@@ -40,11 +40,10 @@ Three threads converge:
    2005; Donagi–Ovrut 2005) closes the geometric-to-spectral loop.
 
 The longer pedagogical exposition of the substrate ontology, the discrete
-isotropic update rule, and the elastic-medium identification lives in
-**Part III, Chapter 3** of the companion book (`book/chapters/part3/` in
-the parent monorepo, "Booting Up Mathematics" through "Substrate
-Elasticity and Subcritical Resonance"). Readers wanting the derivational
-story rather than the compressed paper form should start there.
+isotropic update rule, and the elastic-medium identification lives in the
+companion book *Exist: The Universal Ontology*, Book III. Readers wanting
+the derivational story rather than the compressed paper form should start
+there.
 
 ## Current state of the work
 
@@ -147,7 +146,7 @@ reduced reproducibility artifact alongside the next paper revision.
 ## Reading order for new readers
 
 1. The paper PDF in this folder — compressed, formal, REVTeX.
-2. Part III, Chapter 3 of the companion book — pedagogical, narrative,
+2. *Exist: The Universal Ontology*, Book III — pedagogical, narrative,
    with the substrate-ontology motivation that the paper assumes.
 3. The `cy3_substrate_discrimination` numerical-experiment write-ups for
    the Schoen-vs-alternatives discrimination evidence.

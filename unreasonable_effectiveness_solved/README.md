@@ -62,10 +62,10 @@ quantum critical point of CoNb_2O_6 — golden-ratio mass ratio observed
 to part-in-10³ precision. The McKay correspondence then identifies
 icosahedral order-5 structure as the harmonic seed selected by E_8.
 
-The longer pedagogical exposition lives in **Part III, Chapter 3** of the
-companion book ("Booting Up Mathematics") in `book/chapters/part3/` of the
-parent monorepo. Readers wanting the derivational story rather than the
-compressed paper form should start there.
+The longer pedagogical exposition of the bootstrap material lives in
+the companion book *Exist: The Universal Ontology*, Book III. Readers
+wanting the derivational story rather than the compressed paper form
+should start there.
 
 ## Current state of the work
 
@@ -139,8 +139,8 @@ the macroscopic-limit derivations themselves.
 
 ## Reading order for new readers
 
-1. The paper PDF in this folder — compressed, formal, REVTeX, 8 pages.
-2. Part III, Chapter 3 of the companion book — pedagogical, narrative,
+1. The paper PDF in this folder — compressed, formal, REVTeX.
+2. *Exist: The Universal Ontology*, Book III — pedagogical, narrative,
    with the substrate-ontology motivation that the paper assumes.
 3. The companion paper on the SM derivation
    (`papers/substrate_sm_derivation/`) for the quantitative-physics
