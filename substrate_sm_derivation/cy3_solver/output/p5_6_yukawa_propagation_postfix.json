@@ -1,0 +1,469 @@
+{
+  "label": "p5_6_yukawa_propagation",
+  "geometry": "Tian-Yau bicubic CY3 (CP^3 × CP^3, Z/3-quotiented)",
+  "geometry_note": "PIVOT from brief: Fermat quintic has no Yukawa pipeline in this codebase. Measuring on Tian-Yau where both σ_MA and the Yukawa coupling pipeline (`predict_fermion_masses`) are available.",
+  "n_pts": 200,
+  "seed": 42,
+  "k": 2,
+  "sigma_truth": 0.5119808072448077,
+  "truth_label": "budget_2",
+  "endpoints": [
+    {
+      "label": "budget_2",
+      "max_iter": 2,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5119808072448077,
+      "n_basis": 28,
+      "iterations_run": 2,
+      "elapsed_s_metric": 0.0213215,
+      "elapsed_s_yukawa": 0.0028157,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_10",
+      "max_iter": 10,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5170276282897398,
+      "n_basis": 28,
+      "iterations_run": 10,
+      "elapsed_s_metric": 0.0349395,
+      "elapsed_s_yukawa": 0.0026958,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_50",
+      "max_iter": 50,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.517030599138368,
+      "n_basis": 28,
+      "iterations_run": 30,
+      "elapsed_s_metric": 0.0645853,
+      "elapsed_s_yukawa": 0.0029523,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_25",
+      "max_iter": 25,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5170305992468,
+      "n_basis": 28,
+      "iterations_run": 25,
+      "elapsed_s_metric": 0.0562457,
+      "elapsed_s_yukawa": 0.0039778,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_5",
+      "max_iter": 5,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5172285443928818,
+      "n_basis": 28,
+      "iterations_run": 5,
+      "elapsed_s_metric": 0.0286087,
+      "elapsed_s_yukawa": 0.0026724,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_3",
+      "max_iter": 3,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5186487245168643,
+      "n_basis": 28,
+      "iterations_run": 3,
+      "elapsed_s_metric": 0.0218093,
+      "elapsed_s_yukawa": 0.0029075,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    },
+    {
+      "label": "budget_1",
+      "max_iter": 1,
+      "donaldson_tol": 1e-9,
+      "sigma": 0.5394790285951613,
+      "n_basis": 28,
+      "iterations_run": 1,
+      "elapsed_s_metric": 0.3686325,
+      "elapsed_s_yukawa": 0.0029156,
+      "masses_at_mz": [
+        0.0,
+        0.0,
+        5.492498301338979,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hym_residual": 4.252799872706121,
+      "yukawa_uncertainty_relative": 21.788028468801603,
+      "quadrature_uniformity_score": 0.6212292056216077
+    }
+  ],
+  "per_eigenvalue_bias": [
+    {
+      "name": "m_u",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_c",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_t",
+      "truth": 5.492498301338979,
+      "values_per_endpoint": [
+        5.492498301338979,
+        5.492498301338979,
+        5.492498301338979,
+        5.492498301338979,
+        5.492498301338979,
+        5.492498301338979
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "m_d",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_s",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_b",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_e",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_mu",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "m_tau",
+      "truth": 0.0,
+      "values_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "abs_delta_per_endpoint": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rel_bias_per_endpoint": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "mean_rel_bias_per_endpoint": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "max_rel_bias_per_endpoint": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "fit": {
+    "p": null,
+    "c": null,
+    "r_squared": null,
+    "n_points": 0,
+    "c_max_eigenvalue": 0.0,
+    "c_geom_mean_p1": null
+  },
+  "budget_recalc": {
+    "smallest_pdg_rel_unc": 0.00014,
+    "fit_p": null,
+    "fit_c": null,
+    "sigma_target_under_fit": null,
+    "sigma_target_p1": null,
+    "sigma_target_worst_eigenvalue": null
+  },
+  "verdict": "DECOUPLED at this precision — Yukawa eigenvalues are bit-identical across the observed σ range [5.1198e-1, 5.3948e-1]; rel_bias < f64 ULP. The σ-MA → Yukawa propagation coefficient C is effectively zero in this pipeline at the tested resolution. Linear-in-σ propagation, if present, has C ≪ 4.337e-16.",
+  "total_elapsed_s": 0.6182738,
+  "git_revision": "48e634494d8675e1af8b54d971fc7b80ccb8dae4"
+}

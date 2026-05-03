@@ -1,0 +1,99 @@
+=== P5.10 TY-vs-Schoen 5σ-target ensemble (Path A: n_pts boost) ===
+n_pts=40000, ks=[4], seeds(n=20)=[42, 100, 12345, 7, 99, 1, 2, 3, 4, 5, 137, 271, 314, 666, 1000, 2024, 4242, 57005, 48879, 51966]
+Donaldson(100, 1e-6, GPU) (no Adam refine)
+Bootstrap: n_resamples=10000, seed=12345
+
+--- TY k=4 (n_pts=40000) ---
+  [ 1/20] seed=    42: σ=0.280101  n_basis= 200  iters=27  res_donaldson=9.955e-7  tier=converged      (114.49s)
+  [ 2/20] seed=   100: σ=0.274008  n_basis= 200  iters=27  res_donaldson=8.124e-7  tier=converged      (108.44s)
+  [ 3/20] seed= 12345: σ=0.279178  n_basis= 200  iters=27  res_donaldson=7.452e-7  tier=converged      (110.70s)
+  [ 4/20] seed=     7: σ=0.282970  n_basis= 200  iters=27  res_donaldson=9.363e-7  tier=converged      (119.24s)
+  [ 5/20] seed=    99: σ=0.274033  n_basis= 200  iters=28  res_donaldson=7.943e-7  tier=converged      (128.71s)
+  [ 6/20] seed=     1: σ=0.279059  n_basis= 200  iters=28  res_donaldson=8.195e-7  tier=converged      (117.45s)
+  [ 7/20] seed=     2: σ=0.279964  n_basis= 200  iters=28  res_donaldson=7.508e-7  tier=converged      (113.77s)
+  [ 8/20] seed=     3: σ=0.277909  n_basis= 200  iters=28  res_donaldson=5.525e-7  tier=converged      (117.09s)
+  [ 9/20] seed=     4: σ=0.275766  n_basis= 200  iters=28  res_donaldson=6.749e-7  tier=converged      (114.59s)
+  [10/20] seed=     5: σ=0.285806  n_basis= 200  iters=27  res_donaldson=8.885e-7  tier=converged      (106.91s)
+  [11/20] seed=   137: σ=0.275221  n_basis= 200  iters=25  res_donaldson=8.316e-7  tier=converged      (99.26s)
+  [12/20] seed=   271: σ=0.277451  n_basis= 200  iters=28  res_donaldson=7.740e-7  tier=converged      (112.30s)
+  [13/20] seed=   314: σ=0.278551  n_basis= 200  iters=28  res_donaldson=9.311e-7  tier=converged      (113.55s)
+  [14/20] seed=   666: σ=0.280391  n_basis= 200  iters=28  res_donaldson=6.014e-7  tier=converged      (111.09s)
+  [15/20] seed=  1000: σ=0.271961  n_basis= 200  iters=28  res_donaldson=6.540e-7  tier=converged      (110.43s)
+  [16/20] seed=  2024: σ=0.280685  n_basis= 200  iters=27  res_donaldson=9.707e-7  tier=converged      (107.51s)
+  [17/20] seed=  4242: σ=0.281009  n_basis= 200  iters=28  res_donaldson=7.572e-7  tier=converged      (115.02s)
+  [18/20] seed= 57005: σ=0.276226  n_basis= 200  iters=28  res_donaldson=7.763e-7  tier=converged      (115.72s)
+  [19/20] seed= 48879: σ=0.273210  n_basis= 200  iters=28  res_donaldson=5.959e-7  tier=converged      (117.39s)
+  [20/20] seed= 51966: σ=0.280493  n_basis= 200  iters=28  res_donaldson=6.568e-7  tier=converged      (115.08s)
+  Stats:
+                   sigma_ty_k4: mean=0.278200 std=3.4898e-3 stderr=7.8033e-4  pct95=[0.276719, 0.279679]  bca95=[0.276728, 0.279686]
+
+--- Schoen k=4 (n_pts=40000) ---
+  [ 1/20] seed=    42: σ=5.595319  n_basis=  48  iters=33  res_donaldson=1.295e-4  tier=converged      (16.35s)
+  [ 2/20] seed=   100: σ=6.884981  n_basis=  48  iters=18  res_donaldson=1.517e-3  tier=ambiguous      (6.45s)
+  [ 3/20] seed= 12345: σ=2.851721  n_basis=  48  iters=36  res_donaldson=7.754e-7  tier=converged      (9.01s)
+  [ 4/20] seed=     7: σ=5.730538  n_basis=  48  iters=43  res_donaldson=1.840e-4  tier=converged      (48.66s)
+  [ 5/20] seed=    99: σ=7.789507  n_basis=  48  iters=97  res_donaldson=9.760e-7  tier=converged      (23.76s)
+  [ 6/20] seed=     1: σ=4.555118  n_basis=  48  iters=40  res_donaldson=9.027e-7  tier=converged      (10.08s)
+  [ 7/20] seed=     2: σ=5.974619  n_basis=  48  iters=26  res_donaldson=4.954e-5  tier=converged      (15.12s)
+  [ 8/20] seed=     3: σ=85.789858  n_basis=  48  iters=62  res_donaldson=8.461e-7  tier=converged      (15.21s)
+  [ 9/20] seed=     4: σ=4.614340  n_basis=  48  iters=33  res_donaldson=9.486e-7  tier=converged      (8.39s)
+  [10/20] seed=     5: σ=47.954377  n_basis=  48  iters=23  res_donaldson=2.254e-3  tier=ambiguous      (14.65s)
+  [11/20] seed=   137: σ=3.184412  n_basis=  48  iters=80  res_donaldson=9.655e-7  tier=converged      (19.83s)
+  [12/20] seed=   271: σ=5.928605  n_basis=  48  iters=38  res_donaldson=2.710e-4  tier=converged      (35.52s)
+  [13/20] seed=   314: σ=14.639032  n_basis=  48  iters=47  res_donaldson=8.275e-7  tier=converged      (12.46s)
+  [14/20] seed=   666: σ=16.502225  n_basis=  48  iters=69  res_donaldson=9.942e-7  tier=converged      (18.45s)
+  [15/20] seed=  1000: σ=7.334875  n_basis=  48  iters=38  res_donaldson=1.238e-6  tier=converged      (33.24s)
+  [16/20] seed=  2024: σ=5.600264  n_basis=  48  iters=60  res_donaldson=1.274e-4  tier=converged      (76.52s)
+  [17/20] seed=  4242: σ=15.995564  n_basis=  48  iters=19  res_donaldson=7.395e-3  tier=ambiguous      (7.23s)
+  [18/20] seed= 57005: σ=7.875840  n_basis=  48  iters=43  res_donaldson=5.223e-4  tier=converged      (48.44s)
+  [19/20] seed= 48879: σ=2.768348  n_basis=  48  iters=34  res_donaldson=7.245e-7  tier=converged      (8.78s)
+  [20/20] seed= 51966: σ=6.668756  n_basis=  48  iters=47  res_donaldson=9.917e-7  tier=converged      (12.26s)
+  Stats:
+               sigma_schoen_k4: mean=13.211915 std=1.9753e1 stderr=4.4170e0  pct95=[6.541012, 22.903434]  bca95=[7.452610, 27.632668]
+
+=== n-σ discrimination (Tier 0: STRICT-CONVERGED (residual < tol AND iters < cap)) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |   n-σ pct 95% CI |   n-σ BCa 95% CI |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|------------------|------------------|
+|  4 |   0.278200 |  7.8033e-4 |  14.936332 |   8.0199e0 | -14.658132 |   8.0199e0 |    1.828 |    20 |    10 |   [1.542, 6.950] |   [1.338, 2.326] |
+
+=== n-σ discrimination (Tier 1: conservative (full 20+20)) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |   n-σ pct 95% CI |   n-σ BCa 95% CI |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|------------------|------------------|
+|  4 |   0.278200 |  7.8033e-4 |  13.211915 |   4.4170e0 | -12.933715 |   4.4170e0 |    2.928 |    20 |    20 |   [2.464, 8.614] |   [2.125, 3.997] |
+
+=== n-σ discrimination (Tier 2: canonical (residual < 1e-3)) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |   n-σ pct 95% CI |   n-σ BCa 95% CI |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|------------------|------------------|
+|  4 |   0.278200 |  7.8033e-4 |  11.376669 |   4.7363e0 | -11.098470 |   4.7363e0 |    2.343 |    20 |    17 |  [2.067, 12.345] |   [1.809, 5.754] |
+
+=== n-σ discrimination (Tier 3: Tukey-trimmed canonical with RE-TRIM bootstrap (round-4 Defect B fix)) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |   n-σ pct 95% CI |   n-σ BCa 95% CI |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|------------------|------------------|
+|  4 |   0.278200 |  7.8033e-4 |   5.462304 |  4.5450e-1 |  -5.184105 |  4.5450e-1 |   11.406 |    20 |    14 |  [5.625, 27.888] |  [5.549, 26.427] |
+
+=== Round-4 5σ verdict — four-tier ===
+  Tier 0 (strict-converged): n-σ = 1.828 at k=4  CI=[1.542, 6.950]   point>=5=false  CI_lo>=5=false
+  Tier 1 (conservative):     n-σ = 2.928 at k=4  CI=[2.464, 8.614]   point>=5=false  CI_lo>=5=false
+  Tier 2 (canonical):        n-σ = 2.343 at k=4  CI=[2.067, 12.345]   point>=5=false  CI_lo>=5=false
+  Tier 3 (Tukey re-trim):    n-σ = 11.406 at k=4  CI=[5.625, 27.888]   point>=5=true  CI_lo>=5=true
+
+  HEADLINE TIER: Tier 3 (Tukey-trimmed with re-trim bootstrap)
+  HEADLINE n-σ = 11.406 at k=4  (95% CI = [5.625, 27.888])
+  VERDICT      = 5σ DISCRIMINATION ACHIEVED — point estimate AND 95% CI lower bound both >= 5σ at headline tier
+  conservative max n-σ (full 20+20, INCLUDES guard-restored snapshots) = 2.928 at k=4
+
+=== Bootstrap-seed jitter sensitivity (B=10000) ===
+  |                            label | primary_lo |   seed_999 | seed_31415 | max_jitter (σ) |
+  |              strict_converged_k4 |      1.542 |      1.546 |      1.532 |         0.0097 |
+  |                     canonical_k4 |      2.067 |      2.064 |      2.079 |         0.0119 |
+  |              reference_retrim_k4 |      5.625 |      5.720 |      5.632 |         0.0942 |
+  overall max_jitter = 0.0942σ (target: ≤0.05σ at B=10000)
+P5.7 baseline (n_pts=10000, k=3): n-σ = 4.854.  P5.10 conservative (n_pts=40000, k=3): n-σ = 2.928.
+
+=== n-σ discrimination (Legacy balanced-only (iters >= 10) — round-2 (Concern B), kept for back-compat) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |   n-σ pct 95% CI |   n-σ BCa 95% CI |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|------------------|------------------|
+|  4 |   0.278200 |  7.8033e-4 |  13.211915 |   4.4170e0 | -12.933715 |   4.4170e0 |    2.928 |    20 |    20 |   [2.464, 8.614] |   [2.125, 3.997] |
+=== total elapsed: 2709.2s ===
+Wrote output/p5_10_k4_adaptive.replog (42 events, final chain SHA-256 = 53c1315a58b53ba9268acc52ad7fd895cd1b1ad6266ed83ea68979351f820125)
+Wrote output/p5_10_k4_adaptive.json

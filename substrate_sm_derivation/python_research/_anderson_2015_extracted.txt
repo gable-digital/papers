@@ -1,0 +1,3661 @@
+=== PAGE 1 ===
+A New Construction of Calabi-Yau Manifolds:
+Generalized CICYs
+Lara B. Anderson 1, Fabio Apruzzi 2, Xin Gao 1, James Gray 1 and Seung-Joo Lee 1
+1Physics Department, Robeson Hall, Virginia Tech, Blacksburg, VA 24061, USA
+2Institut f¨ ur Theoretische Physik, Leibniz Universit¨ at Hannover, Appelstrasse 2, D-30167 Hannover, Germany
+Abstract
+We present a generalization of the complete intersection in products of projective space (CICY)
+construction of Calabi-Yau manifolds. CICY three-folds and four-folds have been studied exten-
+sively in the physics literature. Their utility stems from the fact that they can be simply described
+in terms of a ‘conﬁguration matrix’, a matrix of integers from which many of the details of the
+geometries can be easily extracted. The generalization we present is to allow negative integers
+in the conﬁguration matrices which were previously taken to have positive semi-deﬁnite entries.
+This broadening of the complete intersection construction leads to a larger class of Calabi-Yau
+manifolds than that considered in previous work, which nevertheless enjoys much of the same de-
+gree of calculational control. These new Calabi-Yau manifolds are complete intersections in (not
+necessarily Fano) ambient spaces with an eﬀective anticanonical class. We ﬁnd examples with
+topology distinct from any that has appeared in the literature to date. The new manifolds thus
+obtained have many interesting features. For example, they can have smaller Hodge numbers than
+ordinary CICYs and lead to many examples with elliptic and K3-ﬁbration structures relevant to
+F-theory and string dualities.
+lara.anderson@vt.edu, fabio.apruzzi@itp.uni-hannover.de, xingao@vt.edu, jamesgray@vt.edu, seungsm@vt.edu
+arXiv:1507.03235v1  [hep-th]  12 Jul 2015
+=== PAGE 2 ===
+Contents
+1 Introduction 1
+2 The Construction and Topology 4
+2.1 The construction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 Determining the topology of generalized CICY manifolds . . . . . . . . . . . . . . . . 6
+2.2.1 The Koszul complex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2.2 An illustration of the determination of Hodge numbers . . . . . . . . . . . . . . 8
+2.2.3 Chern classes and triple intersection numbers . . . . . . . . . . . . . . . . . . . 9
+2.2.4 The K¨ ahler and Mori cones . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3 Construction of Sections and Smoothness 13
+3.1 Smoothness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.2 Reducedness . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+4 Redundancies 20
+4.1 Splitting transitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+4.2 Identities and reduction rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.3 Trivial line bundles . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+4.4 Multiple components . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+5 Beginning a Classiﬁcation of Generalized CICYs 24
+5.1 Codimension (1,1) generalized CICYs . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+5.1.1 A negative bound . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+5.1.2 The classiﬁcation result . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5.1.3 Apparently inﬁnite classes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5.1.4 New Calabi-Yau three-folds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+5.2 Codimension (2,1) generalized CICYs . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+6 Physics Applications and Outlook 39
+A Line Bundles and Cohomology 42
+B Trivial Bundle Cohomology and Filtering out Non-CY Conﬁguration Matrices 44
+C Numerical Method for Section Construction 45
+1 Introduction
+Calabi-Yau manifolds constructed as complete intersections of polynomial hypersurfaces in products
+of projective spaces, abbreviated here as ‘CICY’s, have proven to be a very useful class of compact-
+iﬁcation manifolds for string theory. The CICY three-folds were ﬁrst discussed and classiﬁed in a
+series of articles in the 1980’s [1–4]. Since that time, these manifolds have been used in a wide variety
+of diﬀerent studies, including recent work on moduli stabilization and model building in string phe-
+nomenology (see [5–11] for some recent examples). Recently the CICY four-folds have been classiﬁed
+and studied [12–15] and work is underway to use this dataset in the context of F-theory compactiﬁ-
+cations to 4-dimensions. One of the reasons why this method of constructing Calabi-Yau manifolds
+has proven to be so useful is that it is exceptionally simple to study and work with. This simplicity
+stems from the fact that the complicated Calabi-Yau geometry is embedded within an extremely
+simple ambient space. Many of the geometric quantities of interest on the Calabi-Yau manifold can
+1
+=== PAGE 3 ===
+be worked out via relations to associated ambient space quantities - leading to an exceptional degree
+of computational control. In this paper, we will generalize the CICY construction in a manner which
+is applicable to any dimensionality of Calabi-Yau manifold.
+A CICY can be described by a conﬁguration matrix which encodes the data essential to the
+deﬁnition of the manifold. An example is as follows, 1
+X1 =
+[ P2 1 1 1
+P4 3 1 1
+]
+, (1.1)
+where this describes a manifold, X1, that is embedded in an ambient space P2 × P4 as the complete
+intersection of the solution of three polynomial equations, one for each column of integers in (1.1).
+The integers themselves denote the degree of the deﬁning polynomials in the homogeneous coordinates
+of the ambient projective factors (here one multi-degree (1 , 3) and two multi-degree (1 , 1) deﬁning
+relations). Note that, in this example, X1 is of complex dimension 3 since the ambient space is of
+dimension 6 and there are 3 polynomials that deﬁne this complete intersection. Equivalently, X1
+is deﬁned as a complete intersection of global sections of three line bundles. That is, the common
+solutions of one element 2 of H 0(P2 × P4, O(1, 3)) and two elements of H 0(P2 × P4, O(1, 1)). Due to
+their interpretation as the degrees of polynomial equations, the integer entries in a CICY conﬁguration
+matrix such as (1.1) are taken to be positive semi-deﬁnite. In the case of generalized CICYs, we will
+drop this requirement, in general allowing for negative degrees in the deﬁning relations in the ambient
+space. In order to explain better the correspondence between the actual variety and the conﬁguration
+matrix, we illustrate now an example of a generalized CICY.
+A simple example
+A generalized CICY, or “gCICY”, will be described by a conﬁguration matrix, similar to (1.1), but
+in which negative integers are now permitted to be used. For example,
+X2 =
+
+
+P1 1 1 −1 1
+P1 1 1 1 −1
+P5 3 1 1 1
+
+ . (1.2)
+In this example one cannot deﬁne X2 as a simple complete intersection of sections of line bundles on
+the ambient spaceA ∼= P1×P1×P5. This is due to the simple fact thath0(P1×P1×P5, O(1, −1, 1)) = 0,
+for example. To state the problem in another way, one cannot have a polynomial in ambient space
+coordinates with negative degree! However if we apply the polynomial conditions sequentially from
+left to right there is no such problem. Deﬁne a manifold, M, to be the complete intersection of
+the ﬁrst two polynomials (columns) in the ambient space. Then the remaining two line bundles
+do have sections on M and as such a manifold can be deﬁned associated to the full conﬁguration
+matrix in (1.2). Note that the sections of the last two line bundles should correspond to polynomials
+in appropriately chosen coordinates for M although they are not polynomial in the homogeneous
+coordinates of the ambient space A.
+Let us look at what the deﬁning equations of X2 are explicitly in terms of the homogenous
+coordinates of A. The ﬁrst two columns correspond to the vanishing of polynomial equations, p1 = 0
+andp2 = 0 (which we can take to be generic polynomials of appropriate degrees in the homogeneous
+coordinates). The remaining two deﬁning relations,q1 = 0 andq2 = 0, will each describe the vanishing
+of a speciﬁc rational function. Since we know that these rational functions should correspond to some
+1Strictly speaking, conﬁguration matrices describe an entire family of varieties and a variety is only determined
+once a choice has been made of its complex structure within the family. In this sense, it can be misleading to use the
+equality symbol in characterizing a speciﬁc variety by its conﬁguration matrix. When no confusions arise, however, we
+will employ such a conventional abuse of notation.
+2See Appendix A for a review of notation and tools to compute line bundle cohomology.
+2
+=== PAGE 4 ===
+polynomial deﬁning relations in the coordinates of M, they should not have poles on that surface (as
+described by p1 =p2 = 0). We therefore require that the poles in these rational functions do not lie
+on the solution set of the ﬁrst two deﬁning relations. Denoting the ambient homogenous coordinates
+in P1 × P1 × P5 as x1 = (x0
+1 :x1
+1), x2 = (x0
+2 :x1
+2), and x3 = (x0
+3 :x1
+3 :x2
+3 :x3
+3 :x4
+3 :x5
+3), respectively,
+one simple way to ensure this is the following. We write
+p2 =c0(x1, x3)x0
+2 +c1(x1, x3)x1
+2 =d0(x2, x3)x0
+1 +d1(x2, x3)x1
+1. (1.3)
+In this expression, c0 and c1 are generic polynomials of degree (1 , 0, 1) in the homogeneous coordi-
+nates (x1, x2, x3) of the three ambient space factors. Likewise, d0 and d1 are generic degree (0, 1, 1)
+polynomials in the same variables. Then the following rational expressions for q1 and q2,
+q1 = d1
+x0
+1
+= −d0
+x1
+1
+, (1.4)
+q2 = c1
+x0
+2
+= −c0
+x1
+2
+,
+which are of the right multi-degree, can be used to algebraically embed X2 in M. The poles of these
+expressions miss the locus p2 = 0, in the sense that, when the denominator vanishes, the numerator
+has to vanish to the same order. For example, if x0
+1 = 0 in (1.4), then p2 = 0, as in (1.3), implies that
+d1 = 0 as well (the two x1 homogeneous coordinates cannot simultaneously vanish). The fact that
+we can write two equivalent expressions for each of q1 and q2 is a direct consequence of (1.3), which
+implies the second equalities in each line of (1.4) if p2 = 0.
+The expressions (1.4) allow us to gain a very concrete picture of the manifold X2 described by
+(1.2). On an open patch of the ambient space where x0
+1 ̸= 0 and x0
+2 ̸= 0 we observe that the manifold
+is deﬁned by the solutions to the equations p1 = p2 = d1 = c1 = 0. Thus on such a coordinate
+patch the manifold is simply the common solution locus of a set of polynomial equations. Such a
+description does not hold globally, however. If we look instead at the patch where x1
+1 ̸= 0 andx0
+2 ̸= 0,
+the expression d1
+x0
+1
+for the q1 equation in (1.4) is not the most useful one since there is a locus in this
+patch where the denominator x0
+1 vanishes. Using the second expression, −d0
+x1
+1
+, however, leads again
+to a polynomial description of our manifold by p1 = p2 = d0 = c1 = 0. Such a trick works for any
+given patch and we thus learn that the manifold is deﬁned locally by polynomial equations, although
+the exact polynomials involved vary as one changes the coordinate chart one is considering. Note in
+particular that, since no single polynomial d can globally replace q1 for instance, this manifold is not
+equivalent to a manifold of the form
+
+
+P1 1 1 1 0
+P1 1 1 0 1
+P5 3 1 1 1
+
+ , (1.5)
+which one would naively obtain simply by setting a numerator of each rational deﬁning relation to
+zero globally. This is just as well, as the conﬁguration matrix (1.5) does not describe a Calabi-Yau
+manifold.
+Constructions of the form we are discussing may seem a little strange at ﬁrst to the reader who
+is used to dealing with ordinary CICYs. However it is simply an extreme example of a very well
+studied phenomenon. Many CICYs have so-called “non-polynomial” deformations [16–20]. That is,
+they have complex structure deformations which are not visible as changes to the polynomial deﬁning
+relations in the ambient space coordinates. In the case of generalized CICYs we have taken a logical
+limit of this situation in which all of the complex structure associated to certain deﬁning relations
+are non-polynomial. These new manifolds are also very similar to previous constructions in that they
+are deﬁned simply as algebraic hypersurfaces (or complete intersections) in simple ambient spaces.
+3
+=== PAGE 5 ===
+However, unlike in previous constructions, here the ambient spaces themselves are not necessarily toric
+nor Fano. Instead, these ambient spaces themselves are deﬁned as complete intersections in products
+of projective spaces and are characterized by the fact that their anticanonical divisor is eﬀective but
+not, in general, ample (as in the Fano case). We refer the readers to Refs. [21–23] for a discussion of
+the importance of the form of the anticanonical divisor in recent mathematical classiﬁcations in the
+context of the Minimal Model program [24].
+This class of Calabi-Yau manifolds shares many of the advantages of the ordinary CICYs, including
+much of the same ease in computation, a preponderance of elliptically ﬁbered examples and so forth.
+It is, however, clearly a more general class of manifolds. In addition gCICYs have many interesting
+features; for example a tendency to lead to Calabi-Yau manifolds with smaller Hodge numbers than
+the former construction. Finally, the fact that, unlike the ordinary CICYs, not every gCICY is smooth,
+leads to the possibility of the dataset giving rise to simple, computable examples with, in the language
+of the F-theory literature, manifest non-Higgsable clusters [25–27]. Such global constructions of this
+phenomenon could greatly aid current explorations of the F-theory landscape of vacua. We hope to
+obtain a complete classiﬁcation of the gCICY three- and four-folds in future work [28]. In the present
+work we generate an initial dataset of 2 , 761 three-fold geometries many of which are manifestly
+new CY manifolds with distinct topology not appearing before in existing datasets of Calabi-Yau
+three-folds. For comparison, we refer the reader to [2,29–41] for other classes of constructions of CY
+manifolds.
+The rest of this paper is structured as follows. In Section 2 we describe the construction of gCICYs
+in detail. We begin with our conventions for deﬁning a gCICY conﬁguration matrix in Subsection 2.1.
+In Subsection 2.2 we describe how to compute the topology associated to such a gCICY conﬁguration
+matrix, assuming that the variety itself is smooth. In Section 3 we describe how to construct the
+gCICY geometry explicitly via its deﬁning relations, and in the process detail how a smoothness check
+can be performed on the variety. In Section 4 we detail some of the redundancies that can occur
+relating diﬀerent conﬁguration matrices to the same Calabi-Yau manifold. Some of these redundancies
+mirror the standard CICY case and some do not. While all the techniques described in Sections 2- 4
+apply to gCICYs of an arbitrary dimension, in Section 5 we focus on Calabi-Yau three-folds and
+take the ﬁrst steps towards a classiﬁcation of gCICYs, by studying and classifying certain low co-
+dimensional sub-classes and detail their geometry. Finally in Section 6 we summarize the physics
+applications of this new dataset, including obvious elliptic ﬁbration structures [15] of gCICYs, as
+well as ﬁbration structures involving K3 and higher-dimensional Calabi-Yau varieties and provide an
+outlook of interesting future directions of investigation.
+2 The Construction and Topology
+2.1 The construction
+Our construction of gCICYs is based on a multi-step process. We ﬁrst impose all of the semi-positive
+deﬁning relations to obtain an ordinary complete intersection, M, of a set of polynomial relations in
+the ambient product of projective spaces, while the rest of the deﬁning relations (including negative
+entries) are to be sequentially imposed on M.
+Let us be more speciﬁc and begin by constructing M as the complete intersection of K polyno-
+mials,pα whereα = 1, · · ·,K , in a product of projective spaces, A = Pn1 × · · · ×Pnm. We choose the
+dimension of M,
+dimC M =
+m∑
+r=1
+nr −K , (2.1)
+such that it is strictly greater than the desired dimension, N, of the Calabi-Yau manifold to be
+constructed. Note that, as in a standard CICY, the polynomials pα are sections of an appropriate
+4
+=== PAGE 6 ===
+line bundle OA(a1
+α, · · ·,am
+α ), with ar
+α ≥ 0 specifying the non-negative homogeneous degree of pα in
+ther-th projective piece. Here the indices r,s, · · · = 1, · · ·,m are used to label the projective ambient
+space factors Pnr, and the indices α,β, · · · = 1, · · ·,K , to label the polynomials, pα. A family of such
+geometries can be characterized by a conﬁguration matrix of the form,
+[ n || {aα} ] =
+
+
+Pn1 a1
+1 · · · a1
+K
+Pn2 a2
+1 · · · a2
+K
+... ... ... ...
+Pnm ar
+1 · · · ar
+K
+
+
+, (2.2)
+with non-negative integer entries ar
+α.
+Inside M we deﬁne the generalized CICY, X, in terms of an ordered list of line bundles Lµ where
+µ = 1,...,L . These are used to iteratively describe hypersurfaces inside a nested sequence of spaces
+as follows. First, we demand that h0(M, L1) ̸= 0 and deﬁne a hypersurface M1 inside M as the
+vanishing locus of a global section in H 0(M, L1). Second, we demand that h0(M1, L2) ̸= 0 and
+deﬁne a hypersurface M2 inside M1 as the vanishing locus of a global section in H 0(M1, L2). We
+sequentially repeat this procedure for all the line bundles Lµ until the gCICY is obtained asX = ML.
+Note that, in general, one needs not have a section of Lµ on the ambient space A, or even on M for
+µ ≥ 2. We need only have sections of Lµ on Mµ−1, i.e. we simply require that h0(Mµ−1, Lµ) ̸= 0.
+As such, as we have already discussed, gCICYs are not described by the solution set of a system of
+simple polynomial equations in the ambient space A.
+By writing Lµ = OMµ−1(b1
+µ, · · ·,bm
+µ ), µ = 1,...L , with M0 = M, we present the deﬁning data
+of a gCICY by the following matrix,
+[ n || {aα} | {bµ} ] =
+
+
+Pn1 a1
+1 · · · a1
+K b1
+1 · · · b1
+L
+Pn2 a2
+1 · · · a2
+K b2
+1 · · · b2
+L
+... ... ... ... ... ... ...
+Pnm am
+1 · · · am
+K bm
+1 · · · bm
+L
+
+
+. (2.3)
+This looks very much like an ordinary CICY conﬁguration matrix with just two important diﬀerences.
+Firstly, the entries br
+µ can be negative, although the ar
+α are still positive semi-deﬁnite. Secondly, the
+order of the columns involving b’s is important and we establish the convention that one restricts to
+sections of the line bundles in an order taken from left to right in constructing the Calabi-YauN-fold.
+Clearly, not every such matrix describes a gCICY, as the Lµ must be chosen so as to have global
+sections over Mµ−1. However, by deﬁnition, every gCICY can be described by such a conﬁguration
+matrix and we will see that much of the familiar utility of describing manifolds with such objects is
+preserved in this case.
+Clearly, the number, L, of the line bundles on M has to be,
+L = dimC M −N =
+m∑
+r=1
+nr −K −N , (2.4)
+if we want the resulting subvariety, X ⊂ M , to be an N-fold. The N-dimensional variety X has
+codimension K +L in A. However, since the K sections pα and the L sections qµ are of a diﬀerent
+type, we say that X is of codimension (K,L ) in this case. The condition that the resulting variety is
+Calabi-Yau remains unaltered: namely that the sum of the degrees of the entries in each row must
+equal nr + 1 for its respective Pnr factor. This will be discussed in detail in the next subsection.
+In the case of a single hypersurface with L = 1, this is the familiar condition that X must be the
+anticanonical hypersurface of M.
+5
+=== PAGE 7 ===
+It should be noted that there is a sub-type of gCICYs which are particularly easy to describe
+and which display many of the interesting properties of the dataset. These are the cases where
+h0(M, Lµ) ̸= 0 for all the µ’s. In this case it frequently does not matter in which order one restricts
+to sections of the Lµ as they all have global sections already on M 3. We refer to such a generalized
+CICY as a minimally generalized CICY or an “mgCICY.” Many of the concrete examples that we
+discuss in what follows will be of this type.
+2.2 Determining the topology of generalized CICY manifolds
+In this subsection tools are provided to compute topological properties of a gCICY from its conﬁgu-
+ration matrix. For the moment, we will make the assumption that the associated variety is smooth 4.
+Unlike in the CICY case, gCICYs are not always generically smooth and this property must be explic-
+itly tested as will be explored in Section 3. Nevertheless we ﬁnd it useful to describe the computation
+of topological properties of the dataset ﬁrst and then proceed on to verifying smoothness in a second
+step. This allows us to preserve the separation between topology, as derived by integer manipulation
+of the conﬁguration matrix, and geometry, as determined by the detail of the deﬁning relations, that
+is seen in the discussion of standard CICYs. In any case, it is useful to determine which conﬁguration
+matrices could have interesting topology, such as vanishing ﬁrst Chern class, before proceeding on to
+the more detailed question of whether or not they are smooth.
+For the rest of this section, we explore such deﬁning topological quantities as the Hodge numbers,
+Chern classes, and triple intersection numbers of our new class of Calabi-Yau manifolds. We will also
+discuss the computation of other geometrical data such as the K¨ ahler and Mori cones and line bundle
+cohomology which is crucial in order to extract the eﬀective physics in a string compactiﬁcation. One
+important omission that we do not consider here is a study of the ﬁrst fundamental group, π1(X),
+of these geometries. Unlike in the case of ordinary CICY manifolds, it is not guaranteed that the
+gCICY manifolds are simply connected. Due to the absence of such useful tools as the Lefschetz
+Hyperplane theorem (employed in the case of CICYs [42]) we leave a complete study of this to a
+future classiﬁcation.
+Much of the formalism that we describe below applies to any Calabi-Yau three-fold described as
+an algebraic hypersurface inside some K¨ ahler ambient space and is not unique to the construction at
+hand. For a more complete overview of these tools, we refer the reader to such useful references as
+[42,43]. Below we will review some of these general results and focus on how they can be implemented
+for generalized complete intersection manifolds.
+2.2.1 The Koszul complex
+To begin, consider a generalized complete intersection manifold, X, deﬁned as a single hypersurface
+in the compact, K¨ ahler ambient spaceM. This construction will be iterated below to describe more
+general complete intersection manifolds. As described previously, these ambient spaces themselves
+are each constructed as complete intersection manifolds in products of projective spaces [1–4]. By
+Bertini’s theorem (see [44,45]), M constructed in this way are generically smooth K¨ ahler manifolds.
+As in many other constructions of CY manifolds, we begin by constructing X as an anticanonical
+hypersurface in M, and thus we will demand that K∨
+M has global sections ( h0(M, K∨M) > 0).
+However, unlike in many constructions of CY manifolds, M will is not required to be Fano (that is,
+K∨
+M is not necessarily ample).
+To construct the hypersurface, X, we will impose on the coordinates of M, collectively denoted
+by x, the algebraic equation p(x) = 0 in the class D (i.e. p is a global, holomorphic section of the
+3Because the number of sections of a given line bundle may vary on the diﬀerent Mµ, it should be noted that
+the order in which the line bundles are placed may still be important in questions such as deciding smoothness of the
+resulting variety.
+4In fact we can somewhat relax this assumption, as we will describe in later sections.
+6
+=== PAGE 8 ===
+line bundle OM(D) and D = [p(x) = 0]). Then we have the familiar Adjunction Formula [44,45]:
+0 →TX →T M|X → OM(D)|X → 0 . (2.5)
+As will be argued below, X will satisfy c1(X) = 0 and thus, is a CY manifold when O(D) =
+K∨M [46, 47]. Using (2.5), the tangent bundle valued cohomology, H∗(X,TX ), can be computed by
+restriction from M. The most useful tool to this end is the familiar Koszul short exact sequence
+[44,45]:
+0 → IX|M → OM → OM|X → 0 , (2.6)
+where IX|M is the ideal sheaf of X ⊂ M. In the case the divisor D is reduced and irreducible 5, the
+ideal sheaf is invertible and a line bundle, leading to
+0 → OM(−D) → OM → OM|X → 0 . (2.7)
+Moreover, for any vector bundle, π : V → M , we can take the tensor product with the above exact
+sequence to produce another short exact sequence (i.e. the above sequence of sheaves/modules is
+ﬂat [44]):
+0 → OM(−D) ⊗ V → V → V| X → 0 . (2.8)
+From this sequence we can use the cohomology of any bundle V on M to determine the cohomology
+of the restricted bundle V|X. It should be noted that in most known algebraic constructions of CY
+manifolds [1–4], this sequence is deﬁned for ample divisors D. Such a choice guarantees that the
+varietyX swept out by the condition p(x) = 0 is generically a smooth, irreducible variety. For the
+case at hand, however, we will simply require that D is eﬀective (and frequently nef) and that the
+line bundle OM(D) has global sections. In general the variety X deﬁned by the global sections of a
+non-Ample line bundle may be singular, reducible, or non-reduced. To proceed, we must ﬁrst consider
+the global sections of OM(D) and whether or not they can be used to deﬁne smooth manifolds. The
+details of this analysis will be described in Section 3. For now, we will simply assume that such good
+sections exist and that X is smooth, but it is important to note that the following analysis is only
+valid for smooth X.
+To determine the topology of X then, consider the long exact sequence in cohomology associated
+to (2.5):
+0 →H 0(X,TX ) →H 0(X,T M|X) →H 0(X,O (D)|X) →H 1(X,TX ) → · · · (2.9)
+where the cohomology of bundles restricted toX can be computed using (2.8) and standard techniques
+(see Section A).
+At this point, determining the tangent bundle valued cohomologyh∗(X,TX ) is as straightforward
+as any other construction of a Calabi-Yau manifold as a complete intersection manifold and the tech-
+niques employed are entirely analogous. This can be concisely summarized by the two-step procedure:
+1) Compute bundle-valued cohomology on the smooth K¨ ahler manifold M.
+2) Use the Koszul (2.7) and Adjunction (2.5) sequences as well as the long exact sequence (2.9) to
+determine bundle valued cohomology on X.
+The ﬁrst of these steps is now well-understood in the physics literature and the reader is referred
+to [42] for a review. The way that these standard results can be implemented for gCICYs in step 2)
+is most simply understood in the context of an example.
+5More speciﬁcally,I is invertible if and only if D is cut out by a single equation, not vanishing at any associated
+point ofM. In this case, D is called an eﬀective Cartier divisor [44,45].
+7
+=== PAGE 9 ===
+2.2.2 An illustration of the determination of Hodge numbers
+The calculation of Hodge numbers is best understood by illustration and we consider a simple example
+here. Let M =
+[
+P1 3
+P4 2
+]
+and X be deﬁned by a generic global section of the line bundle OM(−1, 3)
+(where OM(a,b ) denotes the line bundle associated to the divisoraH1+bH2 whereHr are the ambient
+hyperplanes restricted to M). Note that on the ambient product of projective spaces A = P1 × P4
+the line bundle OA(−1, 3) is not ample and has no global sections. However, on the hypersurface
+M,h0(M, OM(−1, 3)) = 15 and it is possible to consider an algebraic variety swept out by one such
+general global holomorphic section. As described above, in analogy to the conﬁguration matrices
+used to describe ordinary CICY manifolds [1–4], we will schematically denote the ﬁnal CY manifold
+X here by the following conﬁguration matrix
+X =
+[ P1 3 −1
+P4 2 3
+]
+. (2.10)
+Using the techniques described in [42, 44, 45] and the Euler sequence for the tangent bundle to pro-
+jective space,
+0 → O⊕2
+A → OA(1, 0)⊕2 ⊕ OA(0, 1)⊕5 →T A → 0 , (2.11)
+and the key sequences (2.7) and (2.5):
+0 → OA(−3, −2) → OA → OA|M → 0 , (2.12)
+0 →T M → T A|M → OA(3, 2)|M → 0 . (2.13)
+It is straightforward to determine the tangent bundle valued cohomology on M to be
+h∗(M,T M) = (0, 32, 0, 0, 0) . (2.14)
+To move on to the second step described in the previous Subsection, consider next the adjunction
+formula (2.5) for the CY manifold itself:
+0 →TX →T M|X → OM(−1, 3)|X → 0 . (2.15)
+If the cohomologies, h∗(X,T M|X) and h∗(X, OM(−1, 3)|X) are each determined, then (2.9) can be
+used to ﬁnd the Hodge numbers ofX. First, to determine the cohomology of OM(−1, 3)|X the Koszul
+sequence yields
+0 → OM → OM(−1, 3) → OM(−1, 3)|X → 0 . (2.16)
+From the long exact sequence in cohomology associated to this we have
+h∗(X, O(−1, 3)|X) = (14, 0, 0, 0) . (2.17)
+Likewise, for T M:
+0 →T M ⊗ OM(1, −3) →T M → T M|X → 0 . (2.18)
+The cohomology of the twisted bundle T M ⊗ OM(1, −3) can be computed in the same manner as
+that of T M described above. Using
+0 → OA(1, −3)⊕2 → OA(2, −3)⊕2 ⊕ OA(1, −2)⊕5 →T A ⊗ OA(1, −3) → 0 , (2.19)
+0 → OA(−3, −2) → OA → OA|M → 0 , (2.20)
+0 →T M ⊗ OM(1, −3) → (T A ⊗ OA(1, −3))|M → OM(4, −1) → 0 . (2.21)
+It can be veriﬁed that
+h∗(M, OM(4, −1)) = (0, 0, 0, 0, 0) , (2.22)
+8
+=== PAGE 10 ===
+h∗(M, (T A ⊗ OA(1, −3))|M) = (0, 0, 0, 2, 0) , (2.23)
+which can now be combined in the long exact sequence in cohomology associated to (2.18):
+h∗(X,T M|X) = (0, 32, 2, 0) . (2.24)
+At last then, the pieces can be put together. The long exact sequence in cohomology associated to
+(2.15)
+0 →H 0(X,TX ) →H 0(X,T M|X) →H 0(X, OM(−1, 3)|X) →H 1(X,TX ) → · · · (2.25)
+simpliﬁes to
+0 →H 0(X, OM(−1, 3)|X) →H 1(X,TX ) →H 1(X,T M|X) → 0 →H 2(X,TX ) →H 2(X,T M|X) → 0.
+(2.26)
+Thus, the Hodge numbers of the CY are
+h2,1(X) =h1(TX ) = 46 , (2.27)
+h1,1(X) =h1(TX∨) =h2(TX ) = 2 . (2.28)
+An interesting observation at this stage is that once again, h1(TX ) > h0(M, OM(−1, 3)). That is,
+this generalized complete intersection manifold is “non-polynomial” twice over! Not only can it not
+be realized as a complete intersection hypersurface in P1 × P4 alone, but moreover, there are more
+complex structure moduli than are realized as coeﬃcients of the deﬁning relation p(x) = 0 on M.
+This example illustrates how much general structure can potentially be overlooked by considering
+standard CICY manifolds.
+Having obtained a gCICY manifold with χ = −88 we are led now to consider the remaining
+topology of X. In the next section we will consider the Chern classes and triple intersection numbers
+of X and perform an independent check of the Euler number given above.
+2.2.3 Chern classes and triple intersection numbers
+Once again we begin by considering the co-dimension 1 case, in which X is deﬁned as a single
+hypersurface in M. Since X ⊂ M is a K¨ ahler submanifold of a K¨ ahler spaceM, it is easiest to
+discuss the Chern classes of X via pullback. Let i :X ↪→ M denote the embedding of X in M. In
+this notation, the Adjunction formula (2.5) takes the form
+0 →TX →i∗(T M) →i∗(K∨M) → 0 . (2.29)
+By the commutivity of pullback maps and Chern classes, for any bundle π : V → M , we have
+c(i∗V) =i∗(c(V)). Thus, by the short exactness of (2.29),
+i∗(c(T M)) =c(TX ) ∧i∗(c((K∨M)) . (2.30)
+For each of the Chern classes then, we have that
+c1(TX ) =i∗(c1(T M) −c1(K∨M)) = 0 , (2.31)
+c2(TX ) =i∗(c2(T M)) , (2.32)
+c3(TX ) =i∗(c3(M) −c2(T M) ∧c1(K∨
+M)) . (2.33)
+The Chern classes on M are given as simple functions of the entries in the conﬁguration matrix
+[42]. For the total Chern class
+c(M) =cr
+1Jr +crs
+2 JrJs +crst
+3 JrJsJt +... , (2.34)
+9
+=== PAGE 11 ===
+where Jr is a basis the K¨ ahler (i.e. (1, 1)) forms in Pnr, the conﬁguration matrix (2.2) implies that
+cr
+1 = ( nr + 1) −
+K∑
+j=1
+ar
+j ,
+crs
+2 = 1
+2
+
+−δrs(nr + 1) +
+K∑
+j=1
+ar
+jas
+j +cr
+1cs
+1
+
+, (2.35)
+crst
+3 = 1
+6
+
+δrst(nr + 1) −
+K∑
+j=1
+ar
+jas
+jat
+j −c(rs
+2 ct)
+1 +cr
+1cs
+1ct
+1
+
+ .
+Using the formulas above and the pullback of the K¨ ahler form, these formulas allow us to eﬃciently
+calculate the total Chern class of the Calabi-Yau three-fold, X. From (2.31) we see that the Calabi-
+Yau condition remains unchanged from the case of ordinary CICYs.In order to deﬁne a CY manifold,
+the hypersurface deﬁning the CY must be in the class of the anticanonical divisor of preceeding rows
+of the conﬁguration matrix. As mentioned above, this amounts to the familiar condition that the sum
+of the entries of each row of (2.3) must add up to its respective Pnr dimension plus one.
+The third and top Chern class determines the Euler number of the three-fold. This last quantity
+can be found with a notion of integration over X. As described in [42] (see Thm. 1.3), since X is a
+complex submanifold of M (which is in turn a submanifold of a product of projective spaces), there
+is a closed (1, 1) form, µ, whose restriction to X represents the top Chern class of the normal bundle,
+c1(N ). Then if ω is any closed (3, 3)-form on X, then
+∫
+X
+ω =
+∫
+M
+µX ∧ω . (2.36)
+Likewise, viewing M as a complex subspace of the ambient multi-projective space, integration over
+M can be deﬁned with respect to a measure µM and pulled back to a simpler integration over the
+ambient space A = Pn1 × Pn2... :
+∫
+M
+· =
+∫
+A
+µM ∧ · , µ M := ∧K
+j=1
+( m∑
+r=1
+aj
+rJr
+)
+. (2.37)
+Putting these pieces together then, we see that we can deﬁne integration over X via integration on
+the simple ambient space A with a suitable choice of normal form:
+∫
+X
+· =
+∫
+A
+µX ∧µM ∧ · . (2.38)
+We will explore the exact form of µX in more detail in Section 3. As an application of the above
+formula, the triple intersection numbers can be computed as
+drst =
+∫
+X
+Jr ∧Js ∧Jt =
+∫
+A
+Jr ∧Js ∧Jt ∧µX ∧µM . (2.39)
+An Example
+As an example of the utility of these techniques, we can once again consider the example manifold
+given in Section 2.2.2. As observed in (2.27), the Hodge numbers of this manifold are ( h11,h 21) =
+(2, 46). It is natural to ask, from this topology alone can we conclude whether or not (2.10) deﬁnes a
+previously unknown CY three-fold? A comparison with the literature shows that this Hodge number
+10
+=== PAGE 12 ===
+pair appears twice 6 in the original CICY list [2] and not at all in the Kreuzer-Skarke list [29]. From
+the Hodge data alone then, we cannot decide if this is a new manifold. However, the further topology
+described above in this case can help us to distinguish this geometry. Using (2.32), the second Chern
+class can be written as
+c2(TX )rsdrst = (24, 46) , (2.40)
+and from (2.39) the only non-vanishing intersection numbers are
+d122 = 6, d 222 = 7 . (2.41)
+With this in hand it is easy compare this second Chern class and triple intersection numbers to the
+two manifolds in the CICY list with the same Hodge numbers. We can ask whether there exists any
+basis change for which they can be made equivalent? A straightforward calculation veriﬁes that no
+such basis change exists and in fact, this manifold is inequivalent to the other known CYs with this
+Hodge data. It consists of a previously unknown Calabi-Yau three-fold.
+2.2.4 The K¨ ahler and Mori cones
+A key component of the CY geometry that is crucial to understand is the structure of the K¨ ahler
+and Mori cones (i.e. the cone of ample divisors and that of eﬀective curves). Practically, we deﬁne
+the K¨ ahler cone of a Calabi-Yau three-fold to be deﬁned by the requirements
+∫
+X
+J ∧J ∧J >0 ,
+∫
+S
+J ∧J >0 ,
+∫
+C
+J >0 , (2.42)
+for all S,C ⊂ X homologically non-trivial, irreducible, reduced proper surfaces and curves in X,
+respectively. The K¨ ahler cone is associated to ample divisors on X (and the interior of the nef
+cone [45]). If the K¨ ahler forms are well understood they can be used to deﬁne the Mori cone (or cone
+of eﬀective curves) as the cone of curves intersecting positively with the divisors dual to (1 , 1)-forms
+in the K¨ ahler cone.
+An important case distinction must be made between those forms/divisors which descend from
+the ambient space – referred to as “favorable” in the context of [5, 7, 9, 48, 49] – and those that only
+exist on X. In general, for any construction of CY manifolds and X ⊂ A, when h1,1(X) > h1,1(A)
+very few general tools exist for explicitly determining the K¨ ahler and Mori cone and each example
+must be handled on a case-by-case basis. Even in the case when X itself is fully favorable and
+h1,1(X) = h1,1(A), there remain important questions that must be addressed in determining the
+eﬀective and ample cones. We restrict ourselves to the case of favorable manifolds in the following
+discussion.
+In the case of ordinary CICYs, a key tool in determining the K¨ ahler and Mori cones is the Lefschetz
+Hyperplane Theorem (see the statement given in [50]) which guarantees that given an ample divisor
+D ⊂ A it is possible to construct an isomorphism between the spaces of K¨ ahler forms, H 1,1(D) to
+H 1,1(A). In the case at hand, gCICYs are deﬁned via eﬀective but not ample divisors in the ambient
+spaces M and thus, we cannot always apply this standard theorem. To make progress then, we must
+directly explore the conditions in (2.42) directly.
+To determine the K¨ ahler and Mori cones ofX, a necessary ﬁrst step is the determination of these
+cones on the ambient space M. To begin, it must be noted that in general, the cone of eﬀective
+divisors of M is larger than that of the ambient product of projective spaces. It is precisely this
+enhancement that provides the necessary freedom to build gCICYs. As an example, consider again
+the manifold given in (2.10) in Section 2.2.2:
+X =
+[ P1 3 −1
+P4 2 3
+]
+; (2.43)
+6Note that this Hodge number pair also appears in [32] but the remaining topology (i.e. Chern classes and triple
+intersection numbers) has not been calculated for that construction of manifolds.
+11
+=== PAGE 13 ===
+On the ambient space A = P1 × P4 all eﬀective divisors are in the class aH1 +bH2 witha,b ≥ 0 where
+Hi, i = 1, 2 are the hyperplanes of the ambient projective space factors. Since the deﬁning equation
+of M ⊂ A is associated to the ample line bundle OA(3, 2), the Lefschetz hyperplane theorem [42] can
+be applied and h1,1(M) = h1,1(A) = 2. However, it is straightforward to verify that although the
+dimension of the eﬀective cone stays the same in going from A to M, the mapping between these
+spaces increases the “width” of the eﬀective cone.
+An analysis of the line bundle cohomology on M using the techniques described in Appendix A
+reveals that h0(M, OM(aH1 +bH2))> 0 for
+{a,b ≥ 0} | | { a = −1, b ≥ 2} | | { a ≤ −2,b ≥ 1
+6(−5 + 8|a|) + 1
+6
+√
+−119 + 64|a| + 64a2} . (2.44)
+Thus, the eﬀective cone has enhanced to include divisors with a< 0. Each of these may be used to
+deﬁne 3 (complex) dimensional subvarieties of M. Those subvarities of M that satisfyc1(X) = 0 and
+give rise to smooth Calabi-Yau three-folds are listed in Section 5. If the eﬀective cone can change, it
+is natural to ask next, what about the ample cone?
+Before testing (2.42) directly, it should be recalled that there is a useful standard cohomological
+criteria for ampleness of a divsior D ⊂ M [44]:
+D is ample if and only if, for each coherent sheaf F on M, there is an integer, n0, depending on
+F, such that, for each i> 0 and each n ≥n0, Hi(M, F ⊗ OM(nD)) = 0.
+While this is not of practical use to determine the ample cone (since we do not a priori know the
+full set of coherent sheaves on M), it can be used to rapidly constrain the ample cone. For example,
+it clearly follows from this result that if D is ample, it must be the case that
+hi(M, OM(nD)) = 0 for i> 0 , (2.45)
+for some n > n0 (taking F = OM). It is easy to check that for the example given above, all the
+divisors determined by the conditions (2.44) also satisfy this necessary (but not suﬃcient) condition
+for ampleness.
+To proceed further then, we must use our understanding of the eﬀective cone to produce a basis
+of subvarieties of M to test the equivalent of (2.42) directly. For M a fourfold these conditions take
+the form
+∫
+M
+J ∧J ∧J ∧J >0 ,
+∫
+D
+J ∧J ∧J >0 ,
+∫
+S
+J ∧J >0 ,
+∫
+C
+J >0 . (2.46)
+For the example above, we will see that in fact, the ample cone of M is identical to that of
+A. Each divisor satisfying (2.44) can be tested directly. As a ﬁrst step, we can consider a putative
+J associated to a line bundle in (2.44) and compare it to the subvarieties obtained by intersecting
+strictly positive divisors (i.e. aH1 +bH2 with a,b> 0, those descending from ample divisors on A).
+In each case, we ﬁnd that all of the divisors in (2.44) satisfy the positivity conditions of the ample
+cone. However, since the eﬀective cone has enlarged there are more algebraic sub-varieties to be
+considered and hence in this example, we ﬁnd that the K¨ ahler cone can restrict back to the strictly
+positive range for a,b .
+To illustrate this, the anticanonical class of M itself, K−1
+M = O(−1, 3), is a useful example.
+D = −H1 + 3H2 is an eﬀective divisor and satisﬁes the the conditions in (2.46) when compared to
+sub-varieties obtained via restriction from A. However, there exist subvarieties of M which do not
+descend from A, over which the volume can fail to be positive. For example, −H1+2H2 is an eﬀective
+divisor on M (with h0(M, O(D) = 3 ). Consider the smooth surface deﬁned by the intersection of
+two divisors in this class
+S = {p1 = 0} ∩ {p2 = 0} , (2.47)
+12
+=== PAGE 14 ===
+where [pi = 0] ∈ [−H1 + 2H2]. Then denoting JK−1 to be the form dual to KM−1 it can be veriﬁed
+that ∫
+S
+JK−1 ∧JK−1 =
+∫
+A
+JK−1 ∧JK−1 ∧µS ∧µM< 0 , (2.48)
+withµS = (−J1 +2J2) ∧(−J1 +2J2). Thus, in this case the anticanonical class of M itself is eﬀective
+but not ample.
+Finally, to compute the K¨ ahler and Mori cones of the Calabi-Yau three-fold itself, we proceed in a
+step-wise manner. Using the tools described above we ﬁrst understand the change in the eﬀective and
+ample cones in moving from A to M before ﬁnally exploring the same conditions on X ⊂ M itself.
+In each step, the restriction of K¨ ahler forms are K¨ ahler, but linear independence must be veriﬁed 7
+and the constraints on coeﬃcients generically change as illustrated above.
+3 Construction of Sections and Smoothness
+In this section we return to the question of smoothness of gCICYs. As a precursor to discussing such
+issues, we must describe the deﬁning relations of these manifolds in more detail than was required
+for the investigation of topology in the preceding section.
+Given a conﬁguration matrix of the form (2.3), one can construct the gCICY, X, in the manner
+described in Section 2.1. For this section we will, for simplicity, restrict ourselves to the case of
+mgCICYs which can be constructed in two steps,
+X ↪→ M ↪→ A , (3.1)
+where each of the two embeddings is a complete intersection. Much of what we will describe in this
+section generalizes to more complicated examples, however.
+The embedding, M↪→ A, is manifestly algebraic in the coordinates of A in that all the sections
+over A involved in forming the complete intersection are a polynomial of the ambient homogenous
+coordinates, xr = (x0
+r : x1
+r : · · · : xnr
+r ), r = 1, · · ·,m . The other embedding, X ↪→ M , is also an
+algebraic complete intersection and as such must have a polynomial description when an appropriate
+coordinate system is used for M. However, much of the computational power comes from relating
+various quantities to the simple ambient space geometry for A. In this paper, therefore, the homoge-
+neous coordinates, xr, r = 1, · · ·,m , will be employed whenever possible, and all the global sections
+for this latter (gCICY) embedding, X ↪→ M, will be constructed in terms of them, using the idea of
+“tuning” in the following sense.
+Let us start with a general set up and consider a sectionq ∈ Γ(M, OM(b)), with b = (b1, · · ·,bm).
+In view of its zero and pole structure, q may take the rational form, 8
+q = N(x1, · · ·, xm)
+D(x1, · · ·, xm) , (3.2)
+whereN andD are a polynomial in x1, · · ·, xm, of multi-degree [b]+ and [b]−, respectively. Here, [b]+
+is a vector of length m, extracting only the positive entries from b. Similarly, [b]− only extracts the
+negative entries from b, but with the signs inverted so that b = [b]+ − [b]− (e.g., for b = (1, 2, 0, −3)
+of lengthm = 4, we have [b]+ = (1, 2, 0, 0) and [b]− = (0, 0, 0, 3)). Note that the expression, (3.2), for
+a general numerator N of the right multi-degree, is not regular on the divisor D = 0 of the manifold
+7And indeed, in many cases independent K¨ ahler forms on the ambient space can become dependent upon restriction
+to the hypersurface.
+8To be precise, the line bundle degree rules the behaviour of the entire object q and therefore, N and D may have
+a common degree shift. Thus, we are not guaranteed to ﬁnd all the sections by demanding the rational form as in
+eq. (3.2). To make sure all the sections have been constructed, one should compare the number of linearly independent
+q’s and the dimension of the section space, H 0(M,O(b)).
+13
+=== PAGE 15 ===
+M. However, q can remain regular on this divisor if N takes a speciﬁc form such that it also vanishes
+there. Thus, the key idea in making the rational expression a holomorphic object is to “tune” the
+coeﬃcients of the numerator polynomial, N, so that vanishing of the denominator, D, is completely
+cancelled by that of N. To be precise, we demand that
+N ∈ ⟨D⟩ ∩ C [x1, · · ·, xm] , (3.3)
+should hold, where ⟨D⟩ is the ideal generated by D in the homogeneous coordinate ring of M,
+R(M) := C [x1, · · ·, xm]/ ⟨p1, · · ·,pK⟩ . (3.4)
+The regularity condition, (3.3), says that q =N/D is in fact a polynomial section over M.
+Once we have all the sections, qµ ∈ Γ(M, OM(bµ)) written down for µ = 1, · · ·,L , the gCICY,
+X, is then constructed as the common vanishing locus,
+X = {x ∈ M | q1(x) = · · · =qL(x) = 0} . (3.5)
+To be more explicit, let us illustrate the numerator tuning with the two earlier examples. For the
+ﬁrst gCICY, (1.2), the conﬁguration matrices for X and M are, respectively,
+X =
+
+
+P1 1 1 1 −1
+P1 1 1 −1 1
+P5 3 1 1 1
+
+ ; M =
+
+
+P1 1 1
+P1 1 1
+P5 3 1
+
+ . (3.6)
+Using the methods described in Section 2.2.1, we can determine the Hodge number of this manifold
+to be h1,1(X2) = 3 ,h 1,2(X2) = 81. The rational expressions for q1 ∈ H 0(M, OM(1, −1, 1)) and
+q2 ∈H 0(M, OM(−1, 1, 1)) have already been written in eq. (1.4), where they have their numerators
+completely ﬁxed by one of the deﬁning equations,p2 ∈H 0(A, OA(1, 1, 1)), for the embedding M↪→ A.
+Note that for the right multi-degree of the numerator polynomial of q1, for instance, 12 independent
+monomials that are bi-linear in x1 = (x0
+1 : x1
+1) and x3 = (x0
+3 : · · · : x5
+3) can be used. It is the
+holomorphicity of q1 in M that rules out all but one particular linear combination of them (up to
+scaling). Such a restriction of the numerator polynomial is the result of the aforementioned tuning.
+Indeed, one can compute the dimension of the line bundle cohomology:
+h0(M, OM(1, −1, 1)) = 1 ; h0(M, OM(−1, 1, 1)) = 1 , (3.7)
+which shows that eq. (1.4) is the complete answer.
+For the second gCICY, (3.2), whose topological properties have been computed in Section 2, the
+conﬁguration matrices for X and M are, respectively,
+X =
+[ P1 3 −1
+P4 2 3
+]
+; M =
+[ P1 3
+P4 2
+]
+. (3.8)
+Again, the two sections, p1 ∈ H 0(A, OA(3, 2)) and q1 ∈ H 0(M, OM(−1, 3)) can be sequentially
+constructed so that the rational expression for q1 is determined by the choice of p1. For concreteness,
+let us write p1 as,
+p1(x1, x2) = (x0
+1)3P11(x2) + (x0
+1)2x1
+1P12(x2) +x0
+1(x1
+1)2P13(x2) + (x1
+1)3P14(x2) , (3.9)
+where P1a, for a = 1, 2, 3, 4, are a quadric in x2. According to the degree-splitting rule, (3.2), q1 has
+the rational form,
+q1 = N(x1, x2)
+D(x1, x2) , (3.10)
+14
+=== PAGE 16 ===
+where N and D are a polynomial of multi-degree (0 , 3) and (1, 0), respectively. For the numerator
+tuning, we ﬁrst need to choose a denominator. With the choice, D(x1, x2) = x0
+1, for instance, the
+corresponding numerator polynomial should vanish when x0
+1 = 0 in M. On the other hand, since p1
+vanishes on M, so it does on the divisor x0
+1 = 0 of M. Therefore, substituting x0
+1 = 0 in eq. (3.9),
+we obtain an identically-vanishing section P13(x2) ≡ 0 over that divisor. Now, P13 is a quadric in x2
+while we need a cubic expression for the numerator, N. Filling in the missing degree with a linear
+polynomial in x2, we obtain the following 5 global sections
+si := P14(x2)xi
+2
+x0
+1
+, i = 0, · · ·, 4 , (3.11)
+of the line bundle OM(−1, 3). On the other hand, by computing the dimension of the section space one
+sees thath0(M, OM(−1, 3)) = 15, which shows that for a complete basis one needs to obtain 10 more
+independent sections. This can be achieved by starting with diﬀerent choices for the denominator
+polynomial. For instance, following the same procedure with D(x1, x2) =x0 −x1, one obtains 5 more
+sections
+ti :=
+4∑
+a=1
+P1a(x2)xi
+2
+x0
+1 −x1
+1
+, i = 0, · · ·, 4 , (3.12)
+and similarly, with D(x1, x2) =x0 +x1, one obtains
+ui :=
+4∑
+a=1
+(−1)aP1a(x2)xi
+2
+x0
+1 +x1
+1
+, i = 0, · · ·, 4 , (3.13)
+as additional 5 global sections. A total of 15 sections have thus been obtained, as in eqs. (3.11), (3.12),
+and (3.13), each of which lies in the 15-dimensional section space of OM(−1, 3). Interestingly, given
+that p1 is a generic polynomial, one can show that these 15 sections are linearly independent. Fur-
+thermore, any other rational expression for q1, obtained by starting with yet another choice of D,
+turns out to be expressible as their linear combination. Therefore, we come to the conclusion that
+these 15 sections do form a complete basis.
+For certain gCICY conﬁguration matrices, especially for those involving entries strictly smaller
+than −1, the analytic construction of sections may become trickier than for the two example cases
+above. We have thus developed a method to obtain the sections numerically in Mathematica, details
+of which can be found in Appendix C.
+3.1 Smoothness
+With such an explicit description for the deﬁning relations of a gCICY we can now return to the
+question of its smoothness. Let us recall that for an ordinary CICY with br
+µ non-negative, X is
+embedded in A as a smooth complete intersection if the ( K +L)-form,
+ΘX/A = dp1 ∧ · · · ∧ dpK ∧ dq1 ∧ · · · ∧ dqL , (3.14)
+is nowhere vanishing onX. Let us ﬁrst illustrate how vanishing of this (K +L)-form, ΘX/A, remains
+the correct singularity criterion for a gCICY case, even when there is no algebraic embedding of X
+in A and ΘX/A cannot be thought of as a normal form any longer.
+The starting point is that the manifold M, with its generic complex structure, is a smooth
+complete intersection of K polynomials in A. In particular, this requires that the corresponding
+normal form,
+ΘM/A = dp1 ∧ · · · ∧ dpK , (3.15)
+15
+=== PAGE 17 ===
+is nowhere vanishing on M. The smoothness criterion for X then follows in terms of its own normal
+form,
+ΘX/M = dq1 ∧ · · · ∧ dqL . (3.16)
+Now, the claim we need to establish is that vanishing of Θ X/M at a point in X is equivalent to that
+of ΘX/A. Note that at a practical level, we write these expressions in the coordinates xr, and in
+taking exterior derivatives of qµ, some misleading components in d qµ that do not lie in T∗
+x M can
+appear. However, when we eventually form the (K +L)-form ΘX/A, all these components normal to
+T∗
+x M disappear due to the presence of the prefactor, Θ M/A. Furthermore, because that prefactor is
+nowhere vanishing on M and in particular on X, we are led to the desired conclusion that at each
+point in X vanishing of ΘX/M implies that of ΘX/A, and vice versa.
+Let us illustrate this smoothness check based on the ( K +L)-form, ΘX/A, with the two gCI-
+CYs, (3.6) and (3.8), for which the relevant global sections have already been constructed. For the
+former gCICY, (3.6), p1 andp2 are each a generic homogeneous polynomial of the right multi-degree
+and with respect to that choice, q1 and q2 are given as eq. (1.4). Given these 4 sections, p1, p2, q1
+and q2, one can form the system of equations,
+p1 = 0 =p2 =q1 =q2 ; d p1 ∧ dp2 ∧ dq1 ∧ dq2 = 0 , (3.17)
+whose solutions are to be found for the homogeneous coordinates,
+x1 = (x0
+1 :x1
+1), x2 = (x0
+2 :x1
+2), x3 = (x0
+3 : · · · :x5
+3) . (3.18)
+Similarly, for the latter gCICY, (3.8), p1 is a generic homogenous polynomial of the bi-degree (3 , 2)
+and a generic q1 can be obtained by linearly combining the 15 independent sections, si,ti andui, for
+i = 0, · · ·, 4, explicitly given in eqs. (3.11), (3.12) and (3.13), respectively. In other words, we take
+q1 =
+4∑
+i=0
+αisi +
+4∑
+i=0
+βiti +
+4∑
+i=0
+γiui , (3.19)
+for a generic choice of the 15 coeﬃcients, αi, βi and γi, i = 0, · · ·, 4. Given these 2 sections, p1 and
+q1, one can form the system of equations,
+p1 = 0 =q1 ; d p1 ∧ dq1 = 0 , (3.20)
+which have to be solved for the homogeneous coordinates,
+x1 = (x0
+1 :x1
+1), x2 = (x0
+2 : · · · :x4
+2) . (3.21)
+Given the system of constraints for a singularity, such as eqs. (3.17) and (3.20), one needs to
+test whether the system admits a solution or not. However, it can be extremely time-consuming
+on a computer if tackled in a brute-force manner. For the case of an ordinary CICY, this can
+be eﬃciently achieved by the Gr¨ obner basis method, as implemented in the Mathematica package
+“Stringvacua” [51], for instance. For the case of a gCICY, however, due to the presence of negative
+entries in the conﬁguration matrix, not every constraining equation is algebraic when written in terms
+of the xr and the Gr¨ obner basis method does not apply as straight-forwardly. One way to avoid this
+obstacle is to separately analyze diﬀerent regions of M, by rewriting the system of constraints as an
+equivalent polynomial system in each region. More speciﬁcally, we subdivide M into various regions
+according to which denominators that appear in the constraining equations vanish. For instance, the
+ﬁrst region to consider is the one where none of the denominators vanish; in this region, we may
+clear the denominators to obtain an equivalent algebraic system of constraints. The next simplest
+regions are those where only a single denominator vanishes; any rational expressions involving this
+vanishing denominator can then be rewritten, in the coordinate ring of M, as an alternative algebraic
+16
+=== PAGE 18 ===
+expression. One thereby obtains an equivalent algebraic system also in these regions, upon clearing
+the remaining denominators. Such a strategy works for the common zero loci of an arbitrary collection
+of denominator expressions, and that is how we subdivide M into various regions, in each of which
+the usual Gr¨ obner basis method may apply to eﬃciently test the existence of a singular point.
+Again, let us illustrate this with our two examples. For the ﬁrst gCICY example, (3.6), the
+system in question, (3.17), has rational expressions originating from q1 = d1/x0
+1 and q2 = c1/x0
+2, as
+in eq. (1.4). This case is particularly simple that one does not even have to clear denominators.
+However, the subdivision idea is still useful so let us proceed. We consider the subdivision of M into
+the following four regions,
+R1 : x0
+1 ̸= 0, x 0
+2 ̸= 0 ,
+R2 : x0
+1 = 0, x 0
+2 ̸= 0 ,
+R3 : x0
+1 ̸= 0, x 0
+2 = 0 ,
+R4 : x0
+1 = 0, x 0
+2 = 0 ,
+(3.22)
+depending on which of the two denominators, x0
+1 and x0
+2, vanish. Firstly, in the region R1, both
+x0
+1 and x0
+2 can be set to 1 using the scaling of the two P1 coordinates. Therefore, q1 and q2 both
+reduces to a polynomial, d1 and c1, respectively, and the system becomes completely algebraic. In
+R2, one may still setx0
+2 to 1 so thatq2 =c1 is a polynomial butq1 involves a non-trivial denominator.
+However, as shown in eq. (1.4),q1 =d1/x0
+1 can also be written as −d0/x1
+1 andx1
+1 can be set to 1 since
+x0
+1 andx1
+1 can not vanish simultaneously. Therefore, in this region, q1 also reduces to the polynomial
+−d0 and the system becomes algebraic again. Similarly, one can use q1 =d1, q2 = −c0 in the region
+R3, and q1 = −d0, q2 = −c0 in the region R4.
+Now, for the second gCICY example, (3.8), let us ﬁrst recall that the generic sectionq1 in eq. (3.19)
+had 3 denominator expressions, x0,x0 −x1 andx0 +x1. Thus, we consider the subdivision of M into
+the following 4 regions,
+R1 : x0
+1 ̸= 0, x 0
+1 −x1
+1 ̸= 0, x 0
+1 +x1
+1 ̸= 0 ,
+R2 : x0
+1 = 0, x 0
+1 −x1
+1 ̸= 0, x 0
+1 +x1
+1 ̸= 0 ,
+R3 : x0
+1 ̸= 0, x 0
+1 −x1
+1 = 0, x 0
+1 +x1
+1 ̸= 0 ,
+R4 : x0
+1 ̸= 0, x 0
+1 −x1
+1 ̸= 0, x 0
+1 +x1
+1 = 0 ,
+(3.23)
+depending again on which denominators vanish. Note that at most one denominator can be set to
+zero at a time on P1
+x1. In region R1, none of the denominators vanish and hence, one can clear all
+the denominators from the system (3.20) and test if it admits a solution. With the denominators
+cleared, however, naively testing the existence of a solution might lead to a point outside of R1 and
+the test result would become ambiguous. To avoid such an ambiguity, we add to the system (3.20)
+three auxiliary variables, let us call them y1, y2 and y3, together with the three constraints,
+y1x0
+1 − 1 = 0; y2(x0
+1 −x1
+1) − 1 = 0; y3(x0
+1 +x1
+1) − 1 = 0 , (3.24)
+so that none of the denominators can vanish subject to the new system of algebraic equations. In
+region R2, on the other hand, si in eq. (3.11) have their denominator vanishing in that region, and
+therefore the part in q1 that involvessi need to be carefully taken care of. A proper way to deal with
+this is to rewrite them as,
+si = P14(x2)xi
+2
+x0
+1
+= −(x0
+1)2P11(x2) +x0
+1x1
+1P12(x2) + (x1
+1)2P13(x2)
+(x1
+1)3 xi
+2 ,
+(3.25)
+17
+=== PAGE 19 ===
+where we have made use of p1 = 0, (3.9). Since x0
+1 = 0 in this region, the new denominator x1
+1
+cannot vanish and hence, we may set x1
+1 = 1 using the scaling. Then the expressions for si become a
+polynomial and if we use them in eq. (3.19), the denominator clearing does not lead to any ambiguity
+once we consider two auxiliary variables y1, y2, together with the two constraints,
+y1(x0
+1 −x1
+1) − 1 = 0; y2(x0
+1 +x1
+1) − 1 = 0 , (3.26)
+To complete the story, let us also work out the details for regionsR3 andR4. In region R3, we rewrite
+ti in eq. (3.12) as
+ti =
+4∑
+a=1
+P1a(x2)xi
+2
+x0
+1 −x1
+1
+= −P11(x2)((x0
+1)2 +x0
+1x1
+1 + (x1
+1)2) +P12(x2)(x0
+1 +x1
+1)x1
+1 +P13(x2)(x1
+1)2
+(x1
+1)3 xi
+2 ,
+(3.27)
+where vanishing of p1 has been used. Since x1
+1 ̸= 0 in this region, we may set x1
+1 = 1 by scaling
+and use the resulting polynomial expressions for ti to rewrite q1 in eq. (3.19). Again, we clear all
+the denominators and, to make sure only the points in region R3 are analyzed, add two auxiliary
+variablesy1 and y2, together with the constraints,
+y1x0
+1 − 1 = 0; y2(x0
+1 +x1
+1) − 1 = 0 . (3.28)
+Finally in region R4, we rewrite ui in eq. (3.13) as
+ui =
+4∑
+a=1
+(−1)aP1a(x2)xi
+2
+x0
+1 +x1
+1
+= −P11(x2)((x0
+1)2 −x0
+1x1
+1 + (x1
+1)2) +P12(x2)(x0
+1 −x1
+1)x1
+1 +P13(x2)(x1
+1)2
+(x1
+1)3 xi
+2 ,
+(3.29)
+where vanishing of p1 has been used. Since x1
+1 ̸= 0 in this region, we may set x1
+1 = 1 by scaling
+and use the resulting polynomial expressions for ui to rewrite q1 in eq. (3.19). Again, we clear all
+the denominators and, to make sure only the points in region R4 are analyzed, add two auxiliary
+variablesy1 and y2, together with the constraints,
+y1x0
+1 − 1 = 0; y2(x0
+1 −x1
+1) − 1 = 0 . (3.30)
+Therefore, the singularity criteria, in each of the subdivided regions of M, have become a purely
+algebraic system and the techniques from numerical algebraic geometry applies straight-forwardly to
+test the existence of a singular point in each region. This way, it has been shown that both of the
+above gCICY examples, (3.6) and (3.8), lead to a smooth Calabi-Yau three-fold.
+For gCICY cases, it is by now clear that when constructing the sections for the line bundles
+involving a negative degree, one needs to go through the “tuning” process based on (3.3) and as a
+result, not every candidate expression satisfying the degree constraint can be a global holomorphic
+section. It is such a tuning that leads to distinctive features of gCICYs not observed for the ordinary
+CICY cases.
+One interesting feature is that there may arise singular gCICYs even for a generic complex struc-
+ture while the ordinary CICYs are all smooth [3,42]. Note that factorisation of a deﬁning equation is
+a potential source for singularities. For CICY cases, a generic deﬁning equation with a given multi-
+degree does not factorize. However, for gCICYs, even a generic deﬁning equation may factorize (i.e.
+18
+=== PAGE 20 ===
+the associate divisor may not be base point free). Let us illustrate such a section-space factorization
+with the following example,
+X =
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 2 0
+P1 1 2 −1
+
+ ; M =
+
+
+P3 2 0
+P1 0 1
+P1 0 2
+P1 1 2
+
+ , (3.31)
+for which we may write
+p1(x1, x2, x3, x4) =x0
+4P11(x1) +x1
+4P12(x1) , (3.32)
+where P11 and P12 are a generic quadric in x1 = (x0
+1 : · · · :x3
+1). Thus, the numerator tuning due to
+eq. (3.3) leads to the following holomorphic sections,
+si = P12(x1)xi
+2
+x0
+4
+, i = 0, 1 , (3.33)
+of the line bundle OM(2, 1, 0, −1) over M. Furthermore, the computation of line bundle cohomology
+results in h0(M, OM(2, 1, 0, −1)) = 2, which means that the two sections s1 and s2 should form a
+complete basis for the section space. Therefore, a generic section q1 should have the following form,
+q1 =α0s0 +α1s1 = P12(x1)
+x0
+4
+· (α0x0
+2 +α1x1
+2) , (3.34)
+whereα0 andα1 are complex constants. Because both factors, P12/x0
+4 andα0x0
+2 +α1x1
+2, are an alge-
+braic section, this corresponds to the deﬁning section q1 being legitimately factorized. Furthermore,
+one can see that there indeed exists a point in X where both factors vanish simultaneously, thereby
+leading to a singularity.
+3.2 Reducedness
+Another consequence of the numerator tuning is that the coordinate ring does not have to be reduced.
+Again, let us illustrate this with a simple example how a non-reduced coordinate ring may arise. We
+consider,
+X =
+
+
+P1 0 2 0
+P4 1 1 3
+P1 1 4 −3
+
+ ; M =
+
+
+P1 0 2
+P4 1 1
+P1 1 4
+
+ , (3.35)
+for which the ﬁrst deﬁning polynomial can be written as
+p1(x1, x2, x3) =x0
+3P11(x2) +x1
+3P12(x2) , (3.36)
+where P11 and P12 are a generic linear polynomial in x2 = (x0
+2 : · · · :x4
+2). The numerator tuning for
+the section of the line bundle OM(0, 3, −3) over M results in the following expression,
+(P12(x2)
+x0
+3
+)3
+. (3.37)
+Furthermore, computation of the dimension of the associated line bundle cohomology results in
+h0(M, OM(0, 3, −3)) = 1 and thus, the most general section takes the form,
+q1 =α
+(P12(x2)
+x0
+3
+)3
+, (3.38)
+19
+=== PAGE 21 ===
+for a complex constantα. Note that this can be though of as the cube of another holomorphic section,
+s = P12(x2)
+x0
+3
+, (3.39)
+of the line bundle OM(0, 1, −1). Now, the coordinate ring of X deﬁned naively as
+R(X) =R(M)/
+⟨
+s3⟩
+, (3.40)
+is not reduced. However, since the tools developed in Subsection 2.2 for working out the topological
+properties assume that the coordinate ring is reduced, it is better to consider
+R(Xred) =R(M)/ ⟨s⟩ , (3.41)
+which describes Xred deﬁned as the hypersurface s = 0 in M. Set-theoretically, the gCICY conﬁgu-
+ration, (3.35), for X can be equivalently thought of as
+Xred =
+
+
+P1 0 2 0
+P4 1 1 1
+P1 1 4 −1
+
+ ; M =
+
+
+P1 0 2
+P4 1 1
+P1 1 4
+
+ , (3.42)
+and only with this reduced conﬁguration can we directly apply the tools in Subsection 2.2 to compute
+the topological quantities of the resulting classical variety. One immediate observation from this
+reduction is that the gCICY, X ∼ Xred, is not a Calabi-Yau manifold. For ordinary CICY cases,
+the Calabi-Yau criterion was that each row in the conﬁguration matrix should have its entries sum
+up to match the degree of the anticanonical bundle of the corresponding ambient projective space.
+However, from the illustration above, we learn that this could be a misleading criterion for gCICYs
+when the conﬁguration leads to a non-reduced coordinate ring.
+Furthermore, in such a non-reduced case, the smoothness check has to be carefully performed,
+too. In the example, (3.35), if we naively form the system of singularity constraints,
+p1 = 0 =p2 =q1 ; d p1 ∧ dp2 ∧ dq1 = 0 , (3.43)
+with q1 = αs 3, then we come to the incorrect conclusion that X is singular everywhere as s = 0 in
+M is already suﬃcient to satisfy eq. (3.43).
+4 Redundancies
+Just as in the case of ordinary CICYs, conﬁguration matrices of gCICYs also exhibit redundancies.
+A redundancy is simply a situation where two diﬀerent conﬁguration matrices describe the same
+manifold. In fact, the structure of known redundancies is even richer in the gCICY case than in that
+of the CICYs. Many of the same relations between conﬁguration matrices seen in the simpler case still
+hold. In addition, new redundancies do arise, such as those relating seemingly good conﬁguration
+matrices to a description of the empty set. In this section, we present possible sources of such
+redundancies, one in each subsection, emphasizing some distinctive features that are only seen for
+gCICYs.
+20
+=== PAGE 22 ===
+4.1 Splitting transitions
+Between ordinary CICY manifolds, there is an important process known as a splitting transition [2],
+which can essentially be thought of as a combination of deformation and blowup. The splitting, in
+its most general version, relates two conﬁguration matrices of the following form,
+[ Pn 1 · · · 1 0
+A u1 · · · un+1 C
+]
+← →
+[
+A
+n+1∑
+i
+ui C
+]
+, (4.1)
+where A is a product of projective spaces, ui’s are a column vector of degree entries each, C, a
+submatrix of an appropriate size, and 0, a row of zeros. A simple example, as studied in Ref. [2], is
+the following pair of CICY three-folds,
+
+
+P1 1 1
+P2 3 0
+P2 0 3
+
+ ← →
+[ P2 3
+P2 3
+]
+, (4.2)
+where the bi-cubic column of the right hand side is splitted via a P1 row of the left hand side. We
+may write the two deﬁning equations for the splitted conﬁguration as,
+p1(x1, x2, x3) =x0
+1P11(x2) +x1
+1P12(x2) ,
+p2(x1, x2, x3) =x0
+1P21(x3) +x1
+1P22(x3) ,
+(4.3)
+where P11 and P12 are a cubic polynomial in x2, and P21 and P22 are a cubic in x3. In order for the
+system (4.3) to have a non-trivial solution in x1, the determinental expression,
+∆ =P11(x2)P22(x3) −P12(x2)P21(x3) , (4.4)
+should vanish, leading to a bi-cubic relation in x2 and x3, as indicated by the RHS of eq. (4.2). In
+general, however, there exist point-like singularities in the vanishing locus of ∆ and one arrives, via
+a deformation, at a smooth bi-cubic three-fold.
+In Ref. [2], splitting was called eﬀective if the Euler numbers of the two manifolds diﬀer and
+ineﬀective if they are the same. It was also argued there that one should consider two CICY three-
+fold conﬁgurations equivalent if they are related by an ineﬀective splitting because that guarantees
+the process is completely free of singularities. In the example (4.2), the Euler numbers of the LHS
+and the RHS are 0 and −162, respectively, and thus the splitting is eﬀective.
+The idea of splitting and the consequence of its eﬀectiveness straight-forwardly generalizes to
+gCICY manifolds. The rule for relating two gCICY conﬁguration matrices remains the same as
+eq. (4.1), except that now the 1’s of the Pn row can either be in the non-negative sector or in
+the sector where negative entries are allowed. However, one needs to be careful about certain new
+aspects of the gCICY construction. Firstly, although the splitting process is most clear in terms of
+the conﬁguration matrices, what we have in mind is how the corresponding gCICY geometries are
+related and it does not make sense, for the purpose of this paper, to naively relate two conﬁguration
+matrices by the splitting of the form, eq. (4.1), when one or both of them lead to an empty set
+due, for instance, to absence of sections. Secondly, the Euler-number comparison only makes sense
+if both conﬁgurations correspond to a smooth gCICY three-fold and if we were to make use of the
+topology tools of Section 2 in computing the Euler number, both conﬁguration matrices would have
+to result in a reduced geometry. Therefore, to be able to say that two gCICY conﬁgurations related
+by an ineﬀective splitting lead to the same manifold, one ﬁrst needs to verify that both are a nice
+conﬁguration matrix, in that the corresponding geometry is a non-empty smooth three-fold with a
+reduced coordinate ring. 9
+9To be precise, there is another subtlety one needs to be careful about. As it is clear from the example, (4.3),
+21
+=== PAGE 23 ===
+4.2 Identities and reduction rules
+In addition to the ineﬀective splitting, there are many other sources of redundancies. Most notably,
+as already described in Ref. [2], one can make use of the identities between various manifolds for part
+of the full conﬁguration matrices; there, an exhaustive list is given of identities between one-folds
+and between two-folds, and also a partial list of those between three-folds and between manifolds of
+a higher dimension. For instance, the second identity in the list for one-folds [2] is
+[ P1 1
+P1 1
+]
+= P1 , (4.5)
+which can be applied to show that
+
+
+P1 1 a
+P1 1 b
+A 0 C
+
+ =
+[ P1 a +b
+A C
+]
+, (4.6)
+where a and b are a row vector of degree entries, A is a product of projective spaces, 0, a column of
+zeros, and C, a submatrix of an appropriate size.
+All such reduction rules are based on the identities between part of the two conﬁguration matrices
+as well as the resulting relationship between the holomorphic line bundles on the two sides. Therefore,
+they straight-forwardly generalize to the gCICY cases and we may retrieve all the rules from Section
+4 and Appendix of Ref. [2].
+4.3 Trivial line bundles
+The trivial line bundle over a connected base manifold has a unique global section, the constant
+function. For the ordinary CICY case, even when the conﬁguration matrix is viewed as that of
+a gCICY, the line bundle corresponding to each column of the conﬁguration is non-trivial on the
+sequentially constructed ambient space over which the sections are constructed. For the gCICY case,
+however, due to the presence of negative entries, one might end up describing a trivial line bundle by
+a non-trivial column. Let us begin with an illustrative toy example for which this happens:
+X =
+[ P1 1 −1
+P1 1 1
+]
+; M =
+[ P1 1
+P1 1
+]
+. (4.7)
+The ambient space M, where the line bundle L = OM(−1, 1) is deﬁned, is a P1, which has a rank-
+one Picard lattice. Therefore, its conﬁguration matrix in eq. (4.7) is non-favourable since the Picard
+lattice of its ambient space, P1 × P1, is of rank two. There are several ways to see that L is a trivial
+line-bundle over M = P1; one can directly compute its cohomology dimensions, resulting in
+h0(M, L) = 1 ; h1(M, L) = 0 , (4.8)
+which implies that L = OM, or alternatively, by constructing the unique holomorphic section of L
+over M in its ration form, eq. (3.2), one can also see that the vanishing locus is empty. An immediate
+the derivation of splitting relies on the fact that each of the sections from the n columns involved in the process has
+a linear dependence in the coordinates of the splitted Pn. For ordinary CICYs, this is surely the case and even for
+gCICYs, any sections constructed as a rational form, eq. (3.2), will meet this property. However, because our gCICY
+construction bases on a sequential section construction, eq. (3.2) might not give rise to a most general section and
+sometimes one might need to investigate a common degree shift in the numerator and the denominator, in which case
+the derivation of splitting might not work. Although this does not seem to happen due to the controlled cohomology
+structure corresponding to the splitted columns of the conﬁguration matrix, we do not have a complete proof of that
+and instead, for given conﬁgurations we explicitly ensure the linearity of sections.
+22
+=== PAGE 24 ===
+consequence of this is that any gCICY conﬁguration matrices with the two-by-two sub-block for
+X =
+[
+P1 1 −1
+P1 1 1
+]
+appearing as
+
+
+... ... 0 ... ... 0 ...
+P1 · · · 1 · · · · · · − 1 · · ·
+... ... 0 ... ... 0 ...
+P1 · · · 1 · · · · · · 1 · · ·
+... ... 0 ... ... 0 ...
+
+
+, (4.9)
+corresponds to an empty set, given that only a single section (up to scaling) arises from the mixed-sign
+column with −1 and 1 along the two P1 directions. Note that such reductions to an empty set can
+only happen for a non-favourable situation and hence, the minimal number of rows involved is 2. One
+can then see that the most general way in which an empty set arises via a two-by-two description of
+OP1, as in eq. (4.9), is either of the following two types,
+
+
+... ... 0 ... ... 0 ...
+P1 · · · 1 · · · · · · ± 1 · · ·
+... ... 0 ... ... 0 ...
+P1 · · · n · · · · · · ∓ n · · ·
+... ... 0 ... ... 0 ...
+
+
+. (4.10)
+There are various other ways that lead to an empty-set conﬁguration via the appearance of OP1
+involving a bigger sub-block and even via that of OM for a more general base M. Although clas-
+siﬁcation of all such possibilities can be an interesting direction to pursue further, the idea should
+already be clear from these toy instances, (4.9) and (4.10), and we do not attempt in this paper to
+complete the job.
+4.4 Multiple components
+Conﬁguration matrices of a gCICY may describe multiple Calabi-Yau components and, in particular,
+multiple copies of a Calabi-Yau manifold. One way this can occur is through the gCICY conﬁguration
+matrix of the following form, 
+
+... ... 0 ... ...
+P1 · · · n · · · · · ·
+... ... 0 ... ...
+
+ , (4.11)
+where the column involvingn gives rise ton points in the P1 and the rest of the conﬁguration matrix,
+obtained by deleting that column as well as the P1 row, leads to a gCICY three-fold, for each of these
+n points on the P1. An example can be found in the third entry in Table 1, which describes copies of
+a quintic three-fold.
+Note that such a multiple-copy structure via conﬁgurations of the form, (4.11), could also have
+arisen for ordinary CICYs. Since negative entries are not allowed for them, however, the entry, n, in
+eq. (4.11) is either 0, 1, or 2, all of which can then be neglected for the following reason. The column
+involving n is redundant for n = 0 and n = 1 cases, as the former gives no deﬁning relation at all
+and the latter only ﬁxes a point in the P1, which should then be substituted to the deﬁning relation
+dependent on this P1 direction, resulting in the CICY three-fold whose conﬁguration matrix is a
+23
+=== PAGE 25 ===
+reduced one from eq. (4.11) by deleting the column involving the n = 1 and the P1 row. Similarly,
+n = 2 case will lead to two copies of a Calabi-Yau three-fold, as the column involving the n = 2
+gives a quadratic equation in the P1 coordinates, leading to two zero points. However, such case was
+neglected in Ref. [2](see eq. (1.40) there) as it corresponds to a product manifold.
+For a similar reason, gCICY conﬁguration matrices of the form, (4.11), give n copies of a Calabi-
+Yau topology, each of which has a diﬀerent shape in general. Nevertheless, if we only search for a
+connected geometry, such a multiple-copy case, or a multiple-component case in general, is another
+source of redundancy and can thus be excluded.
+5 Beginning a Classiﬁcation of Generalized CICYs
+Although a full classiﬁcation of gCICY manifolds is beyond the scope of the current work, in this
+Section we take the ﬁrst steps towards such a categorization and build an initial dataset of 2 , 761
+conﬁguration matrices. We proceed to systematically classify and/or scan several classes of low
+co-dimension gCICY three-folds.
+5.1 Codimension (1,1) generalized CICYs
+The simplest type of generalized CICYs is a class given by the conﬁguration matrix:
+X(1,1) =
+
+
+Pn1 a1 b1
+Pn2 a2 b2
+... ... ...
+Pnm am bm
+
+ , (5.1)
+where we recall that the ai’s are all semi-positive, whereas some of the bi’s can take negative values.
+We call this class codimension (1,1) gCICYs. To begin, it must be understood ﬁrst what kind of new
+gCICY conﬁguration matrices of this type are well-deﬁned varieties – that is, under what conditions
+the second column of the conﬁguration matrix deﬁnes a line bundle with global sections on a manifold
+deﬁned by the ﬁrst positive column in (5.1). We will impose the CY condition on the ﬁrst Chern class
+in a second step. More concretely, we will study how many negative entries we have in the second
+column, bi’s, and how much negative they can go, by requiring the existence of a global section of
+the line bundle
+LM ≡ OM(b1,...,b m) , (5.2)
+where LM deﬁnes a hypersurface in a new ambient manifold, given by the complete intersection
+manifold M,
+M =
+
+
+Pn1 a1
+Pn2 a1
+... ...
+nm am
+
+ . (5.3)
+We will reduce the problem from M to the original ambient space by using the twisted Koszul
+short-exact sequence
+0 − → N∨ ⊗ L − → L − →L|M − →0 , (5.4)
+where the normal bundle of M is the line bundle N∨ = O(−a1,..., −am) in the original ambient
+space. The values of bi’s will be practically all constrained by the cohomology of LM, which we
+evaluate using the long-exact sequence in cohomology associated to (5.4). In fact, all we need to do
+now is to check when the condition h0(M, L) ̸= 0 is satisﬁed.
+24
+=== PAGE 26 ===
+5.1.1 A negative bound
+The number of global sections, h0(M, L), depends on the ambient space cohomology groups of N∨ ⊗
+L = O(−a1 +b1,..., −am +bm) and L = O(b1,...,b m). The dimensions h∗(A, L) and h∗(A, N∨ ⊗
+L) can be evaluated with the Bott-Borel-Weyl formula for line bundle cohomology for products of
+projective spaces (see Appendix A and [42, 52] for reviews) and by looking then at the long exact
+sequence in cohomology associated to (5.4). We will begin our analysis at this last sequence. Using
+the results of Appendix A it can be veriﬁed that non-ample line bundles on this class of M will arise
+only from negative entries in P1 directions and as result, the only non-vanishing cohomology groups
+associated to the ﬁrst two terms in (5.4) areH 1(A, ·). The map between them is given by the deﬁning
+relation of M:
+q :h1(A, N∨ ⊗ L) →h1(A, L) , (5.5)
+In the long exact sequence associated to (5.4) this map is generically injective whenh1(A, N∨ ⊗ L)<
+h1(A, L), and hence we can generically 10 exclude this possibility since we demand that h0(M, L) ̸= 0
+. For this reason and for the fact that there is only one non-vanishing line bundle cohomology in
+an ambient space, which is a product of projective space, we have just two diﬀerent possibilities for
+h0(M, L) ̸= 0,
+1. h1(A, N∨ ⊗ L) = 0 ⇒ h0(A, L) > h0(A, N∨ ⊗ L), with h0(A, L) ̸= 0, however, if the zero-
+cohomology of L is non-vanishing in the ambient space, it reduces to the case where all the
+integer entries of L are positive: bi ≥ 0, ∀i = 1,...,m .
+2. h0(A, L) = 0 and h1(A, N∨ ⊗ L) ̸= 0, this last condition, together with the Bott-Borel-Weyl
+formula in (A.1) and (A.2) [42, 52] yields the following suﬃcient 11 (and generically necessary)
+conditions for h0(M, L)> 0:
+∃!i = 1 |n1 = 1, (b1 −a1) ≤ −2, ∀i ̸= 1 bi> 0, (bi −ai) ≥ 0 . (5.6)
+where we have set the ﬁrst n1 = 1 for convenience, and, moreover,
+h1(A, N∨ ⊗ L)>h 1(A, L) . (5.7)
+We are of course interested in extensions of the standard class of CICYs, hence we will study further
+only the second case. Equation (5.6) tells us that in codimension (1,1) only a negative entry, b1, in
+a P1 factor is possible. Finally, we expect that (5.7) gives a bound on the negative value for b1. We
+then apply the Bott-Borel-Weyl theorem [42, 52], together with all the conditions in (5.6), and we
+obtain the following expressions for the line bundle ﬁrst-cohomologies, h1, in the ambient space,
+h1(A, L) = ( −b1 − 1)
+m∏
+i=2
+(bi +ni
+ni
+)
+, (5.8)
+h1(A, N∨ ⊗ L) = ( a1 −b1 − 1)
+m∏
+i=2
+(bi −ai +ni
+ni
+)
+. (5.9)
+10We have strong evidences that the map is injective when the deﬁning relation of M are general enough. We gain
+these evidences by computing explicitly the line bundle cohomologies and by analysing their behaviours when the entries
+ofL andN∨⊗L change.
+11These conditions are always suﬃcient and generically necessary for the existence of non-trivial global sections of a
+line bundle on M for suitably “generic” deﬁning relations in (5.3). However, for all conﬁguration matrices (including
+ordinary CICYs) these conditions can be weakened and line bundle cohomology can “jump” [53–57] when special deﬁning
+polynomials are chosen forM. In these special cases new eﬀective divisors exist. We will not consider such cases in the
+following discussion.
+25
+=== PAGE 27 ===
+Plugging in (5.8-5.9) into (5.7), we get the following bounding inequality:
+(a1 −b1 − 1)
+(−b1 − 1) >R , (5.10)
+where we rearranged the expression and R is a ratio that depends on the line bundle cohomologies
+in Pni, with i> 1,
+R ≡
+∏m
+i=2
+(bi+ni
+ni
+)
+∏m
+i=2
+(bi−ai+ni
+ni
+). (5.11)
+Reducing (5.10) in terms of b1, we get
+1<R< 1 +a1 & − a1
+R − 1 − 1<b 1< −2 (5.12)
+R = 1 & b1< −2 . (5.13)
+In the second case (5.13), we do not have any negative bound, however this apparently inﬁnite class
+is actually ﬁnite. As will be shown in Section 5.1.3 these are just copies of a known CICY, when
+we impose the right condition on the Chern-classes of the manifold X(1,1). From (5.12), we get an
+expression for the negative bound of b1 in terms of R and a1.
+b1 = −[1 + a1
+R − 1] . (5.14)
+Finally we want to impose the Calabi-Yau condition on the ﬁrst Chern class c1(TX ) = 0, which
+restricts b1 = 2 −a1, and bi +ai =ni + 1 with i = 2...m . In this way the bound depends only on
+R. We can summarize all the possible cases in the following four cases:
+• R = 4, the bound is b1 ≥ −2.
+• R> 4, the bound is b1 = −1.
+• R = 2, there is no bound, and bi ≤ −1. Apparently this is another inﬁnite class, we will show
+in Section 5.1.3 it is actually ﬁnite.
+• R = 1, for this case as well, we have no bound, and the subclass appears inﬁnite. However it
+turns out that the Euler characteristic is a multiple of a Euler characteristic of a known CY,
+˜X, as well as all the topological data. Moreover, looking in detail at this case, we can see that
+for R = 1 the conﬁguration matrix takes the form
+X(1,1) =
+
+
+P1 2 +i i
+Pn2 0 b2
+... ... ...
+Pnm 0 bm
+
+, i ∈ Z>0 . (5.15)
+We will show in section 5.1.3 that X(1,1) corresponds to (2 +i) copies of the known Calabi-Yau
+˜X =
+
+
+Pn2 b2
+... ...
+Pnm bm
+
+ , (5.16)
+with all positive entries for deﬁnition. These inﬁnite manifolds are all non strictly Calabi-Yau,
+more speciﬁcally each of these is a manifold formed by multiple copies of an already known
+CICY.
+26
+=== PAGE 28 ===
+5.1.2 The classiﬁcation result
+CICYs with codimension (1,1) are determined by two equations in a product of projective space,
+hence, we can encounter only 5 ambient space which are possible for this class of CICY three-folds.
+The complete list of generalized codimension (1,1) CICY is given according to the classiﬁcation in
+5.1.1. The Euler characteristic together with the Hodge numbers ( h(1,1),h (2,1)) are summarized in
+Tables 1-5. In the last column, we present the results of a smoothness check of the manifolds. In the
+tables below, we will use the symbol  to denote a smooth manifold, # a singular manifold and G #
+will indicate a manifold for which smoothness is not yet determined. We remark that the last inﬁnite
+class of every table cannot be strictly considered as CY manifolds:
+• For each i in the last subclass of manifolds of table 1, we have a manifold formed by (2 + i)
+copies of [ P4 || 5 ].
+• For each i in the last subclass of manifolds of table 2, we have a manifold formed by (2 + i)
+copies of
+[ P3 4
+P1 2
+]
+.
+• For each i in the last subclass of manifolds of table 3, we have a manifold formed by (2 + i)
+copies of
+[ P2 3
+P2 3
+]
+.
+• For each i in the last subclass of manifolds of table 4, we have a manifold formed by (2 + i)
+copies of
+
+
+P2 3
+P1 2
+P1 2
+
+.
+• For each i in the last subclass of manifolds of table 5, we have a formed by (2 + i) copies of
+
+P1 2
+P1 2
+P1 2
+P1 2
+
+.
+The list of (1, 1) manifolds is presented in Tables 1-5 given below.
+X R i χ (h1,1(X), h1,2(X)) Inﬁnite Class Smoothness
+[
+P4 2 3
+P1 3 −1
+]
+7 N/A −88 (2 , 46) N/A  
+[
+P4 1 4
+P1 2 +i −i
+]
+2 i ∈ Z>0 −168 (2 , 86) Type III  
+[
+P4 0 5
+P1 2 +i −i
+]
+1 i ∈ Z>0 −200(i + 2) ( i + 2, 101(i + 2)) Type I  
+Table 1: 3 cases in P4 × P1.  indicates they are smooth.
+5.1.3 Apparently inﬁnite classes
+There are twelve apparently inﬁnite families of Calabi-Yau manifolds in the list given in the previous
+section. Here we will analyze these cases further and demonstrate that these are, in each case, a set of
+redundant descriptions of the same, standard CICY. These inﬁnite classes of conﬁgurations matrices
+can be grouped in to three distinct types which is illustrated in Tables 1-5 .
+27
+=== PAGE 29 ===
+X R i χ (h1,1(X), h1,2(X)) Inﬁnite Class Smoothness
+
+
+P3 2 2
+P1 0 2
+P1 3 −1
+
+ 10 N/A −56 (3 , 31) N/A  
+
+
+P3 2 2
+P1 1 1
+P1 3 −1
+
+ 20 N/A −104 (3 , 55) N/A  
+
+
+P3 1 3
+P1 1 1
+P1 2 +i −i
+
+ 4 i = 1, 2 −72, −48 (3 , 39), (3, 27) N/A  
+
+
+P3 1 3
+P1 0 2
+P1 2 +i −i
+
+ 2 i ∈ Z>0 −144 (3 , 75) Type III  
+
+
+P3 0 4
+P1 1 1
+P1 2 +i −i
+
+ 2 i ∈ Z>0 −168 (2 , 86) Type II  
+
+
+P3 0 4
+P1 0 2
+P1 2 +i −i
+
+ 1 i ∈ Z>0 −168(i + 2) ( i + 2, 86(i + 2)) Type I  
+Table 2: 6 cases in P3 × P1 × P1.  indicates they are smooth.
+X R i χ (h1,1(X), h1,2(X)) Inﬁnite Class Smoothness
+
+
+P2 1 2
+P2 1 2
+P1 2 +i −i
+
+ 4 i = 1, 2 −78, −60 (3 , 42), (3, 33) N/A  
+
+
+P2 0 3
+P2 1 2
+P1 2 +i −i
+
+ 2 i ∈ Z>0 −144 (3 , 75) Type III  
+
+
+P2 0 3
+P2 0 3
+P1 2 +i −i
+
+ 1 i ∈ Z>0 −162(i + 2) (2( i + 2), 83(i + 2)) N/A  
+Table 3: 3 cases in P2 × P2 × P1.  indicates they are smooth.
+X R i χ (h1,1(X), h1,2(X)) Inﬁnite Class Smoothness
+
+
+P2 1 2
+P1 1 1
+P1 1 1
+P1 3 −1
+
+ 8 N/A −68 (4 , 38) N/A  
+
+
+P2 1 2
+P1 0 2
+P1 1 1
+P1 2 +i −i
+
+ 4 i = 1, 2 −56, −32 (4 , 32), (4, 20) N/A  
+
+
+P2 0 3
+P1 1 1
+P1 1 1
+P1 2 +i −i
+
+ 4 i = 1, 2 −36, 0 (9 , 27), (11, 11) N/A  
+
+
+P2 0 3
+P1 0 2
+P1 1 1
+P1 2 +i −i
+
+ 2 i ∈ Z>0 −144 (3 , 75) Type II  
+
+
+P2 1 2
+P1 0 2
+P1 0 2
+P1 2 +i −i
+
+ 2 i ∈ Z>0 −128 (4 , 68) Type III  
+
+
+P2 0 3
+P1 0 2
+P1 0 2
+P1 2 +i −i
+
+ 1 i ∈ Z>0 −144(i + 2) (3( i + 2), 75(i + 2)) Type I  
+Table 4: 6 cases in P2 × P1 × P1 × P1.  indicates they are smooth.
+28
+=== PAGE 30 ===
+X R i χ (h1,1(X), h1,2(X)) Inﬁnite Class Smoothness
+
+
+P1 1 1
+P1 1 1
+P1 1 1
+P1 1 1
+P1 3 −1
+
+
+16 N/A −80 (5 , 45) N/A  
+
+
+P1 1 1
+P1 1 1
+P1 1 1
+P1 0 2
+P1 3 −1
+
+
+8 N/A −48 (5 , 29) N/A  
+
+
+P1 1 1
+P1 1 1
+P1 0 2
+P1 0 2
+P1 2 +i −i
+
+
+4 i = 1, 2 −32, 0 (10 , 26), (12, 12) N/A  
+
+
+P1 1 1
+P1 0 2
+P1 0 2
+P1 0 2
+P1 2 +i −i
+
+
+2 i ∈ Z>0 −128 (4 , 68) Type II  
+
+
+P1 0 2
+P1 0 2
+P1 0 2
+P1 0 2
+P1 2 +i −i
+
+
+1 i ∈ Z>0 −128(i + 2) (4( i + 2), 68(i + 2)) Type I  
+Table 5: 5 cases in P1 × P1 × P1 × P1 × P1.  indicates they are smooth.
+Type I
+The conﬁgurations matrices of Type I all describe multiple, disconnected, copies of a regular CICY.
+Let us exemplify the structure with the third example in Table 1,
+[ P1 2 +i −i
+P4 0 5
+]
+, i ∈ Z>0 . (5.17)
+We can solve the ﬁrst equation, a degree 2+i polynomial in P1 to ﬁnd 2+i points in that ﬁrst ambient
+space projective factor. Substituting these into the rational functions described by the second column
+of the conﬁguration matrix, we obtain 2 +i quintic polynomials in P4. At a generic locus in complex
+structure modulus space, therefore, this conﬁguration describes 2 + i disconnected quintics in P4
+separated from one another by their location in P1.
+As a conﬁrmation of this analysis, we ﬁnd that h0(O) = 2 + i in these cases and that the euler
+number is −(2 +i)(200), i.e. (2 + i) times that of the quintic.
+Type II
+The conﬁguration matrices of Type II also all describe regular CICYs. We again exemplify the
+structure with a single case, in this instance the ﬁfth example in Table 2,
+
+
+P1 2 +i −i
+P1 1 1
+P3 0 4
+
+, i ∈ Z>0 . (5.18)
+These coniﬁguration matrices all describe the same manifold as the regular CICY,
+[ P1 2
+P3 4
+]
+, (5.19)
+via a relation analogous to what is called “ineﬀective splitting” in the CICY literature.
+29
+=== PAGE 31 ===
+Let us write the two equations described by the conﬁguration matrices (5.18) as follows
+p1 = P10y0 +P11y1 = 0 , (5.20)
+p2 = P20
+D20
+y0 + P21
+D21
+y1 = 0 . (5.21)
+It is important for us to describe exactly what is meant by the various P polynomials which appear
+in these expressions. P10 andP11 are general degree 2 +i polynomials. The polynomials P20,P 21,D 20
+and D21 are not generic examples of their degree, however. P20 and P21 are degree {0, 0, 4} while
+D20 andD21 are degree {i, 0, 0}. However, the choice of the denominator and numerator polynomials
+are correlated (and also correlated with P10 and P11) such that the poles in the associated rational
+functions miss the hypersurface p1. As described earlier, this structure is associated to the fact
+that the line bundle O(−i, 1, 4) only has global sections when taken to be a line bundle on the
+hypersurface deﬁned by p1 and not when interpreted as a line bundle on the ambient projective
+product. Nevertheless, the ﬁnal Calabi-Yau three-fold can be described in terms of the intersection
+of a rational function and a polynomial on the ambient space, once a tuning of the freedom in the
+P ’s and D’s of this form has been performed.
+We may rewrite the ambient space equations (5.20) and (5.21) in a matrix form as follows
+( P10 P11
+P20
+D20
+P21
+D21
+) (y0
+y1
+)
+= 0 . (5.22)
+These equations have a solution, remembering that the yi are homogeneous coordinates on P1, if and
+only if the determinant of the matrix vanishes,
+P10P21
+D21
+− P11P20
+D20
+= 0 . (5.23)
+These equations have “net degree” {2, 4} in P1 × P3. However, naively, (5.23) seems to be still a
+rational deﬁning relation. In fact, due to the manner in which the singularities in p2 miss the zero
+locus of p1, the numerators in the two terms of (5.23) contain factors of D20 and D21 respectively,
+leading to a polynomial, {2, 4} deﬁning relation in P1 × P3.
+To demonstrate this let us derive (5.23) in a slightly diﬀerent manner (we performed the analysis
+above to emphasize the similarity with ineﬀective splits in the case of an ordinary CICY). First, we
+solve (5.20) for either y0 or y1,
+y0 = −P11
+P10
+y1 , (5.24)
+y1 = −P10
+P11
+y0 . (5.25)
+For a generic choice of complex structure,P11 andP10 are two uncorrelated degree 2+i polynomials in
+P1. They can thus not both be vanishing simultaneously and thus at least one of the above solutions
+is always perfectly well deﬁned.
+Substituting these results into (5.21) we obtain the following two expressions
+(P20
+D20
+P11
+P10
++ P21
+D21
+)
+y1 = 0 , (5.26)
+(P20
+D20
++ P21
+D21
+P10
+P11
+)
+y0 = 0 . (5.27)
+IfP10 ̸= 0 then from (5.25)y1 ̸= 0 (as not both homogeneous coordinates can vanish simultaneously).
+We can divide (5.26) by y1 and multiply up by P10. We then obtain (5.23) once more (a similar
+30
+=== PAGE 32 ===
+argument can be made in the case where P11 ̸= 0). However, by the deﬁnition of our procedure for
+forming the section of the second normal bundle factor, that is the rational function p2, we know
+that it can have no poles when p1 = 0. We have just demonstrated that (5.23) is p2 evaluated
+on the solution to p1 and thus it can have no poles. The only way in which this can happen is
+if the numerators and denominators of the full expression have cancelling factors leaving a simply
+polynomial expression. This can easily be veriﬁed explicitly in any given example.
+Thus (5.18) describes the same manifold as (5.19) for any value of i and the inﬁnite class can be
+viewed as generalized ineﬀective splittings of this standard CICY.
+Type III
+The conﬁguration matrices of Type III also all describe regular CICYs. As before, we exemplify the
+structure with a single case, in this instance the second example in Table 1,
+[ P1 2 +i −i
+P4 1 4
+]
+, i ∈ Z>0 . (5.28)
+A series of operations on this inﬁnite class of conﬁguration matrices can demonstrate that (5.28)
+describes the same manifold for all i. We begin by performing an ineﬀective split as follows
+[ P1 2 +i −i
+P4 1 4
+]
+→
+
+
+P1 0 2 + i −i
+P1 1 1 0
+P4 1 0 4
+
+ . (5.29)
+In peforming such a split in the gCICY case, all of the subtleties mentioned in Section 4 must be
+considered. Once we have the conﬁguration matrix in the form (5.29) we can use the following
+postulated identity [2]
+
+
+P1 1 a
+Pn 1 nb
+Y 0 M
+
+ →
+
+
+P1 a +b
+Pn−1 nb
+Y M
+
+ . (5.30)
+This identity was used in the original investigations of CICY three-folds [2], although it has never,
+to our knowledge, been proven. Here we follow those authors in making use of the identity, leaving a
+rigorous proof of its validity to future work. Applying (5.30) in this case we ﬁnd the following
+[ P1 2 +i −i
+P4 1 4
+]
+→
+
+
+P1 0 2 + i −i
+P1 1 1 0
+P4 1 0 4
+
+ →
+
+
+P1 1 1
+P3 0 4
+P1 2 +i −i
+
+ . (5.31)
+Finally, we may apply an ineﬀective contraction in the ﬁrst P1 direction of (5.31) to arrive at the
+following chain
+[ P1 2 +i −i
+P4 1 4
+]
+→
+
+
+P1 0 2 + i −i
+P1 1 1 0
+P4 1 0 4
+
+ →
+
+
+P1 1 1
+P3 0 4
+P1 2 +i −i
+
+ →
+[ P3 4
+P1 2
+]
+. (5.32)
+Thus, we ﬁnally see that the entire inﬁnite class of conﬁguration matrices (5.28) all simply describe
+a single ordinary CICY.
+A very similar analysis applies to the other cases of Type III. The fourth example in Table 2 and
+second example in Table 3 turn out to be equivalent to the conﬁguration matrix,
+
+
+P1 2
+P1 2
+P2 3
+
+ . (5.33)
+31
+=== PAGE 33 ===
+The ﬁfth example in Table 4 turns out to be equivalent to the tetraquadric:
+
+
+P1 2
+P1 2
+P1 2
+P1 2
+
+ . (5.34)
+With the demonstration that this last type of inﬁnite set of conﬁguration matrices actually corre-
+sponds to a ﬁnite number of Calabi-Yau three-folds we have proven that the gCICYs of codimension
+(1, 1) constitute a ﬁnite dataset of manifolds.
+5.1.4 New Calabi-Yau three-folds
+It is interesting to determine which of the manifolds in Tables 1-5 are genuinely new Calabi-Yau
+three-folds, never before seen in other datasets. Steps can be taken in towards this goal by computing
+topological invariants. We have studied the Hodge data and basis independent quantities computed
+from the Chern classes and intersection numbers (see Ref. [15] for an analogue of this for the four-fold
+cases). We ﬁnd that eight of the codimension (1,1) gCICYs have never appeared before, at least as
+far as our search of the literature could determine. They are certainly of a diﬀerent topological type
+to anything seen in the CICY or the Kreuzer-Skarke datasets. The eight new manifolds are those
+with
+(h1,1,h 2,1) = (2, 46), (3, 31), (3, 39), (3, 27), (3, 42), (3, 33), (4, 20), (5, 29) (5.35)
+from Tables 1-5. Note that many of these Hodge pairs have certainly appeared in the literature
+before. The manifolds are distinguished by the more subtle topological properties mentioned above
+and illustrated in Subsection 2.2.3.
+5.2 Codimension (2,1) generalized CICYs
+The codimension two examples in Section 5.1 can be straightforwardly generalized to codimension
+three. We once again focus on negative codimension one cases, i.e, codimension (2 , 1) examples with
+the following conﬁguration matrix:
+X(2,1) =
+
+
+Pn1 a1
+1 a1
+2 b1
+Pn2 a2
+1 a2
+2 b2
+... ... ... ...
+PnN am
+1 am
+2 bm
+
+ , (5.36)
+where the ﬁrst column ai
+1,ai
+2 ≥ 0, but bi are allowed to assume negative integer values. As described
+previously, we require the third column to deﬁne an anticanonical hypersurface in M. That is,
+L ≡ OM(b1
+3,...,b m
+3 ) =KM−1 with
+M =
+
+
+Pn1 a1
+1 a1
+2
+Pn2 a2
+2 a2
+2
+... ... ...
+PnN am
+1 am
+2
+
+ . (5.37)
+In deﬁning these CY 3-folds there are 10 possible ambient spaces for this class of generalized CICY
+three-folds:
+P5 × P1, P4 × P2, P3 × P3, P4 × P1 × P1 ,
+P3 × P2 × P1, P2 × P2 × P2, P3 × P1 × P1 × P1 ,
+P2 × P2 × P1 × P1, P2 × P1 × P1 × P1 × P1, P1 × P1 × P1 × P1 × P1 × P1 .
+(5.38)
+32
+=== PAGE 34 ===
+In each of these embedding products of projective spaces, there are many more classes of generalized
+conﬁguration matrices than in codimension (1 , 1) case.
+Beginning with these ambient spaces, we construct the generalized CICYs in several steps:
+• To ensure global sections on M, the negative numberbi can only appear in two P1 factors or one
+P2 (see Appendix A for an analysis of the Koszul sequences and the Bott Theorem (A.1) leading
+to this requirement). Moreover, since the last column corresponds to an algebraic constraint
+arising from the vanishing of a global section of a line bundle on M, we explicitly check in each
+case that h0(M, OM(bi))> 0.
+• We choose bi < 0 consistent with vanishing ﬁrst Chern class for the gCICY. For example,
+in a conﬁguration matrix, if one of the rows corresponds to an ambient P2 factor (for exam-
+ple
+[
+P2 0 3 0
+]
+) we will construct a conﬁguration to be
+[
+P2 0 3 + n −n
+]
+. For the
+present, preliminary scan we will restrict the integer range of n, allowing it to vary from 1 to
+4, i.e. (5.39),
+X(2,1) =
+
+
+... ... ... ...
+P2 0 3 0
+... ... ... ...
+
+ ⇒ X′
+(2,1) =
+
+
+... ... ... ...
+P2 0 3 + n −n
+... ... ... ...
+
+ , (5.39)
+the negative entries appearing in the generalized conﬁguration is greater or equal to −4. In this
+scan, since the negative entries appearing in the generalized conﬁguration are greater or equal to
+−4, for eachn we generate 4 new generalized CICYs in one class of the generalized conﬁguration
+matrices listed in Tables 7 - 12. In this way, 34, 192 classes of generalized conﬁguration matrices
+were generated for the initial codimension (2 , 1) scan.
+• To remove some singular/non-reduced, non-CY geometries, we also verify explicitly that the
+trivial line bundle cohomology on X is h∗(X, O) = {1, 0, 0, 1}. So in this scanning, we have
+already ruled out the Type I inﬁnite class discussed in Section 5.1.3 from the starting point.
+Besides the above requirements, there is another constraint that arises from the Koszul sequence,
+(B.3). This provides certain bounds on the magnitude of non-zero entries in the rows of M and can
+be used to rule out certain non-CY conﬁguration matrices. This additional constraint is described in
+Appendix B. Under all these constraints, we constructed all the classes of generalized conﬁguration
+matrices of this type, which could be analyzed in a reasonable computing time 12.
+Unlike in the codimension (1, 1) case and the ordinary CICY dataset, in the case of codimension
+(2, 1) conﬁguration matrices we ﬁnd many manifolds with positive Euler number χ >0. This pre-
+liminary scan yielded 57 spaces with χ > 0 and 2, 676 spaces with χ ≤ 0 out of 34 , 192 classes of
+generalized conﬁguration matrices (5.36), which satisﬁed all the requirements discussed above. The
+distribution of these spaces in terms of embedding projective spaces is classiﬁed in Table 6 13 . Due
+to the rapidly increasing number of spaces in this class of conﬁguration matrices, we leave a full
+classiﬁcation of such geometries to future work.
+Codimension (2, 1) spaces with positive Euler number
+From Table 6 we see that there is no single example with positive Euler number inP5 ×P1, P4 ×P2 and
+P2 × P2 × P2 which passes all the criteria (out of 168, 210 and 550 classes of generalized conﬁguration
+12The primary time constraints arises from the calculation of line bundle cohomology. To complete the initial scan in
+ﬁnite time, we leave for future scans any line bundle cohomology whose calculation time was greater than ﬁve minutes.
+13There may still exist some redundancies in counting of these spaces like ineﬀective splits, some identity and
+reducedness, generally described in sections 4 and 5. Although some of these geometries are singular, we assume the
+method in determining the topological quantity described in section 2.2 still applied, and we assume all of them are
+Calabi-Yau when calculating Hodge number.
+33
+=== PAGE 35 ===
+Embedding # of classes of generalized # of spaces with # of spaces with
+projective spaces conﬁguration matrices positive χ non-positive χ
+P5 × P1 168 0 28
+P4 × P2 210 0 6
+P4 × P1 × P1 1,197 3 226
+P3 × P2 × P1 1,800 2 261
+P2 × P2 × P2 550 0 12
+P3 × P1 × P1 × P1 4,410 17 528
+P2 × P2 × P1 × P1 5,235 9 511
+P2 × P1 × P1 × P1 × P1 12,180 16 754
+P1 × P1 × P1 × P1 × P1 × P1 8,442 10 350
+Total 34,192 57 2,676
+Table 6: The distribution of codimension (2, 1) spaces embedded in products of projective spaces.
+matrices scanned respectively). The distribution of the 57 spaces is explicitly shown in Table 7 -
+12. Once again in these tables,  indicates a smooth manifold, # a singular manifold and ﬁnally,
+G #indicates that the smoothness check has timed out in the current run. For all the generically
+singular geometries we found, the singularities are not of a minimal order in that the “normal form”,
+eq. (3.14), and its exterior derivative both vanish.
+In terms of topological data, none of the positive Euler number examples appears in the regular
+CICY list [2], though many of the Hodge number pairs appear in the Kreuzer-Skarke list [29] (however,
+as seen already in co-dimension (1, 1) case, two spaces with the same Hodge number does not guarantee
+they have the same Chern classes or triple intersection numbers). In some cases, we are not yet able
+to determine the Hodge pairs (again due to the slow computation of line bundle cohomology. The
+integer uncertainty in these Hodge pairs is denoted “ x” in the Tables below).
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P4 1 1 3
+P1 0 2 0
+P1 1 3 −2
+
+ 12 (6 + x,x ) #
+
+
+P4 1 1 3
+P1 0 2 0
+P1 1 4 −3
+
+ 60 (30 + x,x ) #
+
+
+P4 1 1 3
+P1 0 2 0
+P1 2 3 −3
+
+ 24 (12 + x,x ) G #
+Table 7: 3 results out of 1, 197 classes of generalized conﬁguration matrices scanned in P4 × P1 × P1.
+#,G #indicate singular and undetermined manifolds respectively. In the Hodge numbers, x denotes
+an undetermined non-negative integer.
+34
+=== PAGE 36 ===
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P3 1 0 3
+P2 1 3 −1
+P1 0 1 1
+
+ 12 (6 + x,x ) #
+
+
+P3 1 0 3
+P2 0 2 1
+P1 2 3 −3
+
+ 18 (9 + x,x ) G #
+Table 8: 2 results out of 1, 800 classes of generalized conﬁguration matrices scanned in P3 × P2 × P1.
+#,G #indicate singular and undetermined manifolds respectively. In the Hodge numbers, x denotes
+an undetermined non-negative integer.
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 2 0
+P1 1 2 −1
+
+ 24 (12 + x,x ) #
+
+
+P3 1 1 2
+P1 0 0 2
+P1 0 2 0
+P1 1 3 −2
+
+ 32 (16 + x,x ) #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 2 0
+P1 1 3 −2
+
+ 72 (36 + x,x ) #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 2 0
+P1 1 4 −3
+
+ 144 (72 + x,x ) #
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 4 −2
+P1 1 1 0
+
+ 24 (27 , 15) G #
+
+
+P3 2 0 2
+P1 0 0 2
+P1 1 1 0
+P1 1 5 −4
+
+ 16 (69 , 61) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 1 2 −1
+P1 0 3 −1
+
+ 72 (36 + x,x ) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 5 −3
+P1 1 1 0
+
+ 36 (32 , 14) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 1 1
+P1 1 5 −4
+
+ 36 (32 , 14) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 2 0
+P1 2 3 −3
+
+ 72 (36 + x,x ) G #
+
+
+P3 2 0 2
+P1 0 0 2
+P1 0 6 −4
+P1 1 1 0
+
+ 16 (75 , 67) G #
+
+
+P3 1 1 2
+P1 0 0 2
+P1 2 0 0
+P1 2 4 −4
+
+ 32 (16 + x,x ) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 5 −3
+P1 2 1 −1
+
+ 36 (31 , 13) G #
+
+
+P3 1 0 3
+P1 0 1 1
+P1 0 6 −4
+P1 1 1 0
+
+ 72 (48 , 12) G #
+35
+=== PAGE 37 ===
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 4 −3
+
+ 24 (27 , 15) G #
+
+
+P3 1 0 3
+P1 0 4 −2
+P1 1 0 1
+P1 2 1 −1
+
+ 48 (76 , 52) G #
+
+
+P3 1 0 3
+P1 0 5 −3
+P1 1 0 1
+P1 2 1 −1
+
+ 96 (116 , 68) G #
+Table 9: 17 results out of 4, 410 classes of generalized conﬁguration matrices scanned in P3 × P1 ×
+P1 × P1. #,G #indicate singular and undetermined manifolds respectively. In the Hodge numbers, x
+denotes an undetermined non-negative integer.
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P2 0 0 3
+P2 1 1 1
+P1 2 0 0
+P1 2 1 −1
+
+ 36 (18 + x,x ) #
+
+
+P2 0 2 1
+P2 1 0 2
+P1 0 0 2
+P1 1 3 −2
+
+ 16 (8 + x,x ) #
+
+
+P2 0 1 2
+P2 1 0 2
+P1 0 2 0
+P1 1 3 −2
+
+ 16 (8 + x,x ) #
+
+
+P2 3 1 −1
+P2 0 0 3
+P1 1 0 1
+P1 0 1 1
+
+ 18 (9 + x,x ) G #
+
+
+P2 0 1 2
+P2 1 0 2
+P1 0 6 −4
+P1 1 1 0
+
+ 16 (32 , 24) G #
+
+
+P2 0 0 3
+P2 1 1 1
+P1 1 3 −2
+P1 2 0 0
+
+ 36 (18 + x,x ) G #
+
+
+P2 0 0 3
+P2 1 1 1
+P1 0 5 −3
+P1 2 0 0
+
+ 36 (18 + x,x ) G #
+
+
+P2 1 0 2
+P2 1 0 2
+P1 2 1 −1
+P1 0 4 −2
+
+ 12 (75 , 69) G #
+
+
+P2 1 0 2
+P2 1 0 2
+P1 2 1 −1
+P1 0 5 −3
+
+ 48 (111 , 87) G #
+Table 10: 9 results out of 5, 235 classes of generalized conﬁguration matrices scanned in P2 × P2 ×
+P1 × P1. #,G #indicate singular and undetermined manifolds respectively. In the Hodge numbers, x
+denotes an undetermined non-negative integer.
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P2 1 0 2
+P1 1 0 1
+P1 0 1 1
+P1 0 2 0
+P1 1 2 −1
+
+
+24 (12 + x,x ) #
+36
+=== PAGE 38 ===
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P2 1 1 1
+P1 2 1 −1
+P1 2 0 0
+P1 0 0 2
+P1 0 0 2
+
+
+32 (16 + x,x ) #
+
+
+P2 1 0 2
+P1 0 0 2
+P1 0 1 1
+P1 0 2 0
+P1 1 3 −2
+
+
+64 (32 + x,x ) #
+
+
+P2 1 0 2
+P1 0 0 2
+P1 0 1 1
+P1 0 5 −3
+P1 1 1 0
+
+
+32 (29 , 13) G #
+
+
+P2 1 1 1
+P1 0 0 2
+P1 0 0 2
+P1 0 5 −3
+P1 2 0 0
+
+
+32 (16 + x,x ) G #
+
+
+P2 1 1 1
+P1 0 0 2
+P1 0 0 2
+P1 1 3 −2
+P1 2 0 0
+
+
+32 (16 + x,x ) G #
+
+
+P2 1 0 2
+P1 0 1 1
+P1 0 4 −2
+P1 1 0 1
+P1 1 1 0
+
+
+24 (24 , 12) G #
+
+
+P2 1 0 2
+P1 0 0 2
+P1 1 0 1
+P1 1 1 0
+P1 1 5 −4
+
+
+16 (40 , 32) G #
+
+
+P2 0 0 3
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+P1 1 4 −3
+
+
+36 (33 , 15) G #
+
+
+P2 0 0 3
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+P1 1 5 −4
+
+
+72 (55 , 19) G #
+
+
+P2 3 1 −1
+P1 1 0 1
+P1 0 1 1
+P1 0 0 2
+P1 0 0 2
+
+
+16 (8 + x,x ) G #
+
+
+P2 1 0 2
+P1 0 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 5 −4
+
+
+32 (29 , 13) G #
+
+
+P2 1 0 2
+P1 0 0 2
+P1 0 6 −4
+P1 1 0 1
+P1 1 1 0
+
+
+16 (58 , 50) G #
+
+
+P2 0 0 3
+P1 0 5 −3
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+36 (53 , 35) G #
+
+
+P2 0 0 3
+P1 0 6 −4
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+72 (75 , 39) G #
+
+
+P2 1 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 0 1
+P1 1 4 −3
+
+
+24 (24 , 12) G #
+Table 11: 16 results out of 12 , 180 classes of generalized conﬁguration matrices scanned in P2 ×
+P1 × P1 × P1 × P1. #, G #indicate singular and undetermined manifolds respectively. In the Hodge
+numbers,x denotes an undetermined non-negative integer.
+37
+=== PAGE 39 ===
+X χ (h1,1(X), h1,2(X)) Smoothness
+
+
+P1 2 1 −1
+P1 2 0 0
+P1 1 0 1
+P1 0 1 1
+P1 0 1 1
+P1 0 1 1
+
+
+16 (8 + x,x ) #
+
+
+P1 2 1 −1
+P1 2 0 0
+P1 1 0 1
+P1 0 1 1
+P1 0 1 1
+P1 0 0 2
+
+
+32 (16 + x,x ) #
+
+
+P1 0 0 2
+P1 0 0 2
+P1 0 5 −3
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+32 (50 , 34) G #
+
+
+P1 0 1 1
+P1 0 1 1
+P1 1 0 1
+P1 1 0 1
+P1 1 0 1
+P1 1 4 −3
+
+
+16 (25 , 17) G #
+
+
+P1 0 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 0 1
+P1 1 0 1
+P1 1 4 −3
+
+
+32 (26 , 10) G #
+
+
+P1 0 1 1
+P1 0 4 −2
+P1 1 0 1
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+16 (25 , 17) G #
+
+
+P1 0 0 2
+P1 0 1 1
+P1 0 4 −2
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+32 (26 , 10) G #
+
+
+P1 0 0 2
+P1 0 0 2
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+P1 1 4 −3
+
+
+32 (32 , 16) G #
+
+
+P1 0 0 2
+P1 0 0 2
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+P1 1 5 −4
+
+
+64 (52 , 20) G #
+
+
+P1 0 0 2
+P1 0 0 2
+P1 0 6 −4
+P1 1 0 1
+P1 1 0 1
+P1 1 1 0
+
+
+64 (70 , 38) G #
+Table 12: 10 results out of 8, 441 classes of generalized conﬁguration matrices scanned in P1 × P1 ×
+P1 × P1 × P1 × P1. #, G #indicate singular and undetermined manifolds respectively. In the Hodge
+numbers,x denotes an undetermined non-negative integer.
+Codimension (2, 1) spaces with non-positive Euler number
+The initial scan produced 2 , 676 co-dimension (2, 1) examples with non-positive Euler number out
+of the 34, 192 classes of generalized conﬁguration matrices considered. Of these, the exact Hodge
+number pairs could be determined for 2, 469. For these geometeries then, we can compare the Hodge
+number pairs with those found in the literature to date: we ﬁnd 319 pairs with 162 diﬀerent Euler
+number which are not in the regular CICY list [2] and among them, 129 pairs with 24 diﬀerent Euler
+38
+=== PAGE 40 ===
+number not present in the Kreuzer-Skarke list [29]. Further more, there are 16 geometries with new
+Hodge numbers not appearing elsewhere in the literature [58]. These 16 Hodge pairs are distributed
+in 8 diﬀerent Euler numbers. These examples with new Hodge number are listed in Table 13.
+(h1,1(X), h1,2(X)) X
+(1, 91)
+
+
+P2 1 1 1
+P2 0 3 0
+P1 0 0 2
+P1 1 2 −1
+
+
+(1, 109)
+
+
+P2 1 0 2
+P2 0 3 0
+P1 0 1 1
+P1 1 3 −2
+
+
+(2, 98)
+
+
+P2 1 0 2
+P1 0 2 0
+P1 0 1 1
+P1 0 2 0
+P1 1 3 −2
+
+
+(6, 18)
+
+
+P2 0 1 2
+P1 0 1 1
+P1 1 0 1
+P1 1 0 1
+P1 1 3 −2
+
+
+,
+
+
+P2 0 1 2
+P1 0 3 −1
+P1 1 1 0
+P1 1 0 1
+P1 1 0 1
+
+
+,
+
+
+P2 0 1 2
+P1 0 0 2
+P1 1 1 0
+P1 1 3 −2
+P1 1 0 1
+
+
+(10, 19)
+
+
+P2 0 0 3
+P2 1 1 1
+P1 0 1 1
+P1 1 3 −2
+
+,
+
+
+P2 0 0 3
+P2 1 1 1
+P1 1 0 1
+P1 1 5 −4
+
+ ,
+
+
+P2 0 0 3
+P2 1 1 1
+P1 1 0 1
+P1 2 3 −3
+
+ ,
+
+
+P2 0 0 3
+P2 2 2 −1
+P1 0 1 1
+P1 1 0 1
+
+
+(9, 13)
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 3 −2
+
+ ,
+
+
+P3 2 0 2
+P1 0 3 −1
+P1 0 1 1
+P1 1 1 0
+
+
+(9, 15)
+
+
+P3 1 0 3
+P1 0 1 1
+P1 1 1 0
+P1 1 3 −2
+
+
+(10, 14)
+
+
+P2 1 0 2
+P1 0 1 1
+P1 0 1 1
+P1 1 3 −2
+P1 1 0 1
+
+
+,
+
+
+P2 1 0 2
+P1 0 3 −1
+P1 0 1 1
+P1 1 1 0
+P1 1 0 1
+
+
+,
+
+
+P2 1 0 2
+P1 0 0 2
+P1 0 1 1
+P1 1 1 0
+P1 1 3 −2
+
+
+Table 13: The Hodge pairs and conﬁguration matrices of novel codimension (2,1) examples. These
+new Hodge pairs do not appear in the regular CICY list [2], Kreuzer-Skarke list [29] or elsewhere in
+the known literature [58].
+6 Physics Applications and Outlook
+In this work we have introduced a new construction of Calabi-Yau spaces that has the potential to
+yield very large datasets of manifolds of a variety of diﬀerent dimensions. We have seen already that
+this construction has yielded new manifolds as well as previously unknown Hodge number pairs. If
+we take one for each inﬁnite family in the codimension (1,1) dataset, we constructed 28 spaces. For
+codimension (2,1) case, there are 57 spaces with positive Euler number and 2 , 676 with non-positive
+Euler number. In total we constructed 2 , 761 spaces.
+In the discussion below we turn brieﬂy to some of the physics applications of this new dataset of
+manifolds. Many of the topics here deserve to be the subject of future work and we highlight the
+ways that this dataset will be particularly applicable to many physical problems, as well as areas
+where interesting open questions remain.
+Fibration structure
+The obvious ﬁbration structures exhibited by generalized CICYs follow a very similar form to those
+seen in standard semi-positive conﬁguration matrices. Consider a conﬁguration matrix which can be
+39
+=== PAGE 41 ===
+put in the following form by row and column permutations:
+X =
+[ A1 0 F
+A2 B T
+]
+. (6.1)
+where A1 and A2 are two products of projective spaces, while F, B and T are block sub-matrices.
+Such a conﬁguration matrix, in the case of semi-positive conﬁguration matrices, describes a ﬁbration
+of the manifold given by F = [A1||F] over the base B = [A2||B], where the variation of the ﬁbre over
+the base is determined by the matrix T . It has been observed, for example, that almost all known
+CICY three- and four-folds are ﬁbered with Calabi-Yau manifolds of every lower dimension multiple
+times [59].
+As we have mentioned, a similar structure is exhibited by generalized CICYs. Consider, for
+example, the conﬁguration (1.2) for a gCICY three-fold discussed in the introduction. In this example,
+we can rearrange the matrix and make the division as follows,
+X =
+
+
+P5 3 1 1 1
+P1 1 1 1 −1
+P1 1 1 −1 1
+
+ . (6.2)
+Here the base is B = P1 and the ﬁbre, F , is given as
+F =
+[ P5 3 1 1 1
+P1 1 1 1 −1
+]
+, (6.3)
+which is a K3 surface. A diﬀerence with the normal CICY situation is that we must check that
+any mixed-sign line bundles involved in deﬁning the ﬁber and the base, OM′(1, −1) in this case,
+with M′ =
+[
+P5 3 1 1
+P1 1 1 1
+]
+, have global sections such that the associated manifolds do indeed exist.
+Computation of the line bundle cohomology indeed leads to h0(M′, OM′(1, −1)) = 2 > 0. As a
+further check, the Hodge number computation reveals that h0,0(F ) = 1 and h1,1(F ) = 20 as they
+should. The gCICY three-fold at hand is also elliptically ﬁbered, which can similarly be seen from
+the division,
+X =
+
+
+P5 3 1 1 1
+P1 1 1 1 −1
+P1 1 1 −1 1
+
+, (6.4)
+that makes manifest the ﬁbration of the elliptic curve,
+F =
+[
+P5 3 1 1 1
+]
+, (6.5)
+over the base B = P1 × P1. Note that the elliptic and K3 ﬁbration structures here are nested.
+As another example, the following gCICY four-fold,
+X =
+
+
+P3 2 2
+P1 0 2
+P1 0 2
+P1 3 −1
+
+, (6.6)
+similarly has a nested ﬁbration structure of elliptic, K3, and Calabi-Yau three-fold ﬁbers, over the
+bases P1 × P1 × P1, P1 × P1, and P1, respectively. The following divisions of the conﬁguration (6.6)
+in turn make such ﬁbrations manifest:
+
+
+P3 2 2
+P1 0 2
+P1 0 2
+P1 3 −1
+
+ ;
+
+
+P3 2 2
+P1 0 2
+P1 0 2
+P1 3 −1
+
+ ;
+
+
+P3 2 2
+P1 0 2
+P1 0 2
+P1 3 −1
+
+. (6.7)
+40
+=== PAGE 42 ===
+It seems likely that the generalized CICYs exhibit the same rich ﬁbration structure that has
+recently been investigated in other constructions [13–15,25,60–64]. Naturally, a rigorous conﬁrmation
+of such a claim must await a full classiﬁcation of the dataset.
+Discrete Symmetries, Torsion and Wilson Lines
+One application of this simple, algebraic set of manifolds lies in the ease with which its discrete
+automorphisms can be classiﬁed. Discrete symmetries of CY manifolds have a wide number of appli-
+cations in string compactiﬁcations ranging from Type II orientifold actions [65] to heterotic Wilson
+lines [57, 66–68] to discrete symmetries in F-theory (see for example [69–75] for recent work). The
+role of cohomological torsion in Mirror symmetry [76–78] is also an ongoing subject of investigation.
+For the ordinary CICYs, the set of freely acting discrete symmetries was recently classiﬁed in [79].
+The structure of this classiﬁcation took a two step approach:
+1. Classify discrete symmetries descending from the ambient projective space factors (i.e. whose
+action was manifest on the homogenous coordinates of a product of projective spaces)
+2. Consider CICYs that are invariant under those actions (i.e. equivariant normal bundles) and
+for which the induced symmetry action is ﬁxed point free.
+For the manifolds presented here, the same procedure directly applies. Once again, the ambient
+space symmetry actions are known and their action on the deﬁning relations – even the “rational”
+sections described here – can be readily studied. Since the dataset includes many manifolds with
+small Hodge numbers already, it is intriguing future area of study to consider the quotient manifolds
+X/Γ under the already classiﬁed ﬁnite discrete groups Γ.
+Computability and simple algebraic construction
+The two most commonly used datasets of CY manifolds – the CICY list [2] and the Kreuzer-Skarke
+list [29] – have played an important role in the development of string theory largely due to the simple
+algebraic nature of the constructions. The arenas of ordinary projective or toric geometry provide a
+rich toolkit which can be used to calculate the necessary topological and cohomological structure of
+string backgrounds (i.e. bundle valued cohomology, Chern classes, intersection numbers, etc.) [80–86].
+For illustration, one such recent application in heterotic string theory includes systematic, algo-
+rithmic searches for heterotic Standard Model vacua on smooth CY 3-folds [5, 7, 9, 10, 48, 49, 87–90].
+These scans over literally hundreds of billions of heterotic vacua have only been possible due to the
+simple description of the CICY geometry and vector bundles over it and the suitability of these al-
+gebraic constructions for analysis using computational algebraic geometry. We emphasize here that
+this dataset is on an equal footing in terms of computational ease. Indeed, one could also follow a
+similar program of Calabi-Yau manifold construction to the one discussed here for the case of general
+Toric ambient spaces.
+M-theory on CY 4-folds and instantons
+The simple nature of ordinary CICYs in products of projective spaces have also allowed for the
+easy extraction of certain general properties of instanton physics in heterotic string theory, M-theory
+and F-theory (see for example [91, 92]). We explore one aspect of this here involving the physics of
+instantons in 3-dimensional compactiﬁcations of M-theory.
+In [93], Witten pointed out that for M-theory on a CY 4-fold there is a crucial condition that must
+be satisﬁed for any instanton to contribute non-trivially to the N=1 superpotential in 3-dimensions.
+In particular, it is necessary that
+χ(D, O(D)) = 1 . (6.8)
+41
+=== PAGE 43 ===
+In [93] it is argued that for ordinary CICYs in products of projective space, there are no D’s with
+the required properties and thus, the superpotential is identically zero. This argument is based on
+fact that the set of eﬀective divisors on the CICY consist of those that descend from the ambient
+product of projective spaces. As we have demonstrated in Section 2.2.4, in the case of gCICYs the
+eﬀective cone ofX is generically much larger than that of the ambient space A = Pn1 ×... Pnm. As a
+result, there are many more divisors available to satisfy the condition given above. A full exploration
+of such eﬀects and the geometry of gCICY fourfolds is an exciting prospect for future study.
+Relationship to GLSMs?
+Positive CICYs have played an important role as the vacuum solutions of Gauged Linear Sigma
+Models (GLSMs) [94]. It is an intriguing question whether or not gCICYs could also be realized in
+this way? At ﬁrst pass, it seems that the answer should in fact be no, since the generalization under
+consideration is precisely the fact that these manifolds cannot be viewed as the complete intersection of
+a set of strictly polynomial equations in an ambient product of projective spaces. Phrased diﬀerently,
+they are not realizable as complete intersection manifolds on the ambient product of projective spaces.
+Instead they only exhibit such a structure on M (where all negative entry line bundles have global
+sections) which does not carry manifest toric/ U(1) actions on its coordinates.
+Despite this obstacle however, there remain open questions. While the manifolds cannot be
+realized as a complete intersection of polynomial equations on A = Pn1 × ... Pnm, they can be
+described by a complete intersection of (suitably non-singular) rational functions in these coordinates
+as described in detail in Section 3. The question arises then, could such a system of rational conditions
+arise from the F-terms associated to a holomorphic superpotential of a GLSM? If so, it would perhaps
+provide a novel generalization of the solutions studied to date in the literature. We leave this as an
+intriguing topic of future investigation.
+Acknowledgements
+The authors would like to thank A. Lukas for helpful conversations and the Universidad Aut´ onoma
+de Madrid for hospitality during the ﬁnal stage of this work. The work of LA (and XG in part) is
+supported by NSF grant PHY-1417337 and that of JG (and SJL in part) is supported by NSF grant
+PHY-1417316. The work of FA was in part supported by the German Research Foundation (DFG)
+and the RTG 1463 “Analysis, Geometry and String Theory”. FA would like to thank Virginia Tech
+for hospitality during various stages of this work.
+A Line Bundles and Cohomology
+An important tool in the computation of vector bundle-valued cohomology on CICYs or gCICYs is
+the calculation of line bundle cohomology. In this section we focus on the cohomology of OX(D)
+whereD is a divisor obtained by restriction from the ambient space (i.e. the divisor is “favorable” in
+the sense used in [5,7,9,48,49]).
+The Bott-Borel-Weil Theorem (see [95] for the form used here) is a powerful tool that can be
+used to calculate the cohomology of V , a holomorphic homogeneous vector bundle over some Flag
+manifold, M. Here we will apply this technology in the simple case of projective space to obtain the
+so-called Bott-formula [44] for cohomology of line bundles on a single projective space:
+hq(Pn, OPn(k)) =
+
+
+
+(k+n
+n
+)
+q = 0 k> −1
+1 q =n k = −n − 1(−k−1
+−k−n−1
+)
+q =n k< −n − 1
+0 otherwise
+. (A.1)
+42
+=== PAGE 44 ===
+The computation of line bundle cohomology described by the Bott-Borel-Weil theorem is easily gen-
+eralized to products of projective space using the K¨ unneth formula [42] which gives the cohomology
+of bundles over a direct product of spaces. For products of projective spaces it states that:
+Hn(Pn1 ×... × Pnm, O(q1,...,q m)) =
+⨁
+k1+...+km=n
+Hk1(Pn1, O(qi)) ×... ×Hkm(Pnm, O(qm)) , (A.2)
+With this in hand, we can compute the cohomology of line bundles over the ambient space.
+Next, given the Koszul sequence (2.7), it is clear that the cohomologyH∗(X,L ) can be determined
+in terms of H∗(M,L ) for any line bundle L obtained by restriction from M. Here we review brieﬂy
+the techniques for calculating line bundle cohomology on a general (non-CY) complete intersection
+manifold M of the form given in (2.3).
+0 → V ⊗ ∧KN∗
+X → V ⊗ ∧K−1N∗
+X →... → V ⊗ N∗
+X → V → V| X → 0 . (A.3)
+We can break the sequence (A.3) into a series of short exact sequences as
+0 → V ⊗ ∧KN∗
+X → V ⊗ ∧K−1N∗
+X → K 1 → 0 ,
+0 → K 1 → V ⊗ ∧K−2N∗
+X → K 2 → 0 ,
+...
+0 → KK−1 → V → V| X → 0 ,
+(A.4)
+and each of these short exact sequences will give rise to a long exact sequence in cohomology:
+0 → H 0(A, V ⊗ ∧KN∗
+X) →H 0(A, V ⊗ ∧K−1N∗
+X) →H 0(A, K1) ,
+0 → H 0(A, K1) →H 0(A, V ⊗ ∧K−2N∗
+X) →H 0(A, K2) →... ,
+...
+0 → H 0(A, KK−1) →H 0(A, V) →H 0(X, V|X) →... .
+(A.5)
+To ﬁnd H∗(X, V|X) we must determine the various cohomologies in (A.5). It is easy to see that
+for higher co-dimensional spaces or tensor powers of bundles, this decomposition of sequences is
+a laborious process. Fortunately, the analysis of these arrays of exact sequences is dramatically
+simpliﬁed by the use of spectral sequences. Spectral sequences are completely equivalent to the
+collection of exact sequences described above, but designed for explicit cohomology computation.
+Since there are many good reviews of spectral sequence available in the literature [42,52,96], we will
+only discuss the essential features in the following paragraphs.
+To obtain the necessary cohomology of V |X from (A.3), we deﬁne a tableaux
+Ej,k
+1 (V ) :=Hj(A,V ⊗ ∧kN∗
+X), k = 0,...,K ; j = 0,..., dim(A) =
+m∑
+i=1
+ni . (A.6)
+which forms the ﬁrst term of a spectral sequence [44, 45]. Here the spectral sequence of line bundle
+cohomology is a complex deﬁned by diﬀerential maps di : Ej,k
+i → Ej−i+1,k−i
+i for j = 1, 2,... ad
+inﬁnitum where di ◦di = 0. The higher terms in the spectral sequence are deﬁned by
+Ej,k
+i+1(V ) = ker(di :Ej,k
+i (V ) →Ej−i+1,k−i
+i (V ))
+Im(di :Ej+i−1,k+i
+i (V ) →Ej,k
+i (V ))
+. (A.7)
+Since the number of terms in the Koszul sequence (A.3) is ﬁnite, there exists a limit to the spectral
+sequence. That is, the sequence of tableaux converge after a ﬁnite number of steps to Ej,k
+∞ (V ). The
+actual cohomology of the bundle V is constructed from this limit tableaux:
+hq(X,V |X) =
+K∑
+m=0
+rankEq+m,m
+∞ (V ) . (A.8)
+43
+=== PAGE 45 ===
+where hq(X,V |X) = dim( Hq(X,V |X)). In practice, this sequence converges rapidly. For other
+discussions of the calculation of vector/line bundle cohomology in similar contexts, see [52,80–82].
+B Trivial Bundle Cohomology and Filtering out Non-CY Conﬁgu-
+ration Matrices
+As illustrated in Section 3, some conﬁguration matrices of the form (2.3) do not give rise to Calabi-
+Yau manifolds – due to the fact that the zero-locus of the deﬁning equations produces a non-reduced
+scheme whose classical variety 14 does not satisfy the necessary CY conditions. In this section, we
+mention a simple criteria for conﬁguration matrices that always give rise to such non-CY geometries.
+All such conﬁguration matrices have been omitted from the scans carried out in this work.
+A simple ﬁlter for “non-CY” conﬁgurations can be obtained by considering the cohomology of the
+trivial bundle. In the case of a CY manifold the cohomology is h(OX) = (1, 0, 0, 1). Here we present
+a class of manifolds which will generically produce a trivial bundle with diﬀerent cohomology. Any
+(p, 1) conﬁguration matrix of the form
+[ n || {aα} | {bµ} ] =
+
+
+n1 a1
+1 a1
+r · · · b1
+1
+n2 a2
+1 0 · · · b2
+1
+... ... ... ... ... ...
+nm am
+1 am
+r · · · bm
+1
+
+
+, (B.1)
+which has a column containing a zero and another entry as
+r in the same column satisfying
+as
+r ≥nr + 1 (B.2)
+for its respective ambient Pnr dimension.
+To see why such conﬁguration matrices are problematic, as in Section 2.2.1, we can consider the
+Koszul sequence:
+0 →N∨
+X → OM →OX → 0 , (B.3)
+where the cohomology of the line bundles on M is given in terms of the ambient product of projective
+spaces via
+0 → ∧KN∗
+M → ∧K−1N∗
+M → K 1 → 0 ,
+0 → K 1 → ∧K−2N∗
+M → K 2 → 0 ,
+...
+0 → KK−2 →NM∗ → KK−1 ,
+0 → KK−1 → OA → O|M → 0 .
+(B.4)
+The key observation here is that if the conﬁguration matrix of M contains a column as described
+above then generically hi(M, OM) ̸= 0 for some i >0. When this result is combined with the long
+exact sequence associated to (B.3), it leads to trivial bundle cohomology on X that is incompatible
+with the CY condition.
+This is most simply illustrated via an example. Consider the following conﬁguration matrix:
+X =
+
+
+P4 1 0 4
+P1 1 2 −1
+P1 0 3 −1
+
+ ; (B.5)
+14i.e. the variety associated to the radical of the ideal [44].
+44
+=== PAGE 46 ===
+Here the sequence (B.4) takes the form
+0 → O(−1, −3, −3) → O(−1, −1, 0) ⊕ O(0, −2, −3) → K 1 → 0 , (B.6)
+0 → K 1 → OA → OM → 0 . (B.7)
+Unlike in the case of good conﬁguration matrices, the line bundle O(0, −2, −3) does not have entirely
+vanishing or top cohomology. Rather, H 2(A, O(0, −2, −3)) = 2. As a result, the long exact sequence
+in cohomology associated to this sequence yields
+h∗(M, OM) = (1, 2, 0, 0, 0) . (B.8)
+Combining this with the Koszul sequence (B.3) for X ⊂M
+0 → O(−4, 1, 1) → OM → OX → 0 , (B.9)
+and considering the long exact sequence in cohomology, we arrive at the ﬁnal conclusion:
+h∗(X, OX) = (1, 2, 0, 3) . (B.10)
+This fails to agree with the h∗(X, OX) = (1, 0, 0, 1) of a CY manifold. It is straightforward to verify
+that similar problematic cohomology will arise for h∗(X, OX) for any conﬁguration of the form given
+in (B.1) and (B.2).
+C Numerical Method for Section Construction
+In this Appendix, we discuss a numerical method to construct the global sections of a line bundle for
+deﬁning a gCICY three-fold. For a conﬁguration matrix, eq. (2.3), let us explain how the sections,
+q1 ∈H 0(M, OM(b1)) , (C.1)
+can be systematically constructed on a computer. For simplicity, only the construction of q1 is
+discussed here, but the method straight-forwardly generalizes to sections coming from any other
+columns of the conﬁguration matrix.
+As described in Section 3, let us consider the rational form, (3.2),
+q1 = N(x1, · · ·, xm)
+D(x1, · · ·, xm) , (C.2)
+for a section q1 ∈H 0(M, OM(b1)), where N and D are a polynomial in x1, · · ·, xm, of multi-degree
+[b1]+ and [b1]−, respectively. We should then require that the numerator N vanishes on the divisor
+D = 0 of M.
+At the practical level on a computer, we ﬁrst choose a generic denominator polynomial D and
+write N as a linear combination,
+N(x1, · · ·, xm) =
+∑
+deg m=[b1]+
+cm · m(x1, · · ·, xm) , (C.3)
+of all the monomials m of the right multi-degree, with their coeﬃcients, cm, being a free parameter.
+We then intersect the divisor D = 0 of M, whose complex dimension is,
+dimC M − 1 =L + 2, (C.4)
+with an appropriate number of generic multi-linear hypersurfaces,
+hi(x1, · · ·, xm) = 0 , for i = 1, · · ·,L + 2, (C.5)
+45
+=== PAGE 47 ===
+so that the resulting solution set upon the slicing may only consist of a ﬁnite number of points,
+Ih = {x ∈ A | D(x) = 0 , pα(x) = 0 for 1 ≤α ≤K , hi(x) = 0 for 1 ≤i ≤L + 2} , (C.6)
+which can be obtained numerically on a computer. Here, the subscript h collectively denotes the
+choice of generic hypersurfaces, (C.5). Then we demand that the numerator polynomial, N, should
+vanish when evaluated at each point x = (x1, · · ·, xm) ∈ I h, thereby obtaining a system of linear
+equations on the coeﬃcient parameters, cm. The procedure should be repeated with diﬀerent generic
+slicing choices, h, and the additional constraints should augment the system until it becomes big
+enough so that yet another h choice does not give rise to any more independent constraints. Once
+the system saturates in the aforementioned sense, we end up with a subspace of the available linear
+combinations for N, each of which will lead to a globally holomorphic section, q1 =N/D. Note that
+such a linear system on cm leads to a necessary condition for q1 to be a global section over M. It is
+also suﬃcient, however, given the genericity of the slicing choices.
+Let us illustrate our numerical method with the gCICY in eq. (3.31),
+X =
+
+
+P3 2 0 2
+P1 0 1 1
+P1 0 2 0
+P1 1 2 −1
+
+ ; M =
+
+
+P3 2 0
+P1 0 1
+P1 0 2
+P1 1 2
+
+ , (C.7)
+by constructing sections,
+q ∈H 0(M, OM(2, 1, 0, −1)) , (C.8)
+for the last column of the conﬁguration matrix. To begin with, we ﬁx the complex structure of M
+by choosing two sections, p1 and p2, as generic polynomials with the right multi-degree. Moving
+on to q for the remaining complex structure of X, let us start with the rational form, (C.2), where
+the multi-degrees of N and D are (2, 1, 0, 0) and (0, 0, 0, 1), respectively. Then we choose a generic
+denominator, say,
+D = 3x0
+4 − 7x1
+4 , (C.9)
+that is linear in x4 and write the numerator as a linear combination,
+N =
+20∑
+A=1
+cA · mA(x1, x2) , (C.10)
+of the 20 monomialsmA with bi-degree (2, 1) in x1 and x2. The last choice we should make isL+2 = 3
+generic multi-linear polynomials, h1, h2 and h3, each of which is a generic linear combination of 32
+multi-linear monomials. For each generic choice of h = (h1,h 2,h 3), an 18-point set Ih is obtained
+numerically. Consequently, we are given the corresponding 18 linear constraints on the 20 coeﬃcient
+parameters, cA. However, these 18 are not linearly independent in that when the system is solved
+there remains 8 free parameters. Thus, we repeat the procedure with another generic choice of h and
+add the resulting 18 linear constraints to the constraint system. Now the system has 36 equations
+on 20 variables and ends up leading to a 2-parameter family of solutions. By repeating it with yet
+another h choice, the system now consists of 54 linear constraints. However, the solution set is not
+constrained any further and is still parametrized by the same 2 free parameters. This means that
+we end up with the 2-dimensional subspace of linear combinations for N, which in turn results in
+the corresponding 2-dimensional space of sections for q = N/D. An independent computation of
+line bundle cohomology leads to h0(M, OM(2, 1, 0, −1)) = 2, which indicates the completeness of our
+numerical section construction method for this example.
+46
+=== PAGE 48 ===
+References
+[1] T. Hubsch, “Calabi-yau Manifolds: Motivations and Constructions,” Commun. Math. Phys.
+108, 291 (1987).
+[2] P. Candelas, A. M. Dale, C. A. Lutken and R. Schimmrigk, “Complete Intersection Calabi-Yau
+Manifolds,” Nucl. Phys. B 298, 493 (1988).
+[3] P. Green and T. Hubsch, “Calabi-yau Manifolds as Complete Intersections in Products of Com-
+plex Projective Spaces,” Commun. Math. Phys. 109, 99 (1987).
+[4] P. Candelas, C. A. Lutken and R. Schimmrigk, “Complete Intersection Calabi-yau Manifolds. 2.
+Three Generation Manifolds,” Nucl. Phys. B 306, 113 (1988).
+[5] L. B. Anderson, J. Gray, A. Lukas and E. Palti, “Two Hundred Heterotic Standard Models on
+Smooth Calabi-Yau Threefolds,” Phys. Rev. D 84, 106005 (2011) [arXiv:1106.4804 [hep-th]].
+[6] L. B. Anderson, J. Gray, A. Lukas and B. Ovrut, “The Atiyah Class and Complex Structure Sta-
+bilization in Heterotic Calabi-Yau Compactiﬁcations,” JHEP 1110, 032 (2011) [arXiv:1107.5076
+[hep-th]].
+[7] L. B. Anderson, J. Gray, A. Lukas and E. Palti, “Heterotic Line Bundle Standard Models,”
+JHEP 1206, 113 (2012) [arXiv:1202.1757 [hep-th]].
+[8] L. B. Anderson, J. Gray, A. Lukas and B. Ovrut, “Vacuum Varieties, Holomorphic Bun-
+dles and Complex Structure Stabilization in Heterotic Theories,” JHEP 1307, 017 (2013)
+[arXiv:1304.2704 [hep-th]].
+[9] L. B. Anderson, A. Constantin, J. Gray, A. Lukas and E. Palti, “A Comprehensive Scan for
+Heterotic SU(5) GUT models,” JHEP 1401, 047 (2014) [arXiv:1307.4787 [hep-th]].
+[10] L. B. Anderson, A. Constantin, S. J. Lee and A. Lukas, “Hypercharge Flux in Heterotic Com-
+pactiﬁcations,” Phys. Rev. D 91, no. 4, 046008 (2015) [arXiv:1411.0034 [hep-th]].
+[11] E. I. Buchbinder, A. Constantin and A. Lukas, “Heterotic QCD axion,” Phys. Rev. D 91, no. 4,
+046010 (2015) [arXiv:1412.8696 [hep-th]].
+[12] I. Brunner, M. Lynker and R. Schimmrigk, “Uniﬁcation of M theory and F theory Calabi-Yau
+fourfold vacua,” Nucl. Phys. B 498, 156 (1997) [arXiv: hep-th/9610195].
+[13] J. Gray, A. S. Haupt and A. Lukas, “All Complete Intersection Calabi-Yau Four-Folds,” JHEP
+1307, 070 (2013) [arXiv:1303.1832 [hep-th]].
+[14] J. Gray, A. Haupt and A. Lukas, “Calabi-Yau Fourfolds in Products of Projective Space,” Proc.
+Symp. Pure Math. 88, 281 (2014).
+[15] J. Gray, A. S. Haupt and A. Lukas, “Topological Invariants and Fibration Structure of Complete
+Intersection Calabi-Yau Four-Folds,” JHEP 1409, 093 (2014) [arXiv:1405.2073 [hep-th]].
+[16] P. Candelas, X. De La Ossa, A. Font, S. H. Katz and D. R. Morrison, “Mirror symmetry for two
+parameter models. 1.,” Nucl. Phys. B 416, 481 (1994) [arXiv: hep-th/9308083].
+[17] P. Green and T. Hubsch, “Polynomial Deformations and Cohomology of Calabi-yau Manifolds,”
+Commun. Math. Phys. 113, 505 (1987).
+[18] P. Candelas, A. Font, S. H. Katz and D. R. Morrison, “Mirror symmetry for two parameter
+models. 2.,” Nucl. Phys. B 429, 626 (1994) [hep-th/9403187].
+47
+=== PAGE 49 ===
+[19] A. Mavlyutov, “Embedding of Calabi-Yau deformations into toric varieties”, [math/0309240].
+[20] A. E. Mavlyutov, “Deformations of Calabi-Yau hypersurfaces arising from deformations of toric
+varieties ,” Inventiones Mathematicae, 157, 621 . [arXiv:math/0309239]
+[21] S. Mori, “Flip Theorem and the Existence of Minimal Models for 3-Folds ,” Journal of the
+American Mathematical Society Vol. 1, No. 1 (Jan., 1988), pp. 117-253.
+[22] H. Clemens, J. Kollar, S. Mori, “Higher-dimensional complex geometry ,” Asterique (166) 1989
+[23] C. Birkar, P. Cascini, C. D. Hacon, J. McKernan, “Existence of minimal models for varieties of
+log general type”, J. Amer. Math. Soc. 23 (2010), 405-468.
+[24] O. Fujino, “New developments in the theory of minimal models, ” Sugaku (Mathematical Society
+of Japan) 61 2009 (2) pp:162186
+[25] D. R. Morrison and W. Taylor, “Classifying bases for 6D F-theory models,” Central Eur. J.
+Phys. 10, 1072 (2012) [arXiv:1201.1943 [hep-th]].
+[26] A. Grassi, J. Halverson, J. Shaneson and W. Taylor, “Non-Higgsable QCD and the Standard
+Model Spectrum in F-theory,” JHEP 1501, 086 (2015) [arXiv:1409.8295 [hep-th]].
+[27] D. R. Morrison and W. Taylor, “Non-Higgsable clusters for 4D F-theory models,” JHEP 1505,
+080 (2015) [arXiv:1412.6112 [hep-th]].
+[28] L. B. Anderson, F. Apruzzi, X. Gao, J. Gray, and S. J. Lee, To appear.
+[29] M. Kreuzer and H. Skarke, “Complete classiﬁcation of reﬂexive polyhedra in four-dimensions,”
+Adv. Theor. Math. Phys. 4, 1209 (2002) [arXiv: hep-th/0002240].
+[30] V. Batyrev, I. Ciocan-Fontanine, B. Kim, D. van Straten, “Conifold Transitions and Mirror
+Symmetry for Calabi-Yau Complete Intersections in Grassmannians”, Nucl. Phys. B514 (1998)
+640 [alg-geom/9710022].
+[31] V. Batyrev, I. Ciocan-Fontanine, B. Kim, D. van Straten, “Mirror Symmetry and Toric Degen-
+erations of Partial Flag Manifolds”, Acta Math. 184 (2000), no. 1, 1-39 [arXiv:math/9803108].
+[32] V. Batyrev and M. Kreuzer, “Constructing new Calabi-Yau 3-folds and their mirrors via conifold
+transitions,” Adv. Theor. Math. Phys. 14, 879 (2010) [arXiv:0802.3376 [math.AG]].
+[33] A. Klemm and R. Schimmrigk, “Landau-Ginzburg string vacua,” Nucl. Phys. B 411, 559 (1994)
+[arXiv: hep-th/9204060].
+[34] G. Kapustka and M. Kapustka, “A cascade of determinantal Calabi–Yau threefolds ,”
+[arXiv:0802.3669]
+[35] K. Hori and D. Tong, “Aspects of Non-Abelian Gauge Dynamics in Two-Dimensional N=(2,2)
+Theories,” JHEP 0705, 079 (2007) [hep-th/0609032].
+[36] R. Donagi and E. Sharpe, “GLSM’s for partial ﬂag manifolds,” J. Geom. Phys. 58, 1662 (2008)
+[arXiv:0704.1761 [hep-th]].
+[37] K. Hori, “Duality In Two-Dimensional (2,2) Supersymmetric Non-Abelian Gauge Theories,”
+JHEP 1310, 121 (2013) [arXiv:1104.2853 [hep-th]].
+48
+=== PAGE 50 ===
+[38] H. Jockers, V. Kumar, J. M. Lapan, D. R. Morrison and M. Romo, “Nonabelian 2D Gauge
+Theories for Determinantal Calabi-Yau Varieties,” JHEP 1211, 166 (2012) [arXiv:1205.3192
+[hep-th]].
+[39] H. Jockers, V. Kumar, J. M. Lapan, D. R. Morrison and M. Romo, “Two-Sphere Partition Func-
+tions and Gromov-Witten Invariants,” Commun. Math. Phys. 325 (2014) 1139 [arXiv:1208.6244
+[hep-th]].
+[40] E. A. Rodland, “The Pfaﬃan Calabi?Yau, its mirror, and their link to the Grassmannian G(2,
+7)”, Compositio Math. 122 (2000) 135?149, arXiv:math.AG/9801092.
+[41] M. Lynker, R. Schimmrigk and A. Wisskirchen, “Landau-Ginzburg vacua of string, M theory
+and F theory at c = 12,” Nucl. Phys. B 550, 123 (1999) [hep-th/9812195].
+[42] T. Hubsch, “Calabi-Yau manifolds: A Bestiary for physicists,”
+[43] D. Huybrechts, “Complex Geometry, An Introduction”, Springer, 2004.
+[44] R. Hartshorne, “Algebraic Geometry, Springer,” GTM 52, Springer-Verlag, 1977.
+[45] P. Griﬁths, J. Harris, “Principles of algebraic geometry,” 1978.
+[46] S. T. Yau, “Compact Three-dimensional Kahler Manifolds With Zero Ricci Curvature,” In *Ar-
+gonne/chicago 1985, Proceedings, Anomalies, Geometry, Topology*, 395-406.
+[47] S. T. Yau, “On Ricci curvature of a compact K¨ ahler manifold and complex Monge-Amp´ ere
+equation I.” Comm. Pure and App. Math. 31 (1979), 339-411.
+[48] L. B. Anderson, Y. H. He and A. Lukas, “Heterotic Compactiﬁcation, An Algorithmic Approach,”
+JHEP 0707, 049 (2007) [arXiv: hep-th/0702210 ].
+[49] L. B. Anderson, Y. H. He and A. Lukas, “Monad Bundles in Heterotic String Compactiﬁcations,”
+JHEP 0807, 104 (2008) [arXiv:0805.2875 [hep-th]].
+[50] R. Bott, “On a theorem of Lefschetz”, Mich. Math J. 6, (1959), 79.
+[51] J. Gray, Y. H. He, A. Ilderton, and A. Lukas, “STRINGVACUA. A Mathematica package for
+studying vacuum conﬁgurations in string phenomenology,” Computer Physics Communications,
+vol. 180, no. 1, pp. 107-119, 2009.
+[52] L. B. Anderson, “Heterotic and M-theory Compactiﬁcations for String Phenomenology,”
+[arXiv:0808.3621 [hep-th]]. Oxford University DPhil. Thesis (2008).
+[53] R. Donagi, Y. H. He, B. A. Ovrut and R. Reinbacher, “Moduli dependent spectra of heterotic
+compactiﬁcations,” Phys. Lett. B 598, 279 (2004) [hep-th/0403291].
+[54] R. Donagi, Y. H. He, B. A. Ovrut and R. Reinbacher, “The Spectra of heterotic standard model
+vacua,” JHEP 0506, 070 (2005) [hep-th/0411156].
+[55] V. Braun, Y. H. He, B. A. Ovrut and T. Pantev, “Moduli dependent mu-terms in a heterotic
+standard model,” JHEP 0603, 006 (2006) [hep-th/0510142].
+[56] L. B. Anderson, J. Gray, D. Grayson, Y. H. He and A. Lukas, “Yukawa Couplings in Heterotic
+Compactiﬁcation,” Commun. Math. Phys. 297, 95 (2010) [arXiv:0904.2186 [hep-th]].
+[57] L. B. Anderson, J. Gray, Y. H. He and A. Lukas, “Exploring Positive Monad Bundles And A
+New Heterotic Standard Model,” JHEP 1002, 054 (2010) [arXiv:0911.1569 [hep-th]].
+49
+=== PAGE 51 ===
+[58] B. Jurke, CY Explorer Website, http://cyexplorer.benjaminjurke.net.
+[59] L. B. Anderson, X. Gao, J. Gray, and S. J. Lee, To appear.
+[60] L. B. Anderson and W. Taylor, “Geometric constraints in dual F-theory and heterotic string
+compactiﬁcations,” JHEP 1408, 025 (2014) [arXiv:1405.2074 [hep-th]].
+[61] W. Taylor and Y. N. Wang, “Non-toric Bases for Elliptic Calabi-Yau Threefolds and 6D F-Theory
+Vacua,” [ arXiv:1504.07689 [hep-th]].
+[62] S. B. Johnson and W. Taylor, “Calabi-Yau threefolds with large h2,1,” JHEP 1410, 23 (2014)
+[arXiv:1406.0514 [hep-th]].
+[63] G. Martini and W. Taylor, “6D F-theory models and elliptically ﬁbered Calabi-Yau threefolds
+over semi-toric base surfaces,” JHEP 1506, 061 (2015) [arXiv:1404.6300 [hep-th]].
+[64] D. R. Morrison and W. Taylor, “Toric bases for 6D F-theory models,” Fortsch. Phys. 60, 1187
+(2012) [arXiv:1204.0283 [hep-th]].
+[65] M. Cvetic, I. Garcia-Etxebarria and J. Halverson, “On the computation of non-perturbative
+eﬀective potentials in the string theory landscape: IIB/F-theory perspective,” Fortsch. Phys.
+59, 243 (2011) [arXiv:1009.5386 [hep-th]].
+[66] F. Apruzzi, F. F. Gautason, S. Parameswaran and M. Zagermann, “Wilson lines and Chern-
+Simons ﬂux in explicit heterotic Calabi-Yau compactiﬁcations,” JHEP 1502, 183 (2015)
+[arXiv:1410.2603 [hep-th]].
+[67] V. Braun, B. A. Ovrut, T. Pantev and R. Reinbacher, “Elliptic Calabi-Yau threefolds with Z(3)
+x Z(3) Wilson lines,” JHEP 0412, 062 (2004) [hep-th/0410055].
+[68] B. A. Ovrut, A. Purves and S. Spinner, “Wilson Lines and a Canonical Basis of SU(4) Heterotic
+Standard Models,” JHEP 1211, 026 (2012) [arXiv:1203.1325 [hep-th]].
+[69] L. B. Anderson, I. Garcia-Etxebarria, T. W. Grimm and J. Keitel, “Physics of F-theory com-
+pactiﬁcations without section,” JHEP 1412, 156 (2014) [arXiv:1406.5180 [hep-th]].
+[70] M. Cvetic, R. Donagi, D. Klevers, H. Piragua and M. Poretschkin, “F-Theory Vacua with Z3
+Gauge Symmetry,” arXiv:1502.06953 [hep-th].
+[71] T. W. Grimm, T. G. Pugh and D. Regalado, “Non-Abelian discrete gauge symmetries in F-
+theory,” arXiv:1504.06272 [hep-th].
+[72] I. Garcia-Etxebarria, T. W. Grimm and J. Keitel, “Yukawas and discrete symmetries in F-theory
+compactiﬁcations without section,” JHEP 1411, 125 (2014) [arXiv:1408.6448 [hep-th]].
+[73] A. Karozas, S. F. King, G. K. Leontaris and A. Meadowcroft, “Discrete Family Symmetry from
+F-Theory GUTs,” JHEP 1409, 107 (2014) [arXiv:1406.6290 [hep-ph]].
+[74] C. Mayrhofer, E. Palti, O. Till and T. Weigand, “Discrete Gauge Symmetries by Higgsing in
+four-dimensional F-Theory Compactiﬁcations,” JHEP 1412, 068 (2014) [arXiv:1408.6831 [hep-
+th]].
+[75] C. Mayrhofer, E. Palti, O. Till and T. Weigand, “On Discrete Symmetries and Torsion Homology
+in F-Theory,” JHEP 1506, 029 (2015) [arXiv:1410.7814 [hep-th]].
+[76] V. Braun, M. Kreuzer, B. A. Ovrut and E. Scheidegger, “Worldsheet instantons, torsion curves,
+and non-perturbative superpotentials,” Phys. Lett. B 649, 334 (2007) [arXiv: hep-th/0703134].
+50
+=== PAGE 52 ===
+[77] V. Braun, M. Kreuzer, B. A. Ovrut and E. Scheidegger, “Worldsheet instantons and torsion
+curves, part A: Direct computation,” JHEP 0710, 022 (2007) [arXiv: hep-th/0703182 ].
+[78] V. Braun, M. Kreuzer, B. A. Ovrut and E. Scheidegger, “Worldsheet Instantons and Torsion
+Curves, Part B: Mirror Symmetry,” JHEP 0710, 023 (2007) [arXiv:0704.0449 [hep-th]].
+[79] V. Braun, “On Free Quotients of Complete Intersection Calabi-Yau Manifolds,” JHEP 1104,
+005 (2011) [arXiv:1003.3235 [hep-th]].
+[80] R. Blumenhagen, B. Jurke, T. Rahn and H. Roschy, “Cohomology of Line Bundles: A Compu-
+tational Algorithm,” J. Math. Phys. 51, 103525 (2010) [arXiv:1003.5217 [hep-th]].
+[81] R. Blumenhagen, B. Jurke, T. Rahn and H. Roschy, “Cohomology of Line Bundles: Applica-
+tions,” J. Math. Phys. 53, 012302 (2012) [arXiv:1010.3717 [hep-th]].
+[82] R. Blumenhagen, B. Jurke and T. Rahn, “Computational Tools for Cohomology of Toric Vari-
+eties,” Adv. High Energy Phys. 2011, 152749 (2011) [arXiv:1104.1187 [hep-th]].
+[83] M. Kreuzer and H. Skarke, “PALP: A Package for analyzing lattice polytopes with applications
+to toric geometry,” Comput. Phys. Commun. 157, 87 (2004) [arXiv: math/0204356].
+[84] L. B. Anderson, J. Gray, Y.-H. He, S. J. Lee, and A. Lukas, “CICY package,” based on methods
+described in [arXiv:0911.1569], [arXiv:0911.0865], [arXiv:0805.2875], [arXiv: hep-th/0703249],
+[arXiv: hep-th/0702210].
+[85] X. Gao and P. Shukla, “On Classifying the Divisor Involutions in Calabi-Yau Threefolds,” JHEP
+1311, 170 (2013) [arXiv:1307.1139 [hep-th]].
+[86] R. Altman, J. Gray, Y. H. He, V. Jejjala and B. D. Nelson, “A Calabi-Yau Database: Threefolds
+Constructed from the Kreuzer-Skarke List,” JHEP 1502, 158 (2015) [arXiv:1411.1418 [hep-th]].
+[87] Y. H. He, S. J. Lee and A. Lukas, “Heterotic Models from Vector Bundles on Toric Calabi-Yau
+Manifolds,” JHEP 1005, 071 (2010) [arXiv:0911.0865 [hep-th]].
+[88] Y. H. He, M. Kreuzer, S. J. Lee and A. Lukas, “Heterotic Bundles on Calabi-Yau Manifolds with
+Small Picard Number,” JHEP 1112, 039 (2011) [arXiv:1108.1031 [hep-th]].
+[89] Y. H. He, S. J. Lee, A. Lukas and C. Sun, “Heterotic Model Building: 16 Special Manifolds,”
+JHEP 1406, 077 (2014) [arXiv:1309.0223 [hep-th]].
+[90] H. Lin, B. Wu and S. T. Yau, “Heterotic String Compactiﬁcation and New Vector Bundles,”
+arXiv:1412.8000 [hep-th].
+[91] C. Beasley and E. Witten, “Residues and world sheet instantons,” JHEP 0310, 065 (2003)
+[arXiv: hep-th/0304115].
+[92] C. Beasley and E. Witten, “New instanton eﬀects in string theory,” JHEP 0602, 060 (2006)
+[arXiv: hep-th/0512039].
+[93] E. Witten, “Nonperturbative superpotentials in string theory,” Nucl. Phys. B 474, 343 (1996)
+[arXiv: hep-th/9604030].
+[94] E. Witten, “Phases of N=2 theories in two-dimensions,” Nucl. Phys. B 403, 159 (1993) [arXiv:
+hep-th/9301042].
+[95] M. G. Eastwood, “The generalized Penrose-Ward Transform”, Math. Proc. Camb. Phil. Soc.
+97 (1985), 165.
+51
+=== PAGE 53 ===
+[96] J. Distler and B. R. Greene, “Aspects of (2,0) String Compactiﬁcations,” Nucl. Phys. B 304, 1
+(1988).
+52

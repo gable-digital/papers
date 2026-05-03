@@ -1,0 +1,100 @@
+{
+  "label": "p7_1b_omega_fix_converged_seeds",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 40000,
+  "k": 3,
+  "max_iter": 100,
+  "donaldson_tol": 1e-6,
+  "test_degree": 4,
+  "seeds": [
+    48879,
+    2,
+    12345,
+    51966,
+    4
+  ],
+  "per_seed": [
+    {
+      "seed": 48879,
+      "metric_iters": 20,
+      "metric_sigma_residual": 2.234987602209901,
+      "metric_seconds": 2.8520206,
+      "spectrum_seconds": 26.9663488,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lowest_trivial_eigenvalue": 0.3142220423625246,
+      "trivial_rep_purity": 0.25240950319927324,
+      "full_index": 1,
+      "residual_ppm_from_omega_fix": 366446.61377312115,
+      "final_donaldson_residual": 5.035780733095068e-7
+    },
+    {
+      "seed": 2,
+      "metric_iters": 20,
+      "metric_sigma_residual": 4.688080318168188,
+      "metric_seconds": 2.7859488,
+      "spectrum_seconds": 26.353077,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lowest_trivial_eigenvalue": 0.11518049255129195,
+      "trivial_rep_purity": 0.2666629051566193,
+      "full_index": 0,
+      "residual_ppm_from_omega_fix": 767766.1613599968,
+      "final_donaldson_residual": 5.391097534481399e-7
+    },
+    {
+      "seed": 12345,
+      "metric_iters": 20,
+      "metric_sigma_residual": 2.190705377292251,
+      "metric_seconds": 2.833593,
+      "spectrum_seconds": 24.7826824,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lowest_trivial_eigenvalue": 0.14240192779972738,
+      "trivial_rep_purity": 0.26298756379368593,
+      "full_index": 0,
+      "residual_ppm_from_omega_fix": 712880.6658997367,
+      "final_donaldson_residual": 5.497435891341326e-7
+    },
+    {
+      "seed": 51966,
+      "metric_iters": 18,
+      "metric_sigma_residual": 8.592876761270531,
+      "metric_seconds": 2.5897606,
+      "spectrum_seconds": 24.39135,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lowest_trivial_eigenvalue": 0.6362059291898482,
+      "trivial_rep_purity": 0.2440234463538685,
+      "full_index": 2,
+      "residual_ppm_from_omega_fix": 282756.6702364419,
+      "final_donaldson_residual": 5.687723724878089e-7
+    },
+    {
+      "seed": 4,
+      "metric_iters": 22,
+      "metric_sigma_residual": 4.236245280564614,
+      "metric_seconds": 3.010954,
+      "spectrum_seconds": 24.7168014,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lowest_trivial_eigenvalue": 0.09513847611003654,
+      "trivial_rep_purity": 0.2653894504592252,
+      "full_index": 0,
+      "residual_ppm_from_omega_fix": 808176.0806887068,
+      "final_donaldson_residual": 5.824215456566341e-7
+    }
+  ],
+  "aggregate": {
+    "n_seeds": 5,
+    "mean_lowest_trivial_eigenvalue": 0.26062977360268574,
+    "se_lowest_trivial_eigenvalue": 0.10159977026151074,
+    "std_lowest_trivial_eigenvalue": 0.2271839928030996,
+    "spread_pct": 207.60001652943768,
+    "mean_residual_ppm_from_omega_fix": 587605.2383916008,
+    "residual_of_mean_ppm": 474502.57029702386
+  },
+  "verdict": "FAILED — mean off ω_fix by >1% (framework gateway formula has a residual at this basis size) | mean=0.2606297736 ± 1.016e-1  spread=207.600%  mean-residual=587605.238 ppm  residual-of-mean=474502.570 ppm",
+  "total_elapsed_s": 141.3026491
+}

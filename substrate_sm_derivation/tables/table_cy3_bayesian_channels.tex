@@ -1,0 +1,21 @@
+% Multi-channel Bayes-factor discrimination Schoen-vs-TY (load-bearing publication number).
+% Source: book/scripts/cy3_substrate_discrimination/rust_solver/output/p8_1_bayes_multichannel.json
+\begin{table}[h]
+\centering
+\caption{Multi-channel Bayes factor for the substrate-CY3 hypothesis test, $k=3$, $n_{\rm pts}=25{,}000$ chain / $40{,}000$ $\sigma$, $20$ seeds. Sign convention: $\ln \mathrm{BF} > 0 \Leftrightarrow$ Tian--Yau favoured, $< 0 \Leftrightarrow$ Schoen favoured. The combined chain-channel result clears decisive Bayesian strength on the Kass--Raftery scale ($|\ln \mathrm{BF}| > 5$). The $\sigma$-channel is reported separately as discriminability and is excluded from the model-comparison Bayes factor (rationale and empirical defence: Tab.~\ref{tab:cy3-sigma-artifact}).}
+\label{tab:cy3-bayesian-channels}
+\begin{ruledtabular}
+\begin{tabular}{lccc}
+Channel & Likelihood & $\ln \mathrm{BF}_{\rm TY/Schoen}$ & $n_\sigma$-equivalent \\
+\hline
+$\mathrm{chain}_{\rm quark}$ ($\{m_b, m_s, m_d\}$) & log-$\chi^2$ to PDG & $-5.60$ & --- \\
+$\mathrm{chain}_{\rm lepton}$ ($\{m_\tau, m_\mu, m_e\}$) & log-$\chi^2$ to PDG & $-9.16$ & --- \\
+\hline
+\textbf{Combined (physics preference)} & --- & $\mathbf{-14.76}$ & $\mathbf{5.43\sigma}$ \\
+\textbf{Strength (Kass--Raftery)} & --- & \multicolumn{2}{c}{\textbf{Strong (Schoen-favoured)}} \\
+Posterior odds Schoen:TY & --- & \multicolumn{2}{c}{$2.6 \times 10^6 : 1$} \\
+\hline
+$\sigma$-channel (discriminability only; \emph{excluded from BF}) & Welch $t$ on $\sigma$-distribution & --- & $6.92\sigma$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}

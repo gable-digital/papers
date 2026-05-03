@@ -1,0 +1,68 @@
+================================================
+[RETRACTED] P6.3 chain-match result is retracted
+            per P6.3b — see references/p6_3_chain_match.md
+            Binary kept for diagnostic / re-runs only.
+================================================
+=== P7.2 chain-position eigenvalue clustering test ===
+  n_pts=40000  k=3  max_iter=100  seed=42
+  n_low=50  degrees=[3, 4, 5, 6]
+  assign=Hungarian  per-point time cap = 300s
+
+=== TY/Z3 metric solve (once for all degrees) ===
+  metric: iters=26 sigma=2.666e-1 t=29.0s
+  --- TY/Z3 | spectrum solve at deg=3 ---
+    basis_dim=164 elapsed=2.0s n_low_kept=50
+    chain=quark: matched=6 residual=17.4917 max_dev=8.2786
+    chain=lepton: matched=8 residual=33.2407 max_dev=10.4889
+  --- TY/Z3 | spectrum solve at deg=4 ---
+    basis_dim=494 elapsed=25.5s n_low_kept=50
+    chain=quark: matched=6 residual=5.5743 max_dev=3.9786
+    chain=lepton: matched=8 residual=12.6798 max_dev=6.1889
+  --- TY/Z3 | spectrum solve at deg=5 ---
+    basis_dim=1286 elapsed=482.5s n_low_kept=50
+    chain=quark: matched=6 residual=2.2124 max_dev=1.0797
+    chain=lepton: matched=8 residual=1.8668 max_dev=0.4680
+  TY/Z3 skipping degree 6 (previous degree exceeded time cap)
+
+=== Schoen/Z3xZ3 metric solve (once for all degrees) ===
+  metric: iters=30 sigma=8.195e0 t=5.8s
+  --- Schoen/Z3xZ3 | spectrum solve at deg=3 ---
+    basis_dim=164 elapsed=2.0s n_low_kept=50
+    chain=quark: matched=6 residual=10.2319 max_dev=6.0543
+    chain=lepton: matched=8 residual=20.6612 max_dev=8.2646
+  --- Schoen/Z3xZ3 | spectrum solve at deg=4 ---
+    basis_dim=494 elapsed=26.8s n_low_kept=50
+    chain=quark: matched=6 residual=15.2791 max_dev=7.7541
+    chain=lepton: matched=8 residual=30.2593 max_dev=9.9644
+  --- Schoen/Z3xZ3 | spectrum solve at deg=5 ---
+    basis_dim=1286 elapsed=553.9s n_low_kept=50
+    chain=quark: matched=6 residual=10.8543 max_dev=3.7555
+    chain=lepton: matched=8 residual=19.4048 max_dev=4.6225
+  Schoen/Z3xZ3 skipping degree 6 (previous degree exceeded time cap)
+
+=== P7.2 verdict ===
+  overall_converged = false
+  headline: [quark chain @ deg=5: Δ = + 8.642 (TY/Z3 wins) sign-agree=false stable=false] [lepton chain @ deg=5: Δ = + 17.538 (TY/Z3 wins) sign-agree=false stable=false] 
+  quark chain @ deg=3: TY=Some(17.491688951317975) Schoen=Some(10.231873178029586) Δ=Some(-7.2598157732883895) (Schoen wins)
+  quark chain @ deg=4: TY=Some(5.574328389499568) Schoen=Some(15.279082798743495) Δ=Some(9.704754409243927) (TY/Z3 wins)
+  quark chain @ deg=5: TY=Some(2.212445078773776) Schoen=Some(10.854308834896065) Δ=Some(8.641863756122289) (TY/Z3 wins)
+  quark chain @ deg=6: TY=None Schoen=None Δ=None (n/a)
+  lepton chain @ deg=3: TY=Some(33.2406778898719) Schoen=Some(20.661213980500925) Δ=Some(-12.579463909370972) (Schoen wins)
+  lepton chain @ deg=4: TY=Some(12.679806728535924) Schoen=Some(30.259294189543105) Δ=Some(17.579487461007183) (TY/Z3 wins)
+  lepton chain @ deg=5: TY=Some(1.866820892612096) Schoen=Some(19.404825261664293) Δ=Some(17.538004369052196) (TY/Z3 wins)
+  lepton chain @ deg=6: TY=None Schoen=None Δ=None (n/a)
+  candidate=TY/Z3 chain=quark stable=false converged_deg=None converged_res=None
+    NOTE: deg 3->4: residual 17.4917 -> 5.5743 (rel-Δ=0.681)
+    NOTE: deg 4->5: residual 5.5743 -> 2.2124 (rel-Δ=0.603)
+  candidate=TY/Z3 chain=lepton stable=false converged_deg=None converged_res=None
+    NOTE: deg 3->4: residual 33.2407 -> 12.6798 (rel-Δ=0.619)
+    NOTE: deg 4->5: residual 12.6798 -> 1.8668 (rel-Δ=0.853)
+  candidate=Schoen/Z3xZ3 chain=quark stable=false converged_deg=None converged_res=None
+    NOTE: deg 3->4: residual 10.2319 -> 15.2791 (rel-Δ=0.493)
+    NOTE: deg 4->5: residual 15.2791 -> 10.8543 (rel-Δ=0.290)
+  candidate=Schoen/Z3xZ3 chain=lepton stable=false converged_deg=None converged_res=None
+    NOTE: deg 3->4: residual 20.6612 -> 30.2593 (rel-Δ=0.465)
+    NOTE: deg 4->5: residual 30.2593 -> 19.4048 (rel-Δ=0.359)
+
+Wrote output/p7_2_chain_sweep.json
+Total elapsed: 1127.5s

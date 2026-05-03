@@ -1,0 +1,15 @@
+{
+  "seed": 137,
+  "k": 4,
+  "n_pts": 40000,
+  "n_basis": 27,
+  "iterations_run": 22,
+  "final_donaldson_residual": 6.284559013934793e-7,
+  "sigma_final": 2.6255106053014843,
+  "sigma_fs_identity": 1.7164982363605819,
+  "elapsed_s": 2.9460418,
+  "min_residual_iter": 21,
+  "min_residual": 6.284559013934793e-7,
+  "peak_after_min": 0.0,
+  "likely_guard_restored": false
+}

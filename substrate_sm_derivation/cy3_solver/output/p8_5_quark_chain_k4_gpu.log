@@ -1,0 +1,11 @@
+================================================
+[RETRACTED] P6.3 chain-match result is retracted
+            per P6.3b — see references/p6_3_chain_match.md
+            Binary kept for diagnostic / re-runs only.
+================================================
+=== P6.3b basis-size convergence sweep ===
+  n_pts=40000  k=4  max_iter=100  seed=12345
+  n_low=15  degrees=[2, 3, 4, 5, 6]  chain=quark (sqrt2)
+  per-point time cap = 1800s
+
+--- test_degree = 2 ---

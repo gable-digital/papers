@@ -1,0 +1,409 @@
+{
+  "label": "p5_9_ako_apples_to_apples",
+  "protocol": "Donaldson-only, ≤10 T-iters, Shiffman-Zelditch sampler. ABKO-protocol-matched.",
+  "n_pts": 1000000,
+  "seeds": [
+    42,
+    100,
+    12345,
+    7,
+    99,
+    1,
+    2,
+    3,
+    4,
+    5,
+    137,
+    271,
+    314,
+    666,
+    1000,
+    2024,
+    4242,
+    57005,
+    48879,
+    51966
+  ],
+  "donaldson_iters": 10,
+  "donaldson_tol": 1e-12,
+  "newton_tol": 1e-12,
+  "boot_resamples": 1000,
+  "boot_seed": 12345,
+  "sampler": "ShiffmanZelditch",
+  "ks": [
+    {
+      "k": 3,
+      "n_pts": 1000000,
+      "n_basis": 35,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        137,
+        271,
+        314,
+        666,
+        1000,
+        2024,
+        4242,
+        57005,
+        48879,
+        51966
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "elapsed_s": 12.435513,
+          "sigma_fs_identity": 0.1972954417987862,
+          "sigma_donaldson": 0.20115973849768537,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 100,
+          "elapsed_s": 12.2853645,
+          "sigma_fs_identity": 0.1972029398049785,
+          "sigma_donaldson": 0.20107764730400526,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 12345,
+          "elapsed_s": 13.1305912,
+          "sigma_fs_identity": 0.197029666966554,
+          "sigma_donaldson": 0.20088729356693044,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 7,
+          "elapsed_s": 12.447412,
+          "sigma_fs_identity": 0.19714697523395525,
+          "sigma_donaldson": 0.20102316128249517,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 99,
+          "elapsed_s": 12.4227534,
+          "sigma_fs_identity": 0.1971972735845546,
+          "sigma_donaldson": 0.20106579692113583,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 1,
+          "elapsed_s": 12.3868687,
+          "sigma_fs_identity": 0.19716172773644644,
+          "sigma_donaldson": 0.20104384529962788,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 2,
+          "elapsed_s": 12.3373549,
+          "sigma_fs_identity": 0.1970262529042639,
+          "sigma_donaldson": 0.2008893437629706,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 3,
+          "elapsed_s": 13.3699619,
+          "sigma_fs_identity": 0.19707831874581286,
+          "sigma_donaldson": 0.20094946697853744,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 4,
+          "elapsed_s": 13.035911,
+          "sigma_fs_identity": 0.19704648740584899,
+          "sigma_donaldson": 0.20091405628261136,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 5,
+          "elapsed_s": 12.4837519,
+          "sigma_fs_identity": 0.19738105515707974,
+          "sigma_donaldson": 0.20125188465336824,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 137,
+          "elapsed_s": 12.9600907,
+          "sigma_fs_identity": 0.1973001611326177,
+          "sigma_donaldson": 0.20117485334422727,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 271,
+          "elapsed_s": 12.9863395,
+          "sigma_fs_identity": 0.19723624426822942,
+          "sigma_donaldson": 0.20109608065728132,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 314,
+          "elapsed_s": 12.5004815,
+          "sigma_fs_identity": 0.19711486655007862,
+          "sigma_donaldson": 0.20098975571981276,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 666,
+          "elapsed_s": 12.3282226,
+          "sigma_fs_identity": 0.1972706373831964,
+          "sigma_donaldson": 0.20115310098160513,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 1000,
+          "elapsed_s": 12.2151852,
+          "sigma_fs_identity": 0.19704256311739257,
+          "sigma_donaldson": 0.2008962330990961,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 2024,
+          "elapsed_s": 12.4451181,
+          "sigma_fs_identity": 0.1971972125496226,
+          "sigma_donaldson": 0.201068962707653,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 4242,
+          "elapsed_s": 12.4717189,
+          "sigma_fs_identity": 0.1972451429701328,
+          "sigma_donaldson": 0.20111178083286443,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 57005,
+          "elapsed_s": 12.825754,
+          "sigma_fs_identity": 0.1974582489358118,
+          "sigma_donaldson": 0.20133428096657124,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 48879,
+          "elapsed_s": 12.4080208,
+          "sigma_fs_identity": 0.1969437226896494,
+          "sigma_donaldson": 0.20082824486749348,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 51966,
+          "elapsed_s": 13.0372076,
+          "sigma_fs_identity": 0.19751576950624533,
+          "sigma_donaldson": 0.20141891391018366,
+          "donaldson_iters_run": 10
+        }
+      ],
+      "donaldson": {
+        "name": "sigma_donaldson",
+        "n": 20,
+        "mean": 0.2010667220818078,
+        "std": 0.00015487364324257922,
+        "stderr": 0.000034630799421345804,
+        "percentile_ci_low": 0.20100660070830326,
+        "percentile_ci_high": 0.20113639037766484,
+        "bca_ci_low": 0.20100735869711886,
+        "bca_ci_high": 0.20113740548374173
+      },
+      "abko_comparison": {
+        "sigma_abko": 0.19777777777777772,
+        "rel_dev_from_mean": 0.016629493672062283,
+        "inside_percentile_ci": false,
+        "inside_bca_ci": false
+      }
+    },
+    {
+      "k": 4,
+      "n_pts": 1000000,
+      "n_basis": 70,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        137,
+        271,
+        314,
+        666,
+        1000,
+        2024,
+        4242,
+        57005,
+        48879,
+        51966
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "elapsed_s": 53.0687908,
+          "sigma_fs_identity": 0.1406126464257189,
+          "sigma_donaldson": 0.15008317198245746,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 100,
+          "elapsed_s": 53.4310799,
+          "sigma_fs_identity": 0.14047733969597306,
+          "sigma_donaldson": 0.14996688714810485,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 12345,
+          "elapsed_s": 53.6128976,
+          "sigma_fs_identity": 0.14037743058199548,
+          "sigma_donaldson": 0.14983492830657894,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 7,
+          "elapsed_s": 53.5015783,
+          "sigma_fs_identity": 0.14032361542441033,
+          "sigma_donaldson": 0.1498177900190621,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 99,
+          "elapsed_s": 53.8204345,
+          "sigma_fs_identity": 0.1405722940912286,
+          "sigma_donaldson": 0.1500461840824692,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 1,
+          "elapsed_s": 53.9021415,
+          "sigma_fs_identity": 0.14031539556704842,
+          "sigma_donaldson": 0.14982595606537408,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 2,
+          "elapsed_s": 54.0981893,
+          "sigma_fs_identity": 0.1403239970904424,
+          "sigma_donaldson": 0.14979063457673494,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 3,
+          "elapsed_s": 53.9509644,
+          "sigma_fs_identity": 0.1402831885537112,
+          "sigma_donaldson": 0.14976489256061518,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 4,
+          "elapsed_s": 53.6860654,
+          "sigma_fs_identity": 0.14025398520287538,
+          "sigma_donaldson": 0.14972943965800334,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 5,
+          "elapsed_s": 53.5927969,
+          "sigma_fs_identity": 0.14066024843164557,
+          "sigma_donaldson": 0.15014441644007517,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 137,
+          "elapsed_s": 54.6926959,
+          "sigma_fs_identity": 0.14062072513754686,
+          "sigma_donaldson": 0.15010419284505375,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 271,
+          "elapsed_s": 53.7750299,
+          "sigma_fs_identity": 0.1405482424679356,
+          "sigma_donaldson": 0.15001155866218438,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 314,
+          "elapsed_s": 53.7011215,
+          "sigma_fs_identity": 0.1404181173656714,
+          "sigma_donaldson": 0.14990576638999617,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 666,
+          "elapsed_s": 52.9575853,
+          "sigma_fs_identity": 0.14047525734316227,
+          "sigma_donaldson": 0.14998665991377919,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 1000,
+          "elapsed_s": 53.2322983,
+          "sigma_fs_identity": 0.14044184244971278,
+          "sigma_donaldson": 0.14988920847224932,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 2024,
+          "elapsed_s": 53.7078886,
+          "sigma_fs_identity": 0.1404896194890676,
+          "sigma_donaldson": 0.14996626587047246,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 4242,
+          "elapsed_s": 53.635678,
+          "sigma_fs_identity": 0.14060728343708384,
+          "sigma_donaldson": 0.15007931862609367,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 57005,
+          "elapsed_s": 53.8842941,
+          "sigma_fs_identity": 0.1407884882852805,
+          "sigma_donaldson": 0.15028316758618585,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 48879,
+          "elapsed_s": 53.2616284,
+          "sigma_fs_identity": 0.14021338095364042,
+          "sigma_donaldson": 0.14971865801896062,
+          "donaldson_iters_run": 10
+        },
+        {
+          "seed": 51966,
+          "elapsed_s": 53.1537446,
+          "sigma_fs_identity": 0.14078051040159595,
+          "sigma_donaldson": 0.15032495173513014,
+          "donaldson_iters_run": 10
+        }
+      ],
+      "donaldson": {
+        "name": "sigma_donaldson",
+        "n": 20,
+        "mean": 0.14996370244797902,
+        "std": 0.00017356756530017805,
+        "stderr": 0.00003881088747003318,
+        "percentile_ci_low": 0.14989100830429805,
+        "percentile_ci_high": 0.15004067530806103,
+        "bca_ci_low": 0.14989121611622294,
+        "bca_ci_high": 0.15004068072152027
+      },
+      "abko_comparison": {
+        "sigma_abko": 0.13828124999999997,
+        "rel_dev_from_mean": 0.08448327194018752,
+        "inside_percentile_ci": false,
+        "inside_bca_ci": false
+      }
+    }
+  ],
+  "total_elapsed_s": 1491.2371748,
+  "git_revision": "76ade905844e2ba4e840e99d61d36d2ab2682792"
+}

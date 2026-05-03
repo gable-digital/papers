@@ -1,0 +1,83 @@
+{
+  "discriminability": {
+    "sigma_n_schoen": 16,
+    "sigma_n_sigma": 6.921174630952159,
+    "sigma_n_ty": 20,
+    "sigma_pop_schoen": 3.2150116629942525,
+    "sigma_pop_ty": 0.0024689612236628955,
+    "sigma_t_statistic": -6.921174630952159
+  },
+  "p8_1e_note": "σ-channel is reported as discriminability only (|t|, n-σ). The model-comparison Bayes factor (`physics_preference.combined_log_bf`) excludes σ because the σ-gap is dominated by basis-size differences (n_TY=87 vs n_Schoen=27 at k=3), not by physics observables. See references/p5_10_5sigma_target.md for the full justification.",
+  "physics_preference": {
+    "channels": [
+      {
+        "log_bf_ty_vs_schoen": -5.601620003721262,
+        "n_observations": 5,
+        "name": "chain_quark",
+        "source": "output/p7_11_quark_chain.json"
+      },
+      {
+        "log_bf_ty_vs_schoen": -9.15661595836254,
+        "n_observations": 5,
+        "name": "chain_lepton",
+        "source": "output/p7_11_lepton_chain.json"
+      }
+    ],
+    "combined_log10_bf": -6.409420440959123,
+    "combined_log_bf": -14.758235962083802,
+    "combined_strength_label": "Strong",
+    "convention": "positive ln BF = TY-favored, negative = Schoen-favored",
+    "n_sigma_equivalent": 5.432906397515754,
+    "posterior_odds_ty": 3.8956466608787415e-7,
+    "verdict": "Schoen-favored"
+  },
+  "result": {
+    "channels": [
+      {
+        "for_combination": false,
+        "log_bf_ty_vs_schoen": 22.159569666839822,
+        "n_observations": 36,
+        "name": "sigma",
+        "source": "output/p5_10_ty_schoen_5sigma.json"
+      },
+      {
+        "for_combination": true,
+        "log_bf_ty_vs_schoen": -5.601620003721262,
+        "n_observations": 5,
+        "name": "chain_quark",
+        "source": "output/p7_11_quark_chain.json"
+      },
+      {
+        "for_combination": true,
+        "log_bf_ty_vs_schoen": -9.15661595836254,
+        "n_observations": 5,
+        "name": "chain_lepton",
+        "source": "output/p7_11_lepton_chain.json"
+      }
+    ],
+    "combined_log10_bf": -6.409420440959123,
+    "combined_log_bf": -14.758235962083802,
+    "combined_strength_label": "Strong",
+    "discriminability": {
+      "sigma_n_schoen": 16,
+      "sigma_n_sigma": 6.921174630952159,
+      "sigma_n_ty": 20,
+      "sigma_pop_schoen": 3.2150116629942525,
+      "sigma_pop_ty": 0.0024689612236628955,
+      "sigma_t_statistic": -6.921174630952159
+    },
+    "n_sigma_equivalent": 5.432906397515754,
+    "posterior_odds_ty": 3.8956466608787415e-7,
+    "total_observations": 46
+  },
+  "sigma_channel_breakdown": {
+    "k": 3,
+    "n_schoen": 16,
+    "n_ty": 20,
+    "pooled_sd": 0.8037531053518817,
+    "sigma_pop_schoen": 3.2150116629942525,
+    "sigma_pop_ty": 0.0024689612236628955,
+    "t_statistic": -6.921174630952159,
+    "total_log_bf": 22.159569666839822
+  }
+}

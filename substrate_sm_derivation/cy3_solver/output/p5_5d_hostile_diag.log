@@ -1,0 +1,54 @@
+[P5.5d hostile diag] starting…
+[P5.5d] Concern 1 — Schoen 5k iteration trace (seed=42, k=3, iter_cap=50, tol=1e-12)
+  σ_fs=1.599842 σ_last=2.659292 iters=50 final_res=2.607e-4 cond=6.616e0 det=6.314e-22 tr=27.000 max|im|=2.018e-1
+[P5.5d] Concern 1 — Schoen 5k iter_cap=500 (long-iter check)
+  σ_fs=1.599842 σ_last=2.605908 iters=500 final_res=6.491e-3 cond=6.693e0 det=1.667e-11
+[P5.5d] Concern 1 mirror — TY 5k (seed=42, k=3, iter_cap=50, tol=1e-12)
+  σ_fs=0.419866 σ_last=0.288457 iters=36 final_res=7.219e-13 cond=3.494e0 det=3.543e-11 tr=87.000
+[P5.5d] Concern 3 — Schoen P5.10 production (n_pts=25000, iter_cap=50, tol=1e-6, 20 seeds)
+  schoen seed=   42 σ_fs=1.7383 σ=2.3513 iters=22 res=7.517e-7 converged=true cond=7.80e1
+  schoen seed=  100 σ_fs=1.4668 σ=1.6429 iters=19 res=7.043e-7 converged=true cond=5.34e1
+  schoen seed=12345 σ_fs=1.5125 σ=1.8523 iters=24 res=7.546e-7 converged=true cond=5.69e2
+  schoen seed=    7 σ_fs=1.8554 σ=4.0148 iters=40 res=9.287e-7 converged=true cond=7.55e1
+  schoen seed=   99 σ_fs=2.2870 σ=6.2696 iters=50 res=2.389e-6 converged=false cond=2.03e1
+  schoen seed=    1 σ_fs=2.4212 σ=4.2832 iters=25 res=8.061e-7 converged=true cond=2.67e1
+  schoen seed=    2 σ_fs=2.0565 σ=5.4545 iters=50 res=1.906e-5 converged=false cond=1.56e1
+  schoen seed=    3 σ_fs=1.6820 σ=2.8918 iters=43 res=9.258e-7 converged=true cond=1.99e1
+  schoen seed=    4 σ_fs=1.7503 σ=5.9507 iters=24 res=7.845e-7 converged=true cond=2.79e1
+  schoen seed=    5 σ_fs=2.7816 σ=6.6875 iters=50 res=3.280e-2 converged=false cond=3.17e1
+  schoen seed=  137 σ_fs=1.5453 σ=3.6349 iters=50 res=8.509e-7 converged=true cond=2.32e1
+  schoen seed=  271 σ_fs=2.0664 σ=30241.0053 iters=50 res=1.221e1 converged=false cond=1.35e0
+  schoen seed=  314 σ_fs=2.2499 σ=3.3116 iters=28 res=6.855e-7 converged=true cond=5.64e1
+  schoen seed=  666 σ_fs=7.4292 σ=12.3086 iters=46 res=9.116e-7 converged=true cond=3.59e1
+  schoen seed= 1000 σ_fs=2.2465 σ=18.6373 iters=25 res=8.375e-7 converged=true cond=2.88e1
+  schoen seed= 2024 σ_fs=1.6611 σ=3.7364 iters=30 res=9.156e-7 converged=true cond=1.55e1
+  schoen seed= 4242 σ_fs=4.5168 σ=4.8511 iters=42 res=8.010e-7 converged=true cond=2.80e1
+  schoen seed=57005 σ_fs=2.0188 σ=7.9926 iters=50 res=2.809e-1 converged=false cond=1.34e1
+  schoen seed=48879 σ_fs=1.8446 σ=2.3777 iters=22 res=6.535e-7 converged=true cond=8.42e1
+  schoen seed=51966 σ_fs=4.8749 σ=6.4562 iters=18 res=9.343e-7 converged=true cond=2.53e2
+[P5.5d] Concern 3 mirror — TY P5.10 production (n_pts=25000, iter_cap=50, tol=1e-6, 20 seeds)
+  ty seed=   42 σ_fs=0.4143 σ=0.2716 iters=17 res=5.175e-7 converged=true
+  ty seed=  100 σ_fs=0.4149 σ=0.2596 iters=15 res=6.574e-7 converged=true
+  ty seed=12345 σ_fs=0.4190 σ=0.2717 iters=16 res=6.355e-7 converged=true
+  ty seed=    7 σ_fs=0.4195 σ=0.2736 iters=17 res=7.887e-7 converged=true
+  ty seed=   99 σ_fs=0.4076 σ=0.2645 iters=17 res=6.007e-7 converged=true
+  ty seed=    1 σ_fs=0.4032 σ=0.2654 iters=17 res=8.755e-7 converged=true
+  ty seed=    2 σ_fs=0.3990 σ=0.2690 iters=17 res=7.697e-7 converged=true
+  ty seed=    3 σ_fs=0.4061 σ=0.2668 iters=17 res=5.610e-7 converged=true
+  ty seed=    4 σ_fs=0.4041 σ=0.2636 iters=17 res=7.491e-7 converged=true
+  ty seed=    5 σ_fs=0.4273 σ=0.2717 iters=16 res=6.073e-7 converged=true
+  ty seed=  137 σ_fs=0.4121 σ=0.2690 iters=18 res=5.039e-7 converged=true
+  ty seed=  271 σ_fs=0.4056 σ=0.2656 iters=18 res=6.795e-7 converged=true
+  ty seed=  314 σ_fs=0.4120 σ=0.2749 iters=18 res=6.103e-7 converged=true
+  ty seed=  666 σ_fs=0.4198 σ=0.2725 iters=18 res=6.687e-7 converged=true
+  ty seed= 1000 σ_fs=0.4093 σ=0.2683 iters=18 res=6.101e-7 converged=true
+  ty seed= 2024 σ_fs=0.4087 σ=0.2667 iters=17 res=8.018e-7 converged=true
+  ty seed= 4242 σ_fs=0.4041 σ=0.2649 iters=16 res=5.423e-7 converged=true
+  ty seed=57005 σ_fs=0.4075 σ=0.2674 iters=18 res=5.653e-7 converged=true
+  ty seed=48879 σ_fs=0.4066 σ=0.2656 iters=17 res=5.825e-7 converged=true
+  ty seed=51966 σ_fs=0.4157 σ=0.2738 iters=18 res=5.730e-7 converged=true
+[P5.5d] Schoen summary: 15/20 converged, mean_iters=35.4, mean_res=6.264e-1, median_res=9.116e-7, ⟨σ⟩=1517.2855
+[P5.5d] TY     summary: 20/20 converged, mean_iters=17.1, mean_res=6.450e-7, median_res=6.103e-7, ⟨σ⟩=0.2683
+[P5.5d] Schoen extended-iter (seed=42, n_pts=25k, iter_cap=500, tol=1e-12)
+  iters=46 final_res=6.890e-13 σ_last=2.351260 cond=7.800e1 det=6.479e-5
+[P5.5d] wrote output/p5_5d_hostile_diag.json

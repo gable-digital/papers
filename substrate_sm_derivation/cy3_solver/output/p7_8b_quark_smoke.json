@@ -1,0 +1,52 @@
+{
+  "label": "p6_3b_basis_convergence_sweep",
+  "chain_type": "quark (sqrt2)",
+  "n_pts": 5000,
+  "k": 3,
+  "max_iter": 30,
+  "seed": 12345,
+  "n_low": 15,
+  "sweep_time_cap_s": 600.0,
+  "rows": [
+    {
+      "test_degree": 2,
+      "basis_dim": 18,
+      "ty_residual": 23.93953849574682,
+      "schoen_residual": 10.456208233402485,
+      "delta": -13.483330262344335,
+      "ty_seconds": 1.7492896999999998,
+      "schoen_seconds": 0.2229761,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 12,
+      "ty_metric_sigma": 0.2789040580662582,
+      "schoen_metric_iters": 14,
+      "schoen_metric_sigma": 1.6198431578465424
+    },
+    {
+      "test_degree": 3,
+      "basis_dim": 62,
+      "ty_residual": 24.49198279526425,
+      "schoen_residual": 18.307592100004058,
+      "delta": -6.184390695260191,
+      "ty_seconds": 1.4608832999999999,
+      "schoen_seconds": 0.2445325,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 12,
+      "ty_metric_sigma": 0.2789040580662582,
+      "schoen_metric_iters": 14,
+      "schoen_metric_sigma": 1.6198431578465424
+    }
+  ],
+  "converged": false,
+  "converged_test_degree": null,
+  "converged_ty_residual": null,
+  "converged_schoen_residual": null,
+  "converged_delta": null,
+  "convergence_notes": [
+    "deg 2->3: TY rel-Δ=0.023 Schoen rel-Δ=0.751 delta rel-Δ=0.541 sign-kept=true",
+    "No consecutive pair of degrees met the 10% convergence criterion."
+  ],
+  "total_elapsed_s": 3.6788823
+}

@@ -1,0 +1,57 @@
+{
+  "benchmark": "gpu_discrimination",
+  "device": "CUDA (default device 0)",
+  "runs": [
+    {
+      "problem": "medium",
+      "n_sample": 500,
+      "n_modes": 16,
+      "max_iter": 12,
+      "setup_ns": 329892700,
+      "device_bytes": 1512992,
+      "best_total_ns": 11199300,
+      "donaldson_iters": 12,
+      "yukawa_dominant_eigenvalue": 0.5207534252305974
+    },    {
+      "problem": "large",
+      "n_sample": 2000,
+      "n_modes": 16,
+      "max_iter": 12,
+      "setup_ns": 132457500,
+      "device_bytes": 5220992,
+      "best_total_ns": 12429700,
+      "donaldson_iters": 11,
+      "yukawa_dominant_eigenvalue": 0.4948037572500665
+    },    {
+      "problem": "xlarge",
+      "n_sample": 5000,
+      "n_modes": 16,
+      "max_iter": 12,
+      "setup_ns": 127020600,
+      "device_bytes": 12636992,
+      "best_total_ns": 17647200,
+      "donaldson_iters": 12,
+      "yukawa_dominant_eigenvalue": 0.4957463388006501
+    },    {
+      "problem": "xxlarge",
+      "n_sample": 10000,
+      "n_modes": 16,
+      "max_iter": 12,
+      "setup_ns": 115490500,
+      "device_bytes": 24996992,
+      "best_total_ns": 22335500,
+      "donaldson_iters": 10,
+      "yukawa_dominant_eigenvalue": 0.4940974687578801
+    },    {
+      "problem": "xxxlarge",
+      "n_sample": 20000,
+      "n_modes": 16,
+      "max_iter": 12,
+      "setup_ns": 119249700,
+      "device_bytes": 49716992,
+      "best_total_ns": 33048700,
+      "donaldson_iters": 9,
+      "yukawa_dominant_eigenvalue": 0.4951148595861065
+    }
+  ]
+}

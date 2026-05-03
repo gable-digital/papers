@@ -1,0 +1,25 @@
+% TY/Z3 Yukawa-bundle structural exclusion: nine-cycle hypothesis-test enumeration.
+% Source: book/scripts/cy3_substrate_discrimination/rust_solver/references/p_ty_bundle_research_log.md
+\begin{table}[h]
+\centering
+\caption{Structural exclusion of a working three-generation Standard-Model bundle on the closest competitor manifold Tian--Yau $\mathbb{Z}_3$ (bicubic CICY in $\mathbb{P}^3 \times \mathbb{P}^3$, $h^{1,1}=2$): nine-cycle empirical enumeration. Constraints applied per cycle, in chain: $c_1(V)=0$ \textsc{and} $\Sigma\,c_3(V)=\pm 18$ for three generations downstairs after the $\mathbb{Z}_3$ quotient \textsc{and} $\mathrm{ch}_2(V) \le \mathrm{ch}_2(TX)$ for anomaly cancellation \textsc{and} slope-stability via line-destabiliser test on the Kähler cone \textsc{and} balanced $1{:}1{:}1$ Wilson $\mathbb{Z}_3$ phase partition on $V$ \textsc{and} basis-rank $\ge 6$ for three-generation Yukawa population \textsc{and} Mumford--Takemoto SU(3) stability (Huybrechts--Lehn 2010 §1.2: $h^0(V) = 0$). Cycles run on monad bundles $V = \ker(B \to C)$ with $B, C$ line-bundle sums, bidegrees in $[-2,2]^2$. The cycle 1 line-bundle-sum exclusion empirically reproduces and extends Anderson--Gray--Lukas--Palti (arXiv:1202.1757) §5.3's published result that no phenomenologically viable model exists at $h^{1,1}\in\{2,3\}$ in their scan. No candidate survives all nine constraints simultaneously.}
+\label{tab:cy3-ty-exclusion}
+\begin{ruledtabular}
+\begin{tabular}{cllr}
+Cycle & Hypothesis (rank-3 SU(3) bundle on TY/$\mathbb{Z}_3$ bicubic) & Failure mode & Survivors \\
+\hline
+H1 & line-bundle sums, Wilson $1{:}1{:}1$, $c_3=\pm 18$        & polystability fails universally        & $0/{\sim}5.97\times 10^6$ \\
+H2 v1/v2 & monad $\ker(B\to C)$, weak polystability filter         & polystability under correct slope     & $0/-$ \\
+H3 & SU(4)/SO(10) rank-4 alternative embedding                & same polystability obstruction         & $0/{\sim}9 \times 10^4$ \\
+H2 v3 & monad, closed-negative-cone polystability               & (passes topological + summand-stable)  & $10/{\sim}3.78\times 10^6$ \\
+C4 & $V_{\min}$ wired ($\mathrm{rk}\,B = 4$)                  & basis-rank deficit; $3$ modes $\neq 9$ & $0$ (operationally) \\
+C5 & rank-$B \ge 6$ rescan                                   & (10 v3 candidates re-confirmed)        & $10$ \\
+C6 & $V_{\min 2}$ wired ($\mathrm{rk}\,B = 7$)                & $H^0$-seed empty on $\mathrm{neg}$. summands & $0$ (operationally) \\
+C7 & $H^0/H^1$ cohomology audit                              & (LES-collapse argument validates AKLP/Schoen) & --- \\
+\textbf{C8} & $V_{\min 2}$ mathematical falsification                  & $h^0(V) = \mathbb{C}^2 \neq 0$: violates Mumford--Takemoto & $\mathbf{0}$ \\
+\textbf{C9} & $H^0(V) = 0$ filter on cycle-5 v3 set                  & operationally infertile: $\Sigma h^0(B) = \Sigma h^1(B) = 0$ & $\mathbf{0/10}$ \\
+\hline
+\multicolumn{4}{l}{\textbf{Net empirical result:}\ no rank-3 SU(3) Yukawa-active SM monad bundle in scanned bidegree range.} \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}

@@ -1,0 +1,77 @@
+=== P5.10 TY-vs-Schoen 5σ-target ensemble (Path A: n_pts boost) ===
+n_pts=25000, ks=[3], seeds(n=20)=[42, 100, 12345, 7, 99, 1, 2, 3, 4, 5, 137, 271, 314, 666, 1000, 2024, 4242, 57005, 48879, 51966]
+Donaldson(50, 1e-6)  (no Adam refine — fair across candidates, matches P5.7)
+Bootstrap: n_resamples=1000, seed=12345
+
+--- TY k=3 (n_pts=25000) ---
+  [ 1/20] seed=    42: σ=0.271587  n_basis=  87  iters=17  (11.47s)
+  [ 2/20] seed=   100: σ=0.259585  n_basis=  87  iters=15  (10.50s)
+  [ 3/20] seed= 12345: σ=0.271686  n_basis=  87  iters=16  (11.04s)
+  [ 4/20] seed=     7: σ=0.273570  n_basis=  87  iters=17  (11.64s)
+  [ 5/20] seed=    99: σ=0.264451  n_basis=  87  iters=17  (11.50s)
+  [ 6/20] seed=     1: σ=0.265389  n_basis=  87  iters=17  (11.52s)
+  [ 7/20] seed=     2: σ=0.268972  n_basis=  87  iters=17  (11.06s)
+  [ 8/20] seed=     3: σ=0.266850  n_basis=  87  iters=17  (11.32s)
+  [ 9/20] seed=     4: σ=0.263645  n_basis=  87  iters=17  (10.75s)
+  [10/20] seed=     5: σ=0.271740  n_basis=  87  iters=16  (15.17s)
+  [11/20] seed=   137: σ=0.268973  n_basis=  87  iters=18  (11.72s)
+  [12/20] seed=   271: σ=0.265592  n_basis=  87  iters=18  (11.81s)
+  [13/20] seed=   314: σ=0.274864  n_basis=  87  iters=18  (12.18s)
+  [14/20] seed=   666: σ=0.272484  n_basis=  87  iters=18  (11.85s)
+  [15/20] seed=  1000: σ=0.268305  n_basis=  87  iters=18  (11.70s)
+  [16/20] seed=  2024: σ=0.266727  n_basis=  87  iters=17  (11.30s)
+  [17/20] seed=  4242: σ=0.264896  n_basis=  87  iters=16  (10.32s)
+  [18/20] seed= 57005: σ=0.267388  n_basis=  87  iters=18  (11.70s)
+  [19/20] seed= 48879: σ=0.265636  n_basis=  87  iters=17  (11.07s)
+  [20/20] seed= 51966: σ=0.273837  n_basis=  87  iters=18  (12.20s)
+  Stats:
+                   sigma_ty_k3: mean=0.268309 std=4.0155e-3 stderr=8.9790e-4  pct95=[0.266651, 0.270019]  bca95=[0.266601, 0.269902]
+
+--- Schoen k=3 (n_pts=25000) ---
+  [ 1/20] seed=    42: σ=2.351259  n_basis=  27  iters=22  (1.81s)
+  [ 2/20] seed=   100: σ=1.642914  n_basis=  27  iters=19  (1.92s)
+  [ 3/20] seed= 12345: σ=1.852255  n_basis=  27  iters=24  (1.93s)
+  [ 4/20] seed=     7: σ=4.014757  n_basis=  27  iters=40  (3.19s)
+  [ 5/20] seed=    99: σ=6.269586  n_basis=  27  iters=50  (4.24s)
+  [ 6/20] seed=     1: σ=4.283197  n_basis=  27  iters=25  (2.00s)
+  [ 7/20] seed=     2: σ=5.266519  n_basis=  27  iters= 3  (0.46s)
+  [ 8/20] seed=     3: σ=2.891762  n_basis=  27  iters=43  (3.69s)
+  [ 9/20] seed=     4: σ=5.950720  n_basis=  27  iters=24  (1.93s)
+  [10/20] seed=     5: σ=6.780186  n_basis=  27  iters= 2  (0.39s)
+  [11/20] seed=   137: σ=3.634904  n_basis=  27  iters=50  (4.21s)
+  [12/20] seed=   271: σ=4.666330  n_basis=  27  iters= 4  (0.53s)
+  [13/20] seed=   314: σ=3.311565  n_basis=  27  iters=28  (2.27s)
+  [14/20] seed=   666: σ=12.308616  n_basis=  27  iters=46  (3.90s)
+  [15/20] seed=  1000: σ=15.530038  n_basis=  27  iters= 5  (0.61s)
+  [16/20] seed=  2024: σ=3.663598  n_basis=  27  iters= 9  (0.89s)
+  [17/20] seed=  4242: σ=4.851141  n_basis=  27  iters=42  (3.42s)
+  [18/20] seed= 57005: σ=9.263222  n_basis=  27  iters= 4  (0.66s)
+  [19/20] seed= 48879: σ=2.377675  n_basis=  27  iters=22  (1.76s)
+  [20/20] seed= 51966: σ=6.456220  n_basis=  27  iters=18  (1.53s)
+  Stats:
+               sigma_schoen_k3: mean=5.368323 std=3.5189e0 stderr=7.8685e-1  pct95=[4.056109, 6.952536]  bca95=[4.174567, 7.189128]
+
+=== n-σ discrimination summary (P5.10) ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |
+|----|------------|------------|------------|------------|------------|------------|----------|
+|  3 |   0.268309 |  8.9790e-4 |   5.368323 |  7.8685e-1 |  -5.100014 |  7.8685e-1 |    6.482 |
+
+max n-σ = 6.482 at k=3  →  5σ DISCRIMINATION ACHIEVED ON σ ALONE — project goal MET
+P5.7 baseline (n_pts=10000, k=3): n-σ = 4.854.  P5.10 (n_pts=25000, k=3): n-σ = 6.482.
+
+=== balanced-only subset (iters >= 10) — Concern B re-analysis ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |  n_TY |  n_Sc |
+|----|------------|------------|------------|------------|------------|------------|----------|-------|-------|
+|  3 |   0.268309 |  8.9790e-4 |   4.442612 |  7.3917e-1 |  -4.174304 |  7.3917e-1 |    5.647 |    20 |    14 |
+
+=== early-bail seeds (iters < 10) — final σ vs FS-identity σ ===
+| candidate |   seed | iters |    σ_final |  σ_fs_identity |   rel_diff |
+|----------|--------|-------|------------|----------------|------------|
+|   Schoen |      2 |     3 |   5.266519 |       2.056473 |    +1.5609 |
+|   Schoen |      5 |     2 |   6.780186 |       2.781554 |    +1.4376 |
+|   Schoen |    271 |     4 |   4.666330 |       2.066353 |    +1.2582 |
+|   Schoen |   1000 |     5 |  15.530038 |       2.246514 |    +5.9129 |
+|   Schoen |   2024 |     9 |   3.663598 |       1.661146 |    +1.2055 |
+|   Schoen |  57005 |     4 |   9.263222 |       2.018786 |    +3.5885 |
+=== total elapsed: 273.2s ===
+Wrote output/p5_10_ty_schoen_5sigma.json

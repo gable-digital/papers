@@ -1,0 +1,84 @@
+================================================
+[RETRACTED] P6.3 chain-match result is retracted
+            per P6.3b — see references/p6_3_chain_match.md
+            Binary kept for diagnostic / re-runs only.
+================================================
+=== P6.3b basis-size convergence sweep ===
+  n_pts=25000  k=3  max_iter=100  seed=12345
+  n_low=15  degrees=[2, 3, 4, 5]  chain=lepton (phi)
+  per-point time cap = 7200s
+
+--- test_degree = 2 ---
+  metric: iters=16 sigma=2.717e-1 t=18.8s
+  spectrum: basis_dim=18 t=0.05s
+  λ[0..10] = 1.0096e0 1.4396e0 1.5518e0 1.9301e0 2.4562e0 2.8778e0 3.1832e0 3.3762e0 3.5529e0 3.6215e0 
+  chain-match: matched=8  residual_log=43.861925  max_dev=11.718827
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 1.0096e0 3.5529e0 3.6215e0 3.7140e0 3.9245e0 4.0288e0 5.5197e0 5.8393e0 
+  metric: iters=24 sigma=1.852e0 t=5.6s
+  spectrum: basis_dim=13 t=0.04s
+  λ[0..10] = 1.3881e0 2.3538e0 3.6832e0 4.8567e0 7.1885e0 9.4281e0 1.3266e1 1.7197e1 2.3428e1 3.4404e1 
+  chain-match: matched=8  residual_log=31.085288  max_dev=8.876583
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 1.3881e0 1.3266e1 1.7197e1 2.3428e1 3.4404e1 4.8933e1 6.4596e1 1.3773e2 
+  >>> deg=2 basis_dim=18 TY=Some(43.86192507138603) Schoen=Some(31.085287799171653) delta=Some(-12.77663727221438)
+
+--- test_degree = 3 ---
+  metric: iters=16 sigma=2.717e-1 t=17.6s
+  spectrum: basis_dim=62 t=0.32s
+  λ[0..10] = 9.5260e-1 1.3500e0 1.4946e0 1.8168e0 2.3126e0 2.6523e0 2.8881e0 3.0669e0 3.2252e0 3.2361e0 
+  chain-match: matched=8  residual_log=44.688639  max_dev=11.995971
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 9.5260e-1 3.2252e0 3.2361e0 3.3763e0 3.4860e0 3.5642e0 3.8803e0 4.1762e0 
+  metric: iters=24 sigma=1.852e0 t=5.0s
+  spectrum: basis_dim=44 t=0.21s
+  λ[0..10] = 5.9811e-1 1.6508e0 1.9659e0 2.9466e0 3.6908e0 4.3652e0 5.2183e0 6.0360e0 7.3067e0 7.8811e0 
+  chain-match: matched=8  residual_log=33.354900  max_dev=10.144082
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 5.9811e-1 7.3067e0 7.8811e0 1.0233e1 1.1839e1 1.3052e1 1.4996e1 1.6708e1 
+  >>> deg=3 basis_dim=62 TY=Some(44.68863901896731) Schoen=Some(33.35489954090536) delta=Some(-11.33373947806195)
+
+--- test_degree = 4 ---
+  metric: iters=16 sigma=2.717e-1 t=17.4s
+  spectrum: basis_dim=178 t=2.28s
+  λ[0..10] = 9.0309e-1 1.2707e0 1.4267e0 1.7036e0 2.2133e0 2.5274e0 2.7056e0 2.8724e0 3.0699e0 3.0902e0 
+  chain-match: matched=8  residual_log=44.726279  max_dev=12.033167
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 9.0309e-1 3.0699e0 3.0902e0 3.1811e0 3.3175e0 3.3709e0 3.6530e0 3.8146e0 
+  metric: iters=24 sigma=1.852e0 t=5.6s
+  spectrum: basis_dim=119 t=1.12s
+  λ[0..10] = 1.7001e-1 4.5928e-1 8.8456e-1 1.2618e0 2.3638e0 2.8928e0 3.2351e0 3.6725e0 4.4294e0 4.8614e0 
+  chain-match: matched=8  residual_log=29.399862  max_dev=9.669566
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 1.7001e-1 2.8928e0 4.8614e0 5.2503e0 6.5311e0 6.8220e0 7.1097e0 7.6328e0 
+  >>> deg=4 basis_dim=178 TY=Some(44.726278970390524) Schoen=Some(29.399862066942937) delta=Some(-15.326416903447587)
+
+--- test_degree = 5 ---
+  metric: iters=16 sigma=2.717e-1 t=15.3s
+  spectrum: basis_dim=450 t=16.07s
+  λ[0..10] = 7.9033e-1 1.0932e0 1.2517e0 1.4766e0 2.0044e0 2.4129e0 2.5908e0 2.7458e0 2.9302e0 2.9704e0 
+  chain-match: matched=8  residual_log=44.130560  max_dev=11.948582
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 7.9033e-1 2.9302e0 2.9704e0 3.0566e0 3.1701e0 3.2347e0 3.3844e0 3.6329e0 
+  metric: iters=24 sigma=1.852e0 t=2.5s
+  spectrum: basis_dim=285 t=7.90s
+  λ[0..10] = 5.3390e-2 1.1078e-1 2.2592e-1 3.5239e-1 8.7725e-1 1.0657e0 1.2797e0 1.6624e0 1.8101e0 2.3714e0 
+  chain-match: matched=8  residual_log=25.817328  max_dev=8.985597
+  predicted exps = 1 7 11 13 17 19 23 29 
+  assigned λ      = 5.3390e-2 8.7725e-1 2.3714e0 2.7912e0 3.8146e0 4.1348e0 4.4462e0 4.7503e0 
+  >>> deg=5 basis_dim=450 TY=Some(44.13056004689018) Schoen=Some(25.8173281301651) delta=Some(-18.31323191672508)
+
+=== Convergence verdict ===
+  converged = false
+  No converged value. Sweep results:
+    deg=2 basis_dim=18 TY=Some(43.86192507138603) Schoen=Some(31.085287799171653) delta=Some(-12.77663727221438)
+    deg=3 basis_dim=62 TY=Some(44.68863901896731) Schoen=Some(33.35489954090536) delta=Some(-11.33373947806195)
+    deg=4 basis_dim=178 TY=Some(44.726278970390524) Schoen=Some(29.399862066942937) delta=Some(-15.326416903447587)
+    deg=5 basis_dim=450 TY=Some(44.13056004689018) Schoen=Some(25.8173281301651) delta=Some(-18.31323191672508)
+  NOTE: deg 2->3: TY rel-Δ=0.019 Schoen rel-Δ=0.073 delta rel-Δ=0.113 sign-kept=true
+  NOTE: deg 3->4: TY rel-Δ=0.001 Schoen rel-Δ=0.119 delta rel-Δ=0.352 sign-kept=true
+  NOTE: deg 4->5: TY rel-Δ=0.013 Schoen rel-Δ=0.122 delta rel-Δ=0.195 sign-kept=true
+  NOTE: No consecutive pair of degrees met the 10% convergence criterion.
+
+Wrote output/p7_11_lepton_chain.json
+Total elapsed: 116.9s

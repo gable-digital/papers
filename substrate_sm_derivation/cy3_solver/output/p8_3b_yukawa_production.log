@@ -1,0 +1,59 @@
+=== P8.3 Yukawa production sweep ===
+n_pts=25000, k=3, iter_cap=100, donaldson_tol=1e-6, seed=12345
+PDG 2024 reference (MeV):
+     m_e = 5.109990e-1
+    m_mu = 1.056584e2
+   m_tau = 1.776860e3
+     m_u = 2.160000e0
+     m_d = 4.670000e0
+     m_s = 9.340000e1
+     m_c = 1.273000e3
+     m_b = 4.183000e3
+     m_t = 1.725700e5
+
+--- TY/Z3 ---
+
+=== TY/Z3 ===
+  status: OK
+  |   name | predicted(MeV) |       PDG(MeV) |  residual(ppm) |         χ² |
+  |    m_e |     0.000000e0 |    5.109990e-1 |       -1.000e6 |   1.020e25 |
+  |   m_mu |     0.000000e0 |     1.056584e2 |       -1.000e6 |   2.110e15 |
+  |  m_tau |     0.000000e0 |     1.776860e3 |       -1.000e6 |    2.193e8 |
+  |    m_u |     0.000000e0 |     2.160000e0 |       -1.000e6 |    3.318e1 |
+  |    m_d |     0.000000e0 |     4.670000e0 |       -1.000e6 |    2.091e2 |
+  |    m_s |     0.000000e0 |     9.340000e1 |       -1.000e6 |    2.428e2 |
+  |    m_c |     0.000000e0 |     1.273000e3 |       -1.000e6 |    7.658e4 |
+  |    m_b |     0.000000e0 |     4.183000e3 |       -1.000e6 |    3.571e5 |
+  |    m_t |     1.407813e4 |     1.725700e5 |       -9.184e5 |    2.987e5 |
+  χ²(masses)=1.020e25  χ²(total,13dof)=1.020e25  log_L = -χ²/2 = -5.100e24
+  log-χ²(masses)=8.382e6  log_L_from_log_chi2 = -4.191e6
+  log-χ² per particle: m_e=1.000e6 m_mu=1.000e6 m_tau=1.000e6 m_u=1.000e6 m_d=1.000e6 m_s=1.000e6 m_c=1.000e6 m_b=1.000e6 m_t=3.817e5
+  hym_res=4.245e0  coh_dim observed/predicted=9/9
+  metric_solve = 13.2s, yukawa = 0.4s
+
+--- Schoen/Z3xZ3 ---
+  Schoen pipeline auto-applied kernel_dim_target=Some(9) fallback (BBW prediction was 0 on 3-factor ambient).
+
+=== Schoen/Z3xZ3 ===
+  status: OK
+  |   name | predicted(MeV) |       PDG(MeV) |  residual(ppm) |         χ² |
+  |    m_e |     0.000000e0 |    5.109990e-1 |       -1.000e6 |   1.020e25 |
+  |   m_mu |     0.000000e0 |     1.056584e2 |       -1.000e6 |   2.110e15 |
+  |  m_tau |     0.000000e0 |     1.776860e3 |       -1.000e6 |    2.193e8 |
+  |    m_u |     0.000000e0 |     2.160000e0 |       -1.000e6 |    3.318e1 |
+  |    m_d |     0.000000e0 |     4.670000e0 |       -1.000e6 |    2.091e2 |
+  |    m_s |     0.000000e0 |     9.340000e1 |       -1.000e6 |    2.428e2 |
+  |    m_c |     0.000000e0 |     1.273000e3 |       -1.000e6 |    7.658e4 |
+  |    m_b |     0.000000e0 |     4.183000e3 |       -1.000e6 |    3.571e5 |
+  |    m_t |     4.910614e4 |     1.725700e5 |       -7.154e5 |    1.813e5 |
+  χ²(masses)=1.020e25  χ²(total,13dof)=1.020e25  log_L = -χ²/2 = -5.100e24
+  log-χ²(masses)=8.096e6  log_L_from_log_chi2 = -4.048e6
+  log-χ² per particle: m_e=1.000e6 m_mu=1.000e6 m_tau=1.000e6 m_u=1.000e6 m_d=1.000e6 m_s=1.000e6 m_c=1.000e6 m_b=1.000e6 m_t=9.600e4
+  hym_res=5.158e0  coh_dim observed/predicted=9/0
+  metric_solve = 2.3s, yukawa = 0.5s
+
+=== Discrimination ===
+  Schoen/Z3xZ3 fits PDG better than TY/Z3 (log-χ² channel): Δ log L = -1.429e5, n-σ ≈ 534.538
+
+=== Total elapsed: 16.6s ===
+Wrote output/p8_3b_yukawa_production.json

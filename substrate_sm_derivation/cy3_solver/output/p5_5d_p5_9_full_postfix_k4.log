@@ -1,0 +1,36 @@
+=== P5.9 ABKO apples-to-apples comparison ===
+n_pts=1000000, ks=[4], n_seeds=20, donaldson_iters_cap=50 (tol=1e-12)
+Protocol: Donaldson-only (NO sigma_refine_analytic), Shiffman-Zelditch sampler.
+
+--- Profiling pass: k=4, n_pts=1000000, seed=42 ---
+  Profiling: σ_FS=0.140613, σ_D=0.130384 (33 iters), elapsed=159.51s
+  Estimated total wallclock for full sweep (20 seeds × 1 k-values): 3190.3s = 53.17 min = 0.89 hr
+--- k=4 (n_basis=70, n_pts=1000000) ---
+  [ 1/20] seed=    42: σ_FS=0.140613  σ_D=0.130384  iters=33 (158.90s) [reused profile]
+  [ 2/20] seed=   100: σ_FS=0.140477  σ_D=0.130238  iters=34 (161.58s)
+  [ 3/20] seed= 12345: σ_FS=0.140377  σ_D=0.130175  iters=34 (162.76s)
+  [ 4/20] seed=     7: σ_FS=0.140324  σ_D=0.130084  iters=34 (159.51s)
+  [ 5/20] seed=    99: σ_FS=0.140572  σ_D=0.130356  iters=34 (168.52s)
+  [ 6/20] seed=     1: σ_FS=0.140315  σ_D=0.130052  iters=34 (160.34s)
+  [ 7/20] seed=     2: σ_FS=0.140324  σ_D=0.130124  iters=34 (167.62s)
+  [ 8/20] seed=     3: σ_FS=0.140283  σ_D=0.130062  iters=34 (164.91s)
+  [ 9/20] seed=     4: σ_FS=0.140254  σ_D=0.130014  iters=34 (163.70s)
+  [10/20] seed=     5: σ_FS=0.140660  σ_D=0.130419  iters=34 (221.22s)
+  [11/20] seed=   137: σ_FS=0.140621  σ_D=0.130394  iters=34 (187.03s)
+  [12/20] seed=   271: σ_FS=0.140548  σ_D=0.130337  iters=34 (161.20s)
+  [13/20] seed=   314: σ_FS=0.140418  σ_D=0.130190  iters=34 (178.45s)
+  [14/20] seed=   666: σ_FS=0.140475  σ_D=0.130201  iters=34 (161.21s)
+  [15/20] seed=  1000: σ_FS=0.140442  σ_D=0.130255  iters=34 (173.49s)
+  [16/20] seed=  2024: σ_FS=0.140490  σ_D=0.130266  iters=34 (190.28s)
+  [17/20] seed=  4242: σ_FS=0.140607  σ_D=0.130381  iters=34 (212.85s)
+  [18/20] seed= 57005: σ_FS=0.140788  σ_D=0.130534  iters=34 (162.74s)
+  [19/20] seed= 48879: σ_FS=0.140213  σ_D=0.129966  iters=34 (159.80s)
+  [20/20] seed= 51966: σ_FS=0.140781  σ_D=0.130499  iters=34 (161.69s)
+  Stats:
+           sigma_donaldson: mean=0.130247 std=1.6421e-4 stderr=3.6719e-5  pct95=[0.130178, 0.130317]  bca95=[0.130175, 0.130315]
+  ABKO 2010: σ_ABKO(4) = 0.138281, rel_dev_from_mean = -0.0581
+    inside percentile 95% CI: false, inside BCa 95% CI: false
+
+=== total elapsed: 3285.6s (54.76 min) ===
+Wrote output/p5_5d_p5_9_full_postfix_k4.json
+Wrote references/p5_5d_p5_9_full_postfix_k4.md

@@ -1,0 +1,154 @@
+{
+  "label": "p5_9_ako_apples_to_apples",
+  "protocol": "Donaldson-only, ≤50 T-iters, Shiffman-Zelditch sampler. ABKO-protocol-matched.",
+  "n_pts": 200000,
+  "seeds": [
+    42,
+    100,
+    12345,
+    7,
+    99
+  ],
+  "donaldson_iters": 50,
+  "donaldson_tol": 1e-12,
+  "newton_tol": 1e-12,
+  "boot_resamples": 1000,
+  "boot_seed": 12345,
+  "sampler": "ShiffmanZelditch",
+  "ks": [
+    {
+      "k": 3,
+      "n_pts": 200000,
+      "n_basis": 35,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "elapsed_s": 6.0397269,
+          "sigma_fs_identity": 0.19735711129744954,
+          "sigma_donaldson": 0.19332013761052813,
+          "donaldson_iters_run": 28
+        },
+        {
+          "seed": 100,
+          "elapsed_s": 6.021442,
+          "sigma_fs_identity": 0.19715499255420074,
+          "sigma_donaldson": 0.19316733239710196,
+          "donaldson_iters_run": 28
+        },
+        {
+          "seed": 12345,
+          "elapsed_s": 6.0884257,
+          "sigma_fs_identity": 0.19748451230901926,
+          "sigma_donaldson": 0.19347800677126675,
+          "donaldson_iters_run": 28
+        },
+        {
+          "seed": 7,
+          "elapsed_s": 6.4609997,
+          "sigma_fs_identity": 0.19654130922251692,
+          "sigma_donaldson": 0.1926767336475991,
+          "donaldson_iters_run": 29
+        },
+        {
+          "seed": 99,
+          "elapsed_s": 6.0361581,
+          "sigma_fs_identity": 0.1983268211711573,
+          "sigma_donaldson": 0.19437310505654104,
+          "donaldson_iters_run": 28
+        }
+      ],
+      "donaldson": {
+        "name": "sigma_donaldson",
+        "n": 5,
+        "mean": 0.1934030630966074,
+        "std": 0.0006197979561580632,
+        "stderr": 0.0002771820724569727,
+        "percentile_ci_low": 0.19296566906491844,
+        "percentile_ci_high": 0.1939519180781359,
+        "bca_ci_low": 0.1929710928973008,
+        "bca_ci_high": 0.19396591943800812
+      },
+      "abko_comparison": {
+        "sigma_abko": 0.19777777777777772,
+        "rel_dev_from_mean": -0.022119343893557786,
+        "inside_percentile_ci": false,
+        "inside_bca_ci": false
+      }
+    },
+    {
+      "k": 4,
+      "n_pts": 200000,
+      "n_basis": 70,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "elapsed_s": 33.2503487,
+          "sigma_fs_identity": 0.14052738994955957,
+          "sigma_donaldson": 0.13032051156960503,
+          "donaldson_iters_run": 35
+        },
+        {
+          "seed": 100,
+          "elapsed_s": 32.8470882,
+          "sigma_fs_identity": 0.1405790096262153,
+          "sigma_donaldson": 0.13045951339140852,
+          "donaldson_iters_run": 35
+        },
+        {
+          "seed": 12345,
+          "elapsed_s": 33.42177,
+          "sigma_fs_identity": 0.1409271497924407,
+          "sigma_donaldson": 0.1307672525106167,
+          "donaldson_iters_run": 35
+        },
+        {
+          "seed": 7,
+          "elapsed_s": 33.4697245,
+          "sigma_fs_identity": 0.13997225943745897,
+          "sigma_donaldson": 0.1300950917963837,
+          "donaldson_iters_run": 35
+        },
+        {
+          "seed": 99,
+          "elapsed_s": 35.7861078,
+          "sigma_fs_identity": 0.1417973335489416,
+          "sigma_donaldson": 0.131688353870584,
+          "donaldson_iters_run": 35
+        }
+      ],
+      "donaldson": {
+        "name": "sigma_donaldson",
+        "n": 5,
+        "mean": 0.13066614462771958,
+        "std": 0.0006211671584684681,
+        "stderr": 0.00027779439834517574,
+        "percentile_ci_low": 0.1302581440246772,
+        "percentile_ci_high": 0.1311968176789138,
+        "bca_ci_low": 0.1302859443890379,
+        "bca_ci_high": 0.13125836550275544
+      },
+      "abko_comparison": {
+        "sigma_abko": 0.13828124999999997,
+        "rel_dev_from_mean": -0.055069688567903355,
+        "inside_percentile_ci": false,
+        "inside_bca_ci": false
+      }
+    }
+  ],
+  "total_elapsed_s": 193.6816129,
+  "git_revision": "e26103488a79108faa35ea6e26ae95a42cbd0953"
+}

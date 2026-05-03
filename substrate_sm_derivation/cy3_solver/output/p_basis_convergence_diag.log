@@ -1,0 +1,157 @@
+warning: unused import: `num_complex::Complex64`
+    --> src\pipeline.rs:1545:9
+     |
+1545 |     use num_complex::Complex64;
+     |         ^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `in_e8_root_lattice`
+   --> src\route34\wilson_line_e8_z3xz3.rs:104:48
+    |
+104 | use crate::route34::wilson_line_e8::{e8_roots, in_e8_root_lattice, WilsonLineE8};
+    |                                                ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `cudarc::driver::sys::CUstream`
+  --> src\gpu.rs:12:5
+   |
+12 | use cudarc::driver::sys::CUstream;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+   --> src\route34\eta_evaluator.rs:396:34
+    |
+396 |     let visible = VisibleBundle::ty_aglp_2011_standard();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+   --> src\route34\eta_evaluator.rs:575:34
+    |
+575 |     let visible = VisibleBundle::schoen_dhor_2006_minimal();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+    --> src\route34\eta_evaluator.rs:1054:24
+     |
+1054 |         VisibleBundle::ty_aglp_2011_standard(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+    --> src\route34\eta_evaluator.rs:1080:24
+     |
+1080 |         VisibleBundle::schoen_dhor_2006_minimal(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2440:31
+     |
+2440 |             let zr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2441:31
+     |
+2441 |             let zi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2442:31
+     |
+2442 |             let wr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2443:31
+     |
+2443 |             let wi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: unused import: `Deserialize`
+  --> src\route34\metric_cache.rs:60:13
+   |
+60 | use serde::{Deserialize, Serialize};
+   |             ^^^^^^^^^^^
+
+warning: function `lm_divides` is never used
+   --> src\route34\groebner.rs:354:4
+    |
+354 | fn lm_divides(divisor: &Polynomial, target: &Polynomial) -> bool {
+    |    ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `integrate_tr_f_squared_wedge_J` should have a snake case name
+   --> src\route34\chern_field_strength.rs:188:8
+    |
+188 | pub fn integrate_tr_f_squared_wedge_J<B: Bundle>(
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `integrate_tr_f_squared_wedge_j`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: `cy3_rust_solver` (lib) generated 14 warnings (run `cargo fix --lib -p cy3_rust_solver` to apply 3 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.07s
+     Running `target\release\p_basis_convergence_diag.exe --n-pts 10000 --donaldson-iters 25 --seeds 42,100,12345,7,99 --csv-output output/p_basis_convergence_diag.csv --json-output output/p_basis_convergence_diag.json`
+=== P-BASIS-CONV diagnostic ===
+n_pts = 10000
+donaldson_iters = 25
+donaldson_tol   = 0.001
+seeds           = [42, 100, 12345, 7, 99]
+use_gpu         = false
+
+>>> Experiment A: matched-basis-size σ at k=3
+[exp A] native sizes: TY k=3 n_basis=87, Schoen k=3 n_basis=27
+[exp A] TY      k=3 trunc=    15 n_basis= 15 n=5 σ = 6.5207e0 ± 1.47e0  [3.4569e0, 1.1762e1]
+[exp A] TY      k=3 trunc=    20 n_basis= 20 n=5 σ = 6.7624e0 ± 1.87e0  [2.8125e0, 1.3358e1]
+[exp A] TY      k=3 trunc=    25 n_basis= 25 n=5 σ = 3.3581e0 ± 3.54e-1  [2.3959e0, 4.4450e0]
+[exp A] TY      k=3 trunc=    27 n_basis= 27 n=5 σ = 4.0644e1 ± 2.68e1  [5.0022e0, 1.4645e2]
+[exp A] TY      k=3 trunc=    35 n_basis= 35 n=5 σ = 5.1174e0 ± 9.99e-1  [3.2059e0, 8.7894e0]
+[exp A] TY      k=3 trunc=    50 n_basis= 50 n=5 σ = 2.4106e0 ± 4.52e-1  [1.6046e0, 4.1113e0]
+[exp A] TY      k=3 trunc=    87 n_basis= 87 n=5 σ = 2.7115e-1 ± 4.30e-3  [2.5783e-1, 2.8127e-1]
+[exp A] TY      k=3 trunc=native n_basis= 87 n=5 σ = 2.7115e-1 ± 4.30e-3  [2.5783e-1, 2.8127e-1]
+[exp A] Schoen  k=3 trunc=    15 n_basis= 15 n=5 σ = 1.4917e1 ± 3.36e0  [8.8445e0, 2.7791e1]
+[exp A] Schoen  k=3 trunc=    20 n_basis= 20 n=5 σ = 1.9824e1 ± 3.13e0  [1.3130e1, 2.9940e1]
+[exp A] Schoen  k=3 trunc=    25 n_basis= 25 n=5 σ = 2.4345e1 ± 1.22e1  [2.8188e0, 5.5905e1]
+[exp A] Schoen  k=3 trunc=    27 n_basis= 27 n=5 σ = 4.7142e1 ± 3.32e1  [3.0593e0, 1.7462e2]
+[exp A] Schoen  k=3 trunc=native n_basis= 27 n=5 σ = 4.7142e1 ± 3.32e1  [3.0593e0, 1.7462e2]
+
+[exp A] VERDICT NUMBERS
+  σ_TY(n=27)         = Some("4.0644e1")
+  σ_Schoen(n=27)     = Some("4.7142e1")
+  Δσ(matched n=27)   = Some("-6.4984e0")
+  σ_TY(native=87)    = Some("2.7115e-1")
+  σ_Schoen(native=27)= Some("4.7142e1")
+  Δσ(native)         = Some("-4.6871e1")
+  matched / native   = Some("0.139")
+
+>>> Experiment B: native-basis k-scan
+[exp B] TY      k=2 n_basis(native)=28 σ = 3.5238e-1 ± 7.40e-3
+[exp B] Schoen  k=2 n_basis(native)=12 σ = 1.5707e0 ± 1.60e-1
+[exp B] TY      k=3 n_basis(native)=87 σ = 2.7115e-1 ± 4.30e-3
+[exp B] Schoen  k=3 n_basis(native)=27 σ = 4.7142e1 ± 3.32e1
+[exp B] TY      k=4 n_basis(native)=200 σ = 2.8881e-1 ± 4.34e-3
+[exp B] Schoen  k=4 n_basis(native)=48 σ = 9.6928e0 ± 3.27e0
+
+[exp B] K-SCAN VERDICT (Δσ = σ_TY - σ_Schoen at native bases)
+  k=2  Δσ = -1.2183e0  (TY n_basis=28, Schoen n_basis=12)
+  k=3  Δσ = -4.6871e1  (TY n_basis=87, Schoen n_basis=27)
+  k=4  Δσ = -9.4040e0  (TY n_basis=200, Schoen n_basis=48)
+  Δσ(k=3)/Δσ(k=2) = Some("38.471")  (1/k² scaling predicts ~0.444)
+  Δσ(k=4)/Δσ(k=2) = Some("7.719")  (1/k² scaling predicts ~0.250)
+
+CSV written: output/p_basis_convergence_diag.csv
+JSON written: output/p_basis_convergence_diag.json
+
+=== VERDICT ===
+Experiment A (matched-basis k=3):
+  Δσ(matched n=27)  = -6.4984e0
+  Δσ(native)        = -4.6871e1
+  matched/native    = 0.139
+  ⇒ basis-size artefact DOMINATES (matched gap is < 25% of native gap)
+Experiment B (native-basis k-scan):
+  k=2  Δσ = -1.2183e0  (TY n_basis=28, Schoen n_basis=12)
+  k=3  Δσ = -4.6871e1  (TY n_basis=87, Schoen n_basis=27)
+  k=4  Δσ = -9.4040e0  (TY n_basis=200, Schoen n_basis=48)
+  Δσ(k=3)/Δσ(k=2) = 38.471  (1/k² predicts 0.444)
+  Δσ(k=4)/Δσ(k=2) = 7.719  (1/k² predicts 0.250)

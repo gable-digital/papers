@@ -153,4 +153,4 @@ reduced reproducibility artifact alongside the next paper revision.
 
 ## Contact
 
-Eliot Gable — 10015996+egable@users.noreply.github.com — Gable Digital Solutions, Inc.
+Eliot Gable — Gable Digital Solutions, Inc.

@@ -1,0 +1,19 @@
+% Schoen Z3xZ3 working bundle specification used in the chain channels.
+% Source: src/zero_modes.rs::MonadBundle::schoen_z3xz3_canonical (P8.3-followup-B)
+\begin{table}[h]
+\centering
+\caption{Working three-generation Standard-Model bundle on Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ used by the chain channels of Tab.~\ref{tab:cy3-bayesian-channels}. Three-factor monad construction $V = \ker(B \to C)$ on the Schoen ambient $\mathbb{P}^2 \times \mathbb{P}^2 \times \mathbb{P}^1$. The Wilson $\mathbb{Z}_3 \times \mathbb{Z}_3$ phase partition splits the $V$-summands evenly into three classes (one per generation) under the projection $(a-b) \bmod 3$ on the bidegrees, breaking the previously degenerate sector assignment that affects Tian--Yau under the same construction (Tab.~\ref{tab:cy3-ty-exclusion}). Anomaly cancellation $\mathrm{ch}_2(V) \le \mathrm{ch}_2(TX)$ is satisfied with the indicated 5-brane class.}
+\label{tab:cy3-schoen-bundle}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+Object & Specification & Property \\
+\hline
+$B$ & $\mathcal{O}(1,0,0)^2 \oplus \mathcal{O}(0,1,0)^2 \oplus \mathcal{O}(0,0,1)^2$ & rank $6$ \\
+$C$ & $\mathcal{O}(1,1,0) \oplus \mathcal{O}(0,1,1) \oplus \mathcal{O}(1,0,1)$  & rank $3$ \\
+$V \;=\; \ker(B \to C)$ & rank $3$ SU(3) & $c_1(V) = 0$, $\Sigma\,c_3(V) = \pm 18$ \\
+Wilson Z$_3$ partition on $V$ & $(1,1,1)$ across phase classes & balanced; canonical sector assignment \\
+Anomaly cancellation & $\mathrm{ch}_2(V) \le \mathrm{ch}_2(TX)$ with $W=(27,27)$ & satisfied \\
+Yukawa coverage on $V$ & $Y_u : 9/9$, $Y_d : 9/9$ on $h_0$ slice & operationally productive \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}

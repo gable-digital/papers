@@ -1,0 +1,980 @@
+{
+  "label": "p5_10_ty_schoen_5sigma_n20",
+  "path_label": "Path A: n_pts boost",
+  "n_pts": 100,
+  "seeds": [
+    42,
+    100,
+    12345,
+    7,
+    99,
+    1,
+    2,
+    3,
+    4,
+    5,
+    137,
+    271,
+    314,
+    666,
+    1000,
+    2024,
+    4242,
+    57005,
+    48879,
+    51966
+  ],
+  "donaldson_iters": 5,
+  "donaldson_tol": 1e-6,
+  "boot_resamples": 50,
+  "boot_seed": 12345,
+  "candidates": [
+    {
+      "candidate": "TY",
+      "k": 3,
+      "n_pts": 100,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        137,
+        271,
+        314,
+        666,
+        1000,
+        2024,
+        4242,
+        57005,
+        48879,
+        51966
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.4634212,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.0601056526254315,
+          "sigma_fs_identity": 0.47094536258108055,
+          "final_donaldson_residual": 1.4779966017833712,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 100,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0828877,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.2683726032702882,
+          "sigma_fs_identity": 0.39202730040396816,
+          "final_donaldson_residual": 1.5146503904861022,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 12345,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0806043,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 3.86103757613123,
+          "sigma_fs_identity": 0.4940169609752061,
+          "final_donaldson_residual": 1.5675898528683812,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 7,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.080976,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 3.995066464291324,
+          "sigma_fs_identity": 0.4647933510610714,
+          "final_donaldson_residual": 1.3154376545780477,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 99,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0798544,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.4972091435638273,
+          "sigma_fs_identity": 0.31351229483541454,
+          "final_donaldson_residual": 1.4775459889509779,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 1,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.080641,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.45906462334838,
+          "sigma_fs_identity": 0.29124977252256645,
+          "final_donaldson_residual": 1.5072795958414706,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 2,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0798578,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.113837630008855,
+          "sigma_fs_identity": 0.3922668764507733,
+          "final_donaldson_residual": 1.541594869337996,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 3,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0797744,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 14.349036188085963,
+          "sigma_fs_identity": 0.35726031601266584,
+          "final_donaldson_residual": 1.2753563805087516,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 4,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0798195,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 6.0645816198345415,
+          "sigma_fs_identity": 0.4303105769351773,
+          "final_donaldson_residual": 1.1344073650616684,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 5,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0895386,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.398124396867507,
+          "sigma_fs_identity": 0.30252894977843015,
+          "final_donaldson_residual": 1.2955175937523387,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 137,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0931776,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 4.735850908367643,
+          "sigma_fs_identity": 0.407395816545139,
+          "final_donaldson_residual": 1.4202117308512798,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 271,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.101202,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 1.6060504503561406,
+          "sigma_fs_identity": 0.4625705465859728,
+          "final_donaldson_residual": 1.20632586405876,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 314,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.094937,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 3.1769505995377383,
+          "sigma_fs_identity": 0.3704817092475916,
+          "final_donaldson_residual": 1.9262858297398617,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 666,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0870258,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 7.474023172773338,
+          "sigma_fs_identity": 0.4204358709147587,
+          "final_donaldson_residual": 1.6091685928065813,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 1000,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0838113,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 9.313790344033094,
+          "sigma_fs_identity": 0.45278103409666637,
+          "final_donaldson_residual": 1.2863760979747338,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 2024,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0822852,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 3.266606533026997,
+          "sigma_fs_identity": 0.4723989840548908,
+          "final_donaldson_residual": 1.338781826651453,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 4242,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0824143,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 4.354658395865728,
+          "sigma_fs_identity": 0.5147210325319806,
+          "final_donaldson_residual": 1.4952748322271578,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 57005,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0763409,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 13.319741223881104,
+          "sigma_fs_identity": 0.4563321129524219,
+          "final_donaldson_residual": 1.3980142851072572,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 48879,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0784909,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 4.461563463566769,
+          "sigma_fs_identity": 0.44404858967787586,
+          "final_donaldson_residual": 1.9917457661679447,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 51966,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.0839219,
+          "n_basis": 87,
+          "iterations_run": 5,
+          "sigma_final": 2.6003091436281562,
+          "sigma_fs_identity": 0.5091945028193798,
+          "final_donaldson_residual": 1.2628456501280034,
+          "convergence_tier": "non-converged"
+        }
+      ],
+      "sigma_stats": {
+        "name": "sigma_ty_k3",
+        "n": 20,
+        "mean": 4.818799006653204,
+        "std": 3.645057447165551,
+        "stderr": 0.8150596233754019,
+        "percentile_ci_low": 3.339681687083133,
+        "percentile_ci_high": 6.1982353787131865,
+        "bca_ci_low": 3.754539353386838,
+        "bca_ci_high": 6.259324280589084
+      }
+    },
+    {
+      "candidate": "Schoen",
+      "k": 3,
+      "n_pts": 100,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        137,
+        271,
+        314,
+        666,
+        1000,
+        2024,
+        4242,
+        57005,
+        48879,
+        51966
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0254023,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 3.9633584420983685,
+          "sigma_fs_identity": 2.2080868736965162,
+          "final_donaldson_residual": 0.04738506633750017,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 100,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0244744,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 3.102858295198808,
+          "sigma_fs_identity": 1.301699808243821,
+          "final_donaldson_residual": 0.049256966869288626,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 12345,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0280786,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.017761883392656,
+          "sigma_fs_identity": 1.5584151385439207,
+          "final_donaldson_residual": 0.08551712907357051,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 7,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0261622,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 3.0573458131002806,
+          "sigma_fs_identity": 1.6744202014414773,
+          "final_donaldson_residual": 0.08759820606929868,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 99,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0288255,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 3.1510223485987896,
+          "sigma_fs_identity": 0.868014803174807,
+          "final_donaldson_residual": 0.09351485483576091,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 1,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0257454,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.3673922549500275,
+          "sigma_fs_identity": 0.8673064054241555,
+          "final_donaldson_residual": 0.04662171313348554,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 2,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0259694,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 4.187308322942173,
+          "sigma_fs_identity": 1.9579061205374357,
+          "final_donaldson_residual": 0.10420866990696835,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 3,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0262601,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 2.6743659372865682,
+          "sigma_fs_identity": 2.327774723930135,
+          "final_donaldson_residual": 0.09433554142044641,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 4,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0265908,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.1718754748305622,
+          "sigma_fs_identity": 0.6883325558347589,
+          "final_donaldson_residual": 0.1045302508674099,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 5,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0262273,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.0674820911510967,
+          "sigma_fs_identity": 1.3356616477011665,
+          "final_donaldson_residual": 0.12614081627143356,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 137,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0255397,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.215451553255965,
+          "sigma_fs_identity": 1.0524070113442734,
+          "final_donaldson_residual": 0.07937908477717597,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 271,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0252028,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.8773102377253308,
+          "sigma_fs_identity": 1.3979255981129113,
+          "final_donaldson_residual": 0.07673426009657361,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 314,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0262932,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 6.220037003566188,
+          "sigma_fs_identity": 3.805432326631197,
+          "final_donaldson_residual": 0.09524523524920453,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 666,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0240699,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 3.1799420500857334,
+          "sigma_fs_identity": 2.3340809006700853,
+          "final_donaldson_residual": 0.08881452979708195,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 1000,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0229207,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.1232581074445078,
+          "sigma_fs_identity": 1.0829708517043437,
+          "final_donaldson_residual": 0.10538655172255373,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 2024,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0226054,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 2.049095944107576,
+          "sigma_fs_identity": 0.9746434158889187,
+          "final_donaldson_residual": 0.08984746466786835,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 4242,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.022644,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 5.964117008567901,
+          "sigma_fs_identity": 2.2722897365375094,
+          "final_donaldson_residual": 0.08823500209423975,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 57005,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0267552,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 0.827641078299466,
+          "sigma_fs_identity": 0.8149053824462169,
+          "final_donaldson_residual": 0.074220052671161,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 48879,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.02284,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 7.584476169896882,
+          "sigma_fs_identity": 1.081537565203827,
+          "final_donaldson_residual": 0.10544921697283552,
+          "convergence_tier": "non-converged"
+        },
+        {
+          "seed": 51966,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.0233162,
+          "n_basis": 27,
+          "iterations_run": 5,
+          "sigma_final": 1.0539687300850134,
+          "sigma_fs_identity": 0.9927345285366365,
+          "final_donaldson_residual": 0.10269286639304198,
+          "convergence_tier": "non-converged"
+        }
+      ],
+      "sigma_stats": {
+        "name": "sigma_schoen_k3",
+        "n": 20,
+        "mean": 2.792803437329195,
+        "std": 1.9584532105999588,
+        "stderr": 0.43792345096542196,
+        "percentile_ci_low": 2.057443820247604,
+        "percentile_ci_high": 3.531274778601061,
+        "bca_ci_low": 2.064813708411128,
+        "bca_ci_high": 3.5338770906683763
+      }
+    }
+  ],
+  "discrimination": [
+    {
+      "k": 3,
+      "mean_ty": 4.818799006653204,
+      "se_ty": 0.8150596233754019,
+      "n_ty": 20,
+      "mean_schoen": 2.792803437329195,
+      "se_schoen": 0.43792345096542196,
+      "n_schoen": 20,
+      "delta_sigma": 2.025995569324009,
+      "se_combined": 0.9252562556191212,
+      "n_sigma": 2.1896588723610897,
+      "n_sigma_ci_low": 0.4781482951025046,
+      "n_sigma_ci_high": 3.7588543841637625,
+      "n_sigma_bca_ci_low": 0.19062196469295484,
+      "n_sigma_bca_ci_high": 3.0854869227672594,
+      "n_sigma_boot_resamples": 50,
+      "subset_label": "conservative"
+    }
+  ],
+  "discrimination_balanced_only": [],
+  "discrimination_strict_converged": [],
+  "discrimination_canonical": [],
+  "discrimination_reference": [],
+  "boot_seed_jitter": [],
+  "early_bail_seeds": [
+    {
+      "seed": 42,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.0601056526254315,
+      "sigma_fs_identity": 0.47094536258108055,
+      "rel_diff_to_fs": 3.374404795780853
+    },
+    {
+      "seed": 100,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.2683726032702882,
+      "sigma_fs_identity": 0.39202730040396816,
+      "rel_diff_to_fs": 4.786261826492244
+    },
+    {
+      "seed": 12345,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 3.86103757613123,
+      "sigma_fs_identity": 0.4940169609752061,
+      "rel_diff_to_fs": 6.81559719834196
+    },
+    {
+      "seed": 7,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 3.995066464291324,
+      "sigma_fs_identity": 0.4647933510610714,
+      "rel_diff_to_fs": 7.595360616005011
+    },
+    {
+      "seed": 99,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.4972091435638273,
+      "sigma_fs_identity": 0.31351229483541454,
+      "rel_diff_to_fs": 6.965267023657858
+    },
+    {
+      "seed": 1,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.45906462334838,
+      "sigma_fs_identity": 0.29124977252256645,
+      "rel_diff_to_fs": 7.4431469320987995
+    },
+    {
+      "seed": 2,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.113837630008855,
+      "sigma_fs_identity": 0.3922668764507733,
+      "rel_diff_to_fs": 4.388774217019893
+    },
+    {
+      "seed": 3,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 14.349036188085963,
+      "sigma_fs_identity": 0.35726031601266584,
+      "rel_diff_to_fs": 39.16409196586293
+    },
+    {
+      "seed": 4,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 6.0645816198345415,
+      "sigma_fs_identity": 0.4303105769351773,
+      "rel_diff_to_fs": 13.093498846876171
+    },
+    {
+      "seed": 5,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.398124396867507,
+      "sigma_fs_identity": 0.30252894977843015,
+      "rel_diff_to_fs": 6.926925335984786
+    },
+    {
+      "seed": 137,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 4.735850908367643,
+      "sigma_fs_identity": 0.407395816545139,
+      "rel_diff_to_fs": 10.624692046495072
+    },
+    {
+      "seed": 271,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 1.6060504503561406,
+      "sigma_fs_identity": 0.4625705465859728,
+      "rel_diff_to_fs": 2.4720119173381954
+    },
+    {
+      "seed": 314,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 3.1769505995377383,
+      "sigma_fs_identity": 0.3704817092475916,
+      "rel_diff_to_fs": 7.575188788644336
+    },
+    {
+      "seed": 666,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 7.474023172773338,
+      "sigma_fs_identity": 0.4204358709147587,
+      "rel_diff_to_fs": 16.776844674341927
+    },
+    {
+      "seed": 1000,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 9.313790344033094,
+      "sigma_fs_identity": 0.45278103409666637,
+      "rel_diff_to_fs": 19.570186564052612
+    },
+    {
+      "seed": 2024,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 3.266606533026997,
+      "sigma_fs_identity": 0.4723989840548908,
+      "rel_diff_to_fs": 5.914931325608928
+    },
+    {
+      "seed": 4242,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 4.354658395865728,
+      "sigma_fs_identity": 0.5147210325319806,
+      "rel_diff_to_fs": 7.460230145336377
+    },
+    {
+      "seed": 57005,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 13.319741223881104,
+      "sigma_fs_identity": 0.4563321129524219,
+      "rel_diff_to_fs": 28.18870017212628
+    },
+    {
+      "seed": 48879,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 4.461563463566769,
+      "sigma_fs_identity": 0.44404858967787586,
+      "rel_diff_to_fs": 9.047466802683239
+    },
+    {
+      "seed": 51966,
+      "candidate": "TY",
+      "iterations_run": 5,
+      "sigma_final": 2.6003091436281562,
+      "sigma_fs_identity": 0.5091945028193798,
+      "rel_diff_to_fs": 4.106710950786779
+    },
+    {
+      "seed": 42,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 3.9633584420983685,
+      "sigma_fs_identity": 2.2080868736965162,
+      "rel_diff_to_fs": 0.7949286730115765
+    },
+    {
+      "seed": 100,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 3.102858295198808,
+      "sigma_fs_identity": 1.301699808243821,
+      "rel_diff_to_fs": 1.3836972822366835
+    },
+    {
+      "seed": 12345,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.017761883392656,
+      "sigma_fs_identity": 1.5584151385439207,
+      "rel_diff_to_fs": -0.3469250533952173
+    },
+    {
+      "seed": 7,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 3.0573458131002806,
+      "sigma_fs_identity": 1.6744202014414773,
+      "rel_diff_to_fs": 0.8259131193402159
+    },
+    {
+      "seed": 99,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 3.1510223485987896,
+      "sigma_fs_identity": 0.868014803174807,
+      "rel_diff_to_fs": 2.630148169217587
+    },
+    {
+      "seed": 1,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.3673922549500275,
+      "sigma_fs_identity": 0.8673064054241555,
+      "rel_diff_to_fs": 0.5765965135254656
+    },
+    {
+      "seed": 2,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 4.187308322942173,
+      "sigma_fs_identity": 1.9579061205374357,
+      "rel_diff_to_fs": 1.1386665473995135
+    },
+    {
+      "seed": 3,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 2.6743659372865682,
+      "sigma_fs_identity": 2.327774723930135,
+      "rel_diff_to_fs": 0.14889379534599478
+    },
+    {
+      "seed": 4,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.1718754748305622,
+      "sigma_fs_identity": 0.6883325558347589,
+      "rel_diff_to_fs": 0.7024844530408678
+    },
+    {
+      "seed": 5,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.0674820911510967,
+      "sigma_fs_identity": 1.3356616477011665,
+      "rel_diff_to_fs": -0.20078405111926279
+    },
+    {
+      "seed": 137,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.215451553255965,
+      "sigma_fs_identity": 1.0524070113442734,
+      "rel_diff_to_fs": 0.1549253664734043
+    },
+    {
+      "seed": 271,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.8773102377253308,
+      "sigma_fs_identity": 1.3979255981129113,
+      "rel_diff_to_fs": 0.3429257181208719
+    },
+    {
+      "seed": 314,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 6.220037003566188,
+      "sigma_fs_identity": 3.805432326631197,
+      "rel_diff_to_fs": 0.6345152060745087
+    },
+    {
+      "seed": 666,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 3.1799420500857334,
+      "sigma_fs_identity": 2.3340809006700853,
+      "rel_diff_to_fs": 0.36239581463213716
+    },
+    {
+      "seed": 1000,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.1232581074445078,
+      "sigma_fs_identity": 1.0829708517043437,
+      "rel_diff_to_fs": 0.03720068335796976
+    },
+    {
+      "seed": 2024,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 2.049095944107576,
+      "sigma_fs_identity": 0.9746434158889187,
+      "rel_diff_to_fs": 1.1024057729243553
+    },
+    {
+      "seed": 4242,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 5.964117008567901,
+      "sigma_fs_identity": 2.2722897365375094,
+      "rel_diff_to_fs": 1.6247167835453757
+    },
+    {
+      "seed": 57005,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 0.827641078299466,
+      "sigma_fs_identity": 0.8149053824462169,
+      "rel_diff_to_fs": 0.015628435064471573
+    },
+    {
+      "seed": 48879,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 7.584476169896882,
+      "sigma_fs_identity": 1.081537565203827,
+      "rel_diff_to_fs": 6.012679368624157
+    },
+    {
+      "seed": 51966,
+      "candidate": "Schoen",
+      "iterations_run": 5,
+      "sigma_final": 1.0539687300850134,
+      "sigma_fs_identity": 0.9927345285366365,
+      "rel_diff_to_fs": 0.061682352923334495
+    }
+  ],
+  "balanced_min_iters": 10,
+  "converged_residual_threshold": 0.001,
+  "ambiguous_residual_threshold": 0.01,
+  "max_n_sigma": 2.1896588723610897,
+  "max_n_sigma_k": 3,
+  "five_sigma_achieved": false,
+  "total_elapsed_s": 2.5733408,
+  "git_revision": "db1b4ca16ceb336def07d2aa4201b8ca629f4c73",
+  "repro_manifest": {
+    "git_revision": "db1b4ca16ceb336def07d2aa4201b8ca629f4c73",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-04-30T13:01:17Z",
+    "command_line": [
+      "target\\release\\p5_10_ty_schoen_5sigma.exe",
+      "--n-pts",
+      "100",
+      "--ks",
+      "3",
+      "--donaldson-iters",
+      "5",
+      "--boot-resamples",
+      "50",
+      "--output",
+      "output/p5_10_smoke.json"
+    ],
+    "n_threads_rayon": 24
+  },
+  "repro_log_path": "output/p5_10_smoke.replog",
+  "repro_log_final_chain_sha256_hex": "cb6fd88dc834a034a78888a31a6326af40a2b943d0bf56c99645ea75ed5baaea",
+  "repro_log_n_events": 42
+}

@@ -1,0 +1,275 @@
+{
+  "label": "p7_6_z3xz3_h4_omega_fix",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 25000,
+  "k": 3,
+  "max_iter": 100,
+  "seed": 12345,
+  "kernel_zero_thresh": 0.001,
+  "h4_applied": true,
+  "wilson": {
+    "coweight_1": [
+      0.6666666666666666,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "coweight_2": [
+      0.0,
+      0.0,
+      0.0,
+      0.6666666666666666,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.0,
+      0.0
+    ],
+    "quantization_residual_1": 0.0,
+    "quantization_residual_2": 0.0,
+    "commutator_residual": 0.0,
+    "joint_invariant_root_count": 24,
+    "fiber_dim": 6,
+    "fiber_characters": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  "candidates": [
+    {
+      "label": "Schoen/Z3xZ3-AKLP/H4",
+      "geometry": "schoen_z3xz3",
+      "bundle": "anderson_lukas_palti_example_with_z3xz3_wilson",
+      "metric_iters": 24,
+      "metric_sigma_residual": 1.8522547541722887,
+      "metric_seconds": 1.9132125,
+      "spectrum_seconds": 0.0038157,
+      "full_seed_basis_dim": 24,
+      "z3xz3_basis_dim": 3,
+      "final_basis_dim": 3,
+      "z3xz3_survival_fraction": 0.125,
+      "final_survival_fraction": 0.125,
+      "n_points": 25000,
+      "h4_applied": true,
+      "full_spectrum": [
+        1.1011427297641134,
+        1.363224233890859,
+        5.276429077902506
+      ],
+      "kernel_eigenvalues": [
+        1.1011427297641134
+      ],
+      "kernel_count_used": 1,
+      "lambda_lowest_nonzero": 1.363224233890859,
+      "lambda_kernel_max": 1.1011427297641134,
+      "lambda_max": 5.276429077902506,
+      "lambda_mean": 2.580265347185826,
+      "lambda_trace": 7.740796041557479,
+      "volume_proxy": 8.663363948145635,
+      "bottom_eigvalues": [
+        {
+          "rank": 0,
+          "eigenvalue": 1.363224233890859,
+          "normalised": {
+            "by_lambda1_min": 1.0,
+            "by_lambda_max": 0.2583611404159667,
+            "by_mean_eigvalue": 0.5283271487475749,
+            "by_trace": 0.17610904958252496,
+            "by_volume": 0.15735506923758555,
+            "by_sigmoid": 0.2053155744546929,
+            "by_kernel_max": 1.2380086586803225,
+            "raw": 1.363224233890859
+          },
+          "residual_ppm_raw": 1748614.7154872604,
+          "residual_ppm_by_lambda1_min": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 479076.7250149615,
+          "residual_ppm_by_mean": 65244.98284063885,
+          "residual_ppm_by_trace": 644918.3390531205,
+          "residual_ppm_by_volume": 682731.2425128355,
+          "residual_ppm_by_sigmoid": 586030.3864653347,
+          "residual_ppm_by_kernel_max": 1496147.539453008
+        },
+        {
+          "rank": 1,
+          "eigenvalue": 5.276429077902506,
+          "normalised": {
+            "by_lambda1_min": 3.870551114575434,
+            "by_lambda_max": 1.0,
+            "by_mean_eigvalue": 2.044917234445387,
+            "by_trace": 0.6816390781484624,
+            "by_volume": 0.6090508386216313,
+            "by_sigmoid": 0.5,
+            "by_kernel_max": 4.79177579370916,
+            "raw": 5.276429077902506
+          },
+          "residual_ppm_raw": 9638653.750567654,
+          "residual_ppm_by_lambda1_min": 6804038.019631769,
+          "residual_ppm_by_lambda_max": 1016260.162601626,
+          "residual_ppm_by_mean": 3123085.155629723,
+          "residual_ppm_by_trace": 374361.7185432412,
+          "residual_ppm_by_volume": 228004.94291190707,
+          "residual_ppm_by_sigmoid": 8130.081300813001,
+          "residual_ppm_by_kernel_max": 8661466.640974566
+        }
+      ],
+      "closest_to_omega_fix": {
+        "rank": 1,
+        "eigenvalue": 5.276429077902506,
+        "chosen_scheme": "by_sigmoid",
+        "chosen_value": 0.5,
+        "residual_ppm": 8130.081300813,
+        "residual_pct": 0.8130081300813
+      }
+    },
+    {
+      "label": "TY/Z3-AKLP/H4",
+      "geometry": "tian_yau_z3",
+      "bundle": "anderson_lukas_palti_example_with_z3_wilson",
+      "metric_iters": 16,
+      "metric_sigma_residual": 0.2716856238752092,
+      "metric_seconds": 10.2519917,
+      "spectrum_seconds": 0.0051883,
+      "full_seed_basis_dim": 24,
+      "z3xz3_basis_dim": 8,
+      "final_basis_dim": 4,
+      "z3xz3_survival_fraction": 0.3333333333333333,
+      "final_survival_fraction": 0.16666666666666666,
+      "n_points": 25000,
+      "h4_applied": true,
+      "full_spectrum": [
+        1.368994176847489,
+        1.3940384896448377,
+        1.6430404688407758,
+        1.737162704503503
+      ],
+      "kernel_eigenvalues": [
+        1.368994176847489
+      ],
+      "kernel_count_used": 1,
+      "lambda_lowest_nonzero": 1.3940384896448377,
+      "lambda_kernel_max": 1.368994176847489,
+      "lambda_max": 1.737162704503503,
+      "lambda_mean": 1.5358089599591513,
+      "lambda_trace": 6.143235839836605,
+      "volume_proxy": 0.03830830457146445,
+      "bottom_eigvalues": [
+        {
+          "rank": 0,
+          "eigenvalue": 1.3940384896448377,
+          "normalised": {
+            "by_lambda1_min": 1.0,
+            "by_lambda_max": 0.8024800935634101,
+            "by_mean_eigvalue": 0.9076900356681834,
+            "by_trace": 0.22692250891704585,
+            "by_volume": 36.38998136929416,
+            "by_sigmoid": 0.4452088521970572,
+            "by_kernel_max": 1.0182939512971638,
+            "raw": 1.3940384896448377
+          },
+          "residual_ppm_raw": 1810744.2718042256,
+          "residual_ppm_by_lambda1_min": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 618008.6439327293,
+          "residual_ppm_by_mean": 830139.2589082072,
+          "residual_ppm_by_trace": 542465.1852729482,
+          "residual_ppm_by_volume": 72371669.7527232,
+          "residual_ppm_by_sigmoid": 102343.12727747818,
+          "residual_ppm_by_kernel_max": 1053145.527818672
+        },
+        {
+          "rank": 1,
+          "eigenvalue": 1.6430404688407758,
+          "normalised": {
+            "by_lambda1_min": 1.178619156533746,
+            "by_lambda_max": 0.9458184110108281,
+            "by_mean_eigvalue": 1.06982086423332,
+            "by_trace": 0.26745521605833,
+            "by_volume": 42.88992914775622,
+            "by_sigmoid": 0.48607742924967356,
+            "by_kernel_max": 1.2001807579812787,
+            "raw": 1.6430404688407758
+          },
+          "residual_ppm_raw": 2312797.042865955,
+          "residual_ppm_by_lambda1_min": 1376402.852198122,
+          "residual_ppm_by_lambda_max": 907015.9831763038,
+          "residual_ppm_by_mean": 1157037.189673686,
+          "residual_ppm_by_trace": 460740.7025815786,
+          "residual_ppm_by_volume": 85477255.51742719,
+          "residual_ppm_by_sigmoid": 19941.443464072818,
+          "residual_ppm_by_kernel_max": 1419876.6502386758
+        },
+        {
+          "rank": 2,
+          "eigenvalue": 1.737162704503503,
+          "normalised": {
+            "by_lambda1_min": 1.24613683008572,
+            "by_lambda_max": 1.0,
+            "by_mean_eigvalue": 1.1311059837479442,
+            "by_trace": 0.28277649593698606,
+            "by_volume": 45.34689603041064,
+            "by_sigmoid": 0.5,
+            "by_kernel_max": 1.2689335965649102,
+            "raw": 1.737162704503503
+          },
+          "residual_ppm_raw": 2502571.9570477135,
+          "residual_ppm_by_lambda1_min": 1512536.0476525086,
+          "residual_ppm_by_lambda_max": 1016260.162601626,
+          "residual_ppm_by_mean": 1280603.9347113022,
+          "residual_ppm_by_trace": 429849.01632217446,
+          "residual_ppm_by_volume": 90431139.9637548,
+          "residual_ppm_by_sigmoid": 8130.081300813001,
+          "residual_ppm_by_kernel_max": 1558500.259740632
+        }
+      ],
+      "closest_to_omega_fix": {
+        "rank": 2,
+        "eigenvalue": 1.737162704503503,
+        "chosen_scheme": "by_sigmoid",
+        "chosen_value": 0.5,
+        "residual_ppm": 8130.081300813,
+        "residual_pct": 0.8130081300813
+      }
+    }
+  ],
+  "historical_comparison": {
+    "p7_2b_schoen_residual_pct": 75.0,
+    "p7_3_schoen_residual_pct": 2.4,
+    "p7_5_schoen_residual_pct": 17.0,
+    "p7_6_schoen_residual_pct": 0.8130081300813
+  },
+  "verdict": "Schoen/Z3xZ3-AKLP/H4: rank=1 λ=5.276429e0 via by_sigmoid → 0.500000 (8130.081 ppm = 0.8130% off ω_fix) — MARGINAL (≤1% but >100 ppm)\nTY/Z3-AKLP/H4: rank=2 λ=1.737163e0 via by_sigmoid → 0.500000 (8130.081 ppm = 0.8130% off ω_fix) — MARGINAL (≤1% but >100 ppm)\n",
+  "notes": [
+    "Bundle Laplacian = ⟨D_V ψ_α, D_V ψ_β⟩ on AKLP polynomial-seed basis;",
+    "h_V is the HYM-balanced bundle metric (route34::hym_hermitian).",
+    "Z/3 × Z/3 Wilson-line bundle: (W_1, W_2) = (ω_2∨, ω_5∨) commuting Cartan pair",
+    "  acting jointly to break E_8 → SO(10) × SU(3) × U(1)^2 (journal §F.1.5/§F.1.6).",
+    "Sub-bundle filter: combined base + fiber Z/3 × Z/3 character must vanish.",
+    "H_4 (Z/5 icosahedral fivefold) sector projection on top (Klein 1884 §I.7)."
+  ],
+  "total_elapsed_s": 12.2594575
+}

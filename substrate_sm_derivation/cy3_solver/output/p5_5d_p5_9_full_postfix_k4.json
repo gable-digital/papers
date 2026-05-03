@@ -1,0 +1,223 @@
+{
+  "label": "p5_9_ako_apples_to_apples",
+  "protocol": "Donaldson-only, ≤50 T-iters, Shiffman-Zelditch sampler. ABKO-protocol-matched.",
+  "n_pts": 1000000,
+  "seeds": [
+    42,
+    100,
+    12345,
+    7,
+    99,
+    1,
+    2,
+    3,
+    4,
+    5,
+    137,
+    271,
+    314,
+    666,
+    1000,
+    2024,
+    4242,
+    57005,
+    48879,
+    51966
+  ],
+  "donaldson_iters": 50,
+  "donaldson_tol": 1e-12,
+  "newton_tol": 1e-12,
+  "boot_resamples": 1000,
+  "boot_seed": 12345,
+  "sampler": "ShiffmanZelditch",
+  "ks": [
+    {
+      "k": 4,
+      "n_pts": 1000000,
+      "n_basis": 70,
+      "seeds": [
+        42,
+        100,
+        12345,
+        7,
+        99,
+        1,
+        2,
+        3,
+        4,
+        5,
+        137,
+        271,
+        314,
+        666,
+        1000,
+        2024,
+        4242,
+        57005,
+        48879,
+        51966
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "elapsed_s": 158.8969124,
+          "sigma_fs_identity": 0.1406126464257189,
+          "sigma_donaldson": 0.13038421758421873,
+          "donaldson_iters_run": 33
+        },
+        {
+          "seed": 100,
+          "elapsed_s": 161.5837861,
+          "sigma_fs_identity": 0.14047733969597306,
+          "sigma_donaldson": 0.1302377545358829,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 12345,
+          "elapsed_s": 162.7564505,
+          "sigma_fs_identity": 0.14037743058199548,
+          "sigma_donaldson": 0.13017476229759967,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 7,
+          "elapsed_s": 159.5110123,
+          "sigma_fs_identity": 0.14032361542441033,
+          "sigma_donaldson": 0.13008448729730437,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 99,
+          "elapsed_s": 168.5184476,
+          "sigma_fs_identity": 0.1405722940912286,
+          "sigma_donaldson": 0.1303557877575634,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 1,
+          "elapsed_s": 160.3440561,
+          "sigma_fs_identity": 0.14031539556704842,
+          "sigma_donaldson": 0.1300519807316741,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 2,
+          "elapsed_s": 167.6176138,
+          "sigma_fs_identity": 0.1403239970904424,
+          "sigma_donaldson": 0.1301241371604781,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 3,
+          "elapsed_s": 164.9066276,
+          "sigma_fs_identity": 0.1402831885537112,
+          "sigma_donaldson": 0.1300617663188219,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 4,
+          "elapsed_s": 163.7006555,
+          "sigma_fs_identity": 0.14025398520287538,
+          "sigma_donaldson": 0.13001424085557226,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 5,
+          "elapsed_s": 221.2190126,
+          "sigma_fs_identity": 0.14066024843164557,
+          "sigma_donaldson": 0.13041929859946907,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 137,
+          "elapsed_s": 187.0298534,
+          "sigma_fs_identity": 0.14062072513754686,
+          "sigma_donaldson": 0.13039386625188693,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 271,
+          "elapsed_s": 161.2000457,
+          "sigma_fs_identity": 0.1405482424679356,
+          "sigma_donaldson": 0.13033748902539716,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 314,
+          "elapsed_s": 178.4496726,
+          "sigma_fs_identity": 0.1404181173656714,
+          "sigma_donaldson": 0.13019003297951476,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 666,
+          "elapsed_s": 161.2057532,
+          "sigma_fs_identity": 0.14047525734316227,
+          "sigma_donaldson": 0.1302010703458043,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 1000,
+          "elapsed_s": 173.4896216,
+          "sigma_fs_identity": 0.14044184244971278,
+          "sigma_donaldson": 0.1302554243744771,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 2024,
+          "elapsed_s": 190.2832873,
+          "sigma_fs_identity": 0.1404896194890676,
+          "sigma_donaldson": 0.13026563091601923,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 4242,
+          "elapsed_s": 212.8507003,
+          "sigma_fs_identity": 0.14060728343708384,
+          "sigma_donaldson": 0.13038079134867167,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 57005,
+          "elapsed_s": 162.7434064,
+          "sigma_fs_identity": 0.1407884882852805,
+          "sigma_donaldson": 0.13053418612854556,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 48879,
+          "elapsed_s": 159.8044855,
+          "sigma_fs_identity": 0.14021338095364042,
+          "sigma_donaldson": 0.12996588645229135,
+          "donaldson_iters_run": 34
+        },
+        {
+          "seed": 51966,
+          "elapsed_s": 161.6920924,
+          "sigma_fs_identity": 0.14078051040159595,
+          "sigma_donaldson": 0.13049948016340923,
+          "donaldson_iters_run": 34
+        }
+      ],
+      "donaldson": {
+        "name": "sigma_donaldson",
+        "n": 20,
+        "mean": 0.13024661455623007,
+        "std": 0.00016421350369550167,
+        "stderr": 0.00003671925570865546,
+        "percentile_ci_low": 0.13017846784347797,
+        "percentile_ci_high": 0.13031669394300088,
+        "bca_ci_low": 0.13017464962552375,
+        "bca_ci_high": 0.13031524512897852
+      },
+      "abko_comparison": {
+        "sigma_abko": 0.13828124999999997,
+        "rel_dev_from_mean": -0.058103578350426364,
+        "inside_percentile_ci": false,
+        "inside_bca_ci": false
+      }
+    }
+  ],
+  "total_elapsed_s": 3285.5911722,
+  "git_revision": "b2b8f5209606a1f2216993bc65d46f6d07bc2820"
+}

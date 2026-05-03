@@ -1,0 +1,65 @@
+================================================
+P7.1 — ω_fix gateway-electron diagnostic
+  predicted ω_fix = 1/2 − 1/dim(E_8) = 123/248
+                  = 0.495967741935483875
+================================================
+  n_pts=40000  k=3  max_iter=100  seed=42  test_degree=4
+
+--- running Schoen/Z₃×Z₃ ---
+
+=== Schoen/Z3xZ3 ===
+  symmetry: z3xz3
+  metric: iters=26  σ-residual=8.195e0  t=3.5s
+  spectrum: basis_dim=494  n_pts=40000  t=25.11s
+  λ_min_full = 4.319534e-1  λ_max_full = 4.032996e9  λ_mean_full = 2.590910e7
+  λ_min_trivial-rep = 5.055080e-1
+  trivial-rep eigenvalues (lowest 5):
+    [0] λ=5.055080e-1  norm/(λ_min_triv)=1.000000  norm/(λ_min_overall)=1.170284  triv-purity=0.2604  dom-χ=(0, 0)
+    [1] λ=9.502138e-1  norm/(λ_min_triv)=1.879721  norm/(λ_min_overall)=2.199806  triv-purity=0.2389  dom-χ=(0, 0)
+    [2] λ=1.874424e0  norm/(λ_min_triv)=3.708000  norm/(λ_min_overall)=4.339411  triv-purity=0.3112  dom-χ=(0, 0)
+    [3] λ=2.089451e0  norm/(λ_min_triv)=4.133370  norm/(λ_min_overall)=4.837215  triv-purity=0.2783  dom-χ=(0, 0)
+    [4] λ=2.378240e0  norm/(λ_min_triv)=4.704654  norm/(λ_min_overall)=5.505778  triv-purity=0.2622  dom-χ=(0, 0)
+  bottom (all-rep) eigenvalues (lowest 5):
+    [0] λ=4.319534e-1  norm/(λ_min_overall)=1.000000  triv-purity=0.2292  dom-χ=(1, 0)
+    [1] λ=5.055080e-1  norm/(λ_min_overall)=1.170284  triv-purity=0.2604  dom-χ=(0, 0)
+    [2] λ=9.502138e-1  norm/(λ_min_overall)=2.199806  triv-purity=0.2389  dom-χ=(0, 0)
+    [3] λ=1.604067e0  norm/(λ_min_overall)=3.713518  triv-purity=0.2541  dom-χ=(1, 0)
+    [4] λ=1.734961e0  norm/(λ_min_overall)=4.016546  triv-purity=0.2514  dom-χ=(1, 0)
+  closest-to-ω_fix (trivial pool):  Some(ClosestPick { full_index: 1, eigenvalue: 0.5055079875456941, chosen_scheme: "raw", chosen_value: 0.5055079875456941, residual_ppm: 19235.617165302014, dominant_character: (0, 0), trivial_rep_purity: 0.2603609367870407 })
+  closest-to-ω_fix (all-rep pool):  scheme=raw value=0.505508  residual=19235.617 ppm  dom-χ=(0, 0)  triv-purity=0.2604
+  predicted ω_fix = 0.495967741935 (= 123/248)
+
+--- running TY/Z₃ (control) ---
+
+=== TY/Z3 ===
+  symmetry: z3_ty
+  metric: iters=17  σ-residual=2.667e-1  t=18.8s
+  spectrum: basis_dim=494  n_pts=40000  t=25.77s
+  λ_min_full = 2.283004e-3  λ_max_full = 5.648974e9  λ_mean_full = 1.498843e8
+  λ_min_trivial-rep = 2.283004e-3
+  trivial-rep eigenvalues (lowest 5):
+    [0] λ=2.283004e-3  norm/(λ_min_triv)=1.000000  norm/(λ_min_overall)=1.000000  triv-purity=0.3556  dom-χ=(0, 0)
+    [1] λ=1.952276e-1  norm/(λ_min_triv)=85.513470  norm/(λ_min_overall)=85.513470  triv-purity=0.4181  dom-χ=(0, 0)
+    [2] λ=6.297328e-1  norm/(λ_min_triv)=275.835114  norm/(λ_min_overall)=275.835114  triv-purity=0.4546  dom-χ=(0, 0)
+    [3] λ=8.675509e-1  norm/(λ_min_triv)=380.004044  norm/(λ_min_overall)=380.004044  triv-purity=0.5035  dom-χ=(0, 0)
+    [4] λ=1.295549e0  norm/(λ_min_triv)=567.475347  norm/(λ_min_overall)=567.475347  triv-purity=0.4226  dom-χ=(0, 0)
+  bottom (all-rep) eigenvalues (lowest 5):
+    [0] λ=2.283004e-3  norm/(λ_min_overall)=1.000000  triv-purity=0.3556  dom-χ=(0, 0)
+    [1] λ=1.883602e-2  norm/(λ_min_overall)=8.250539  triv-purity=0.2168  dom-χ=(1, 0)
+    [2] λ=1.952276e-1  norm/(λ_min_overall)=85.513470  triv-purity=0.4181  dom-χ=(0, 0)
+    [3] λ=2.152352e-1  norm/(λ_min_overall)=94.277172  triv-purity=0.3425  dom-χ=(1, 0)
+    [4] λ=3.303336e-1  norm/(λ_min_overall)=144.692491  triv-purity=0.2821  dom-χ=(1, 0)
+  closest-to-ω_fix (trivial pool):  Some(ClosestPick { full_index: 6, eigenvalue: 0.6297327840645273, chosen_scheme: "raw", chosen_value: 0.6297327840645273, residual_ppm: 269705.1255935184, dominant_character: (0, 0), trivial_rep_purity: 0.4545608035680587 })
+  closest-to-ω_fix (all-rep pool):  scheme=raw value=0.330334  residual=333961.526 ppm  dom-χ=(1, 0)  triv-purity=0.2821
+  predicted ω_fix = 0.495967741935 (= 123/248)
+
+================================================
+VERDICT: Schoen/Z3xZ3: closest-trivial-rep value = 0.505508 via raw → residual = 19235.617 ppm  (1.92356% of ω_fix)
+TY/Z3: closest-trivial-rep value = 0.629733 via raw → residual = 269705.126 ppm  (26.97051% of ω_fix)
+Schoen tier: FAILED (>1% off ω_fix)
+TY tier:     FAILED (>1% off ω_fix) (control — should NOT match)
+
+================================================
+
+Wrote output/p7_1_omega_fix_diagnostic.json
+Total elapsed: 73.2s

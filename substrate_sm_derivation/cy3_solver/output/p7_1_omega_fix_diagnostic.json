@@ -1,0 +1,740 @@
+{
+  "label": "p7_1_omega_fix_diagnostic",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 40000,
+  "k": 3,
+  "max_iter": 100,
+  "seed": 42,
+  "test_degree": 4,
+  "candidates": [
+    {
+      "label": "Schoen/Z3xZ3",
+      "symmetry": "z3xz3",
+      "metric_iters": 26,
+      "metric_sigma_residual": 8.194638990263705,
+      "metric_seconds": 3.4781575,
+      "spectrum_seconds": 25.1136025,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lambda_min_full_nonzero": 0.43195344213116643,
+      "lambda_min_trivial_nonzero": 0.5055079875456941,
+      "lambda_max_full": 4032995854.887115,
+      "lambda_mean_full": 25909096.72192819,
+      "trivial_eigvalues": [
+        {
+          "full_index": 1,
+          "eigenvalue": 0.5055079875456941,
+          "trivial_rep_purity": 0.2603609367870407,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.2603609367870407,
+            0.08324455111921228,
+            0.00980062707131401,
+            0.23538314823475837,
+            0.07744325923897591,
+            0.015434926086640178,
+            0.22161315720244018,
+            0.0847750870465055,
+            0.011944307213112956
+          ],
+          "normalised": {
+            "by_lambda1_overall": 1.1702835033600503,
+            "by_lambda1_trivial": 1.0,
+            "by_lambda_max": 1.2534304664189732e-10,
+            "by_mean_eigvalue": 1.9510830229672074e-08,
+            "raw": 0.5055079875456941
+          },
+          "residual_ppm_raw": 19235.617165302014,
+          "residual_ppm_by_lambda1_overall": 1359596.0067747354,
+          "residual_ppm_by_lambda1_trivial": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999999.9997472757,
+          "residual_ppm_by_mean_eigvalue": 999999.9606610903
+        },
+        {
+          "full_index": 2,
+          "eigenvalue": 0.9502138135157335,
+          "trivial_rep_purity": 0.23893741605898455,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.23893741605898455,
+            0.10002392740217124,
+            0.017183210595675798,
+            0.2348407111851099,
+            0.06046128458539191,
+            0.019639374794671042,
+            0.23013529088338547,
+            0.08548210782113994,
+            0.013296676673469312
+          ],
+          "normalised": {
+            "by_lambda1_overall": 2.1998060921278473,
+            "by_lambda1_trivial": 1.8797206709416066,
+            "by_lambda_max": 2.356099157315723e-10,
+            "by_mean_eigvalue": 3.667491088994697e-08,
+            "raw": 0.9502138135157335
+          },
+          "residual_ppm_raw": 915878.258145544,
+          "residual_ppm_by_lambda1_overall": 3435381.3890057406,
+          "residual_ppm_by_lambda1_trivial": 2790005.905638361,
+          "residual_ppm_by_lambda_max": 999999.9995249491,
+          "residual_ppm_by_mean_eigvalue": 999999.9260538382
+        },
+        {
+          "full_index": 5,
+          "eigenvalue": 1.8744237203017249,
+          "trivial_rep_purity": 0.31117855337059364,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.31117855337059364,
+            0.07657712387761298,
+            0.015491326112709558,
+            0.22186490889334903,
+            0.06216505455417858,
+            0.005380249537129365,
+            0.2372952188973249,
+            0.05637397999771628,
+            0.013673584759385508
+          ],
+          "normalised": {
+            "by_lambda1_overall": 4.339411467712161,
+            "by_lambda1_trivial": 3.708000202731299,
+            "by_lambda_max": 4.6477204235911386e-10,
+            "by_mean_eigvalue": 7.234616244708e-08,
+            "raw": 1.8744237203017249
+          },
+          "residual_ppm_raw": 2779325.8750799005,
+          "residual_ppm_by_lambda1_overall": 7749382.471484682,
+          "residual_ppm_by_lambda1_trivial": 6476293.091685871,
+          "residual_ppm_by_lambda_max": 999999.9990628987,
+          "residual_ppm_by_mean_eigvalue": 999999.8541313147
+        },
+        {
+          "full_index": 6,
+          "eigenvalue": 2.0894514914785813,
+          "trivial_rep_purity": 0.2782703106301911,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.2782703106301911,
+            0.058559700131834154,
+            0.01541704736357187,
+            0.2213100480203521,
+            0.07134033383743327,
+            0.012020364207286527,
+            0.2730666184474738,
+            0.059560876426418746,
+            0.010454700935438398
+          ],
+          "normalised": {
+            "by_lambda1_overall": 4.83721458768721,
+            "by_lambda1_trivial": 4.133369883279461,
+            "by_lambda_max": 5.180891740681112e-10,
+            "by_mean_eigvalue": 8.064547806910504e-08,
+            "raw": 2.0894514914785813
+          },
+          "residual_ppm_raw": 3212877.803956814,
+          "residual_ppm_by_lambda1_overall": 8753083.071109172,
+          "residual_ppm_by_lambda1_trivial": 7333949.03295371,
+          "residual_ppm_by_lambda_max": 999999.9989553975,
+          "residual_ppm_by_mean_eigvalue": 999999.8373977352
+        },
+        {
+          "full_index": 7,
+          "eigenvalue": 2.378239932622956,
+          "trivial_rep_purity": 0.2621871718853871,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.2621871718853871,
+            0.061930266547752535,
+            0.011305838570850768,
+            0.2362310796106457,
+            0.08104319092655188,
+            0.008080168101878884,
+            0.2606259740987793,
+            0.07022394980415447,
+            0.008372360453998631
+          ],
+          "normalised": {
+            "by_lambda1_overall": 5.505778402619565,
+            "by_lambda1_trivial": 4.704653519264086,
+            "by_lambda_max": 5.896956054990847e-10,
+            "by_mean_eigvalue": 9.179169610379084e-08,
+            "raw": 2.378239932622956
+          },
+          "residual_ppm_raw": 3795150.4332560413,
+          "residual_ppm_by_lambda1_overall": 10101081.657314245,
+          "residual_ppm_by_lambda1_trivial": 8485805.469735717,
+          "residual_ppm_by_lambda_max": 999999.9988110202,
+          "residual_ppm_by_mean_eigvalue": 999999.8149240599
+        }
+      ],
+      "bottom_eigvalues": [
+        {
+          "full_index": 0,
+          "eigenvalue": 0.43195344213116643,
+          "trivial_rep_purity": 0.22920410949074285,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.22920410949074285,
+            0.08244217077384523,
+            0.011119599788452547,
+            0.28750925186037946,
+            0.06716186205048488,
+            0.013312157346251179,
+            0.23799854616881042,
+            0.06596273744364532,
+            0.005289565077387683
+          ],
+          "normalised": {
+            "by_lambda1_overall": 1.0,
+            "by_lambda1_trivial": 0.8544938018256756,
+            "by_lambda_max": 1.071048564574478e-10,
+            "by_mean_eigvalue": 1.6671883499727808e-08,
+            "raw": 0.43195344213116643
+          },
+          "residual_ppm_raw": 129069.48253228233,
+          "residual_ppm_by_lambda1_overall": 1016260.162601626,
+          "residual_ppm_by_lambda1_trivial": 722881.8118111183,
+          "residual_ppm_by_lambda_max": 999999.9997840486,
+          "residual_ppm_by_mean_eigvalue": 999999.9663851456
+        },
+        {
+          "full_index": 1,
+          "eigenvalue": 0.5055079875456941,
+          "trivial_rep_purity": 0.2603609367870407,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.2603609367870407,
+            0.08324455111921228,
+            0.00980062707131401,
+            0.23538314823475837,
+            0.07744325923897591,
+            0.015434926086640178,
+            0.22161315720244018,
+            0.0847750870465055,
+            0.011944307213112956
+          ],
+          "normalised": {
+            "by_lambda1_overall": 1.1702835033600503,
+            "by_lambda1_trivial": 1.0,
+            "by_lambda_max": 1.2534304664189732e-10,
+            "by_mean_eigvalue": 1.9510830229672074e-08,
+            "raw": 0.5055079875456941
+          },
+          "residual_ppm_raw": 19235.617165302014,
+          "residual_ppm_by_lambda1_overall": 1359596.0067747354,
+          "residual_ppm_by_lambda1_trivial": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999999.9997472757,
+          "residual_ppm_by_mean_eigvalue": 999999.9606610903
+        },
+        {
+          "full_index": 2,
+          "eigenvalue": 0.9502138135157335,
+          "trivial_rep_purity": 0.23893741605898455,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.23893741605898455,
+            0.10002392740217124,
+            0.017183210595675798,
+            0.2348407111851099,
+            0.06046128458539191,
+            0.019639374794671042,
+            0.23013529088338547,
+            0.08548210782113994,
+            0.013296676673469312
+          ],
+          "normalised": {
+            "by_lambda1_overall": 2.1998060921278473,
+            "by_lambda1_trivial": 1.8797206709416066,
+            "by_lambda_max": 2.356099157315723e-10,
+            "by_mean_eigvalue": 3.667491088994697e-08,
+            "raw": 0.9502138135157335
+          },
+          "residual_ppm_raw": 915878.258145544,
+          "residual_ppm_by_lambda1_overall": 3435381.3890057406,
+          "residual_ppm_by_lambda1_trivial": 2790005.905638361,
+          "residual_ppm_by_lambda_max": 999999.9995249491,
+          "residual_ppm_by_mean_eigvalue": 999999.9260538382
+        },
+        {
+          "full_index": 3,
+          "eigenvalue": 1.6040670030607334,
+          "trivial_rep_purity": 0.254133443233578,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.254133443233578,
+            0.05452253999138913,
+            0.016751214466489976,
+            0.2835845919709594,
+            0.06518148138798066,
+            0.00728435177700895,
+            0.24269251334791772,
+            0.05853395896094632,
+            0.017315904863729293
+          ],
+          "normalised": {
+            "by_lambda1_overall": 3.713518279068707,
+            "by_lambda1_trivial": 3.173178352430559,
+            "by_lambda_max": 3.977358422317624e-10,
+            "by_mean_eigvalue": 6.191134412274318e-08,
+            "raw": 1.6040670030607334
+          },
+          "residual_ppm_raw": 2234216.396415137,
+          "residual_ppm_by_lambda1_overall": 6487418.969179181,
+          "residual_ppm_by_lambda1_trivial": 5397953.100835599,
+          "residual_ppm_by_lambda_max": 999999.9991980611,
+          "residual_ppm_by_mean_eigvalue": 999999.8751706233
+        },
+        {
+          "full_index": 4,
+          "eigenvalue": 1.7349610448024797,
+          "trivial_rep_purity": 0.25138789563044717,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.25138789563044717,
+            0.07639599929326954,
+            0.012645963563133045,
+            0.2799237571243894,
+            0.06829860379236527,
+            0.011932190771863615,
+            0.2180385056230693,
+            0.07426374303254937,
+            0.007113341168913338
+          ],
+          "normalised": {
+            "by_lambda1_overall": 4.016546404266513,
+            "by_lambda1_trivial": 3.4321140071909393,
+            "by_lambda_max": 4.3019162608364294e-10,
+            "by_mean_eigvalue": 6.696339372318193e-08,
+            "raw": 1.7349610448024797
+          },
+          "residual_ppm_raw": 2498132.8383009345,
+          "residual_ppm_by_lambda1_overall": 7098402.506163375,
+          "residual_ppm_by_lambda1_trivial": 5920034.7462061215,
+          "residual_ppm_by_lambda_max": 999999.9991326218,
+          "residual_ppm_by_mean_eigvalue": 999999.8649843769
+        }
+      ],
+      "closest_to_omega_fix_overall": {
+        "full_index": 1,
+        "eigenvalue": 0.5055079875456941,
+        "chosen_scheme": "raw",
+        "chosen_value": 0.5055079875456941,
+        "residual_ppm": 19235.617165302014,
+        "dominant_character": [
+          0,
+          0
+        ],
+        "trivial_rep_purity": 0.2603609367870407
+      },
+      "closest_to_omega_fix_trivial": {
+        "full_index": 1,
+        "eigenvalue": 0.5055079875456941,
+        "chosen_scheme": "raw",
+        "chosen_value": 0.5055079875456941,
+        "residual_ppm": 19235.617165302014,
+        "dominant_character": [
+          0,
+          0
+        ],
+        "trivial_rep_purity": 0.2603609367870407
+      }
+    },
+    {
+      "label": "TY/Z3",
+      "symmetry": "z3_ty",
+      "metric_iters": 17,
+      "metric_sigma_residual": 0.26666226970768697,
+      "metric_seconds": 18.7943226,
+      "spectrum_seconds": 25.767413,
+      "basis_dim": 494,
+      "n_points": 40000,
+      "lambda_min_full_nonzero": 0.00228300442249181,
+      "lambda_min_trivial_nonzero": 0.00228300442249181,
+      "lambda_max_full": 5648974373.650719,
+      "lambda_mean_full": 149884281.97085384,
+      "trivial_eigvalues": [
+        {
+          "full_index": 0,
+          "eigenvalue": 0.00228300442249181,
+          "trivial_rep_purity": 0.3555709808102886,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.3555709808102886,
+            0.0,
+            0.0,
+            0.322693138315407,
+            0.0,
+            0.0,
+            0.3217358808743047,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 1.0,
+            "by_lambda1_trivial": 1.0,
+            "by_lambda_max": 4.041449423351501e-13,
+            "by_mean_eigvalue": 1.5231780093764324e-11,
+            "raw": 0.00228300442249181
+          },
+          "residual_ppm_raw": 995396.8691318864,
+          "residual_ppm_by_lambda1_overall": 1016260.162601626,
+          "residual_ppm_by_lambda1_trivial": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999999.9999991852,
+          "residual_ppm_by_mean_eigvalue": 999999.9999692888
+        },
+        {
+          "full_index": 2,
+          "eigenvalue": 0.19522763001765944,
+          "trivial_rep_purity": 0.41805421901135414,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.41805421901135414,
+            0.0,
+            0.0,
+            0.33769971073289035,
+            0.0,
+            0.0,
+            0.24424607025575568,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 85.51346992336357,
+            "by_lambda1_trivial": 85.51346992336357,
+            "by_lambda_max": 3.455983637105636e-11,
+            "by_mean_eigvalue": 1.3025223689274034e-09,
+            "raw": 0.19522763001765944
+          },
+          "residual_ppm_raw": 606370.306956264,
+          "residual_ppm_by_lambda1_overall": 171417402.7723103,
+          "residual_ppm_by_lambda1_trivial": 171417402.7723103,
+          "residual_ppm_by_lambda_max": 999999.9999303183,
+          "residual_ppm_by_mean_eigvalue": 999999.997373776
+        },
+        {
+          "full_index": 6,
+          "eigenvalue": 0.6297327840645273,
+          "trivial_rep_purity": 0.4545608035680587,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.4545608035680587,
+            0.0,
+            0.0,
+            0.29164805198067206,
+            0.0,
+            0.0,
+            0.2537911444512695,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 275.8351135286889,
+            "by_lambda1_trivial": 275.8351135286889,
+            "by_lambda_max": 1.1147736605106154e-10,
+            "by_mean_eigvalue": 4.201459791407505e-09,
+            "raw": 0.6297327840645273
+          },
+          "residual_ppm_raw": 269705.1255935184,
+          "residual_ppm_by_lambda1_overall": 555155350.8545922,
+          "residual_ppm_by_lambda1_trivial": 555155350.8545922,
+          "residual_ppm_by_lambda_max": 999999.9997752326,
+          "residual_ppm_by_mean_eigvalue": 999999.9915287639
+        },
+        {
+          "full_index": 7,
+          "eigenvalue": 0.8675509129690222,
+          "trivial_rep_purity": 0.5035405121770599,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.5035405121770599,
+            0.0,
+            0.0,
+            0.19255457470962578,
+            0.0,
+            0.0,
+            0.3039049131133141,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 380.0040439790845,
+            "by_lambda1_trivial": 380.0040439790845,
+            "by_lambda_max": 1.5357671244105093e-10,
+            "by_mean_eigvalue": 5.788138032630561e-09,
+            "raw": 0.8675509129690222
+          },
+          "residual_ppm_raw": 749208.3448481099,
+          "residual_ppm_by_lambda1_overall": 765187015.5025443,
+          "residual_ppm_by_lambda1_trivial": 765187015.5025443,
+          "residual_ppm_by_lambda_max": 999999.9996903493,
+          "residual_ppm_by_mean_eigvalue": 999999.9883296079
+        },
+        {
+          "full_index": 11,
+          "eigenvalue": 1.2955487258321676,
+          "trivial_rep_purity": 0.42257656890128675,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.42257656890128675,
+            0.0,
+            0.0,
+            0.27121659849670876,
+            0.0,
+            0.0,
+            0.30620683260200543,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 567.475346551509,
+            "by_lambda1_trivial": 567.475346551509,
+            "by_lambda_max": 2.293422912086789e-10,
+            "by_mean_eigvalue": 8.643659687305284e-09,
+            "raw": 1.2955487258321676
+          },
+          "residual_ppm_raw": 1612163.2846046959,
+          "residual_ppm_by_lambda1_overall": 1143177934.5103595,
+          "residual_ppm_by_lambda1_trivial": 1143177934.5103595,
+          "residual_ppm_by_lambda_max": 999999.9995375864,
+          "residual_ppm_by_mean_eigvalue": 999999.9825721333
+        }
+      ],
+      "bottom_eigvalues": [
+        {
+          "full_index": 0,
+          "eigenvalue": 0.00228300442249181,
+          "trivial_rep_purity": 0.3555709808102886,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.3555709808102886,
+            0.0,
+            0.0,
+            0.322693138315407,
+            0.0,
+            0.0,
+            0.3217358808743047,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 1.0,
+            "by_lambda1_trivial": 1.0,
+            "by_lambda_max": 4.041449423351501e-13,
+            "by_mean_eigvalue": 1.5231780093764324e-11,
+            "raw": 0.00228300442249181
+          },
+          "residual_ppm_raw": 995396.8691318864,
+          "residual_ppm_by_lambda1_overall": 1016260.162601626,
+          "residual_ppm_by_lambda1_trivial": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999999.9999991852,
+          "residual_ppm_by_mean_eigvalue": 999999.9999692888
+        },
+        {
+          "full_index": 1,
+          "eigenvalue": 0.018836017956013595,
+          "trivial_rep_purity": 0.21683251233662554,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.21683251233662554,
+            0.0,
+            0.0,
+            0.4243333945050047,
+            0.0,
+            0.0,
+            0.35883409315836845,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 8.250539407827699,
+            "by_lambda1_trivial": 8.250539407827699,
+            "by_lambda_max": 3.334413773210408e-12,
+            "by_mean_eigvalue": 1.25670401914968e-10,
+            "raw": 0.018836017956013595
+          },
+          "residual_ppm_raw": 962021.6873732408,
+          "residual_ppm_by_lambda1_overall": 15635233.927977799,
+          "residual_ppm_by_lambda1_trivial": 15635233.927977799,
+          "residual_ppm_by_lambda_max": 999999.999993277,
+          "residual_ppm_by_mean_eigvalue": 999999.9997466158
+        },
+        {
+          "full_index": 2,
+          "eigenvalue": 0.19522763001765944,
+          "trivial_rep_purity": 0.41805421901135414,
+          "dominant_character": [
+            0,
+            0
+          ],
+          "character_weights": [
+            0.41805421901135414,
+            0.0,
+            0.0,
+            0.33769971073289035,
+            0.0,
+            0.0,
+            0.24424607025575568,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 85.51346992336357,
+            "by_lambda1_trivial": 85.51346992336357,
+            "by_lambda_max": 3.455983637105636e-11,
+            "by_mean_eigvalue": 1.3025223689274034e-09,
+            "raw": 0.19522763001765944
+          },
+          "residual_ppm_raw": 606370.306956264,
+          "residual_ppm_by_lambda1_overall": 171417402.7723103,
+          "residual_ppm_by_lambda1_trivial": 171417402.7723103,
+          "residual_ppm_by_lambda_max": 999999.9999303183,
+          "residual_ppm_by_mean_eigvalue": 999999.997373776
+        },
+        {
+          "full_index": 3,
+          "eigenvalue": 0.21523520036419672,
+          "trivial_rep_purity": 0.3425200753682928,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.3425200753682928,
+            0.0,
+            0.0,
+            0.3885801591945812,
+            0.0,
+            0.0,
+            0.26889976543712596,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 94.27717188969608,
+            "by_lambda1_trivial": 94.27717188969608,
+            "by_lambda_max": 3.8101642196882254e-11,
+            "by_mean_eigvalue": 1.43600915008587e-09,
+            "raw": 0.21523520036419672
+          },
+          "residual_ppm_raw": 566029.8399160912,
+          "residual_ppm_by_lambda1_overall": 189087305.92394003,
+          "residual_ppm_by_lambda1_trivial": 189087305.92394003,
+          "residual_ppm_by_lambda_max": 999999.9999231772,
+          "residual_ppm_by_mean_eigvalue": 999999.997104632
+        },
+        {
+          "full_index": 4,
+          "eigenvalue": 0.3303335978555031,
+          "trivial_rep_purity": 0.2820875720844594,
+          "dominant_character": [
+            1,
+            0
+          ],
+          "character_weights": [
+            0.2820875720844594,
+            0.0,
+            0.0,
+            0.39837480123476166,
+            0.0,
+            0.0,
+            0.3195376266807787,
+            0.0,
+            0.0
+          ],
+          "normalised": {
+            "by_lambda1_overall": 144.69249143852156,
+            "by_lambda1_trivial": 144.69249143852156,
+            "by_lambda_max": 5.847673860875048e-11,
+            "by_mean_eigvalue": 2.203924210810437e-09,
+            "raw": 0.3303335978555031
+          },
+          "residual_ppm_raw": 333961.5262750832,
+          "residual_ppm_by_lambda1_overall": 290737706.3150678,
+          "residual_ppm_by_lambda1_trivial": 290737706.3150678,
+          "residual_ppm_by_lambda_max": 999999.9998820956,
+          "residual_ppm_by_mean_eigvalue": 999999.9955563154
+        }
+      ],
+      "closest_to_omega_fix_overall": {
+        "full_index": 4,
+        "eigenvalue": 0.3303335978555031,
+        "chosen_scheme": "raw",
+        "chosen_value": 0.3303335978555031,
+        "residual_ppm": 333961.5262750832,
+        "dominant_character": [
+          1,
+          0
+        ],
+        "trivial_rep_purity": 0.2820875720844594
+      },
+      "closest_to_omega_fix_trivial": {
+        "full_index": 6,
+        "eigenvalue": 0.6297327840645273,
+        "chosen_scheme": "raw",
+        "chosen_value": 0.6297327840645273,
+        "residual_ppm": 269705.1255935184,
+        "dominant_character": [
+          0,
+          0
+        ],
+        "trivial_rep_purity": 0.4545608035680587
+      }
+    }
+  ],
+  "verdict": "Schoen/Z3xZ3: closest-trivial-rep value = 0.505508 via raw \u00e2\u2020\u2019 residual = 19235.617 ppm  (1.92356% of \u00cf\u2030_fix)\nTY/Z3: closest-trivial-rep value = 0.629733 via raw \u00e2\u2020\u2019 residual = 269705.126 ppm  (26.97051% of \u00cf\u2030_fix)\nSchoen tier: FAILED (>1% off \u00cf\u2030_fix)\nTY tier:     FAILED (>1% off \u00cf\u2030_fix) (control \u00e2\u20ac\u201d should NOT match)\n",
+  "total_elapsed_s": 73.1624137,
+  "retraction_marker": "RETRACTED-pending-P7.1b",
+  "retraction_note": "Single-seed result (seed=42) does not survive ensemble averaging. P7.1b multi-seed sweep on five strict-converged Schoen seeds [48879, 2, 12345, 51966, 4] gives lambda_lowest_triv = 0.26 +/- 0.10 (spread 207.6%) \u2014 47.5% from omega_fix=123/248. The 1.92% on seed=42 was lucky alignment, not robust verification. Trivial-rep purity ~0.25 across all seeds confirms the test_degree=4 basis cannot block-diagonalize over Z3xZ3 cleanly enough to read off the gateway eigenvalue. See references/p7_1b_omega_fix_results.md and output/p7_1b_omega_fix_converged_seeds.json."
+}

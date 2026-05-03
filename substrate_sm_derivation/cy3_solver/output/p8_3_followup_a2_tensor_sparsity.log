@@ -1,0 +1,279 @@
+warning: unused import: `num_complex::Complex64`
+    --> src\pipeline.rs:1545:9
+     |
+1545 |     use num_complex::Complex64;
+     |         ^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `in_e8_root_lattice`
+   --> src\route34\wilson_line_e8_z3xz3.rs:104:48
+    |
+104 | use crate::route34::wilson_line_e8::{e8_roots, in_e8_root_lattice, WilsonLineE8};
+    |                                                ^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `cudarc::driver::sys::CUstream`
+  --> src\gpu.rs:12:5
+   |
+12 | use cudarc::driver::sys::CUstream;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+   --> src\route34\eta_evaluator.rs:396:34
+    |
+396 |     let visible = VisibleBundle::ty_aglp_2011_standard();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+   --> src\route34\eta_evaluator.rs:575:34
+    |
+575 |     let visible = VisibleBundle::schoen_dhor_2006_minimal();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+    --> src\route34\eta_evaluator.rs:1053:24
+     |
+1053 |         VisibleBundle::ty_aglp_2011_standard(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+    --> src\route34\eta_evaluator.rs:1079:24
+     |
+1079 |         VisibleBundle::schoen_dhor_2006_minimal(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2320:31
+     |
+2320 |             let zr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2321:31
+     |
+2321 |             let zi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2322:31
+     |
+2322 |             let wr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:2323:31
+     |
+2323 |             let wi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: unused import: `Deserialize`
+  --> src\route34\metric_cache.rs:60:13
+   |
+60 | use serde::{Deserialize, Serialize};
+   |             ^^^^^^^^^^^
+
+warning: function `lm_divides` is never used
+   --> src\route34\groebner.rs:354:4
+    |
+354 | fn lm_divides(divisor: &Polynomial, target: &Polynomial) -> bool {
+    |    ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `integrate_tr_f_squared_wedge_J` should have a snake case name
+   --> src\route34\chern_field_strength.rs:188:8
+    |
+188 | pub fn integrate_tr_f_squared_wedge_J<B: Bundle>(
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `integrate_tr_f_squared_wedge_j`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: `cy3_rust_solver` (lib) generated 14 warnings (run `cargo fix --lib -p cy3_rust_solver` to apply 3 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.09s
+     Running `target\release\p8_3_followup_a2_tensor_sparsity_diag.exe`
+=== P8.3-followup-A2 T-tensor sparsity diagnostic ===
+n_pts=200, seed=42, k_or_dx=3, max_iter=50, donaldson_tol=1e-9
+MAG_FLOOR (treat |T| <= floor as zero) = 1e-10
+
+==================================================================
+TY/Z3 (k=3)
+==================================================================
+metric: σ=7.616940e-1  iters=50  n_basis=87
+metric background: 200 accepted points
+HYM solved (h_V dim = 6)
+harmonic modes: returned=9, predicted=9, observed=9
+Yukawa T tensor: n=9, total entries=729
+CSV written: output\p8_3_followup_a2_tensor_TY.csv
+
+--- Sparsity statistics (TY/Z3) ---
+Total entries           : 729
+Non-zero entries        : 343
+Sparsity ratio (zeros/N): 0.5295
+max |T|                 : 4.625529e0
+min nonzero |T|         : 2.567279e-2
+mean nonzero |T|        : 2.946512e-1
+
+--- Per-Higgs-slice rank (9x9 (i,j) submatrix at fixed k) ---
+  k    rank    n_nz          max|T|        fro_norm
+  0       7      49      1.208824e0      2.516054e0
+  1       7      49     3.672403e-1      1.443636e0
+  2       7      49     9.422439e-1      2.677848e0
+  3       7      49     6.375081e-1      1.149180e0
+  4       7       0      0.000000e0    6.928818e-12
+  5       7       0      0.000000e0    5.043109e-12
+  6       7      49      1.479447e0      3.737536e0
+  7       7      49      1.064021e0      2.301968e0
+  8       7      49      4.625529e0      5.672458e0
+
+--- Sector assignment ---
+up_quark  : [0, 3, 6]
+down_quark: [1, 4, 7]
+lepton    : [2, 5, 8]
+higgs     : [0, 1, 2, 3, 4, 5, 6, 7, 8]
+h_0 (lowest-eigenvalue Higgs index)    : 0
+
+--- Mode eigenvalues (ascending order from solver) ---
+  λ[ 0] = 1.147938e0
+  λ[ 1] = 1.151298e0
+  λ[ 2] = 1.151298e0
+  λ[ 3] = 1.241388e0
+  λ[ 4] = 1.243307e0
+  λ[ 5] = 1.243307e0
+  λ[ 6] = 1.307563e0
+  λ[ 7] = 1.313128e0
+  λ[ 8] = 1.313128e0
+
+--- Sector x sector buckets evaluated at h_0=0 ---
+Y_u (up x up):
+           rj=0          rj=3          rj=6      
+li=0  : +6.171e-1 +8.407e-2 +2.184e-1 
+li=3  : +8.407e-2 +4.397e-2 +1.909e-1 
+li=6  : +2.184e-1 +1.909e-1 +5.621e-1 
+Y_d (up x down):
+           rj=1          rj=4          rj=7      
+li=0  : +2.508e-1 +3.019e-13 +1.018e-1 
+li=3  : +9.768e-2 +4.767e-13 +4.644e-2 
+li=6  : +2.567e-2 +9.247e-13 +4.764e-1 
+Y_e (lepton x lepton):
+           rj=2          rj=5          rj=8      
+li=2  : +9.542e-2 +2.999e-13 +3.667e-1 
+li=5  : +2.999e-13 +1.367e-24 +6.406e-13 
+li=8  : +3.667e-1 +6.406e-13 +1.209e0 
+
+--- Assignment vs sparsity cross-reference ---
+(For each sector pair: of the 9 (li,rj) buckets evaluated at h_0,
+ how many are above the MAG_FLOOR on the T_{i,j,h_0} slice?)
+h_0 slice has 49 non-zero (i,j) entries (out of 81)
+Y_u (up x up)          buckets=[(0, 0), (0, 3), (0, 6), (3, 0), (3, 3), (3, 6), (6, 0), (6, 3), (6, 6)]  hit=9/9
+Y_d (up x down)        buckets=[(0, 1), (0, 4), (0, 7), (3, 1), (3, 4), (3, 7), (6, 1), (6, 4), (6, 7)]  hit=6/9
+Y_e (lepton x lepton)  buckets=[(2, 2), (2, 5), (2, 8), (5, 2), (5, 5), (5, 8), (8, 2), (8, 5), (8, 8)]  hit=4/9
+
+--- Verdict (TY/Z3) ---
+Non-zero (i,j) entries at h_0 = 49
+Rank of T_{:,:,h_0} 9x9 slice = 7
+VERDICT: cause (b) ASSIGNMENT-DRIVEN — T has 49 non-zero (i,j) entries at h_0,
+         rank 7, but bucket overlap with sector indices is sparse.
+→ Recommend P8.3-followup-B (real Schoen 3-factor bundle providing 3 Wilson
+  Z/3 phase classes). Once 3 phase classes exist, the round-robin fallback in
+  assign_sectors_dynamic disengages and bucket assignment becomes consistent.
+
+==================================================================
+Schoen Z/3xZ/3 (d=(3,3,1))
+==================================================================
+metric: σ=5.288258e0  iters=50  n_basis=27
+metric background: 200 accepted points
+HYM solved (h_V dim = 6)
+harmonic modes: returned=12, predicted=0, observed=12
+Yukawa T tensor: n=12, total entries=1728
+CSV written: output\p8_3_followup_a2_tensor_Schoen.csv
+
+--- Sparsity statistics (Schoen/Z3xZ3) ---
+Total entries           : 1728
+Non-zero entries        : 1271
+Sparsity ratio (zeros/N): 0.2645
+max |T|                 : 2.675575e5
+min nonzero |T|         : 1.014450e-10
+mean nonzero |T|        : 6.758933e3
+
+--- Per-Higgs-slice rank (9x9 (i,j) submatrix at fixed k) ---
+  k    rank    n_nz          max|T|        fro_norm
+  0       8     122      2.145077e1      3.852392e1
+  1       7      63     1.220066e-5     2.090709e-5
+  2       7      64     1.283292e-3     2.585537e-3
+  3       7     128      5.231550e4      1.136605e5
+  4       7     128      9.639943e4      2.652448e5
+  5       7     128      9.639943e4      1.833723e5
+  6       7     128      1.066076e5      1.521862e5
+  7       7      63     9.078299e-5     1.554480e-4
+  8       7      63     3.443882e-5     6.363722e-5
+  9       7     128      9.738598e4      2.086213e5
+ 10       7     128      2.675575e5      4.307052e5
+ 11       7     128      1.436004e5      2.789793e5
+
+--- Sector assignment ---
+up_quark  : [0, 3, 6, 9]
+down_quark: [1, 4, 7, 10]
+lepton    : [2, 5, 8, 11]
+higgs     : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+h_0 (lowest-eigenvalue Higgs index)    : 0
+
+--- Mode eigenvalues (ascending order from solver) ---
+  λ[ 0] = 4.164822e-1
+  λ[ 1] = 4.830491e-1
+  λ[ 2] = 4.830491e-1
+  λ[ 3] = 5.340226e-1
+  λ[ 4] = 5.340226e-1
+  λ[ 5] = 6.484671e-1
+  λ[ 6] = 1.475823e3
+  λ[ 7] = 1.621306e3
+  λ[ 8] = 1.621306e3
+  λ[ 9] = 2.150770e3
+  λ[10] = 2.150770e3
+  λ[11] = 2.473694e3
+
+--- Sector x sector buckets evaluated at h_0=0 ---
+Y_u (up x up):
+           rj=0          rj=3          rj=6      
+li=0  : +1.431e-3 +2.028e-3 +1.191e-3 
+li=3  : +2.028e-3 +4.772e0 +9.719e-1 
+li=6  : +1.191e-3 +9.719e-1 +3.195e0 
+Y_d (up x down):
+           rj=1          rj=4          rj=7      
+li=0  : +1.529e-12 +5.184e-3 +1.820e-13 
+li=3  : +7.297e-10 +3.323e0 +1.403e-9 
+li=6  : +7.173e-10 +2.484e0 +6.715e-10 
+Y_e (lepton x lepton):
+           rj=2          rj=5          rj=8      
+li=2  : +5.739e-15 +1.138e-7 +1.356e-17 
+li=5  : +1.138e-7 +9.110e0 +9.920e-10 
+li=8  : +1.356e-17 +9.920e-10 +3.254e-19 
+
+--- Assignment vs sparsity cross-reference ---
+(For each sector pair: of the 9 (li,rj) buckets evaluated at h_0,
+ how many are above the MAG_FLOOR on the T_{i,j,h_0} slice?)
+h_0 slice has 122 non-zero (i,j) entries (out of 144)
+Y_u (up x up)          buckets=[(0, 0), (0, 3), (0, 6), (3, 0), (3, 3), (3, 6), (6, 0), (6, 3), (6, 6)]  hit=9/9
+Y_d (up x down)        buckets=[(0, 1), (0, 4), (0, 7), (3, 1), (3, 4), (3, 7), (6, 1), (6, 4), (6, 7)]  hit=7/9
+Y_e (lepton x lepton)  buckets=[(2, 2), (2, 5), (2, 8), (5, 2), (5, 5), (5, 8), (8, 2), (8, 5), (8, 8)]  hit=5/9
+
+--- Verdict (Schoen/Z3xZ3) ---
+Non-zero (i,j) entries at h_0 = 122
+Rank of T_{:,:,h_0} 9x9 slice = 8
+VERDICT: cause (b) ASSIGNMENT-DRIVEN — T has 122 non-zero (i,j) entries at h_0,
+         rank 8, but bucket overlap with sector indices is sparse.
+→ Recommend P8.3-followup-B (real Schoen 3-factor bundle providing 3 Wilson
+  Z/3 phase classes). Once 3 phase classes exist, the round-robin fallback in
+  assign_sectors_dynamic disengages and bucket assignment becomes consistent.
+
+==================================================================
+=== TY vs Schoen comparison ===
+==================================================================
+label           n_modes     n_nz   sparsity       max|T|    min_nz|T|   mean_nz|T|
+TY/Z3                 9      343     0.5295     4.6255e0    2.5673e-2    2.9465e-1
+Schoen/Z3xZ3         12     1271     0.2645     2.6756e5   1.0145e-10     6.7589e3
+
+CSV outputs:
+  output/p8_3_followup_a2_tensor_TY.csv
+  output/p8_3_followup_a2_tensor_Schoen.csv

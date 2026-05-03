@@ -1,0 +1,84 @@
+=== P5.9 ABKO apples-to-apples comparison ===
+n_pts=1000000, ks=[3, 4, 5], n_seeds=20, donaldson_iters_cap=10 (tol=1e-12)
+Protocol: Donaldson-only (NO sigma_refine_analytic), Shiffman-Zelditch sampler.
+
+--- Profiling pass: k=3, n_pts=1000000, seed=42 ---
+  Profiling: σ_FS=0.197295, σ_D=0.201160 (10 iters), elapsed=12.71s
+  Estimated total wallclock for full sweep (20 seeds × 3 k-values): 762.4s = 12.71 min = 0.21 hr
+--- k=3 (n_basis=35, n_pts=1000000) ---
+  [ 1/20] seed=    42: σ_FS=0.197295  σ_D=0.201160  iters=10 (12.44s) [reused profile]
+  [ 2/20] seed=   100: σ_FS=0.197203  σ_D=0.201078  iters=10 (12.29s)
+  [ 3/20] seed= 12345: σ_FS=0.197030  σ_D=0.200887  iters=10 (13.13s)
+  [ 4/20] seed=     7: σ_FS=0.197147  σ_D=0.201023  iters=10 (12.45s)
+  [ 5/20] seed=    99: σ_FS=0.197197  σ_D=0.201066  iters=10 (12.42s)
+  [ 6/20] seed=     1: σ_FS=0.197162  σ_D=0.201044  iters=10 (12.39s)
+  [ 7/20] seed=     2: σ_FS=0.197026  σ_D=0.200889  iters=10 (12.34s)
+  [ 8/20] seed=     3: σ_FS=0.197078  σ_D=0.200949  iters=10 (13.37s)
+  [ 9/20] seed=     4: σ_FS=0.197046  σ_D=0.200914  iters=10 (13.04s)
+  [10/20] seed=     5: σ_FS=0.197381  σ_D=0.201252  iters=10 (12.48s)
+  [11/20] seed=   137: σ_FS=0.197300  σ_D=0.201175  iters=10 (12.96s)
+  [12/20] seed=   271: σ_FS=0.197236  σ_D=0.201096  iters=10 (12.99s)
+  [13/20] seed=   314: σ_FS=0.197115  σ_D=0.200990  iters=10 (12.50s)
+  [14/20] seed=   666: σ_FS=0.197271  σ_D=0.201153  iters=10 (12.33s)
+  [15/20] seed=  1000: σ_FS=0.197043  σ_D=0.200896  iters=10 (12.22s)
+  [16/20] seed=  2024: σ_FS=0.197197  σ_D=0.201069  iters=10 (12.45s)
+  [17/20] seed=  4242: σ_FS=0.197245  σ_D=0.201112  iters=10 (12.47s)
+  [18/20] seed= 57005: σ_FS=0.197458  σ_D=0.201334  iters=10 (12.83s)
+  [19/20] seed= 48879: σ_FS=0.196944  σ_D=0.200828  iters=10 (12.41s)
+  [20/20] seed= 51966: σ_FS=0.197516  σ_D=0.201419  iters=10 (13.04s)
+  Stats:
+           sigma_donaldson: mean=0.201067 std=1.5487e-4 stderr=3.4631e-5  pct95=[0.201007, 0.201136]  bca95=[0.201007, 0.201137]
+  ABKO 2010: σ_ABKO(3) = 0.197778, rel_dev_from_mean = +0.0166
+    inside percentile 95% CI: false, inside BCa 95% CI: false
+
+--- k=4 (n_basis=70, n_pts=1000000) ---
+  [ 1/20] seed=    42: σ_FS=0.140613  σ_D=0.150083  iters=10 (53.07s)
+  [ 2/20] seed=   100: σ_FS=0.140477  σ_D=0.149967  iters=10 (53.43s)
+  [ 3/20] seed= 12345: σ_FS=0.140377  σ_D=0.149835  iters=10 (53.61s)
+  [ 4/20] seed=     7: σ_FS=0.140324  σ_D=0.149818  iters=10 (53.50s)
+  [ 5/20] seed=    99: σ_FS=0.140572  σ_D=0.150046  iters=10 (53.82s)
+  [ 6/20] seed=     1: σ_FS=0.140315  σ_D=0.149826  iters=10 (53.90s)
+  [ 7/20] seed=     2: σ_FS=0.140324  σ_D=0.149791  iters=10 (54.10s)
+  [ 8/20] seed=     3: σ_FS=0.140283  σ_D=0.149765  iters=10 (53.95s)
+  [ 9/20] seed=     4: σ_FS=0.140254  σ_D=0.149729  iters=10 (53.69s)
+  [10/20] seed=     5: σ_FS=0.140660  σ_D=0.150144  iters=10 (53.59s)
+  [11/20] seed=   137: σ_FS=0.140621  σ_D=0.150104  iters=10 (54.69s)
+  [12/20] seed=   271: σ_FS=0.140548  σ_D=0.150012  iters=10 (53.78s)
+  [13/20] seed=   314: σ_FS=0.140418  σ_D=0.149906  iters=10 (53.70s)
+  [14/20] seed=   666: σ_FS=0.140475  σ_D=0.149987  iters=10 (52.96s)
+  [15/20] seed=  1000: σ_FS=0.140442  σ_D=0.149889  iters=10 (53.23s)
+  [16/20] seed=  2024: σ_FS=0.140490  σ_D=0.149966  iters=10 (53.71s)
+  [17/20] seed=  4242: σ_FS=0.140607  σ_D=0.150079  iters=10 (53.64s)
+  [18/20] seed= 57005: σ_FS=0.140788  σ_D=0.150283  iters=10 (53.88s)
+  [19/20] seed= 48879: σ_FS=0.140213  σ_D=0.149719  iters=10 (53.26s)
+  [20/20] seed= 51966: σ_FS=0.140781  σ_D=0.150325  iters=10 (53.15s)
+  Stats:
+           sigma_donaldson: mean=0.149964 std=1.7357e-4 stderr=3.8811e-5  pct95=[0.149891, 0.150041]  bca95=[0.149891, 0.150041]
+  ABKO 2010: σ_ABKO(4) = 0.138281, rel_dev_from_mean = +0.0845
+    inside percentile 95% CI: false, inside BCa 95% CI: false
+
+--- k=5 (n_basis=126, n_pts=1000000) ---
+  [ 1/20] seed=    42: SKIPPED — Cholesky failed (k=5, seed=42): FS Gram matrix not positive-definite
+  [ 2/20] seed=   100: SKIPPED — Cholesky failed (k=5, seed=100): FS Gram matrix not positive-definite
+  [ 3/20] seed= 12345: SKIPPED — Cholesky failed (k=5, seed=12345): FS Gram matrix not positive-definite
+  [ 4/20] seed=     7: SKIPPED — Cholesky failed (k=5, seed=7): FS Gram matrix not positive-definite
+  [ 5/20] seed=    99: SKIPPED — Cholesky failed (k=5, seed=99): FS Gram matrix not positive-definite
+  [ 6/20] seed=     1: SKIPPED — Cholesky failed (k=5, seed=1): FS Gram matrix not positive-definite
+  [ 7/20] seed=     2: SKIPPED — Cholesky failed (k=5, seed=2): FS Gram matrix not positive-definite
+  [ 8/20] seed=     3: SKIPPED — Cholesky failed (k=5, seed=3): FS Gram matrix not positive-definite
+  [ 9/20] seed=     4: SKIPPED — Cholesky failed (k=5, seed=4): FS Gram matrix not positive-definite
+  [10/20] seed=     5: SKIPPED — Cholesky failed (k=5, seed=5): FS Gram matrix not positive-definite
+  [11/20] seed=   137: SKIPPED — Cholesky failed (k=5, seed=137): FS Gram matrix not positive-definite
+  [12/20] seed=   271: SKIPPED — Cholesky failed (k=5, seed=271): FS Gram matrix not positive-definite
+  [13/20] seed=   314: SKIPPED — Cholesky failed (k=5, seed=314): FS Gram matrix not positive-definite
+  [14/20] seed=   666: SKIPPED — Cholesky failed (k=5, seed=666): FS Gram matrix not positive-definite
+  [15/20] seed=  1000: SKIPPED — Cholesky failed (k=5, seed=1000): FS Gram matrix not positive-definite
+  [16/20] seed=  2024: SKIPPED — Cholesky failed (k=5, seed=2024): FS Gram matrix not positive-definite
+  [17/20] seed=  4242: SKIPPED — Cholesky failed (k=5, seed=4242): FS Gram matrix not positive-definite
+  [18/20] seed= 57005: SKIPPED — Cholesky failed (k=5, seed=57005): FS Gram matrix not positive-definite
+  [19/20] seed= 48879: SKIPPED — Cholesky failed (k=5, seed=48879): FS Gram matrix not positive-definite
+  [20/20] seed= 51966: SKIPPED — Cholesky failed (k=5, seed=51966): FS Gram matrix not positive-definite
+  k=5: no seeds succeeded; skipping stats
+=== total elapsed: 1491.2s (24.85 min) ===
+Wrote output/p5_9_ako_apples_to_apples.json
+Wrote references/p5_9_ako_apples_to_apples.md

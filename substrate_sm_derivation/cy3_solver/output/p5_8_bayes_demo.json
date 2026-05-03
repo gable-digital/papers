@@ -1,0 +1,487 @@
+{
+  "input_file": "output/p5_10_ty_schoen_5sigma.json",
+  "p5_10_summary": {
+    "k": 3,
+    "mean_ty": 1.0146875862209517,
+    "se_ty": 0.005225177112356106,
+    "n_ty": 20,
+    "mean_schoen": 3.0365304513085367,
+    "se_schoen": 0.2307189145987404,
+    "n_schoen": 20,
+    "n_sigma": 8.760983306769223
+  },
+  "ty_model": {
+    "mean": 1.0146875862209517,
+    "stderr": 0.005225177112356106,
+    "n_seeds": 20
+  },
+  "schoen_model": {
+    "mean": 3.0365304513085367,
+    "stderr": 0.2307189145987404,
+    "n_seeds": 20
+  },
+  "scenario_a_ty_truth": {
+    "label": "Scenario A — TY-truth (per-seed)",
+    "description": "Each of the 20 σ_TY values evaluated as a single observation. Under TY-truth we expect ln BF > 0 (TY preferred) on every seed.",
+    "per_seed": [
+      {
+        "seed": 42,
+        "sigma_obs": 1.0203499812417631,
+        "log_bf_ty_vs_schoen": 41.382864117089596,
+        "log10_bf_ty_vs_schoen": 17.972349531404095,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.097567160190641,
+        "posterior_odds_ty_at_prior_1": 9.383168847505508e+17
+      },
+      {
+        "seed": 100,
+        "sigma_obs": 1.041660674795229,
+        "log_bf_ty_vs_schoen": 27.84330655562642,
+        "log10_bf_ty_vs_schoen": 12.092194395049189,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 7.462346354281128,
+        "posterior_odds_ty_at_prior_1": 1236500781120.2185
+      },
+      {
+        "seed": 12345,
+        "sigma_obs": 1.055199154512842,
+        "log_bf_ty_vs_schoen": 10.605856413454404,
+        "log10_bf_ty_vs_schoen": 4.60606491622146,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 4.6056175293774455,
+        "posterior_odds_ty_at_prior_1": 40370.57324222135
+      },
+      {
+        "seed": 7,
+        "sigma_obs": 1.0294349919205463,
+        "log_bf_ty_vs_schoen": 37.64381400345382,
+        "log10_bf_ty_vs_schoen": 16.34850069949235,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.67684435765144,
+        "posterior_odds_ty_at_prior_1": 2.2310058008277252e+16
+      },
+      {
+        "seed": 99,
+        "sigma_obs": 0.9910759119563513,
+        "log_bf_ty_vs_schoen": 32.87697027512395,
+        "log10_bf_ty_vs_schoen": 14.278286772183565,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.10888035121051,
+        "posterior_odds_ty_at_prior_1": 189795876263913.94
+      },
+      {
+        "seed": 1,
+        "sigma_obs": 0.9908295303535024,
+        "log_bf_ty_vs_schoen": 32.672251314240064,
+        "log10_bf_ty_vs_schoen": 14.189378457130726,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.083594660080387,
+        "posterior_odds_ty_at_prior_1": 154660160712026.22
+      },
+      {
+        "seed": 2,
+        "sigma_obs": 0.9776644197904804,
+        "log_bf_ty_vs_schoen": 18.501517815160188,
+        "log10_bf_ty_vs_schoen": 8.035107093958777,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 6.083012052455623,
+        "posterior_odds_ty_at_prior_1": 108419423.57182704
+      },
+      {
+        "seed": 3,
+        "sigma_obs": 0.97540323516883,
+        "log_bf_ty_vs_schoen": 15.429138157378567,
+        "log10_bf_ty_vs_schoen": 6.700789562272417,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 5.555022620544144,
+        "posterior_odds_ty_at_prior_1": 5020992.379944001
+      },
+      {
+        "seed": 4,
+        "sigma_obs": 1.026825232899574,
+        "log_bf_ty_vs_schoen": 39.027208951942406,
+        "log10_bf_ty_vs_schoen": 16.949301491913776,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.834841136312798,
+        "posterior_odds_ty_at_prior_1": 8.898186251805005e+16
+      },
+      {
+        "seed": 5,
+        "sigma_obs": 1.053808567076561,
+        "log_bf_ty_vs_schoen": 12.68558231101332,
+        "log10_bf_ty_vs_schoen": 5.509278397402585,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 5.036979712290555,
+        "posterior_odds_ty_at_prior_1": 323056.43587493274
+      },
+      {
+        "seed": 137,
+        "sigma_obs": 1.0163778479253498,
+        "log_bf_ty_vs_schoen": 42.068315480829014,
+        "log10_bf_ty_vs_schoen": 18.270037276289184,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.172602191399015,
+        "posterior_odds_ty_at_prior_1": 1.8622469698646188e+18
+      },
+      {
+        "seed": 271,
+        "sigma_obs": 1.0020549071276574,
+        "log_bf_ty_vs_schoen": 39.743597031353154,
+        "log10_bf_ty_vs_schoen": 17.260424881703134,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.91555909983812,
+        "posterior_odds_ty_at_prior_1": 1.821481990896481e+17
+      },
+      {
+        "seed": 314,
+        "sigma_obs": 1.0103110959870756,
+        "log_bf_ty_vs_schoen": 42.000450644149936,
+        "log10_bf_ty_vs_schoen": 18.240563952204194,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.165200559087612,
+        "posterior_odds_ty_at_prior_1": 1.740058912230667e+18
+      },
+      {
+        "seed": 666,
+        "sigma_obs": 1.0467974950475831,
+        "log_bf_ty_vs_schoen": 22.09296831143889,
+        "log10_bf_ty_vs_schoen": 9.594854226521312,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 6.647250305417856,
+        "posterior_odds_ty_at_prior_1": 3934180002.421693
+      },
+      {
+        "seed": 1000,
+        "sigma_obs": 1.0139782102922266,
+        "log_bf_ty_vs_schoen": 42.20254251296375,
+        "log10_bf_ty_vs_schoen": 18.32833133566755,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.187224010871157,
+        "posterior_odds_ty_at_prior_1": 2.1297632835692933e+18
+      },
+      {
+        "seed": 2024,
+        "sigma_obs": 1.0128442908087971,
+        "log_bf_ty_vs_schoen": 42.19263009695765,
+        "log10_bf_ty_vs_schoen": 18.32402642809377,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.186145012676171,
+        "posterior_odds_ty_at_prior_1": 2.1087564700488125e+18
+      },
+      {
+        "seed": 4242,
+        "sigma_obs": 0.9994459319642752,
+        "log_bf_ty_vs_schoen": 38.51156452447896,
+        "log10_bf_ty_vs_schoen": 16.72535996244224,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.7762821883163,
+        "posterior_odds_ty_at_prior_1": 5.31324647103387e+16
+      },
+      {
+        "seed": 57005,
+        "sigma_obs": 0.9918954093787312,
+        "log_bf_ty_vs_schoen": 33.54190406296493,
+        "log10_bf_ty_vs_schoen": 14.56706384707393,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 8.190470568040023,
+        "posterior_odds_ty_at_prior_1": 369031847179704.7
+      },
+      {
+        "seed": 48879,
+        "sigma_obs": 1.0147494293679742,
+        "log_bf_ty_vs_schoen": 42.18239066629658,
+        "log10_bf_ty_vs_schoen": 18.319579499859834,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.185030284794555,
+        "posterior_odds_ty_at_prior_1": 2.0872741753202693e+18
+      },
+      {
+        "seed": 51966,
+        "sigma_obs": 1.023045406803685,
+        "log_bf_ty_vs_schoen": 40.58877070690181,
+        "log10_bf_ty_vs_schoen": 17.627479145243804,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 9.009858012965777,
+        "posterior_odds_ty_at_prior_1": 4.241106176929468e+17
+      }
+    ],
+    "log_bf_summary": {
+      "n": 20,
+      "mean": 32.68968219764088,
+      "stderr_of_mean": 2.4363027692974657,
+      "min": 10.605856413454404,
+      "max": 42.20254251296375
+    },
+    "log10_bf_summary": {
+      "n": 20,
+      "mean": 14.196948593606393,
+      "stderr_of_mean": 1.0580728489515008,
+      "min": 4.60606491622146,
+      "max": 18.32833133566755
+    },
+    "category_distribution": {
+      "Strong": 20
+    },
+    "sign_consistent": true,
+    "sign_correctly_favours": "TY"
+  },
+  "scenario_b_schoen_truth": {
+    "label": "Scenario B — Schoen-truth (per-seed)",
+    "description": "Each of the 20 σ_Schoen values evaluated as a single observation. Under Schoen-truth we expect ln BF < 0 (Schoen preferred) on every seed.",
+    "per_seed": [
+      {
+        "seed": 42,
+        "sigma_obs": 2.4268556059647075,
+        "log_bf_ty_vs_schoen": -36513.557429168555,
+        "log10_bf_ty_vs_schoen": -15857.636506145387,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 270.23529536005674,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 100,
+        "sigma_obs": 2.1568402612490747,
+        "log_bf_ty_vs_schoen": -23878.95147955421,
+        "log10_bf_ty_vs_schoen": -10370.496861205882,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 218.53581619292618,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 12345,
+        "sigma_obs": 2.134359252968572,
+        "log_bf_ty_vs_schoen": -22947.375934289932,
+        "log10_bf_ty_vs_schoen": -9965.918742421594,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 214.23060441631551,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 7,
+        "sigma_obs": 2.5090754401353763,
+        "log_bf_ty_vs_schoen": -40890.898460871074,
+        "log10_bf_ty_vs_schoen": -17758.69156162248,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 285.9751683656155,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 99,
+        "sigma_obs": 2.842850510089814,
+        "log_bf_ty_vs_schoen": -61202.39105974919,
+        "log10_bf_ty_vs_schoen": -26579.86071653398,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 349.86394801336473,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 1,
+        "sigma_obs": 2.7874636440769027,
+        "log_bf_ty_vs_schoen": -57549.65818017622,
+        "log10_bf_ty_vs_schoen": -24993.49898306887,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 339.26290153854495,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 2,
+        "sigma_obs": 2.8299084925363434,
+        "log_bf_ty_vs_schoen": -60338.817460414626,
+        "log10_bf_ty_vs_schoen": -26204.815467625653,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 347.38686636202766,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 3,
+        "sigma_obs": 2.5148788227085253,
+        "log_bf_ty_vs_schoen": -41209.217776375204,
+        "log10_bf_ty_vs_schoen": -17896.93588382914,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 287.086111737838,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 4,
+        "sigma_obs": 2.3394422251043747,
+        "log_bf_ty_vs_schoen": -32131.129765029316,
+        "log10_bf_ty_vs_schoen": -13954.372354269559,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 253.50001879695913,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 5,
+        "sigma_obs": 4.048856044786919,
+        "log_bf_ty_vs_schoen": -168582.61922501048,
+        "log10_bf_ty_vs_schoen": -73214.5012742191,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 580.6593135824319,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 137,
+        "sigma_obs": 2.0592526491975445,
+        "log_bf_ty_vs_schoen": -19969.241783692047,
+        "log10_bf_ty_vs_schoen": -8672.531514449305,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 199.84614974370683,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 271,
+        "sigma_obs": 3.058386950539329,
+        "log_bf_ty_vs_schoen": -76485.73779540678,
+        "log10_bf_ty_vs_schoen": -33217.33386884415,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 391.1156805739365,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 314,
+        "sigma_obs": 2.758329857977791,
+        "log_bf_ty_vs_schoen": -55673.373061310616,
+        "log10_bf_ty_vs_schoen": -24178.63870946835,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 333.6865986560162,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 666,
+        "sigma_obs": 5.69498261851176,
+        "log_bf_ty_vs_schoen": -401086.88310758787,
+        "log10_bf_ty_vs_schoen": -174189.82009739996,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 895.6415389067078,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 1000,
+        "sigma_obs": 3.011827717119087,
+        "log_bf_ty_vs_schoen": -73040.2909751893,
+        "log10_bf_ty_vs_schoen": -31720.995327132594,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 382.20489524648764,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 2024,
+        "sigma_obs": 2.3592127824298874,
+        "log_bf_ty_vs_schoen": -33097.83855885906,
+        "log10_bf_ty_vs_schoen": -14374.208649037164,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 257.2852057886697,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 4242,
+        "sigma_obs": 4.736887422556154,
+        "log_bf_ty_vs_schoen": -253696.4404537653,
+        "log10_bf_ty_vs_schoen": -110178.96416756716,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 712.3151556070744,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 57005,
+        "sigma_obs": 3.0744644639944108,
+        "log_bf_ty_vs_schoen": -77693.9286166124,
+        "log10_bf_ty_vs_schoen": -33742.0444755799,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 394.1926651184986,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 48879,
+        "sigma_obs": 2.324081882903881,
+        "log_bf_ty_vs_schoen": -31389.9417839867,
+        "log10_bf_ty_vs_schoen": -13632.478504049737,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 250.55914185671494,
+        "posterior_odds_ty_at_prior_1": 0.0
+      },
+      {
+        "seed": 51966,
+        "sigma_obs": 5.062652381320283,
+        "log_bf_ty_vs_schoen": -300040.6755293885,
+        "log10_bf_ty_vs_schoen": -130306.00972893744,
+        "evidence_strength": "Strong",
+        "equivalent_n_sigma": 774.6491793442867,
+        "posterior_odds_ty_at_prior_1": 0.0
+      }
+    ],
+    "log_bf_summary": {
+      "n": 20,
+      "mean": -93370.94842182186,
+      "stderr_of_mean": 23488.29254095626,
+      "min": -401086.88310758787,
+      "max": -19969.241783692047
+    },
+    "log10_bf_summary": {
+      "n": 20,
+      "mean": -40550.487669670365,
+      "stderr_of_mean": 10200.835839866613,
+      "min": -174189.82009739996,
+      "max": -8672.531514449305
+    },
+    "category_distribution": {
+      "Strong": 20
+    },
+    "sign_consistent": true,
+    "sign_correctly_favours": "Schoen"
+  },
+  "scenario_c_train_test_split": [
+    {
+      "label": "Scenario C — TY-truth ensemble",
+      "description": "TY held-out 10 (train ⟨σ⟩ = 1.016225 ± 0.009611, Schoen train ⟨σ⟩ = 2.659053 ± 0.174416)",
+      "sigma_obs": [
+        1.0163778479253498,
+        1.0020549071276574,
+        1.0103110959870756,
+        1.0467974950475831,
+        1.0139782102922266,
+        1.0128442908087971,
+        0.9994459319642752,
+        0.9918954093787312,
+        1.0147494293679742,
+        1.023045406803685
+      ],
+      "n_observations": 10,
+      "log_bf_ty_vs_schoen": 462.85407995207044,
+      "log10_bf_ty_vs_schoen": 201.0149728495907,
+      "evidence_strength": "Strong",
+      "equivalent_n_sigma": 30.42545250122241,
+      "posterior_odds_ty_at_prior_1": 1.0350774556222712e+201
+    },
+    {
+      "label": "Scenario C — Schoen-truth ensemble",
+      "description": "Schoen held-out 10 (train ⟨σ⟩ = 2.659053 ± 0.174416, TY train ⟨σ⟩ = 1.016225 ± 0.009611)",
+      "sigma_obs": [
+        2.0592526491975445,
+        3.058386950539329,
+        2.758329857977791,
+        5.69498261851176,
+        3.011827717119087,
+        2.3592127824298874,
+        4.736887422556154,
+        3.0744644639944108,
+        2.324081882903881,
+        5.062652381320283
+      ],
+      "n_observations": 10,
+      "log_bf_ty_vs_schoen": -390106.9786505112,
+      "log10_bf_ty_vs_schoen": -169421.30817986664,
+      "evidence_strength": "Strong",
+      "equivalent_n_sigma": 883.2972077964598,
+      "posterior_odds_ty_at_prior_1": 0.0
+    }
+  ],
+  "n_sigma_check": {
+    "p5_10_raw_n_sigma": 8.760983306769223,
+    "predicted_log_bf_at_truth": 38.37741425074449,
+    "observed_log_bf_at_ty_mean": 42.18480961473658,
+    "observed_log_bf_at_schoen_mean": -74858.44443082811,
+    "relation_holds": true,
+    "notes": "Asymptotic relation |ln BF| ≈ n_σ²/2 = 38.38 (Cowan-Cranmer-Gross-Vitells 2011 §4). Observed ln BF at TY mean = 42.18, at Schoen mean = -74858.44. Asymmetry between the two values comes from the log(SE_TY / SE_Schoen) = -3.788 normalisation term and the differing z-distances under the two models."
+  }
+}

@@ -1,0 +1,697 @@
+{
+  "label": "p7_4_omega_fix_ratio_sweep",
+  "predicted_omega_fix": 0.4959677419354839,
+  "targets": {
+    "omega_fix_123_over_248": 0.4959677419354839,
+    "one_minus_2_over_248": 0.9919354838709677,
+    "alpha_tau_1_over_278": 0.0035971223021582736,
+    "delta_phi_30_plus_phi2": 0.03065788699419789,
+    "epsilon_1_over_496": 0.0020161290322580645,
+    "delta_H_1_over_59": 0.01694915254237288,
+    "phi_minus_1": 0.6180339887498949,
+    "one_over_phi2": 0.38196601125010515,
+    "one_over_e8_dim": 0.004032258064516129,
+    "one_half_minus_one_over_e8": 0.4959677419354839
+  },
+  "data_sources": [
+    "p7_1_omega_fix_diagnostic.json",
+    "p7_2b_omega_fix_localized.json",
+    "p7_2b_omega_fix_localized_seed42.json"
+  ],
+  "p7_1b_lowest_trivial_per_seed": [
+    {
+      "seed": 48879,
+      "lambda_lowest_triv": 0.3142220423625246
+    },
+    {
+      "seed": 2,
+      "lambda_lowest_triv": 0.11518049255129195
+    },
+    {
+      "seed": 12345,
+      "lambda_lowest_triv": 0.14240192779972738
+    },
+    {
+      "seed": 51966,
+      "lambda_lowest_triv": 0.6362059291898482
+    },
+    {
+      "seed": 4,
+      "lambda_lowest_triv": 0.09513847611003654
+    }
+  ],
+  "top10_raw_ratios": [
+    {
+      "kind": "sigmoid",
+      "i": 2,
+      "j": 3,
+      "lam_i": 1.3195896944931553,
+      "lam_j": 1.3468684241833024,
+      "value": 0.4948848381493261,
+      "char_i": null,
+      "char_j": null,
+      "ppm_to_target": 2183.41576396039,
+      "seed": 12345,
+      "file": "p7_2b_omega_fix_localized.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "over_plus_one",
+      "i": 2,
+      "j": null,
+      "lam_i": 0.9502138135157335,
+      "lam_j": null,
+      "value": 0.487235710736118,
+      "char_i": [
+        0,
+        0
+      ],
+      "char_j": null,
+      "ppm_to_target": 17606.046645875933,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 3,
+      "j": 2,
+      "lam_i": 1.3468684241833024,
+      "lam_j": 1.3195896944931553,
+      "value": 0.505115161850674,
+      "char_i": null,
+      "char_j": null,
+      "ppm_to_target": 18443.578365586505,
+      "seed": 12345,
+      "file": "p7_2b_omega_fix_localized.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "raw_ratio",
+      "i": 2,
+      "j": 5,
+      "lam_i": 0.9502138135157335,
+      "lam_j": 1.8744237203017249,
+      "value": 0.5069365070576348,
+      "char_i": [
+        0,
+        0
+      ],
+      "char_j": [
+        0,
+        0
+      ],
+      "ppm_to_target": 22115.884148727113,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "raw_ratio",
+      "i": 1,
+      "j": 4,
+      "lam_i": 1.8668473846652842,
+      "lam_j": 3.8551434365417,
+      "value": 0.4842484891664526,
+      "char_i": null,
+      "char_j": null,
+      "ppm_to_target": 23629.0624936566,
+      "seed": 42,
+      "file": "p7_2b_omega_fix_localized_seed42.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 4,
+      "j": 5,
+      "lam_i": 1.7349610448024797,
+      "lam_j": 1.8744237203017249,
+      "value": 0.4806805474373943,
+      "char_i": [
+        1,
+        0
+      ],
+      "char_j": [
+        0,
+        0
+      ],
+      "ppm_to_target": 30822.961264440768,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 3,
+      "j": 4,
+      "lam_i": 1.6040670030607334,
+      "lam_j": 1.7349610448024797,
+      "value": 0.48039937971986924,
+      "char_i": [
+        1,
+        0
+      ],
+      "char_j": [
+        1,
+        0
+      ],
+      "ppm_to_target": 31389.86853229618,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 1,
+      "j": 2,
+      "lam_i": 1.8668473846652842,
+      "lam_j": 2.0612209839115385,
+      "value": 0.4752583737084141,
+      "char_i": null,
+      "char_j": null,
+      "ppm_to_target": 41755.474148888614,
+      "seed": 42,
+      "file": "p7_2b_omega_fix_localized_seed42.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 5,
+      "j": 6,
+      "lam_i": 1.8744237203017249,
+      "lam_j": 2.0894514914785813,
+      "value": 0.4728765715759906,
+      "char_i": [
+        0,
+        0
+      ],
+      "char_j": [
+        0,
+        0
+      ],
+      "ppm_to_target": 46557.80690369373,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    {
+      "kind": "sigmoid",
+      "i": 5,
+      "j": 4,
+      "lam_i": 1.8744237203017249,
+      "lam_j": 1.7349610448024797,
+      "value": 0.5193194525626058,
+      "char_i": [
+        0,
+        0
+      ],
+      "char_j": [
+        1,
+        0
+      ],
+      "ppm_to_target": 47083.12386606699,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    }
+  ],
+  "top10_character_aware": [
+    {
+      "tag": "sigmoid lowest_nontriv / (lowest_triv + lowest_nontriv)",
+      "i": 0,
+      "j": 1,
+      "lam_i": 0.43195344213116643,
+      "lam_j": 0.5055079875456941,
+      "value": 0.46076929509522235,
+      "ppm_to_target": 70969.22614947039,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    {
+      "tag": "sigmoid lowest_triv / (lowest_triv + lowest_nontriv)",
+      "i": 1,
+      "j": 0,
+      "lam_i": 0.5055079875456941,
+      "lam_j": 0.43195344213116643,
+      "value": 0.5392307049047776,
+      "ppm_to_target": 87229.38875109638,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    {
+      "tag": "lambda_lowest_triv / lambda_max_triv",
+      "i": 1,
+      "j": 7,
+      "lam_i": 0.5055079875456941,
+      "lam_j": 2.378239932622956,
+      "value": 0.21255550401433654,
+      "ppm_to_target": 571432.8049141832,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    {
+      "tag": "lambda_lowest_nontriv / lambda_lowest_triv",
+      "i": 0,
+      "j": 1,
+      "lam_i": 0.43195344213116643,
+      "lam_j": 0.5055079875456941,
+      "value": 0.8544938018256756,
+      "ppm_to_target": 722881.8118111183,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    {
+      "tag": "lambda_lowest_triv / lambda_lowest_nontriv",
+      "i": 1,
+      "j": 0,
+      "lam_i": 0.5055079875456941,
+      "lam_j": 0.43195344213116643,
+      "value": 1.1702835033600503,
+      "ppm_to_target": 1359596.0067747354,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    {
+      "tag": "lambda_2nd_triv / lambda_lowest_triv",
+      "i": 2,
+      "j": 1,
+      "lam_i": 0.9502138135157335,
+      "lam_j": 0.5055079875456941,
+      "value": 1.8797206709416066,
+      "ppm_to_target": 2790005.905638361,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    }
+  ],
+  "cross_seed_consistency_top10": [
+    {
+      "key": [
+        "raw_ratio",
+        0,
+        1,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.8544938018256756,
+        0.6533271248487499,
+        0.06579566701859234
+      ],
+      "mean": 0.5245388645643393,
+      "spread_relative": 1.5036028559335521,
+      "mean_ppm_to_target": 57606.81635736702
+    },
+    {
+      "key": [
+        "raw_ratio",
+        1,
+        2,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.5319939368965235,
+        0.20192224509186615,
+        0.9056997766064873
+      ],
+      "mean": 0.546538652864959,
+      "spread_relative": 1.287699466131837,
+      "mean_ppm_to_target": 101964.11309357577
+    },
+    {
+      "key": [
+        "sigmoid",
+        2,
+        3,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.3720083584189919,
+        0.4948848381493261,
+        0.43927416123336666
+      ],
+      "mean": 0.4353891192672282,
+      "spread_relative": 0.28222221064490244,
+      "mean_ppm_to_target": 122142.26359127979
+    },
+    {
+      "key": [
+        "raw_ratio",
+        2,
+        4,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.5476859646862634,
+        0.6039341768676155,
+        0.5346677802890208
+      ],
+      "mean": 0.5620959739476333,
+      "spread_relative": 0.12322877193396828,
+      "mean_ppm_to_target": 133331.7198293745
+    },
+    {
+      "key": [
+        "sigmoid",
+        3,
+        2,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.6279916415810082,
+        0.505115161850674,
+        0.5607258387666333
+      ],
+      "mean": 0.5646108807327718,
+      "spread_relative": 0.21763037859075762,
+      "mean_ppm_to_target": 138402.4261929057
+    },
+    {
+      "key": [
+        "sigmoid",
+        3,
+        4,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.48039937971986924,
+        0.3813484409368464,
+        0.40564428842463823
+      ],
+      "mean": 0.42246403636045127,
+      "spread_relative": 0.2344600492774524,
+      "mean_ppm_to_target": 148202.59335453727
+    },
+    {
+      "key": [
+        "sigmoid",
+        4,
+        3,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.5196006202801308,
+        0.6186515590631536,
+        0.5943557115753618
+      ],
+      "mean": 0.5775359636395487,
+      "spread_relative": 0.1715060966226554,
+      "mean_ppm_to_target": 164462.7559561633
+    },
+    {
+      "key": [
+        "raw_ratio",
+        1,
+        3,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.31514144146169093,
+        0.19783262338614635,
+        0.709527691060519
+      ],
+      "mean": 0.4075005853027855,
+      "spread_relative": 1.2556916140234926,
+      "mean_ppm_to_target": 178372.80361714796
+    },
+    {
+      "key": [
+        "sigmoid",
+        2,
+        4,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.3538740915036253,
+        0.37653301836055497,
+        0.34839317483314075
+      ],
+      "mean": 0.359600094899107,
+      "spread_relative": 0.07825315934721713,
+      "mean_ppm_to_target": 274952.6541871664
+    },
+    {
+      "key": [
+        "sigmoid",
+        4,
+        2,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.6461259084963746,
+        0.623466981639445,
+        0.6516068251668593
+      ],
+      "mean": 0.640399905100893,
+      "spread_relative": 0.0439410488716124,
+      "mean_ppm_to_target": 291212.8167887923
+    }
+  ],
+  "offset_from_one_half_check": [
+    {
+      "file": "p7_1_omega_fix_diagnostic.json",
+      "label": "Schoen/Z3xZ3",
+      "seed": 42,
+      "rows": [
+        {
+          "i": 0,
+          "lambda": 0.43195344213116643,
+          "half_minus_lambda": 0.06804655786883357,
+          "times_e8_dim": 16.875546351470724,
+          "abs_dist_from_integer": 0.12445364852927554
+        },
+        {
+          "i": 1,
+          "lambda": 0.5055079875456941,
+          "half_minus_lambda": -0.0055079875456941485,
+          "times_e8_dim": -1.3659809113321488,
+          "abs_dist_from_integer": 0.36598091133214883
+        },
+        {
+          "i": 2,
+          "lambda": 0.9502138135157335,
+          "half_minus_lambda": -0.45021381351573353,
+          "times_e8_dim": -111.65302575190192,
+          "abs_dist_from_integer": 0.3469742480980784
+        },
+        {
+          "i": 3,
+          "lambda": 1.6040670030607334,
+          "half_minus_lambda": -1.1040670030607334,
+          "times_e8_dim": -273.80861675906186,
+          "abs_dist_from_integer": 0.19138324093813708
+        },
+        {
+          "i": 4,
+          "lambda": 1.7349610448024797,
+          "half_minus_lambda": -1.2349610448024797,
+          "times_e8_dim": -306.27033911101495,
+          "abs_dist_from_integer": 0.27033911101494823
+        },
+        {
+          "i": 5,
+          "lambda": 1.8744237203017249,
+          "half_minus_lambda": -1.3744237203017249,
+          "times_e8_dim": -340.85708263482775,
+          "abs_dist_from_integer": 0.14291736517225218
+        },
+        {
+          "i": 6,
+          "lambda": 2.0894514914785813,
+          "half_minus_lambda": -1.5894514914785813,
+          "times_e8_dim": -394.18396988668815,
+          "abs_dist_from_integer": 0.1839698866881463
+        },
+        {
+          "i": 7,
+          "lambda": 2.378239932622956,
+          "half_minus_lambda": -1.878239932622956,
+          "times_e8_dim": -465.8035032904931,
+          "abs_dist_from_integer": 0.1964967095069028
+        }
+      ]
+    },
+    {
+      "file": "p7_2b_omega_fix_localized.json",
+      "label": "Schoen/Z3xZ3",
+      "seed": 12345,
+      "rows": [
+        {
+          "i": 0,
+          "lambda": 0.17408196134652926,
+          "half_minus_lambda": 0.32591803865347074,
+          "times_e8_dim": 80.82767358606074,
+          "abs_dist_from_integer": 0.17232641393925974
+        },
+        {
+          "i": 1,
+          "lambda": 0.2664545137121477,
+          "half_minus_lambda": 0.23354548628785232,
+          "times_e8_dim": 57.91928059938738,
+          "abs_dist_from_integer": 0.0807194006126224
+        },
+        {
+          "i": 2,
+          "lambda": 1.3195896944931553,
+          "half_minus_lambda": -0.8195896944931553,
+          "times_e8_dim": -203.2582442343025,
+          "abs_dist_from_integer": 0.2582442343025093
+        },
+        {
+          "i": 3,
+          "lambda": 1.3468684241833024,
+          "half_minus_lambda": -0.8468684241833024,
+          "times_e8_dim": -210.023369197459,
+          "abs_dist_from_integer": 0.023369197459004454
+        },
+        {
+          "i": 4,
+          "lambda": 2.1849892671042097,
+          "half_minus_lambda": -1.6849892671042097,
+          "times_e8_dim": -417.87733824184403,
+          "abs_dist_from_integer": 0.1226617581559708
+        }
+      ]
+    },
+    {
+      "file": "p7_2b_omega_fix_localized_seed42.json",
+      "label": "Schoen/Z3xZ3",
+      "seed": 42,
+      "rows": [
+        {
+          "i": 0,
+          "lambda": 0.122830468895967,
+          "half_minus_lambda": 0.377169531104033,
+          "times_e8_dim": 93.53804371380019,
+          "abs_dist_from_integer": 0.46195628619980766
+        },
+        {
+          "i": 1,
+          "lambda": 1.8668473846652842,
+          "half_minus_lambda": -1.3668473846652842,
+          "times_e8_dim": -338.9781513969905,
+          "abs_dist_from_integer": 0.02184860300951641
+        },
+        {
+          "i": 2,
+          "lambda": 2.0612209839115385,
+          "half_minus_lambda": -1.5612209839115385,
+          "times_e8_dim": -387.18280401006155,
+          "abs_dist_from_integer": 0.18280401006154534
+        },
+        {
+          "i": 3,
+          "lambda": 2.6311127926169293,
+          "half_minus_lambda": -2.1311127926169293,
+          "times_e8_dim": -528.5159725689984,
+          "abs_dist_from_integer": 0.4840274310015502
+        },
+        {
+          "i": 4,
+          "lambda": 3.8551434365417,
+          "half_minus_lambda": -3.3551434365417,
+          "times_e8_dim": -832.0755722623417,
+          "abs_dist_from_integer": 0.07557226234166592
+        }
+      ]
+    }
+  ],
+  "best_match": {
+    "raw": {
+      "kind": "sigmoid",
+      "i": 2,
+      "j": 3,
+      "lam_i": 1.3195896944931553,
+      "lam_j": 1.3468684241833024,
+      "value": 0.4948848381493261,
+      "char_i": null,
+      "char_j": null,
+      "ppm_to_target": 2183.41576396039,
+      "seed": 12345,
+      "file": "p7_2b_omega_fix_localized.json",
+      "candidate_label": "Schoen/Z3xZ3"
+    },
+    "character_aware": {
+      "tag": "sigmoid lowest_nontriv / (lowest_triv + lowest_nontriv)",
+      "i": 0,
+      "j": 1,
+      "lam_i": 0.43195344213116643,
+      "lam_j": 0.5055079875456941,
+      "value": 0.46076929509522235,
+      "ppm_to_target": 70969.22614947039,
+      "seed": 42,
+      "file": "p7_1_omega_fix_diagnostic.json"
+    },
+    "cross_seed_consistent": {
+      "key": [
+        "raw_ratio",
+        0,
+        1,
+        "Schoen/Z3xZ3"
+      ],
+      "seeds": [
+        42,
+        12345,
+        42
+      ],
+      "values": [
+        0.8544938018256756,
+        0.6533271248487499,
+        0.06579566701859234
+      ],
+      "mean": 0.5245388645643393,
+      "spread_relative": 1.5036028559335521,
+      "mean_ppm_to_target": 57606.81635736702
+    }
+  },
+  "verdict": "Hypothesis (2) FALSIFIED \u2014 no eigenvalue ratio reproduces \u03c9_fix robustly",
+  "notes": "Available data is uneven: P7.1 (seed=42) has 8 eigenvalues with character labels; both P7.2b files have 5 projected eigenvalues. P7.1b 5-seed file stores only \u03bb_lowest_triv per seed, so a true 5-seed full-spectrum cross-check is not possible from existing outputs. Cross-seed consistency is therefore measured between seed=42 and seed=12345 of P7.2b only (n=2)."
+}

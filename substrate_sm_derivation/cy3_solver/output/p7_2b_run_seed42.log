@@ -1,0 +1,48 @@
+================================================
+P7.2b — ω_fix gateway-eigenvalue diagnostic (projected basis)
+  predicted ω_fix = 1/2 − 1/dim(E_8) = 123/248
+                  = 0.495967741935483875
+================================================
+  n_pts=40000  k=3  max_iter=100  seed=42  test_degree=4
+
+--- running Schoen / Z₃×Z₃ projected ---
+
+=== Schoen/Z3xZ3 ===
+  projection: schoen_z3xz3 (full 494 -> projected 119, survival 0.241)
+  metric: iters=26  σ-residual=8.195e0  t=3.6s
+  spectrum: basis_dim=119  n_pts=40000  t=1.14s
+  λ_min_nonzero = 1.228305e-1  λ_max = 2.394536e5  λ_mean = 8.135320e3  vol_proxy = 1.352862e2
+  bottom-5 eigenvalues (all in trivial rep by construction):
+    [0] λ=1.228305e-1  raw_ppm=752341.8  /λ1=1.000000 (1016260.2 ppm)  /λmax=5.130e-7 (999999.0 ppm)  /vol=0.000908 (998169.4 ppm)
+    [1] λ=1.866847e0  raw_ppm=2764050.0  /λ1=15.198569 (29644269.7 ppm)  /λmax=7.796e-6 (999984.3 ppm)  /vol=0.013799 (972177.1 ppm)
+    [2] λ=2.061221e0  raw_ppm=3155957.8  /λ1=16.781023 (32834909.2 ppm)  /λmax=8.608e-6 (999982.6 ppm)  /vol=0.015236 (969280.2 ppm)
+    [3] λ=2.631113e0  raw_ppm=4305007.9  /λ1=21.420685 (42189674.0 ppm)  /λmax=1.099e-5 (999977.8 ppm)  /vol=0.019448 (960786.8 ppm)
+    [4] λ=3.855143e0  raw_ppm=6772972.1  /λ1=31.385889 (62282117.2 ppm)  /λmax=1.610e-5 (999967.5 ppm)  /vol=0.028496 (942544.2 ppm)
+  closest-to-ω_fix:  rank=0 λ=1.228305e-1 scheme=raw value=0.122830 residual=752341.819 ppm
+  predicted ω_fix = 0.495967741935 (= 123/248)
+
+--- running TY / Z₃ projected (control) ---
+
+=== TY/Z3 ===
+  projection: ty_z3 (full 494 -> projected 178, survival 0.360)
+  metric: iters=17  σ-residual=2.667e-1  t=19.3s
+  spectrum: basis_dim=178  n_pts=40000  t=2.67s
+  λ_min_nonzero = 6.866236e-2  λ_max = 9.594504e9  λ_mean = 3.191262e8  vol_proxy = 3.456373e-2
+  bottom-5 eigenvalues (all in trivial rep by construction):
+    [0] λ=6.866236e-2  raw_ppm=861558.8  /λ1=1.000000 (1016260.2 ppm)  /λmax=7.156e-12 (1000000.0 ppm)  /vol=1.986544 (3005389.0 ppm)
+    [1] λ=3.352777e-1  raw_ppm=323992.9  /λ1=4.882991 (8845381.1 ppm)  /λmax=3.494e-11 (1000000.0 ppm)  /vol=9.700276 (18558280.3 ppm)
+    [2] λ=5.131361e-1  raw_ppm= 34615.9  /λ1=7.473325 (14068167.2 ppm)  /λmax=5.348e-11 (1000000.0 ppm)  /vol=14.846087 (28933573.6 ppm)
+    [3] λ=7.762569e-1  raw_ppm=565136.0  /λ1=11.305422 (21794671.3 ppm)  /λmax=8.091e-11 (1000000.0 ppm)  /vol=22.458715 (44282611.9 ppm)
+    [4] λ=1.015670e0  raw_ppm=1047854.5  /λ1=14.792235 (28824994.3 ppm)  /λmax=1.059e-10 (1000000.0 ppm)  /vol=29.385422 (58248656.2 ppm)
+  closest-to-ω_fix:  rank=2 λ=5.131361e-1 scheme=raw value=0.513136 residual=34615.943 ppm
+  predicted ω_fix = 0.495967741935 (= 123/248)
+
+================================================
+VERDICT:
+Schoen/Z3xZ3: rank=0 λ=0.122830 via raw → 0.122830 (752341.819 ppm, 75.2342% off ω_fix) — FAILED (>1% off ω_fix)
+TY/Z3: rank=2 λ=0.513136 via raw → 0.513136 (34615.943 ppm, 3.4616% off ω_fix) — FAILED (>1% off ω_fix)
+
+================================================
+
+Wrote output/p7_2b_omega_fix_localized_seed42.json
+Total elapsed: 26.7s

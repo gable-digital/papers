@@ -1,0 +1,233 @@
+{
+  "label": "p7_5_h4_gateway_test",
+  "h4_projection_scheme": "fallback-Z5: icosahedral fivefold rotation only (R_5 acting as ζ_5^k on x_k, y_k); no 2-fold or 3-fold reflections beyond the existing Z/3 × Z/3 Γ-quotient",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 25000,
+  "k": 3,
+  "max_iter": 100,
+  "seed": 12345,
+  "test_degree": 4,
+  "candidate": {
+    "label": "Schoen/Z3xZ3 ∩ H_4(icosa-Z5)",
+    "projection": "schoen_z3xz3_intersect_icosa_z5",
+    "metric_iters": 24,
+    "metric_sigma_residual": 1.8522547541722887,
+    "metric_seconds": 1.8846254999999998,
+    "spectrum_seconds": 0.0878541,
+    "full_basis_dim": 494,
+    "gamma_projected_basis_dim": 119,
+    "h4_projected_basis_dim": 38,
+    "gamma_survival_fraction": 0.2408906882591093,
+    "h4_survival_fraction": 0.07692307692307693,
+    "h4_relative_survival_fraction": 0.31932773109243695,
+    "n_points": 25000,
+    "lambda_min_nonzero": 0.15011211580320846,
+    "lambda_max": 10696.378432070916,
+    "lambda_mean": 645.9940295929654,
+    "volume_proxy": 8.663363948145635,
+    "bottom_eigvalues": [
+      {
+        "rank": 0,
+        "eigenvalue": 0.15011211580320846,
+        "normalised": {
+          "by_lambda1_min": 1.0,
+          "by_lambda_max": 0.000014033919681929709,
+          "by_mean_eigvalue": 0.0002323738439158527,
+          "by_volume": 0.017327231858398316,
+          "raw": 0.15011211580320846
+        },
+        "residual_ppm_raw": 697334.9209821487,
+        "residual_ppm_by_lambda1_min": 1016260.162601626,
+        "residual_ppm_by_lambda_max": 999971.7039668203,
+        "residual_ppm_by_mean": 999531.473875682,
+        "residual_ppm_by_volume": 965063.7926757497
+      },
+      {
+        "rank": 1,
+        "eigenvalue": 5.03799027899045,
+        "normalised": {
+          "by_lambda1_min": 33.56151668393691,
+          "by_lambda_max": 0.00047099962954611445,
+          "by_mean_eigvalue": 0.0077988186394924415,
+          "by_volume": 0.5815281811020782,
+          "raw": 5.03799027899045
+        },
+        "residual_ppm_raw": 9157899.099102696,
+        "residual_ppm_by_lambda1_min": 66668749.086311825,
+        "residual_ppm_by_lambda_max": 999050.342210346,
+        "residual_ppm_by_mean": 984275.5526618364,
+        "residual_ppm_by_volume": 172512.10498630392
+      },
+      {
+        "rank": 2,
+        "eigenvalue": 5.561898827449578,
+        "normalised": {
+          "by_lambda1_min": 37.0516316933473,
+          "by_lambda_max": 0.0005199796232688772,
+          "by_mean_eigvalue": 0.008609830079937545,
+          "by_volume": 0.642002213082608,
+          "raw": 5.561898827449578
+        },
+        "residual_ppm_raw": 10214235.03420728,
+        "residual_ppm_by_lambda1_min": 73705728.94268398,
+        "residual_ppm_by_lambda_max": 998951.5858002383,
+        "residual_ppm_by_mean": 982640.3426030528,
+        "residual_ppm_by_volume": 294443.4865405429
+      },
+      {
+        "rank": 3,
+        "eigenvalue": 6.50379627599653,
+        "normalised": {
+          "by_lambda1_min": 43.32625811845042,
+          "by_lambda_max": 0.0006080372265528881,
+          "by_mean_eigvalue": 0.010067889141474743,
+          "by_volume": 0.7507241199752027,
+          "raw": 6.50379627599653
+        },
+        "residual_ppm_raw": 12113345.336968614,
+        "residual_ppm_by_lambda1_min": 86357008.23882687,
+        "residual_ppm_by_lambda_max": 998774.0387627226,
+        "residual_ppm_by_mean": 979700.516202555,
+        "residual_ppm_by_volume": 513655.1362101648
+      },
+      {
+        "rank": 4,
+        "eigenvalue": 8.402776986029572,
+        "normalised": {
+          "by_lambda1_min": 55.97667410833985,
+          "by_lambda_max": 0.0007855721484979957,
+          "by_mean_eigvalue": 0.013007514932179916,
+          "by_volume": 0.9699208109372063,
+          "raw": 8.402776986029572
+        },
+        "residual_ppm_raw": 15942184.492157185,
+        "residual_ppm_by_lambda1_min": 111863538.03957954,
+        "residual_ppm_by_lambda_max": 998416.0821721341,
+        "residual_ppm_by_mean": 973773.4658277998,
+        "residual_ppm_by_volume": 955612.6919709524
+      },
+      {
+        "rank": 5,
+        "eigenvalue": 9.805933777772045,
+        "normalised": {
+          "by_lambda1_min": 65.32406611753623,
+          "by_lambda_max": 0.0009167526971905693,
+          "by_mean_eigvalue": 0.015179604343945207,
+          "by_volume": 1.1318852395518917,
+          "raw": 9.805933777772045
+        },
+        "residual_ppm_raw": 18771313.63323144,
+        "residual_ppm_by_lambda1_min": 130710312.17194296,
+        "residual_ppm_by_lambda_max": 998151.588057697,
+        "residual_ppm_by_mean": 969393.9684772487,
+        "residual_ppm_by_volume": 1282175.1171452776
+      },
+      {
+        "rank": 6,
+        "eigenvalue": 12.518696248019767,
+        "normalised": {
+          "by_lambda1_min": 83.39564185765873,
+          "by_lambda_max": 0.001170367739653358,
+          "by_mean_eigvalue": 0.019378965864293943,
+          "by_volume": 1.4450156224476005,
+          "raw": 12.518696248019767
+        },
+        "residual_ppm_raw": 24240948.5325927,
+        "residual_ppm_by_lambda1_min": 167147310.41218993,
+        "residual_ppm_by_lambda_max": 997640.2341509429,
+        "residual_ppm_by_mean": 960926.9631354074,
+        "residual_ppm_by_volume": 1913527.4338780888
+      },
+      {
+        "rank": 7,
+        "eigenvalue": 12.98561952488272,
+        "normalised": {
+          "by_lambda1_min": 86.50613879765972,
+          "by_lambda_max": 0.00121402020388022,
+          "by_mean_eigvalue": 0.02010176399473047,
+          "by_volume": 1.498911924121836,
+          "raw": 12.98561952488272
+        },
+        "residual_ppm_raw": 25182387.334722884,
+        "residual_ppm_by_lambda1_min": 173418881.4782082,
+        "residual_ppm_by_lambda_max": 997552.2194263228,
+        "residual_ppm_by_mean": 959469.6140594052,
+        "residual_ppm_by_volume": 2022196.399855409
+      }
+    ],
+    "closest_to_omega_fix": {
+      "rank": 1,
+      "eigenvalue": 5.03799027899045,
+      "chosen_scheme": "by_volume",
+      "chosen_value": 0.5815281811020782,
+      "residual_ppm": 172512.10498630392,
+      "residual_pct": 17.251210498630392
+    },
+    "chain_position": {
+      "note": "Naive index-ordered match against icosahedral exponents {1,7,11,13,17,19,23,29} with predicted ratio φ^{e_k - 1}; no Hungarian assignment, no constant-mode handling — bonus diagnostic only.",
+      "n_eigvals_used": 8,
+      "entries": [
+        {
+          "k": 0,
+          "exponent": 1,
+          "predicted_ratio": 1.0,
+          "observed_ratio": 1.0,
+          "relative_error": 0.0
+        },
+        {
+          "k": 1,
+          "exponent": 7,
+          "predicted_ratio": 17.944271909999163,
+          "observed_ratio": 33.56151668393691,
+          "relative_error": 0.8703192223271696
+        },
+        {
+          "k": 2,
+          "exponent": 11,
+          "predicted_ratio": 122.99186938124426,
+          "observed_ratio": 37.0516316933473,
+          "relative_error": 0.6987473084216939
+        },
+        {
+          "k": 3,
+          "exponent": 13,
+          "predicted_ratio": 321.996894379985,
+          "observed_ratio": 43.32625811845042,
+          "relative_error": 0.865445105606138
+        },
+        {
+          "k": 4,
+          "exponent": 17,
+          "predicted_ratio": 2206.9995468961474,
+          "observed_ratio": 55.97667410833985,
+          "relative_error": 0.9746367532394541
+        },
+        {
+          "k": 5,
+          "exponent": 19,
+          "predicted_ratio": 5777.999826929732,
+          "observed_ratio": 65.32406611753623,
+          "relative_error": 0.9886943461276898
+        },
+        {
+          "k": 6,
+          "exponent": 23,
+          "predicted_ratio": 39602.999974749415,
+          "observed_ratio": 83.39564185765873,
+          "relative_error": 0.9978942089763192
+        },
+        {
+          "k": 7,
+          "exponent": 29,
+          "predicted_ratio": 710646.9999985935,
+          "observed_ratio": 86.50613879765972,
+          "relative_error": 0.9998782712953157
+        }
+      ],
+      "rms_relative_error": 0.860064045663413
+    }
+  },
+  "verdict": "Schoen/Z3xZ3 ∩ H_4(icosa-Z5): rank=1 λ=5.037990 via by_volume → 0.581528 (172512.105 ppm, 17.2512 % off ω_fix) — FAILED (>1 % off ω_fix)\nH_4 projection: schoen_z3xz3_intersect_icosa_z5 (basis dim 38 after projection)",
+  "total_elapsed_s": 1.9744883
+}

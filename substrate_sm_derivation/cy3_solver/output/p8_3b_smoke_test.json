@@ -1,0 +1,202 @@
+{
+  "label": "p8_3_yukawa_production",
+  "settings": {
+    "n_pts": 1000,
+    "k": 2,
+    "iter_cap": 8,
+    "donaldson_tol": 0.001,
+    "seed": 12345,
+    "harmonic_auto_use_predicted_dim": true
+  },
+  "pdg_reference": [
+    {
+      "name": "m_e",
+      "central_mev": 0.51099895069
+    },
+    {
+      "name": "m_mu",
+      "central_mev": 105.6583755
+    },
+    {
+      "name": "m_tau",
+      "central_mev": 1776.86
+    },
+    {
+      "name": "m_u",
+      "central_mev": 2.16
+    },
+    {
+      "name": "m_d",
+      "central_mev": 4.67
+    },
+    {
+      "name": "m_s",
+      "central_mev": 93.4
+    },
+    {
+      "name": "m_c",
+      "central_mev": 1273.0
+    },
+    {
+      "name": "m_b",
+      "central_mev": 4183.0
+    },
+    {
+      "name": "m_t",
+      "central_mev": 172570.0
+    }
+  ],
+  "candidates": [
+    "TY/Z3",
+    "Schoen/Z3xZ3"
+  ],
+  "per_candidate": [
+    {
+      "label": "TY/Z3",
+      "geometry": "TianYau bicubic CP^3 x CP^3, Z/3 quotient",
+      "bundle": "AKLP (Anderson-Lukas-Palti) SU(5) monad bundle, single-Z/3 Wilson line",
+      "status": "OK",
+      "donaldson_residual": 0.0008187370564285013,
+      "sigma_fs_identity": 0.3277416401179682,
+      "sigma_final": 0.393702416227344,
+      "n_basis": 28,
+      "iterations_run": 7,
+      "n_accepted_points": 1000,
+      "predicted_masses_mev": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        54737.007102839234
+      ],
+      "residuals_ppm": [
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -682812.7304697268
+      ],
+      "chi2_per_particle": [
+        1.019999717212035e+25,
+        2110338811587712.5,
+        219252184.69444448,
+        33.1776,
+        209.13609467455626,
+        242.84027777777774,
+        76584.5463137996,
+        357091.61224489793,
+        165096.48293819663
+      ],
+      "chi2_masses": 1.0199997174230688e+25,
+      "chi2_total": 1.0199997174230688e+25,
+      "log_chi2_per_particle": [
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        80134.07027279492
+      ],
+      "log_chi2_masses": 8080134.070272795,
+      "log_likelihood": -5.099998587115344e+24,
+      "log_likelihood_from_log_chi2": -4040067.0351363975,
+      "used_kernel_dim_fallback": false,
+      "hym_residual": 4.247196320257429,
+      "cohomology_dim_predicted": 9,
+      "cohomology_dim_observed": 9,
+      "yukawa_uncertainty_relative": 7.247648361785444,
+      "quadrature_uniformity_score": 0.6305900686524266,
+      "convergence_ratio": 0.23219429285186788,
+      "harmonic_orthonormality_residual": 4.4098804322265374e-10,
+      "elapsed_s_metric": 0.4455463,
+      "elapsed_s_yukawa": 0.0112793
+    },
+    {
+      "label": "Schoen/Z3xZ3",
+      "geometry": "Schoen CP^2 x CP^2 x CP^1, (d_x,d_y,d_t)=(2,2,1), Z/3xZ/3 quotient",
+      "bundle": "Schoen Z/3×Z/3 canonical monad bundle, WilsonLineE8 with quotient_order=9",
+      "status": "OK",
+      "donaldson_residual": 0.0021311827987908,
+      "sigma_fs_identity": 0.7938784757310681,
+      "sigma_final": 1.944755587333327,
+      "n_basis": 12,
+      "iterations_run": 8,
+      "n_accepted_points": 1000,
+      "predicted_masses_mev": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        68779.36025475673
+      ],
+      "residuals_ppm": [
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -1000000.0,
+        -601440.8051529424
+      ],
+      "chi2_per_particle": [
+        1.019999717212035e+25,
+        2110338811587712.5,
+        219252184.69444448,
+        33.1776,
+        209.13609467455626,
+        242.84027777777774,
+        76584.5463137996,
+        357091.61224489793,
+        128091.520793423
+      ],
+      "chi2_masses": 1.0199997174230688e+25,
+      "chi2_total": 1.0199997174230688e+25,
+      "log_chi2_per_particle": [
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        1000000.0,
+        51429.82487361936
+      ],
+      "log_chi2_masses": 8051429.82487362,
+      "log_likelihood": -5.099998587115344e+24,
+      "log_likelihood_from_log_chi2": -4025714.91243681,
+      "used_kernel_dim_fallback": true,
+      "hym_residual": 4.861940090759483,
+      "cohomology_dim_predicted": 0,
+      "cohomology_dim_observed": 9,
+      "yukawa_uncertainty_relative": 26.45454534794445,
+      "quadrature_uniformity_score": 0.05218632024933226,
+      "convergence_ratio": 0.9848474963242634,
+      "harmonic_orthonormality_residual": 5.889248882005592e-12,
+      "elapsed_s_metric": 0.0291664,
+      "elapsed_s_yukawa": 0.0144175
+    }
+  ],
+  "delta_log_likelihood_ty_minus_schoen": -14352.122699587606,
+  "discrimination_n_sigma": 169.4232728971295,
+  "verdict": "Schoen/Z3xZ3 fits PDG better than TY/Z3 (log-χ² channel): Δ log L = -1.435e4, n-σ ≈ 169.423",
+  "total_elapsed_s": 0.503148,
+  "git_revision": "d16c6998d01503a87f3205bb8c2dc883b46c9476"
+}

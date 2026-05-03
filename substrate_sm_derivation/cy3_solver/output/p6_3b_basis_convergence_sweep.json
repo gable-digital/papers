@@ -1,0 +1,68 @@
+{
+  "label": "p6_3b_basis_convergence_sweep",
+  "chain_type": "quark (sqrt2)",
+  "n_pts": 10000,
+  "k": 3,
+  "max_iter": 8,
+  "seed": 42,
+  "n_low": 15,
+  "sweep_time_cap_s": 300.0,
+  "rows": [
+    {
+      "test_degree": 3,
+      "basis_dim": 164,
+      "ty_residual": 18.28519756635098,
+      "schoen_residual": 13.074230106393781,
+      "delta": -5.2109674599572,
+      "ty_seconds": 2.6936527999999997,
+      "schoen_seconds": 0.7523677,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 8,
+      "ty_metric_sigma": 0.27736327073785655,
+      "schoen_metric_iters": 8,
+      "schoen_metric_sigma": 4.042375640921078
+    },
+    {
+      "test_degree": 4,
+      "basis_dim": 494,
+      "ty_residual": 8.623626689392996,
+      "schoen_residual": 20.870593386080614,
+      "delta": 12.246966696687618,
+      "ty_seconds": 10.339771,
+      "schoen_seconds": 8.8235092,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 8,
+      "ty_metric_sigma": 0.27736327073785655,
+      "schoen_metric_iters": 8,
+      "schoen_metric_sigma": 4.042375640921078
+    },
+    {
+      "test_degree": 5,
+      "basis_dim": 1286,
+      "ty_residual": 2.521952953971732,
+      "schoen_residual": 10.462227724573859,
+      "delta": 7.940274770602127,
+      "ty_seconds": 296.9939163,
+      "schoen_seconds": 282.8613099,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 8,
+      "ty_metric_sigma": 0.27736327073785655,
+      "schoen_metric_iters": 8,
+      "schoen_metric_sigma": 4.042375640921078
+    }
+  ],
+  "converged": false,
+  "converged_test_degree": null,
+  "converged_ty_residual": null,
+  "converged_schoen_residual": null,
+  "converged_delta": null,
+  "convergence_notes": [
+    "deg 3->4: TY rel-Δ=0.528 Schoen rel-Δ=0.596 delta rel-Δ=3.350 sign-kept=false",
+    "deg 4->5: TY rel-Δ=0.708 Schoen rel-Δ=0.499 delta rel-Δ=0.352 sign-kept=true",
+    "No consecutive pair of degrees met the 10% convergence criterion."
+  ],
+  "total_elapsed_s": 602.4659201
+}

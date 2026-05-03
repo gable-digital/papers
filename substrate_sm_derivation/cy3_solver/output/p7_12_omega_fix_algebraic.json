@@ -1,0 +1,24 @@
+{
+  "step1_algebraic_identity": {
+    "omega_fix_via_1_2_minus_1_dim_first_50_digits": "0.495967741935483870967741935483870967741935483870",
+    "omega_fix_via_123_over_248_first_50_digits": "0.495967741935483870967741935483870967741935483870",
+    "omega_fix_via_246_over_496_first_50_digits": "0.495967741935483870967741935483870967741935483870",
+    "abs_diff_with_123_248": 0e0,
+    "abs_diff_with_246_496": 0e0,
+    "first_100_digit_prefix_match": true
+  },
+  "step2_dual_anchor_at_journal_omega_fix": {
+    "omega_fix_used": "123/248 = 1/2 - 1/248",
+    "h_eff_e_first_25_digits_mev": "0.5151534130081300813008130",
+    "h_eff_mu_first_25_digits_mev": "0.5151534283853649479754169",
+    "variance_ppb": -29.84981564593516,
+    "variance_ppm": -0.029849815645935158
+  },
+  "step3_perturbation_breaks_dual_anchor": {
+    "omega_minus_one_122_248_variance_ppm": 8196.691216989144,
+    "omega_plus_one_124_248_variance_ppm": -8064.545738123585,
+    "amplification_minus_one_x_baseline": 274597,
+    "amplification_plus_one_x_baseline": 270170
+  },
+  "verdict": "ω_fix is an EXACT algebraic invariant of E_8, not a measurable eigenvalue. The empirical content is its appearance as a coefficient in m_e = 2·ℏ_eff·ω_fix, verified by ~30 ppb dual-anchor self-consistency."
+}

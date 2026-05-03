@@ -1,0 +1,232 @@
+{
+  "label": "p7_7_higher_k_omega_fix",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 25000,
+  "seed": 12345,
+  "k_list": [
+    3
+  ],
+  "test_degree_list": [
+    2
+  ],
+  "wallclock_estimates": [
+    {
+      "k": 3,
+      "estimated_donaldson_seconds_each_geometry": 90.0,
+      "estimated_spectrum_seconds_each_cell": 10.0
+    }
+  ],
+  "cells": [
+    {
+      "channel": "bundle_laplacian",
+      "geometry": "schoen_z3xz3",
+      "k": 3,
+      "test_degree": 2,
+      "metric_iters": 24,
+      "metric_sigma_residual": 1.8522547541722887,
+      "metric_seconds": 1.9328983,
+      "spectrum_seconds": 0.015807,
+      "full_basis_dim": 600,
+      "gamma_basis_dim": 66,
+      "final_basis_dim": 8,
+      "gamma_survival_fraction": 0.11,
+      "final_survival_fraction": 0.013333333333333334,
+      "n_points": 25000,
+      "lambda_min_nonzero": 7.3912495593770355,
+      "lambda_max": 28.851362946398936,
+      "lambda_mean": 14.86404817129939,
+      "lambda_trace": 118.91238537039511,
+      "volume_proxy": 0.7410240907569103,
+      "full_spectrum_head": [
+        5.749433910481373,
+        7.3912495593770355,
+        7.548360677512615,
+        7.9882971603033335,
+        8.648769134833795,
+        25.33371622230741,
+        27.40119575918062,
+        28.851362946398936
+      ],
+      "bottom_eigvalues": [
+        {
+          "rank": 0,
+          "eigenvalue": 7.3912495593770355,
+          "normalised": {
+            "raw": 7.3912495593770355,
+            "by_lambda1_min": 1.0,
+            "by_lambda_max": 0.256183722519756,
+            "by_mean": 0.4972568357016368,
+            "by_trace": 0.0621571044627046,
+            "by_volume": 9.974371483425498,
+            "by_saturating_abs": 0.8808282374485548,
+            "by_volume_dim": 6.688498620573251
+          },
+          "residual_ppm_raw": 13902682.038418738,
+          "residual_ppm_by_lambda1_min": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 483466.96597642684,
+          "residual_ppm_by_mean": 2599.148406552265,
+          "residual_ppm_by_trace": 874675.106449181,
+          "residual_ppm_by_volume": 19110927.869020514,
+          "residual_ppm_by_saturating_abs": 775978.8852621267,
+          "residual_ppm_by_volume_dim": 12485753.316277772
+        },
+        {
+          "rank": 1,
+          "eigenvalue": 7.548360677512615,
+          "normalised": {
+            "raw": 7.548360677512615,
+            "by_lambda1_min": 1.0212563676646877,
+            "by_lambda_max": 0.2616292579153443,
+            "by_mean": 0.50782670982509,
+            "by_trace": 0.06347833872813625,
+            "by_volume": 10.186390390901368,
+            "by_saturating_abs": 0.8830185063867733,
+            "by_volume_dim": 6.8306718063769125
+          },
+          "residual_ppm_raw": 14219458.927017305,
+          "residual_ppm_by_lambda1_min": 1059118.5299255494,
+          "residual_ppm_by_lambda_max": 472487.3498942651,
+          "residual_ppm_by_mean": 23910.764525384788,
+          "residual_ppm_by_trace": 872011.1544343269,
+          "residual_ppm_by_volume": 19538413.14588243,
+          "residual_ppm_by_saturating_abs": 780395.0372676403,
+          "residual_ppm_by_volume_dim": 12772411.447003856
+        },
+        {
+          "rank": 2,
+          "eigenvalue": 7.9882971603033335,
+          "normalised": {
+            "raw": 7.9882971603033335,
+            "by_lambda1_min": 1.0807776271292102,
+            "by_lambda_max": 0.27687763573402996,
+            "by_mean": 0.5374240629633946,
+            "by_trace": 0.06717800787042433,
+            "by_volume": 10.780077543961871,
+            "by_saturating_abs": 0.8887442212729144,
+            "by_volume_dim": 7.228779668200154
+          },
+          "residual_ppm_raw": 15106485.331343306,
+          "residual_ppm_by_lambda1_min": 1179128.874211741,
+          "residual_ppm_by_lambda_max": 441742.653154151,
+          "residual_ppm_by_mean": 83586.72857660052,
+          "residual_ppm_by_trace": 864551.6589279249,
+          "residual_ppm_by_volume": 20735440.9016467,
+          "residual_ppm_by_saturating_abs": 791939.568094982,
+          "residual_ppm_by_volume_dim": 13575100.46921657
+        },
+        {
+          "rank": 3,
+          "eigenvalue": 8.648769134833795,
+          "normalised": {
+            "raw": 8.648769134833795,
+            "by_lambda1_min": 1.170136262529708,
+            "by_lambda_max": 0.2997698635902151,
+            "by_mean": 0.5818582552452624,
+            "by_trace": 0.0727322819056578,
+            "by_volume": 11.671373768698412,
+            "by_saturating_abs": 0.8963598376097714,
+            "by_volume_dim": 7.826454777812691
+          },
+          "residual_ppm_raw": 16438168.662103914,
+          "residual_ppm_by_lambda1_min": 1359299.130954208,
+          "residual_ppm_by_lambda_max": 395585.9660945256,
+          "residual_ppm_by_mean": 173177.62033191108,
+          "residual_ppm_by_trace": 853352.7974585112,
+          "residual_ppm_by_volume": 22532525.972660214,
+          "residual_ppm_by_saturating_abs": 807294.6319286448,
+          "residual_ppm_by_volume_dim": 14780168.982906887
+        },
+        {
+          "rank": 4,
+          "eigenvalue": 25.33371622230741,
+          "normalised": {
+            "raw": 25.33371622230741,
+            "by_lambda1_min": 3.427528189758842,
+            "by_lambda_max": 0.8780769306938209,
+            "by_mean": 1.704361821917641,
+            "by_trace": 0.21304522773970513,
+            "by_volume": 34.187439434567615,
+            "by_saturating_abs": 0.9620258686028941,
+            "by_volume_dim": 22.925017569177946
+          },
+          "residual_ppm_raw": 50079362.78969299,
+          "residual_ppm_by_lambda1_min": 5910788.54520482,
+          "residual_ppm_by_lambda_max": 770431.53505746,
+          "residual_ppm_by_mean": 2436436.844191666,
+          "residual_ppm_by_trace": 570445.3944760417,
+          "residual_ppm_by_volume": 67930772.19327454,
+          "residual_ppm_by_saturating_abs": 939694.4342562417,
+          "residual_ppm_by_volume_dim": 45222799.651675865
+        },
+        {
+          "rank": 5,
+          "eigenvalue": 27.40119575918062,
+          "normalised": {
+            "raw": 27.40119575918062,
+            "by_lambda1_min": 3.7072480828925096,
+            "by_lambda_max": 0.9497366141796321,
+            "by_mean": 1.8434544508600885,
+            "by_trace": 0.23043180635751107,
+            "by_volume": 36.9774695599869,
+            "by_saturating_abs": 0.9647902148740779,
+            "by_volume_dim": 24.79592368854938
+          },
+          "residual_ppm_raw": 54247939.416884504,
+          "residual_ppm_by_lambda1_min": 6474776.622417417,
+          "residual_ppm_by_lambda_max": 914916.1001345427,
+          "residual_ppm_by_mean": 2716883.7708398537,
+          "residual_ppm_by_trace": 535389.5286450185,
+          "residual_ppm_by_volume": 73556198.78761587,
+          "residual_ppm_by_saturating_abs": 945268.075518466,
+          "residual_ppm_by_volume_dim": 48995033.12813208
+        },
+        {
+          "rank": 6,
+          "eigenvalue": 28.851362946398936,
+          "normalised": {
+            "raw": 28.851362946398936,
+            "by_lambda1_min": 3.9034486272752296,
+            "by_lambda_max": 1.0,
+            "by_mean": 1.9410165127227788,
+            "by_trace": 0.24262706409034734,
+            "by_volume": 38.93444667491046,
+            "by_saturating_abs": 0.9665006920522993,
+            "by_volume_dim": 26.108210759008923
+          },
+          "residual_ppm_raw": 57171853.745584846,
+          "residual_ppm_by_lambda1_min": 6870367.963937049,
+          "residual_ppm_by_lambda_max": 1016260.162601626,
+          "residual_ppm_by_mean": 2913594.2695548707,
+          "residual_ppm_by_trace": 510800.7163056411,
+          "residual_ppm_by_volume": 77501973.78355931,
+          "residual_ppm_by_saturating_abs": 948716.842511953,
+          "residual_ppm_by_volume_dim": 51640945.27019685
+        }
+      ],
+      "closest_to_omega_fix": {
+        "rank": 0,
+        "eigenvalue": 7.3912495593770355,
+        "chosen_scheme": "by_mean",
+        "chosen_value": 0.4972568357016368,
+        "residual_ppm": 2599.148406552265,
+        "residual_pct": 0.25991484065522646
+      }
+    }
+  ],
+  "convergence_verdict": {
+    "pattern": "indeterminate — insufficient k-sweep coverage",
+    "explanation": "Best Schoen residual: 2599.148 ppm at bundle_laplacian/schoen_z3xz3 k=3 td=2 via by_mean. k-sweep (Schoen bundle Laplacian): [(3, 2599.148406552265)]. Monotone-decreasing: true. Last ratio: NaN.",
+    "best_residual_ppm": 2599.148406552265,
+    "best_cell_label": "bundle_laplacian/schoen_z3xz3 k=3 td=2",
+    "best_normalisation": "by_mean",
+    "cleared_100_ppm": false,
+    "cleared_1_ppm": false
+  },
+  "notes": [
+    "P7.7 sweeps both bundle Laplacian (P7.6 path) and H_4-projected scalar metric Laplacian (P7.5 path) over (k, test_degree).",
+    "Bundle Laplacian basis is fixed by the AKLP bundle b_lines (degrees 0 and 1) and is independent of test_degree; only k affects it (via the metric background).",
+    "Scalar-metric Laplacian basis depends on both k (sample cloud) and test_degree (max total degree of the test-function basis)."
+  ],
+  "total_elapsed_s": 2.004514
+}

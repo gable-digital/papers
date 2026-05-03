@@ -1,0 +1,55 @@
+=== P8.3 Yukawa production sweep ===
+n_pts=25000, k=3, iter_cap=100, donaldson_tol=1e-6, seed=12345
+PDG 2024 reference (MeV):
+     m_e = 5.109990e-1
+    m_mu = 1.056584e2
+   m_tau = 1.776860e3
+     m_u = 2.160000e0
+     m_d = 4.670000e0
+     m_s = 9.340000e1
+     m_c = 1.273000e3
+     m_b = 4.183000e3
+     m_t = 1.725700e5
+
+--- TY/Z3 ---
+
+=== TY/Z3 ===
+  status: OK
+  |   name | predicted(MeV) |       PDG(MeV) |  residual(ppm) |         χ² |
+  |    m_e |     0.000000e0 |    5.109990e-1 |       -1.000e6 |   1.020e25 |
+  |   m_mu |     0.000000e0 |     1.056584e2 |       -1.000e6 |   2.110e15 |
+  |  m_tau |     0.000000e0 |     1.776860e3 |       -1.000e6 |    2.193e8 |
+  |    m_u |     0.000000e0 |     2.160000e0 |       -1.000e6 |    3.318e1 |
+  |    m_d |     0.000000e0 |     4.670000e0 |       -1.000e6 |    2.091e2 |
+  |    m_s |     0.000000e0 |     9.340000e1 |       -1.000e6 |    2.428e2 |
+  |    m_c |     0.000000e0 |     1.273000e3 |       -1.000e6 |    7.658e4 |
+  |    m_b |     0.000000e0 |     4.183000e3 |       -1.000e6 |    3.571e5 |
+  |    m_t |     2.478843e3 |     1.725700e5 |       -9.856e5 |    3.440e5 |
+  χ²(masses)=1.020e25  χ²(total,13dof)=1.020e25  log_L = -χ²/2 = -5.100e24
+  hym_res=4.245e0  coh_dim observed/predicted=9/9
+  metric_solve = 11.8s, yukawa = 0.3s
+
+--- Schoen/Z3xZ3 ---
+  Schoen first attempt failed with empty kernel basis; retrying with kernel_dim_target=Some(9)
+
+=== Schoen/Z3xZ3 ===
+  status: OK
+  |   name | predicted(MeV) |       PDG(MeV) |  residual(ppm) |         χ² |
+  |    m_e |     0.000000e0 |    5.109990e-1 |       -1.000e6 |   1.020e25 |
+  |   m_mu |     0.000000e0 |     1.056584e2 |       -1.000e6 |   2.110e15 |
+  |  m_tau |     0.000000e0 |     1.776860e3 |       -1.000e6 |    2.193e8 |
+  |    m_u |     0.000000e0 |     2.160000e0 |       -1.000e6 |    3.318e1 |
+  |    m_d |     0.000000e0 |     4.670000e0 |       -1.000e6 |    2.091e2 |
+  |    m_s |     0.000000e0 |     9.340000e1 |       -1.000e6 |    2.428e2 |
+  |    m_c |     0.000000e0 |     1.273000e3 |       -1.000e6 |    7.658e4 |
+  |    m_b |     0.000000e0 |     4.183000e3 |       -1.000e6 |    3.571e5 |
+  |    m_t |     5.723905e3 |     1.725700e5 |       -9.668e5 |    3.310e5 |
+  χ²(masses)=1.020e25  χ²(total,13dof)=1.020e25  log_L = -χ²/2 = -5.100e24
+  hym_res=5.158e0  coh_dim observed/predicted=9/0
+  metric_solve = 3.2s, yukawa = 0.5s
+
+=== Discrimination ===
+  Tie: Δ log L = 0
+
+=== Total elapsed: 16.1s ===
+Wrote output/p8_3_yukawa_production.json

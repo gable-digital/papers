@@ -1,0 +1,11 @@
+================================================
+[RETRACTED] P6.3 chain-match result is retracted
+            per P6.3b — see references/p6_3_chain_match.md
+            Binary kept for diagnostic / re-runs only.
+================================================
+=== P7.2 chain-position eigenvalue clustering test ===
+  n_pts=15000  k=4  max_iter=50  seed=12345
+  n_low=15  degrees=[2, 3, 4, 5]
+  assign=Hungarian  per-point time cap = 300s
+
+=== TY/Z3 metric solve (once for all degrees) ===

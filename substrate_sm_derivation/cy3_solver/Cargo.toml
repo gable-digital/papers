@@ -1,0 +1,156 @@
+[package]
+name = "cy3_rust_solver"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "bench_donaldson"
+path = "src/bench_donaldson.rs"
+
+[[bin]]
+name = "bench_yukawa"
+path = "src/bench_yukawa.rs"
+
+[[bin]]
+name = "discriminate"
+path = "src/discriminate.rs"
+
+[[bin]]
+name = "bench_threads"
+path = "src/bench_threads.rs"
+
+[[bin]]
+name = "bench_gpu"
+path = "src/bench_gpu.rs"
+required-features = ["gpu"]
+
+[[bin]]
+name = "bench_hybrid"
+path = "src/bench_hybrid.rs"
+required-features = ["gpu"]
+
+[[bin]]
+name = "bench_refine"
+path = "src/bench_refine.rs"
+
+[[bin]]
+name = "bench_pipeline"
+path = "src/bench_pipeline.rs"
+
+[[bin]]
+name = "eta_discriminate"
+path = "src/bin/eta_discriminate.rs"
+
+[[bin]]
+name = "bayes_discriminate"
+path = "src/bin/bayes_discriminate.rs"
+
+[[bin]]
+name = "p5_3_multi_seed_ensemble"
+path = "src/bin/p5_3_multi_seed_ensemble.rs"
+
+[[bin]]
+name = "p5_7_ty_schoen_ensemble"
+path = "src/bin/p5_7_ty_schoen_ensemble.rs"
+
+[[bin]]
+name = "p5_10_ty_schoen_5sigma"
+path = "src/bin/p5_10_ty_schoen_5sigma.rs"
+
+[[bin]]
+name = "p5_8_bayes_demo"
+path = "src/bin/p5_8_bayes_demo.rs"
+
+[[bin]]
+name = "p4_7_tracefree_ricci"
+path = "src/bin/p4_7_tracefree_ricci.rs"
+
+[[bin]]
+name = "p5_6b_eigenvalue_spectrum"
+path = "src/bin/p5_6b_eigenvalue_spectrum.rs"
+
+[[bin]]
+name = "p5_9_ako_apples_to_apples"
+path = "src/bin/p5_9_ako_apples_to_apples.rs"
+
+[[bin]]
+name = "p6_2_mass_spectrum"
+path = "src/bin/p6_2_mass_spectrum.rs"
+
+[[bin]]
+name = "p6_3_chain_match_diagnostic"
+path = "src/bin/p6_3_chain_match_diagnostic.rs"
+
+[[bin]]
+name = "p7_1_omega_fix_diagnostic"
+path = "src/bin/p7_1_omega_fix_diagnostic.rs"
+
+[[bin]]
+name = "p7_7_higher_k_omega_fix"
+path = "src/bin/p7_7_higher_k_omega_fix.rs"
+
+[[bin]]
+name = "p7_12_omega_fix_algebraic"
+path = "src/bin/p7_12_omega_fix_algebraic.rs"
+
+[[bin]]
+name = "p8_3_yukawa_production"
+path = "src/bin/p8_3_yukawa_production.rs"
+
+[[bin]]
+name = "p8_2_hodge_diagnostic"
+path = "src/bin/p8_2_hodge_diagnostic.rs"
+
+[[bin]]
+name = "p8_1_bayes_multichannel"
+path = "src/bin/p8_1_bayes_multichannel.rs"
+
+[[bin]]
+name = "p8_4_donaldson_stall_diag"
+path = "src/bin/p8_4_donaldson_stall_diag.rs"
+
+[[bin]]
+name = "p_repro2_within_proc"
+path = "src/bin/p_repro2_within_proc.rs"
+
+[[bin]]
+name = "p8_3_followup_a_zero_mode_diag"
+path = "src/bin/p8_3_followup_a_zero_mode_diag.rs"
+
+[[bin]]
+name = "p8_3_followup_a2_tensor_sparsity_diag"
+path = "src/bin/p8_3_followup_a2_tensor_sparsity_diag.rs"
+
+[[bin]]
+name = "p_basis_convergence_diag"
+path = "src/bin/p_basis_convergence_diag.rs"
+
+[dependencies]
+pwos-math = { path = "../../../../products/pwos/libs/pwos-math", default-features = false, features = ["ndarray", "kernels", "polynomial", "linalg", "infra", "opt", "sample", "pde", "hol-proofs", "std", "nn", "stats", "precision-bigfloat"] }
+astro-float = { version = "0.9", default-features = false, features = ["std"] }
+rayon = "1.10"
+crossbeam-channel = "0.5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+cudarc = { version = "0.16", features = ["cuda-11080", "cublas", "driver", "nvrtc", "f16"], optional = true }
+num-complex = { version = "0.4", features = ["serde"] }
+rand = "0.9"
+rand_chacha = "0.9"
+rand_distr = "0.5"
+clap = { version = "4", features = ["derive"] }
+sha2 = "0.10"
+hex = "0.4"
+libm = "0.2"
+
+[features]
+default = ["precision-bigfloat"]
+gpu = ["cudarc", "pwos-math/cuda"]
+# High-precision (~150-digit) comparator layer for the chain matcher and
+# any downstream eigenvalue-ratio analysis. Routes through
+# `pwos_math::precision::BigFloat` (astro-float).
+precision-bigfloat = []
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1

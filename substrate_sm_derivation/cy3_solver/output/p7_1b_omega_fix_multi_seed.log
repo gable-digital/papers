@@ -1,0 +1,41 @@
+================================================
+P7.1b — ω_fix multi-seed sweep on Schoen converged seeds
+  predicted ω_fix = 123/248 = 0.495967741935483875
+  n_pts=40000 k=3 max_iter=100 tol=1e-6 test_degree=4
+  seeds = [48879, 2, 12345, 51966, 4]
+================================================
+
+--- Schoen seed=48879 ---
+  metric: iters=20 σ-residual=2.235e0 donaldson-residual=5.036e-7 t=2.9s
+  trivial-rep λ_min = 0.3142220424  (366446.6138 ppm from ω_fix=0.4959677419)  purity=0.2524
+
+--- Schoen seed=2 ---
+  metric: iters=20 σ-residual=4.688e0 donaldson-residual=5.391e-7 t=2.8s
+  trivial-rep λ_min = 0.1151804926  (767766.1614 ppm from ω_fix=0.4959677419)  purity=0.2667
+
+--- Schoen seed=12345 ---
+  metric: iters=20 σ-residual=2.191e0 donaldson-residual=5.497e-7 t=2.8s
+  trivial-rep λ_min = 0.1424019278  (712880.6659 ppm from ω_fix=0.4959677419)  purity=0.2630
+
+--- Schoen seed=51966 ---
+  metric: iters=18 σ-residual=8.593e0 donaldson-residual=5.688e-7 t=2.6s
+  trivial-rep λ_min = 0.6362059292  (282756.6702 ppm from ω_fix=0.4959677419)  purity=0.2440
+
+--- Schoen seed=4 ---
+  metric: iters=22 σ-residual=4.236e0 donaldson-residual=5.824e-7 t=3.0s
+  trivial-rep λ_min = 0.0951384761  (808176.0807 ppm from ω_fix=0.4959677419)  purity=0.2654
+
+================================================
+Per-seed summary:
+   seed  iters  λ_lowest_triv     purity  ppm-from-ωfix     donald-res
+  48879     20   0.3142220424     0.2524     366446.614       5.036e-7
+      2     20   0.1151804926     0.2667     767766.161       5.391e-7
+  12345     20   0.1424019278     0.2630     712880.666       5.497e-7
+  51966     18   0.6362059292     0.2440     282756.670       5.688e-7
+      4     22   0.0951384761     0.2654     808176.081       5.824e-7
+
+VERDICT: FAILED — mean off ω_fix by >1% (framework gateway formula has a residual at this basis size) | mean=0.2606297736 ± 1.016e-1  spread=207.600%  mean-residual=587605.238 ppm  residual-of-mean=474502.570 ppm
+================================================
+
+Wrote output/p7_1b_omega_fix_converged_seeds.json
+Total elapsed: 141.3s

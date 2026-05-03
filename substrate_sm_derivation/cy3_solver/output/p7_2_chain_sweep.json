@@ -1,0 +1,543 @@
+{
+  "label": "p7_2_chain_sweep",
+  "n_pts": 8000,
+  "k": 4,
+  "max_iter": 25,
+  "seed": 12345,
+  "n_low": 15,
+  "sweep_time_cap_s": 300.0,
+  "assign": "Hungarian",
+  "rows": [
+    {
+      "candidate": "TY/Z3",
+      "chain": "quark",
+      "test_degree": 2,
+      "basis_dim": 18,
+      "n_pos_eigvals": 18,
+      "galerkin_condition_log10": 0.7634510254435016,
+      "smallest_eig": 1.2002170945399806,
+      "largest_eig": 6.961628333636885,
+      "residual_log": 23.8244713285166,
+      "n_assigned": 6,
+      "max_individual_dev": 9.729785581851065,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.0154726,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "lepton",
+      "test_degree": 2,
+      "basis_dim": 18,
+      "n_pos_eigvals": 18,
+      "galerkin_condition_log10": 0.7634510254435016,
+      "smallest_eig": 1.2002170945399806,
+      "largest_eig": 6.961628333636885,
+      "residual_log": 45.41226796749959,
+      "n_assigned": 8,
+      "max_individual_dev": 11.940074999420847,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.0154726,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "quark",
+      "test_degree": 3,
+      "basis_dim": 62,
+      "n_pos_eigvals": 60,
+      "galerkin_condition_log10": 1.717695196636316,
+      "smallest_eig": 1.1423746315519527,
+      "largest_eig": 59.635346488329404,
+      "residual_log": 24.31254337429414,
+      "n_assigned": 6,
+      "max_individual_dev": 9.957266086191337,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.1144022,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "lepton",
+      "test_degree": 3,
+      "basis_dim": 62,
+      "n_pos_eigvals": 60,
+      "galerkin_condition_log10": 1.717695196636316,
+      "smallest_eig": 1.1423746315519527,
+      "largest_eig": 59.635346488329404,
+      "residual_log": 45.89093406671746,
+      "n_assigned": 8,
+      "max_individual_dev": 12.167555503761122,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.1144022,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "quark",
+      "test_degree": 4,
+      "basis_dim": 178,
+      "n_pos_eigvals": 168,
+      "galerkin_condition_log10": 2.0279916835541223,
+      "smallest_eig": 1.073333769087537,
+      "largest_eig": 114.47917126965551,
+      "residual_log": 24.349845542614077,
+      "n_assigned": 6,
+      "max_individual_dev": 9.973700964457212,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.9974162,
+      "skipped_reason": null,
+      "ratio_pattern": [
+        {
+          "idx": 3,
+          "lambda_lo": 1.6460455198654067,
+          "lambda_hi": 2.374496793231594,
+          "ratio": 1.4425462507414442,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.020034236074504806
+        },
+        {
+          "idx": 0,
+          "lambda_lo": 1.073333769087537,
+          "lambda_hi": 1.3849431074759933,
+          "ratio": 1.2903191415037296,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": 0.08502474062373672
+        },
+        {
+          "idx": 2,
+          "lambda_lo": 1.4335026633489043,
+          "lambda_hi": 1.6460455198654067,
+          "ratio": 1.148268197855989,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.0344253886730558
+        },
+        {
+          "idx": 4,
+          "lambda_lo": 2.374496793231594,
+          "lambda_hi": 2.708685377635863,
+          "ratio": 1.140740802580513,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.04075514837640128
+        },
+        {
+          "idx": 12,
+          "lambda_lo": 3.3954915315971266,
+          "lambda_hi": 3.8369319803412743,
+          "ratio": 1.1300078190848877,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.04978047572284992
+        }
+      ]
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "lepton",
+      "test_degree": 4,
+      "basis_dim": 178,
+      "n_pos_eigvals": 168,
+      "galerkin_condition_log10": 2.0279916835541223,
+      "smallest_eig": 1.073333769087537,
+      "largest_eig": 114.47917126965551,
+      "residual_log": 45.845961610300215,
+      "n_assigned": 8,
+      "max_individual_dev": 12.183990382026996,
+      "metric_iters": 23,
+      "metric_sigma": 0.28515302359265116,
+      "metric_seconds": 37.4770925,
+      "spectrum_seconds": 0.9974162,
+      "skipped_reason": null,
+      "ratio_pattern": [
+        {
+          "idx": 3,
+          "lambda_lo": 1.6460455198654067,
+          "lambda_hi": 2.374496793231594,
+          "ratio": 1.4425462507414442,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.020034236074504806
+        },
+        {
+          "idx": 0,
+          "lambda_lo": 1.073333769087537,
+          "lambda_hi": 1.3849431074759933,
+          "ratio": 1.2903191415037296,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": 0.08502474062373672
+        },
+        {
+          "idx": 2,
+          "lambda_lo": 1.4335026633489043,
+          "lambda_hi": 1.6460455198654067,
+          "ratio": 1.148268197855989,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.0344253886730558
+        },
+        {
+          "idx": 4,
+          "lambda_lo": 2.374496793231594,
+          "lambda_hi": 2.708685377635863,
+          "ratio": 1.140740802580513,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.04075514837640128
+        },
+        {
+          "idx": 12,
+          "lambda_lo": 3.3954915315971266,
+          "lambda_hi": 3.8369319803412743,
+          "ratio": 1.1300078190848877,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 0.5,
+          "closest_predicted": 1.189207115002721,
+          "rel_residual": -0.04978047572284992
+        }
+      ]
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "quark",
+      "test_degree": 2,
+      "basis_dim": 13,
+      "n_pos_eigvals": 13,
+      "galerkin_condition_log10": 8.558280900597156,
+      "smallest_eig": 0.01637697860214547,
+      "largest_eig": 5922631.091609819,
+      "residual_log": 8.491836947716521,
+      "n_assigned": 6,
+      "max_individual_dev": 4.3255352887066305,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.0079289,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "lepton",
+      "test_degree": 2,
+      "basis_dim": 13,
+      "n_pos_eigvals": 13,
+      "galerkin_condition_log10": 8.558280900597156,
+      "smallest_eig": 0.01637697860214547,
+      "largest_eig": 5922631.091609819,
+      "residual_log": 7.399430604905488,
+      "n_assigned": 8,
+      "max_individual_dev": 2.3046983140489408,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.0079289,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "quark",
+      "test_degree": 3,
+      "basis_dim": 44,
+      "n_pos_eigvals": 44,
+      "galerkin_condition_log10": 11.376302679096279,
+      "smallest_eig": 0.0015999186905027384,
+      "largest_eig": 380540242.8741379,
+      "residual_log": 9.850748290128148,
+      "n_assigned": 6,
+      "max_individual_dev": 3.8337258435360586,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.0627379,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "lepton",
+      "test_degree": 3,
+      "basis_dim": 44,
+      "n_pos_eigvals": 44,
+      "galerkin_condition_log10": 11.376302679096279,
+      "smallest_eig": 0.0015999186905027384,
+      "largest_eig": 380540242.8741379,
+      "residual_log": 10.209392487722036,
+      "n_assigned": 8,
+      "max_individual_dev": 3.3053616251966833,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.0627379,
+      "skipped_reason": null,
+      "ratio_pattern": []
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "quark",
+      "test_degree": 4,
+      "basis_dim": 119,
+      "n_pos_eigvals": 119,
+      "galerkin_condition_log10": 14.653145860316702,
+      "smallest_eig": 0.00008450321292106446,
+      "largest_eig": 38020610143.63767,
+      "residual_log": 13.955633831177176,
+      "n_assigned": 6,
+      "max_individual_dev": 4.912562929920633,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.4262457,
+      "skipped_reason": null,
+      "ratio_pattern": [
+        {
+          "idx": 0,
+          "lambda_lo": 0.00008450321292106446,
+          "lambda_hi": 0.010203070409475018,
+          "ratio": 120.74180444483025,
+          "closest_harmonic": "phi",
+          "closest_dk": 7.0,
+          "closest_predicted": 29.03444185374864,
+          "rel_residual": 3.158571570034892
+        },
+        {
+          "idx": 1,
+          "lambda_lo": 0.010203070409475018,
+          "lambda_hi": 0.520040503762473,
+          "ratio": 50.96902039209105,
+          "closest_harmonic": "phi",
+          "closest_dk": 7.0,
+          "closest_predicted": 29.03444185374864,
+          "rel_residual": 0.755467546055494
+        },
+        {
+          "idx": 2,
+          "lambda_lo": 0.520040503762473,
+          "lambda_hi": 0.9905451698278164,
+          "ratio": 1.9047461931546874,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 2.0,
+          "closest_predicted": 2.0000000000000004,
+          "rel_residual": -0.047626903422656505
+        },
+        {
+          "idx": 3,
+          "lambda_lo": 0.9905451698278164,
+          "lambda_hi": 1.4899965637698012,
+          "ratio": 1.5042186960830903,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.06364324038793952
+        },
+        {
+          "idx": 4,
+          "lambda_lo": 1.4899965637698012,
+          "lambda_hi": 2.196427910120574,
+          "ratio": 1.474116090954901,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.04235748417041585
+        }
+      ]
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "lepton",
+      "test_degree": 4,
+      "basis_dim": 119,
+      "n_pos_eigvals": 119,
+      "galerkin_condition_log10": 14.653145860316702,
+      "smallest_eig": 0.00008450321292106446,
+      "largest_eig": 38020610143.63767,
+      "residual_log": 14.988621831123378,
+      "n_assigned": 8,
+      "max_individual_dev": 3.9127541724042985,
+      "metric_iters": 25,
+      "metric_sigma": 2.43149064030488,
+      "metric_seconds": 3.0813077,
+      "spectrum_seconds": 0.4262457,
+      "skipped_reason": null,
+      "ratio_pattern": [
+        {
+          "idx": 0,
+          "lambda_lo": 0.00008450321292106446,
+          "lambda_hi": 0.010203070409475018,
+          "ratio": 120.74180444483025,
+          "closest_harmonic": "phi",
+          "closest_dk": 7.0,
+          "closest_predicted": 29.03444185374864,
+          "rel_residual": 3.158571570034892
+        },
+        {
+          "idx": 1,
+          "lambda_lo": 0.010203070409475018,
+          "lambda_hi": 0.520040503762473,
+          "ratio": 50.96902039209105,
+          "closest_harmonic": "phi",
+          "closest_dk": 7.0,
+          "closest_predicted": 29.03444185374864,
+          "rel_residual": 0.755467546055494
+        },
+        {
+          "idx": 2,
+          "lambda_lo": 0.520040503762473,
+          "lambda_hi": 0.9905451698278164,
+          "ratio": 1.9047461931546874,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 2.0,
+          "closest_predicted": 2.0000000000000004,
+          "rel_residual": -0.047626903422656505
+        },
+        {
+          "idx": 3,
+          "lambda_lo": 0.9905451698278164,
+          "lambda_hi": 1.4899965637698012,
+          "ratio": 1.5042186960830903,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.06364324038793952
+        },
+        {
+          "idx": 4,
+          "lambda_lo": 1.4899965637698012,
+          "lambda_hi": 2.196427910120574,
+          "ratio": 1.474116090954901,
+          "closest_harmonic": "sqrt2",
+          "closest_dk": 1.0,
+          "closest_predicted": 1.4142135623730951,
+          "rel_residual": 0.04235748417041585
+        }
+      ]
+    }
+  ],
+  "per_candidate_chain_verdicts": [
+    {
+      "candidate": "TY/Z3",
+      "chain": "quark",
+      "residual_stable": true,
+      "converged_test_degree": 4,
+      "converged_residual": 24.349845542614077,
+      "notes": [
+        "deg 2->3: residual 23.8245 -> 24.3125 (rel-Δ=0.020)",
+        "deg 3->4: residual 24.3125 -> 24.3498 (rel-Δ=0.002)"
+      ]
+    },
+    {
+      "candidate": "TY/Z3",
+      "chain": "lepton",
+      "residual_stable": true,
+      "converged_test_degree": 4,
+      "converged_residual": 45.845961610300215,
+      "notes": [
+        "deg 2->3: residual 45.4123 -> 45.8909 (rel-Δ=0.011)",
+        "deg 3->4: residual 45.8909 -> 45.8460 (rel-Δ=0.001)"
+      ]
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "quark",
+      "residual_stable": false,
+      "converged_test_degree": null,
+      "converged_residual": null,
+      "notes": [
+        "deg 2->3: residual 8.4918 -> 9.8507 (rel-Δ=0.160)",
+        "deg 3->4: residual 9.8507 -> 13.9556 (rel-Δ=0.417)"
+      ]
+    },
+    {
+      "candidate": "Schoen/Z3xZ3",
+      "chain": "lepton",
+      "residual_stable": false,
+      "converged_test_degree": null,
+      "converged_residual": null,
+      "notes": [
+        "deg 2->3: residual 7.3994 -> 10.2094 (rel-Δ=0.380)",
+        "deg 3->4: residual 10.2094 -> 14.9886 (rel-Δ=0.468)"
+      ]
+    }
+  ],
+  "discrimination": [
+    {
+      "chain": "quark",
+      "test_degree": 2,
+      "ty_residual": 23.8244713285166,
+      "schoen_residual": 8.491836947716521,
+      "delta": -15.33263438080008,
+      "sign": "Schoen wins"
+    },
+    {
+      "chain": "quark",
+      "test_degree": 3,
+      "ty_residual": 24.31254337429414,
+      "schoen_residual": 9.850748290128148,
+      "delta": -14.461795084165992,
+      "sign": "Schoen wins"
+    },
+    {
+      "chain": "quark",
+      "test_degree": 4,
+      "ty_residual": 24.349845542614077,
+      "schoen_residual": 13.955633831177176,
+      "delta": -10.3942117114369,
+      "sign": "Schoen wins"
+    },
+    {
+      "chain": "lepton",
+      "test_degree": 2,
+      "ty_residual": 45.41226796749959,
+      "schoen_residual": 7.399430604905488,
+      "delta": -38.0128373625941,
+      "sign": "Schoen wins"
+    },
+    {
+      "chain": "lepton",
+      "test_degree": 3,
+      "ty_residual": 45.89093406671746,
+      "schoen_residual": 10.209392487722036,
+      "delta": -35.68154157899543,
+      "sign": "Schoen wins"
+    },
+    {
+      "chain": "lepton",
+      "test_degree": 4,
+      "ty_residual": 45.845961610300215,
+      "schoen_residual": 14.988621831123378,
+      "delta": -30.857339779176836,
+      "sign": "Schoen wins"
+    }
+  ],
+  "overall_converged": false,
+  "overall_headline": "[quark chain @ deg=4: Δ = − 10.394 (Schoen wins) sign-agree=true stable=false] [lepton chain @ deg=4: Δ = − 30.857 (Schoen wins) sign-agree=true stable=false] ",
+  "total_elapsed_s": 42.5904322
+}

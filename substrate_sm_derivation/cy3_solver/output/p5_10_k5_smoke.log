@@ -1,0 +1,7 @@
+=== P5.10 TY-vs-Schoen 5σ-target ensemble (Path A: n_pts boost) ===
+n_pts=5000, ks=[5], seeds(n=20)=[42, 100, 12345, 7, 99, 1, 2, 3, 4, 5, 137, 271, 314, 666, 1000, 2024, 4242, 57005, 48879, 51966]
+Donaldson(30, 1e-4, GPU) (no Adam refine)
+Bootstrap: n_resamples=10000, seed=12345
+
+--- TY k=5 (n_pts=5000) ---
+  [ 1/20] seed=    42: σ=0.349108  n_basis= 385  iters=25  res_donaldson=7.084e-5  tier=converged      (58.14s)

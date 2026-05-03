@@ -1,0 +1,224 @@
+{
+  "label": "p7_2b_omega_fix_localized",
+  "e8_dim": 248,
+  "predicted_omega_fix": 0.4959677419354839,
+  "n_pts": 40000,
+  "k": 3,
+  "max_iter": 100,
+  "seed": 12345,
+  "test_degree": 4,
+  "candidates": [
+    {
+      "label": "Schoen/Z3xZ3",
+      "projection": "schoen_z3xz3",
+      "metric_iters": 20,
+      "metric_sigma_residual": 2.190705377292251,
+      "metric_seconds": 2.7400838,
+      "spectrum_seconds": 1.1130036,
+      "full_basis_dim": 494,
+      "projected_basis_dim": 119,
+      "survival_fraction": 0.2408906882591093,
+      "n_points": 40000,
+      "lambda_min_nonzero": 0.17408196134652926,
+      "lambda_max": 10460.538401324538,
+      "lambda_mean": 394.35596263673324,
+      "volume_proxy": 6.579018009441014,
+      "bottom_eigvalues": [
+        {
+          "rank": 0,
+          "eigenvalue": 0.17408196134652926,
+          "normalised": {
+            "by_lambda1_min": 1.0,
+            "by_lambda_max": 0.000016641778335662586,
+            "by_mean_eigvalue": 0.00044143357230504816,
+            "by_volume": 0.02646017401027302,
+            "raw": 0.17408196134652926
+          },
+          "residual_ppm_raw": 649005.476309437,
+          "residual_ppm_by_lambda1_min": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999966.445845307,
+          "residual_ppm_by_mean": 999109.9550737265,
+          "residual_ppm_by_volume": 946649.4052475797
+        },
+        {
+          "rank": 1,
+          "eigenvalue": 0.2664545137121477,
+          "normalised": {
+            "by_lambda1_min": 1.5306267901114734,
+            "by_lambda_max": 0.000025472351755661887,
+            "by_mean_eigvalue": 0.0006756700518247169,
+            "by_volume": 0.040500651211135226,
+            "raw": 0.2664545137121477
+          },
+          "residual_ppm_raw": 462758.37885680795,
+          "residual_ppm_by_lambda1_min": 2086141.820712564,
+          "residual_ppm_by_lambda_max": 999948.6411119073,
+          "residual_ppm_by_mean": 998637.6733914429,
+          "residual_ppm_by_volume": 918340.1504035648
+        },
+        {
+          "rank": 2,
+          "eigenvalue": 1.3195896944931553,
+          "normalised": {
+            "by_lambda1_min": 7.580278187849499,
+            "by_lambda_max": 0.00012614930932484944,
+            "by_mean_eigvalue": 0.0033461892795284415,
+            "by_volume": 0.2005754798967748,
+            "raw": 1.3195896944931553
+          },
+          "residual_ppm_raw": 1660636.1319861994,
+          "residual_ppm_by_lambda1_min": 14283812.93159899,
+          "residual_ppm_by_lambda_max": 999745.6501730686,
+          "residual_ppm_by_mean": 993253.2118591622,
+          "residual_ppm_by_volume": 595587.6502894297
+        },
+        {
+          "rank": 3,
+          "eigenvalue": 1.3468684241833024,
+          "normalised": {
+            "by_lambda1_min": 7.73697868386382,
+            "by_lambda_max": 0.00012875708424460816,
+            "by_mean_eigvalue": 0.003415362139266016,
+            "by_volume": 0.20472180228880985,
+            "raw": 1.3468684241833024
+          },
+          "residual_ppm_raw": 1715637.147946821,
+          "residual_ppm_by_lambda1_min": 14599761.89917258,
+          "residual_ppm_by_lambda_max": 999740.3922203849,
+          "residual_ppm_by_mean": 993113.74137774,
+          "residual_ppm_by_volume": 587227.5856290663
+        },
+        {
+          "rank": 4,
+          "eigenvalue": 2.1849892671042097,
+          "normalised": {
+            "by_lambda1_min": 12.551497295890115,
+            "by_lambda_max": 0.0002088792357788717,
+            "by_mean_eigvalue": 0.0055406522891019265,
+            "by_volume": 0.3321148025387238,
+            "raw": 2.1849892671042097
+          },
+          "residual_ppm_raw": 3405506.8149743415,
+          "residual_ppm_by_lambda1_min": 24307083.978705272,
+          "residual_ppm_by_lambda_max": 999578.8451181044,
+          "residual_ppm_by_mean": 988828.6035146562,
+          "residual_ppm_by_volume": 330370.1542308659
+        }
+      ],
+      "closest_to_omega_fix": {
+        "rank": 4,
+        "eigenvalue": 2.1849892671042097,
+        "chosen_scheme": "by_volume",
+        "chosen_value": 0.3321148025387238,
+        "residual_ppm": 330370.1542308659
+      }
+    },
+    {
+      "label": "TY/Z3",
+      "projection": "ty_z3",
+      "metric_iters": 16,
+      "metric_sigma_residual": 0.26738296392189254,
+      "metric_seconds": 18.0857867,
+      "spectrum_seconds": 2.6543349000000003,
+      "full_basis_dim": 494,
+      "projected_basis_dim": 178,
+      "survival_fraction": 0.3603238866396761,
+      "n_points": 40000,
+      "lambda_min_nonzero": 0.1999719511811716,
+      "lambda_max": 10062448339.135458,
+      "lambda_mean": 300996680.57383436,
+      "volume_proxy": 0.036065795856580235,
+      "bottom_eigvalues": [
+        {
+          "rank": 0,
+          "eigenvalue": 0.1999719511811716,
+          "normalised": {
+            "by_lambda1_min": 1.0,
+            "by_lambda_max": 1.9873090965687652e-11,
+            "by_mean_eigvalue": 6.643659684217632e-10,
+            "by_volume": 5.544642685174145,
+            "raw": 0.1999719511811716
+          },
+          "residual_ppm_raw": 596804.5211956864,
+          "residual_ppm_by_lambda1_min": 1016260.162601626,
+          "residual_ppm_by_lambda_max": 999999.9999599307,
+          "residual_ppm_by_mean": 999999.9986604655,
+          "residual_ppm_by_volume": 10179442.161977137
+        },
+        {
+          "rank": 1,
+          "eigenvalue": 0.3122071059060496,
+          "normalised": {
+            "by_lambda1_min": 1.5612544862513975,
+            "by_lambda_max": 3.1026952425861964e-11,
+            "by_mean_eigvalue": 1.037244348711232e-9,
+            "by_volume": 8.65659826688913,
+            "raw": 0.3122071059060496
+          },
+          "residual_ppm_raw": 370509.24988048535,
+          "residual_ppm_by_lambda1_min": 2147895.2243117606,
+          "residual_ppm_by_lambda_max": 999999.9999374415,
+          "residual_ppm_by_mean": 999999.9979086455,
+          "residual_ppm_by_volume": 16453954.229174832
+        },
+        {
+          "rank": 2,
+          "eigenvalue": 0.5996465605724903,
+          "normalised": {
+            "by_lambda1_min": 2.998653346284647,
+            "by_lambda_max": 5.959251072527847e-11,
+            "by_mean_eigvalue": 1.9922032343655606e-9,
+            "by_volume": 16.626461341850142,
+            "raw": 0.5996465605724903
+          },
+          "residual_ppm_raw": 209043.4717233951,
+          "residual_ppm_by_lambda1_min": 5046065.283565793,
+          "residual_ppm_by_lambda_max": 999999.9998798461,
+          "residual_ppm_by_mean": 999999.9959832,
+          "residual_ppm_by_volume": 32523271.648608416
+        },
+        {
+          "rank": 3,
+          "eigenvalue": 0.6585857680229558,
+          "normalised": {
+            "by_lambda1_min": 3.2933907187127804,
+            "by_lambda_max": 6.544985333853052e-11,
+            "by_mean_eigvalue": 2.1880167142288634e-9,
+            "by_volume": 18.260674757931238,
+            "raw": 0.6585857680229558
+          },
+          "residual_ppm_raw": 327880.24772108154,
+          "residual_ppm_by_lambda1_min": 5640332.506022517,
+          "residual_ppm_by_lambda_max": 999999.999868036,
+          "residual_ppm_by_mean": 999999.9955883891,
+          "residual_ppm_by_volume": 35818271.05664184
+        },
+        {
+          "rank": 4,
+          "eigenvalue": 0.9710230124391569,
+          "normalised": {
+            "by_lambda1_min": 4.855796058915406,
+            "by_lambda_max": 9.649967678965345e-11,
+            "by_mean_eigvalue": 3.2260256511399146e-9,
+            "by_volume": 26.923654098762746,
+            "raw": 0.9710230124391569
+          },
+          "residual_ppm_raw": 957835.0169504952,
+          "residual_ppm_by_lambda1_min": 8790548.15130911,
+          "residual_ppm_by_lambda_max": 999999.9998054316,
+          "residual_ppm_by_mean": 999999.993495493,
+          "residual_ppm_by_volume": 53285091.19100131
+        }
+      ],
+      "closest_to_omega_fix": {
+        "rank": 2,
+        "eigenvalue": 0.5996465605724903,
+        "chosen_scheme": "raw",
+        "chosen_value": 0.5996465605724903,
+        "residual_ppm": 209043.47172339514
+      }
+    }
+  ],
+  "verdict": "Schoen/Z3xZ3: rank=4 λ=2.184989 via by_volume → 0.332115 (330370.154 ppm, 33.0370% off ω_fix) — FAILED (>1% off ω_fix)\nTY/Z3: rank=2 λ=0.599647 via raw → 0.599647 (209043.472 ppm, 20.9043% off ω_fix) — FAILED (>1% off ω_fix)\n",
+  "total_elapsed_s": 24.5982992
+}

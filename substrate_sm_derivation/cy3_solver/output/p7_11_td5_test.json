@@ -1,0 +1,36 @@
+{
+  "label": "p6_3b_basis_convergence_sweep",
+  "chain_type": "quark (sqrt2)",
+  "n_pts": 25000,
+  "k": 3,
+  "max_iter": 100,
+  "seed": 12345,
+  "n_low": 15,
+  "sweep_time_cap_s": 7200.0,
+  "rows": [
+    {
+      "test_degree": 5,
+      "basis_dim": 450,
+      "ty_residual": 23.398232729711214,
+      "schoen_residual": 12.19499272226869,
+      "delta": -11.203240007442524,
+      "ty_seconds": 27.3264705,
+      "schoen_seconds": 7.9145751,
+      "ty_skipped_reason": null,
+      "schoen_skipped_reason": null,
+      "ty_metric_iters": 16,
+      "ty_metric_sigma": 0.2716856238752092,
+      "schoen_metric_iters": 24,
+      "schoen_metric_sigma": 1.8522547541722887
+    }
+  ],
+  "converged": false,
+  "converged_test_degree": null,
+  "converged_ty_residual": null,
+  "converged_schoen_residual": null,
+  "converged_delta": null,
+  "convergence_notes": [
+    "Need at least 2 successful (TY, Schoen) pairs to assess convergence; got 1."
+  ],
+  "total_elapsed_s": 35.2418121
+}

@@ -1,0 +1,83 @@
+================================================
+P7.7 — higher-k / larger-basis ω_fix convergence sweep
+  predicted ω_fix = 1/2 - 1/dim(E_8) = 123/248 = 0.495967741935483875
+================================================
+  n_pts=25000 seed=12345 k_list=[3, 4, 5] test_degree_list=[1, 2, 3, 4]
+  Wallclock pre-estimates:
+    k=3: Donaldson ≈ 90s/geom × 1 geom + spectrum (1 cells × 10s) ≈ 100s
+    k=4: Donaldson ≈ 600s/geom × 1 geom + spectrum (1 cells × 18s) ≈ 618s
+    k=5: Donaldson ≈ 2400s/geom × 1 geom + spectrum (1 cells × 28s) ≈ 2428s
+  Total estimated wallclock: ≈ 3146s (52.4 min)
+  Wilson Z/3×Z/3:  ω_2∨ residual=0.000e0  ω_5∨ residual=0.000e0  [W_1,W_2] residual=0.000e0
+
+--- k = 3 ---
+  [Donaldson] Schoen k=3 n_pts=25000 seed=12345 ...
+  [Donaldson] Schoen k=3 done: iters=24 σ=1.852e0 t=1.9s
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=3  basis: full=24 → Z3×Z3=3 (surv 0.1250) → final=3 (surv 0.1250)
+    [bundle_laplacian] geom=schoen_z3xz3 k=3 td=Some(1) basis(full→Γ→final)=24→3→3  iters=24 σ=1.852e0  t_metric=1.9s t_spec=0.01s
+         λ_min_nonzero=4.4896e0  λ_max=5.4800e0  λ_mean=4.2461e0  vol=7.4102e-1
+         closest-to-ω_fix:  rank=1  λ=5.4800e0  via by_trace=0.430200  → 132604.917 ppm  (13.2605 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=3  basis: full=600 → Z3×Z3=66 (surv 0.1100) → final=8 (surv 0.0133)
+    [bundle_laplacian] geom=schoen_z3xz3 k=3 td=Some(2) basis(full→Γ→final)=600→66→8  iters=24 σ=1.852e0  t_metric=1.9s t_spec=0.02s
+         λ_min_nonzero=7.4332e0  λ_max=2.9957e1  λ_mean=1.5418e1  vol=7.4102e-1
+         closest-to-ω_fix:  rank=1  λ=7.5736e0  via by_mean=0.491202  → 9608.842 ppm  (0.9609 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=3  basis: full=2400 → Z3×Z3=272 (surv 0.1133) → final=42 (surv 0.0175)
+    [bundle_laplacian] geom=schoen_z3xz3 k=3 td=Some(3) basis(full→Γ→final)=2400→272→42  iters=24 σ=1.852e0  t_metric=1.9s t_spec=0.28s
+         λ_min_nonzero=-5.7204e1  λ_max=5.3231e2  λ_mean=6.3554e1  vol=7.4102e-1
+         closest-to-ω_fix:  rank=4  λ=1.0005e0  via by_saturating_abs=0.500134  → 8399.940 ppm  (0.8400 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=3  basis: full=7350 → Z3×Z3=814 (surv 0.1107) → final=128 (surv 0.0174)
+    [bundle_laplacian] geom=schoen_z3xz3 k=3 td=Some(4) basis(full→Γ→final)=7350→814→128  iters=24 σ=1.852e0  t_metric=1.9s t_spec=3.09s
+         λ_min_nonzero=-1.4570e3  λ_max=5.1582e3  λ_mean=1.8956e2  vol=7.4102e-1
+         closest-to-ω_fix:  rank=0  λ=-1.4570e3  via by_saturating_abs=1.000687  → 1017644.979 ppm  (101.7645 %)
+
+--- k = 4 ---
+  [Donaldson] Schoen k=4 n_pts=25000 seed=12345 ...
+  [Donaldson] Schoen k=4 done: iters=100 σ=4.982e0 t=19.4s
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=4  basis: full=24 → Z3×Z3=3 (surv 0.1250) → final=3 (surv 0.1250)
+    [bundle_laplacian] geom=schoen_z3xz3 k=4 td=Some(1) basis(full→Γ→final)=24→3→3  iters=100 σ=4.982e0  t_metric=19.4s t_spec=0.00s
+         λ_min_nonzero=2.2428e0  λ_max=3.7656e0  λ_mean=2.3552e0  vol=8.0017e-1
+         closest-to-ω_fix:  rank=1  λ=3.7656e0  via by_trace=0.532933  → 74532.075 ppm  (7.4532 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=4  basis: full=600 → Z3×Z3=66 (surv 0.1100) → final=8 (surv 0.0133)
+    [bundle_laplacian] geom=schoen_z3xz3 k=4 td=Some(2) basis(full→Γ→final)=600→66→8  iters=100 σ=4.982e0  t_metric=19.4s t_spec=0.02s
+         λ_min_nonzero=6.9324e0  λ_max=6.2384e1  λ_mean=2.0907e1  vol=8.0017e-1
+         closest-to-ω_fix:  rank=3  λ=1.2445e1  via by_mean=0.595250  → 200178.774 ppm  (20.0179 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=4  basis: full=2400 → Z3×Z3=272 (surv 0.1133) → final=42 (surv 0.0175)
+    [bundle_laplacian] geom=schoen_z3xz3 k=4 td=Some(3) basis(full→Γ→final)=2400→272→42  iters=100 σ=4.982e0  t_metric=19.4s t_spec=0.28s
+         λ_min_nonzero=-7.3138e2  λ_max=2.2726e3  λ_mean=1.3403e2  vol=8.0017e-1
+         closest-to-ω_fix:  rank=10  λ=6.4820e0  via by_saturating_abs=0.866345  → 746777.064 ppm  (74.6777 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=4  basis: full=7350 → Z3×Z3=814 (surv 0.1107) → final=128 (surv 0.0174)
+    [bundle_laplacian] geom=schoen_z3xz3 k=4 td=Some(4) basis(full→Γ→final)=7350→814→128  iters=100 σ=4.982e0  t_metric=19.4s t_spec=3.16s
+         λ_min_nonzero=-1.3731e4  λ_max=3.6604e4  λ_mean=7.7197e2  vol=8.0017e-1
+         closest-to-ω_fix:  rank=0  λ=-1.3731e4  via by_saturating_abs=1.000073  → 1016407.009 ppm  (101.6407 %)
+
+--- k = 5 ---
+  [Donaldson] Schoen k=5 n_pts=25000 seed=12345 ...
+  [Donaldson] Schoen k=5 done: iters=32 σ=4.294e0 t=14.4s
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=5  basis: full=24 → Z3×Z3=3 (surv 0.1250) → final=3 (surv 0.1250)
+    [bundle_laplacian] geom=schoen_z3xz3 k=5 td=Some(1) basis(full→Γ→final)=24→3→3  iters=32 σ=4.294e0  t_metric=14.4s t_spec=0.00s
+         λ_min_nonzero=2.0221e0  λ_max=1.0015e3  λ_mean=3.3473e2  vol=1.4518e2
+         closest-to-ω_fix:  rank=0  λ=2.0221e0  via by_saturating_abs=0.669107  → 349094.674 ppm  (34.9095 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=5  basis: full=600 → Z3×Z3=66 (surv 0.1100) → final=8 (surv 0.0133)
+    [bundle_laplacian] geom=schoen_z3xz3 k=5 td=Some(2) basis(full→Γ→final)=600→66→8  iters=32 σ=4.294e0  t_metric=14.4s t_spec=0.02s
+         λ_min_nonzero=-9.5224e2  λ_max=5.4271e4  λ_mean=1.6693e4  vol=1.4518e2
+         closest-to-ω_fix:  rank=6  λ=5.4271e4  via by_trace=0.406394  → 180604.536 ppm  (18.0605 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=5  basis: full=2400 → Z3×Z3=272 (surv 0.1133) → final=42 (surv 0.0175)
+    [bundle_laplacian] geom=schoen_z3xz3 k=5 td=Some(3) basis(full→Γ→final)=2400→272→42  iters=32 σ=4.294e0  t_metric=14.4s t_spec=0.29s
+         λ_min_nonzero=-4.1703e4  λ_max=2.7341e5  λ_mean=1.7319e4  vol=1.4518e2
+         closest-to-ω_fix:  rank=11  λ=-6.7010e-1  via by_trace=-0.000001  → 1000001.857 ppm  (100.0002 %)
+    [bundle ] Schoen/Z3xZ3-AKLP/H4 k=5  basis: full=7350 → Z3×Z3=814 (surv 0.1107) → final=128 (surv 0.0174)
+    [bundle_laplacian] geom=schoen_z3xz3 k=5 td=Some(4) basis(full→Γ→final)=7350→814→128  iters=32 σ=4.294e0  t_metric=14.4s t_spec=3.18s
+         λ_min_nonzero=-3.1976e5  λ_max=1.4409e6  λ_mean=2.0599e4  vol=1.4518e2
+         closest-to-ω_fix:  rank=11  λ=-8.1872e1  via by_trace=-0.000031  → 1000062.608 ppm  (100.0063 %)
+
+================================================
+CONVERGENCE VERDICT:
+  pattern: (b) saturates above 100 ppm
+  best:    8399.940475108735 ppm at bundle_laplacian/schoen_z3xz3 k=3 td=3 via by_saturating_abs
+  cleared 100 ppm: false
+  cleared 1 ppm:   false
+  Best Schoen residual: 8399.940 ppm at bundle_laplacian/schoen_z3xz3 k=3 td=3 via by_saturating_abs. k-sweep (Schoen bundle Laplacian): [(3, 132604.91704339345), (3, 9608.842476633923), (3, 8399.940475108735), (3, 1017644.9792110859), (4, 74532.07482236011), (4, 200178.7744795438), (4, 746777.0644682853), (4, 1016407.0091287205), (5, 349094.67432107514), (5, 180604.53566008885), (5, 1000001.8574330849), (5, 1000062.6082366569)]. Monotone-decreasing: false. Last ratio: 1.0001.
+================================================
+
+Wrote output/p7_7_production_gpu_schoen_bundle.json
+Total elapsed: 46.8s

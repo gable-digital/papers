@@ -1,0 +1,150 @@
+warning: unused import: `num_complex::Complex64`
+    --> src\pipeline.rs:1545:9
+     |
+1545 |     use num_complex::Complex64;
+     |         ^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `cudarc::driver::sys::CUstream`
+  --> src\gpu.rs:12:5
+   |
+12 | use cudarc::driver::sys::CUstream;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+   --> src\route34\eta_evaluator.rs:396:34
+    |
+396 |     let visible = VisibleBundle::ty_aglp_2011_standard();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+   --> src\route34\eta_evaluator.rs:575:34
+    |
+575 |     let visible = VisibleBundle::schoen_dhor_2006_minimal();
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::ty_aglp_2011_standard`: The literal AGLP-2011-Tab-5 provenance was not verified; use ty_chern_canonical_su5_monad for the same bundle with an honest citation footprint.
+    --> src\route34\eta_evaluator.rs:1053:24
+     |
+1053 |         VisibleBundle::ty_aglp_2011_standard(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated associated function `route34::hidden_bundle::VisibleBundle::schoen_dhor_2006_minimal`: Use schoen_bhop2005_su4_extension for the literally published BHOP-2005 §6 extension bundle on the Schoen Z/3 × Z/3 Calabi-Yau.
+    --> src\route34\eta_evaluator.rs:1079:24
+     |
+1079 |         VisibleBundle::schoen_dhor_2006_minimal(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:1564:31
+     |
+1564 |             let zr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:1565:31
+     |
+1565 |             let zi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:1566:31
+     |
+1566 |             let wr: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: use of deprecated method `rand::Rng::gen_range`: Renamed to `random_range`
+    --> src\route34\ty_metric.rs:1567:31
+     |
+1567 |             let wi: f64 = rng.gen_range(-1.0..1.0);
+     |                               ^^^^^^^^^
+
+warning: unused import: `Deserialize`
+  --> src\route34\metric_cache.rs:60:13
+   |
+60 | use serde::{Deserialize, Serialize};
+   |             ^^^^^^^^^^^
+
+warning: function `lm_divides` is never used
+   --> src\route34\groebner.rs:354:4
+    |
+354 | fn lm_divides(divisor: &Polynomial, target: &Polynomial) -> bool {
+    |    ^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `integrate_tr_f_squared_wedge_J` should have a snake case name
+   --> src\route34\chern_field_strength.rs:188:8
+    |
+188 | pub fn integrate_tr_f_squared_wedge_J<B: Bundle>(
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: `integrate_tr_f_squared_wedge_j`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: `cy3_rust_solver` (lib) generated 13 warnings (run `cargo fix --lib -p cy3_rust_solver` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 0.07s
+     Running `target\release\p5_7_ty_schoen_ensemble.exe --n-pts 25000 --ks 3 --output output/p5_10_path_a_n25000_k3.json`
+=== P5.7 TY-vs-Schoen multi-seed σ ensemble ===
+n_pts=25000, ks=[3], seeds(n=20)=[42, 100, 12345, 7, 99, 1, 2, 3, 4, 5, 137, 271, 314, 666, 1000, 2024, 4242, 57005, 48879, 51966]
+Donaldson(25, 1e-3)  (no Adam refine — fair across candidates)
+Bootstrap: n_resamples=1000, seed=12345
+
+--- TY k=3 (n_pts=25000) ---
+  [ 1/20] seed=    42: σ=1.020350  n_basis=  87  iters= 7  (4.62s)
+  [ 2/20] seed=   100: σ=1.041661  n_basis=  87  iters= 7  (4.22s)
+  [ 3/20] seed= 12345: σ=1.055199  n_basis=  87  iters= 7  (4.33s)
+  [ 4/20] seed=     7: σ=1.029435  n_basis=  87  iters= 7  (4.33s)
+  [ 5/20] seed=    99: σ=0.991076  n_basis=  87  iters= 7  (4.34s)
+  [ 6/20] seed=     1: σ=0.990830  n_basis=  87  iters= 8  (4.83s)
+  [ 7/20] seed=     2: σ=0.977664  n_basis=  87  iters= 7  (4.21s)
+  [ 8/20] seed=     3: σ=0.975403  n_basis=  87  iters= 7  (4.24s)
+  [ 9/20] seed=     4: σ=1.026825  n_basis=  87  iters= 7  (4.25s)
+  [10/20] seed=     5: σ=1.053809  n_basis=  87  iters= 7  (4.33s)
+  [11/20] seed=   137: σ=1.016378  n_basis=  87  iters= 7  (4.27s)
+  [12/20] seed=   271: σ=1.002055  n_basis=  87  iters= 8  (4.94s)
+  [13/20] seed=   314: σ=1.010311  n_basis=  87  iters= 8  (4.97s)
+  [14/20] seed=   666: σ=1.046797  n_basis=  87  iters= 8  (4.87s)
+  [15/20] seed=  1000: σ=1.013978  n_basis=  87  iters= 7  (4.29s)
+  [16/20] seed=  2024: σ=1.012844  n_basis=  87  iters= 7  (4.24s)
+  [17/20] seed=  4242: σ=0.999446  n_basis=  87  iters= 7  (4.29s)
+  [18/20] seed= 57005: σ=0.991895  n_basis=  87  iters= 8  (4.92s)
+  [19/20] seed= 48879: σ=1.014749  n_basis=  87  iters= 7  (4.34s)
+  [20/20] seed= 51966: σ=1.023045  n_basis=  87  iters= 8  (4.89s)
+  Stats:
+                   sigma_ty_k3: mean=1.014688 std=2.3368e-2 stderr=5.2252e-3  pct95=[1.005023, 1.024749]  bca95=[1.005320, 1.025012]
+
+--- Schoen k=3 (n_pts=25000) ---
+  [ 1/20] seed=    42: σ=2.426856  n_basis=  27  iters=11  (0.94s)
+  [ 2/20] seed=   100: σ=2.156840  n_basis=  27  iters=12  (0.99s)
+  [ 3/20] seed= 12345: σ=2.134359  n_basis=  27  iters=11  (0.92s)
+  [ 4/20] seed=     7: σ=2.509075  n_basis=  27  iters=15  (1.22s)
+  [ 5/20] seed=    99: σ=2.842851  n_basis=  27  iters=17  (1.34s)
+  [ 6/20] seed=     1: σ=2.787464  n_basis=  27  iters=14  (1.17s)
+  [ 7/20] seed=     2: σ=2.829908  n_basis=  27  iters=23  (1.78s)
+  [ 8/20] seed=     3: σ=2.514879  n_basis=  27  iters=14  (1.16s)
+  [ 9/20] seed=     4: σ=2.339442  n_basis=  27  iters=13  (1.07s)
+  [10/20] seed=     5: σ=4.048856  n_basis=  27  iters=25  (1.92s)
+  [11/20] seed=   137: σ=2.059253  n_basis=  27  iters=11  (0.91s)
+  [12/20] seed=   271: σ=3.058387  n_basis=  27  iters=20  (1.58s)
+  [13/20] seed=   314: σ=2.758330  n_basis=  27  iters=12  (0.99s)
+  [14/20] seed=   666: σ=5.694983  n_basis=  27  iters=14  (1.16s)
+  [15/20] seed=  1000: σ=3.011828  n_basis=  27  iters=18  (1.45s)
+  [16/20] seed=  2024: σ=2.359213  n_basis=  27  iters=14  (1.15s)
+  [17/20] seed=  4242: σ=4.736887  n_basis=  27  iters=12  (1.01s)
+  [18/20] seed= 57005: σ=3.074464  n_basis=  27  iters=19  (1.51s)
+  [19/20] seed= 48879: σ=2.324082  n_basis=  27  iters=11  (0.92s)
+  [20/20] seed= 51966: σ=5.062652  n_basis=  27  iters=13  (1.08s)
+  Stats:
+               sigma_schoen_k3: mean=3.036530 std=1.0318e0 stderr=2.3072e-1  pct95=[2.647629, 3.495655]  bca95=[2.677246, 3.568277]
+
+=== n-σ discrimination summary ===
+|  k |     <σ_TY> |      SE_TY | <σ_Schoen> |  SE_Schoen |         Δσ |    SE_comb |      n-σ |
+|----|------------|------------|------------|------------|------------|------------|----------|
+|  3 |   1.014688 |  5.2252e-3 |   3.036530 |  2.3072e-1 |  -2.021843 |  2.3078e-1 |    8.761 |
+
+max n-σ = 8.761 at k=3  →  5σ DISCRIMINATION ACHIEVED ON σ ALONE
+=== total elapsed: 114.0s ===
+Wrote output/p5_10_path_a_n25000_k3.json

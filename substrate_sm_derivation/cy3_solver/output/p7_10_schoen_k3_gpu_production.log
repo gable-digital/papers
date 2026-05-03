@@ -1,0 +1,33 @@
+================================================
+P7.7 — higher-k / larger-basis ω_fix convergence sweep
+  predicted ω_fix = 1/2 - 1/dim(E_8) = 123/248 = 0.495967741935483875
+================================================
+  n_pts=25000 seed=12345 k_list=[3] test_degree_list=[2, 3]
+  Wallclock pre-estimates:
+    k=3: Donaldson ≈ 90s/geom × 1 geom + spectrum (2 cells × 10s) ≈ 110s
+  Total estimated wallclock: ≈ 110s (1.8 min)
+  Wilson Z/3×Z/3:  ω_2∨ residual=0.000e0  ω_5∨ residual=0.000e0  [W_1,W_2] residual=0.000e0
+
+--- k = 3 ---
+  [Donaldson] Schoen k=3 n_pts=25000 seed=12345 adam_iters=30 ...
+  [Donaldson+Adam] Schoen k=3 done: iters=24 σ_donaldson=1.852e0 σ_adam=1.445e0 adam_iters=30 t=592.3s
+    [metric ] Schoen/Γ∩H_4 k=3 td=2  basis: full=44 → Γ=13 (surv 0.2955) → H_4=9 (surv 0.2045, rel 0.6923)
+    [metric_h4_projected] geom=schoen_z3xz3 k=3 td=Some(2) basis(full→Γ→final)=44→13→9  iters=24 σ=1.445e0  t_metric=592.3s t_spec=0.02s
+         λ_min_nonzero=1.6372e0  λ_max=9.5689e1  λ_mean=2.4379e1  vol=7.1759e-1
+         closest-to-ω_fix:  rank=3  λ=1.1890e1  via by_mean=0.487721  → 16628.145 ppm  (1.6628 %)
+    [metric ] Schoen/Γ∩H_4 k=3 td=3  basis: full=164 → Γ=44 (surv 0.2683) → H_4=20 (surv 0.1220, rel 0.4545)
+    [metric_h4_projected] geom=schoen_z3xz3 k=3 td=Some(3) basis(full→Γ→final)=164→44→20  iters=24 σ=1.445e0  t_metric=592.3s t_spec=0.05s
+         λ_min_nonzero=2.1791e0  λ_max=2.1598e2  λ_mean=5.0068e1  vol=7.1759e-1
+         closest-to-ω_fix:  rank=8  λ=2.6029e1  via by_mean=0.519874  → 48201.007 ppm  (4.8201 %)
+
+================================================
+CONVERGENCE VERDICT:
+  pattern: indeterminate — insufficient k-sweep coverage
+  best:    16628.145427495805 ppm at metric_h4_projected/schoen_z3xz3 k=3 td=2 via by_mean
+  cleared 100 ppm: false
+  cleared 1 ppm:   false
+  Best Schoen residual: 16628.145 ppm at metric_h4_projected/schoen_z3xz3 k=3 td=2 via by_mean. k-sweep (Schoen bundle Laplacian): []. Monotone-decreasing: true. Last ratio: NaN.
+================================================
+
+Wrote output/p7_10_schoen_k3_gpu_production.json
+Total elapsed: 592.3s
