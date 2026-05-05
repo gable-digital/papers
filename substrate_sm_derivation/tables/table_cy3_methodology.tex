@@ -2,12 +2,14 @@
 % Source: book/scripts/cy3_substrate_discrimination/rust_solver/references/cy3_publication_summary.md §6
 \begin{table}[h]
 \centering
-\caption{Methodological provenance and replicability conventions for the CY3-substrate-identification analysis (Tabs.~\ref{tab:cy3-substrate-identification}--\ref{tab:cy3-schoen-bundle}). Run-time per sweep: $\sim 2.5$~h CPU on the basis-convergence sign-reversal test; $\sim 3.5$~h GPU on each $k$-scan production run; total ${\sim}50$ GPU-hours plus ${\sim}30$ CPU-hours across all reported tiers.}
+\caption{Methodological provenance and replicability conventions for the CY3-substrate-identification analysis (Tabs.~\ref{tab:cy3-substrate-identification}--\ref{tab:cy3-schoen-bundle}). Run-time per sweep: $\sim 2.5$~h CPU on the basis-convergence sign-reversal test; $\sim 3.5$~h GPU on each $k$-scan production run; total ${\sim}50$ GPU-hours plus ${\sim}30$ CPU-hours across all reported tiers. The $\sigma$-discriminator throughout this paper is the weighted-L$^2$ Donaldson 2009 §3.4 functional, matching the production implementation; see row below.}
 \label{tab:cy3-methodology}
 \begin{ruledtabular}
 \begin{tabular}{ll}
 Item & Setting / source \\
 \hline
+$\sigma$-functional definition & weighted L$^2$ Monge--Ampère residual: $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$, $\kappa = \langle \eta \rangle_{w}$ (Donaldson 2009 §3.4 eq.~3.4) \\
+$\sigma$-functional implementation & \texttt{schoen\_metric.rs::compute\_sigma}, \texttt{ty\_metric.rs::compute\_sigma} (CPU + GPU bit-exact mirror) \\
 Bayes-factor sign convention & $\ln \mathrm{BF}_{12} > 0 \Leftrightarrow M_1$ favoured (Jeffreys/Kass--Raftery) \\
 Strict-converged tier gate & $\mathrm{residual} < \mathrm{tol}$ AND $\mathrm{iters} < \mathrm{cap}$, no Tukey trim \\
 Bootstrap CI methodology & percentile and bias-corrected accelerated, $B=10^4$ resamples \\
