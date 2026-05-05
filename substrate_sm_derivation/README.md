@@ -80,6 +80,65 @@ Lie-algebraic inputs narrow the space of admissible configurations sharply
 enough that this configuration is the natural landing — but a single
 deductive link is missing (see open questions).
 
+## Bundle commitment update (2026-05-04)
+
+Earlier wave-28-era drafts of this work used a placeholder rank-3 SU(3)
+"non-standard" bundle on the Schoen cover with `c_2(V) = c_2(TX̃)` and
+`|c_3(V_cover)| = 54`. A standalone audit at commit `0cad4b0b` documented
+that this construction failed all four physical heterotic-SM requirements
+(full Bianchi anomaly cancellation, N_gen = 3 via Atiyah–Singer on the
+free quotient, polystability on a documented Kähler region, and 3:3:3
+character decomposition of `H¹(X/Γ, V)` across Wilson characters).
+
+The current commitment is the **rank-4 SU(4) extension construction of
+Braun–He–Ovrut–Pantev §6** (arXiv:hep-th/0505041, JHEP 06 (2006) 070,
+"Vector Bundle Extensions, Sheaf Cohomology, and the Heterotic Standard
+Model"). The associated GUT chain is
+
+```
+E_8 → SO(10) × SU(4) → SU(5) × U(1) → SU(3)_C × SU(2)_L × U(1)_Y × U(1)_X
+```
+
+via Wilson-line breaking with Z_3 × Z_3 characters on π_1(X/Γ). Status of
+the four requirements:
+
+- *Anomaly cancellation:* `c_2(TX̃) − c_2(V_BHOP) − c_2(V'_BHOP) = 6·τ_1²`
+  (BHOP Eq. 99); positive-tension 5-brane wraps τ_1². Programmatically
+  verified at commit `a3317377`.
+- *Polystability:* Mumford–Takemoto polystable on the documented Kähler
+  region `{t_a ∈ [0.25, 8.0], t_a/t_b ∈ [0.25, 4.0]}`. Programmatically
+  verified at commit `a4d1bc72`.
+- *Three generations:* `|c_3(V_cover)| / (2|Γ|) = 3` with `H¹(X/Γ, V_BHOP)`
+  decomposing into three copies of the **16** of SO(10) under the
+  Z_3 × Z_3 Wilson-line characters. Right-handed neutrinos appear
+  automatically as the singlet **1** of the SO(10) decomposition
+  `16 = 10 + 5̄ + 1`.
+- *3:3:3 character decomposition:* delivered by the BHOP equivariant
+  bundle data, recorded explicitly in BHOP Tab. 5 of the cited paper.
+
+A substrate-physical reading of the rank-4 internal mode count is the
+Pati–Salam decomposition (Pati & Salam, *Phys. Rev. D* 10, 275–289
+(1974), DOI 10.1103/PhysRevD.10.275): three colour modes + one
+lepton-number-unifier mode (lepton number as a fourth colour). This
+gives the substrate-level reason the BHOP rank-4 SU(4) construction is
+preferred over the wave-28 rank-3 SU(3) placeholder: SU(4) is the
+correct internal-symmetry rank for one mode-pattern category that
+includes both quarks and leptons under a single 4-tuple.
+
+The rank-3 SU(3) bundle still appears in the paper's Tian–Yau
+*exclusion* table (Tab. cy3-ty-exclusion), where it is the appropriate
+comparison class for the TY/Z_3 Hodge (1,4) competing CY3, *not* the
+framework's commitment. Wave-28-era prose that asserted rank-3 SU(3) on
+Schoen has been retracted; if any residual occurrence remains in the
+text, treat it as historical context to be replaced on the next sweep
+rather than as the framework's current commitment.
+
+The `*_canonical_*` builders that propagated false provenance for
+arXiv:1106.4804 / hep-th/0512149 line-bundle SMs (which do not contain
+the cited TY/Z3 or Schoen Z/3 × Z/3 line-bundle SMs) have been retracted
+upstream. Correct provenance citations for line-bundle SMs are
+arXiv:0911.1569, arXiv:0910.5464, and arXiv:1202.1757.
+
 ## Open questions and efforts underway
 
 The list below is what the draft does *not* yet close. Active work is
@@ -126,7 +185,12 @@ and hep-th/0512149 do *not* contain the TY/Z3 or Schoen Z/3 × Z/3
 line-bundle SMs cited in earlier drafts; the correct papers are 0911.1569,
 0910.5464, 1202.1757). The `*_canonical_*` builders that propagated the
 false provenance have been retracted. Any future paper revision must cite
-only the corrected sources.
+only the corrected sources. The framework's current commitment is the
+rank-4 SU(4) bundle from BHOP-2005 §6 (arXiv:hep-th/0505041) — a vector
+bundle extension construction, not a line-bundle sum — and the bundle
+audit is closed at commits `a3317377` (anomaly cancellation) and
+`a4d1bc72` (polystability). See the "Bundle commitment update" section
+above.
 
 ### 5. Yukawa kernel-selection robustness
 
