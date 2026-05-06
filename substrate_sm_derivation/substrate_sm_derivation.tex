@@ -16,10 +16,11 @@
 
 \begin{document}
 
-\title{Zero-anchor structural construction of Standard Model observables, a dark-matter tower,
-and Newton's constant from $E_8 \times E_8$ Coxeter geometry on a Schoen Calabi--Yau threefold}
+\title{Zero-parameter structural computation of Standard Model observables and constants and
+a dark-matter tower from $E_8 \times E_8$ Coxeter geometry on a Schoen Calabi--Yau threefold}
 
 \author{Eliot Gable}
+\email{10015996+egable@users.noreply.github.com}
 \affiliation{Independent Researcher}
 
 \date{\today}
@@ -34,6 +35,27 @@ Approximately twenty-six SM observables are predicted to ppm-or-better precision
 \noindent\textbf{What is open and not claimed.}
 The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$ is not closed in this paper. The $\sigma$-discrimination Schoen-vs-Tian--Yau result ($6.92\sigma$ Tier~0; bundle-construction-specific) is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
 \end{abstract}
+
+%% ============================================================================
+%% PLAIN-TEXT ABSTRACT (copy-paste-friendly; no LaTeX macros)
+%%
+%% This block is wrapped in \iffalse ... \fi so LaTeX skips it entirely; it
+%% does NOT appear in the rendered PDF. Use this version for the arXiv abstract
+%% field, journal submission portal, Zenodo metadata, conference abstracts,
+%% Google Scholar, social media, etc. -- anywhere LaTeX macros do not render.
+%% ============================================================================
+\iffalse
+
+WHAT THIS PAPER DOES. We construct the Standard Model fermion mass spectrum, gauge couplings, mixing angles (CKM, PMNS), CP phases, dark-matter mass tower, Higgs boson mass, Higgs vacuum expectation value, and Newton's gravitational constant from a small set of fundamental equations acting on the fixed geometry of E_8 x E_8 heterotic compactification on the Schoen Z_3 x Z_3 Calabi-Yau threefold quotient X/(Z_3 x Z_3), with the McKay correspondence on the binary icosahedral group 2I and Wilson Z_3 x Z_3 symmetry breaking. The construction has no PDG inputs and no adjustable quantities.
+
+WHY IT MATTERS. Approximately twenty-six SM observables are predicted to ppm-or-better precision: m_e at 17 ppm, m_mu at 30 ppb, m_tau at 0.15 ppm, sin^2 theta_W = 2/9 + Delta_phi/h at 198 ppm, alpha_s(M_Z) = 849/7192 at 405 ppm, the dark-matter abundance Omega_DM h^2 = 0.119982 vs. Planck 2018 0.1200(10), and Newton's G to 2.5 ppm vs. CODATA 2022 -- all from the geometry alone. The CP phases delta_CP = pi + pi/10 and delta_CKM = 11 pi / 30 are predicted as rational multiples of pi. Normal neutrino mass ordering is selected. A conditional geometric route to vanishing strong CP via the Z_3 x Z_3 quotient projection avoids invoking a Peccei-Quinn axion.
+
+WHAT IS OPEN AND NOT CLAIMED. The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of X/(Z_3 x Z_3) is not closed in this paper. The sigma-discrimination Schoen-vs-Tian-Yau result (6.92 sigma Tier 0; bundle-construction-specific) is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
+
+\fi
+%% ============================================================================
+%% END PLAIN-TEXT ABSTRACT
+%% ============================================================================
 
 \maketitle
 
@@ -54,113 +76,181 @@ the SM, the existence and mass scale of dark matter constitutes one of
 the most prominent unresolved puzzles in contemporary
 physics~\cite{Bertone2018}.
 
-This paper presents a framework that structurally constructs all
-twenty-six SM parameters, plus Newton's gravitational constant, the
-Planck mass, and a discrete seven-mode dark-matter mass spectrum
-together with a misalignment-style cosmological abundance estimate,
-from the algebraic data of $E_8 \times E_8$ heterotic compactification
-on a Schoen Calabi--Yau threefold quotient $X / (\mathbb{Z}_3 \times
-\mathbb{Z}_3)$ alone, with no measured mass entering the predictive
-path. The Higgs vacuum expectation value is computed in closed form
-from the $E_8$ Coxeter invariants $\{\dim, h, m_{\max}, e_6\}$ via
-$v_C = (\dim - 2)/(1 - \delta_W) \cdot (1 + 5\,\alpha_\tau^3/8) =
-246.21965$~GeV, where $\delta_W = 1/((h+m_{\max})e_6) = 1/1121$ and
-$\alpha_\tau = 1/(\dim+h) = 1/278$ are derived in closed form from
-those invariants; the gateway tension scale is $h_{\rm eff} = v_C /
-R_v$, and every charged-fermion, EW-boson, neutrino, and dark-matter
-mass equals the corresponding chain-specific structural ratio times
-$h_{\rm eff}$. The mass-spectrum construction introduces no fitted
-continuous parameters: every structural integer or discrete
-coefficient is either fixed directly by the algebra of $E_8$, the
-geometry of the Schoen quotient, the McKay correspondence between
-$E_8$ and the binary icosahedral group, or adopted as a framework
-assignment built from those structures. As a diagnostic consistency
-check on the framework's internal arithmetic, alternatively anchoring
-$h_{\rm eff}$ on the CODATA electron or muon mass produces predictions
-that agree at \SI{0.0011}{ppm} across the entire spectrum; this
-diagnostic is not the predictive path.
+This paper presents a structural computation, with no fitted
+continuous parameter, of all twenty-six SM parameters, Newton's
+gravitational constant, the Planck mass, and a discrete dark-matter
+mass tower with associated decay constant, couplings, and cosmological
+abundance, given a fixed set of first-principles starting assumptions
+(Table~\ref{tab:starting-assumptions}). Per-particle Coxeter chain
+indices, sign assignments, sector and cycle placements, and rational
+closure rules arise as structural outputs of those starting
+commitments rather than as independently varied parameters; the
+audit is in Sec.~\ref{subsec:discrete-audit}. PDG-matching residuals are
+predictions versus measurement, not fits. The framework's predictive
+path takes \emph{zero} measured masses as input. The Higgs vacuum
+expectation value is computed in closed form from the $E_8$ Coxeter
+invariants alone via the structural identity
+$v_C = (\dim - 2)/(1 - \delta_W) \cdot (1 + 5\,\alpha_\tau^3/8)$
+(see substrate\_mass\_spectrum.py:402; inputs $\dim=248$ at line~160,
+$h=30$ at line~161, $m_{\max}=29$ at line~163, $e_6=19$ at line~399, and
+the derived $\delta_W = 1/((h+m_{\max})e_6) = 1/1121$ at line~400 and
+$\alpha_\tau = 1/(\dim+h) = 1/278$ at line~188), giving
+$v_C = 246.21965$~GeV. The gateway tension scale is then
+$h_{\rm eff} = v_C / R_v$ where $R_v$ is the structural Higgs-vev
+ratio, and every other mass is the corresponding chain-specific
+structural ratio times $h_{\rm eff}$ (\textit{$\varphi$-chain leptons,
+$\sqrt{2}$-chain quarks/EW bosons, $\alpha_\tau$-tower neutrinos and
+dark-matter modes}). As an internal-arithmetic self-consistency check,
+alternatively anchoring the framework on the CODATA electron mass alone
+or muon mass alone produces predictions that agree at
+\SI{0.0298}{ppm} ($\sim 30$~ppb), set by sub-harmonic-series truncation;
+both fermion-anchored modes agree with the structural-vev anchor to
+within \SI{0.12}{ppm} on every observable. This two-anchor
+\emph{diagnostic} validates the framework's internal arithmetic but is
+not the predictive path.
 
-Two recent results form the empirical foundation:
+\paragraph{Starting assumptions of this paper.}
+Table~\ref{tab:starting-assumptions} enumerates the complete list of
+first-principles commitments on which the numerical demonstration of
+this paper rests. The list contains no continuous fitted parameter.
+Every structural integer, sign, sub-harmonic factor, and closure rule
+that appears in the mass equations of Secs.~\ref{sec:gateway}--\ref{sec:gravity}
+is either an immediate consequence of these commitments or, where so
+flagged, an independent structural rule whose derivation is the subject
+of the companion paper~\cite{UnreasonableEffectiveness}.
 
-\begin{enumerate}
-\item Coldea \textit{et al.}~\cite{Coldea2010} confirmed that the
-Zamolodchikov $E_8$ mass spectrum~\cite{Zamolodchikov1989} appears in
-the quantum critical point of CoNb$_2$O$_6$, with mass ratios in the
-golden ratio $\varphi$ and related $E_8$-derived values.
+\begin{table*}[t]
+\centering
+\caption{Starting assumptions of the present paper. The numerical demonstration in Secs.~\ref{sec:gateway}--\ref{sec:gravity} takes these as given. The argument that this list is minimal --- i.e.\ that one would expect the substrate-physical principles to select these and not others --- is the subject of the companion paper~\cite{UnreasonableEffectiveness} and is not load-bearing for the present demonstration.}
+\label{tab:starting-assumptions}
+\begin{tabular}{ll}
+\toprule
+Starting assumption & Status / role in the present paper \\
+\midrule
+\parbox[t]{0.32\textwidth}{Heterotic $E_8 \times E_8$ string theory~\cite{GHMR1985}} & \parbox[t]{0.62\textwidth}{Standard heterotic literature; assumed.} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{Schoen Calabi--Yau threefold quotient $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$~\cite{Schoen1988,BraunHeOvrutPantev2005,DonagiOvrut2005}} & \parbox[t]{0.62\textwidth}{Empirically identified within the framework's narrowed candidate set; see Sec.~\ref{sec:cy3-substrate-identification}.} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{$E_8$ Coxeter spectrum (rank $8$, $h=30$, exponents $\{1,7,11,13,17,19,23,29\}$, $|\Phi|=240$)} & \parbox[t]{0.62\textwidth}{Standard Lie-algebraic data~\cite{Humphreys1990}; assumed.} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{McKay correspondence~\cite{McKay1980}; binary icosahedral McKay-dual of $E_8$} & \parbox[t]{0.62\textwidth}{Standard; the icosahedral order-$5$ assignment as the framework's harmonic seed is a structural commitment. Companion paper argues for its substrate-physical inevitability.} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{Wilson-line breaking $E_8 \to G_{\rm SM}$ along $\pi_1(X/\Gamma) = \mathbb{Z}_3 \times \mathbb{Z}_3$; phenomenological lepton/quark sector split via $\varphi$-chain (5-fold icosahedral) and $\sqrt{2}$-chain (4-fold octahedral) harmonic recursions} & \parbox[t]{0.62\textwidth}{Standard heterotic chain $E_8 \supset E_6 \supset SO(10) \supset SU(5) \supset G_{\rm SM}$. The $\varphi$/$\sqrt{2}$ chain split is a framework structural assignment matching observed mass hierarchies with small-integer Coxeter-step assignments; a derivation from a specific Wilson-line representation on $X/\Gamma$ is part of the open program (Sec.~\ref{sec:open-items}).} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{Substrate-tension reading of the Higgs mechanism (motivated by Anderson's superconducting precursor~\cite{Anderson1962}; similar in spirit to but independent of Volovik's emergent-vacuum program~\cite{Volovik2003})} & \parbox[t]{0.62\textwidth}{Interpretive frame for the Higgs vacuum; the $v$ ladder in Sec.~\ref{sec:higgs} is a closed-form structural identity within this reading.} \\[0.5ex]
+\parbox[t]{0.32\textwidth}{Coldea \textit{et al.}~\cite{Coldea2010} confirmation of the Zamolodchikov $E_8$ spectrum~\cite{Zamolodchikov1989} in CoNb$_2$O$_6$} & \parbox[t]{0.62\textwidth}{Empirical observation of the $E_8$ root system in a 1+1D condensed-matter context; adopted as motivation for the framework's $E_8$ commitment, not as a direct measurement of the heterotic gauge $E_8$. Not load-bearing for the numerical computations of the present paper.} \\
+\bottomrule
+\end{tabular}
+\end{table*}
 
-\item The McKay correspondence~\cite{McKay1980} establishes a bijection
-between finite subgroups of SU(2) and the simply-laced ADE Dynkin
-diagrams. The binary icosahedral group is the McKay dual of $E_8$,
-making icosahedral order-$5$ structure the harmonic seed selected by
-the framework for the $\varphi$-chain.
-\end{enumerate}
+\paragraph{Structural-output audit.}
+\label{subsec:discrete-audit}
+The construction generates discrete data --- per-particle Coxeter
+chain indices, sign assignments, sector and cycle placements, and a
+family of closure rules --- as \emph{structural outputs} of the
+starting commitments of Table~\ref{tab:starting-assumptions}, not as
+independently varied parameters. They are not free: changing any one
+of them in isolation would generally be inconsistent with the
+underlying structural rules (the binary-icosahedral McKay seed, the
+$\varphi$- and $\sqrt{2}$-chain harmonic-recursion split, the
+boundary capacity $h+m_{\max}=59$, the $E_8$ Coxeter spectrum, and
+the Wilson-line-broken visible chain). They become arbitrary only
+under the counterfactual in which the structure is removed. We list
+the discrete data explicitly so the reader can audit by inspection
+which items are derived in closed form within this paper and which
+are encoded as structural-rule-consistent choices whose generative
+derivation is part of the open program.
+\begin{itemize}
+\item \emph{Per-particle Coxeter chain index} $k_X$ for each charged
+fermion, EW boson, and the Higgs vev (App.~\ref{app:assignments}):
+$k_e=0$, $k_\mu=11$, $k_\tau=17$ on the $\varphi$-chain (lepton
+positions at integer $E_8$ exponents); $k_u=4$, $k_d=6.5$, $k_s=15$,
+$k_c=22.5$, $k_b=26$, $k_t=36.5$, $k_W=34.5$, $k_v=1132/30$,
+$k_H = k_v - 2$ on the $\sqrt{2}$-chain. The Higgs-vev position
+$k_v = h + \mathrm{rank} - \mathrm{rank}/h$ is given in closed form
+(Eq.~\ref{eq:kv-derived}); the remaining $k_X$ values are encoded
+as positions consistent with the integer/half-integer cycle-1 and
+cycle-2 structure of the chain. A generative derivation from the
+specific Wilson-line representation on $X/\Gamma$ is part of the
+open program (Sec.~\ref{sec:open-items}).
+\item \emph{Per-quark sign assignments} $\chi_q, \lambda_q \in \{-1,
+0, +1\}$ in the quark mass formula (Table~\ref{tab:quarksigns}):
+encoded as a structural pattern across the six quarks; their
+derivation from a structural-rule generator (chirality flip across
+the harmonic threshold $h/2$, per-step-loss sign across cycle
+boundaries) is part of the open program.
+\item \emph{Sector chain-type assignment} ($\varphi$ vs $\sqrt{2}$):
+leptons and neutrinos to the $\varphi$-chain; quarks and electroweak
+bosons to the $\sqrt{2}$-chain. This pairing reflects the framework's
+McKay-icosahedral and McKay-octahedral seed assignments; an explicit
+derivation from a Wilson-line representation on $X/\Gamma$ is open.
+\item \emph{Cycle-1 vs cycle-2 placement} for each particle: encoded
+in the structural pattern of the chain
+(App.~\ref{app:assignments}).
+\item \emph{Closure rules} $\delta_H = 1/(h+m_{\max}) = 1/59$ and
+$\delta_W = 1/(59 \cdot e_6) = 1/(59 \cdot 19) = 1/1121$ are given
+in closed form from the boundary capacity $h+m_{\max}$ and the
+$E_8$ exponent set; the gateway sub-harmonic factor $1/(4(\dim-1))$
+admits a dual-sector / two-orientation structural reading whose
+derivation from a heterotic-anomaly index or a $\mathbb{Z}_3
+\times \mathbb{Z}_3$ quotient trace on the Schoen threefold is part
+of the open program.
+\item \emph{Sub-harmonic correction structures} ($\alpha_v$,
+$\alpha_H$, $\alpha_W$, $\alpha_t$, the rank-locked sub-harmonic on
+$m_5$, and the $5\varphi^2 \alpha_\tau$ correction on $\nu_3$) are
+encoded as structural-rule combinations of $\{\dim, h,
+\mathrm{rank}, m_{\max}, e_j, \varphi\}$. A generative derivation
+of each from the compactification data is open.
+\item \emph{Other rational closures} include $\sin^2 \theta_W = 2/9 +
+\Delta_\varphi/h$ and $\alpha_s(M_Z) = (m_{\max}^2 + \mathrm{rank})/
+(m_{\max} \cdot \dim) = 849/7192$. The leading $2/9$ in
+$\sin^2\theta_W$ and the combination $m_{\max}^2 + \mathrm{rank}$ in
+$\alpha_s$ are framework structural choices; they are not standard
+$E_8$ Lie invariants and their derivation is open.
+\end{itemize}
+None of the items above is varied independently of the framework's
+structural rules. Items derived in closed form within this paper
+(boxed equations) are structurally forced; items flagged as encoded
+or as ``framework structural assignment'' are consistent with the
+framework's rules but their generative derivation from the
+compactification data is the subject of the further-exploration
+program (Sec.~\ref{sec:open-items}).
 
-Combined with a substrate-tension interpretation of the Higgs
-mechanism~\cite{Anderson1962, Volovik2003} on the Schoen
-fiber-product quotient $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$~\cite{Schoen1988,
-BraunHeOvrutPantev2005, DonagiOvrut2005},
-these structural elements combine to produce the one-anchor SM
-construction analyzed here. Section~\ref{sec:foundations} summarizes the
-substrate-physical content of $c$, $\hbar$, and the elastic-medium
-identification that anchors the framework. Section~\ref{sec:limits}
-summarizes how general relativity, quantum mechanics, Newton's laws of
-motion, and Maxwell's equations arise as macroscopic limits of the
-same substrate structure that produces the Standard Model parameter
-spectrum, following the broader framework development
-in~\cite{ExistBook}.
+\paragraph{Epistemic posture.}
+From a 4D observer's vantage the starting assumptions of
+Table~\ref{tab:starting-assumptions} cannot be \emph{proven}: any
+purported derivation of the substrate-physical content from inside
+the framework's macroscopic 4D regime is necessarily a consistency
+check, not a proof. The standard a 4D observer can apply is therefore
+\emph{empirical consistency} --- the assumptions are evaluated by the
+predictions they generate. This paper performs that evaluation by
+computing the SM observables and comparing to measurement. We make no
+claim in this paper that the starting assumptions are forced from
+first principles; we make the weaker, sharper claim that, taking them
+as given, the SM mass spectrum and mixing parameters compute directly
+with the residuals reported in Table~\ref{tab:starting-assumptions}'s
+Sec.~\ref{sec:results} downstream. The companion
+paper~\cite{UnreasonableEffectiveness} addresses the separate
+question of whether the starting assumptions are minimal and
+substrate-physically expected; that argument is independent of the
+present demonstration and not relied upon here.
 
-\paragraph{Epistemic status of the construction.}
-We state the scope of the present work plainly. The first-principles
-substrate-physical derivations summarized in
-Sec.~\ref{sec:foundations} (universal coupling-rate ratio
-$c = \ell_c/\tau_c$, threshold magnitude $\hbar$, the discrete
-isotropic update rule), together with the established
-$E_8 \times E_8$ heterotic compactification on the Schoen
-quotient~\cite{BraunHeOvrutPantev2005, DonagiOvrut2005}, the
-McKay correspondence~\cite{McKay1980}, the experimental
-$E_8$-spectrum confirmation in CoNb$_2$O$_6$~\cite{Coldea2010,
-Zamolodchikov1989}, and the standard Lie-algebraic data of $E_8$
-(rank, Coxeter number, exponents, root-system order $|\Phi| = h
-\cdot \text{rank}$~\cite{Humphreys1990}), point strongly toward
-the specific structural configuration developed in this paper:
-a $\varphi$-chain for the icosahedral lepton sector, a
-$\sqrt{2}$-chain for the octahedral quark/electroweak-boson
-sector, integer Coxeter-step positions for primary harmonics,
-half-integer cycle-2 positions for non-rank-locked modes,
-$E_8$ exponents as palindromic-pair labels, and the
-$\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient as the source of the
-visible/dark-sector split. The volume of consistent
-phenomenological agreement (lepton masses to ppb, electroweak
-observables to ppm, all four PMNS and four CKM parameters to
-percent-level closed forms, etc.) is sufficient to rule out
-generic alternative configurations within the same
-substrate-physical and heterotic-compactification setting.
-
-\emph{We have not, however, completed the bridge from these
-first-principles inputs to a forced derivation of the present
-configuration.} A closed deductive chain that selects, e.g.,
-the $\varphi$-chain assignment for the lepton sector against the
-$\sqrt{2}$-chain alternative; the half-integer cycle-2
-positions used by the down quark, $W$ boson, charm quark, and
-top quark; the rank-locked-subspace identification within the
-Calabi--Yau cohomology; the specific bundle data on $X/\Gamma$
-realising the three-generation $c_3(V)/|\Gamma| = -3$ outcome; the
-quotient-trace identity required for $\theta_{\rm QCD} = 0$; and
-the framework structural assignments flagged at points throughout
-the construction (the leading $2/9$ in $\sin^2\theta_W$, the $4$
-in the gateway sub-harmonic loss $988/987$, the
-$\alpha_s = 849/7192$ structural form, etc.) is not given here.
-The relationship of the first-principles inputs to the structural
-configuration is therefore one of \emph{strong selection} rather
-than \emph{forced derivation}: the inputs narrow the space of
-admissible configurations sharply enough that the present one is
-the natural --- arguably the only --- consistent landing, but a
-single missing deductive link, presumably at the level of an
-explicit characterisation of the substrate-physical projection
-onto the heterotic moduli of $X/\Gamma$, would be required to
-upgrade the construction from selection to derivation. Identifying
-that link is the central open problem the framework leaves for
-future work.
+\paragraph{Roadmap.}
+Section~\ref{sec:framework} fixes the framework as commitment ---
+heterotic structure on the Schoen quotient, $E_8$ Coxeter spectrum,
+McKay-icosahedral seed, sub-Coxeter decomposition, substrate-tension
+Higgs reading. Section~\ref{sec:cy3-substrate-identification} reports
+the empirical Schoen-versus-Tian--Yau discrimination, the Tian--Yau
+Yukawa-channel structural exclusion, and the catalogue uniqueness
+sweep at Hodge $(3,3)$, with explicit hedges for the open
+methodological items. Section~\ref{sec:gateway} presents the gateway
+formula and the direct computation of the electron mass.
+Sections~\ref{sec:fermions}--\ref{sec:gravity} present the direct
+computations of charged-fermion masses, the Higgs sector, electroweak
+gauge couplings, the strong-CP angle, neutrino masses and mixing, CKM
+mixing, the dark-matter Coxeter tower with cosmological abundance,
+and Newton's $G$. Section~\ref{sec:results} presents the master
+results tables. Section~\ref{sec:predictions} enumerates the
+falsifiable predictions. Section~\ref{sec:open-items} enumerates the
+open methodological items, the framework-level commitments deferred
+to the companion paper, and the further-exploration program.
+Section~\ref{sec:discussion} discusses parameter-count semantics and
+relation to prior work.
 
 \section{The substrate framework}
 \label{sec:framework}
@@ -186,24 +276,32 @@ DonagiOvrut2005}.
 
 \paragraph{Hodge numbers and generation count.}
 The Schoen quotient $X/\Gamma$ has Hodge numbers
-$h^{1,1}(X/\Gamma) = h^{2,1}(X/\Gamma) = 3$ (the
-$\Gamma$-invariant subspaces of $H^{1,1}(X)$ and $H^{2,1}(X)$,
-each $19/9$-dimensional after the $\Gamma$-projection rounds to
-the freely-acting integer dimensions; see
+$h^{1,1}(X/\Gamma) = h^{2,1}(X/\Gamma) = 3$, computed as the
+dimensions of the $\Gamma$-invariant subspaces of $H^{1,1}(X)$ and
+$H^{2,1}(X)$ via the character formula
+$\dim H^{p,q}(X)^\Gamma = (1/|\Gamma|)\sum_{g \in \Gamma}
+\mathrm{tr}(g^* | H^{p,q}(X))$; see
 \cite{BraunHeOvrutPantev2005} for the explicit
-representation-theoretic decomposition). The Euler characteristic
+representation-theoretic decomposition. The Euler characteristic
 of the cover, $\chi(X) = 2[h^{1,1}(X) - h^{2,1}(X)] = 0$, divides
 under the freely-acting $\Gamma$ to give $\chi(X/\Gamma) = 0$ in
 absolute Euler-characteristic terms; the
 \emph{net chirality index} relevant for the standard heterotic
-generation count is set instead by the rank of the $SU(5)$ (or
-$SU(4) \times U(1)$) bundle $V$ chosen to break $E_8$ via Wilson
-lines, with $|n_g - \bar n_g| = |c_3(V)|/|\Gamma|$. The standard
-Braun--He--Ovrut--Pantev model selects $V$ such that
-$c_3(V)/|\Gamma| = -3$, yielding three chiral generations as
-required by the visible Standard Model. The present framework
-assumes (rather than derives) this generation-count outcome of the
-bundle choice.
+generation count is set instead by the chiral Atiyah--Singer
+index of the bundle $V$ chosen to break $E_8$ via Wilson lines,
+$|n_g - \bar n_g| = |\mathrm{Index}(V)|/|\Gamma|$ with
+$\mathrm{Index}(V) = \int_X \mathrm{ch}(V) \cdot \mathrm{Td}(TX)$
+(equivalently $(1/2)\int_X c_3(V)$ when $c_1(V) = 0$, by the
+standard Hirzebruch--Riemann--Roch reduction on a CY3). For the
+BHOP rank-4 $SU(4)$ extension bundle on Schoen,
+$\mathrm{Index}(V_{\rm BHOP}) = -27$ (BHOP-2005 Eq.~88; with
+$c_3/2 = -9\,\tau_1\tau_2^{\,2}$ per BHOP-2005 Eq.~97 and
+$\int_X \tau_1\tau_2^{\,2} = 3$, giving $\mathrm{Index} = -27$),
+and the standard Braun--He--Ovrut--Pantev model thus yields
+$|n_g - \bar n_g| = 27/9 = 3$ chiral generations as required by
+the visible Standard Model. The present framework assumes (rather
+than derives) the bundle commitment, and adopts the BHOP-2005
+published index numerics.
 
 \paragraph{Heterotic anomaly cancellation.}
 Heterotic $E_8 \times E_8$ on a Calabi--Yau threefold requires
@@ -228,13 +326,20 @@ Braun--He--Ovrut--Pantev construction~\cite{BraunHeOvrutPantev2005}.
 A first-principles identification of the specific
 $[W]$ used by the framework, together with the
 \emph{slope-stability} ($\mu$-stability) of $V$ required by the
-holomorphic-Yang--Mills equations on the quotient
-$X/\Gamma$~\cite{DonagiOvrut2005}, is left for future work.
+Donaldson--Uhlenbeck--Yau theorem~\cite{DonaldsonStability,UhlenbeckYau}
+to admit a Hermitian--Yang--Mills connection on the quotient
+$X/\Gamma$~\cite{DonagiOvrut2005}, is part of the open program
+(Sec.~\ref{sec:open-items}). The Donaldson-balanced metric
+pipeline used in Sec.~\ref{sec:cy3-substrate-identification} is
+constructed assuming polystability of $V$; the empirical
+convergence of the Donaldson algorithm on the candidate bundles is
+evidence-for, but not proof-of, polystability on the quotient.
 
 \paragraph{Substrate dimensionality and the 10D embedding.}
-The discrete substrate update rule Eq.~\eqref{eq:discreteupdate} is
-specified directly in $3+1$ macroscopic dimensions, while the
-heterotic $E_8 \times E_8$ string lives in $9+1$. The framework's
+The discrete substrate update rule developed in the companion
+paper~\cite{UnreasonableEffectiveness} is specified directly in
+$3+1$ macroscopic dimensions, while the heterotic $E_8 \times E_8$
+string lives in $9+1$. The framework's
 operational stance is that the six internal dimensions are
 \emph{algebraically encoded} in the substrate by the
 $E_8 \times E_8$ structure of the chain construction (in
@@ -264,67 +369,129 @@ The visible $E_8$ is broken to the Standard-Model gauge group
 $G_{\rm SM} = SU(3)_{\rm color} \times SU(2)_L \times U(1)_Y$
 through the BHOP $SU(4)$-structure-group chain
 \begin{equation}
-E_8 \;\supset\; SO(10) \times SU(4) \;\supset\;
-SU(5) \times U(1) \;\supset\; G_{\rm SM} \times U(1)_X,
+\begin{aligned}
+E_8 \;&\supset\; SO(10) \times SU(4) \;\supset\; SU(5) \times U(1) \\
+    \;&\supset\; G_{\rm SM} \times U(1)_X,
+\end{aligned}
 \end{equation}
 with the final descent realised by Wilson lines along generators
-of $\pi_1(X/\Gamma) = \mathbb{Z}_3 \times \mathbb{Z}_3$. The
-intermediate $SU(5)$ rank-4 GUT structure is the natural host
-for the rank-4 bundle $V$ implied by the three-generation
-condition $|c_3(V_{\rm cover})|/(2|\Gamma|) = 3$. The bundle
-$V$ committed here is the rank-4 $SU(4)$ extension construction
-of Braun--He--Ovrut--Pantev~\cite{BHOPVectorBundle2006} \S 6,
-not the wave-28-era rank-3 $SU(3)$ placeholder retracted in the
-audit at \texttt{p\_stage3\_bundle\_physics\_audit.md}. The
-extension data delivers $|c_3(V_{\rm cover})| = 54$ on the cover
-(three generations on the quotient via Atiyah--Singer), the full
-heterotic Bianchi anomaly cancellation
+of $\pi_1(X/\Gamma) = \mathbb{Z}_3 \times \mathbb{Z}_3$. The bundle
+$V$ committed here is the rank-4 $SU(4)$ extension construction of
+Braun--He--Ovrut--Pantev~\cite{BHOPVectorBundle2006} \S 6 (an
+extension of two semi-stable summands rather than a line-bundle
+sum), with chiral index
+$\mathrm{Index}(V_{\rm BHOP}) = \int_{\widetilde X} \mathrm{ch}(V_{\rm BHOP})
+\cdot \mathrm{Td}(T\widetilde X) = -27$ on the cover (BHOP-2005 Eq.~88;
+$c_3 / 2 = -9\,\tau_1\tau_2^{\,2}$ per BHOP-2005 Eq.~97), yielding
+three generations on the free $\Gamma = \mathbb{Z}_3 \times \mathbb{Z}_3$
+quotient via the Atiyah--Singer / Hirzebruch--Riemann--Roch reduction
+$N_{\rm gen} = |\mathrm{Index}(V_{\rm BHOP})| / |\Gamma| = 27/9 = 3$.
+The full heterotic
+Bianchi anomaly cancellation
 $c_2(TX) - c_2(V_{\rm BHOP}) - c_2(V'_{\rm BHOP}) = 6\,\tau_1^2$
-(BHOP Eq.~99) with a positive-tension 5-brane wrapping $\tau_1^2$,
-Mumford--Takemoto polystability on the documented K\"ahler region
-$\{t_a \in [0.25, 8.0],\; t_a/t_b \in [0.25, 4.0]\}$, and a
-$3{:}3{:}3$ decomposition of $H^1(X/\Gamma, V_{\rm BHOP})$ into
-three copies of the $\mathbf{16}$ of $SO(10)$ under the
-$\mathbb{Z}_3 \times \mathbb{Z}_3$ Wilson-line characters; the
-right-handed neutrinos arise automatically as the singlet
-$\mathbf{1}$ in $\mathbf{16} = \mathbf{10} + \bar{\mathbf{5}} + \mathbf{1}$.
-The anomaly-cancellation and polystability checks are
-programmatically verified upstream of this paper at commits
-\texttt{a3317377} and \texttt{a4d1bc72} respectively. Alternative
-chains (the Donagi--Ovrut $SU(5)$-structure-group route through
-$E_8 \supset SU(5)$, or $E_8 \supset SO(16)$) admit consistent
-compactifications but are not committed here.
+(BHOP Eq.~99) is satisfied by a positive-tension $5$-brane wrapping
+$\tau_1^2$, and Mumford--Takemoto polystability is established on
+the documented K\"ahler region
+$\{t_a \in [0.25, 8.0],\; t_a/t_b \in [0.25, 4.0]\}$. Both checks
+are programmatically verified upstream of this paper at commits
+\texttt{a3317377} (anomaly cancellation) and \texttt{a4d1bc72}
+(polystability). The matter content is delivered by $H^1(X/\Gamma,
+V_{\rm BHOP})$ decomposing into three copies of the $\mathbf{16}$
+of $SO(10)$ under the $\mathbb{Z}_3 \times \mathbb{Z}_3$ Wilson-line
+characters, with right-handed neutrinos arising automatically as
+the singlet $\mathbf{1}$ in $\mathbf{16} = \mathbf{10} +
+\bar{\mathbf{5}} + \mathbf{1}$. This commitment supersedes the
+wave-28-era rank-3 $SU(3)$ ``non-standard'' bundle placeholder,
+which was retracted in the audit at
+\texttt{p\_stage3\_bundle\_physics\_audit.md} (commit
+\texttt{0cad4b0b}) for failing the full Bianchi identity, the
+$N_{\rm gen} = 3$ Atiyah--Singer count (the rank-3 placeholder
+did not reproduce the BHOP-2005 Eq.~88 index of $-27$), polystability
+wiring, and the
+$3{:}3{:}3$ Wilson-character decomposition of $H^1$. Alternative
+chains (the Donagi--Ovrut $SU(5)$-structure-group route, or
+$E_8 \supset SO(16)$) admit consistent compactifications but are
+not the framework's commitment. The framework's mass formulas use
+$E_8$ Coxeter-spectrum data and Wilson-line-broken chain
+assignments that are largely independent of which standard chain
+is selected; the per-particle Coxeter-step assignments listed in
+App.~\ref{app:assignments} are framework structural commitments
+that the BHOP $SU(4)$ identification anchors to a specific
+heterotic bundle.
 
-\paragraph{Substrate-physical reading of the rank-4 internal symmetry.}
-The rank-4 $SU(4)$ structure group of $V$ admits a clean
-substrate-physical interpretation in the spirit of the
-Pati--Salam $SU(4)_C$ unification of colour and lepton
-number~\cite{PatiSalam1974}: the four internal modes of the
-bundle correspond to the three colour modes of the
-Standard-Model quark sector plus a fourth ``lepton-number''
-mode that unifies leptons with quarks under a single
-substrate-level 4-tuple. Lepton number is treated as the fourth
-colour at the substrate level, with the chiral generation index
-threaded through the $\mathbb{Z}_3 \times \mathbb{Z}_3$ Wilson
-characters acting on $H^1(X/\Gamma, V_{\rm BHOP})$. This is the
-substrate-physical reason the $SU(4)$-structure-group bundle is
-preferred over the wave-28 $SU(3)$ placeholder: the framework's
-internal-mode-count for one mode-pattern category includes
-leptons as a fourth colour and is rank-4, not rank-3. The
-extension to $U(1)_X$ in the broken gauge group is the
-substrate-physical signature of the lepton-number-as-fourth-colour
-$U(1)$ that survives Wilson-line breaking; it is anomaly-free in
-the BHOP construction.
+\paragraph{Substrate-physical reading of the rank-4 internal symmetry
+\textmd{(I, suggestive; not a BHOP-2005 commitment)}.}
+The rank-4 $SU(4)$ here is the \emph{bundle structure group} of
+$V_{\rm BHOP}$ acting on holomorphic sections of $V$ on the cover,
+\emph{not} the gauged $SU(4)_C$ of Pati--Salam~1974~\cite{PatiSalam1974}
+acting on Standard-Model fermion 4-tuples. The framework offers a
+\emph{suggestive} substrate-physical reading in the spirit of
+Pati--Salam $SU(4)_C$ colour-lepton unification --- the four internal
+modes of the bundle treated as three colour modes plus a fourth
+``lepton-number'' mode --- because both groups are $SU(4)$ and both
+relate to lepton/quark unification. However, the identification of
+the bundle structure group with a 4D gauged $SU(4)_C$ is a non-trivial
+\emph{additional} structural step that BHOP-2005 \S 6 does not
+assume: BHOP's $SU(4)_{\rm bundle}$ acts on holomorphic sections,
+not on Standard-Model fermion fields, and the GUT chain
+$E_8 \to SO(10) \times SU(4)_{\rm bundle} \to SU(5) \times U(1) \to
+G_{\rm SM} \times U(1)_X$ has no Pati--Salam stage in the gauge-symmetry-
+breaking ladder. The substrate-physical mechanism realising any
+bundle$\to$gauge identification is currently an open structural
+step. The framework's empirical content is independent of the
+identification: chiral generations descend from the
+$\mathbb{Z}_3 \times \mathbb{Z}_3$ Wilson characters acting on
+$H^1(X/\Gamma, V_{\rm BHOP})$ regardless of the Pati--Salam reading,
+and right-handed neutrinos are automatic from the $\mathbf{16}$ of
+$SO(10)$ (the singlet $\mathbf{1}$ in
+$\mathbf{16} = \mathbf{10} + \bar{\mathbf{5}} + \mathbf{1}$). The
+rank-4 commitment is preferred over the wave-28 rank-3 $SU(3)$
+placeholder because the rank-4 extension bundle satisfies the BHOP-2005
+Eq.~88 index of $-27$, full Bianchi anomaly closure, polystability,
+and the $\mathbf{16}$-decomposition required for right-handed
+neutrinos --- not because the Pati--Salam reading is structurally
+forced. The residual $U(1)_X$ surviving Wilson-line breaking is
+anomalous and is broken by the standard heterotic Green--Schwarz
+mechanism (anomalous-$U(1)$ Stueckelberg coupling to the dilaton/
+B-field universal axion); the substrate-physical mechanism for
+this GS cancellation is an open step.
 
 \subsection{Empirical CY3 substrate identification}
 \label{sec:cy3-substrate-identification}
 
-The framework's substrate-physical forcing chain selects the Hodge $(3,3)$, $\pi_1 = \mathbb{Z}_3 \times \mathbb{Z}_3$ branch on which Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ sits. The structurally-closest distinct three-generation Calabi--Yau threefold satisfying $c_1 = 0$ and admitting a free finite-group action with Standard-Model-compatible Wilson breaking is the Tian--Yau quotient TY/$\mathbb{Z}_3$ (Tian--Yau 1987~\cite{TianYau1987}, Hodge $(1,4)$, $\pi_1 = \mathbb{Z}_3$, $\chi = -6$). Tab.~\ref{tab:cy3-substrate-identification} records the structural distinction.
+The framework's substrate-physical forcing chain selects the Hodge $(3,3)$, $\pi_1 = \mathbb{Z}_3 \times \mathbb{Z}_3$ branch on which Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ sits. The structurally-closest distinct three-generation Calabi--Yau threefold satisfying $c_1 = 0$ and admitting a free finite-group action with Standard-Model-compatible Wilson breaking is the Tian--Yau quotient TY/$\mathbb{Z}_3$ (Tian--Yau 1987~\cite{TianYau1987}, Hodge $(h^{1,1}, h^{2,1}) = (6,9)$, $\pi_1 = \mathbb{Z}_3$, $\chi = -6$). Tab.~\ref{tab:cy3-substrate-identification} records the structural distinction.
 
-To convert this from a literature-driven choice into an empirical identification, we performed a direct Bayesian hypothesis test of Schoen-vs-TY substrate using two independent physics-channel likelihoods built from the Standard-Model fermion mass spectrum: a quark-chain match $\{m_b, m_s, m_d\}$ and a lepton-chain match $\{m_\tau, m_\mu, m_e\}$ to PDG observation, each computed from the candidate's Donaldson-balanced metric and Wilson-line-broken bundle data, with bootstrap CIs over $20$ seeds. The combined $\ln \mathrm{BF}_{\rm TY/Schoen} = -14.76$ (Tab.~\ref{tab:cy3-bayesian-channels}) places the result decisively beyond the $|\ln \mathrm{BF}|>5$ threshold of the Kass--Raftery scale~\cite{KassRaftery1995} at posterior odds Schoen:TY $= 2.6 \times 10^6$. Translated through the Wilks/Cowan--Cranmer--Gross--Vitells equivalence $n_\sigma = \sqrt{2|\ln \mathrm{BF}|}$, the chain-channel result is a $5.43\sigma$ Schoen-favoured discrimination.
+To convert this from a literature-driven choice into an empirical identification, we ran two independent physics-channel discriminators on the Schoen and Tian--Yau Donaldson-balanced metrics: a quark-chain channel and a lepton-chain channel. The pipeline as currently implemented computes, for each candidate, a Galerkin-residual sweep at successive test-degrees $k_\mathrm{test} \in \{2,3,4,5\}$ of the discrepancy between the metric-Laplacian eigenvalues (projected onto the framework's $\sqrt{2}$-chain integer/half-integer positions for the quark channel and the $\varphi$-chain integer-exponent positions for the lepton channel) and the structural sub-Coxeter chain expected from the framework. The signed channel residual difference $\delta = \rho_\mathrm{Schoen} - \rho_\mathrm{TY}$ is interpreted as a per-channel $\ln \mathrm{BF}_{\rm TY/Schoen} = \delta/2$ under a Laplace/BIC heuristic. The combined channel report is $\ln \mathrm{BF}_{\rm TY/Schoen} = -14.76$ (Tab.~\ref{tab:cy3-bayesian-channels}), corresponding to the highest tier of the Kass--Raftery scale~\cite{KassRaftery1995} (``very strong'' evidence at $|\ln \mathrm{BF}|>5$; equivalently $\log_{10} \mathrm{BF} > 6$, well beyond Jeffreys's ``decisive'' threshold of $\log_{10} \mathrm{BF} > 2$~\cite{Jeffreys1961}), with posterior odds Schoen:TY $= 2.6 \times 10^6$. The Wilks/Cowan--Cranmer--Gross--Vitells $\chi^2_1$ equivalence $n_\sigma = \sqrt{2|\ln \mathrm{BF}|}$ yields $5.43\sigma$-equivalent discrimination as an order-of-magnitude non-nested heuristic.
+
+\paragraph{Convergence status of the chain-channel sweep.}
+The chain-channel discriminators reported here are \emph{indicative,
+not converged} at the strict 10\% basis-size convergence criterion.
+The current production sweep at $n_{\rm pts}=25{,}000$, $k=3$,
+$k_\mathrm{test} \in \{2,3,4,5\}$ records the channel JSONs at
+\texttt{p7\_11\_quark\_chain.json} and
+\texttt{p7\_11\_lepton\_chain.json}, both of which carry
+\texttt{converged: false} flags with consecutive-degree relative
+deltas of order 11--35\% on the Schoen side and the signed-delta
+$\delta$ residual. The $\ln \mathrm{BF} = -14.76$ figure is therefore
+a preliminary discriminator, not a converged Bayes factor in the
+strict statistical sense; we report it as supporting evidence
+alongside the catalogue uniqueness sweep (which \emph{is} closed
+modulo the gCICY non-manifest residue) and the Tian--Yau Yukawa
+structural exclusion (which \emph{is} closed at the searched
+bidegree range). The full replacement of the metric-Laplacian
+chain-residual likelihood by a converged PDG-fermion-mass
+Yukawa-cohomology pipeline (Anderson--Karigiannis--Larfors--Lukas--Schneider
+style: HYM Hermitian metric on $V$, harmonic representatives of
+$H^1(X/\Gamma, V)$, Yukawa cohomology pairing, Kähler normalisation,
+two-loop SM RG running) is the in-flight remediation specified in
+the project's \texttt{REMEDIATION\_PLAN\_OPTION\_B.md}, Phase 2; we
+expect to retract or upgrade the present chain-channel BF figure on
+its completion. The catalogue uniqueness and TY-exclusion arguments
+do not depend on the chain-channel convergence and stand on their
+own.
 
 \paragraph{$\sigma$-channel as discriminability, not BF input.}
-The L$^2$ Donaldson §3.4 weighted-variance Monge--Ampère residual $\sigma$ on the Donaldson-balanced metric (Donaldson 2009~\cite{Donaldson2009}, PAMQ \textbf{5}, p.~587, eq.~3.4: $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$ with $\kappa = \langle \eta \rangle_{w}$, matching the production implementation in \texttt{schoen\_metric.rs::compute\_sigma} and \texttt{ty\_metric.rs::compute\_sigma}) is a separately-computed statistical discriminator that distinguishes the two candidates' metrics with extreme confidence ($|t| = 6.92$ at $k=3$, BCa $[5.30, 9.04]$, Tab.~\ref{tab:cy3-sigma-kscan}). The $k$-scan across $k=3,4,5$ reveals the empirical signature of basis-size dominance: as Schoen's basis dimension grows monotonically ($27 \to 48 \to 75$), the strict-converged Schoen subset shrinks ($16/20 \to 7/20 \to 6/20$) and the heavy-tailed $\sigma_{\rm Schoen}$ distribution increasingly drives the $|t|$-statistic. To test whether this is a real geometric signal or a basis-size artifact, we performed a direct paired-bootstrap test at matched basis size $n_b = n_b^{\rm Schoen} = 27$ between the two candidates' metrics, $20$ seeds, $B = 10^4$ resamples (Tab.~\ref{tab:cy3-sigma-artifact}). The signed gap \emph{inverts} when bases are matched, with disjoint BCa CIs and bootstrap probability of opposite sign equal to unity. This is the textbook signature of a basis-size-induced artifact, and is the empirical basis for excluding $\sigma$ from the multi-channel Bayes factor of Tab.~\ref{tab:cy3-bayesian-channels} via the \texttt{for\_combination = false} flag on the corresponding \texttt{ChannelEvidence} record. The $\sigma$-discriminability is reported \emph{only} as a separate $|t|$-statistic, not as a likelihood contribution.
+The L$^2$ Donaldson §3.4 weighted-variance Monge--Ampère residual $\sigma$ on the Donaldson-balanced metric (Donaldson 2009~\cite{Donaldson2009}, PAMQ \textbf{5}, p.~587, eq.~3.4: $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$ with $\kappa = \langle \eta \rangle_{w}$, matching the production implementation in \texttt{schoen\_metric.rs::compute\_sigma} and \texttt{ty\_metric.rs::compute\_sigma}) is a separately-computed statistical discriminator that distinguishes the two candidates' metrics with $|t| = 6.92$ at $k=3$, BCa $[5.30, 9.04]$ (Tab.~\ref{tab:cy3-sigma-kscan}). The $k$-scan across $k=3,4,5$ reveals the empirical signature of basis-size dominance: as Schoen's basis dimension grows monotonically ($27 \to 48 \to 75$), the strict-converged Schoen subset shrinks ($16/20 \to 7/20 \to 6/20$) and the heavy-tailed $\sigma_{\rm Schoen}$ distribution increasingly drives the $|t|$-statistic. To test whether this is a real geometric signal or a basis-size artifact, we performed a paired-bootstrap test at matched basis size $n_b = n_b^{\rm Schoen} = 27$ between the two candidates' metrics, $20$ seeds, $B = 10^4$ resamples (Tab.~\ref{tab:cy3-sigma-artifact}). The signed gap \emph{inverts} when bases are matched, with disjoint BCa CIs and bootstrap probability of opposite sign equal to unity, and is the empirical basis for excluding $\sigma$ from the multi-channel Bayes factor (\texttt{for\_combination = false} flag on the \texttt{ChannelEvidence} record). The matched-basis comparison is currently implemented as a lex-sorted truncation of the larger TY basis to Schoen's 27-monomial dimension; a geometric basis projection (eigenvalue-ranked principal-components of the Laplacian, or harmonic-form ranking) is the in-flight upgrade to the matched-basis defense (\texttt{REMEDIATION\_PLAN\_OPTION\_B.md} Phase 3.3). The $\sigma$-discriminability is reported \emph{only} as a separate $|t|$-statistic, not as a likelihood contribution; the Bayes-factor exclusion of $\sigma$ is conditional on the matched-basis defense surviving the geometric-projection upgrade.
 
 \input{tables/table_cy3_substrate_identification.tex}
 \input{tables/table_cy3_bayesian_channels.tex}
@@ -339,10 +506,13 @@ Beyond the chain-channel Bayesian preference, we attempted to construct a workin
 \input{tables/table_cy3_methodology.tex}
 
 \paragraph{Catalogue uniqueness at $h^{1,1} = h^{2,1} = 3$.}
-The chain-channel Bayes factor and the Tian--Yau Yukawa exclusion identify Schoen as the favoured candidate within the framework's pre-narrowed two-element shortlist. To upgrade this from a pairwise discrimination to a catalogue-level uniqueness statement we performed a four-cycle hostile sweep of the published smooth-CY3 universe at $(h^{1,1}, h^{2,1}) = (3,3)$ for non-Schoen entries admitting a free $\mathbb{Z}_3 \times \mathbb{Z}_3$ action with Standard-Model-compatible Wilson-line breaking. Cycle~1 (Hodge filter) returned zero hard-match competitors across CICY (Anderson--He--Lukas~\cite{AndersonHeLukas2008}), Schoen-class fiber products, Constantin--Lukas free-quotient catalogue, Borisov--Caldararu Pfaffian threefolds, and gCICY (Anderson--Apruzzi--Gao--Gray--Lee~\cite{AndersonApruzziGaoGrayLee2015}). Cycle~2 (free-action structural filter) returned zero non-Schoen survivors. Cycle~2.5 (computer-algebra sweep) verified by direct query against the Kreuzer--Skarke 473{,}800{,}776-polytope catalogue~\cite{KreuzerSkarke2002} that the $(3,3)$ Hodge bin is \emph{literally empty} (response \texttt{\#NF: 0} at output limits $L \in \{100, 1000, 10000\}$, cross-verified by sweeping the entire $\chi = 0$ self-mirror diagonal $h = 1, \ldots, 14$ and confirming the bin is empty for $h \le 13$ and populated from $h = 14$). Cycle~2.6 (gCICY non-manifest residue) closed the last open cell by programmatic search of arXiv:1507.03235 for the literal $(3,3)$ Hodge pair (zero hits), cross-checked against Larfors--Lukas~\cite{LarforsLukas2020} and Constantin--Lukas--Manuwal~\cite{ConstantinLukasManuwal2016}. The combined catalogue scan supports the stronger statement: \emph{no published smooth Calabi--Yau threefold in the catalogued universe satisfies the substrate-physical four-principle constraint at $(h^{1,1}, h^{2,1}) = (3,3)$ except Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$.} The narrow residual gap is a future paper extending the gCICY codim~$\ge (3,1)$ classification with a new $(3,3)$ entry; this would require a re-test but does not affect the present empirical identification.
+The chain-channel Bayes factor and the Tian--Yau Yukawa exclusion identify Schoen as the favoured candidate within the framework's pre-narrowed two-element shortlist. To upgrade this from a pairwise discrimination to a catalogue-level uniqueness statement we performed a four-cycle sweep of the published smooth-CY3 universe at $(h^{1,1}, h^{2,1}) = (3,3)$ for non-Schoen entries admitting a free $\mathbb{Z}_3 \times \mathbb{Z}_3$ action with Standard-Model-compatible Wilson-line breaking. Cycle~1 (Hodge filter) returned zero hard-match competitors across CICY (Anderson--He--Lukas~\cite{AndersonHeLukas2008}), Schoen-class fiber products, Constantin--Lukas free-quotient catalogue, Borisov--Caldararu Pfaffian threefolds, and gCICY (Anderson--Apruzzi--Gao--Gray--Lee~\cite{AndersonApruzziGaoGrayLee2015}). Cycle~2 (free-action structural filter) returned zero non-Schoen survivors. Cycle~2.5 (computer-algebra sweep) verified by direct query against the Kreuzer--Skarke 473{,}800{,}776-polytope catalogue~\cite{KreuzerSkarke2002} that the $(3,3)$ Hodge bin is \emph{literally empty} (response \texttt{\#NF: 0} at output limits $L \in \{100, 1000, 10000\}$, cross-verified by sweeping the entire $\chi = 0$ self-mirror diagonal $h = 1, \ldots, 14$ and confirming the bin is empty for $h \le 13$ and populated from $h = 14$). Cycle~2.6 (gCICY non-manifest Aut residue) reduced the last open cell by programmatic literature search of arXiv:1507.03235 for the literal $(3,3)$ Hodge pair (zero hits), cross-checked against Larfors--Schneider~\cite{LarforsLukas2020} and Constantin--Lukas--Mishra~\cite{ConstantinLukasManuwal2016}; the strict-CAS portion of cycle 2.6 (computing the full ambient automorphism group via Sage / Macaulay2 / polymake and checking which $\mathbb{Z}_3 \times \mathbb{Z}_3$ subgroups act freely on a generic gCICY $(3,3)$) remains \textbf{DEFERRED} pending a CAS-equipped re-run; see \texttt{p\_schoen\_uniqueness\_cycle2\_5.md} §3.4 and the in-flight Phase 6.2 of the remediation plan. The combined catalogue scan, modulo the gCICY non-manifest CAS residue, supports the statement: \emph{no published smooth Calabi--Yau threefold in the catalogued universe is established to satisfy the substrate-physical four-principle constraint at $(h^{1,1}, h^{2,1}) = (3,3)$ except Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$.} The remaining residual is a future gCICY codim~$\ge (3,1)$ extension producing a $(3,3)$ entry, plus the deferred CAS check on existing gCICY $(3,3)$ classifications; both would require a re-test but do not affect the present empirical identification.
 
 \paragraph{Net empirical statement.}
-The substrate's internal Calabi--Yau threefold is empirically identified as Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ over the closest structural competitor Tian--Yau $\mathbb{Z}_3$ at decisive Bayesian strength on independent quark-chain and lepton-chain mass-spectrum match to PDG ($\ln \mathrm{BF} = -14.76$, $n_\sigma$-equivalent $= 5.43\sigma$, posterior odds $2.6 \times 10^6$:1 Schoen:TY); the Donaldson $\sigma$-channel is correctly excluded from the model-comparison Bayes factor by an empirical sign-reversal test at matched basis size with paired-bootstrap probability of opposite sign equal to unity over $10^4$ resamples; the Tian--Yau Yukawa channel is structurally excluded by a nine-cycle hypothesis-test enumeration showing that no rank-3 SU(3) stable polystable monad bundle on TY/$\mathbb{Z}_3$ in the bicubic ambient at $h^{1,1} = 2$ in the searched bidegree range simultaneously satisfies all required physical constraints; and a four-cycle catalogue scan finds no non-Schoen $(h^{1,1}, h^{2,1}) = (3,3)$ smooth CY3 with a free $\mathbb{Z}_3 \times \mathbb{Z}_3$ action across the published universe (CICY, Kreuzer--Skarke toric, Schoen-class, Constantin--Lukas, Borisov--Caldararu Pfaffian, gCICY). The substrate-physical forcing chain narrows the candidate manifold to a single empirically-identified element of the catalogued universe.
+Three convergent lines of evidence support the empirical identification of the substrate's internal Calabi--Yau threefold as Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ over the closest structural competitor Tian--Yau $\mathbb{Z}_3$. \textbf{Closed:} (a) the four-cycle catalogue uniqueness sweep finds no non-Schoen $(h^{1,1}, h^{2,1}) = (3,3)$ smooth CY3 with a free $\mathbb{Z}_3 \times \mathbb{Z}_3$ action across the published universe (CICY, Kreuzer--Skarke toric, Schoen-class, Constantin--Lukas, Borisov--Caldararu Pfaffian, gCICY); the Kreuzer--Skarke direct query records \texttt{\#NF: 0} at output limits up to $L = 10{,}000$, cross-verified by sweeping the entire $\chi=0$ self-mirror diagonal $h \in \{1, \ldots, 14\}$. (b) the Tian--Yau Yukawa channel is structurally excluded by a nine-cycle hypothesis-test enumeration showing that no rank-3 SU(3) stable polystable monad bundle on TY/$\mathbb{Z}_3$ in the bicubic ambient at $h^{1,1} = 2$ in the searched bidegree range simultaneously satisfies all required physical constraints. \textbf{Indicative, not converged:} (c) the chain-channel Bayes factor at $\ln \mathrm{BF} = -14.76$ (posterior odds $2.6 \times 10^6$:1 Schoen:TY; nested-LRT $\sigma$-equivalent $5.43\sigma$) is computed from a metric-Laplacian Galerkin-residual sweep that has not yet met the strict 10\% basis-size convergence criterion at $k_\mathrm{test} \in \{2,3,4,5\}$; we report it as supporting evidence and expect to retract or upgrade the figure on completion of the full PDG-fermion-mass Yukawa-cohomology pipeline (Phase 2 of the remediation plan). The Donaldson $\sigma$-channel is excluded from the model-comparison Bayes factor by a paired-bootstrap matched-basis sign-reversal test (currently using lex truncation; geometric-projection upgrade is in flight at Phase 3). \emph{Conditional on the open methodological items below and the in-flight pipeline upgrades enumerated in Sec.~\ref{sec:open-items}, the substrate-physical four-principle constraint narrows the candidate manifold to a single element of the catalogued universe at the searched Hodge bin.}
+
+\paragraph{What this section does \emph{not} claim.}
+We are explicit about the residual scope. (i)~We do \emph{not} claim Schoen-uniqueness in full generality across the Calabi--Yau threefold landscape; the catalogue uniqueness statement is at the single Hodge bin $(h^{1,1}, h^{2,1}) = (3,3)$ and is conditional on the gCICY non-manifest CAS residue (item~iii below). (ii)~The chain-channel Bayes factor $\ln \mathrm{BF} = -14.76$ is \emph{not} a converged result at the strict 10\% basis-size convergence criterion: both the quark-chain and lepton-chain JSON outputs (\texttt{p7\_11\_quark\_chain.json}, \texttt{p7\_11\_lepton\_chain.json}) carry \texttt{converged: false}. The figure is reported as indicative; the full PDG-fermion-mass Yukawa-cohomology pipeline replacement is in-flight Phase 2 of the remediation plan. (iii)~The gCICY $(3,3)$ uniqueness check has \textbf{deferred} the strict computer-algebra-system portion of cycle 2.6 (Sage / Macaulay2 / polymake-based ambient automorphism enumeration) pending CAS environment availability; the literature-cross-check portion is closed. A future gCICY codim~$\ge (3,1)$ extension producing a $(3,3)$ entry would also require a re-test. (iv)~We do \emph{not} claim that the Bayesian discrimination is independent of the Donaldson convention adopted for the Schoen and Tian--Yau metrics; the $\sigma$-channel result is sensitive to h-inversion handling and Kähler-form projection, and we report only the conventions used here. The $\sigma$-channel matched-basis defense currently uses lex truncation rather than a geometric basis projection; the geometric-projection upgrade and the full Donaldson convention robustness sweep are in-flight Phase 3 of the remediation plan. (v)~The TY Yukawa exclusion is at the searched bidegree range in the bicubic ambient and is consistent with, but does not rigorously imply, the absence of any TY-supported three-generation bundle outside that range. (vi)~The bundle data we use on Schoen, and the line-bundle enumerations cited from the literature, are subject to the bundle-provenance audit summarised in Sec.~\ref{sec:open-items}. None of items (i)--(vi) affects the numerical computations of Secs.~\ref{sec:gateway}--\ref{sec:gravity}, which proceed from the Schoen identification taken as a starting commitment.
 
 \subsection{The $E_8$ Coxeter spectrum}
 
@@ -384,12 +554,19 @@ Dynkin diagrams: cyclic $\mathbb{Z}_n \leftrightarrow \widehat{A}_{n-1}$,
 binary dihedral $\leftrightarrow \widehat{D}_n$, binary tetrahedral
 $\leftrightarrow \widehat{E}_6$, binary octahedral
 $\leftrightarrow \widehat{E}_7$, and \textbf{binary icosahedral
-$\leftrightarrow \widehat{E}_8$}. The icosahedron has 5-fold rotational
-symmetry as one of its characteristic rotational orders in the
-$(2,3,5)$-triangle group, with $\varphi = 2\cos(\pi/5) = (1+\sqrt{5})/2$ the
-characteristic icosahedral angular ratio. This identifies the
-integer $5$ as the framework's preferred icosahedral order associated
-with the $E_8$ McKay dual.
+$\leftrightarrow \widehat{E}_8$}. The McKay correspondence itself
+identifies vertices of the affine $\widehat{E}_8$ Dynkin diagram
+with irreducible representations of the binary icosahedral group;
+it does \emph{not}, on its own, single out a particular integer.
+Separately, the icosahedral rotation group $A_5$ contains elements
+of order $5$ in the $(2,3,5)$-triangle group, with
+$\varphi = 2\cos(\pi/5) = (1+\sqrt{5})/2$ as the icosahedral angular
+ratio. The framework adopts this fivefold rotation order, paired
+with the binary icosahedral McKay-dual of $E_8$, as the seed integer
+for the $\varphi$-chain. The use of the integer $5$ is therefore a
+framework structural commitment combining the McKay-dual
+identification with the icosahedral rotation order, not a forced
+output of the McKay correspondence.
 
 \paragraph{Two harmonic chains used by the framework.}
 The mass-formula construction below distinguishes a $\varphi$-chain
@@ -429,9 +606,10 @@ construction is the joint use of both.
 
 The framework adopts a substrate-tension interpretation of the Higgs
 mechanism, motivated by Anderson's superconducting precursor to
-gauge-boson mass generation~\cite{Anderson1962} and by Volovik's
-quantum-liquid / helium-droplet emergent-vacuum
-program~\cite{Volovik2001,Volovik2003}. Within the substrate framework,
+gauge-boson mass generation~\cite{Anderson1962}; the resulting picture
+is similar in spirit to Volovik's quantum-liquid / helium-droplet
+emergent-vacuum program~\cite{Volovik2001,Volovik2003}, though arrived
+at independently and from a different structural starting point. Within the substrate framework,
 the Higgs vacuum expectation value $v$ is interpreted as the baseline
 relaxed tension of the $E_8 \times E_8$ substrate, and massive SM
 particles are localized deformations of this tension at
@@ -439,720 +617,28 @@ structurally-determined Coxeter positions. Photons are massless because
 they correspond to solitonic excitations of the substrate that do not
 deform its baseline tension.
 
-\section{Substrate foundations: derivation of $c$, $\hbar$, and the elastic medium}
-\label{sec:foundations}
-
-Before the structural derivation of Standard Model parameters can be
-presented, we summarize the substrate-physical content of the
-fundamental constants and equations of motion that govern propagation
-on the $E_8 \times E_8$ substrate. The full derivation is developed
-in~\cite{ExistBook}; here we collect the results that anchor the
-$E_8 \times E_8$ Coxeter framework to standard physics.
-
-\subsection{The speed of light as a substrate coupling-rate ratio}
-
-The substrate is committed by axiom to a positive coupling reach
-$\ell_c$ and a positive coupling time $\tau_c$ -- the elementary spatial
-extent over which one local-coupling event reaches, and the elementary
-duration of that event.
-
-\paragraph{Derivation of the wave equation.}
-Let $\phi(\vec{x}, t)$ be a substrate-amplitude pattern. The
-leading-order linear, isotropic, time-reversal-symmetric
-local-coupling update rule that uses only nearest-neighbor spatial
-coupling and nearest-neighbor temporal correlation is
-\begin{equation}
-\begin{aligned}
-&\phi(\vec{x}, t+\tau_c) - 2\phi(\vec{x}, t) + \phi(\vec{x}, t-\tau_c) \\
-&\quad = B \sum_{i=1}^{3} \bigl[\,\phi(\vec{x}+\ell_c \hat e_i, t) - 2\phi(\vec{x}, t) \\
-&\qquad\qquad\qquad\qquad + \phi(\vec{x}-\ell_c \hat e_i, t)\,\bigr],
-\end{aligned}
-\label{eq:discreteupdate}
-\end{equation}
-for some dimensionless coupling coefficient $B$. The Taylor expansions
-\begin{align}
-\phi(\vec{x}, t \pm \tau_c) &= \phi \pm \tau_c \partial_t \phi + \tfrac{1}{2}\tau_c^2 \partial_t^2 \phi + O(\tau_c^3), \\
-\phi(\vec{x} \pm \ell_c \hat e_i, t) &= \phi \pm \ell_c \partial_i \phi + \tfrac{1}{2}\ell_c^2 \partial_i^2 \phi + O(\ell_c^3),
-\end{align}
-substituted into Eq.~\eqref{eq:discreteupdate} and divided by
-$\tau_c^2$ in the continuum limit $\tau_c, \ell_c \to 0$, yield
-\begin{equation}
-\partial_t^2 \phi
-= B \cdot \frac{\ell_c^2}{\tau_c^2} \, \nabla^2 \phi.
-\label{eq:continuumlimit}
-\end{equation}
-The continuum equation has the form of a relativistic wave equation
-with squared wave-speed $c^2 = B \, \ell_c^2/\tau_c^2$.
-
-\paragraph{Lattice dispersion and emergent Lorentz invariance.}
-The full discrete dispersion relation associated with
-Eq.~\eqref{eq:discreteupdate} is
-\begin{equation}
-\sin^2 \!\Bigl(\tfrac{\omega\tau_c}{2}\Bigr) \;=\; B \sum_{i=1}^{3}
-\sin^2 \!\Bigl(\tfrac{k_i \ell_c}{2}\Bigr),
-\label{eq:lattice-dispersion}
-\end{equation}
-obtained by substituting $\phi \propto \exp[i(\vec k \cdot \vec x -
-\omega t)]$ into Eq.~\eqref{eq:discreteupdate}. Expanding at small
-$|\vec k|\,\ell_c$ and $\omega \tau_c$ yields
-$\omega^2 = B\, c^2 |\vec k|^2 + O(\ell_c^2 |\vec k|^4)$, with the
-sub-leading term containing a cubic-lattice anisotropy
-$\sum_i k_i^4 \neq |\vec k|^4$. \emph{Exact} Lorentz invariance is
-therefore recovered only in the continuum limit
-$\ell_c, \tau_c \to 0$; finite-$k$ modes carry
-$O(k^2 \ell_c^2)$ corrections to the relativistic dispersion, so the
-substrate's Lorentz invariance is an emergent long-wavelength
-symmetry. With $\tau_c \sim t_{\rm Planck}$ this anisotropy is
-unobservably small at any laboratory or astrophysical wavelength
-realised to date, and present cosmic-ray photon-timing constraints
-(discussed below) are already consistent with the identification.
-
-\paragraph{CFL stability and the marginal-luminal choice.}
-With $B = 1$ the discrete update Eq.~\eqref{eq:discreteupdate} sits
-at $c \tau_c / \ell_c = 1$, the \emph{marginal CFL stability point}
-of an explicit central-difference scheme on a cubic lattice. The
-standard CFL condition for stability of such a scheme in
-$d$ spatial dimensions is $c \tau_c / \ell_c \leq 1/\sqrt{d}$
-(Courant--Friedrichs--Lewy 1928), so for $d = 3$ the marginal limit
-is $c \tau_c / \ell_c = 1/\sqrt{3}$. The choice $B = 1$ therefore
-exceeds the standard subluminal CFL bound by a factor of $\sqrt{3}$
-along the lattice diagonal: axial signal propagation is
-ringing-free at the luminal limit, whereas off-axis
-(diagonal) modes carry a residual $O(\ell_c^2 k^2)$ instability
-with growth rate suppressed only by powers of $\ell_c k$. In the
-substrate-physical interpretation, this is read as the statement
-that $c$ is the \emph{global} maximum substrate-deformation rate
-along any axis, while finite-$k$ off-axis modes near the lattice
-cutoff are unphysical excitations that the substrate does not
-support: the framework identifies the substrate's continuum
-limit as the physically realised regime and treats the lattice
-artefact at $|\vec k| \ell_c \sim 1$ as a non-observable
-ultraviolet boundary, consistent with $\ell_c \sim l_{\rm Planck}$
-being many orders of magnitude below any observed wavelength.
-A first-principles continuum derivation of $c = \ell_c/\tau_c$
-without invoking a discrete cubic lattice (e.g.\ a
-Hamilton--Jacobi formulation on a continuum substrate manifold)
-is left for future work.
-
-By the conventional choice $B = 1$ we identify the universal scalar
-\begin{equation}
-\boxed{c \;\equiv\; \frac{\ell_c}{\tau_c},}
-\label{eq:cratio}
-\end{equation}
-which absorbs $B$ into the definition of $c$ in terms of the
-elementary substrate scales (alternative choices of $B$ correspond to
-a redefinition of either $\ell_c$ or $\tau_c$ by a constant factor).
-Lorentz invariance fixes $c$ as a frame-independent constant, but
-does not separately determine $B$. With this choice,
-Eq.~\eqref{eq:continuumlimit} becomes
-\begin{equation}
-\tau_c^2 \, \partial_t^2 \phi = \ell_c^2 \, \nabla^2 \phi
-\quad \Longleftrightarrow \quad
-\frac{1}{c^2} \partial_t^2 \phi - \nabla^2 \phi \equiv \Box \phi = 0.
-\label{eq:dalembert}
-\end{equation}
-Reading off, $c$ is the rate at which one elementary substrate-coupling
-event extends through space per elementary substrate-coupling
-duration. The framework forbids $\ell_c$ and $\tau_c$ from being
-separately observable; only their ratio is. As a
-substrate-physical quantity, $c$ represents not merely the propagation
-speed of free mode-patterns but the \emph{global maximum rate at which
-the substrate can deform itself}. This bound is universal: it applies
-to every kinematic process in the framework, including the apparent
-``faster-than-light'' geometries of proposed warp-drive
-metrics~\cite{Alcubierre1994}, in which the warp bubble's apparent
-displacement is a coordinate-frame artifact of substrate-tension
-redistribution whose underlying local deformation rate remains
-bounded by $c$. The cosmological inflationary epoch likewise does not
-violate this bound: inflation is the rapid expansion of the substrate's
-spatial extent itself rather than the propagation of any mode-pattern
-through pre-existing space, and the local rate of substrate
-deformation per coupling-event remains bounded by $c$
-throughout~\cite{ExistBook}.
-Ultra-high-energy cosmic-ray photon timing currently
-provides the tightest \emph{observational} upper limit identified to
-date, $\tau_c \lesssim 10^{-34}$~s; this is the maximum value of
-$\tau_c$ consistent with present observations rather than a
-theoretical bound, and future higher-energy or longer-baseline
-observations may further constrain it. As a separate
-\emph{framework identification} --- not a forced consequence of the
-substrate axioms in Sec.~\ref{sec:foundations} but an independently
-falsifiable scale-fixing postulate --- we set
-\begin{equation}
-\tau_c \;\equiv\; t_{\rm Planck} \;=\; \sqrt{\frac{\hbar G}{c^5}}, \qquad
-\ell_c \;\equiv\; l_{\rm Planck} \;=\; \sqrt{\frac{\hbar G}{c^3}},
-\label{eq:tauPlanck}
-\end{equation}
-with $c = \ell_c/\tau_c$ identically. Combined with the framework's
-predicted Newton's constant $G$ (Sec.~\ref{sec:gravity}, agreeing with
-CODATA~2022 at \SI{2.5}{ppm}), this gives
-$\tau_c \approx 5.391 \times 10^{-44}$~s and
-$\ell_c \approx 1.616 \times 10^{-35}$~m at $\sim$\SI{1.25}{ppm}
-framework precision (since $t_{\rm Planck} \propto \sqrt{G}$), ten
-orders of magnitude tighter than the cosmic-ray observational upper
-limit and falsifiable should $\tau_c$ ever be measured at a scale
-incompatible with $t_{\rm Planck}$.
-
-\subsection{Planck's constant as the universal threshold magnitude}
-
-The substrate is continuous in amplitude, configuration, and tension,
-yet event counts (detector clicks, atomic transitions) are discrete.
-We introduce a continuously-accumulating coupling amplitude $C(t)$
-whose rate of change is set by the local substrate-tension content
-$E$ of the participating mode-pattern, and which resolves into a
-discrete information-transfer event each time $C$ crosses a universal
-threshold magnitude. That magnitude is
-\begin{equation}
-\boxed{\hbar \;\equiv\; \text{universal substrate threshold magnitude}.}
-\label{eq:hbardef}
-\end{equation}
-
-\paragraph{Derivation of the Planck--Einstein relation.}
-For a stationary mode-pattern with substrate-tension content
-$E$, the accumulator advances at the constant rate
-\begin{equation}
-\frac{dC}{dt} = E.
-\label{eq:Cdotdef}
-\end{equation}
-A complete substrate-cycle event corresponds to $C$ traversing the
-total per-cycle action $\Delta C = h$ (where $h$ is the
-Planck-constant-as-action-per-cycle), in elapsed time
-$T = h/E$. Identifying $T$ with the period of the corresponding
-mode-pattern gives the angular frequency
-\begin{equation}
-\omega \;=\; \frac{2\pi}{T} \;=\; \frac{2\pi E}{h} \;=\; \frac{E}{\hbar},
-\label{eq:planckeinstein}
-\end{equation}
-where the reduced Planck constant $\hbar = h/(2\pi)$ is the
-action-per-radian threshold. This is the Planck--Einstein relation.
-For a mode-pattern of rest mass $m$ at rest, the substrate-tension
-content is the rest energy $E = mc^2$, and
-Eq.~\eqref{eq:planckeinstein} yields the Compton angular frequency
-\begin{equation}
-\omega_C \;=\; \frac{m c^2}{\hbar}, \qquad
-\lambda_C \;=\; \frac{2\pi c}{\omega_C} \;=\; \frac{h}{m c}.
-\label{eq:compton-derived}
-\end{equation}
-The boxed identification Eq.~\eqref{eq:hbardef} is therefore most
-precisely stated as: $\hbar$ is the universal substrate threshold
-magnitude per radian of cycle phase, equivalently $h = 2\pi\hbar$
-per full cycle.
-
-\paragraph{Sub-threshold activity.}
-Below the threshold magnitude $\hbar$: virtual-particle activity,
-vacuum fluctuations, Casimir effect, Lamb shift, and anomalous magnetic
-moments are real physical signatures of below-threshold accumulator
-activity that never transfer information. At threshold: information
-transfers, the event count advances by one. The constant proportionality
-$\hbar$ in Eq.~\eqref{eq:planckeinstein} is therefore the structural
-content of Planck's constant in the substrate framework.
-
-\subsection{Substrate elastic medium}
-
-\paragraph{Derivation of the elastic-medium identification.}
-A linear elastic medium with restoring stiffness $\Theta$ and inertial
-response $\mathcal{I}$ obeys the canonical wave equation
-\begin{equation}
-\mathcal{I} \, \partial_t^2 \phi \;=\; \Theta \, \nabla^2 \phi,
-\label{eq:elasticwave}
-\end{equation}
-which can be written equivalently as
-$\partial_t^2 \phi = (\Theta/\mathcal{I}) \nabla^2 \phi$ with wave
-speed $v_{\rm wave} = \sqrt{\Theta/\mathcal{I}}$.
-
-Comparing Eq.~\eqref{eq:elasticwave} term-by-term with the d'Alembert
-equation~\eqref{eq:dalembert}, $\partial_t^2 \phi = c^2 \nabla^2 \phi$,
-the identification
-\begin{equation}
-\boxed{c \;=\; \sqrt{\frac{\Theta_{\rm restoring}}{\mathcal{I}_{\rm inertial}}}}
-\label{eq:celastic}
-\end{equation}
-follows immediately, with $c^2 = \Theta_{\rm restoring}/\mathcal{I}_{\rm inertial}$
-matching the elastic wave speed. Combined with the
-substrate coupling-rate identification $c = \ell_c/\tau_c$ from
-Eq.~\eqref{eq:cratio}, the dimensional content of $\Theta$ and
-$\mathcal{I}$ becomes
-\begin{equation}
-\frac{\Theta_{\rm restoring}}{\mathcal{I}_{\rm inertial}}
-= \frac{\ell_c^2}{\tau_c^2},
-\label{eq:elasticdimensional}
-\end{equation}
-fixing the ratio of stiffness to inertia in terms of the substrate
-elementary scales.
-
-This identification is the substrate-physical content of the
-framework: the $E_8 \times E_8$ heterotic substrate behaves as a
-Lorentz-invariant elastic medium whose coupling reach and coupling time
-are set by the geometry of the Schoen Calabi--Yau quotient. The Higgs
-vacuum expectation value $v$ is interpreted within the framework as the
-baseline tension of this medium; particle masses are localized
-deformations of this tension at the Coxeter positions tabulated in
-Sec.~\ref{sec:framework} and quantified by the gateway formula in
-Sec.~\ref{sec:gateway}.
-
-\section{Macroscopic limits: GR, QM, Newton's laws, Maxwell's equations}
-\label{sec:limits}
-
-\subsection{Special relativity as substrate Lorentz invariance}
-\label{sub:SR}
-
-\paragraph{Derivation chain.}
-Special relativity emerges from substrate first principles as the
-long-wavelength continuum-limit symmetry of the discrete update rule
-Eq.~\eqref{eq:discreteupdate} (cf.\ Eq.~\eqref{eq:lattice-dispersion}
-and the discussion of emergent Lorentz invariance in
-Sec.~\ref{sec:foundations}). The argument has three steps.
-
-\textbf{Step 1: Universal coupling-rate ratio.}
-The d'Alembert equation Eq.~\eqref{eq:dalembert} requires the universal
-scalar $c = \ell_c/\tau_c$ to be the same in every inertial frame; if
-two observers measured different ratios $c_1 \neq c_2$, the $B = 1$
-condition forcing isotropy of the wave-equation operator would fail.
-Hence the constancy of $c$ is forced rather than postulated.
-
-\textbf{Step 2: Linear transformations preserving $c$.}
-The most general linear coordinate transformation
-$(t, \vec{x}) \to (t', \vec{x}')$ that preserves the d'Alembert
-operator
-$\Box = (1/c^2) \partial_t^2 - \nabla^2$ is the Lorentz transformation:
-for boost velocity $\vec{v}$,
-\begin{align}
-t' &\;=\; \gamma\bigl(t - \vec{v}\cdot\vec{x}/c^2\bigr),
-   \label{eq:tprime}\\
-\vec{x}'_\| &\;=\; \gamma\bigl(\vec{x}_\| - \vec{v} t\bigr),
-   \qquad \vec{x}'_\perp \;=\; \vec{x}_\perp,
-   \label{eq:xprime}
-\end{align}
-with $\gamma = 1/\sqrt{1 - v^2/c^2}$. The substrate elementary
-scales $\ell_c, \tau_c$ are intrinsic Lorentz-invariant constants
-(the same in every inertial frame); the standard relativistic
-length contraction and time dilation effects act on extended
-physical objects (rulers and clocks built from many mode-patterns)
-as observation-frame artifacts of Eqs.~\eqref{eq:tprime}--\eqref{eq:xprime},
-not on the elementary substrate scales themselves. For an extended
-object with proper length $L_0$ and proper time interval $T_0$
-measured in the rest frame, a boosted observer measures
-\begin{equation}
-L \;=\; L_0/\gamma,
-\qquad
-T \;=\; \gamma T_0
-\quad \text{(observation-frame intervals)},
-\label{eq:lengthtime}
-\end{equation}
-recovering the standard Lorentz contraction and time dilation.
-
-\textbf{Step 3: Mass-energy equivalence.}
-For a substrate mode-pattern with rest substrate-tension content $E_0$,
-threshold-crossing rate (Eq.~\eqref{eq:planckeinstein}) at rest
-$\omega_0 = E_0/\hbar$. Under a boost,
-the threshold-crossing rate transforms as
-$\omega = \gamma \omega_0$, so the boosted energy is
-\begin{equation}
-E \;=\; \hbar \omega \;=\; \gamma E_0.
-\label{eq:relenergy}
-\end{equation}
-For a mode at rest with rest-mass $m$, $E_0 = m c^2$ (Compton
-relation, Eq.~\eqref{eq:compton-derived}); for a mode in motion,
-$E^2 = E_0^2 + (pc)^2 = (mc^2)^2 + (pc)^2$, the standard
-relativistic dispersion. Length contraction, time dilation, and
-relativistic mass--energy equivalence all follow as immediate
-consequences of Eqs.~\eqref{eq:tprime}--\eqref{eq:relenergy}.
-
-The substrate-physical content of special relativity is thus that
-the universal ratio $c = \ell_c/\tau_c$ is the same in all inertial
-frames, with elementary length and time scales transforming
-inversely so the ratio is preserved.
-
-\subsection{General relativity as bulk substrate-tension response}
-
-\paragraph{Derivation chain.}
-General relativity emerges in the present framework when the
-substrate's elementary scales $\ell_c, \tau_c$ are allowed to vary
-with position in response to local stress-energy density. The
-argument below is a compressed summary of the substrate-side
-construction developed in~\cite{ExistBook}; it records the
-continuum-limit closure used later in the paper rather than a
-self-contained proof.
-
-\textbf{Step 1: Tension-modulated proper time and length.}
-Let the local substrate-tension content at spatial position $\vec{x}$
-be characterized by a scalar Newtonian-potential analog $\Phi(\vec{x})$.
-The substrate elementary scales $\ell_c, \tau_c$ remain intrinsic
-Lorentz invariants, but the \emph{proper time} and \emph{proper length}
-intervals at position $\vec{x}$ -- the physical clock-tick and ruler
-intervals an observer measures locally -- are modulated by the
-tension content. For a clock at rest at position $\vec{x}$,
-\begin{equation}
-d\tau_{\rm proper}(\vec{x}) \;=\; \sqrt{1 + 2\Phi(\vec{x})/c^2}\; dt
-\label{eq:propertime-mod}
-\end{equation}
-relative to coordinate-time $dt$ at infinity, while at leading order
-in $\Phi/c^2$ the proper radial length scales inversely:
-\begin{equation}
-d\ell_{\rm proper}(\vec{x}) \;\approx\; \bigl(1 - \Phi(\vec{x})/c^2\bigr)\,dr
-\label{eq:properlength-mod}
-\end{equation}
-(the standard weak-field-limit Schwarzschild-style scaling, in which
-$g_{00}$ and $g_{ii}$ scale oppositely at leading order). The
-modulation is universal across mode species --- the substrate-physical
-content of the equivalence principle --- and is consistent with the
-equivalence-principle precision $\eta < 10^{-15}$~\cite{MICROSCOPE2022}.
-The local speed-of-light ratio $c$ remains invariant in any local
-freely-falling inertial frame.
-
-\textbf{Step 2: Emergence of the Lorentzian metric.}
-Eq.~\eqref{eq:propertime-mod} identifies $g_{00} = -(1 + 2\Phi/c^2)$
-in the weak-field limit, recovering Newtonian gravity at leading
-order; Eq.~\eqref{eq:properlength-mod} identifies the spatial metric
-component as $g_{ii} \approx 1 - 2\Phi/c^2$ (opposite sign at leading
-order). Combining these with the special-relativistic result of
-Sec.~\ref{sub:SR} (local Lorentz invariance at every point in
-freely-falling inertial frames) extends the position-dependent
-proper-time/proper-length modulation to the full Lorentzian metric
-$g_{\mu\nu}(\vec{x}, t)$ on the substrate. The line element becomes
-\begin{equation}
-ds^2 \;=\; g_{\mu\nu}(x) \, dx^\mu dx^\nu,
-\label{eq:gmunu}
-\end{equation}
-with $g_{\mu\nu}$ identified at every point as the local
-tension-modulated metric, and special relativity recovered as the
-limit $g_{\mu\nu} \to \eta_{\mu\nu}$ when $\Phi \to 0$.
-
-\textbf{Step 3: Continuum closure.}
-Once the substrate response is encoded in a Lorentzian metric
-$g_{\mu\nu}$, the continuum theory must relate curvature to the local
-stress-energy distribution in a generally covariant, local, second-order
-equation that preserves stress-energy conservation and reduces to the
-Newtonian limit already identified in Step 1. In four dimensions, the
-minimal closure with these properties is
-\begin{equation}
-G_{\mu\nu} \;=\; \frac{8\pi G}{c^4} \, T_{\mu\nu},
-\label{eq:einstein}
-\end{equation}
-the Einstein field equations describing the bulk geometric response to
-the local stress-energy distribution. Within the substrate framework,
-Eq.~\eqref{eq:einstein} is therefore not taken as an independent
-starting axiom but as the continuum closure of the tension-modulated
-metric response; the detailed substrate-side argument is developed
-in~\cite{ExistBook}.
-
-\paragraph{Negative prediction.}
-Gravity in this framework is bulk tension geometry, not a mode-mediated
-cross-term coupling: there is no graviton mode species, and
-quantum-gravity-as-gauge-boson-exchange programs are structurally
-misguided. The Newton's-constant prediction
-$G^{\rm pred} = 6.67431691 \times 10^{-11}$ m$^3$kg$^{-1}$s$^{-2}$
-(Sec.~\ref{sec:gravity}) follows from Eq.~\eqref{eq:einstein} combined
-with the Coxeter-spectrum mass scales.
-
-The Newton's constant prediction in Sec.~\ref{sec:gravity} ($G$ to
-\SI{2.5}{ppm} of CODATA) is therefore not a coincidence: it is the
-substrate-physical content of $c^4/(8\pi)$ in Eq.~\eqref{eq:einstein}
-combined with the structural mass scales fixed by the Coxeter spectrum.
-
-At sufficiently high local stress-energy density, the inertial response
-$\mathcal{I}_{\rm inertial}$ diverges and the wave equation
-Eq.~\eqref{eq:dalembert} degenerates. The unique resolution consistent
-with substrate continuity and information conservation is
-\emph{substrate inversion} through the event horizon into a child
-substrate region~\cite{ExistBook}. The black-hole event horizon is
-the single bidirectional substrate boundary between the elastic regime
-(outside) and the inversion regime (inside). The inversion event is
-itself a catastrophe-theoretic ADE event~\cite{ArnoldCatastrophe}: the
-local degeneration of the substrate's elastic-response operator at
-$\mathcal{I}_{\rm inertial} \to \infty$ is governed by the same
-ADE classification (cf.\ McKay correspondence,
-Sec.~\ref{sec:framework}) that organizes the $E_8 \times E_8$ Coxeter
-spectrum used throughout this paper, providing a structural link
-between the cosmological inversion threshold and the framework's
-particle-spectrum classification.
-
-Matter and information traversing the inversion threshold are not
-destroyed: substrate continuity and information
-conservation~\cite{ExistBook} require that the stress-energy content
-falling through the horizon be re-emitted into the connected child
-substrate region as a relativistic flux of disassembled
-mode-pattern content --- a sub-atomic particle soup at relativistic
-speeds, with composite mode-patterns (atoms, nuclei, hadrons)
-reduced to their constituent free mode-patterns by the extreme
-substrate-tension gradient at the inversion locus. The process is
-structurally bidirectional: the same substrate boundary that admits
-infalling content from the parent substrate region admits outgoing
-content into the child substrate region, with no preferred temporal
-direction at the boundary itself. This identifies the cosmological
-``Big Bang'' of any one substrate region with the inversion outflow
-of a parent black hole in another substrate region, and it forces
-matter--antimatter parity, baryon-number distribution, and the
-initial cosmological power spectrum of the child region to inherit
-specific structural properties from the parent's inversion event ---
-properties whose explicit derivation is developed
-in~\cite{ExistBook}.
-
-\subsection{Quantum mechanics from accumulator + threshold structure}
-
-The substrate-amplitude pattern $\phi(\vec{x}, t)$ obeying
-Eq.~\eqref{eq:dalembert} is identified within the framework with the
-wavefunction of standard quantum mechanics. The full framework account
-of measurement, threshold crossing, entanglement, and Bell correlations
-is developed in~\cite{ExistBook}; here we record only the continuum-limit
-equations used later in the paper and the substrate-side interpretation
-attached to them.
-
-\paragraph{Klein--Gordon from substrate restoring response.}
-For a mode-pattern with substrate-tension content $E = mc^2$ at rest,
-the Compton angular frequency Eq.~\eqref{eq:compton-derived} fixes the
-natural local restoring scale of the corresponding substrate
-deformation. The massless d'Alembert equation~\eqref{eq:dalembert}
-describes freely propagating tension waves; a localized massive mode
-requires an additional quadratic restoring term that pins the mode to
-its rest oscillation scale $\omega_C = mc^2/\hbar$. The minimal
-Lorentz-invariant continuum equation with that restoring scale is
-\begin{equation}
-\frac{1}{c^2} \partial_t^2 \phi - \nabla^2 \phi
-+ \left(\frac{m c}{\hbar}\right)^2 \phi \;=\; 0,
-\label{eq:KG}
-\end{equation}
-the Klein--Gordon equation. In substrate language, the mass term is the
-continuum imprint of the local restoring potential whose equilibrium
-oscillation frequency is the Compton scale. The point is not that the
-massive term follows algebraically from substituting
-$\phi = e^{-i\omega_C t}\psi$ into the massless equation, but that the
-substrate's localized massive modes demand precisely such a restoring
-term once the Compton threshold is imposed.
-
-\paragraph{Schr\"odinger from non-relativistic limit.}
-For a sub-relativistic mode-pattern with kinetic energy
-$|\vec{p}|^2/(2m) \ll mc^2$, factor out the rest-mass oscillation:
-\begin{equation}
-\phi(\vec{x}, t) \;=\; e^{-i (mc^2/\hbar) t} \, \psi(\vec{x}, t),
-\label{eq:NRfactor}
-\end{equation}
-with $\psi$ slowly varying compared to the rest-mass period.
-Substituting into Eq.~\eqref{eq:KG} and keeping leading-order terms in
-the non-relativistic expansion (dropping $\partial_t^2 \psi$ relative
-to $(2 i m c^2/\hbar) \partial_t \psi$ in the kinetic term):
-\begin{equation}
-i \hbar \, \partial_t \psi \;=\; -\frac{\hbar^2}{2m} \nabla^2 \psi
-\;+\; V(\vec{x}) \psi,
-\label{eq:schroedinger}
-\end{equation}
-the Schr\"odinger equation, with the potential $V(\vec{x})$ inherited
-from the substrate-tension perturbation
-$V(\phi; \vec{x})$ in the Lagrangian density Eq.~\eqref{eq:substrateL}
-expanded around the mode's center.
-
-\paragraph{Dirac from chirality-graded factorization.}
-The Dirac equation arises as the unique linear first-order
-differential operator whose square is the Klein--Gordon equation
-Eq.~\eqref{eq:KG}, requiring the introduction of $\gamma$-matrices
-satisfying $\{\gamma^\mu, \gamma^\nu\} = 2 \eta^{\mu\nu}$. The
-4-component spinor structure encodes the substrate's
-$\mathbb{Z}/2$ inheritance grading (matter/antimatter parity)
-$\otimes$ chirality (left/right handedness):
-\begin{equation}
-(i \gamma^\mu \partial_\mu - m c/\hbar) \, \psi \;=\; 0.
-\label{eq:dirac}
-\end{equation}
-
-\paragraph{Born rule and Hilbert-space structure.}
-The framework interprets the Born rule through the continuous accumulator
-structure: $|\phi(\vec{x}, t)|^2$ is the local partial-coupling
-magnitude that contributes to the threshold-crossing rate per unit
-volume, hence the probability density of a discrete information-transfer
-event. Hilbert-space structure inherits from the $L^2$ inner product
-on substrate-amplitude configurations,
-$\langle \phi | \psi \rangle = \int \phi^* \psi \, d^3 x$, with $\hbar$
-as the universal normalization between accumulator and threshold.
-
-\paragraph{Entanglement and Bell-inequality violation.}
-Within the framework, entanglement is joint-state encoding in the six compact internal
-phase-alignment dimensions of the heterotic Calabi--Yau quotient ---
-not in 3D space --- which forces the no-signaling theorem (since
-information transfer requires a substrate-coupling chain extending
-through 3D, while compact-dimension joint-state encoding does not)
-and reproduces the Bell-inequality violation $|S| \to 2\sqrt{2}$. The
-explicit construction is developed in~\cite{ExistBook}.
-
-\subsection{Newton's laws from elastic restoring response}
-
-\paragraph{Derivation of $F = ma$.}
-The substrate elastic medium of Eq.~\eqref{eq:celastic} admits the
-canonical Lagrangian density
-\begin{equation}
-\mathcal{L} \;=\; \tfrac{1}{2} \mathcal{I}\, (\partial_t \phi)^2
-\;-\; \tfrac{1}{2} \Theta\, |\nabla \phi|^2
-\;-\; V(\phi; \vec{x}),
-\label{eq:substrateL}
-\end{equation}
-where $V(\phi; \vec{x})$ is a tension-potential coupling. For a
-localized mode-pattern $\phi_X(\vec{x}, t)$ centered at position
-$\vec{X}(t)$ with substrate-tension content $E_X = m_X c^2$ and
-spatial extent small compared to the gradient scale of $V$,
-standard wave-packet (WKB) reduction of the field-theoretic action
-$S = \int \mathcal{L}\, d^3 x \, dt$ yields, to leading order in the
-small extent of the packet relative to the potential's gradient
-scale, the effective particle Lagrangian
-\begin{equation}
-L \;=\; \tfrac{1}{2} m_X \, |\dot{\vec{X}}|^2 \;-\; U(\vec{X}),
-\qquad U(\vec{X}) \equiv \int V(\phi_X; \vec{x}) \, d^3 x,
-\label{eq:particleL}
-\end{equation}
-where the effective mass $m_X = E_X/c^2$ inherits from the
-elastic-medium inertial response (as $\mathcal{I}$ acting on the
-square-amplitude integral of the mode-pattern), and $U(\vec{X})$ is
-the tension-potential energy at the mode-pattern's center of mass.
-The wave-packet reduction is the standard localized-mode reduction of a
-field theory; the substrate framework's content is
-the identification of the substrate elastic Lagrangian
-Eq.~\eqref{eq:substrateL} as the underlying field theory.
-
-The Euler--Lagrange equations for $\vec{X}(t)$ in
-Eq.~\eqref{eq:particleL} read
-\begin{equation}
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\vec{X}}}\right)
-- \frac{\partial L}{\partial \vec{X}} \;=\; 0
-\quad \Longrightarrow \quad
-m_X \, \ddot{\vec{X}} \;=\; -\nabla U(\vec{X}),
-\label{eq:eom}
-\end{equation}
-which is Newton's second law in standard form
-\begin{equation}
-\boxed{\vec{F} \;=\; m \vec{a}, \qquad \vec{F} \equiv -\nabla U.}
-\label{eq:newton}
-\end{equation}
-Force is therefore not ontologically primitive in the substrate
-framework; it is the kinematic byproduct of substrate-tension
-flattening its own gradient via cross-term mode-mode overlap.
-
-\paragraph{Inheritance of the rest of classical mechanics.}
-Statics ($\sum \vec{F} = 0$, $\sum \vec{M} = 0$) follows from
-$\ddot{\vec{X}} = 0$ in Eq.~\eqref{eq:eom}. The rotational analogue
-$\vec{\tau} = I \vec{\alpha}$ follows from extending
-Eq.~\eqref{eq:particleL} to a rigid mode-pattern with internal
-angular degrees of freedom. The principle of least action
-$\delta S = \delta \int L \, dt = 0$ is the variational form of
-Eq.~\eqref{eq:eom}. Hooke's law $\sigma = E \varepsilon$ is the
-linearized small-strain regime of $V(\phi; \vec{x})$ around its
-local minimum in Eq.~\eqref{eq:substrateL}. All inherit from the
-same elastic foundation.
-
-\subsection{Maxwell's equations as $U(1)$ cross-term coupling}
-
-\paragraph{Status note.} The reduction of Maxwell's equations from
-substrate axioms in this subsection requires one input not derived
-from the wave-equation foundation alone: the $U(1)$ gauge structure
-that produces the four-potential $A_\mu$. Within the framework, this
-$U(1)$ symmetry is identified with one of the compact phase-alignment
-directions in the visible $E_8$ embedding on the Schoen quotient
-(Sec.~\ref{sec:framework}); we treat the existence of this $U(1)$
-as inherited from heterotic compactification rather than derived
-here.
-
-\paragraph{Derivation chain.}
-Let $\phi_X, \phi_Y$ be substrate mode-patterns whose substrate-amplitude
-phases are aligned along the visible-$E_8$ $U(1)$ axis with charges
-$q_X, q_Y$, respectively. Gauge invariance under the $U(1)$ phase
-rotation $\phi \to e^{i q \alpha(\vec{x},t)} \phi$ requires the
-introduction of a connection 1-form $A_\mu$ via the gauge-covariant
-derivative
-\begin{equation}
-D_\mu \phi \;=\; (\partial_\mu - i q A_\mu) \phi.
-\label{eq:covderiv}
-\end{equation}
-The field strength
-\begin{equation}
-F_{\mu\nu} \;=\; \partial_\mu A_\nu - \partial_\nu A_\mu
-\label{eq:fmunu}
-\end{equation}
-is gauge-invariant, and the substrate elastic Lagrangian
-Eq.~\eqref{eq:substrateL} extended to include the $A_\mu$
-connection picks up the canonical Maxwell kinetic term
-$-\tfrac{1}{4} F_{\mu\nu} F^{\mu\nu}$.
-
-Variation of the resulting Lagrangian density
-\begin{equation}
-\mathcal{L}_{\rm em} \;=\;
--\tfrac{1}{4 \mu_0} F_{\mu\nu} F^{\mu\nu}
-\;-\; J^\mu A_\mu,
-\label{eq:Lem}
-\end{equation}
-where $J^\mu$ is the conserved $U(1)$ Noether current associated with
-the gauge symmetry of $\phi$ (its specific form depends on whether
-$\phi$ is treated as scalar, $J^\mu = i q [\phi^* (D^\mu \phi) - (D^\mu
-\phi)^* \phi]$, or as the Dirac spinor of Eq.~\eqref{eq:dirac},
-$J^\mu = q \bar\psi \gamma^\mu \psi$), with respect to $A_\mu$ yields
-the inhomogeneous Maxwell equations
-\begin{equation}
-\partial_\mu F^{\mu\nu} \;=\; \mu_0 J^\nu.
-\label{eq:maxwell-inhom}
-\end{equation}
-The homogeneous equations
-\begin{equation}
-\partial_{[\lambda} F_{\mu\nu]} \;=\; 0
-\label{eq:maxwell-hom}
-\end{equation}
-follow from the antisymmetric definition Eq.~\eqref{eq:fmunu} as a
-Bianchi identity. Together, Eqs.~\eqref{eq:maxwell-inhom}
-and~\eqref{eq:maxwell-hom} reproduce the four Maxwell equations
-\begin{align}
-\nabla \cdot \vec{E} &= \rho/\epsilon_0,
-   & \nabla \cdot \vec{B} &= 0, \\
-\nabla \times \vec{E} &= -\partial_t \vec{B},
-   & \nabla \times \vec{B} &= \mu_0 \vec{J} + (1/c^2) \partial_t \vec{E},
-\end{align}
-in standard $(\vec{E}, \vec{B})$ form, with $c = 1/\sqrt{\mu_0 \epsilon_0}$
-matching the substrate coupling-rate ratio Eq.~\eqref{eq:cratio}.
-
-The photon is the free $A_\mu$ mode satisfying $\Box A_\mu = 0$ in
-Lorenz gauge; in the substrate language, this is pinched-off cross-term
-content that has detached from the source region under sufficient
-acceleration of the participating charged mode-patterns and
-self-stabilized as a solitonic excitation of the $U(1)$ connection.
-
-\paragraph{Photon vs.\ gluon distinction.}
-The photon and the gluon arise from the same cross-term mechanism but
-in distinct regimes: photons have a low pinch-off threshold, $U(1)$
-binary phase-alignment, and a $1/r$ Coulomb tail; gluons have a high
-pinch-off threshold, $SU(3)$ tripartite $120^\circ$ phase-alignment
-producing destructive overlap that lowers tension and binds the hadron,
-and no long-range strain tail (confinement). The strong, weak, and
-electromagnetic interactions, together with matter-antimatter
-attraction-and-annihilation, are unified instances of one
-substrate-physical cross-term mechanism distinguished only by
-phase-alignment structure and pinch-off regime. Gravity remains
-in a categorically separate class as bulk geometric response.
-
-\subsection{Connection to the $E_8 \times E_8$ Coxeter framework}
-
-The foundational derivations above commit the framework to:
-\begin{itemize}
-\item Heterotic $E_8 \times E_8$ on a Calabi--Yau threefold quotient,
-providing the dual-sector setting used by the framework's gateway
-eigenvalue $(\dim - 2)/\dim$.
-\item McKay correspondence between $E_8$ and the binary icosahedral
-group, motivating the icosahedral integer $5$ in
-Eq.~\eqref{eq:gateway}.
-\item Coxeter spectrum $\{1, 7, 11, 13, 17, 19, 23, 29\}$ with
-harmonic threshold $h/2 = 15$, fixing the available exponent set and
-allowing the framework to read off $M = 14$; the particle step
-assignments themselves are framework assignments listed in
-App.~\ref{app:assignments}.
-\item Schoen $\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient structure,
-supplying the geometric setting for a vanishing $\theta_{\rm QCD}$ if
-the quotient-projected twisted-trace cancellation of
-Sec.~\ref{sec:strongCP} holds.
-\end{itemize}
-The Standard Model parameter derivations that follow are therefore
-the structural consequences of the same substrate framework that
-produces classical and quantum mechanics, general relativity, and
-Maxwell's equations as macroscopic limits. The framework is unified
-in the sense that all of these emerge from the same elastic-substrate
-foundation~\eqref{eq:dalembert}--\eqref{eq:celastic}, with $c$ and
-$\hbar$ as the two universal substrate constants that anchor it to
-observation.
+\paragraph{Foundations deferred to companion paper.}
+The substrate-physical reading of $c$, $\hbar$, the elastic-medium
+identification $c = \sqrt{\Theta/\mathcal{I}}$, and the macroscopic
+emergence of general relativity, quantum mechanics, Newton's laws of
+motion, and Maxwell's equations from the same elastic substrate that
+hosts the $E_8 \times E_8$ Coxeter structure are not load-bearing for
+the numerical demonstration of this paper, and the present paper
+takes them as part of the starting commitment of
+Table~\ref{tab:starting-assumptions}. Their derivation chains are
+developed in the companion paper~\cite{UnreasonableEffectiveness}
+and the foundational monograph~\cite{ExistBook}. We do not repeat
+them here.
 
 \section{Gateway formula}
 \label{sec:gateway}
+
+The remainder of this paper is the direct computation of SM observables
+from the starting assumptions of Table~\ref{tab:starting-assumptions}.
+There is no per-particle scheme choice and no fitted continuous
+parameter: every numerical value reported below is the framework's
+structural prediction. PDG-matching residuals are predictions versus
+measurement, not fits versus measurement.
 
 The electron sits at the gateway $k=0$, defined as one chain step
 before the first $E_8$ exponent (at position 1). The chain depth from
@@ -1163,23 +649,33 @@ M = h/2 - 1 = 14.
 
 The framework's effective coupling scale is
 \begin{equation}
-h_{\rm eff} = \frac{m_e}{2 \omega_{\rm fix}}
-            = m_e \cdot \frac{\dim}{\dim - 2}
-            = m_e \cdot \frac{124}{123},
+h_{\rm eff} \;=\; \frac{m_e}{2 \omega_{\rm fix}}
+            \;=\; m_e \cdot \frac{\dim}{\dim - 2}
+            \;=\; m_e \cdot \frac{124}{123},
 \end{equation}
 where $\omega_{\rm fix} = 1/2 - 1/\dim = 123/248$ is the gateway
-normalization factor.
+normalization factor. Equivalently, with the Planck mass
+$m_{\rm Planck} = \sqrt{\hbar c / G}$ taken from the structurally
+predicted $G$ of Sec.~\ref{sec:gravity},
+$h_{\rm eff} = F_e \cdot m_{\rm Planck} \cdot 124/123$, with $F_e$
+fixed entirely by Eq.~\eqref{eq:gateway} below; the two readings
+agree at the \SI{17}{ppm} residual reported here, and the downstream
+mass formulas are operationally identical under either reading.
 
 The dimensionless ratio of the electron mass to the Planck mass is
-predicted by
+predicted by the framework as
 \begin{equation}
 \boxed{
-F_e = \frac{m_e}{m_{\rm Planck}}
-    = \frac{\dim - 2}{\dim} \cdot \frac{5}{\dim \cdot h^M}
+F_e \;=\; \frac{m_e}{m_{\rm Planck}}
+    \;=\; \frac{\dim - 2}{\dim} \cdot \frac{5}{\dim \cdot h^M}
       \cdot \frac{1}{1 - \frac{1}{4(\dim - 1)}}.
 }
 \label{eq:gateway}
 \end{equation}
+The right-hand side contains \emph{no measured input}: every quantity
+is a structural integer of the starting assumptions
+(Table~\ref{tab:starting-assumptions}). This is a zero-parameter
+prediction of the dimensionless electron-to-Planck mass ratio.
 
 Each factor has a specific structural role in the framework:
 \begin{itemize}
@@ -1188,25 +684,26 @@ dual-sector count subtracting two distinguished endpoints (one in each
 $E_8$).
 \item McKay icosahedral $5$: framework-selected icosahedral order
 motivated by the binary-icosahedral McKay dual of $E_8$.
-\item Coxeter chain $h^M = 30^{14} = 4{,}782{,}969 \times 10^{14}$:
+\item Coxeter chain $h^M = 30^{14} \approx 4.78 \times 10^{20}$:
 each step contributes a factor of $h = 30$.
 \item Sub-harmonic loss $988/987 = 1/(1 - 1/988)$: the geometric
 sum $\sum_{n \geq 0} (1/988)^n$ of a per-step leakage rate
 $1/(4(\dim - 1)) = 1/988$ to all orders. The factor of $4$ in
-$4(\dim - 1)$ is identified in the framework as
-``$2 \times 2$'': two $E_8$ factors, each carrying both an upward
+$4(\dim - 1)$ admits a dual-sector / two-orientation reading
+(``$2 \times 2$'': two $E_8$ factors, each carrying both an upward
 and a downward chain-step orientation; $\dim - 1$ removes the
-distinguished anchor mode in each sector. We flag this 4 as a
-\emph{framework structural assignment} that admits the stated
-dual-sector / two-orientation reading but is not derived from a
-specific group-theoretic counting rule; a first-principles
-identification (e.g.\ via a heterotic-anomaly index or a
+distinguished anchor mode in each sector); a substrate-physical
+derivation of the $4$ from a heterotic-anomaly index or a
 $\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient trace on the Schoen
-threefold) is left for future work.
+threefold is part of the open companion-paper program
+(Sec.~\ref{sec:open-items}).
 \end{itemize}
 
-Numerically, $F_e = 4.18547 \times 10^{-23}$, agreeing with observation
-at \SI{17}{ppm}. Newton's constant follows: $G = F_e^2 \cdot \hbar c / m_e^2$.
+Numerically, $F_e = 4.18547 \times 10^{-23}$. The measured value
+$m_e^{\rm PDG} / m_{\rm Planck}^{\rm CODATA}$ agrees with this
+structural prediction at \SI{17}{ppm}. Newton's constant is the
+zero-parameter consequence $G = F_e^2 \cdot \hbar c / m_e^2$ developed
+in Sec.~\ref{sec:gravity}.
 
 \section{Charged-fermion masses}
 \label{sec:fermions}
@@ -1462,8 +959,10 @@ m_Z \;&=\; m_W / \cos\theta_W
 \end{align}
 where the Higgs-vev Coxeter position is
 \begin{equation}
-k_v \;=\; h + \text{rank} - \text{rank}/h \;=\; 30 + 8 - 8/30 \;=\; \frac{1132}{30}
-\;\approx\; 37.733.
+\begin{aligned}
+k_v \;&=\; h + \text{rank} - \text{rank}/h \\
+     \;&=\; 30 + 8 - 8/30 \;=\; \frac{1132}{30} \;\approx\; 37.733.
+\end{aligned}
 \label{eq:kv-derived}
 \end{equation}
 The Higgs vev and Higgs boson share the same $\sqrt{2}$-chain
@@ -1562,7 +1061,10 @@ substrate-physical identity at two levels of precision.
 to numerical residual $\sim 29$ ppb (at the framework's
 gateway-mixing-tower depth-$3$, $\alpha_\tau^3$, scale). Equivalently,
 \begin{equation}
-v \;=\; \frac{\dim(E_8) - 2}{1 - \delta_W} \;=\; \frac{246 \cdot 1121}{1120} \;=\; \frac{275766}{1120}~\text{GeV} \;\approx\; 246.21964~\text{GeV},
+\begin{aligned}
+v \;&=\; \frac{\dim(E_8) - 2}{1 - \delta_W} \;=\; \frac{246 \cdot 1121}{1120} \\
+   \;&=\; \frac{275766}{1120}~\text{GeV} \;\approx\; 246.21964~\text{GeV},
+\end{aligned}
 \label{eq:v-identity-form}
 \end{equation}
 with $\delta_W = 1/(h+m_{\max})/e_6 = 1/1121$ the W boson's vector
@@ -1577,7 +1079,10 @@ with the additional gateway-mixing-tower depth-$3$ correction
 $\frac{5}{8}\alpha_\tau^3 \approx 29.1$ ppb. The leading factor $5/8$
 is the substrate-physical structural ratio
 \begin{equation}
-\frac{5}{8} \;=\; \frac{\text{McKay icosahedral integer}}{\text{rank}(E_8)} \;=\; \frac{\text{rank}(E_8) - h_{SU(3)}}{\text{rank}(E_8)} \;=\; \frac{8-3}{8},
+\begin{aligned}
+\frac{5}{8} \;&=\; \frac{\text{McKay icosahedral integer}}{\text{rank}(E_8)} \\
+            \;&=\; \frac{\text{rank}(E_8) - h_{SU(3)}}{\text{rank}(E_8)} \;=\; \frac{8-3}{8},
+\end{aligned}
 \label{eq:5-over-8}
 \end{equation}
 ``rank not consumed by colour, normalised by rank.'' The McKay
@@ -1739,12 +1244,10 @@ determined by the mode's internal index structure. The dark-sector
 coupling family is therefore graded by the $E_8$ exponent set
 $\{1, 7, 11, 13, 17, 19, 23, 29\}$, producing a discrete spectrum
 of structurally-fixed corrections rather than a continuous parameter.
-
-\subsection{Higgs self-coupling}
-
-The Higgs self-coupling follows from the predicted $m_H$ and $v$:
-$\lambda_H = m_H^2/(2 v^2) = 0.12928011$, agreeing with the
-observed $\lambda_H = 0.12928057$ at \SI{3.5}{ppm}.
+The Higgs self-coupling $\lambda_H = m_H^2/(2 v^2)$ follows from the
+predicted $m_H$ and $v$ by the standard SM tree-level relation; its
+closed form and numerical value are presented in
+Sec.~\ref{sec:EW}.
 
 \subsection{Term-by-term decomposition: electroweak bosons}
 \label{sub:boson-terms}
@@ -2361,7 +1864,8 @@ order is identified directly with the mixing parameter in the dark-photon
 literature; for $n = 5$, $\epsilon_5 = 6.022 \times 10^{-13}$. The
 axion-photon coupling $g_{a\gamma\gamma} = \epsilon_5 \alpha_{\rm em}/v$
 follows from the substrate cross-term construction
-(Sec.~\ref{sec:limits}.4) extended to the dark-sector mode.
+(developed in the companion paper~\cite{UnreasonableEffectiveness})
+extended to the dark-sector mode.
 
 \paragraph{Structural pattern across the gateway-mixing tower.}
 The rank-locked sub-harmonic corrections (Table~\ref{tab:subharmonic})
@@ -2418,12 +1922,19 @@ $G$-measurement scatter that still characterizes direct laboratory
 determinations~\cite{GReview2017}. Planck mass:
 $m_{\rm Planck}^{\rm pred} = 1.22088858 \times 10^{19}$~GeV (\SI{1.2}{ppm}).
 
-\section{Two-anchor verification}
+\section{Two-anchor diagnostic consistency check}
 \label{sec:anchor}
 
-The framework predicts dimensionless ratios $F_X = m_X/m_{\rm Planck}$
-independent of the anchor choice. Verification through both electron
-and muon anchors gives a single consistency residual
+The framework's predictive path computes $h_{\rm eff} = v_C / R_v$
+from the structural Higgs-vev identity (Sec.~\ref{sec:intro}); no PDG
+mass enters. As a diagnostic check on the framework's internal
+arithmetic, we additionally evaluate two fermion-anchored modes
+(anchoring $h_{\rm eff}$ on the CODATA electron mass or on the CODATA
+muon mass) and compare their predictions across the entire 26-parameter
+spectrum. The structural-vev mode is the primary prediction; the two
+fermion-anchored modes are diagnostic only. Cross-checking the two
+fermion-anchored modes against each other gives a single consistency
+residual
 \begin{equation}
 \Delta_{e\mu} = \frac{F_\mu/F_e}{m_\mu/m_e} - 1 = -2.98 \times 10^{-8} = -30~\text{ppb},
 \end{equation}
@@ -2619,20 +2130,340 @@ $g_{a\gamma\gamma} = 1.78 \times 10^{-17}$~GeV$^{-1}$.
 inconsistent with $2/9 + \Delta_\varphi/h$ at ppm precision.
 \end{enumerate}
 
+\section{Open items and further-exploration program}
+\label{sec:open-items}
+
+We make this section explicit and visible. The numerical demonstration
+of the present paper is internally complete in the sense that, given
+the starting assumptions of Table~\ref{tab:starting-assumptions}, no
+fitted continuous parameter is introduced and every reported value is
+a direct structural computation. The items below are open methodological
+questions that affect either the empirical CY3 identification of
+Sec.~\ref{sec:cy3-substrate-identification} or the substrate-physical
+support of the starting assumptions themselves.
+
+\subsection{Pipeline state and in-flight remediation}
+\label{subsec:pipeline-state}
+
+We disclose the present state of the CY3 discrimination pipeline
+explicitly, separating closed results from indicative-but-unconverged
+results from in-flight work. The full engineering plan to upgrade the
+indicative results to converged-and-cross-checked status is the
+project's \texttt{REMEDIATION\_PLAN\_OPTION\_B.md},
+which specifies a seven-phase program with 111 positive and negative
+acceptance tests organised into five CI tiers.
+
+\paragraph{Closed results (do not depend on in-flight work).}
+\begin{itemize}
+\item \emph{Catalogue uniqueness sweep at Hodge $(3,3)$}, modulo the
+gCICY non-manifest CAS residue. The Kreuzer--Skarke direct query
+returns \texttt{\#NF: 0} at output limits up to $L=10{,}000$; the
+$\chi=0$ self-mirror diagonal sweep $h \in \{1, \ldots, 14\}$
+confirms the bin is empty for $h \le 13$ and populated from $h = 14$.
+The CICY, Schoen-class, Constantin--Lukas, Borisov--Caldararu
+Pfaffian, and gCICY-manifest classifications are programmatically
+checked.
+\item \emph{Tian--Yau Yukawa-channel structural exclusion} at the
+searched bidegree range in the bicubic ambient at $h^{1,1}=2$. No
+rank-3 SU(3) stable polystable monad bundle on TY/$\mathbb{Z}_3$ in
+the searched range satisfies the heterotic-SM constraint suite; the
+leading rank-7 monad survivor $V_{\min 2}$ is excluded by
+$h^0(V_{\min 2}) = \mathbb{C}^2 \neq 0$.
+\item \emph{$E_8$ Coxeter / McKay / closed-form algebraic identities}
+($k_v = 1132/30$, $\delta_H = 1/59$, $\delta_W = 1/1121$,
+$\alpha_\tau = 1/278$, $\omega_{\rm fix} = 123/248$, $\alpha_s = 849/7192$,
+the gateway formula $F_e = (\dim-2)/\dim \cdot 5/(\dim \cdot h^M) /
+(1 - 1/(4(\dim-1)))$, etc.), all closed in rational arithmetic.
+\item \emph{Mass-spectrum prediction pipeline} (\texttt{substrate\_mass\_spectrum.py})
+producing the residuals reported in
+Tabs.~\ref{tab:complete-table}--\ref{tab:complete-table-2}.
+\end{itemize}
+
+\paragraph{Indicative, not converged.}
+\begin{itemize}
+\item \emph{Chain-channel Bayes factor $\ln \mathrm{BF} = -14.76$}.
+The current chain-channel discriminators score the
+metric-Laplacian Galerkin residual against the framework's
+sub-Coxeter chain at $k_\mathrm{test} \in \{2,3,4,5\}$. Both
+\texttt{p7\_11\_quark\_chain.json} and
+\texttt{p7\_11\_lepton\_chain.json} report
+\texttt{converged: false} with consecutive-degree relative deltas
+of order 11--35\% on the Schoen-side residual. The figure is
+reported as supporting evidence; the converged replacement is
+Phase 2 of the remediation plan.
+\item \emph{$\sigma$-channel matched-basis defense}. The current
+basis-matching at $n_b = 27$ is implemented as a lex-sorted
+truncation of TY's 87-dimensional invariant basis to Schoen's
+27-dimensional basis. A geometric basis projection
+(eigenvalue-ranked principal components of the Laplacian, or
+harmonic-form ranking) is the in-flight Phase 3.3 upgrade; the
+$\sigma$-channel exclusion from the model-comparison BF is
+conditional on its survival under the upgrade.
+\item \emph{$\sigma$ functional definition}. The production code
+computes a weighted L$^2$ variance per Donaldson 2009 §3.4; a uniform
+pin of the L$^1$ vs L$^2$ functional choice across code, paper, and
+methodology table is in-flight Phase 3.1.
+\end{itemize}
+
+\paragraph{In-flight work (Option B remediation).}
+The phases below are scheduled per the remediation plan. Each phase
+has explicit acceptance criteria gating the next.
+\begin{enumerate}
+\item \emph{Phase 1 — pipeline integrity}: anomaly-cancellation
+regression test for the Schoen monad with $W=(27,27)$;
+slope-stability proof on a stated Kähler-cone region;
+structure-group-of-$V$ consistency (SU(3) vs SU(4) vs SU(5));
+bundle-provenance forward-confirmation; replacement or
+ensemble-invariance of the LCG-random monad coefficients in
+\texttt{zero\_modes.rs}; explicit Wilson-line representation
+specification.
+\item \emph{Phase 2 — real chain-channel Yukawa likelihood}: wire
+the existing \texttt{yukawa\_pipeline.rs} (publication-grade
+end-to-end Yukawa pipeline already implemented in the rust\_solver
+tree but not currently plumbed into the BF combiner) into
+\texttt{bayes\_factor\_multichannel.rs::from\_yukawa\_pipeline\_prediction};
+parallel TY implementation; bootstrap with $\ge 100$ seeds; convergence
+guarantees with \texttt{Result<\ldots, NotConvergedError>} short-circuit;
+Higgs-vev fitting/normalisation; two-loop SM RG running with
+threshold corrections.
+\item \emph{Phase 3 — $\sigma$-channel functional pin and
+matched-basis fix}: pin L$^1$ vs L$^2$; replace lex truncation with
+geometric basis projection; Donaldson convention robustness sweep
+across $\ge 3$ published variants.
+\item \emph{Phase 4 — dark-matter $\Omega_{\rm DM} h^2$
+re-derivation or relabelling}: the current pipeline uses the observed
+Planck $0.12$ as a multiplicative prefactor; either re-derive the
+prefactor structurally or honestly relabel as
+\texttt{Omega\_DM\_h2\_consistency\_estimate} with the Planck
+empirical anchor disclosed.
+\item \emph{Phase 5 — structural-rule generators} for the
+per-particle Coxeter chain indices $k_X$, the per-quark sign
+assignments $\chi_q, \lambda_q$, and the rational closures used in
+$\sin^2\theta_W$ and $\alpha_s(M_Z)$; or honest documentation as
+encoded structural-rule-consistent choices in a data file.
+\item \emph{Phase 6 — convergence, reproducibility, external
+verification}: programmatic gCICY $(3,3)$ cycle 2.6 in a
+Sage/Macaulay2-equipped container; adjacent-Hodge-bin sweep at
+$(3,4), (4,3)$; rational-search baseline for closure rules;
+Zenodo-archived reproducibility kit
+(\texttt{cargo run --release --bin reproduce\_paper\_results});
+external independent re-implementation in the AKLP PyTorch suite or
+equivalent; pre-registration of falsifiable predictions.
+\item \emph{Phase 7 — paper/pipeline alignment audit}: pre-submission
+line-by-line audit against a 111-test acceptance matrix.
+\end{enumerate}
+The acceptance criteria, decision points, risk register, and test
+matrix for each phase are detailed in
+\texttt{REMEDIATION\_PLAN\_OPTION\_B.md}. Estimated total effort: 6--12
+person-weeks; submission-readiness gate is Phase 7 sign-off.
+
+\subsection{Open methodological items}
+\label{subsec:open-method}
+
+\begin{enumerate}
+\item \emph{gCICY non-manifest residue at Hodge $(3,3)$.} The
+catalogue uniqueness sweep
+(Sec.~\ref{sec:cy3-substrate-identification}) closes the polytope
+catalogue~\cite{KreuzerSkarke2002} and the published gCICY
+classifications~\cite{AndersonApruzziGaoGrayLee2015,LarforsLukas2020,ConstantinLukasManuwal2016}
+at $(h^{1,1},h^{2,1})=(3,3)$, but a future codim~$\ge (3,1)$
+extension producing a $(3,3)$ entry is not pre-empted. \emph{Required
+work:} structural enumeration over the gCICY-extension constructions
+at parity with the polytope sweep, applying the same four-principle
+filter and reporting non-Schoen survivors if any. Until this is done
+the catalogue uniqueness statement at $(3,3)$ is conditional on the
+gCICY non-manifest residue.
+
+\item \emph{Donaldson convention robustness on the $\sigma$-channel
+discrimination.} The $|t| = 6.92$ Schoen-vs-TY $\sigma$-channel
+result reported in Sec.~\ref{sec:cy3-substrate-identification}
+depends on the specific choice of Donaldson h-inversion procedure and
+the Kähler-form projection convention used in the metric pipeline.
+The paired-bootstrap sign-reversal defense addresses the basis-size
+artifact at matched basis size; it does not address convention-choice
+artifacts. \emph{Required work:} robustness sweep over $\geq 3$
+published convention variants for both the h-inversion handling and
+the Kähler-form projection, with a stress-test report on whether the
+$|t| = 6.92$ result survives or degrades. The $\sigma$-channel
+discrimination should be re-stated with an explicit convention
+sensitivity envelope.
+
+\item \emph{Schoen-uniqueness sweep at adjacent Hodge bins.} The
+catalogue uniqueness statement is at the single Hodge bin $(3,3)$.
+\emph{Required work:} extension of the four-cycle sweep to bins
+adjacent to $(3,3)$ (in particular $(3,4)$ and $(4,3)$) at the same
+fidelity, to confirm that the empty-bin result at $(3,3)$ is not
+isolated to one bin under the four-principle filter.
+
+\item \emph{Bundle provenance forward-confirmation.} An audit
+performed during the development of this paper retracted some
+previously asserted bundle provenance to nominally cited
+references; bundles currently in use have been re-pointed to
+primary sources. \emph{Required work:} a comprehensive
+forward-confirmation that, for every bundle data set used in the
+present paper, the citation chain terminates at a primary source
+where the bundle is constructed and its stability/topological
+constraints are stated.
+\end{enumerate}
+
+\subsection{Open framework items deferred to companion paper}
+\label{subsec:open-framework}
+
+The following items are starting commitments of the present paper and
+are listed here for transparency. Their substrate-physical support
+--- i.e.\ the argument that one would expect these and not other
+substrate-physical structures --- is the subject of the companion
+paper~\cite{UnreasonableEffectiveness} and of the foundational
+monograph~\cite{ExistBook}, and is not load-bearing for the numerical
+demonstration of this paper.
+
+\begin{enumerate}
+\item \emph{Heterotic $E_8 \times E_8$ doubling.} The Coldea
+\textit{et al.}~\cite{Coldea2010} CoNb$_2$O$_6$ measurement empirically
+anchors one $E_8$ factor. The doubling to $E_8 \times E_8$ is a
+heterotic-string commitment~\cite{GHMR1985} adopted here; an
+independent empirical anchor for the second $E_8$ factor is not
+claimed.
+
+\item \emph{McKay-icosahedral seed.} The selection of the binary
+icosahedral McKay-dual of $E_8$ as the framework's harmonic seed,
+and the resulting $\varphi$-chain / $\sqrt{2}$-chain decomposition,
+is a structural commitment.
+
+\item \emph{Gateway-formula structural integers.} The factor of $4$
+in the sub-harmonic loss $988/987$, the gateway-depth $M=14$, and
+the boundary capacity $h + m_{\max} = 59$ used in the dark-sector
+coupling family admit dual-sector / two-orientation readings within
+the framework but are not derived in the present paper from a
+specific group-theoretic counting rule on the Schoen quotient.
+
+\item \emph{Equivariant-cohomology identity for $\theta_{\rm QCD}=0$.}
+The vanishing of the strong-CP angle is presented in
+Sec.~\ref{sec:strongCP} contingent on a $\mathbb{Z}_3 \times
+\mathbb{Z}_3$ quotient-projected twisted-trace cancellation. The
+identity itself is adopted as input from the framework; an explicit
+proof on the Schoen $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$ quotient
+is part of the open program.
+
+\item \emph{The $\omega_{\rm fix} = 123/248$ identity is algebraic,
+not eigenvalue.} $\omega_{\rm fix} = (\dim - 2)/(2 \cdot \dim)$
+appears in the gateway formula as an exact $E_8$-algebraic
+coefficient. It is \emph{not} an eigenvalue of any operator and is
+not predicted to be empirically measurable as such. We have
+internally tested and retracted the alternative hypothesis under
+which it would be an eigenvalue; the algebraic reading is the
+correct one and is the only role $\omega_{\rm fix}$ plays in the
+construction.
+
+\item \emph{Hodge-pair self-conjugacy $h^{1,1} = h^{2,1}$.} The
+substrate-physical argument that the framework selects
+self-conjugate Hodge structures (and hence $(3,3)$ as the
+mathematical-minimum admissible bin compatible with three
+generations and Wilson-line breaking) lives in the companion
+paper~\cite{UnreasonableEffectiveness}. The present paper takes the
+$(3,3)$ outcome as the input to Sec.~\ref{sec:cy3-substrate-identification}.
+\end{enumerate}
+
+\subsection{What this paper does not claim}
+\label{subsec:not-claimed}
+
+For the avoidance of overreach we state plainly:
+
+\begin{itemize}
+\item This paper does not claim that the starting assumptions of
+Table~\ref{tab:starting-assumptions} are forced from first principles
+in the sense of being derivable from inside the framework's
+macroscopic 4D regime. From a 4D observer's vantage they are evaluated
+\emph{empirically} --- by the predictions they generate.
+
+\item The 26-to-zero-free-parameter reduction reported here is
+\emph{conditional} on the starting assumptions; without those
+assumptions the present construction makes no statement.
+
+\item Schoen uniqueness in full generality across the Calabi--Yau
+threefold landscape is not claimed; the catalogue uniqueness
+statement is at the searched Hodge bin and is conditional on the
+gCICY residue (item~1 of Sec.~\ref{subsec:open-method}).
+
+\item Internal consistency of the present construction at the
+\SI{0.0298}{ppm} ($\sim 30$~ppb) two-anchor level
+(Sec.~\ref{sec:anchor}) is a self-consistency statement of the
+structural pipeline; it is not itself a derivation of the starting
+assumptions.
+
+\item No claim is made that the substrate-physical readings of $c$,
+$\hbar$, and the macroscopic emergence of GR/QM/Newton/Maxwell from
+substrate elasticity, deferred to the companion
+paper~\cite{UnreasonableEffectiveness}, are required for the
+numerical demonstration of this paper. They are interpretive context;
+the numerical results stand or fall on their own.
+\end{itemize}
+
+\subsection{Further-exploration program}
+\label{subsec:further-exploration}
+
+The most informative empirical and theoretical extensions of the
+present construction, in priority order:
+
+\begin{enumerate}
+\item Direct dark-sector searches at the predicted dominant order-5
+slot $m_5 = 602.645$~neV with $g_{a\gamma\gamma} = 1.78 \times 10^{-17}$
+GeV$^{-1}$. A null result at the predicted mass and coupling, with
+sensitivity exceeding the prediction, falsifies the dark-sector
+construction.
+
+\item Improved precision measurements on $m_W$, $m_H$, $m_t$,
+$\sin^2\theta_W$, $m_\beta$ (KATRIN), and $\Sigma m_\nu$
+(cosmological) at thresholds that either tighten the present
+ppm/ppb-level residuals or break them.
+
+\item Independent reproduction of the Schoen-vs-TY $\sigma$-channel
+discrimination pipeline by a third party, using independent metric
+codes and convention sweeps.
+
+\item Closure of the gCICY non-manifest residue
+(Sec.~\ref{subsec:open-method} item~1) and the adjacent-Hodge-bin
+sweep (item~3).
+
+\item Heterotic-anomaly index or $\mathbb{Z}_3 \times \mathbb{Z}_3$
+quotient-trace derivation of the gateway-formula structural integers
+(Sec.~\ref{subsec:open-framework} item~3).
+
+\item Explicit Schoen-side proof of the
+$\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient-projected twisted-trace
+cancellation underlying $\theta_{\rm QCD} = 0$
+(Sec.~\ref{subsec:open-framework} item~4).
+
+\item Peer-reviewed development of the foundational arguments
+relegated to the companion paper~\cite{UnreasonableEffectiveness}.
+\end{enumerate}
+
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Reduction of the parameter count}
+\subsection{Parameter-count semantics}
 
-Within the mass-spectrum construction presented here, the framework
-reduces the SM parameter count from 26 to 1: the electron rest mass is
-the sole dimensional input, with the remaining particle-spectrum
-quantities built from framework-fixed integers of the
-$E_8 \times E_8$ Coxeter spectrum on the Schoen Calabi--Yau quotient.
-The dark-matter abundance and strong-CP sectors are more conditional:
-the former currently closes through a substrate-to-misalignment
-dictionary, while the latter depends on the twisted-trace cancellation
-described in Sec.~\ref{sec:strongCP}.
+Conditional on the starting assumptions of
+Table~\ref{tab:starting-assumptions}, the construction presented here
+contains \emph{no fitted continuous parameter}: the 26 continuous
+parameters of the SM are computed structurally from the algebraic
+data of the starting assumptions, and the residuals reported in
+Sec.~\ref{sec:results} are predictions versus measurement, not fits
+versus measurement. We are explicit about the scope of this
+statement. (i)~Without the starting commitments
+(Table~\ref{tab:starting-assumptions}) the construction has no
+content; the reduction is not a model-independent claim, but a
+zero-free-parameter consequence of those commitments.
+(ii)~Two sectors carry residual conditionality even within the
+framework: the dark-matter abundance closes through a
+substrate-to-misalignment dictionary whose substrate-physical
+derivation lives in the companion paper, and the strong-CP angle
+closes through the quotient-projected twisted-trace cancellation
+described in Sec.~\ref{sec:strongCP} and listed in
+Sec.~\ref{subsec:open-framework}. (iii)~The argument that the starting
+commitments themselves are minimal and substrate-physically expected
+is the subject of the companion paper~\cite{UnreasonableEffectiveness}
+and is not load-bearing here.
 
 \subsection{Common geometric origin}
 
@@ -2661,43 +2492,51 @@ and so contrasts with the dominant axion-mediated approach.
 
 \subsection{Open directions}
 
-The paper still leaves several genuine follow-up tasks. Open directions
-for follow-up work:
+The complete enumeration of open methodological items, deferred
+framework commitments, and the further-exploration program is given
+in Sec.~\ref{sec:open-items}. Among the items most likely to sharpen
+or break the present construction:
 \begin{enumerate}
-\item Higher-order sub-harmonic precision beyond the current 0.0011~ppm floor.
-\item Compactification-level derivation of the cycle-2 closure factors
-$\delta_H$, $\delta_W$, and the Coxeter-step assignment $k_v$ from CY3
-cohomology and Wilson-line data.
-\item Substrate-native cosmological evolution for the dark-matter tower,
-replacing the imported misalignment-style abundance estimate with a full
-continuum calculation.
-\item Independent derivation of the quotient-projected twisted-trace
-cancellation required for $\theta_{\rm QCD} = 0$.
+\item Direct dark-sector searches at the predicted dominant order-5
+slot (Sec.~\ref{subsec:further-exploration} item~1).
+\item Closure of the gCICY non-manifest residue and the
+adjacent-Hodge-bin sweep
+(Sec.~\ref{subsec:open-method} items~1 and~3).
+\item Donaldson-convention robustness sweep on the
+$\sigma$-channel discrimination
+(Sec.~\ref{subsec:open-method} item~2).
+\item Substrate-native cosmological evolution for the dark-matter
+tower, replacing the misalignment-style abundance estimate with a
+full continuum calculation.
 \item Cosmological inflationary connection: $n_s = 58/60$ from dual-$E_8$
 Coxeter structure.
-\item Beyond-SM extensions: direct DM detection signatures, generation
-count derivation.
 \end{enumerate}
 
 \subsection{Conclusion}
 
-We have presented a one-anchor structural construction of the Standard
-Model, the dark-matter sector, and the gravitational sector --- 26 SM
-parameters, Newton's $G$, the Planck mass, the discrete dark-matter mass
-spectrum, and a misalignment-style cosmological dark-matter abundance
-estimate --- from a single
-measured input (the electron rest mass) and the geometry of
-$E_8 \times E_8$ heterotic compactification on a Schoen Calabi--Yau
-quotient $X / (\mathbb{Z}_3 \times \mathbb{Z}_3)$, with
-McKay-correspondence anchoring. A conditional geometric route to
-$\theta_{\rm QCD} = 0$ is identified through the quotient projection.
-Both CP phases are rational multiples of $\pi$. Two-anchor
-self-consistency between electron and muon anchors is verified at 30
-parts per billion across all observables. The framework reduces the SM
-parameter count from 26 to 1 in the mass-spectrum construction
-presented here, while leaving the strong-CP cancellation and the
-dark-matter abundance as sharpened but not yet fully first-principles
-closures.
+Conditional on the starting assumptions of
+Table~\ref{tab:starting-assumptions} --- heterotic
+$E_8 \times E_8$ on the Schoen Calabi--Yau quotient
+$X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$, the McKay-icosahedral seed,
+the phenomenological $\varphi$/$\sqrt{2}$ chain split for the lepton
+and quark/EW-boson sectors, the $E_8$ Coxeter spectrum, and the
+substrate-tension reading of the Higgs vacuum --- the present paper computes the SM
+mass spectrum, mixing parameters, gauge couplings, the strong-CP
+angle, the cosmological dark-matter abundance, and Newton's $G$
+\emph{directly}, with no fitted continuous parameter and no
+per-particle scheme choice. The Schoen-versus-Tian--Yau
+$\sigma$-channel discrimination (Sec.~\ref{sec:cy3-substrate-identification})
+and the four-cycle catalogue uniqueness sweep at Hodge $(3,3)$
+provide the empirical CY3 identification, with explicit hedges on
+the gCICY residue and the Donaldson convention sensitivity
+(Sec.~\ref{sec:open-items}). The numerical residuals against PDG and
+Planck~2018 measurements are predictions, not fits. From a 4D
+observer's vantage the starting assumptions cannot be \emph{proven};
+this paper evaluates them by empirical consistency, and reports the
+result. The companion paper~\cite{UnreasonableEffectiveness}
+addresses the separate question of whether those starting assumptions
+are minimal and substrate-physically expected; that argument is
+independent of the present demonstration and is not relied upon here.
 
 \appendix
 
@@ -2733,7 +2572,7 @@ Higgs boson   & $k_v - 2$ & breathing mode, with $\delta_H$ \\
 \section{Complete structural correction list}
 \label{app:corrections}
 
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{All structural corrections, built from framework-fixed
 $E_8$ invariants $\dim = 248$, $h = 30$, $M = 14$, rank $= 8$,
@@ -2761,7 +2600,7 @@ $f_5$                  & $\frac{\text{rank}(h-\text{rank})}{\dim} \frac{\sqrt{v 
 $\theta_5$             & $\arctan \varphi$                & DM misalignment \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{Numerical precision}
 \label{app:numerics}
@@ -2884,10 +2723,10 @@ DOI: 10.1088/1126-6708/2005/06/070.
 ``Vector Bundle Extensions, Sheaf Cohomology, and the Heterotic Standard Model,''
 Adv.\ Theor.\ Math.\ Phys.\ \textbf{10}, 525--589 (2006).
 Open-access preprint (free): \href{https://arxiv.org/abs/hep-th/0505041}{arXiv:hep-th/0505041}.
-\S 6 introduces the rank-4 $SU(4)$ extension construction used as the
-framework's bundle commitment; Eq.~99 records the heterotic Bianchi
-anomaly-cancellation identity with the positive-tension $5$-brane
-wrapping $\tau_1^2$.
+\S 6 introduces the rank-4 $SU(4)$ extension construction used as
+the framework's bundle commitment; Eq.~99 records the heterotic
+Bianchi anomaly-cancellation identity with the positive-tension
+$5$-brane wrapping $\tau_1^2$.
 
 \bibitem{PatiSalam1974} J.~C.~Pati and A.~Salam,
 ``Lepton number as the fourth color,''
@@ -2896,8 +2735,8 @@ erratum \emph{ibid.}\ \textbf{11}, 703 (1975).
 APS abstract page (free abstract):
 \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.10.275}{journals.aps.org/prd/abstract/10.1103/PhysRevD.10.275}.
 DOI: 10.1103/PhysRevD.10.275. Source for the substrate-physical
-``lepton number as the fourth colour'' reading of the rank-4 $SU(4)$
-internal-symmetry structure committed in this paper.
+``lepton number as the fourth colour'' reading of the rank-4
+$SU(4)$ internal-symmetry structure committed in this paper.
 
 \bibitem{TianYau1987} G.~Tian and S.-T.~Yau,
 ``Three-dimensional algebraic manifolds with $c_1 = 0$ and $\chi = -6$,''
@@ -2956,6 +2795,21 @@ arXiv:math/0512625.
 See §3 eq.~(3.4) for the weighted L$^2$ Monge--Ampère residual functional
 $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$ with $\kappa = \langle \eta \rangle_{w}$
 that defines the production $\sigma$-discriminator used in this work.
+
+\bibitem{Jeffreys1961} H.~Jeffreys,
+\emph{Theory of Probability}, 3rd ed.\
+(Oxford University Press, 1961).
+Source of the ``decisive evidence'' threshold $\log_{10} \mathrm{BF} > 2$ on the Bayes-factor strength scale.
+
+\bibitem{DonaldsonStability} S.~K.~Donaldson,
+``Anti self-dual Yang--Mills connections over complex algebraic surfaces and stable vector bundles,''
+Proc.\ London Math.\ Soc.\ \textbf{50}, 1--26 (1985).
+DOI: 10.1112/plms/s3-50.1.1.
+
+\bibitem{UhlenbeckYau} K.~Uhlenbeck and S.-T.~Yau,
+``On the existence of Hermitian--Yang--Mills connections in stable vector bundles,''
+Comm.\ Pure Appl.\ Math.\ \textbf{39}, S257--S293 (1986).
+DOI: 10.1002/cpa.3160390714.
 
 \bibitem{KimCarosi2010} J.~E.~Kim and G.~Carosi,
 ``Axions and the strong CP problem,''
@@ -3061,6 +2915,15 @@ DOI: 10.1016/0370-2693(83)90644-5.
 (2026). Foundational substrate-physical derivations of $c$, $\hbar$,
 general relativity, quantum mechanics, Newton's laws, Maxwell's
 equations, and the heterotic $E_8 \times E_8$ commitment.
+
+\bibitem{UnreasonableEffectiveness} E.~Gable,
+``The unreasonable effectiveness of mathematics, solved:
+substrate-physical derivation of the first-principles starting
+assumptions,'' companion paper (in preparation, 2026).
+Argues that the starting assumptions of
+Table~\ref{tab:starting-assumptions} are minimal and substrate-physically
+expected. Independent of, and not load-bearing for, the numerical
+demonstration of the present paper.
 
 \bibitem{ArnoldCatastrophe} V.~I.~Arnold,
 \textit{Catastrophe Theory}, 3rd ed.\

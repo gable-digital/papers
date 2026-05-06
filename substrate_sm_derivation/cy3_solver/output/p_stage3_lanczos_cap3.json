@@ -1,0 +1,411 @@
+{
+  "label": "p_stage3_lanczos_cap3",
+  "description": "Stage 3 Fix B falsifiability sweep \u2014 combined cap=1 (dense), cap=2 (dense), cap=2 (Lanczos validation), cap=3 (Lanczos) results across TY/Z3 and Schoen/Z3xZ3.",
+  "date_utc": "2026-05-05T09:53:49.700236Z",
+  "pwos_math_lanczos_commit": "70345173",
+  "cy3_solver_git_revision_at_cap3_run": "0b769351ef5f1020252fc637d0ff644ed89b9724",
+  "settings": {
+    "n_pts": 300,
+    "k": 2,
+    "iter_cap": 3,
+    "donaldson_tol": 0.1,
+    "seed": 12345,
+    "degrees": [
+      1,
+      2,
+      3
+    ],
+    "use_lanczos_at_cap3": true,
+    "lanczos_max_iters": 300,
+    "lanczos_tol": 1e-09
+  },
+  "per_candidate": [
+    {
+      "label": "TY/Z3",
+      "geometry": "TianYau bicubic CP^3 x CP^3, Z/3 quotient",
+      "bundle": "AKLP (Anderson-Lukas-Palti) SU(5) monad bundle, single-Z/3 Wilson line",
+      "per_cap": [
+        {
+          "tag": "cap_1_dense",
+          "cap": 1,
+          "eigensolver": "jacobi_dense",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            135976.02723958087
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 2.4156803899964174e-09,
+          "elapsed_s": 0.0040804,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_2_dense",
+          "cap": 2,
+          "eigensolver": "jacobi_dense",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            135.67606145130847
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 1.5563045090749853e-15,
+          "elapsed_s": 273.6812722,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_2_lanczos",
+          "cap": 2,
+          "eigensolver": "lanczos",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            135.67606145132916
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 1.3322676295501878e-15,
+          "elapsed_s": 27.9258733,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_3_lanczos",
+          "cap": 3,
+          "eigensolver": "lanczos",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            39.37972400709239
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 9.713056277098182e-15,
+          "elapsed_s": 5913.3215061,
+          "rank1_collapse": true
+        }
+      ]
+    },
+    {
+      "label": "Schoen/Z3xZ3",
+      "geometry": "Schoen CP^2 x CP^2 x CP^1, (d_x,d_y,d_t)=(2,2,1), Z/3 x Z/3 quotient",
+      "bundle": "Schoen Z/3 x Z/3 canonical monad bundle, WilsonLineE8 quotient_order=9",
+      "per_cap": [
+        {
+          "tag": "cap_1_dense",
+          "cap": 1,
+          "eigensolver": "jacobi_dense",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            1.081787897119609
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 2,
+          "cohomology_dim_predicted": 0,
+          "orthonormality_residual": 1.1051053663732656e-13,
+          "elapsed_s": 0.0018592,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_2_dense",
+          "cap": 2,
+          "eigensolver": "jacobi_dense",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            87.15437837804984
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 1.0392577871542646e-12,
+          "elapsed_s": 226.0534094,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_2_lanczos",
+          "cap": 2,
+          "eigensolver": "lanczos",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            87.15437837806519
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 5.475738334154768e-13,
+          "elapsed_s": 31.793196299999998,
+          "rank1_collapse": true
+        },
+        {
+          "tag": "cap_3_lanczos",
+          "cap": 3,
+          "eigensolver": "lanczos",
+          "status": "OK",
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios_labelled": {
+            "m_mu_over_m_tau": 0.0,
+            "m_e_over_m_tau": 0.0,
+            "m_c_over_m_t": 0.0,
+            "m_u_over_m_t": 0.0,
+            "m_s_over_m_b": 0.0,
+            "m_d_over_m_b": 0.0
+          },
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.8237482786778391
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "orthonormality_residual": 4.853957492905637e-13,
+          "elapsed_s": 6501.4525302,
+          "rank1_collapse": true
+        }
+      ]
+    }
+  ],
+  "decision": "A",
+  "decision_explanation": "Outcome A: rank-1 collapse persists at cap=3 for both TY and Schoen. G1 structural-degeneracy diagnosis confirmed; bespoke Fix B M0+M1+M2+M3+M4 (~6.5 weeks per references/p_stage3_fix_b_m1m2_detailed_spec.md) remains the critical-path remediation.",
+  "total_elapsed_s": {
+    "cap_1_dense": 0.0626335,
+    "cap_2_dense": 499.8004899,
+    "cap_2_lanczos": 59.7801682,
+    "cap_3_lanczos": 12414.8320562
+  },
+  "lanczos_convergence_summary": {
+    "TY/Z3 cap=2": "Converged (28s wall-clock; max_iters=300, tol=1e-9; smoke n_pts=300).",
+    "TY/Z3 cap=3": "Converged (5913s wall-clock; max_iters=300, tol=1e-9. Wall-clock dominator is the dense invert_hermitian step, not the Lanczos iteration.",
+    "Schoen/Z3xZ3 cap=2": "Converged (32s wall-clock; max_iters=300, tol=1e-9; smoke n_pts=300).",
+    "Schoen/Z3xZ3 cap=3": "Converged (6501s wall-clock; max_iters=300, tol=1e-9.)"
+  },
+  "rank1_collapse_per_cap": {
+    "TY/Z3": {
+      "cap_1": true,
+      "cap_2_dense": true,
+      "cap_2_lanczos": true,
+      "cap_3_lanczos": true
+    },
+    "Schoen/Z3xZ3": {
+      "cap_1": true,
+      "cap_2_dense": true,
+      "cap_2_lanczos": true,
+      "cap_3_lanczos": true
+    }
+  },
+  "fix_b_implication": "NEEDED",
+  "fix_b_spec_doc": "references/p_stage3_fix_b_m1m2_detailed_spec.md",
+  "reference_doc": "references/p_stage3_lanczos_cap3_confirms_fix_b.md",
+  "source_smoke_runs": {
+    "cap_1_dense": "output/p_stage3_g1_cap1.json",
+    "cap_2_dense": "output/p_stage3_g1_cap2_smoke.json",
+    "cap_2_lanczos": "output/p_stage3_g1_cap2_lanczos_smoke.json",
+    "cap_3_lanczos": "output/p_stage3_g1_cap3_lanczos_smoke.json"
+  }
+}

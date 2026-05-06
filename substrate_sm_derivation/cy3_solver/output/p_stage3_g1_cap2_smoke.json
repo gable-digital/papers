@@ -1,0 +1,103 @@
+{
+  "label": "p_stage3_g1_basis_sweep",
+  "settings": {
+    "n_pts": 300,
+    "k": 2,
+    "iter_cap": 3,
+    "donaldson_tol": 0.1,
+    "seed": 12345,
+    "degrees": [
+      2
+    ]
+  },
+  "per_candidate": [
+    {
+      "label": "TY/Z3",
+      "geometry": "TianYau bicubic CP^3 x CP^3, Z/3 quotient",
+      "bundle": "AKLP (Anderson-Lukas-Palti) SU(5) monad bundle, single-Z/3 Wilson line",
+      "per_degree": [
+        {
+          "completion_degree": 2,
+          "status": "OK",
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            135.67606145130847
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "used_kernel_dim_fallback": false,
+          "quadrature_uniformity_score": 0.632800357154867,
+          "convergence_ratio": 0.8853746142103305,
+          "harmonic_orthonormality_residual": 1.5563045090749853e-15,
+          "elapsed_s": 273.6812722
+        }
+      ],
+      "verdict": "FIX_A_INSUFFICIENT: rank-1 collapse persists at all swept caps"
+    },
+    {
+      "label": "Schoen/Z3xZ3",
+      "geometry": "Schoen CP^2 x CP^2 x CP^1, (d_x,d_y,d_t)=(2,2,1), Z/3 x Z/3 quotient",
+      "bundle": "Schoen Z/3 x Z/3 canonical monad bundle, WilsonLineE8 quotient_order=9",
+      "per_degree": [
+        {
+          "completion_degree": 2,
+          "status": "OK",
+          "lepton_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "up_quark_masses_mev": [
+            0.0,
+            0.0,
+            87.15437837804984
+          ],
+          "down_quark_masses_mev": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eigenvalue_ratios": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cohomology_dim_observed": 9,
+          "cohomology_dim_predicted": 9,
+          "used_kernel_dim_fallback": false,
+          "quadrature_uniformity_score": 0.21926715859063597,
+          "convergence_ratio": 0.8096415580505459,
+          "harmonic_orthonormality_residual": 1.0392577871542646e-12,
+          "elapsed_s": 226.0534094
+        }
+      ],
+      "verdict": "FIX_A_INSUFFICIENT: rank-1 collapse persists at all swept caps"
+    }
+  ],
+  "decision": "FIX_A_INSUFFICIENT",
+  "recommended_completion_degree": null,
+  "total_elapsed_s": 499.8004899,
+  "git_revision": "0b769351ef5f1020252fc637d0ff644ed89b9724"
+}

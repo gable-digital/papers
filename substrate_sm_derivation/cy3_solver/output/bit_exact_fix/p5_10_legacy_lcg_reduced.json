@@ -1,0 +1,293 @@
+{
+  "label": "p5_10_ty_schoen_5sigma_n20",
+  "path_label": "Path A: n_pts boost",
+  "n_pts": 2000,
+  "seeds": [
+    42,
+    100,
+    12345
+  ],
+  "donaldson_iters": 30,
+  "donaldson_tol": 1e-6,
+  "compute_path": "cpu",
+  "boot_resamples": 200,
+  "boot_seed": 12345,
+  "candidates": [
+    {
+      "candidate": "TY",
+      "k": 3,
+      "n_pts": 2000,
+      "seeds": [
+        42,
+        100,
+        12345
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.8843972,
+          "n_basis": 87,
+          "iterations_run": 17,
+          "sigma_final": 0.29063351352275085,
+          "sigma_fs_identity": 0.40488947607413917,
+          "final_donaldson_residual": 6.758779729016927e-7,
+          "convergence_tier": "converged",
+          "sigma_after_donaldson": 0.29063351352275085,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        },
+        {
+          "seed": 100,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 0.9302576,
+          "n_basis": 87,
+          "iterations_run": 18,
+          "sigma_final": 0.28885721600457764,
+          "sigma_fs_identity": 0.4218565002660518,
+          "final_donaldson_residual": 8.379310403658816e-7,
+          "convergence_tier": "converged",
+          "sigma_after_donaldson": 0.28885721600457764,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        },
+        {
+          "seed": 12345,
+          "candidate": "TY",
+          "k": 3,
+          "elapsed_s": 1.0080215,
+          "n_basis": 87,
+          "iterations_run": 20,
+          "sigma_final": 0.29473209510966336,
+          "sigma_fs_identity": 0.4310770389594379,
+          "final_donaldson_residual": 5.161751450003374e-7,
+          "convergence_tier": "converged",
+          "sigma_after_donaldson": 0.29473209510966336,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        }
+      ],
+      "sigma_stats": {
+        "name": "sigma_ty_k3",
+        "n": 3,
+        "mean": 0.29140760821233064,
+        "std": 0.0030129666553365447,
+        "stderr": 0.0017395371095179205,
+        "percentile_ci_low": 0.28885721600457764,
+        "percentile_ci_high": 0.29473209510966336,
+        "bca_ci_low": 0.28885721600457764,
+        "bca_ci_high": 0.29336590124735923
+      }
+    },
+    {
+      "candidate": "Schoen",
+      "k": 3,
+      "n_pts": 2000,
+      "seeds": [
+        42,
+        100,
+        12345
+      ],
+      "per_seed": [
+        {
+          "seed": 42,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.2138281,
+          "n_basis": 27,
+          "iterations_run": 30,
+          "sigma_final": 2.424439962194202,
+          "sigma_fs_identity": 1.665668592652566,
+          "final_donaldson_residual": 0.8310500724302655,
+          "convergence_tier": "non-converged",
+          "sigma_after_donaldson": 2.424439962194202,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        },
+        {
+          "seed": 100,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.2354074,
+          "n_basis": 27,
+          "iterations_run": 30,
+          "sigma_final": 1.836502169686329,
+          "sigma_fs_identity": 1.2341685630003616,
+          "final_donaldson_residual": 0.000262721757771961,
+          "convergence_tier": "converged",
+          "sigma_after_donaldson": 1.836502169686329,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        },
+        {
+          "seed": 12345,
+          "candidate": "Schoen",
+          "k": 3,
+          "elapsed_s": 0.2192485,
+          "n_basis": 27,
+          "iterations_run": 30,
+          "sigma_final": 6.525026087470861,
+          "sigma_fs_identity": 1.1549246781596225,
+          "final_donaldson_residual": 0.0000613866887128792,
+          "convergence_tier": "converged",
+          "sigma_after_donaldson": 6.525026087470861,
+          "sigma_after_adam": null,
+          "adam_iters_run": 0
+        }
+      ],
+      "sigma_stats": {
+        "name": "sigma_schoen_k3",
+        "n": 3,
+        "mean": 3.5953227397837977,
+        "std": 2.554170900909207,
+        "stderr": 1.4746512571962396,
+        "percentile_ci_low": 1.836502169686329,
+        "percentile_ci_high": 6.52502608747086,
+        "bca_ci_low": 2.03248143385562,
+        "bca_ci_high": 6.525026087470859
+      }
+    }
+  ],
+  "discrimination": [
+    {
+      "k": 3,
+      "mean_ty": 0.29140760821233064,
+      "se_ty": 0.0017395371095179205,
+      "n_ty": 3,
+      "mean_schoen": 3.5953227397837977,
+      "se_schoen": 1.4746512571962396,
+      "n_schoen": 3,
+      "delta_sigma": -3.303915131571467,
+      "se_combined": 1.4746522831975697,
+      "n_sigma": 2.2404706310883036,
+      "n_sigma_ci_low": 1.9877688303706955,
+      "n_sigma_ci_high": 3605.7990710716167,
+      "n_sigma_bca_ci_low": 1.9865174530067484,
+      "n_sigma_bca_ci_high": 2.989897383239874,
+      "n_sigma_boot_resamples": 200,
+      "subset_label": "conservative"
+    }
+  ],
+  "discrimination_balanced_only": [
+    {
+      "k": 3,
+      "mean_ty": 0.29140760821233064,
+      "se_ty": 0.0017395371095179205,
+      "n_ty": 3,
+      "mean_schoen": 3.5953227397837977,
+      "se_schoen": 1.4746512571962396,
+      "n_schoen": 3,
+      "delta_sigma": -3.303915131571467,
+      "se_combined": 1.4746522831975697,
+      "n_sigma": 2.2404706310883036,
+      "n_sigma_ci_low": 1.9877688303706955,
+      "n_sigma_ci_high": 3605.7990710716167,
+      "n_sigma_bca_ci_low": 1.9865174530067484,
+      "n_sigma_bca_ci_high": 2.989897383239874,
+      "n_sigma_boot_resamples": 200,
+      "subset_label": "balanced_only_iters_ge_10"
+    }
+  ],
+  "discrimination_strict_converged": [],
+  "discrimination_canonical": [
+    {
+      "k": 3,
+      "mean_ty": 0.29140760821233064,
+      "se_ty": 0.0017395371095179205,
+      "n_ty": 3,
+      "mean_schoen": 4.180764128578595,
+      "se_schoen": 2.344261958892266,
+      "n_schoen": 2,
+      "delta_sigma": -3.889356520366264,
+      "se_combined": 2.3442626042955936,
+      "n_sigma": 1.6590959192197419,
+      "n_sigma_ci_low": 1.6576782380179034,
+      "n_sigma_ci_high": 10531.304652105993,
+      "n_sigma_bca_ci_low": 1.6576782380179034,
+      "n_sigma_bca_ci_high": 888.2216728917132,
+      "n_sigma_boot_resamples": 200,
+      "subset_label": "canonical"
+    }
+  ],
+  "discrimination_reference": [
+    {
+      "k": 3,
+      "mean_ty": 0.29140760821233064,
+      "se_ty": 0.0017395371095179205,
+      "n_ty": 3,
+      "mean_schoen": 4.180764128578595,
+      "se_schoen": 2.344261958892266,
+      "n_schoen": 2,
+      "delta_sigma": -3.889356520366264,
+      "se_combined": 2.3442626042955936,
+      "n_sigma": 1.6590959192197419,
+      "n_sigma_ci_low": 1.6576782380179034,
+      "n_sigma_ci_high": 10531.304652105993,
+      "n_sigma_bca_ci_low": 1.6576782380179034,
+      "n_sigma_bca_ci_high": 888.2216728917132,
+      "n_sigma_boot_resamples": 200,
+      "subset_label": "reference_retrim"
+    }
+  ],
+  "boot_seed_jitter": [
+    {
+      "label": "canonical_k3",
+      "primary_seed": 12345,
+      "primary_ci_low": 1.6576782380179034,
+      "seed_999_ci_low": 1.658260738497056,
+      "seed_31415_ci_low": 1.658260738497056,
+      "max_jitter_sigma": 0.0005825004791526478
+    },
+    {
+      "label": "reference_retrim_k3",
+      "primary_seed": 12345,
+      "primary_ci_low": 1.6576782380179034,
+      "seed_999_ci_low": 1.658260738497056,
+      "seed_31415_ci_low": 1.658260738497056,
+      "max_jitter_sigma": 0.0005825004791526478
+    }
+  ],
+  "early_bail_seeds": [],
+  "balanced_min_iters": 10,
+  "converged_residual_threshold": 0.001,
+  "ambiguous_residual_threshold": 0.01,
+  "max_n_sigma": 2.2404706310883036,
+  "max_n_sigma_k": 3,
+  "five_sigma_achieved": false,
+  "total_elapsed_s": 3.4936552,
+  "git_revision": "ad12bfc83d7f7038f38b2d9a7eb5f4ba5d451a64",
+  "repro_manifest": {
+    "git_revision": "ad12bfc83d7f7038f38b2d9a7eb5f4ba5d451a64",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-05T22:59:22Z",
+    "command_line": [
+      "C:\\Users\\egabl\\dev\\gds-monorepo\\book\\scripts\\cy3_substrate_discrimination\\rust_solver\\target\\release\\p5_10_ty_schoen_5sigma.exe",
+      "--n-seeds",
+      "3",
+      "--n-pts",
+      "2000",
+      "--donaldson-iters",
+      "30",
+      "--boot-resamples",
+      "200",
+      "--output",
+      "output/bit_exact_fix/p5_10_legacy_lcg_reduced.json"
+    ],
+    "n_threads_rayon": 24
+  },
+  "repro_log_path": "output/bit_exact_fix/p5_10_legacy_lcg_reduced.replog",
+  "repro_log_final_chain_sha256_hex": "bff32e9ec0214fb8d4d060ff9b888e7bb983095d035cab9a561dc34548c55d36",
+  "repro_log_n_events": 8
+}

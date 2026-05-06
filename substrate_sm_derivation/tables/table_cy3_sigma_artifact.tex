@@ -1,6 +1,6 @@
 % sigma-channel basis-size sign-reversal: empirical defence for sigma exclusion from BF.
 % Source: book/scripts/cy3_substrate_discrimination/rust_solver/output/p_basis_convergence_prod.json
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{Empirical defence of the $\sigma$-channel exclusion from the multi-channel Bayes factor: matched-basis-size paired bootstrap test on TY-vs-Schoen, $k=3$, $n_{\rm pts}=40{,}000$, donaldson\_iters$=100$, donaldson\_tol$=10^{-6}$, $20$ seeds, $B=10^4$ resamples, boot\_seed $\in \{12345, 999, 31415\}$ for jitter check. At native basis sizes $\sigma_{\rm TY}<\sigma_{\rm Schoen}$ as expected. \textbf{When the two metrics' bases are truncated to a common dimension $n_b=27$ (Schoen's native value), the sign of the $\sigma$-gap inverts}, with disjoint BCa CIs and paired-bootstrap probability of opposite sign equal to unity over $10^4$ resamples. The artifact magnitude is $\sim 3\times$ the native gap, in the opposite direction. This is the textbook signature of a basis-size-induced artifact, not a likelihood contribution, and is the empirical basis for excluding $\sigma$ from the model-comparison Bayes factor of Tab.~\ref{tab:cy3-bayesian-channels}.}
 \label{tab:cy3-sigma-artifact}
@@ -16,4 +16,4 @@ $\mathbb{P}(\mathrm{opposite\ sign}\mid \mathrm{boot})$ & \multicolumn{2}{c}{$\m
 Bootstrap-seed jitter on BCa-low & \multicolumn{2}{c}{$0.52$ (range over $\{12345, 999, 31415\}$)} \\
 \end{tabular}
 \end{ruledtabular}
-\end{table}
+\end{table*}

@@ -1,6 +1,6 @@
 % sigma-channel discriminability k-scan (supporting evidence; sigma not in BF).
 % Sources: p5_10_ty_schoen_5sigma.json, p5_10_k4_damped.json, p5_10_k5_damped_relaunch.json
-\begin{table}[h]
+\begin{table*}[t]
 \centering
 \caption{$\sigma$-channel discriminability $k$-scan on TY-vs-Schoen, Donaldson balanced metric (no Adam refinement), $n_{\rm pts}=40{,}000$, $20$ seeds, BCa-95\% CI from $B=10^4$ bootstrap resamples (DiCiccio--Efron 1996). Strict-converged tier: $\mathrm{residual}<10^{-6}$ AND $\mathrm{iters}<\mathrm{cap}$, no Tukey trim, no guard-snapshot inflation. The $k=3$ row is the publication discriminability headline; $k=4,5$ are reported as \emph{supporting tiers at higher basis order}, not as parallel publication results. The monotone shrinkage of the strict-converged Schoen subset ($16/20 \to 7/20 \to 6/20$) as Schoen's basis dimension grows ($27 \to 48 \to 75$) is the empirical signature of $\sigma$ as a basis-size-saturated indicator at finite $k$, motivating exclusion from the model-comparison Bayes factor (Tab.~\ref{tab:cy3-sigma-artifact}).}
 \label{tab:cy3-sigma-kscan}
@@ -13,4 +13,4 @@ $4$ (damped, supporting)   & $0.278$ & $13.21$ & $3.82\sigma$ & $[2.48,\ 6.37]$ 
 $5$ (supporting)           & $0.295$ & $13.05$ & $10.87\sigma$ & $[8.79,\ 15.01]$ & $6/20\,/\,75$ \\
 \end{tabular}
 \end{ruledtabular}
-\end{table}
+\end{table*}

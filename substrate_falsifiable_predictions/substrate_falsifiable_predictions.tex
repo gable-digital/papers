@@ -1,0 +1,398 @@
+\documentclass[reprint,amsmath,amssymb,aps,prd,longbibliography,floatfix]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{longtable}
+% Force longtable captions to span the full text width (both columns),
+% otherwise revtex's reprint mode renders them at column width.
+\setlength{\LTcapwidth}{\textwidth}
+\sisetup{
+    range-units = single,
+    separate-uncertainty = true,
+    table-align-uncertainty = true,
+}
+
+\begin{document}
+
+\title{Substrate Framework: Falsifiable Observational Predictions}
+
+\author{Eliot Gable}
+\email{10015996+egable@users.noreply.github.com}
+\affiliation{Independent Researcher}
+
+\date{2026-05-05}
+
+\begin{abstract}
+\noindent
+A live audit of the substrate-framework's quantitative predictions
+across particle, gravitational, and cosmological observables. Each
+predicted value is paired with the current best measurement and the
+deviation, anchored on three independent reading paths (CODATA
+$m_e$, CODATA $m_\mu$~\cite{CODATA2022}, and the framework's own
+Higgs vev $\approx 246.21965$~GeV). All values computed at
+$\mathrm{mp.prec}=500$. Status flags: $\dagger$ tension, $\ddagger$
+open prediction, $\dagger\dagger$ regime-tension. As of 2026-05-05,
+no entry is in falsifying tension ($\geq 3\sigma$) with observation.
+Three entries ($\rho_\Lambda$, $H_0$ tension magnitude, TOV bound)
+are flagged~$\ddagger$ pending closure of upstream prediction work;
+38 distinct observables are auto-flagged blue (estimate-pending);
+14 half-integer-slot dark-mode candidates are auto-flagged violet
+(mass predicted, but the framework cannot yet decide whether the
+slot is occupied). Cell counts in Tables~1--2 exceed observable
+counts because each observable is rendered across three anchor
+columns. This document is intended as a falsification target.
+\end{abstract}
+
+%% ============================================================================
+%% PLAIN-TEXT ABSTRACT (LaTeX-macro-free; for arXiv submission portal etc.)
+%% ============================================================================
+\iffalse
+
+A live audit of the substrate-framework's quantitative predictions across
+particle, gravitational, and cosmological observables. Each predicted value
+is paired with the current best measurement and the deviation, anchored on
+three independent reading paths (CODATA m_e, CODATA m_mu, framework Higgs
+vev approx 246.21965 GeV). All values computed at mp.prec = 500. Status
+flags: dagger tension, double-dagger open prediction, dagger-dagger regime-tension.
+As of 2026-05-05, no entry is in falsifying tension with observation;
+three entries (rho_Lambda, H_0 tension magnitude, TOV bound) are flagged
+double-dagger pending closure of upstream prediction work; 38 observables
+are auto-flagged blue (estimate-pending); 14 half-integer-slot dark-mode
+candidates are auto-flagged violet (mass predicted but slot occupancy
+unresolved). This document is intended as a falsification target.
+
+\fi
+
+\maketitle
+
+\section{Methodology}
+
+Predictions are computed from a single mass-anchor parameter
+$h_{\rm eff}$ that is independently fixed three ways: from CODATA
+$m_e$~\cite{CODATA2022}, from CODATA $m_\mu$, and from the
+framework's own Higgs vev. The three anchor reading paths agree
+to $\sim 158$~ppt (max pairwise relative deviation across the full
+42-particle catalogue), with the spread carried mostly by the
+e-anchor-vs-vev-anchor pair ($\sim 158$~ppt) and the
+$\mu$-anchor-vs-vev-anchor pair ($\sim 153$~ppt); the
+e-anchor-vs-$\mu$-anchor pair agrees at $\sim 4$~ppt. All
+computations are performed at $\mathrm{mp.prec}=500$ in mpmath; no
+floating-point compounding occurs.
+
+\paragraph{What each anchor column means.}
+The three anchor columns in Tables~1 and~2 are not three
+independent measurements; each carries a specific epistemic status:
+\begin{itemize}\itemsep0pt
+\item The \textbf{electron-anchor} column inherits the
+electron-mass CODATA central value as its base reading; every
+prediction in that column is propagated from that single
+experimental input. The column's residual against any other
+observable is therefore bounded below by the CODATA $m_e$
+experimental uncertainty (and above by the framework's structural
+precision).
+\item The \textbf{muon-anchor} column does the same with the
+muon-mass CODATA central value as its single experimental input.
+\item The \textbf{vev-anchor} column is qualitatively different:
+it carries the framework's geometry-intrinsic prediction of the
+Higgs vev as its base reading, with no CODATA particle-mass input.
+The values in that column are pure framework predictions; their
+residual against observation is not bounded below by any
+experimental uncertainty band on a measured anchor.
+\end{itemize}
+A reader comparing the three columns is therefore comparing two
+experimentally-anchored readings against one geometry-only
+reading; agreement of all three to $\sim 4$~ppt is consistency
+between two independent CODATA inputs and one parameter-free
+geometric prediction.
+
+\paragraph{Auto-flag legend (appears on every cell).} Each predicted
+value's deviation against the observed value is automatically
+compared against the observation's published experimental
+uncertainty $\sigma_{\rm obs}$ (covering $\sim 70$ observables):
+\begin{itemize}\itemsep0pt
+\item \textcolor{OliveGreen}{$\checkmark$ \textbf{green:}}
+$|{\rm dev}| \leq 1\,\sigma_{\rm obs}$ --- prediction sits within
+the experimental band.
+\item \textcolor{orange}{$\bullet$ \textbf{orange:}}
+$1\,\sigma_{\rm obs} < |{\rm dev}| \leq 3\,\sigma_{\rm obs}$ ---
+marginal.
+\item \textcolor{red}{$\times$ \textbf{red:}}
+$|{\rm dev}| > 3\,\sigma_{\rm obs}$ --- outside the experimental
+band; falsifying tension if reproducible.
+\item \textcolor{blue}{$?$ \textbf{blue:}} estimate-pending; the
+prediction depends on upstream work that is not yet closed, so
+the deviation is \emph{not yet falsifiable}. The work-remaining
+tally (\S~Work remaining) names which item gates each blue
+prediction.
+\item \textcolor{violet}{$?$ \textbf{violet:}} mass predicted, but
+the framework cannot yet decide whether this candidate slot is
+physically occupied. Used for spin-$\tfrac12$ half-integer-slot
+dark-mode candidates.
+\item plain (no colour): $\sigma_{\rm obs}$ unavailable for this
+observable; status undetermined.
+\end{itemize}
+
+\section{SM mass spectrum, electroweak sector, mixing}
+
+\begin{widetext}
+\input{tables/table_complete}
+\end{widetext}
+
+\section{Gravitational and cosmological observables}
+
+\begin{widetext}
+\input{tables/table_extended_predictions}
+\end{widetext}
+
+\section{Predicted but unobserved (falsification targets)}
+
+\noindent\textbf{Discrete dark-matter spectrum (21 modes total: 13
+with specific mass predictions, 8 high-mass with envelope).}
+The framework predicts a discrete spectrum of dark-matter masses,
+none yet detected. The 13 specific-mass predictions are:
+\begin{itemize}\itemsep0pt
+\item \emph{Ultralight band (7 modes):} 0.62~$\mu$eV, 2.23~neV,
+8.03~peV, 28.9~feV, 0.10~aeV, 0.37~zeV, 1.34~zeV. The
+Lyman-$\alpha$-forest ultralight-DM bound $m \gtrsim 2\times
+10^{-20}$~eV at 95\%~CL~\cite{RogersPeiris2021} excludes the
+1.34~zeV mode; the next-lightest mode (0.37~zeV is below; 0.10~aeV
+$\sim 19\times$ above the bound) is above the bound.
+\item \emph{MeV--GeV band (6 modes):} 0.83~MeV, 5.83~MeV,
+46.6~MeV, 1.49~GeV, 4.82~GeV, 593~GeV.
+\end{itemize}
+The remaining 8 high-mass modes lie within the envelope
+$[191~\mathrm{GeV},\,1.1~\mathrm{EeV}]$; specific masses
+$\ddagger$~open.
+
+\noindent\textbf{CP rationals (framework predictions).}
+$\delta_{\rm CP}^{\rm PMNS} = 11\pi/10 \approx 198^\circ$ (consistent
+with NuFit-6.0~\cite{NuFit60} normal ordering: at the IC24 fit
+$\delta_{\rm CP}^{\rm best} = 212^\circ$ with asymmetric range
+$-41^\circ/+26^\circ$, the framework's $198^\circ$ sits at
+$\sim 0.3\sigma$ on the low-$\delta$ side; awaiting DUNE/HyperK).
+$\delta_{\rm CKM} = 11\pi/30 \approx 1.152$~rad (within $\sim 1\sigma$
+of the CKMfitter/PDG~2024 central value~\cite{CKMfitter2005,PDG2024}).
+
+\noindent\textbf{Three matter generations ($N_{\rm gen} = 3$).}
+The framework predicts exactly three chiral fermion generations.
+
+\noindent\textbf{Strong CP: $\theta_{\rm QCD} = 0$ exactly}, with no
+PQ axion required.
+
+\noindent\textbf{Internal topology-discrimination test: $|t| = 6.92\sigma$.}
+A measurement-level discrimination test against the leading
+alternative scenario clears $5\sigma$ on both percentile and BCa
+$95\%$-CI floors.
+
+\noindent\textbf{No quantum-gravity scale below $\sim 10\,E_{\rm Planck}$;
+no fourth chiral generation; no fundamental scalar beyond Higgs.}
+
+\section{What would falsify the framework}
+
+The list below is mixed: items marked $\dagger$ are committed and
+falsifiable today; items marked $\ddagger$ become falsifiable once
+upstream prediction work closes (see \S~Work remaining).
+
+\begin{enumerate}\itemsep0pt
+\item[$\dagger$] Fourth chiral fermion generation observed.
+\item[$\dagger$] $\theta_{\rm QCD}$ measured nonzero.
+\item[$\ddagger$] Direct-detection dark-matter peak at a mass
+either (a) outside the union of the 13 specific-mass predictions
+$\pm$ predicted width AND outside the high-mass envelope
+$[191~\mathrm{GeV},\,1.1~\mathrm{EeV}]$, or (b) inside the high-mass
+envelope but inconsistent with the 8 high-mass values once those
+are committed.
+\item[$\ddagger$] $\delta_{\rm CP}^{\rm PMNS}$ measured inconsistent
+with $11\pi/10$ at $\geq 3\sigma$ in normal ordering. (Currently
+auto-flagged blue; becomes a committed-falsifiable prediction once
+the upstream PMNS-mixing work closes.)
+\item[$\dagger$] Topology-discrimination null result: a reproducible
+measurement-level test showing the framework's preferred scenario
+loses to the leading alternative at $> 5\sigma$.
+\item[$\dagger$] Astrophysical detection of an azimuthal mode-pattern
+on a rotating compact body (e.g.\ pulsar surface oscillations via
+NICER or successor X-ray timing missions) whose symmetry group,
+classified as a finite subgroup of $O(3)$, falls outside
+$\{\mathbb{Z}_n, D_n, T, O, I\}$.
+\item[$\ddagger$] Stable non-collapsed compact object whose mass
+exceeds the framework-predicted substrate TOV bound $M_{\rm sub-TOV}$
+(value $\ddagger$~open; bound is geometric at saturation,
+$r_{\rm phys} = r_s$).
+\item[$\dagger$] CMB-S4 measurement of $n_s$ inconsistent with the
+framework's prediction $n_s = (N-2)/N$ at the $\Delta n_s\sim 10^{-4}$
+level, with $N=60$ as the framework canonical value
+($n_s = 58/60 = 0.9667$ at $N=60$ vs.\ $n_s = 56/58 = 0.9655$ at
+$N=58$ differ by $\sim 1.2\times 10^{-3}$, so the $N$-dependence
+is itself part of the falsifiable claim).
+\item[$\dagger$] Frame-dependent $c$, vacuum dispersion, or any
+departure from speed-of-light universality at any energy scale.
+\item[$\dagger$] Experimental confirmation of a quantum-gravity
+scale below $\sim 10\,E_{\rm Planck} \approx 10^{20}$~GeV (via
+gravitational decoherence at observer-energies $\ll E_{\rm Planck}$,
+or any single-graviton-exchange process detected at sub-Planckian
+energies).
+\end{enumerate}
+
+\section{Work remaining (prioritized by unblock count)}
+
+The two tables together carry 38 distinct blue-flagged
+observables that are \emph{not yet falsifiable} because the
+upstream prediction work that would commit them at structural
+precision is not yet closed. The list below tallies open work
+items in priority order, counting how many blue observables each
+item turns into committed predictions.
+
+\paragraph{J1. Lepton/quark mixing structure ---
+unblocks 12 observables.}
+Blocks: PMNS $\sin^2\theta_{12}$, $\sin^2\theta_{23}$,
+$\sin^2\theta_{13}$, $\delta_{\rm CP}$ (4); CKM
+$\sin^2\theta_{12}^{\rm CKM}$, $\sin^2\theta_{23}^{\rm CKM}$,
+$\sin^2\theta_{13}^{\rm CKM}$, $\delta_{\rm CKM}$ (4); Higgs partial
+widths $\Gamma_{H\to bb,\tau\tau,cc,ff}$ (4).
+
+\paragraph{J2. Gauge-coupling precision --- unblocks 9 observables.}
+Blocks: $\alpha_{\rm EM}^{\rm tree}$, $\alpha_2$, $\alpha_1^{\rm EW}$,
+$\alpha_1^{\rm GUT}$ (4); $g_2$, $g_1^{\rm EW}$, $g_1^{\rm GUT}$ (3);
+$\sin^2\theta_W$ (1); $Z$ boson cascading from the
+$W$-mass$+\sin^2\theta_W$ identity (1).
+
+\paragraph{J3. $\alpha_{\rm EM}$ hadronic running ---
+unblocks 5 observables.} Blocks: lepton anomalous magnetic
+moments $a_e^{\rm LO}$, $a_\mu^{\rm LO}$, $a_\tau^{\rm LO}$ (3);
+Bohr radius $a_0$ (1); Rydberg energy $\mathrm{Ry}$ (1).
+
+\paragraph{J4. Gravity / cosmology block --- unblocks 4
+observables.} A single closure decomposes into five sub-items:
+(a) the form of the MOND interpolation function (cf.\
+Famaey--Binney~\cite{FamaeyBinney2005} and the radial-acceleration
+relation~\cite{McGaughLelliSchombert2016}); (b) the prefactor in
+the relation $a_0 = c H_0/(2\pi)$ (cf.\ Milgrom~1983
+\cite{Milgrom1983}); (c) the residual $\sim 50\%$ Friedmann
+coefficient that closes $\Lambda_{\rm crit-tension} = (H_0/c)^2$
+to the full $\Lambda$CDM relation; (d) the local-vs-CMB $H_0$
+regime tension at $\sim 9\%$ (SH0ES~\cite{Riess2022}
+vs.\ Planck~\cite{Planck2018VI}); (e) the dark-mode spatial
+density at cluster scales needed for combined-MOND-plus-dark-mode
+acceleration tests. Blocks: $\rho_\Lambda$ (dark-tower contribution);
+MOND $a_0$; $\Lambda_{\rm crit-tension}$; $H_0$ regime tension.
+
+\paragraph{J5. NLO electroweak radiative corrections ---
+unblocks 4 observables.} Blocks: $\Gamma_W$, $\Gamma_Z$,
+$\Gamma_Z^{\rm invisible}$, $\Gamma_Z^{\rm leptonic}$ (4).
+
+\paragraph{J6. NLO$+$ QED/QCD corrections for lepton lifetimes
+--- unblocks 2 observables.} Blocks: $\tau_\mu$, $\tau_\tau$ (2).
+
+\paragraph{J7. $\Lambda_{\rm QCD}$ closure --- unblocks 1
+observable.} Blocks: $\alpha_s$ at lower scales (1).
+
+\paragraph{J8. Thermal-history closure --- unblocks 1 observable.}
+Blocks: $N_{\rm eff}$ at recombination (1).
+
+\paragraph{Total unblock count.}
+J1 (12) $+$ J2 (9) $+$ J3 (5) $+$ J4 (4) $+$ J5 (4) $+$ J6 (2)
+$+$ J7 (1) $+$ J8 (1) $=$ 38 observables, matching the count of
+distinct blue-flagged observables across both tables.
+
+\paragraph{Strategic note.}
+J1 and J2 together account for 21 of 38 blue observables (55\%);
+J3 and J7 are tightly coupled. Realistically, closing J1$+$J2$+$J3$+$J7
+together unblocks 27 of 38 (71\%); J4 is structurally independent
+and is the second-priority closure.
+
+\paragraph{$\ddagger$-flagged items.} $\rho_\Lambda$ and the
+$H_0$ regime tension fall under J4 (sub-items~c and~d). The TOV
+bound's nuclear-scale closure is a separate item not yet in the
+J1--J8 tally; it remains $\ddagger$-flagged.
+
+\section{Provenance}
+
+All numerical content auto-generated at $\mathrm{mp.prec}=500$.
+Source code, per-section reproducibility traces, and JSON output
+artefacts mirrored at
+\href{https://github.com/gable-digital/papers}{github.com/gable-digital/papers}.
+
+\begin{thebibliography}{99}
+
+\bibitem{CKMfitter2005}
+J.~Charles \emph{et al.} (CKMfitter Group),
+``CP violation and the CKM matrix: assessing the impact of the asymmetric
+$B$ factories,''
+\emph{Eur.~Phys.~J.~C} \textbf{41}, 1--131 (2005),
+\href{https://doi.org/10.1140/epjc/s2005-02169-1}{doi:10.1140/epjc/s2005-02169-1},
+\href{https://arxiv.org/abs/hep-ph/0406184}{arXiv:hep-ph/0406184}.
+
+\bibitem{NuFit60}
+I.~Esteban, M.~C.~Gonzalez-Garcia, M.~Maltoni, I.~Martinez-Soler,
+J.~P.~Pinheiro, and T.~Schwetz,
+``NuFit-6.0: updated global analysis of three-flavor neutrino oscillations,''
+\emph{J.~High Energy Phys.} \textbf{2024}, 216 (2024),
+\href{https://doi.org/10.1007/JHEP12(2024)216}{doi:10.1007/JHEP12(2024)216},
+\href{https://arxiv.org/abs/2410.05380}{arXiv:2410.05380}.
+
+\bibitem{CODATA2022}
+P.~J.~Mohr, D.~B.~Newell, B.~N.~Taylor, and E.~Tiesinga,
+``CODATA recommended values of the fundamental physical constants: 2022,''
+\emph{Rev.~Mod.~Phys.} \textbf{97}, 025002 (2025),
+\href{https://doi.org/10.1103/RevModPhys.97.025002}{doi:10.1103/RevModPhys.97.025002},
+\href{https://arxiv.org/abs/2409.03787}{arXiv:2409.03787}.
+
+\bibitem{FamaeyBinney2005}
+B.~Famaey and J.~Binney,
+``Modified Newtonian dynamics in the Milky Way,''
+\emph{Mon.~Not.~R.~Astron.~Soc.} \textbf{363}, 603--608 (2005),
+\href{https://doi.org/10.1111/j.1365-2966.2005.09474.x}{doi:10.1111/j.1365-2966.2005.09474.x},
+\href{https://arxiv.org/abs/astro-ph/0506723}{arXiv:astro-ph/0506723}.
+
+\bibitem{McGaughLelliSchombert2016}
+S.~S.~McGaugh, F.~Lelli, and J.~M.~Schombert,
+``The radial acceleration relation in rotationally supported galaxies,''
+\emph{Phys.~Rev.~Lett.} \textbf{117}, 201101 (2016),
+\href{https://doi.org/10.1103/PhysRevLett.117.201101}{doi:10.1103/PhysRevLett.117.201101},
+\href{https://arxiv.org/abs/1609.05917}{arXiv:1609.05917}.
+
+\bibitem{Milgrom1983}
+M.~Milgrom,
+``A modification of the Newtonian dynamics as a possible alternative to
+the hidden mass hypothesis,''
+\emph{Astrophys.~J.} \textbf{270}, 365--370 (1983),
+\href{https://doi.org/10.1086/161130}{doi:10.1086/161130}.
+
+\bibitem{PDG2024}
+S.~Navas \emph{et al.} (Particle Data Group),
+``Review of particle physics,''
+\emph{Phys.~Rev.~D} \textbf{110}, 030001 (2024),
+\href{https://doi.org/10.1103/PhysRevD.110.030001}{doi:10.1103/PhysRevD.110.030001}.
+
+\bibitem{Planck2018VI}
+N.~Aghanim \emph{et al.} (Planck Collaboration),
+``Planck 2018 results.~VI.~Cosmological parameters,''
+\emph{Astron.~Astrophys.} \textbf{641}, A6 (2020),
+\href{https://doi.org/10.1051/0004-6361/201833910}{doi:10.1051/0004-6361/201833910},
+\href{https://arxiv.org/abs/1807.06209}{arXiv:1807.06209}.
+
+\bibitem{Riess2022}
+A.~G.~Riess \emph{et al.},
+``A comprehensive measurement of the local value of the Hubble constant
+with $1~\mathrm{km\,s^{-1}\,Mpc^{-1}}$ uncertainty from the Hubble Space
+Telescope and the SH0ES Team,''
+\emph{Astrophys.~J.~Lett.} \textbf{934}, L7 (2022),
+\href{https://doi.org/10.3847/2041-8213/ac5c5b}{doi:10.3847/2041-8213/ac5c5b},
+\href{https://arxiv.org/abs/2112.04510}{arXiv:2112.04510}.
+
+\bibitem{RogersPeiris2021}
+K.~K.~Rogers and H.~V.~Peiris,
+``Strong bound on canonical ultra-light axion dark matter from the
+Lyman-alpha forest,''
+\emph{Phys.~Rev.~Lett.} \textbf{126}, 071302 (2021),
+\href{https://doi.org/10.1103/PhysRevLett.126.071302}{doi:10.1103/PhysRevLett.126.071302},
+\href{https://arxiv.org/abs/2007.12705}{arXiv:2007.12705}.
+
+\end{thebibliography}
+
+\end{document}
