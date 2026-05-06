@@ -1,0 +1,275 @@
+{
+  "manifest": {
+    "git_revision": "d265309e75fec06bd57e60b3045ddafd74096014",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-06T15:33:16Z",
+    "command_line": [
+      "C:\\Users\\egabl\\dev\\gds-monorepo\\book\\scripts\\cy3_substrate_discrimination\\rust_solver\\target-dp9-w-3\\release\\p_dp9_w_lift_compute.exe",
+      "--output",
+      "output/p_dp9_w_lift_compute.json"
+    ],
+    "n_threads_rayon": 24
+  },
+  "config": {
+    "method": "dp9_bbw_w_extension_ses_partial_lift",
+    "output": "output/p_dp9_w_lift_compute.json",
+    "scope": "dP9-side only (X̃-side Leray chase deferred)"
+  },
+  "build_id": "d265309e_dp9_w_lift",
+  "dp9_ambient": [
+    2,
+    1
+  ],
+  "dp9_relations": [
+    [
+      3,
+      1
+    ]
+  ],
+  "line_probes": [
+    {
+      "line": [
+        0,
+        0
+      ],
+      "h_star": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "chi_rr": 1,
+      "chi_bbw": 1,
+      "rr_match": true
+    },
+    {
+      "line": [
+        1,
+        0
+      ],
+      "h_star": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "chi_rr": 3,
+      "chi_bbw": 3,
+      "rr_match": true
+    },
+    {
+      "line": [
+        0,
+        1
+      ],
+      "h_star": [
+        2,
+        1,
+        0,
+        0
+      ],
+      "chi_rr": 1,
+      "chi_bbw": 1,
+      "rr_match": true
+    },
+    {
+      "line": [
+        -1,
+        0
+      ],
+      "h_star": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chi_rr": 0,
+      "chi_bbw": 0,
+      "rr_match": true
+    },
+    {
+      "line": [
+        0,
+        -1
+      ],
+      "h_star": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "chi_rr": 1,
+      "chi_bbw": 1,
+      "rr_match": true
+    },
+    {
+      "line": [
+        1,
+        1
+      ],
+      "h_star": [
+        6,
+        0,
+        0,
+        0
+      ],
+      "chi_rr": 6,
+      "chi_bbw": 6,
+      "rr_match": true
+    },
+    {
+      "line": [
+        -1,
+        1
+      ],
+      "h_star": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "chi_rr": -3,
+      "chi_bbw": -3,
+      "rr_match": true
+    },
+    {
+      "line": [
+        -2,
+        2
+      ],
+      "h_star": [
+        0,
+        12,
+        0,
+        0
+      ],
+      "chi_rr": -12,
+      "chi_bbw": -12,
+      "rr_match": true
+    },
+    {
+      "line": [
+        -3,
+        1
+      ],
+      "h_star": [
+        0,
+        8,
+        0,
+        0
+      ],
+      "chi_rr": -8,
+      "chi_bbw": -8,
+      "rr_match": true
+    }
+  ],
+  "w_tensor_l_summands": [
+    {
+      "line": [
+        1,
+        0
+      ],
+      "h_a_l_minus_2f": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "h_b_pre_ideal": [
+        9,
+        0,
+        0,
+        0
+      ],
+      "h_b_post_ideal_singleton": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "h_b_total": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "chi_w_tensor_l": -3,
+      "h_w_lower_bound": [
+        0,
+        3,
+        0,
+        0
+      ],
+      "h_w_upper_bound": [
+        0,
+        3,
+        0,
+        0
+      ]
+    },
+    {
+      "line": [
+        2,
+        0
+      ],
+      "h_a_l_minus_2f": [
+        0,
+        6,
+        0,
+        0
+      ],
+      "h_b_pre_ideal": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "h_b_post_ideal_singleton": [
+        9,
+        0,
+        0,
+        0
+      ],
+      "h_b_total": [
+        18,
+        0,
+        0,
+        0
+      ],
+      "chi_w_tensor_l": 12,
+      "h_w_lower_bound": [
+        12,
+        6,
+        0,
+        0
+      ],
+      "h_w_upper_bound": [
+        18,
+        6,
+        0,
+        0
+      ]
+    }
+  ],
+  "total_chi_dp9_side": 18,
+  "interpretation": "DP9-W-LIFT partial computation:\n\n(i) dP9 BBW infrastructure validated against closed-form Riemann-Roch\non 9 probe line bundles — all matched.\n\n(ii) For each K-theoretic summand of [V_1 ⊗ V_2*] on X̃, the dP9-side\ncohomology of W ⊗ L_base was computed via the BHOP §6.1 Eq. 85\nSES `0 → O(-2f) → W → 2·O(2f) ⊗ I_9 → 0` with generic-position\nideal-sheaf twist for the 9 points of the Z/3×Z/3 orbit.\n\n(iii) Total K-theoretic χ_dP9 contribution = 18\n\n(iv) DEFINITIVE Ext¹ value not yet derivable from this computation\nalone. The final answer requires the Leray spectral sequence\nchase that pushes the X̃-side line bundle (with its CP²_x = τ_1\ndegree) forward to dP9 along π_2: X̃ → B_2; the fiber-cohomology\nR^* π_{2*} of `O(a τ_1)` involves the relative dualising\nsheaf of the elliptic fibration B_1 → CP¹ pulled back along\nB_2 → CP¹, which is non-trivial Schoen-CY3 geometry and is\noutside the scope of this single-stream binary.",
+  "open_research_items": [
+    "Resolve the rank(W) = 2 (code) vs rank(W) = 3 (literal BHOP Eq. 85 reading) discrepancy. Likely the BHOP `2·O(2f)` notation means the rank-2 trivial bundle tensored with O(2f), not two copies. Cross-check against BHOP-2005 hep-th/0505041 PDF directly.",
+    "Implement R^* π_{2*} for the elliptic fibration π_2: X̃ → B_2 = dP9. The fiber over y ∈ B_2 is the cubic curve E_y ⊂ CP²_x cut by F_1(x, t(y)) = 0. For O_X̃(a, b, c)|_fiber = O_E(3a) the Künneth + relative duality gives R^q π_{2*} = (rank |3a| bundle on B_2) ⊗ O_{B_2}(b, c) for q = (a < 0 ? 1 : 0); explicit identification of the bundle requires the relative dualising sheaf of the elliptic fibration.",
+    "Push the dP9-side computation H^*(B_2, W ⊗ R^q π_{2*}(O_{X̃}(a,b,c))) through the Leray E_2 → E_∞ spectral sequence chase. Combine with the χ_dP9 results in this binary to produce h^p(X̃, V_1 ⊗ V_2*) per K-theoretic summand.",
+    "Project onto the Z/3 × Z/3 invariant subspace via character decomposition (the BBW Schoen module already does this via the Koszul chase; the analogue for the W-twisted case requires tracking Γ-equivariant W-module characters).",
+    "Resolve the BHOP V_1 rank(2) vs line-bundle expansion rank(4) discrepancy. Most likely V_1 in the paper is a non-split rank-2 extension whose K-theoretic class equals 2·[O] + 2·[O(-τ_1+τ_2)] but whose actual rank is 2; the K-theoretic Euler characteristic is the same either way, but the SES bounds on h^p will differ.",
+    "Once all of (i)-(iv) are complete: derive κ ≠ 0 and propagate through the rank-4 H¹ frame-irrep redistribution pipeline to test whether {Q, u^c, e^c} now appear at non-zero κ."
+  ],
+  "replog_final_chain_sha256": "fcc30d360e2ca0eba91c616baab9370960653e9c8d96c1a72163d9660c8db1d1"
+}

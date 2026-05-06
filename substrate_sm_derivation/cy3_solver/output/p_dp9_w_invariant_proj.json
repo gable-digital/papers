@@ -1,0 +1,875 @@
+{
+  "manifest": {
+    "git_revision": "eea6f085bb9274033f3eb3d04ffbadf3d04ce15d",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-06T15:52:19Z",
+    "command_line": [
+      "C:\\Users\\egabl\\dev\\gds-monorepo\\book\\scripts\\cy3_substrate_discrimination\\rust_solver\\target-dp9-w-invariant\\release\\p_dp9_w_invariant_proj.exe",
+      "--output",
+      "output/p_dp9_w_invariant_proj.json"
+    ],
+    "n_threads_rayon": 24
+  },
+  "config": {
+    "bhop_canonical_bundle_frame_lift": [
+      0,
+      0
+    ],
+    "method": "z3xz3_invariant_projection_of_w_twisted_h1_per_bhop_summand",
+    "output": "output/p_dp9_w_invariant_proj.json"
+  },
+  "build_id": "eea6f085_dp9_w_invariant_proj",
+  "bhop_canonical_bundle_frame_alpha": 0,
+  "bhop_canonical_bundle_frame_beta": 0,
+  "summands": [
+    {
+      "label": "Summand A: V_2*-line factor [-τ_1+τ_2] ⊗ W → L_base = O_dP9(1,0)",
+      "l_base": [
+        1,
+        0
+      ],
+      "multiplicity": 2,
+      "h1_l_minus_2f_basis": [
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        }
+      ],
+      "h0_l_plus_2f_basis": [
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 0
+        }
+      ],
+      "chi_h1_l_minus_2f": {
+        "counts": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "chi_h0_l_plus_2f": {
+        "counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "chi_h0_l_plus_2f_ideal": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "chi_h1_l_plus_2f_ideal": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "chi_gamma_w_tensor_l": {
+        "counts": [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          -1
+        ]
+      },
+      "chi_h1_w_tensor_l_lower_bound": {
+        "counts": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "chi_h1_w_tensor_l_upper_bound": {
+        "counts": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "invariant_h1_dim_singleton": 0,
+      "invariant_h1_dim_total": 0,
+      "invariant_h1_dim_upper_singleton": 0,
+      "invariant_h1_dim_upper_total": 0
+    },
+    {
+      "label": "Summand B: V_2*-line factor [-2τ_1+2τ_2] ⊗ W → L_base = O_dP9(2,0)",
+      "l_base": [
+        2,
+        0
+      ],
+      "multiplicity": 2,
+      "h1_l_minus_2f_basis": [
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            -1,
+            -1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        }
+      ],
+      "h0_l_plus_2f_basis": [
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 2,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 1,
+          "chi_beta": 0
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            2
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 2
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 1
+        },
+        {
+          "exp": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            2,
+            0
+          ],
+          "source": "amb",
+          "chi_alpha": 0,
+          "chi_beta": 0
+        }
+      ],
+      "chi_h1_l_minus_2f": {
+        "counts": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2
+        ]
+      },
+      "chi_h0_l_plus_2f": {
+        "counts": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "chi_h0_l_plus_2f_ideal": {
+        "counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "chi_h1_l_plus_2f_ideal": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "chi_gamma_w_tensor_l": {
+        "counts": [
+          2,
+          2,
+          0,
+          2,
+          2,
+          0,
+          2,
+          2,
+          0
+        ]
+      },
+      "chi_h1_w_tensor_l_lower_bound": {
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "chi_h1_w_tensor_l_upper_bound": {
+        "counts": [
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2
+        ]
+      },
+      "invariant_h1_dim_singleton": 0,
+      "invariant_h1_dim_total": 0,
+      "invariant_h1_dim_upper_singleton": 0,
+      "invariant_h1_dim_upper_total": 0
+    }
+  ],
+  "sensitivity": [
+    {
+      "label": "Summand A: V_2*-line factor [-τ_1+τ_2] ⊗ W → L_base = O_dP9(1,0)",
+      "invariant_h1_dim_table": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "invariant_h1_dim_table_upper": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "bhop_canonical_h1_dim_singleton": 0,
+      "bhop_canonical_h1_dim_singleton_upper": 0
+    },
+    {
+      "label": "Summand B: V_2*-line factor [-2τ_1+2τ_2] ⊗ W → L_base = O_dP9(2,0)",
+      "invariant_h1_dim_table": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "invariant_h1_dim_table_upper": [
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ]
+      ],
+      "bhop_canonical_h1_dim_singleton": 0,
+      "bhop_canonical_h1_dim_singleton_upper": 0
+    }
+  ],
+  "total_invariant_h1_dim": 0,
+  "total_invariant_h1_dim_upper": 0,
+  "verdict": "(a) Ext¹_full = 0 on quotient X̃/Γ (robust: invariant subspace empty at BOTH lower and upper SES bounds) → BHOP-shadow framework prediction IS the genuine answer → Y_u, Y_d ≈ 1.6 TeV is the framework's PUBLISHED prediction (falsified vs PDG at TeV scale)",
+  "interpretation": "DP9-W-INVARIANT-PROJ result:\n\nFor each K-theoretic summand of [V_1 ⊗ V_2*] on the BHOP-2005 SU(4)\nextension bundle, we computed the explicit Čech-cocycle monomial basis\nof H¹(O_dP9(L(-2f))) and tracked Schoen Z/3×Z/3 (α, β)-characters via\nthe diagonal-phase realisation in route34::z3xz3_projector.\n\nEquivariant Euler character was tracked through the BHOP §6.1 Eq. 85\nW-extension SES `0 → O(-2f) → W → 2·O(2f) ⊗ I_9 → 0`, with the I_9\n9-point ideal contributing the regular representation of Γ\n(every (i, j) ∈ (Z/3)² appears once, since Z_9 is a free orbit).\n\nBHOP-canonical bundle-frame equivariant lift (g_α, g_β) = (0, 0)\nper BHOP-2005 §3.2 / §6.1.\n\nTotal invariant H¹(W ⊗ L) dim across all summands (lower bound) = 0\nTotal invariant H¹(W ⊗ L) dim across all summands (upper bound) = 0\n\nVerdict: (a) Ext¹_full = 0 on quotient X̃/Γ (robust: invariant subspace empty at BOTH lower and upper SES bounds) → BHOP-shadow framework prediction IS the genuine answer → Y_u, Y_d ≈ 1.6 TeV is the framework's PUBLISHED prediction (falsified vs PDG at TeV scale)",
+  "replog_final_chain_sha256": "1b02a78bc51a326b264be9b10236dee05684dba5260784199e50130cf901a8b4"
+}

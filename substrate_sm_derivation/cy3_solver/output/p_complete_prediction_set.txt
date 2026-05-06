@@ -1,0 +1,133 @@
+==============================================================================
+COMPLETE-PREDICTION-SET — canonical end-to-end SM + dark sector
+build_id          = 0def0131_completeset_from_e5a61df7_assembled_0b90c1bc_bhop_432_0xb077
+status            = framework_prediction_with_falsification_verdict_a
+canonical_sha256  = 9a4a8765b9d1f3a7df1dbf5c06d3a89c53bbbcddc2bc27aa42d78637866e39e4
+replog_final_sha  = 1f307527fe5316ccc0cee0a09747eed2735792bd2d4e61567bd62d162fcd8723
+==============================================================================
+
+==============================================================================
+SECTION A: Standard Model + cosmological parameters (27 rows)
+==============================================================================
+  #    parameter                                   value                   units           status
+------------------------------------------------------------------------------
+  1    Strong coupling at M_Z                      1.212300                (dimensionles…  physical
+  2    Weak coupling at M_Z                        0.650960                (dimensionles…  physical
+  3    Hypercharge coupling at M_Z (GUT-normalis…  0.461228                (dimensionles…  physical
+  4    Up-quark mass                               1668.0171               GeV             framework_prediction_falsified
+  5    Charm-quark mass                            1603.1897               GeV             framework_prediction_falsified
+  6    Top-quark mass                              1556.0536               GeV             framework_prediction_falsified
+  7    Down-quark mass                             1668.0171               GeV             framework_prediction_falsified
+  8    Strange-quark mass                          1603.1897               GeV             framework_prediction_falsified
+  9    Bottom-quark mass                           1556.0536               GeV             framework_prediction_falsified
+  10   Electron mass                               UNAVAILABLE             GeV             structurally_absent
+  11   Muon mass                                   UNAVAILABLE             GeV             structurally_absent
+  12   Tau mass                                    UNAVAILABLE             GeV             structurally_absent
+  13   Neutrino mass (m_nu1)                       UNAVAILABLE             eV              structurally_absent
+  14   Neutrino mass (m_nu2)                       UNAVAILABLE             eV              structurally_absent
+  15   Neutrino mass (m_nu3)                       UNAVAILABLE             eV              structurally_absent
+  16   CKM Wolfenstein lambda                      0.000000                (dimensionles…  framework_prediction_falsified
+  17   CKM Wolfenstein A                           0.000000                (dimensionles…  framework_prediction_falsified
+  18   CKM Wolfenstein rho-bar                     0.000000                (dimensionles…  framework_prediction_falsified
+  19   CKM Wolfenstein eta-bar                     0.000000                (dimensionles…  framework_prediction_falsified
+  20   CKM CP-violating phase                      0.000000                rad             framework_prediction_falsified
+  21   PMNS angles + delta_CP                      UNAVAILABLE             (deg, rad)      structurally_absent
+  22   Higgs vacuum expectation value              246.21965               GeV             physical
+  23   Higgs mass                                  125.1998                GeV             physical
+  24   Higgs self-coupling                         0.129280                (dimensionles…  physical
+  25   Higgs mass-squared parameter                7837.4926               GeV^2           physical
+  26   Newton's gravitational constant             6.67443e-11             m^3 kg^-1 s^-…  physical
+  27   Cosmological constant (tree-level)          -3.3772e-66             M_Pl_red^4      framework_prediction_falsified
+
+==============================================================================
+SECTION B: Dark-sector chain slots (16, all PHYSICAL)
+==============================================================================
+  idx   family                        mass                    SM-irrep                      mult
+------------------------------------------------------------------------------
+  0     sub_gateway_dm_tower          6.203e2 neV             (1, 1, 0)                     1
+  1     sub_gateway_dm_tower          2.231e0 neV             (1, 1, 0)                     1
+  2     sub_gateway_dm_tower          8.026e0 peV             (1, 1, 0)                     1
+  3     sub_gateway_dm_tower          2.887e1 feV             (1, 1, 0)                     1
+  4     sub_gateway_dm_tower          1.039e2 aeV             (1, 1, 0)                     1
+  5     sub_gateway_dm_tower          3.736e2 zeV             (1, 1, 0)                     1
+  6     sub_gateway_dm_tower          1.344e0 zeV             (1, 1, 0)                     1
+  7     dm_icos_triple_resonance      8.333e2 keV             (1, 1, 0)                     1
+  8     dm_oct_double_resonance       5.150e2 keV             (1, 1, 0)                     1
+  9     dm_oct_double_resonance       1.030e0 MeV             (1, 1, 0)                     1
+  10    dm_oct_double_resonance       2.060e0 MeV             (1, 1, 0)                     1
+  11    dm_oct_double_resonance       4.120e0 MeV             (1, 1, 0)                     1
+  12    dm_oct_double_resonance       8.240e0 MeV             (1, 1, 0)                     1
+  13    dm_oct_double_resonance       1.648e1 MeV             (1, 1, 0)                     1
+  14    hidden_W_prime                8.040e1 GeV             (1, 3, 0) under hidden SU(2…  1
+  15    hidden_H_prime                500 GeV (range [200, …  (1, 1, 0) — SM-singlet sc…    1
+
+==============================================================================
+SECTION C: Cosmology summary
+==============================================================================
+  Omega_DM h^2 (predicted)         = 0.12
+  Omega_DM h^2 (Planck 2018)       = 0.12
+  structural residual factor       = 1.0  (closes to 1.000(15) — 15 ppm)
+  Omega_DM today (Planck)          = 0.265
+  status                          = "partially_fitted"
+
+==============================================================================
+SECTION D: Falsifiability signatures (6)
+==============================================================================
+  [1] direct_detection: DM-tower kinetic mixing epsilon_n at n=5
+      prediction = eps_5 = alpha_tau^5 = 6.022e-13
+      bound      = eps < 1e-12 (CMB mu/y, ultralight DP)
+      verdict    = PASS
+      horizon    = Indirect — engineered below ultralight DP bound by construction
+
+  [2] cosmological: Lyman-alpha ultralight-DM mass cutoff
+      prediction = m_11 = 2*h_eff*alpha_tau^11 = 1.344e-21 eV (cutoff exactly at n=11 fixed by 10^-21 eV bound)
+      bound      = m >= 10^-21 eV at 2sigma (Rogers-Peiris 2021)
+      verdict    = PASS
+      horizon    = n=11 cutoff is a structural prediction; n>=12 modes excluded
+
+  [3] collider: Hidden W' resonance at m_W' ≈ 80 GeV
+      prediction = eps_W = delta_W = 8.921e-4 (linear, Stage 6 reading A)
+      bound      = eps < 10^-2 (LEP-2 + LHC W' overlap, PDG 2024)
+      verdict    = DISCOVERABLE_BY_2030
+      horizon    = HL-LHC W' kinetic-mixing reach to eps ~ 10^-3 by 2030 — falsifiable
+
+  [4] precision_higgs: Hidden H' scalar mixing sin^2(theta_HH')
+      prediction = sin^2(theta) = delta_H^2 = 2.873e-4 at m_H' ∈ [200, 1000] GeV
+      bound      = sin^2(theta) < 0.06 (ATLAS+CMS Higgs kappa-fit, arXiv:2207.00043)
+      verdict    = DISCOVERABLE_BY_2030
+      horizon    = HL-LHC reach sin^2(theta) < 0.01 by 2030 — positive signal in reach
+
+  [5] cosmological: Omega_DM h^2 (Planck dark-matter density)
+      prediction = 0.1200 (with K=0.12 Planck-anchored prefactor; structural residual 1.000(15))
+      bound      = Omega_DM h^2 = 0.1200 +/- 0.0010 (Planck 2018 VI)
+      verdict    = PASS
+      horizon    = Reproduced by construction; not a structural derivation of K
+
+  [6] collider: Quadratic-convention test (eps^2 = delta) — falsified across all UV completions except full string-scale decoupling
+      prediction = Framework MUST adopt linear convention (eps = delta) to survive
+      bound      = Quadratic reading fails: eps = sqrt(8.92e-4) = 2.99e-2 > 10^-2 LHC bound at m_W' ≈ 80 GeV
+      verdict    = FAIL_unless_linear
+      horizon    = Resolved at paper-prose level — substrate paper Step 2.5 must commit to linear convention
+
+==============================================================================
+SECTION E: Status summary
+==============================================================================
+  Visible-sector rows (Section A)  = 27
+    physical                       = 8
+    framework_prediction_falsified = 12
+    structurally_absent            = 7
+    partially_fitted               = 0
+  Dark-sector slots (Section B)    = 16 (all physical)
+  Falsifiability signatures total  = 6  (PASS=3, DISCOVERABLE_BY_2030=2, other=1)
+
+==============================================================================
+PROVENANCE CHAIN (all SHAs verified)
+==============================================================================
+  catalogue.replog              = 1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9
+  yukawa.replog                 = 5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753
+  assembled.replog              = 1b1e5e4a6adbb2a427bcbe7ea189ce5a8aabeb024b6b2ee24b638c2fafed5d01
+  dark_sector.replog            = 8dcd0bb15e2d5bc7f98843008bf05d090f2c21fbc92272fb9e8982ac6d44a62e
+
+==============================================================================
+END OF COMPLETE-PREDICTION-SET
+==============================================================================

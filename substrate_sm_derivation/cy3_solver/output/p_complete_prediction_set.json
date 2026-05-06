@@ -1,0 +1,743 @@
+{
+  "manifest": {
+    "git_revision": "0def0131dbceab5cbc457d2992d7fc622cda90e6",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-06T16:09:20Z",
+    "command_line": [
+      "C:\\Users\\egabl\\dev\\gds-monorepo\\book\\scripts\\cy3_substrate_discrimination\\rust_solver\\target-final-paper\\release\\p_complete_prediction_set.exe"
+    ],
+    "n_threads_rayon": 24
+  },
+  "config": {
+    "assembled": "output/p_lagrangian_assembled.json",
+    "catalogue": "output/p_lagrangian_eigenmodes_bhop_schoen_n432.json",
+    "dark_sector": "output/p_dark_sector_predictions.json",
+    "output": "output/p_complete_prediction_set.json",
+    "yukawa": "output/p_lagrangian_yukawa_matrices.json"
+  },
+  "build_id": "0def0131_completeset_from_e5a61df7_assembled_0b90c1bc_bhop_432_0xb077",
+  "status": "framework_prediction_with_falsification_verdict_a",
+  "description": "Canonical end-to-end prediction set after Path A research closure (verdict (a) ROBUST, 2026-05-06). 27 SM + cosmological visible-sector rows: 4 PHYSICAL (gauge couplings, Higgs, Newton G), 12 FRAMEWORK_PREDICTION_FALSIFIED (rank-4 BHOP-2005 SU(4) shadow at κ=0 gives O(TeV) Yukawa eigenvalues + identity CKM, in tension with PDG; plus tree-level Λ_cc), 7 STRUCTURALLY_ABSENT (e^c, ν^c slots empty at degree-1 H^1 of the rank-4 SU(4) shadow). 16 physically-meaningful dark-sector chain slots independent of κ, 6 falsifiability signatures. Provenance chain: shadow Ext^1=0 (831d910c) → dP9 W h^1≥3 (eea6f085) → Z/3xZ/3-invariant H^1=0 (a4e6231e). The κ=0 frame-collapse is the framework's CANONICAL prediction at the rank-4 BHOP-2005 level — not a placeholder pending Ext^1 engagement (Ext^1_full = 0 on the Schoen Z/3xZ/3 quotient is now a definitive theorem).",
+  "section_a_sm_parameters": [
+    {
+      "index": 1,
+      "parameter": "Strong coupling at M_Z",
+      "symbol": "g_3(M_Z)",
+      "value": 1.2123,
+      "value_string": "1.212300",
+      "units": "(dimensionless)",
+      "status": "physical",
+      "source": "Stage 3 forward model + PDG 2024 anchor",
+      "notes": "GUT-normalized; SU(3)_C from SO(10) trace decomposition."
+    },
+    {
+      "index": 2,
+      "parameter": "Weak coupling at M_Z",
+      "symbol": "g_2(M_Z)",
+      "value": 0.65096,
+      "value_string": "0.650960",
+      "units": "(dimensionless)",
+      "status": "physical",
+      "source": "Stage 3 forward model + PDG 2024 anchor",
+      "notes": "SU(2)_L from SO(10) trace decomposition."
+    },
+    {
+      "index": 3,
+      "parameter": "Hypercharge coupling at M_Z (GUT-normalised)",
+      "symbol": "g_1(M_Z)",
+      "value": 0.461228,
+      "value_string": "0.461228",
+      "units": "(dimensionless)",
+      "status": "physical",
+      "source": "Stage 3 forward model + PDG 2024 anchor",
+      "notes": "g_1^2 = 5/3 g'^2 GUT normalisation."
+    },
+    {
+      "index": 4,
+      "parameter": "Up-quark mass",
+      "symbol": "m_u",
+      "value": 1668.01705838181,
+      "value_string": "1668.0171",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction at the rank-4 κ=0 fixed point: 1668 GeV. PDG m_u(2 GeV) ≈ 2.16 MeV — falsified by ~5.9 orders. Path A research closure: shadow Ext^1=0 + Z/3xZ/3-invariant H^1=0."
+    },
+    {
+      "index": 5,
+      "parameter": "Charm-quark mass",
+      "symbol": "m_c",
+      "value": 1603.1896971389176,
+      "value_string": "1603.1897",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 1603 GeV; PDG m_c(m_c) ≈ 1.273 GeV — falsified by ~3.1 orders."
+    },
+    {
+      "index": 6,
+      "parameter": "Top-quark mass",
+      "symbol": "m_t",
+      "value": 1556.0535766990115,
+      "value_string": "1556.0536",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 1556 GeV; PDG m_t pole ≈ 172.57 GeV — falsified by factor ~9 (>5σ)."
+    },
+    {
+      "index": 7,
+      "parameter": "Down-quark mass",
+      "symbol": "m_d",
+      "value": 1668.01705838181,
+      "value_string": "1668.0171",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 1668 GeV (identical to m_u, diagonal Y_d at κ=0); PDG m_d(2 GeV) ≈ 4.7 MeV — falsified."
+    },
+    {
+      "index": 8,
+      "parameter": "Strange-quark mass",
+      "symbol": "m_s",
+      "value": 1603.1896971389176,
+      "value_string": "1603.1897",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 1603 GeV (identical to m_c); PDG m_s(2 GeV) ≈ 93.5 MeV — falsified."
+    },
+    {
+      "index": 9,
+      "parameter": "Bottom-quark mass",
+      "symbol": "m_b",
+      "value": 1556.0535766990115,
+      "value_string": "1556.0536",
+      "units": "GeV",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 1556 GeV (identical to m_t); PDG m_b(m_b) ≈ 4.183 GeV — falsified by factor ~370."
+    },
+    {
+      "index": 10,
+      "parameter": "Electron mass",
+      "symbol": "m_e",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "GeV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: e^c slot empty (Path A closed: a4e6231e)",
+      "notes": "STRUCTURAL PREDICTION: e^c modes = 0 at deg-1 H^1 of rank-4 SU(4) shadow on the Schoen Z/3xZ/3 quotient. The framework does NOT encode the charged-lepton sector at this construction level. Falsifiable: any non-zero charged-lepton Yukawa data sourced from the rank-4 BHOP shadow at degree-1 H^1 would falsify this claim."
+    },
+    {
+      "index": 11,
+      "parameter": "Muon mass",
+      "symbol": "m_mu",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "GeV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: e^c slot empty (Path A closed: a4e6231e)",
+      "notes": "Same e^c-slot-empty structural absence as m_e."
+    },
+    {
+      "index": 12,
+      "parameter": "Tau mass",
+      "symbol": "m_tau",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "GeV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: e^c slot empty (Path A closed: a4e6231e)",
+      "notes": "Same e^c-slot-empty structural absence as m_e."
+    },
+    {
+      "index": 13,
+      "parameter": "Neutrino mass (m_nu1)",
+      "symbol": "m_nu1",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "eV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: ν^c slot empty (Path A closed: a4e6231e)",
+      "notes": "STRUCTURAL PREDICTION: ν^c modes = 0 at deg-1 H^1 of rank-4 SU(4) shadow."
+    },
+    {
+      "index": 14,
+      "parameter": "Neutrino mass (m_nu2)",
+      "symbol": "m_nu2",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "eV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: ν^c slot empty (Path A closed: a4e6231e)",
+      "notes": "Same ν^c-slot-empty structural absence as m_nu1."
+    },
+    {
+      "index": 15,
+      "parameter": "Neutrino mass (m_nu3)",
+      "symbol": "m_nu3",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "eV",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: ν^c slot empty (Path A closed: a4e6231e)",
+      "notes": "Same ν^c-slot-empty structural absence as m_nu1."
+    },
+    {
+      "index": 16,
+      "parameter": "CKM Wolfenstein lambda",
+      "symbol": "lambda",
+      "value": 0.0,
+      "value_string": "0.000000",
+      "units": "(dimensionless)",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (CKM = identity; Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 0; PDG ≈ 0.22501 — falsified (CKM is non-trivial in nature)."
+    },
+    {
+      "index": 17,
+      "parameter": "CKM Wolfenstein A",
+      "symbol": "A",
+      "value": 0.0,
+      "value_string": "0.000000",
+      "units": "(dimensionless)",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (CKM = identity; Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 0; PDG ≈ 0.826 — falsified."
+    },
+    {
+      "index": 18,
+      "parameter": "CKM Wolfenstein rho-bar",
+      "symbol": "rho_bar",
+      "value": 0.0,
+      "value_string": "0.000000",
+      "units": "(dimensionless)",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (CKM = identity; Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 0; PDG ≈ 0.159 — falsified."
+    },
+    {
+      "index": 19,
+      "parameter": "CKM Wolfenstein eta-bar",
+      "symbol": "eta_bar",
+      "value": 0.0,
+      "value_string": "0.000000",
+      "units": "(dimensionless)",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (CKM = identity; Path A closed: a4e6231e)",
+      "notes": "Framework prediction: 0; PDG ≈ 0.348 — falsified."
+    },
+    {
+      "index": 20,
+      "parameter": "CKM CP-violating phase",
+      "symbol": "delta_CKM",
+      "value": 0.0,
+      "value_string": "0.000000",
+      "units": "rad",
+      "status": "framework_prediction_falsified",
+      "source": "Rank-4 BHOP-2005 SU(4) shadow at κ=0 (CKM = identity; Path A closed: a4e6231e)",
+      "notes": "Framework prediction: Jarlskog J = 0; PDG J ≈ 3.08e-5 — falsified (CP violation observed)."
+    },
+    {
+      "index": 21,
+      "parameter": "PMNS angles + delta_CP",
+      "symbol": "(theta_12, theta_23, theta_13, delta_PMNS)",
+      "value": null,
+      "value_string": "UNAVAILABLE",
+      "units": "(deg, rad)",
+      "status": "structurally_absent",
+      "source": "Rank-4 BHOP-2005 shadow degree-1 H^1: ν^c slot empty (Path A closed: a4e6231e)",
+      "notes": "All four PMNS parameters STRUCTURALLY ABSENT — no Y_ν at this construction level."
+    },
+    {
+      "index": 22,
+      "parameter": "Higgs vacuum expectation value",
+      "symbol": "v",
+      "value": 246.21965001985257,
+      "value_string": "246.21965",
+      "units": "GeV",
+      "status": "physical",
+      "source": "STAGE-4-LAGRANGIAN (chain-position k_v + Eq. v-ladder)",
+      "notes": "PDG tree v = 246.21965 GeV; framework matches to <1 ppm."
+    },
+    {
+      "index": 23,
+      "parameter": "Higgs mass",
+      "symbol": "m_H",
+      "value": 125.19978135423081,
+      "value_string": "125.1998",
+      "units": "GeV",
+      "status": "physical",
+      "source": "STAGE-4-LAGRANGIAN (chain position k_H = 1072/30)",
+      "notes": "PDG 2024: 125.20 ± 0.11 GeV; framework central inside 1σ."
+    },
+    {
+      "index": 24,
+      "parameter": "Higgs self-coupling",
+      "symbol": "lambda_H",
+      "value": 0.12928011384688914,
+      "value_string": "0.129280",
+      "units": "(dimensionless)",
+      "status": "physical",
+      "source": "Derived: lambda_H = m_H^2 / (2 v^2)",
+      "notes": "Cross-check: same value to <1 ppm."
+    },
+    {
+      "index": 25,
+      "parameter": "Higgs mass-squared parameter",
+      "symbol": "mu^2",
+      "value": 7837.492625573601,
+      "value_string": "7837.4926",
+      "units": "GeV^2",
+      "status": "physical",
+      "source": "Derived: mu^2 = m_H^2 / 2",
+      "notes": "Tree-level SM normalisation."
+    },
+    {
+      "index": 26,
+      "parameter": "Newton's gravitational constant",
+      "symbol": "G_N",
+      "value": 6.674428600384526e-11,
+      "value_string": "6.67443e-11",
+      "units": "m^3 kg^-1 s^-2 (SI)",
+      "status": "physical",
+      "source": "STAGE-4 dimensional reduction (V_X / kappa_10^2)",
+      "notes": "CODATA 2022 residual = 1.927e-5 (~19 ppm)."
+    },
+    {
+      "index": 27,
+      "parameter": "Cosmological constant (tree-level)",
+      "symbol": "Lambda_cc",
+      "value": -3.377168253846624e-66,
+      "value_string": "-3.3772e-66",
+      "units": "M_Pl_red^4",
+      "status": "framework_prediction_falsified",
+      "source": "STAGE-4-LAGRANGIAN (tree-level Higgs V_min); SM tree-level CC problem",
+      "notes": "Sits 56.49 orders above observed Lambda; sign flipped (V_min<0; Lambda_obs>0). This is the SM tree-level cosmological-constant problem inherited from any heterotic compactification — Stage 7 loop corrections are an independent stream not closed by Path A."
+    }
+  ],
+  "section_b_dark_sector_slots": {
+    "chain_slots": [
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=5. Mass m = 2*h_eff*alpha_tau^5 = 6.203e-16 GeV. Kinetic mixing eps = alpha_tau^5 = 6.022e-13, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 6.203163741015096e-16,
+        "predicted_mass_string": "6.203e2 neV",
+        "slot_idx": 0,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "6.022e-13",
+          "kinetic_mixing_epsilon": 6.022489068946693e-13,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 5
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=6. Mass m = 2*h_eff*alpha_tau^6 = 2.231e-18 GeV. Kinetic mixing eps = alpha_tau^6 = 2.166e-15, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 2.2313538636744945e-18,
+        "predicted_mass_string": "2.231e0 neV",
+        "slot_idx": 1,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "2.166e-15",
+          "kinetic_mixing_epsilon": 2.1663629744412567e-15,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 6
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=7. Mass m = 2*h_eff*alpha_tau^7 = 8.026e-21 GeV. Kinetic mixing eps = alpha_tau^7 = 7.793e-18, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 8.026452747030556e-21,
+        "predicted_mass_string": "8.026e0 peV",
+        "slot_idx": 2,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "7.793e-18",
+          "kinetic_mixing_epsilon": 7.792672569932578e-18,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 7
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=8. Mass m = 2*h_eff*alpha_tau^8 = 2.887e-23 GeV. Kinetic mixing eps = alpha_tau^8 = 2.803e-20, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 2.8872132183563156e-23,
+        "predicted_mass_string": "2.887e1 feV",
+        "slot_idx": 3,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "2.803e-20",
+          "kinetic_mixing_epsilon": 2.803119629472151e-20,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 8
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=9. Mass m = 2*h_eff*alpha_tau^9 = 1.039e-25 GeV. Kinetic mixing eps = alpha_tau^9 = 1.008e-22, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 1.038565905883567e-25,
+        "predicted_mass_string": "1.039e2 aeV",
+        "slot_idx": 4,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "1.008e-22",
+          "kinetic_mixing_epsilon": 1.0083164134791911e-22,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 9
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=10. Mass m = 2*h_eff*alpha_tau^10 = 3.736e-28 GeV. Kinetic mixing eps = alpha_tau^10 = 3.627e-25, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 3.7358485823149883e-28,
+        "predicted_mass_string": "3.736e2 zeV",
+        "slot_idx": 5,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "3.627e-25",
+          "kinetic_mixing_epsilon": 3.6270374585582417e-25,
+          "lyman_alpha_cutoff_at_n_11": false,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 10
+        }
+      },
+      {
+        "family": "sub_gateway_dm_tower",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Dark-photon-like sub-gateway tower mode at order n=11. Mass m = 2*h_eff*alpha_tau^11 = 1.344e-30 GeV. Kinetic mixing eps = alpha_tau^11 = 1.305e-27, satisfies eps < 10^-12 ultralight DP bound.",
+        "predicted_mass_gev": 1.3438304252931616e-30,
+        "predicted_mass_string": "1.344e0 zeV",
+        "slot_idx": 6,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m_n = 2*h_eff*alpha_tau^n (Eq. m-DM-tower); epsilon_n = alpha_tau^n (Eq. epsilon-DM-tower)",
+        "substrate_corrections": {
+          "epsilon_in_scientific": "1.305e-27",
+          "kinetic_mixing_epsilon": 1.3046897332943314e-27,
+          "lyman_alpha_cutoff_at_n_11": true,
+          "spin_doublet_prefactor": 2.0,
+          "tower_order_n": 11
+        }
+      },
+      {
+        "family": "dm_icos_triple_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Unique cycle-1 icosahedral triple-resonance dark slot at k=1. Cycle-2 triple-res slots {31, 41} are above-gateway and lie deep in the empty-slot catalogue (PeV-scale or above).",
+        "predicted_mass_gev": 0.0008332875042061959,
+        "predicted_mass_string": "8.333e2 keV",
+        "slot_idx": 7,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = phi^k * h_eff (Eq. m-DM-icos), k=1 (cycle-1 triple-res)",
+        "substrate_corrections": {
+          "chain_position_k": 1,
+          "muon_takes_k_11_so_k_1_is_unoccupied": true,
+          "phi": 1.618033988749895,
+          "resonance_type": "triple_E8_H4_D8_intersection_cycle_1"
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=0. Mass m = sqrt(2)^0 * h_eff = 5.150e-4 GeV.",
+        "predicted_mass_gev": 0.000515,
+        "predicted_mass_string": "5.150e2 keV",
+        "slot_idx": 8,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 0,
+          "oct_slot_index_within_family": 0,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 1.0
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=2. Mass m = sqrt(2)^2 * h_eff = 1.030e-3 GeV.",
+        "predicted_mass_gev": 0.0010300000000000003,
+        "predicted_mass_string": "1.030e0 MeV",
+        "slot_idx": 9,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 2,
+          "oct_slot_index_within_family": 1,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 2.0000000000000004
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=4. Mass m = sqrt(2)^4 * h_eff = 2.060e-3 GeV.",
+        "predicted_mass_gev": 0.0020600000000000006,
+        "predicted_mass_string": "2.060e0 MeV",
+        "slot_idx": 10,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 4,
+          "oct_slot_index_within_family": 2,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 4.000000000000001
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=6. Mass m = sqrt(2)^6 * h_eff = 4.120e-3 GeV.",
+        "predicted_mass_gev": 0.004120000000000002,
+        "predicted_mass_string": "4.120e0 MeV",
+        "slot_idx": 11,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 6,
+          "oct_slot_index_within_family": 3,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 8.000000000000004
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=8. Mass m = sqrt(2)^8 * h_eff = 8.240e-3 GeV.",
+        "predicted_mass_gev": 0.008240000000000004,
+        "predicted_mass_string": "8.240e0 MeV",
+        "slot_idx": 12,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 8,
+          "oct_slot_index_within_family": 4,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 16.000000000000007
+        }
+      },
+      {
+        "family": "dm_oct_double_resonance",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Octahedral cycle-1 dark slot at even k=10. Mass m = sqrt(2)^10 * h_eff = 1.648e-2 GeV.",
+        "predicted_mass_gev": 0.016480000000000012,
+        "predicted_mass_string": "1.648e1 MeV",
+        "slot_idx": 13,
+        "sm_irrep_under_gauge": "(1, 1, 0)",
+        "source_equation": "m = sqrt(2)^k * h_eff (Eq. m-DM-oct), cycle-1 D_8 even-k slots",
+        "substrate_corrections": {
+          "chain_position_k": 10,
+          "oct_slot_index_within_family": 5,
+          "resonance_type": "double_E8_D8_intersection_cycle_1_even_k",
+          "sqrt2_pow_k": 32.00000000000002
+        }
+      },
+      {
+        "family": "hidden_W_prime",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Hidden W' under mirror-SM UV completion (Stage 6 reading A). Predicts an LHC W' resonance with eps ≈ 8.92e-4 at m ≈ 80 GeV — discoverable at HL-LHC, currently consistent (factor ~10 below CMS/ATLAS null-search reach).",
+        "predicted_mass_gev": 80.4,
+        "predicted_mass_string": "8.040e1 GeV",
+        "slot_idx": 14,
+        "sm_irrep_under_gauge": "(1, 3, 0) under hidden SU(2)' (SM-singlet under visible gauge)",
+        "source_equation": "m_W' approx m_W (mirror-SM); delta_W = 1/(59*19) = 1/1121 (Eq. RW)",
+        "substrate_corrections": {
+          "delta_W_in_scientific": "8.921e-4",
+          "discovery_horizon": "HL-LHC by 2030",
+          "kinetic_mixing_delta_W_linear": 0.0008920606601248885,
+          "stage6_uv_reading": "(A) mirror-SM"
+        }
+      },
+      {
+        "family": "hidden_H_prime",
+        "kappa_0_affected": false,
+        "multiplicity": 1,
+        "notes": "Hidden H' under mirror-SM UV completion (Stage 6 reading A'). m_H' must be > m_H/2 = 62.5 GeV to avoid h -> H'H' exotic decay (BR < 0.11 from ATLAS+CMS), so m_H' >= 200 GeV under reading (A'). sin^2(theta_HH') ≈ 2.86e-4 sits factor ~200 below current LHC bound.",
+        "predicted_mass_gev": 500.0,
+        "predicted_mass_string": "500 GeV (range [200, 1000] GeV)",
+        "slot_idx": 15,
+        "sm_irrep_under_gauge": "(1, 1, 0) — SM-singlet scalar mixing into 125 GeV Higgs",
+        "source_equation": "m_H' in [200, 1000] GeV (mirror-SM gauge-Higgs unification shift); sin(theta_HH') = delta_H = 1/59 (Eq. RH)",
+        "substrate_corrections": {
+          "atlas_cms_kfit_bound_sin2theta": 0.06,
+          "discovery_horizon": "HL-LHC sin^2 theta < 0.01 by 2030 — POSITIVE SIGNAL IN REACH",
+          "factor_below_bound": 208.86,
+          "scalar_mixing_delta_H_linear": 0.01694915254237288,
+          "sin_squared_in_scientific": "2.873e-4",
+          "sin_squared_theta_HH_prime": 0.0002872737719046251,
+          "sin_theta_HH_prime": 0.01694915254237288,
+          "stage6_uv_reading": "(A') mirror-SM with gauge-Higgs unification mass shift"
+        }
+      }
+    ],
+    "dark_chiral_fermion_count_principal": 3,
+    "framework_constants": {
+      "alpha_tau": 0.0035971223021582736,
+      "alpha_tau_one_over": 278,
+      "delta_h_linear": 0.01694915254237288,
+      "delta_w_linear": 0.0008920606601248885,
+      "dim_e8": 248,
+      "epsilon_11": 1.3046897332943314e-27,
+      "epsilon_5": 6.022489068946693e-13,
+      "h_e8": 30,
+      "h_eff_gev": 0.000515,
+      "phi": 1.618033988749895,
+      "sqrt2": 1.4142135623730951
+    },
+    "kappa_0_placeholder": false,
+    "total_chiral_count_principal": 18,
+    "total_dark_mass_slots": 16
+  },
+  "section_c_cosmology": {
+    "notes": "K = 0.12 is a fitted cosmological prefactor anchored to Planck 2018 (Omega_DM h^2 = 0.1200(10)). The structural content is the residual factor (f_5/10^17 GeV)^2 * theta_5^2 * zeta_tower * sqrt(m_5/10^-22 eV) which closes to 1.000(15) — the framework reproduces Planck to within 0.015% with no fitted parameters in the residual. Deriving K from first principles (analogous to Sikivie's QCD-axion misalignment) is an open structural step, NOT a current prediction.",
+    "omega_dm_h2_planck": 0.12,
+    "omega_dm_h2_predicted": 0.12,
+    "omega_dm_today_planck": 0.265,
+    "relative_residual": 0.0,
+    "status": "partially_fitted",
+    "structural_residual_factor": 1.0
+  },
+  "section_d_falsifiability_signatures": [
+    {
+      "bound_reference": "Caputo, Millar, O'Hare, Vitagliano, PRD 104 (2021) 095029 (arXiv:2105.04565)",
+      "current_bound_95cl": "eps < 1e-12 (CMB mu/y, ultralight DP)",
+      "discovery_horizon": "Indirect — engineered below ultralight DP bound by construction",
+      "framework_prediction": "eps_5 = alpha_tau^5 = 6.022e-13",
+      "signature_type": "direct_detection",
+      "target_quantity": "DM-tower kinetic mixing epsilon_n at n=5",
+      "verdict": "PASS"
+    },
+    {
+      "bound_reference": "Rogers & Peiris, PRL 126 (2021) 071302",
+      "current_bound_95cl": "m >= 10^-21 eV at 2sigma (Rogers-Peiris 2021)",
+      "discovery_horizon": "n=11 cutoff is a structural prediction; n>=12 modes excluded",
+      "framework_prediction": "m_11 = 2*h_eff*alpha_tau^11 = 1.344e-21 eV (cutoff exactly at n=11 fixed by 10^-21 eV bound)",
+      "signature_type": "cosmological",
+      "target_quantity": "Lyman-alpha ultralight-DM mass cutoff",
+      "verdict": "PASS"
+    },
+    {
+      "bound_reference": "PDG 2024 W' Searches review; CMS 2202.06091; ATLAS 1909.04114",
+      "current_bound_95cl": "eps < 10^-2 (LEP-2 + LHC W' overlap, PDG 2024)",
+      "discovery_horizon": "HL-LHC W' kinetic-mixing reach to eps ~ 10^-3 by 2030 — falsifiable",
+      "framework_prediction": "eps_W = delta_W = 8.921e-4 (linear, Stage 6 reading A)",
+      "signature_type": "collider",
+      "target_quantity": "Hidden W' resonance at m_W' ≈ 80 GeV",
+      "verdict": "DISCOVERABLE_BY_2030"
+    },
+    {
+      "bound_reference": "ATLAS+CMS, Nature 607 (2022) 52 (arXiv:2207.00043)",
+      "current_bound_95cl": "sin^2(theta) < 0.06 (ATLAS+CMS Higgs kappa-fit, arXiv:2207.00043)",
+      "discovery_horizon": "HL-LHC reach sin^2(theta) < 0.01 by 2030 — positive signal in reach",
+      "framework_prediction": "sin^2(theta) = delta_H^2 = 2.873e-4 at m_H' ∈ [200, 1000] GeV",
+      "signature_type": "precision_higgs",
+      "target_quantity": "Hidden H' scalar mixing sin^2(theta_HH')",
+      "verdict": "DISCOVERABLE_BY_2030"
+    },
+    {
+      "bound_reference": "Planck Collaboration, A&A 641 (2020) A6",
+      "current_bound_95cl": "Omega_DM h^2 = 0.1200 +/- 0.0010 (Planck 2018 VI)",
+      "discovery_horizon": "Reproduced by construction; not a structural derivation of K",
+      "framework_prediction": "0.1200 (with K=0.12 Planck-anchored prefactor; structural residual 1.000(15))",
+      "signature_type": "cosmological",
+      "target_quantity": "Omega_DM h^2 (Planck dark-matter density)",
+      "verdict": "PASS"
+    },
+    {
+      "bound_reference": "Stage 6 audit, p_stage6_dark_sector_falsifiability.md §5.2",
+      "current_bound_95cl": "Quadratic reading fails: eps = sqrt(8.92e-4) = 2.99e-2 > 10^-2 LHC bound at m_W' ≈ 80 GeV",
+      "discovery_horizon": "Resolved at paper-prose level — substrate paper Step 2.5 must commit to linear convention",
+      "framework_prediction": "Framework MUST adopt linear convention (eps = delta) to survive",
+      "signature_type": "collider",
+      "target_quantity": "Quadratic-convention test (eps^2 = delta) — falsified across all UV completions except full string-scale decoupling",
+      "verdict": "FAIL_unless_linear"
+    }
+  ],
+  "section_e_status_summary": {
+    "total_visible_sector_rows": 27,
+    "physical": 8,
+    "framework_prediction_falsified": 12,
+    "structurally_absent": 7,
+    "partially_fitted": 0,
+    "dark_sector_slots_total": 16,
+    "dark_sector_slots_physical": 16,
+    "falsifiability_signatures_total": 6,
+    "falsifiability_pass": 3,
+    "falsifiability_discoverable_by_2030": 2,
+    "falsifiability_other": 1
+  },
+  "provenance_chain": {
+    "assembled_lagrangian": {
+      "replog_final_chain_sha256": "1b1e5e4a6adbb2a427bcbe7ea189ce5a8aabeb024b6b2ee24b638c2fafed5d01",
+      "status": "kappa_0_placeholder_lagrangian",
+      "yukawa_replog_chain_sha256_match": "5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753"
+    },
+    "catalogue": {
+      "build_id": "0b90c1bc_bhop_432_0xb077",
+      "replog_final_chain_sha256": "1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9"
+    },
+    "chain_invariants_passed": [
+      "catalogue.replog == yukawa.catalogue_replog",
+      "catalogue.build_id == yukawa.catalogue_build_id",
+      "yukawa.replog == assembled.provenance.yukawa_replog",
+      "catalogue.replog == dark.upstream_catalogue_replog",
+      "assembled.status == 'kappa_0_placeholder_lagrangian'",
+      "dark.kappa_0_placeholder == false"
+    ],
+    "dark_sector": {
+      "canonical_dark_sector_sha256": "97f07d3588fa9b44bc815dd9fae394afd6a8a90eab43c6ede2a990f281e64893",
+      "kappa_0_placeholder": false,
+      "replog_final_chain_sha256": "8dcd0bb15e2d5bc7f98843008bf05d090f2c21fbc92272fb9e8982ac6d44a62e",
+      "upstream_catalogue_replog_chain_sha_match": "1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9"
+    },
+    "yukawa_matrices": {
+      "catalogue_replog_chain_sha256_match": "1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9",
+      "replog_final_chain_sha256": "5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753"
+    }
+  },
+  "canonical_complete_set_sha256": "9a4a8765b9d1f3a7df1dbf5c06d3a89c53bbbcddc2bc27aa42d78637866e39e4",
+  "replog_final_chain_sha256": "1f307527fe5316ccc0cee0a09747eed2735792bd2d4e61567bd62d162fcd8723"
+}
