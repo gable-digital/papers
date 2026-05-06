@@ -1,0 +1,427 @@
+{
+  "manifest": {
+    "git_revision": "e5a61df723debdf4e5c9e1cd9243b124f9de5544",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-06T05:26:04Z",
+    "command_line": [
+      "C:\\Users\\egabl\\dev\\gds-monorepo\\book\\scripts\\cy3_substrate_discrimination\\rust_solver\\target-stage4-lagrangian\\release\\p_lagrangian_assemble.exe"
+    ],
+    "n_threads_rayon": 24
+  },
+  "config": {
+    "expect_yukawa_replog_sha": null,
+    "output": "output/p_lagrangian_assembled.json",
+    "python_bin": "python",
+    "skip_stage4_rerun": false,
+    "stage4_json": "../python_research/output/p_stage4_dimensional_reduction.json",
+    "yukawa_matrices": "output/p_lagrangian_yukawa_matrices.json"
+  },
+  "build_id": "e5a61df7_assembled_0b90c1bc_bhop_432_0xb077",
+  "status": "kappa_0_placeholder_lagrangian",
+  "physically_meaningful_sectors": [
+    "kinetic",
+    "gauge",
+    "higgs_potential",
+    "newton_G"
+  ],
+  "placeholder_sectors": {
+    "ckm_matrix": "trivial identity at kappa_0; mixing angles = 0",
+    "cosmological_constant": "56.5 orders-of-magnitude too large at tree level; well-known SM problem; requires loop corrections (Stage 7)",
+    "yukawa_charged_lepton": "deferred; e^c modes = 0 in degree-1 H^1 rank-4 path; requires higher-degree H^1 exploration",
+    "yukawa_down_quark": "kappa_0; same as up",
+    "yukawa_neutrino": "same as charged_lepton",
+    "yukawa_up_quark": "kappa_0; values dimensionally inconsistent (~TeV vs PDG ~GeV-scale m_t); requires Ext^1 SU(4) extension data from BHOP §6.5 (not numerically published)"
+  },
+  "next_steps": [
+    "Engage off-diagonal Ext^1 in BHOP-MonadAdapter (currently kappa=0)",
+    "Lift to higher-degree H^1 for e^c, nu^c sectors",
+    "Loop corrections for cosmological constant (Stage 7)"
+  ],
+  "canonical_form_latex": "\\mathcal{L}_4 = \\mathcal{L}_{kin} + \\mathcal{L}_{gauge} + \\mathcal{L}_{Yukawa} + V(H) + \\Lambda_{cc}",
+  "sectors": [
+    {
+      "name": "kinetic",
+      "symbol": "L_kin = i \\bar{\\psi}_i \\gamma^\\mu D_\\mu \\psi_i + |D_\\mu H|^2",
+      "description": "Canonical fermion + Higgs kinetic terms. Three generations of SM matter (Q_i, u^c_i, d^c_i, L_i, e^c_i, nu^c_i; 12 chiral fields) come from H^1(X̃/Γ, V_BHOP); the κ=0 catalogue populates Q/Uc/Dc/L (12 modes) and defers Ec/NuC. The Higgs doublet H comes from a 10 of SO(10), Wilson-broken to (1,2,1/2).",
+      "status": "physically_meaningful",
+      "coefficients": {
+        "fermion_kinetic_normalization": 1.0,
+        "h1_cohomology_dim": 48,
+        "higgs_kinetic_normalization": 1.0,
+        "n_chiral_fermion_fields_total": 12,
+        "n_generations": 3
+      },
+      "notes": "Coefficients are 1 by canonical normalisation choice (kinetic-normalised basis). The 4D R/c^2_4 = V_X / kappa^2_10 reduction is reported in the gravity-sector block under provenance.newton_check."
+    },
+    {
+      "name": "gauge",
+      "symbol": "L_gauge = -1/4 sum_a F^a_{munu} F^{a,munu}, a in {SU(3)_C, SU(2)_L, U(1)_Y, U(1)_X}",
+      "description": "SM gauge kinetic terms. Coefficient = V_X / (4 alpha' kappa^2_10) times the BHOP-2005 §6 trace-decomposition factor for each group. The structure-group SU(4) ⊂ E_8 has commutant SO(10); Wilson-line breaking by Z_3 × Z_3 reduces SO(10) → SU(3)_C × SU(2)_L × U(1)_Y × U(1)_X with U(1)_X breaking via Green-Schwarz Stueckelberg (substrate paper Step 0.6). Numerical g_1, g_2, g_3 at M_Z are taken from PDG 2024 (GUT-normalized convention g_1^2 = 5/3 g'^2).",
+      "status": "physically_meaningful",
+      "coefficients": {
+        "alpha_s_mz_central": 0.118,
+        "alpha_s_mz_sigma": 0.0009,
+        "g_1_mz_gut_normalized": 0.461228,
+        "g_2_mz": 0.65096,
+        "g_3_mz": 1.2123,
+        "m_z_central_gev": 91.1876,
+        "m_z_sigma_gev": 0.0021
+      },
+      "notes": "Structural prediction is the ratio g^2_a : g^2_b at the unification scale via the SO(10) → SM trace decomposition (committed pre-Stage-3); the absolute scale is set by V_X / kappa^2_10. The numerical values reported are PDG 2024 anchors at M_Z."
+    },
+    {
+      "name": "yukawa",
+      "symbol": "L_Yukawa = -Y^u_{ij} \\bar{Q}_i u^c_j H - Y^d_{ij} \\bar{Q}_i d^c_j \\tilde{H} - Y^e_{ij} \\bar{L}_i e^c_j \\tilde{H} - Y^nu_{ij} \\bar{L}_i nu^c_j H + h.c.",
+      "description": "κ=0 PLACEHOLDER Yukawa matrices from frame-collapse overlaps on the rank-4 SU(4) BHOP shadow bundle. Y_u and Y_d are diagonal in this regime (no Ext^1 deformation engaged). Y_e and Y_nu are zero because the e^c and nu^c slots carry zero modes in H^1(X̃/Γ, V) at degree 1 of the rank-4 shadow (BHOP §6.3). Up-quark mass eigenvalues (descending GeV): [1668.01705838181, 1603.1896971389176, 1556.0535766990115]. Down-quark mass eigenvalues (descending GeV): [1668.01705838181, 1603.1896971389176, 1556.0535766990115]. Both sets are dimensionally inconsistent vs PDG (m_t ≈ 173 GeV) — this is expected at κ=0 and reflects the engineered frame-collapse convention, not a derived prediction. CKM matrix is the 3×3 identity at κ=0; mixing angles all vanish.",
+      "status": "kappa_0_placeholder",
+      "coefficients": {
+        "Y_d_re_im": [
+          [
+            [
+              2267.252612750672,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2358.9323462332304,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2200.5920719469054,
+              0.0
+            ]
+          ]
+        ],
+        "Y_e": null,
+        "Y_nu": null,
+        "Y_u_re_im": [
+          [
+            [
+              2267.252612750672,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2358.9323462332304,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              2200.5920719469054,
+              0.0
+            ]
+          ]
+        ],
+        "ckm_magnitudes": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "deferred": {
+          "Y_e": "e^c modes deferred to higher-degree H¹ via the M3 lift's BHOP §6.3 classification — Ec count is 0 at degree 1 of the rank-4 SU(4) shadow.",
+          "Y_nu": "ν^c modes deferred to higher-degree H¹ via the M3 lift's BHOP §6.3 classification — NuC count is 0 at degree 1 of the rank-4 SU(4) shadow."
+        },
+        "generation_picks": {
+          "Dc": [
+            7,
+            11,
+            15
+          ],
+          "Ec": [],
+          "L": [
+            5,
+            9,
+            13
+          ],
+          "NuC": [],
+          "Q": [
+            4,
+            8,
+            12
+          ],
+          "Uc": [
+            6,
+            10,
+            14
+          ]
+        },
+        "kappa_0_placeholder": true,
+        "masses_down_descending_gev": [
+          1668.01705838181,
+          1603.1896971389176,
+          1556.0535766990115
+        ],
+        "masses_up_descending_gev": [
+          1668.01705838181,
+          1603.1896971389176,
+          1556.0535766990115
+        ],
+        "wolfenstein": {
+          "A": 0.0,
+          "delta_ckm_radians": 0.0,
+          "eta_bar": 0.0,
+          "jarlskog_invariant_J": 0.0,
+          "lambda": 0.0,
+          "rho_bar": 0.0
+        }
+      },
+      "notes": "DO NOT treat these Yukawa values as physics predictions. They are a structurally-honest κ=0 placeholder pending engagement of off-diagonal Ext^1 in BHOP-MonadAdapter. The Y_e, Y_nu zero entries are NOT a prediction of massless leptons — they are a 'no eigenmode in this slot at this cohomology degree' sentinel, deferred to higher-degree H^1 exploration."
+    },
+    {
+      "name": "higgs",
+      "symbol": "V(H) = -mu^2 |H|^2 + lambda |H|^4",
+      "description": "SM Higgs potential with structurally-derived coefficients anchored to the framework's m_H (chain position k_H = 1072/30) and v_C (Eq. v-ladder) predictions. NO Stage 3 numerics are required. m_H_predicted = 125.199781354230815106095591677 GeV (PDG 2024 central is 125.20 GeV). v_C_predicted = 246.219650019852561793722730693 GeV (PDG tree v = 246.21965 GeV).",
+      "status": "physically_meaningful",
+      "coefficients": {
+        "consistency_check": "lambda = m_H^2 / (2 v^2)",
+        "lambda_quartic_dimensionless": "0.129280113846889134218965632025",
+        "m_H_PDG_GeV": "125.2",
+        "m_H_pred_GeV": "125.199781354230815106095591677",
+        "minimum_value_GeV4": "-118785265.630006015228464140905",
+        "mu_squared_GeV2": "7837.4926255736010374743950284",
+        "v_C_GeV": "246.219650019852561793722730693"
+      },
+      "notes": "Tree-level SM normalisation: minimum at |H|^2 = mu^2 / (2 lambda) = v^2 / 2; m_H^2 = 2 mu^2 = 2 lambda v^2. The structural prediction matches PDG 2024 m_H = 125.20 ± 0.11 GeV inside the 1-sigma bar."
+    },
+    {
+      "name": "cosmological_constant",
+      "symbol": "Lambda_cc = V_min(H) (tree-level Higgs contribution)",
+      "description": "Tree-level Higgs vacuum energy at the broken minimum: V_min = -m_H^2 v^2 / 8 = -118785265.630006015228464140905 GeV^4. In M_Pl_reduced^4 units this is -3.37716825384662386119268026967e-66, vs Planck 2018 Lambda_obs = 1.1e-122 M_Pl^4. The ratio is 56.48716 orders of magnitude — the well-known SM cosmological-constant problem at tree level. NB: V_min is NEGATIVE (Higgs broken-minimum) while Lambda_obs is POSITIVE (de Sitter); the framework's Stage 7 task is to compute the radiatively-corrected vacuum energy including gauge-boson + fermion + scalar loops.",
+      "status": "kappa_0_placeholder",
+      "coefficients": {
+        "Lambda_observed_M_Pl4_units": "1.1e-122",
+        "orders_above_observed": "56.48716",
+        "sign_note": "tree-level Higgs V_min is NEGATIVE; observed Lambda is POSITIVE",
+        "tree_level_value_GeV4": "-118785265.630006015228464140905",
+        "tree_level_value_M_Pl4_units": "-3.37716825384662386119268026967e-66"
+      },
+      "notes": "DO NOT treat the tree-level value as the framework's final prediction. Loop corrections (Stage 7) are required. The cosmological-constant problem is acknowledged here, not solved."
+    }
+  ],
+  "pdg_2024_reference": {
+    "alpha_s_mz_central": 0.118,
+    "alpha_s_mz_sigma": 0.0009,
+    "g1_mz_gut_normalized": 0.461228,
+    "g2_mz": 0.65096,
+    "g3_mz": 1.2123,
+    "jarlskog_j_central": 0.0000308,
+    "m_b_mb_central_gev": 4.183,
+    "m_c_mc_central_gev": 1.273,
+    "m_e_central_mev": 0.00051099895069,
+    "m_h_pdg_central_gev": 125.2,
+    "m_mu_central_gev": 0.1056583755,
+    "m_t_pole_central_gev": 172.57,
+    "m_tau_central_mev": 1.77686,
+    "m_z_central_gev": 91.1876,
+    "m_z_sigma_gev": 0.0021,
+    "v_higgs_tree_gev": 246.21965,
+    "wolfenstein_a": 0.826,
+    "wolfenstein_etabar": 0.348,
+    "wolfenstein_lambda": 0.22501,
+    "wolfenstein_rhobar": 0.159
+  },
+  "provenance": {
+    "higgs_block": {
+      "Lambda_observed_M_Pl4_units": "1.1e-122",
+      "cosmological_constant_GeV4": "-118785265.630006015228464140905",
+      "cosmological_constant_M_Pl4_units": "-3.37716825384662386119268026967e-66",
+      "lambda_quartic": "0.129280113846889134218965632025",
+      "lambda_quartic_dimensionless": "0.129280113846889134218965632025",
+      "m_H_PDG_GeV": "125.2",
+      "m_H_pred_GeV": "125.199781354230815106095591677",
+      "minimum_value_GeV4": "-118785265.630006015228464140905",
+      "mu_squared_GeV2": "7837.4926255736010374743950284",
+      "orders_above_observed": "56.48716",
+      "v_C_GeV": "246.219650019852561793722730693"
+    },
+    "newton_check": {
+      "F_e_gateway_consistent": "YES: m_Planck(F_e) / m_Planck(G_CODATA) matches to -1.85963e-6 relative.",
+      "G_Newton_CODATA_SI": "6.6743e-11",
+      "G_Newton_recovered_SI": "6.67442860038452611151512377268e-11",
+      "G_residual_relative": "0.0000192679958236985923802904693557",
+      "M_Pl_red_target_GeV": "2435300000000000000.0",
+      "M_string_implied_GeV": "190295.342901878784694215851338",
+      "V_X_at_central": "1.33333333333333333333333333333",
+      "V_X_range_hi": "682.666666666666666666666666667",
+      "V_X_range_lo": "0.0208333333333333333333333333333"
+    },
+    "stage4_python_config": {
+      "M_Pl_used_label": "M_Pl_reduced (= 2.4353e18 GeV)",
+      "dps": 50,
+      "kahler_range_hi": "8.0",
+      "kahler_range_lo": "0.25",
+      "kahler_t1_central": "1.0",
+      "kahler_t2_central": "1.0",
+      "kahler_tT_central": "1.0",
+      "use_reduced_planck": true
+    },
+    "stage4_python_geometry": {
+      "Gamma_order": 9,
+      "bundle": "Rank-4 SU(4) BHOP-2005 Sec. 6 extension; structure group SU(4) subset E_8; commutant SO(10); Wilson-line break Z_3 x Z_3 -> SU(3)_C x SU(2)_L x U(1)_Y x U(1)_X (U(1)_X via Green-Schwarz Stueckelberg)",
+      "bundle_index_on_cover": "-27 (BHOP-2005 Eq. 88)",
+      "cover_triple_intersections": {
+        "J1_J1_J1": "0.0",
+        "J1_J1_J2": "3.0",
+        "J1_J2_J2": "3.0",
+        "J1_J2_JT": "9.0",
+        "J2_J2_J2": "0.0"
+      },
+      "generations": "|Index| / |Gamma| = 27 / 9 = 3",
+      "h11_h21_quotient": "h^{1,1} = h^{2,1} = 3 (BHOP-2005 Sec. 5)",
+      "manifold": "Schoen Calabi-Yau quotient X / (Z_3 x Z_3)",
+      "quotient_triple_intersections": {
+        "J1_J1_J1": "0.0",
+        "J1_J1_J2": "0.333333333333",
+        "J1_J2_J2": "0.333333333333",
+        "J1_J2_JT": "1.0",
+        "J2_J2_J2": "0.0"
+      }
+    },
+    "stage4_python_structural_inputs": {
+      "R_H": "243033.974293872269471496038095",
+      "R_W": "156010.225966486867542367850875",
+      "R_v": "477954.030321067642943762352814",
+      "alpha_tau": "0.00359712230215827338129496402878",
+      "delta_H": "0.0169491525423728813559322033898",
+      "delta_W": "0.000892060660124888492417484388938",
+      "dim_E8": "248",
+      "h_E8": "30",
+      "h_SU3": "3",
+      "h_eff_GeV (structural)": "0.000515153413089651048027765634496",
+      "m_H_pred_GeV (structural)": "125.199781354230815106095591677",
+      "m_W_pred_GeV (structural)": "80.3692003835234136950738039448",
+      "m_max": "29",
+      "omega_fix_eq_123_over_248": "0.495967741935483870967741935484",
+      "phi_golden": "1.61803398874989484820458683437",
+      "rank_E8": "8",
+      "v_C_GeV (structural)": "246.219650019852561793722730693"
+    },
+    "yukawa_catalogue_build_id": "0b90c1bc_bhop_432_0xb077",
+    "yukawa_catalogue_replog_chain_sha": "1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9",
+    "yukawa_catalogue_summary": {
+      "build_id": "0b90c1bc_bhop_432_0xb077",
+      "bundle_kind": "bhop",
+      "generation_multiplicity": 3,
+      "h1_dim": 48,
+      "irrep_counts": [
+        [
+          "Q",
+          12
+        ],
+        [
+          "Uc",
+          12
+        ],
+        [
+          "Dc",
+          12
+        ],
+        [
+          "L",
+          12
+        ],
+        [
+          "Ec",
+          0
+        ],
+        [
+          "NuC",
+          0
+        ],
+        [
+          "Hu",
+          0
+        ],
+        [
+          "Hd",
+          0
+        ],
+        [
+          "Unassigned",
+          0
+        ]
+      ],
+      "manifest_git_revision": "0b90c1bc77fb04544d315947f0ba3a50ee34a724",
+      "n_anti": 3,
+      "n_pts": 432,
+      "rank": 4
+    },
+    "yukawa_replog_chain_sha256": "5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753"
+  },
+  "replog_final_chain_sha256": "1b1e5e4a6adbb2a427bcbe7ea189ce5a8aabeb024b6b2ee24b638c2fafed5d01"
+}

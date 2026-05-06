@@ -7,6 +7,8 @@
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{multirow}
+\usepackage{longtable}
+\usepackage[dvipsnames]{xcolor}
 \providecommand{\degree}{^{\circ}}
 \sisetup{
     range-units = single,
@@ -2537,6 +2539,242 @@ result. The companion paper~\cite{UnreasonableEffectiveness}
 addresses the separate question of whether those starting assumptions
 are minimal and substrate-physically expected; that argument is
 independent of the present demonstration and is not relied upon here.
+
+\section{Computed 4D effective Lagrangian: $\kappa=0$ critical-path milestone}
+\label{sec:stage4-lagrangian}
+
+This section reports the first end-to-end computed assembly of the 4D
+effective Lagrangian under the rank-4 $SU(4)$ Braun--He--Ovrut--Pantev
+(BHOP-2005~\cite{BHOP2005a,BHOP2005b}) bundle on the Schoen
+$\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient. The output is the
+critical-path completion of the Stage~4 dimensional-reduction skeleton
+described in the companion paper, with three sectors carrying
+\emph{physically meaningful} structural predictions (kinetic, gauge,
+Higgs potential, plus the Newton's-$G$ closure), and the Yukawa,
+CKM, and cosmological-constant sectors carrying explicit
+$\kappa=0$ \emph{placeholder} content. Honest framing is supplied
+sector by sector.
+
+\subsection{Canonical form and provenance chain}
+
+The assembled 4D effective Lagrangian takes the canonical form
+\begin{equation}
+\boxed{\;
+\mathcal{L}_4 \;=\; \mathcal{L}_{\rm kin}
+                 + \mathcal{L}_{\rm gauge}
+                 + \mathcal{L}_{\rm Yukawa}
+                 + V(H)
+                 + \Lambda_{\rm cc},
+\;}
+\label{eq:lagrangian-canonical}
+\end{equation}
+with
+\begin{align*}
+\mathcal{L}_{\rm kin}    &= i\,\bar\psi_i\,\gamma^\mu D_\mu \psi_i + |D_\mu H|^2, \\
+\mathcal{L}_{\rm gauge}  &= -\tfrac{1}{4}\,\sum_a F^a_{\mu\nu}\,F^{a\,\mu\nu},
+                          \quad a \in \{SU(3)_C, SU(2)_L, U(1)_Y, U(1)_X\}, \\
+\mathcal{L}_{\rm Yukawa} &= - Y^u_{ij}\,\bar Q_i u^c_j H
+                            - Y^d_{ij}\,\bar Q_i d^c_j \tilde H
+                            - Y^e_{ij}\,\bar L_i e^c_j \tilde H
+                            - Y^\nu_{ij}\,\bar L_i \nu^c_j H + \mathrm{h.c.}, \\
+V(H)                     &= -\mu^2\,|H|^2 + \lambda\,|H|^4, \\
+\Lambda_{\rm cc}         &= V_{\min}(H) \quad\text{(tree-level)}.
+\end{align*}
+
+The numerical workflow producing the values below is implemented in
+the Rust binary \texttt{p\_lagrangian\_assemble} (commit
+\texttt{ad1fd1b2}), which consumes the upstream Yukawa-matrix
+artefact from \texttt{p\_lagrangian\_yukawa\_matrices}
+(commit \texttt{e5a61df7}) which in turn consumes the eigenmode
+catalogue from \texttt{p\_lagrangian\_eigenmodes} at $n_{\rm pts}=432$
+(commits \texttt{0b90c1bc}~+~\texttt{77385de0}). The provenance chain
+SHA-256s, pinned for reproducibility, are
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Artefact & Replog terminal SHA-256 \\
+\midrule
+Eigenmode catalogue ($n_{\rm pts}=432$, BHOP) &
+\texttt{1a5a13bf...8e7d6fe9} \\
+Yukawa matrices ($\kappa=0$) &
+\texttt{5c043eb0...051d5753} \\
+Assembled Lagrangian & \texttt{1b1e5e4a...fafed5d01} \\
+Sectors-payload SHA & \texttt{f4079981...270dd9965} \\
+\bottomrule
+\end{tabular}
+\end{center}
+The full 64-character chains are \texttt{1a5a13bf010f7314beab35ad81b4b288%
+5a6eeaaf756849c5c97e9d3e8e7d6fe9} (eigenmode catalogue),
+\texttt{5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753}
+(Yukawa matrices),
+\texttt{1b1e5e4a6adbb2a427bcbe7ea189ce5a8aabeb024b6b2ee24b638c2fafed5d01}
+(assembled Lagrangian replog), and the canonical sectors-payload SHA
+\texttt{f407998187055a74b64ce0e7c9397c4d6b2133cb535b943f48d2a31270dd9965}.
+
+\subsection{Lagrangian header summary}
+
+\begin{table}[h]
+\centering
+\caption{4D effective Lagrangian sector summary
+(build \texttt{e5a61df7\_assembled\_0b90c1bc\_bhop\_432\_0xb077}).
+\textbf{Status} marks each sector as \emph{physically meaningful}
+(structural prediction) or $\kappa=0$ \emph{placeholder} (do not cite
+as a physics prediction).}
+\label{tab:stage4-lagrangian-summary}
+\begin{tabular}{lll}
+\toprule
+Sector & Status & Headline numerical content \\
+\midrule
+Kinetic            & meaningful  & 12 chiral fermions; $H^1$ dim $= 48$; canonical normalisation \\
+Gauge              & meaningful  & $g_1 = 0.461228$, $g_2 = 0.65096$, $g_3 = 1.2123$ at $M_Z$ \\
+Higgs $V(H)$       & meaningful  & $m_H = 125.1998$ GeV; $v_C = 246.21965$ GeV; $\lambda = 0.12928$; $\mu^2 = 7837.49$ GeV$^2$ \\
+Newton $G$         & meaningful  & $G_{\rm rec} = 6.67443 \times 10^{-11}$ vs CODATA $6.6743 \times 10^{-11}$ ($\sim 19$~ppm) \\
+Yukawa             & $\kappa=0$ placeholder & $Y_u = Y_d = \mathrm{diag}(2267.25, 2358.93, 2200.59)$~GeV (TeV-scale; non-physical) \\
+$Y_e, Y_\nu$       & deferred    & $e^c, \nu^c$ modes absent at degree-1 $H^1$ of rank-4 shadow \\
+CKM                & $\kappa=0$ placeholder & $V_{\rm CKM} = \mathbb{1}_3$; Wolfenstein $\lambda = A = \bar\rho = \bar\eta = J = 0$ \\
+$\Lambda_{\rm cc}$ & $\kappa=0$ placeholder & $V_{\min} = -1.188 \times 10^{8}$~GeV$^4 = -3.38 \times 10^{-66}\,(M_{\rm Pl}^{\rm red})^4$ (56.5 orders too large) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Newton's $G$ from heterotic volume reduction}
+\label{subsec:stage4-newton}
+
+The 4D Newton constant emerges as a closure check between three
+structural commitments, none of which is a fit parameter: the $F_e$
+gateway (Eq.~\eqref{eq:gateway}) fixing $m_{\rm Pl} = m_e/F_e$, the
+Schoen-quotient internal volume $V_X^{\rm central} = 4/3$ (structural-exact
+from the $\mathbb{Z}_3 \times \mathbb{Z}_3$ triple intersections at the
+central K\"ahler point $t_1 = t_2 = t_T = 1$), and the standard heterotic
+relation $1/\kappa_4^{\,2} = V_X/\kappa_{10}^{\,2}$ between the 10D and
+4D gravitational couplings. Substituting the gateway-fixed Planck mass
+and $V_X^{\rm central}$ recovers
+\[
+G_{\rm rec} \;=\; 6.67442860 \times 10^{-11}~\mathrm{N\cdot m^2/kg^2},
+\qquad
+G_{\rm CODATA-2022} \;=\; 6.6743 \times 10^{-11}~\mathrm{N\cdot m^2/kg^2},
+\]
+i.e.\ relative residual $\approx 1.93 \times 10^{-5}$ ($\sim 19$~ppm).
+The independent gateway cross-check
+$m_{\rm Pl}(F_e)$ versus $m_{\rm Pl}(G_{\rm CODATA}, V_X)$ matches at
+$-1.86 \times 10^{-6}$ ($\sim 2$~ppm). The implied string scale at the
+central K\"ahler point is $M_{\rm string} \approx 1.90 \times 10^{5}$~GeV
+in the binary's reduced-Planck convention; the committed K\"ahler-cone
+range gives $V_X \in [0.0208, 682.7]$ over which the residual budget
+varies. $G$ is \emph{not} a fit parameter.
+
+\subsection{Higgs potential as derived corollary}
+\label{subsec:stage4-higgs}
+
+Once $v_C$ and $m_H$ are predicted structurally
+(Sec.~\ref{sec:higgs}; chain positions $k_v = 1132/30$ and
+$k_H = 1072/30$), the SM tree-level relations
+$\mu^2 = m_H^{\,2}/2$ and $\lambda = m_H^{\,2}/(2 v_C^{\,2})$
+are arithmetic identities of the SM Higgs Lagrangian and follow
+without further input:
+\begin{equation}
+\boxed{\;
+m_H^{\rm pred} = 125.19978~\mathrm{GeV},
+\qquad
+v_C = 246.21965~\mathrm{GeV},
+\qquad
+\mu^2 = 7837.4926~\mathrm{GeV}^2,
+\qquad
+\lambda = 0.129280.
+\;}
+\label{eq:stage4-higgs-corollaries}
+\end{equation}
+PDG 2024 references: $m_H = 125.20 \pm 0.11$~GeV (central inside the
+1$\sigma$ bar); $v_{\rm tree} = 246.21965$~GeV (sub-ppm).
+$\mu^2$ and $\lambda$ are derived corollaries of the structurally
+predicted $m_H$ and $v_C$, not independent predictions.
+
+\subsection{Yukawa sector: $\kappa=0$ placeholder, NOT a physics prediction}
+\label{subsec:stage4-yukawa-placeholder}
+
+The Yukawa matrices computed by the assembly binary at $\kappa=0$ are
+\[
+Y_u \;=\; Y_d \;=\;
+\mathrm{diag}\bigl(2267.25,\; 2358.93,\; 2200.59\bigr)~\mathrm{GeV},
+\qquad
+V_{\rm CKM} \;=\; \mathbb{1}_3,
+\]
+with the corresponding diagonalised mass eigenvalues (descending,
+GeV) $[1668.02,\; 1603.19,\; 1556.05]$ for both up- and down-type
+quarks. The charged-lepton and neutrino blocks $Y_e$ and $Y_\nu$ are
+\emph{absent}: the $e^c$ and $\nu^c$ slots carry zero modes in the
+degree-1 $H^1(\widetilde X/\Gamma, V_{\rm BHOP})$ catalogue of the
+rank-4 shadow bundle (irrep counts: $Q$, $U^c$, $D^c$, $L$ each $12$;
+$E^c$, $\nu^c$, $H_u$, $H_d$ each $0$).
+
+\textbf{Honest caveat (load-bearing).}  These values are NOT physical
+predictions. They reflect the $\kappa=0$ block-diagonal limit in
+which the rank-4 $SU(4)$ BHOP bundle $V$ is treated as a sum of four
+line bundles with the off-diagonal $\mathrm{Ext}^1(V_2, V_1)$ data
+\emph{not engaged}. The genuine $SU(4)$ extension data is encoded in
+the BHOP-2005~\S{}6.5 monad presentation but is not numerically
+published in a form that can be consumed by a triple-overlap
+integral; the resulting $\kappa=0$ Yukawa structure produces
+$\mathcal{O}(\mathrm{TeV})$ values where physics requires the
+hierarchical pattern $m_t \approx 173$~GeV, $m_b \approx 4$~GeV,
+$m_u \approx 2$~MeV. The frame-collapse convention used inside the
+binary is engineered to produce non-zero output (so that the
+downstream pipeline is exercised end-to-end), \emph{not} derived
+from physics. Likewise, the $Y_e \equiv 0$ and $Y_\nu \equiv 0$
+entries are NOT a prediction of massless leptons --- they are a
+``no eigenmode in this slot at this cohomology degree'' sentinel,
+deferred to higher-degree $H^1$ exploration. Engagement of
+$\mathrm{Ext}^1$ ($\kappa \neq 0$) and lift to higher-degree $H^1$
+for the $e^c, \nu^c$ sectors are the next critical-path work items.
+The CKM matrix is the $3 \times 3$ identity at $\kappa=0$ for the
+same reason; Wolfenstein $\lambda = A = \bar\rho = \bar\eta = \delta_{\rm CKM}
+= J = 0$.
+
+\subsection{Cosmological constant: tree-level Higgs $V_{\min}$ only}
+\label{subsec:stage4-lambda}
+
+The tree-level Higgs potential of Eq.~\eqref{eq:stage4-higgs-corollaries},
+evaluated at its minimum $|H|^2 = v_C^{\,2}/2$, gives
+\[
+V_{\min} \;=\; -\frac{m_H^{\,2}\,v_C^{\,2}}{8}
+\;\approx\; -1.188 \times 10^{8}~\mathrm{GeV}^4
+\;\approx\; -3.377 \times 10^{-66}\,(M_{\rm Pl}^{\rm red})^4,
+\]
+versus the Planck~2018-derived
+$\Lambda_{\rm obs} \approx 1.1 \times 10^{-122}\,(M_{\rm Pl}^{\rm red})^4$,
+i.e.\ approximately $56.49$ orders of magnitude too large in
+absolute value, with the sign flipped (tree-level $V_{\min}$ is
+negative, observed $\Lambda_{\rm obs}$ is positive).
+
+\textbf{Honest framing.} This is the well-known Standard-Model
+cosmological-constant problem at tree level, NOT a framework-specific
+defect. Any heterotic compactification with the SM-coupled-to-gravity
+tree-level Higgs minimum produces the same mismatch. Loop corrections
+(Stage~7: gauge-boson + fermion + scalar contributions, plus a
+possible Sakharov-induced-gravity reading of the substrate's
+baseline tension) are not committed by the present construction and
+are explicitly deferred. We flag this here so the reader does not
+misread the tree-level value as a framework prediction.
+
+\subsection{Milestone interpretation}
+\label{subsec:stage4-milestone}
+
+This section records the first end-to-end \emph{computed} 4D
+Lagrangian assembly under the BHOP-2005 rank-4 $SU(4)$ bundle: an
+eigenmode catalogue ($n_{\rm pts}=432$, BHOP $H^1$ dim $48$) feeds a
+Yukawa-overlap pipeline that produces the $\kappa=0$ Yukawa matrices
+above, which in turn assemble the canonical-form Lagrangian of
+Eq.~\eqref{eq:lagrangian-canonical} with full SHA-pinned provenance.
+The kinetic, gauge, Higgs-potential, and Newton's-$G$ sectors are
+\emph{physically meaningful} and reproduce the structural predictions
+already documented in earlier sections of this paper. The Yukawa,
+CKM, and cosmological-constant sectors carry explicit $\kappa=0$
+placeholder status with caveats stated above. The
+present milestone is therefore a pipeline-readiness deliverable:
+the next critical-path step is to engage $\mathrm{Ext}^1(V_2, V_1)$
+($\kappa \neq 0$) inside the BHOP MonadAdapter so that the genuine
+$SU(4)$ Yukawa structure is computed; the
+hierarchical-Yukawa observables become unblocked at that step.
 
 \appendix
 

@@ -1,0 +1,231 @@
+{
+  "manifest": {
+    "git_revision": "139143d81cfd5002d42ff955b44636563e8acb4b",
+    "rust_toolchain": "rustc 1.93.1 (01f6ddf75 2026-02-11)",
+    "target_triple": "x86_64-pc-windows-msvc",
+    "cpu_features": [
+      "sse2",
+      "sse4.1",
+      "sse4.2",
+      "avx",
+      "avx2",
+      "fma"
+    ],
+    "hostname": "RACKROCKET",
+    "timestamp_utc": "2026-05-06T05:10:29Z",
+    "command_line": [
+      "target-yukawa-overlap\\release\\p_lagrangian_yukawa_matrices.exe"
+    ],
+    "n_threads_rayon": 24
+  },
+  "config": {
+    "catalogue": "output/p_lagrangian_eigenmodes_bhop_schoen_n432.json",
+    "expect_catalogue_replog_sha": null,
+    "higgs_vev": 246.21956,
+    "output": "output/p_lagrangian_yukawa_matrices.json"
+  },
+  "build_id": "139143d8_0b90c1bc_bhop_432_0xb077",
+  "catalogue_replog_chain_sha256": "1a5a13bf010f7314beab35ad81b4b2885a6eeaaf756849c5c97e9d3e8e7d6fe9",
+  "catalogue_build_id": "0b90c1bc_bhop_432_0xb077",
+  "kappa_0_placeholder": true,
+  "catalogue_summary": {
+    "build_id": "0b90c1bc_bhop_432_0xb077",
+    "bundle_kind": "bhop",
+    "generation_multiplicity": 3,
+    "h1_dim": 48,
+    "irrep_counts": [
+      [
+        "Q",
+        12
+      ],
+      [
+        "Uc",
+        12
+      ],
+      [
+        "Dc",
+        12
+      ],
+      [
+        "L",
+        12
+      ],
+      [
+        "Ec",
+        0
+      ],
+      [
+        "NuC",
+        0
+      ],
+      [
+        "Hu",
+        0
+      ],
+      [
+        "Hd",
+        0
+      ],
+      [
+        "Unassigned",
+        0
+      ]
+    ],
+    "manifest_git_revision": "0b90c1bc77fb04544d315947f0ba3a50ee34a724",
+    "n_anti": 3,
+    "n_pts": 432,
+    "rank": 4
+  },
+  "y_u_re_im": [
+    [
+      [
+        2267.252612750672,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        2358.9323462332304,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        2200.5920719469054,
+        0.0
+      ]
+    ]
+  ],
+  "y_d_re_im": [
+    [
+      [
+        2267.252612750672,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        2358.9323462332304,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        2200.5920719469054,
+        0.0
+      ]
+    ]
+  ],
+  "masses_up_descending_gev": [
+    1668.0170583818099,
+    1603.1896971389176,
+    1556.0535766990115
+  ],
+  "masses_down_descending_gev": [
+    1668.0170583818099,
+    1603.1896971389176,
+    1556.0535766990115
+  ],
+  "ckm_magnitudes": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "wolfenstein": {
+    "A": 0.0,
+    "delta_ckm_radians": 0.0,
+    "eta_bar": 0.0,
+    "jarlskog_invariant_J": 0.0,
+    "lambda": 0.0,
+    "rho_bar": 0.0
+  },
+  "deferred": {
+    "Y_e": "e^c modes deferred to higher-degree H¹ via the M3 lift's BHOP §6.3 classification — Ec count is 0 at degree 1 of the rank-4 SU(4) shadow.",
+    "Y_nu": "ν^c modes deferred to higher-degree H¹ via the M3 lift's BHOP §6.3 classification — NuC count is 0 at degree 1 of the rank-4 SU(4) shadow."
+  },
+  "generation_picks": {
+    "Dc": [
+      7,
+      11,
+      15
+    ],
+    "Ec": [],
+    "L": [
+      5,
+      9,
+      13
+    ],
+    "NuC": [],
+    "Q": [
+      4,
+      8,
+      12
+    ],
+    "Uc": [
+      6,
+      10,
+      14
+    ]
+  },
+  "replog_final_chain_sha256": "5c043eb0355710a67b4929c4e8dfb01448b2daa6bfad68ee42499c94051d5753"
+}

@@ -1,0 +1,124 @@
+==============================================================================
+STAGE-4-LAGRANGIAN: 4D effective Lagrangian (assembled)
+build_id          = e5a61df7_assembled_0b90c1bc_bhop_432_0xb077
+status            = kappa_0_placeholder_lagrangian
+==============================================================================
+
+CANONICAL FORM
+------------------------------------------------------------------------------
+  L_4 = L_kin + L_gauge + L_Yukawa + V(H) + Lambda_cc
+
+where:
+L_kin    = i bar{psi}_i gamma^mu D_mu psi_i + |D_mu H|^2
+L_gauge  = -1/4 sum_a F^a_{munu} F^{a,munu}
+L_Yukawa = -Y^u_{ij} bar{Q}_i u^c_j H
+-Y^d_{ij} bar{Q}_i d^c_j tilde{H}
+-Y^e_{ij} bar{L}_i e^c_j tilde{H}
+-Y^nu_{ij} bar{L}_i nu^c_j H + h.c.
+V(H)     = -mu^2 |H|^2 + lambda |H|^4
+Lambda_cc = V_min(H)  (tree-level Higgs contribution)
+
+==============================================================================
+HONEST FRAMING (read first)
+==============================================================================
+Physically meaningful sectors at this stage:
+  - kinetic
+  - gauge
+  - higgs
+  - newton_G (in provenance.newton_check)
+
+PLACEHOLDER sectors (do NOT cite as physics predictions):
+  - yukawa_up_quark        : κ=0; values dimensionally absurd
+  - yukawa_down_quark      : κ=0; same
+  - yukawa_charged_lepton  : deferred (e^c modes = 0 at deg-1 H^1)
+  - yukawa_neutrino        : deferred (same)
+  - ckm_matrix             : trivial identity at κ=0
+  - cosmological_constant  : tree-level only; 56.5 orders too large
+
+Next critical-path step: PAPER-UPDATE-AND-SYNC (final stream).
+
+==============================================================================
+KINETIC SECTOR (status: physically_meaningful)
+==============================================================================
+  L_kin = i bar{psi}_i gamma^mu D_mu psi_i + |D_mu H|^2
+  Fermion + Higgs kinetic-term coefficients = 1 (canonical normalisation).
+  N_chiral_fermion_fields_total = 12   (3 generations × 4 SM irreps Q,u^c,d^c,L)
+  H^1(X̃/Γ, V_BHOP) total dimension = 48 (κ=0 catalogue)
+
+==============================================================================
+GAUGE SECTOR (status: physically_meaningful)
+==============================================================================
+  L_gauge = -1/4 sum_a F^a_{munu} F^{a,munu}, a in {SU(3)_C, SU(2)_L, U(1)_Y, U(1)_X}
+  g_1(M_Z, GUT-norm)   = 0.461228
+  g_2(M_Z)             = 0.650960
+  g_3(M_Z)             = 1.212300
+  alpha_s(M_Z)         = 0.118 ± 0.0009
+  m_Z (GeV)            = 91.1876 ± 0.0021
+  U(1)_X breaks via Green-Schwarz Stueckelberg (substrate paper Step 0.6).
+
+==============================================================================
+YUKAWA SECTOR (status: kappa_0_placeholder — DO NOT CITE AS PHYSICS)
+==============================================================================
+  L_Yukawa = -Y^u bar{Q} u^c H - Y^d bar{Q} d^c tilde{H}
+             - Y^e bar{L} e^c tilde{H} - Y^nu bar{L} nu^c H + h.c.
+
+  Y_u (κ=0, diagonal):
+    [      2.267253e3,       0.000000e0,       0.000000e0]
+    [      0.000000e0,       2.358932e3,       0.000000e0]
+    [      0.000000e0,       0.000000e0,       2.200592e3]
+  Y_d (κ=0, diagonal):
+    [      2.267253e3,       0.000000e0,       0.000000e0]
+    [      0.000000e0,       2.358932e3,       0.000000e0]
+    [      0.000000e0,       0.000000e0,       2.200592e3]
+  Y_e: deferred (e^c modes = 0 at degree-1 H^1 of rank-4 shadow)
+  Y_nu: deferred (ν^c modes = 0 at degree-1 H^1 of rank-4 shadow)
+  Up-quark masses (descending, GeV)   = [1.6680e3, 1.6032e3, 1.5561e3]
+  Down-quark masses (descending, GeV) = [1.6680e3, 1.6032e3, 1.5561e3]
+  CKM = identity at κ=0; Wolfenstein λ=A=η̄=ρ̄=δ_CKM=J=0.
+
+  CAVEAT: m_t_predicted ~ 1.67 TeV vs m_t_PDG ≈ 173 GeV. The factor-
+  of-10 mismatch is the κ=0 frame-collapse signature, NOT a real
+  physics prediction. Engagement of Ext^1 (κ ≠ 0) is required.
+
+==============================================================================
+HIGGS POTENTIAL SECTOR (status: physically_meaningful)
+==============================================================================
+  V(H) = -mu^2 |H|^2 + lambda |H|^4
+  v_C predicted (GeV)              = 246.219650019852561793722730693
+  m_H predicted (GeV)              = 125.199781354230815106095591677
+  m_H PDG (GeV)                    = 125.2
+  mu^2 = m_H^2 / 2 (GeV^2)         = 7837.4926255736010374743950284
+  lambda = m_H^2 / (2 v^2)         = 0.129280113846889134218965632025
+  V_min = -m_H^2 v^2 / 8 (GeV^4)   = -118785265.630006015228464140905
+
+==============================================================================
+NEWTON'S G + GRAVITY (status: physically_meaningful)
+==============================================================================
+  V_X (Schoen quotient, central pt)        = 1.33333333333333333333333333333
+  V_X (lo end of committed Kahler range)   = 0.0208333333333333333333333333333
+  V_X (hi end of committed Kahler range)   = 682.666666666666666666666666667
+  M_Pl_red target (GeV)                    = 2435300000000000000.0
+  M_string implied (GeV)                   = 190295.342901878784694215851338
+  G_Newton recovered (SI)                  = 6.67442860038452611151512377268e-11
+  G_Newton CODATA-2022 (SI)                = 6.6743e-11
+  G_Newton residual (relative)             = 0.0000192679958236985923802904693557
+  F_e gateway cross-check                  = YES: m_Planck(F_e) / m_Planck(G_CODATA) matches to -1.85963e-6 relative.
+
+==============================================================================
+COSMOLOGICAL CONSTANT (status: kappa_0_placeholder)
+==============================================================================
+  Lambda_pred (tree-level Higgs, GeV^4)    = -118785265.630006015228464140905
+  Lambda_pred / M_Pl_red^4                 = -3.37716825384662386119268026967e-66
+  Lambda_observed (Planck 2018, M_Pl_red^4)= 1.1e-122
+  |Lambda_pred / Lambda_obs| in orders     = 56.48716
+  Note: tree-level Higgs V_min is NEGATIVE; observed Lambda is POSITIVE.
+  Full Stage-7 calc requires gauge + fermion + scalar loop contributions.
+
+==============================================================================
+CANONICAL SHA-256 (sectors payload)
+==============================================================================
+  replog_final_chain_sha256 = 1b1e5e4a6adbb2a427bcbe7ea189ce5a8aabeb024b6b2ee24b638c2fafed5d01
+
+==============================================================================
+END OF ASSEMBLED 4D LAGRANGIAN
+==============================================================================
