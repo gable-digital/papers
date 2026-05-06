@@ -139,38 +139,99 @@ observable; status undetermined.
 
 \section{Cross-anchor consistency}
 
+\input{tables/cross_anchor_summary}%
+
 The framework's mass scale $h_{\rm eff}$ can be fixed from any one
-of several independent observables. Table~\ref{tab:cross-anchor}
-makes this explicit: each row uses a single observable as the sole
-input and computes every other observable from the framework's
-structural relations. Agreement across rows tests internal
-consistency; disagreement against the observed values is a
-prediction error of the framework. The fine-structure constant
-$\alpha_{\rm EM}$ is included even though it is dimensionless and
-does not pin the mass scale --- the $\alpha_{\rm EM}$ column shows
-the framework's single structural prediction (lepton-VP-corrected
-$\alpha_2 \sin^2\theta_W$, $\sim\!877$~ppm above CODATA, with
-hadronic VP not yet substrate-derived; J7).
+of several \emph{dimensionally distinct} observables. The seven
+anchors used in Table~\ref{tab:cross-anchor} and the companion data
+file are not seven variations on the same input; they span a range
+of physical dimensions:
+\begin{itemize}\itemsep0pt
+\item $m_e$ --- mass, $[M]$ (CODATA $m_e c^2$ in MeV);
+\item $v_C$ --- mass, $[M]$ (G$_F$-derived Higgs vev in GeV);
+\item $m_P c^2$ --- mass, $[M]$ at the Planck scale (CODATA, in GeV);
+\item $G$ --- $[L^3 M^{-1} T^{-2}]$ (CODATA Newton's constant in
+SI units);
+\item $\lambda_{C,\tau}$ --- length, $[L]$ (PDG-derived Compton
+wavelength of the tau in fm);
+\item $\alpha_{\rm EM}$ --- dimensionless (CODATA fine-structure
+constant);
+\item $v_C^{\rm struct}$ --- mass, $[M]$ (the framework's own Higgs
+vev, computed from $E_8$ invariants alone with \emph{no} PDG input;
+included as a 7th column in the data file).
+\end{itemize}
+A consistency claim across these inputs is therefore not a
+normalisation property: an internally-rigid framework reproduces a
+mass-dimension prediction equally well from a length-dimension
+input, a coupling-strength input, and a gravitational input.
+
+\paragraph{Two distinct empirical claims.}
+The cross-anchor exercise establishes \emph{rigidity} (anchor
+independence) and is logically separate from \emph{accuracy} (the
+match against observation, addressed by the prediction tables in
+Sections~III--IV). Both must hold for the framework to be
+correct; here we report the rigidity result, and rely on the
+prediction tables for the accuracy result.
+
+\paragraph{Rigidity result, operational.}
+For every one of the \crossanchorNObservables{} predicted
+observables in the framework's structural catalogue, the seven
+anchor-derived predictions agree to \emph{better than
+\crossanchorMaxPpm~ppm} (max pairwise spread), with a median
+pairwise spread of \crossanchorMedianPpm~ppm. This consistency is a
+structural property of the framework's equations: no anchor is
+privileged, no observed value is tuned, and the residual spread
+reflects the precision of the underlying CODATA/PDG inputs (PDG
+$m_\tau$ at $\sim 6.8\times 10^{-5}$ and CODATA $G$ at $\sim
+2.2\times 10^{-5}$ dominate) rather than tunable parameters. The
+parameter-free $v_C^{\rm struct}$ anchor reproduces the
+mass-anchored predictions at $<\!1$~ppb spread against $v_C^{\rm
+obs}$, so the rigidity result holds even when the seventh
+column carries no measured input at all.
+
+\paragraph{Why this isn't dimensional analysis through known physics.}
+A reader might ask: ``if every anchor produces the same prediction,
+isn't that just because the anchors are related through known
+physics?'' The framework's structural equations do \emph{not} route
+through CODATA conversions. Each anchor enters its own
+geometry-intrinsic relation: $m_e$ via the gateway-slot $R$-ratio
+($m_e = R_e \cdot h_{\rm eff}$ with $R_e = (\dim - 2)/\dim$), $v_C$
+via the chain-position ratio $R_v$, $m_P$ via the structural
+factor $F_{\rm struct} = m_e/m_P$ derived from $E_8$ invariants
+alone, $G$ via $F_{\rm struct}^2$ entering as a closed
+geometric identity, $\lambda_{C,\tau}$ via the tau slot's
+sub-harmonic position $R_\tau$, and $\alpha_{\rm EM}$ via the
+lepton-vacuum-polarisation-corrected $\alpha_2 \sin^2\theta_W$
+combination. The fact that all seven paths converge on the same
+predicted value is a property of the framework's structural
+identities (companion paper for the full derivation), not of
+unit conversions; SI dimensional analysis cannot, on its own,
+relate $G$ to $m_e$ to a part-per-million.
 
 \begin{widetext}
 \input{tables/table_cross_anchor}
 \end{widetext}
 
 \noindent\textbf{Full machine-readable cross-anchor grid.}
-A complete observable-by-anchor cross-tabulation covering all 102
-predicted observables (every entry in the framework's structural
-catalogue --- 42 particle-mass entries plus electroweak couplings,
-mixing angles, CP phases, gauge bosons, lifetimes, decay widths,
-Compton wavelengths, atomic constants, Yukawa couplings, dark-matter
-candidate spectrum, and gravitational sector) is provided as
-\href{https://github.com/gable-digital/papers/blob/main/substrate_falsifiable_predictions/cross_anchor_full.csv}{\texttt{cross\_anchor\_full.csv}}
-alongside this paper. The CSV adds a seventh, parameter-free anchor
-not shown in Table~\ref{tab:cross-anchor}: the framework's
-structurally-derived Higgs vev (\texttt{vC\_struct\_anchor}, $v_C$
-computed from $E_8$ invariants alone with no PDG input). For each
-observable each anchor column carries the predicted value and the
-relative deviation in ppm against CODATA/PDG, all computed at
-$\mathrm{mp.prec}=500$.
+A complete observable-by-anchor cross-tabulation covering all
+\crossanchorNObservables{} predicted observables (every entry in the
+framework's structural catalogue --- 42 particle-mass entries plus
+electroweak couplings, mixing angles, CP phases, gauge bosons,
+lifetimes, decay widths, Compton wavelengths, atomic constants,
+Yukawa couplings, dark-matter candidate spectrum, and gravitational
+sector) is provided as
+\href{https://github.com/gable-digital/papers/blob/v2026-05-05-cross-anchor/substrate_falsifiable_predictions/cross_anchor_full.csv}{\texttt{cross\_anchor\_full.csv}}
+(permanent reference, pinned to git tag
+\texttt{v2026-05-05-cross-anchor}).
+The CSV exposes the seven anchors listed above (including the
+parameter-free $v_C^{\rm struct}$ column not shown in
+Table~\ref{tab:cross-anchor}), and for each observable carries a
+\texttt{max\_pairwise\_anchor\_spread\_ppm} column so the rigidity
+property is visible directly in the data without recomputation. All
+values are computed at $\mathrm{mp.prec}=500$. The latest (untagged)
+revision tracks the
+\href{https://github.com/gable-digital/papers/tree/main/substrate_falsifiable_predictions}{\texttt{main}}
+branch.
 
 \section{SM mass spectrum, electroweak sector, mixing}
 
