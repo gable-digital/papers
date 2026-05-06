@@ -137,6 +137,41 @@ dark-mode candidates.
 observable; status undetermined.
 \end{itemize}
 
+\section{Cross-anchor consistency}
+
+The framework's mass scale $h_{\rm eff}$ can be fixed from any one
+of several independent observables. Table~\ref{tab:cross-anchor}
+makes this explicit: each row uses a single observable as the sole
+input and computes every other observable from the framework's
+structural relations. Agreement across rows tests internal
+consistency; disagreement against the observed values is a
+prediction error of the framework. The fine-structure constant
+$\alpha_{\rm EM}$ is included even though it is dimensionless and
+does not pin the mass scale --- the $\alpha_{\rm EM}$ column shows
+the framework's single structural prediction (lepton-VP-corrected
+$\alpha_2 \sin^2\theta_W$, $\sim\!877$~ppm above CODATA, with
+hadronic VP not yet substrate-derived; J7).
+
+\begin{widetext}
+\input{tables/table_cross_anchor}
+\end{widetext}
+
+\noindent\textbf{Full machine-readable cross-anchor grid.}
+A complete observable-by-anchor cross-tabulation covering all 102
+predicted observables (every entry in the framework's structural
+catalogue --- 42 particle-mass entries plus electroweak couplings,
+mixing angles, CP phases, gauge bosons, lifetimes, decay widths,
+Compton wavelengths, atomic constants, Yukawa couplings, dark-matter
+candidate spectrum, and gravitational sector) is provided as
+\href{https://github.com/gable-digital/papers/blob/main/substrate_falsifiable_predictions/cross_anchor_full.csv}{\texttt{cross\_anchor\_full.csv}}
+alongside this paper. The CSV adds a seventh, parameter-free anchor
+not shown in Table~\ref{tab:cross-anchor}: the framework's
+structurally-derived Higgs vev (\texttt{vC\_struct\_anchor}, $v_C$
+computed from $E_8$ invariants alone with no PDG input). For each
+observable each anchor column carries the predicted value and the
+relative deviation in ppm against CODATA/PDG, all computed at
+$\mathrm{mp.prec}=500$.
+
 \section{SM mass spectrum, electroweak sector, mixing}
 
 \begin{widetext}
@@ -169,6 +204,25 @@ The remaining 8 high-mass modes lie within the envelope
 $[191~\mathrm{GeV},\,1.1~\mathrm{EeV}]$; specific masses
 $\ddagger$~open.
 
+\noindent\textbf{Slot-occupancy disclaimer.}
+The dark-matter modes enumerated above are \emph{candidate slots}
+only. The framework predicts the mass that would be carried by
+each slot \emph{if} it is occupied; it does not yet predict which
+slots are physically populated, nor with what relic abundance. We
+are explicitly \emph{not} predicting that detector experiments will
+find a particle in every listed mass band. Some, all, or none of
+these candidate slots may host observable dark-matter species; the
+framework's slot-occupancy prediction function (which slots are
+populated and at what abundance) is unfinished work and is gated
+by the open J-items below. The 14 spin-$\tfrac12$ half-integer-slot
+modes (auto-flagged violet in the predictions table) are the
+clearest example of this: each has a definite predicted mass, but
+whether the half-integer slot can support a populated state at all
+is a spin-cover question the framework cannot currently answer.
+Treat the dark-matter spectrum as a list of \emph{permissible}
+masses for any dark-sector state the framework does admit, not as
+a list of guaranteed detections.
+
 \noindent\textbf{CP rationals (framework predictions).}
 $\delta_{\rm CP}^{\rm PMNS} = 11\pi/10 \approx 198^\circ$ (consistent
 with NuFit-6.0~\cite{NuFit60} normal ordering: at the IC24 fit
@@ -191,6 +245,217 @@ $95\%$-CI floors.
 
 \noindent\textbf{No quantum-gravity scale below $\sim 10\,E_{\rm Planck}$;
 no fourth chiral generation; no fundamental scalar beyond Higgs.}
+
+\section{Upcoming experiments and what we predict they will find}
+
+The following named experiments have data releases or sensitivity
+upgrades scheduled in the 2026--2030 window that directly test the
+framework's predictions. Each entry pairs the experiment with the
+specific framework prediction it probes and the central-value
+expectation we anticipate the data to converge on.
+
+\subsection*{Neutrino sector}
+
+\paragraph{JUNO (Jiangmen Underground Neutrino Observatory).}
+\emph{Status:} taking data since August 2025. \emph{First-result
+window:} 2026--2030. The 59-day exposure already published
+$\sin^2\theta_{12} = 0.3092 \pm 0.0087$ and
+$\Delta m_{21}^2 = (7.50\pm 0.12)\times 10^{-5}~\mathrm{eV}^2$;
+the full 6-year program will reach $\sim\!0.5\%$ precision on
+$\sin^2\theta_{12}$. \emph{Framework prediction:}
+$\sin^2\theta_{12} = 0.3066$. The current measurement sits at
+$\sim\!0.3\sigma$ above the framework value; we expect JUNO's
+high-statistics result to converge on a central value within
+$\sim\!0.5\%$ of $0.3066$.
+
+\paragraph{Hyper-Kamiokande.}
+\emph{Status:} under construction; commissioning 2027--2028; data
+taking from 2028. \emph{First-result window:} 2029--2030.
+\emph{Framework prediction:} $\delta_{\rm CP}^{\rm PMNS} = 11\pi/10
+\approx 198^\circ$ (normal ordering). Hyper-K's projected $6^\circ$--$20^\circ$
+precision on $\delta_{\rm CP}$ will discriminate $198^\circ$ from
+the current global-fit best fits ($177^\circ$ in NuFit-6.0~IC19,
+$212^\circ$ in IC24) at high significance. We anticipate Hyper-K
+will converge near $198^\circ$.
+
+\paragraph{IceCube-Upgrade.}
+\emph{Status:} 7 new strings deploying austral summer 2025--2026.
+\emph{First-result window:} 2027--2028. \emph{Framework prediction:}
+$\sin^2\theta_{23} = 4/7 \approx 0.5714$. We anticipate
+IceCube-Upgrade's atmospheric-oscillation result to land near
+$0.5714$.
+
+\paragraph{T2K + NOvA joint analysis.}
+\emph{Status:} first joint result published October 2025; next
+combined update expected 2027--2028. The current $3\sigma$ band on
+$\delta_{\rm CP}$ does not exclude CP conservation. \emph{Framework
+prediction:} same $11\pi/10$ as Hyper-K. We anticipate the next
+T2K$+$NOvA joint update will pull the central value toward $198^\circ$
+as data accumulates.
+
+\subsection*{CKM sector}
+
+\paragraph{LHCb (Run 3 $\to$ Upgrade II).}
+\emph{Status:} Run~3 data ongoing; analysis 2026--2028. The
+current measurement $\gamma = (64.6 \pm 2.8)^\circ$ is already
+within $0.5\sigma$ of the framework's $11\pi/30 \approx 66.0^\circ$.
+\emph{First-result window:} Run 3 datasets give $\sim\!1^\circ$
+precision by 2027--2028; HL-LHC$+$Upgrade~II projects $0.3^\circ$
+by $\sim\!2036$. We anticipate LHCb's central value to converge
+near $66^\circ$.
+
+\paragraph{Belle II.}
+\emph{Status:} running. Independent $\gamma$ extraction expected
+$\sim\!2027$ providing cross-check on LHCb. \emph{Framework
+prediction:} same $66^\circ$. Independent confirmation expected.
+
+\subsection*{Cosmology and CMB}
+
+\paragraph{Simons Observatory.}
+\emph{Status:} Large Aperture Telescope first light February 2025;
+two Small Aperture Telescopes running since 2023; full array
+online mid-2026. \emph{First-result window:} 2027--2028.
+\emph{Framework prediction:} $n_s = 58/60 \approx 0.9667$. SO's
+projected $\sigma(n_s) \approx 0.002$ (vs Planck's $0.0042$) will
+discriminate $0.9667$ from the current Planck-2018 central value
+$0.9649 \pm 0.0042$ at greater than $2\sigma$. We anticipate SO's
+central value to land near $0.9667$.
+
+\paragraph{LiteBIRD.}
+\emph{Status:} JAXA satellite; launch JFY 2027 ($\sim\!2028$);
+3-year survey. Joint constraint on $n_s$ and tensor-to-scalar
+ratio $r$ at $\sigma(r) \sim 10^{-3}$. Confirms or refutes the
+$n_s$ prediction in conjunction with SO.
+
+\paragraph{Vera C. Rubin Observatory (LSST).}
+\emph{Status:} operations begin early 2026; alert stream live
+February 2026; DR1 $\sim\!2028$. SN-Ia$+$lensing program will
+deliver an independent $H_0$ at $\sim\!1\%$ precision by 2028--2030.
+\emph{Framework prediction:} the local-vs-CMB $H_0$ tension
+($\sim\!9\%$) is a genuine substrate-physical effect, not
+measurement error; Rubin's local $H_0$ should land near the
+SH0ES central value, $\sim\!73~\mathrm{km/s/Mpc}$.
+
+\paragraph{Euclid \& DESI.}
+\emph{Status:} both running; Euclid DR1 expected 2026--2027; DESI
+5-year results expected 2027 with extension through 2028.
+\emph{Framework prediction:} BAO/lensing-derived $H_0$ should
+remain in the CMB-extrapolated band ($\sim\!67$--$68~\mathrm{km/s/Mpc}$);
+neither survey will resolve the $\sim\!9\%$ tension to within
+measurement error. The persistence of the gap is the framework
+prediction.
+
+\paragraph{CMB-S4.}
+\emph{Status:} revised plan published June 2025; full survey starts
+mid-2030s. Long-term ultimate test of $n_s = 0.9667$ at $\sigma(r)
+\sim 5\times 10^{-4}$ tensor sensitivity.
+
+\subsection*{Dark-matter direct detection}
+
+\paragraph{LZ (LUX-ZEPLIN).}
+\emph{Status:} operating; latest world-best WIMP exclusion limits
+published December 2025. Next major release $\sim\!2027$.
+\emph{Framework prediction:} discrete-mass dark-matter peaks at
+$1.49~\mathrm{GeV}$, $4.82~\mathrm{GeV}$, and $593~\mathrm{GeV}$ are
+within LZ's accessible window. We expect LZ to either detect a
+peak at one of these specific masses (consistent with the
+framework) or continue to set null limits across the band.
+
+\paragraph{XENONnT.}
+\emph{Status:} running since 2021; updates 2026--2028. Same
+framework predictions apply; XENONnT provides an independent
+cross-check.
+
+\paragraph{XLZD (DARWIN successor).}
+\emph{Status:} Design Book published 2025; construction late 2020s;
+operations early 2030s. 60--80~tonne LXe target reaches
+$\sigma_{\rm SI} \sim 3\times 10^{-49}~\mathrm{cm}^2$, covering the
+framework's MeV--GeV and high-mass-envelope predictions down to
+the neutrino fog.
+
+\paragraph{ADMX (axion direct detection).}
+\emph{Status:} currently scanning $1.10$--$1.31~\mathrm{GHz}$
+($4.6$--$5.4~\mu\mathrm{eV}$); upgrades extend the range through
+2030. \emph{Framework prediction:} no QCD axion (since $\theta_{\rm QCD}
+= 0$ is a structural identity, not a Peccei-Quinn relaxation), so
+we predict ADMX will continue to set null limits and
+\emph{not} detect any DFSZ-class axion signal in any frequency
+band.
+
+\paragraph{NANOGrav, EPTA, SKA (pulsar-timing arrays).}
+\emph{Status:} NANOGrav 15-year dataset published; SKA-Mid first
+light 2028; 30-year datasets simulated through the 2030s.
+\emph{Framework prediction:} the framework's $0.37~\mathrm{zeV}$ and
+$1.34~\mathrm{zeV}$ ultralight modes lie in the PTA-sensitive
+$10^{-23}$--$10^{-22}~\mathrm{eV}$ range. We anticipate
+PTA-program detection of one of these specific zeV-band masses if
+they are dominant DM components, or continued null limits.
+
+\subsection*{Lepton magnetic moments}
+
+\paragraph{J-PARC E34 muon $g{-}2$/EDM.}
+\emph{Status:} beam commissioning 2025; data taking $\sim\!2030$;
+target precision $450~\mathrm{ppb}$. Independent ultracold-muon
+technique with different systematics. Cross-checks the closed
+Fermilab Muon $g{-}2$ result; framework predicts no discrepancy
+beyond Standard-Model lattice-QCD evaluations.
+
+\paragraph{Belle II tau program.}
+\emph{Status:} running. Few-${\times}10^{-6}$ sensitivity on $a_\tau$
+projected by 2028.
+
+\subsection*{Higgs and electroweak precision}
+
+\paragraph{HL-LHC (ATLAS \& CMS).}
+\emph{Status:} Run 3 finishes $\sim\!2026$; HL-LHC Run 4 begins
+mid-2030s; 3000~$\mathrm{fb}^{-1}$ per detector. Reaches
+$\kappa_b \sim 3\%$, $\kappa_\tau \sim 2\%$, total $\Gamma_H \sim 5\%$
+precision on Higgs partial widths. \emph{Framework predictions:}
+the predicted partial widths and the observation that no fourth
+chiral fermion generation exists below $\sim\!2.5~\mathrm{TeV}$;
+we expect HL-LHC to confirm the Standard-Model partial-width
+pattern and to push 4th-generation exclusion to $\sim\!2.5~\mathrm{TeV}$
+without discovery. Di-Higgs $\to \lambda_{HHH}$ extraction at
+$3$--$5\sigma$ tests the no-new-fundamental-scalar prediction.
+
+\subsection*{Gravitational tests}
+
+\paragraph{LIGO/Virgo/KAGRA O5 \& LISA.}
+\emph{Status:} O5 run starting 2027; LISA launch $\sim\!2035$.
+Multi-messenger BNS$+$GRB timing constrains $\Delta c/c$ down to
+$10^{-17}$ and tests vacuum dispersion of gravitational waves.
+\emph{Framework prediction:} no frame-dependent $c$, no vacuum
+dispersion; we anticipate continued null measurement of any
+deviation from the speed-of-light universality.
+
+\paragraph{ACES (Atomic Clock Ensemble in Space).}
+\emph{Status:} launched April 21, 2025 to ISS. Tests gravitational
+redshift to $\sim\!3\times 10^{-6}$ and time variation of fundamental
+constants. \emph{Framework prediction:} no time variation of
+constants beyond the framework's structural integers, no
+Lorentz-violation signature.
+
+\paragraph{LHC searches for sub-Planckian quantum gravity.}
+\emph{Status:} ongoing through HL-LHC. \emph{Framework prediction:}
+no detection of quantum-gravity signatures (e.g.\ micro-black-hole
+production) below $\sim\!10\,E_{\rm Planck}$.
+
+\subsection*{Anchored summary of near-term decisive tests}
+
+The most actionable falsification targets within the 2026--2028
+window are:
+\begin{itemize}\itemsep0pt
+\item \textbf{Simons Observatory} on $n_s = 0.9667$ (2027--2028
+result, $>2\sigma$ discrimination from Planck central);
+\item \textbf{JUNO} on $\sin^2\theta_{12} = 0.3066$ (already at
+$0.3\sigma$ in 59-day data; full-precision result by $\sim\!2030$);
+\item \textbf{LHCb Run 3} on $\gamma = 11\pi/30$ (already at
+$0.5\sigma$; $\sim\!1^\circ$ precision by 2027--2028);
+\item \textbf{Hyper-Kamiokande} on $\delta_{\rm CP}^{\rm PMNS} =
+11\pi/10$ (first decisive results 2029--2030);
+\item \textbf{LZ/XENONnT} on the MeV--GeV dark-matter spectrum
+(continuous updates through 2027).
+\end{itemize}
 
 \section{What would falsify the framework}
 
