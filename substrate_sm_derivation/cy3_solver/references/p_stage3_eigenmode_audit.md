@@ -1,5 +1,7 @@
 # P-Stage 3 — Bundle-Laplacian Eigenmode Infrastructure Audit (unblock plan)
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Status:** Read-only audit. No production code modified.
 **Audit head:** `eb04d05915a71a2c8e133c1e3788ffd16742446c` (origin/main).
 **Scope:** Framework Stage 3 = `{harmonic representatives H^p(X, V^q), bundle-Laplacian Box_V eigenvalue spectrum, triple overlaps y_{ij,k̄}}` on Schoen `Z_3 × Z_3` (with Tian-Yau `Z_3` as the comparison candidate). Stages 4-7 (Lagrangian dim-reduction → closure check → PPN → cosmological constant) are mechanical once Stage 3 outputs are in hand and are explicitly out of scope for this audit.

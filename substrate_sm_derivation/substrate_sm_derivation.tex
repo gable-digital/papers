@@ -35,7 +35,7 @@ We construct the Standard Model fermion mass spectrum, gauge couplings, mixing a
 Approximately twenty-six SM observables are predicted to ppm-or-better precision: $m_e$ at \SI{17}{ppm}, $m_\mu$ at \SI{30}{ppb}, $m_\tau$ at \SI{0.15}{ppm}, $\sin^2 \theta_W = 2/9 + \Delta_\varphi/h$ at \SI{198}{ppm}, $\alpha_s(M_Z) = 849/7192$ at \SI{405}{ppm}, the dark-matter abundance $\Omega_{\rm DM} h^2 = 0.119982$ vs.\ Planck~2018 $0.1200(10)$, and Newton's $G$ to \SI{2.5}{ppm} vs.\ CODATA~2022 --- all from the geometry alone. The CP phases $\delta_{\rm CP} = \pi + \pi/10$ and $\delta_{\rm CKM} = 11\pi/30$ are predicted as rational multiples of $\pi$. Normal neutrino mass ordering is selected. A conditional geometric route to vanishing strong CP via the $\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient projection avoids invoking a Peccei--Quinn axion.
 
 \noindent\textbf{What is open and not claimed.}
-The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$ is not closed in this paper. The $\sigma$-discrimination Schoen-vs-Tian--Yau result ($6.92\sigma$ Tier~0; bundle-construction-specific) is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
+The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of $X/(\mathbb{Z}_3 \times \mathbb{Z}_3)$ is not closed in this paper. The $\sigma$-discrimination Schoen-vs-Tian--Yau result is reported as a four-tier transparency table (conservative full $20{+}20$ seeds: $|t| = 3.99\sigma$, percentile~95\% CI $[3.29, 10.64]$ -- referee-safe unconditional reading, CI lower bound straddles $5\sigma$; strict-converged tier: $|t| = 6.92\sigma$, BCa $[5.30, 9.04]$ -- conditional on the convergence filter that preferentially trims $4/20$ Schoen seeds from the upper tail; bundle-construction-specific) and is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
 \end{abstract}
 
 %% ============================================================================
@@ -52,7 +52,7 @@ WHAT THIS PAPER DOES. We construct the Standard Model fermion mass spectrum, gau
 
 WHY IT MATTERS. Approximately twenty-six SM observables are predicted to ppm-or-better precision: m_e at 17 ppm, m_mu at 30 ppb, m_tau at 0.15 ppm, sin^2 theta_W = 2/9 + Delta_phi/h at 198 ppm, alpha_s(M_Z) = 849/7192 at 405 ppm, the dark-matter abundance Omega_DM h^2 = 0.119982 vs. Planck 2018 0.1200(10), and Newton's G to 2.5 ppm vs. CODATA 2022 -- all from the geometry alone. The CP phases delta_CP = pi + pi/10 and delta_CKM = 11 pi / 30 are predicted as rational multiples of pi. Normal neutrino mass ordering is selected. A conditional geometric route to vanishing strong CP via the Z_3 x Z_3 quotient projection avoids invoking a Peccei-Quinn axion.
 
-WHAT IS OPEN AND NOT CLAIMED. The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of X/(Z_3 x Z_3) is not closed in this paper. The sigma-discrimination Schoen-vs-Tian-Yau result (6.92 sigma Tier 0; bundle-construction-specific) is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
+WHAT IS OPEN AND NOT CLAIMED. The construction is a strong-selection structural identification, not yet a forced derivation: the substrate-physical projection onto the heterotic moduli of X/(Z_3 x Z_3) is not closed in this paper. The sigma-discrimination Schoen-vs-Tian-Yau result is reported as a four-tier transparency table (conservative full 20+20 seeds: |t| = 3.99 sigma, percentile 95% CI [3.29, 10.64] -- referee-safe unconditional reading, CI lower bound straddles 5 sigma; strict-converged tier: |t| = 6.92 sigma, BCa [5.30, 9.04] -- conditional on the convergence filter that preferentially trims 4/20 Schoen seeds from the upper tail; bundle-construction-specific) and is reported as supporting evidence pending the converged PDG-fermion-mass Yukawa-cohomology pipeline. Dark-sector chirality assignments and several closure-rule numerators are encoded structural-rule-consistent choices whose generative derivation is deferred.
 
 \fi
 %% ============================================================================
@@ -493,7 +493,7 @@ do not depend on the chain-channel convergence and stand on their
 own.
 
 \paragraph{$\sigma$-channel as discriminability, not BF input.}
-The L$^2$ Donaldson §3.4 weighted-variance Monge--Ampère residual $\sigma$ on the Donaldson-balanced metric (Donaldson 2009~\cite{Donaldson2009}, PAMQ \textbf{5}, p.~587, eq.~3.4: $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$ with $\kappa = \langle \eta \rangle_{w}$, matching the production implementation in \texttt{schoen\_metric.rs::compute\_sigma} and \texttt{ty\_metric.rs::compute\_sigma}) is a separately-computed statistical discriminator that distinguishes the two candidates' metrics with $|t| = 6.92$ at $k=3$, BCa $[5.30, 9.04]$ (Tab.~\ref{tab:cy3-sigma-kscan}). The $k$-scan across $k=3,4,5$ reveals the empirical signature of basis-size dominance: as Schoen's basis dimension grows monotonically ($27 \to 48 \to 75$), the strict-converged Schoen subset shrinks ($16/20 \to 7/20 \to 6/20$) and the heavy-tailed $\sigma_{\rm Schoen}$ distribution increasingly drives the $|t|$-statistic. To test whether this is a real geometric signal or a basis-size artifact, we performed a paired-bootstrap test at matched basis size $n_b = n_b^{\rm Schoen} = 27$ between the two candidates' metrics, $20$ seeds, $B = 10^4$ resamples (Tab.~\ref{tab:cy3-sigma-artifact}). The signed gap \emph{inverts} when bases are matched, with disjoint BCa CIs and bootstrap probability of opposite sign equal to unity, and is the empirical basis for excluding $\sigma$ from the multi-channel Bayes factor (\texttt{for\_combination = false} flag on the \texttt{ChannelEvidence} record). The matched-basis comparison is currently implemented as a lex-sorted truncation of the larger TY basis to Schoen's 27-monomial dimension; a geometric basis projection (eigenvalue-ranked principal-components of the Laplacian, or harmonic-form ranking) is the in-flight upgrade to the matched-basis defense (\texttt{REMEDIATION\_PLAN\_OPTION\_B.md} Phase 3.3). The $\sigma$-discriminability is reported \emph{only} as a separate $|t|$-statistic, not as a likelihood contribution; the Bayes-factor exclusion of $\sigma$ is conditional on the matched-basis defense surviving the geometric-projection upgrade.
+The L$^2$ Donaldson §3.4 weighted-variance Monge--Ampère residual $\sigma$ on the Donaldson-balanced metric (Donaldson 2009~\cite{Donaldson2009}, PAMQ \textbf{5}, p.~587, eq.~3.4: $\sigma^2 = \langle (\eta/\kappa - 1)^2 \rangle_{w}$ with $\kappa = \langle \eta \rangle_{w}$, matching the production implementation in \texttt{schoen\_metric.rs::compute\_sigma} and \texttt{ty\_metric.rs::compute\_sigma}) is a separately-computed statistical discriminator that distinguishes the two candidates' metrics; we report the $k=3$ result as a four-tier table (Tab.~\ref{tab:cy3-sigma-kscan}): \emph{conservative tier} (full $20{+}20$, no filter -- referee-safe unconditional reading) $|t| = 3.99\sigma$, percentile~95\% CI $[3.29, 10.64]$ -- CI lower bound straddles $5\sigma$ at $3.29$; \emph{strict-converged tier} ($\mathrm{residual}<\mathrm{tol}$ AND $\mathrm{iters}<\mathrm{cap}$, $n_{\rm Sc}=16$ -- conditional on the convergence filter, which preferentially trims $4/20$ Schoen seeds from the upper tail) $|t| = 6.92\sigma$, BCa $[5.30, 9.04]$. The $k$-scan across $k=3,4,5$ reveals the empirical signature of basis-size dominance: as Schoen's basis dimension grows monotonically ($27 \to 48 \to 75$), the strict-converged Schoen subset shrinks ($16/20 \to 7/20 \to 6/20$) and the heavy-tailed $\sigma_{\rm Schoen}$ distribution increasingly drives the $|t|$-statistic. To test whether this is a real geometric signal or a basis-size artifact, we performed a paired-bootstrap test at matched basis size $n_b = n_b^{\rm Schoen} = 27$ between the two candidates' metrics, $20$ seeds, $B = 10^4$ resamples (Tab.~\ref{tab:cy3-sigma-artifact}). The signed gap \emph{inverts} when bases are matched, with disjoint BCa CIs and bootstrap probability of opposite sign equal to unity, and is the empirical basis for excluding $\sigma$ from the multi-channel Bayes factor (\texttt{for\_combination = false} flag on the \texttt{ChannelEvidence} record). The matched-basis comparison is currently implemented as a lex-sorted truncation of the larger TY basis to Schoen's 27-monomial dimension; a geometric basis projection (eigenvalue-ranked principal-components of the Laplacian, or harmonic-form ranking) is the in-flight upgrade to the matched-basis defense (\texttt{REMEDIATION\_PLAN\_OPTION\_B.md} Phase 3.3). The $\sigma$-discriminability is reported \emph{only} as a separate $|t|$-statistic, not as a likelihood contribution; the Bayes-factor exclusion of $\sigma$ is conditional on the matched-basis defense surviving the geometric-projection upgrade.
 
 \input{tables/table_cy3_substrate_identification.tex}
 \input{tables/table_cy3_bayesian_channels.tex}
@@ -656,7 +656,15 @@ h_{\rm eff} \;=\; \frac{m_e}{2 \omega_{\rm fix}}
             \;=\; m_e \cdot \frac{124}{123},
 \end{equation}
 where $\omega_{\rm fix} = 1/2 - 1/\dim = 123/248$ is the gateway
-normalization factor. Equivalently, with the Planck mass
+normalization factor, structurally defined as $(\dim - 2)/(2\dim)$
+--- an arithmetic gcd-reduction of an $E_8$ algebraic invariant, not
+an empirical eigenvalue. The $h_{\rm eff} = m_e \cdot 124/123$
+identity is therefore a definitional rearrangement once $m_e$ is
+supplied, and its empirical content is the muon-formula
+self-consistency
+$h_{\rm eff} = m_\mu / R_\mu$ at $\sim 30$~ppb (test of $R_\mu$
+given $m_e$, not of $\omega_{\rm fix}$). Equivalently, with the
+Planck mass
 $m_{\rm Planck} = \sqrt{\hbar c / G}$ taken from the structurally
 predicted $G$ of Sec.~\ref{sec:gravity},
 $h_{\rm eff} = F_e \cdot m_{\rm Planck} \cdot 124/123$, with $F_e$
@@ -2277,18 +2285,25 @@ the catalogue uniqueness statement at $(3,3)$ is conditional on the
 gCICY non-manifest residue.
 
 \item \emph{Donaldson convention robustness on the $\sigma$-channel
-discrimination.} The $|t| = 6.92$ Schoen-vs-TY $\sigma$-channel
-result reported in Sec.~\ref{sec:cy3-substrate-identification}
-depends on the specific choice of Donaldson h-inversion procedure and
-the Kähler-form projection convention used in the metric pipeline.
-The paired-bootstrap sign-reversal defense addresses the basis-size
-artifact at matched basis size; it does not address convention-choice
-artifacts. \emph{Required work:} robustness sweep over $\geq 3$
-published convention variants for both the h-inversion handling and
-the Kähler-form projection, with a stress-test report on whether the
-$|t| = 6.92$ result survives or degrades. The $\sigma$-channel
-discrimination should be re-stated with an explicit convention
-sensitivity envelope.
+discrimination.} The Schoen-vs-TY $\sigma$-channel result
+(reported as a four-tier table in
+Sec.~\ref{sec:cy3-substrate-identification}: conservative tier
+$|t| = 3.99\sigma$, full $20{+}20$ seeds, percentile~95\% CI
+$[3.29, 10.64]$ — CI lower bound straddles $5\sigma$;
+strict-converged tier $|t| = 6.92\sigma$, BCa $[5.30, 9.04]$,
+conditional on the convergence filter trimming $4/20$ Schoen
+seeds preferentially from the upper tail) depends on the
+specific choice of Donaldson h-inversion procedure and the
+Kähler-form projection convention used in the metric pipeline.
+The paired-bootstrap sign-reversal defense addresses the
+basis-size artifact at matched basis size; it does not address
+convention-choice artifacts. \emph{Required work:} robustness
+sweep over $\geq 3$ published convention variants for both the
+h-inversion handling and the Kähler-form projection, with a
+stress-test report on whether the four-tier result survives or
+degrades. The $\sigma$-channel discrimination should be
+re-stated with an explicit convention sensitivity envelope on
+both the conservative and strict tiers.
 
 \item \emph{Schoen-uniqueness sweep at adjacent Hodge bins.} The
 catalogue uniqueness statement is at the single Hodge bin $(3,3)$.
@@ -2548,35 +2563,49 @@ effective Lagrangian under the rank-4 $SU(4)$ Braun--He--Ovrut--Pantev
 (BHOP-2005~\cite{BHOP2005a,BHOP2005b}) bundle on the Schoen
 $\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient.
 
-\paragraph{Path A research closure (verdict (a) ROBUST).}
+\paragraph{Path A research closure (verdict (a) at the audited scope).}
 At the time of writing, the Path A heterotic line of attack has reached
-definitive closure. Three sequential computational artefacts on the
-\texttt{Schoen}~$\widetilde X / \Gamma$ quotient establish:
+closure \emph{within an explicitly audited scope}: the line-bundle
+shadow + $W$-twisted SES on the $\mathbb{Z}_3 \times \mathbb{Z}_3$-invariant
+subspace at the BHOP-canonical bundle-frame lift
+$(g_\alpha, g_\beta) = (0, 0)$. Three sequential computational
+artefacts on the \texttt{Schoen}~$\widetilde X / \Gamma$ quotient
+establish:
 \begin{itemize}\itemsep0pt
 \item \textbf{Shadow $\mathrm{Ext}^1 = 0$.} The line-bundle-shadow
   $\mathrm{Ext}^1(V_2, V_1)$ on the Schoen quotient was computed to be
   exactly zero (commit \texttt{831d910c}; reference document
-  \path{references/p_ext1_engagement_2026-05-05.md}).
+  \path{references/p_ext1_engagement_2026-05-05.md}). The shadow
+  truncation drops the rank-2 dP9 bundle $W$ carried by the full
+  $V_2 = \mathcal{O}(\tau_1 - \tau_2) \otimes \pi_2^*(W)$; this caveat
+  is self-disclosed in
+  \path{src/bin/p_ext1_compute.rs} lines 19--37, 87--90, 324--330.
 \item \textbf{dP9-side $W$-bundle $h^1 \geq 3$.} The $W$-twisted
   contribution to $\mathrm{Ext}^1$ on the dP9 side was found to carry
   $h^1 \geq 3$ in non-trivial $\mathbb{Z}_3 \times \mathbb{Z}_3$
   characters, with $\sum \mathrm{mult} \cdot \chi_\mathrm{dP9} = +18$
   (commit \texttt{eea6f085}; \path{references/p_dp9_w_lift_2026-05-05.md}).
 \item \textbf{$\mathbb{Z}_3 \times \mathbb{Z}_3$-invariant projection
-  yields $0$.} The $+18$ resides entirely in the non-invariant
-  $\beta = 2$ characters; the BHOP-canonical bundle-frame lift
-  $(g_\alpha, g_\beta) = (0, 0)$ projects the invariant subspace to
-  exactly $0$ at both the lower and upper SES bounds (commit
+  yields $0$ at the $(0,0)$ lift.} The $+18$ resides entirely in the
+  non-invariant $\beta = 2$ characters; the BHOP-canonical bundle-frame
+  lift $(g_\alpha, g_\beta) = (0, 0)$ projects the invariant subspace
+  to exactly $0$ at both the lower and upper SES bounds (commit
   \texttt{a4e6231e};
   \path{references/p_dp9_w_invariant_proj_2026-05-06.md}).
 \end{itemize}
-This chain of three computations definitively settles
-$\mathrm{Ext}^1_{\mathrm{full}} = 0$ on the Schoen
-$\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient. The robustness argument is
-geometric: the BHOP \S 6.1 SES sub-bundle $O(-2f)$ rigs the elliptic-fiber
-$H^1$ direction to sit at $\beta = 2 \neq 0$, and no admissible choice of
-$L_\mathrm{base}$ on dP9 can move that character without breaking the
-SES design (see the cited reference for the closed-form proof).
+Within that scope this chain of three computations settles
+$\mathrm{Ext}^1_{\mathrm{shadow}} = 0$ on the Schoen
+$\mathbb{Z}_3 \times \mathbb{Z}_3$ quotient. The robustness argument
+is geometric: the BHOP \S 6.1 SES sub-bundle $\mathcal{O}(-2f)$ rigs
+the elliptic-fiber $H^1$ direction to sit at $\beta = 2 \neq 0$, and
+no admissible choice of $L_\mathrm{base}$ on dP9 can move that
+character without breaking the SES design (see the cited reference
+for the closed-form proof). \textbf{Scope caveat.} A complete
+proof of $\mathrm{Ext}^1_{\mathrm{full}} = 0$ across all bundle-frame
+lifts $(g_\alpha, g_\beta) \in (\mathbb{Z}_3)^2$ and beyond the
+line-bundle shadow truncation requires dP9-cohomology of the rank-2
+$W$-bundle in its own right; the present chain proves vanishing on
+the audited scope only.
 
 \paragraph{Consequence for the framework prediction.}
 The off-diagonal $SU(4)$ coupling $\kappa$ \emph{vanishes} as a
@@ -2747,9 +2776,12 @@ predicted $m_H$ and $v_C$, not independent predictions.
 \subsection{Yukawa sector: framework prediction at $\kappa=0$ fixed point, falsified vs PDG}
 \label{subsec:stage4-yukawa-framework-prediction}
 
-Post Path A research closure (verdict (a) ROBUST), the Yukawa matrices
-emitted by the assembly binary at the rank-4 BHOP-2005 $\kappa = 0$
-fixed point are the framework's \emph{canonical prediction} for the
+Post Path A closure at the audited scope (verdict (a),
+line-bundle-shadow $+$ $W$-twisted SES on the
+$\mathbb{Z}_3 \times \mathbb{Z}_3$-invariant subspace, $(0,0)$ lift),
+the Yukawa matrices emitted by the assembly binary at the rank-4
+BHOP-2005 $\kappa = 0$ fixed point are the framework's
+\emph{canonical prediction at that scope} for the
 visible-sector Yukawa eigenvalues:
 \begin{align*}
 Y_u = Y_d &= \mathrm{diag}\bigl(2267.25,\; 2358.93,\; 2200.59\bigr)~\mathrm{GeV}, \\
@@ -3192,9 +3224,10 @@ the Taylor upper bound versus the actual residual).
 
 The substrate-physical reading of the special chain positions is:
 \begin{itemize}
-\item \textbf{electron at $k = 0$} -- gateway eigenvalue
-$\omega_{\rm fix} = (\dim - 2)/(2\dim) = 123/248$, an exact $E_8$
-algebraic identity (P7.12). Off the Coxeter ladder; no chain-position
+\item \textbf{electron at $k = 0$} -- gateway-normalisation
+coefficient $\omega_{\rm fix} = (\dim - 2)/(2\dim) = 123/248$, an
+exact $E_8$ algebraic identity (P7.12), structurally defined and not
+an empirical eigenvalue. Off the Coxeter ladder; no chain-position
 freedom; no within-row chirality bit. Fully UGP-derived.
 \item \textbf{strange at $k = h/2 = 15$} -- midpoint of the substrate's
 vacuum coupling-reach kernel. Gaussian overlap collapses to the base

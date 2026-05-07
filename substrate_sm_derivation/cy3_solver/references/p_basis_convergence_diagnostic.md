@@ -1,5 +1,7 @@
 # P-BASIS-CONV — Basis-size-artefact diagnostic for σ-channel discrimination
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Status:** complete — manuscript-grade production rerun landed 2026-04-30 23:54
 (20 seeds × n_pts=40 000 × Donaldson iters=100 × tol=1e-6, bootstrap B=10 000,
 boot_seed=12345). The 5-seed loose-tol diagnostic is preserved verbatim below

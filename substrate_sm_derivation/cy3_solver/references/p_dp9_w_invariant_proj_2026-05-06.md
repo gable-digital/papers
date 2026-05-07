@@ -206,9 +206,17 @@ which always sits at β = `−(b − 2 + 1)` mod 3 = `(1 − b) mod 3`, and
 for L_base bidegrees `(a, 0)` (BHOP's V_2* twist directions on dP9)
 this is `1`, but the doubled-fiber `(-2f) − f` shift makes it `2`.
 
-So the verdict (a) is a **robust geometric consequence of BHOP §6.1's
-SES design**: W's elliptic-fiber sub is rigged precisely to sit in a
-non-trivial β-character.
+So the verdict (a) is a **geometric consequence of BHOP §6.1's
+SES design at the line-bundle-shadow + W-twisted-SES audited scope
+on the Z/3×Z/3-invariant subspace at the (g_α, g_β) = (0, 0)
+bundle-frame lift**: W's elliptic-fiber sub is rigged precisely to
+sit in a non-trivial β-character. This robustness statement is
+scoped — it does not address bundle-frame lifts other than (0, 0)
+nor full-bundle Ext¹ beyond the line-bundle shadow truncation
+(`p_ext1_compute.rs` self-discloses the shadow caveat at
+lines 19–37, 87–90, 324–330). A complete proof of
+Ext¹_full = 0 requires dP9-cohomology of the rank-2 W-bundle
+in its own right.
 
 ---
 

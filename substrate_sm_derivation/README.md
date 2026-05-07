@@ -162,10 +162,15 @@ A separate σ-discrimination program in the monorepo (`book/scripts/
 cy3_substrate_discrimination/`) tests whether the framework's predictions
 are tight enough to *distinguish* the Schoen Z/3 × Z/3 background from
 plausible alternatives (TY/Z3 line bundles, Fermat quintic) via numerical
-Donaldson-metric statistics. Current state: TY-vs-Schoen at 6.92σ Tier 0,
-publication-quality after seven rounds of hostile review (n_pts=40k, strict
-residual+iter convergence, BCa CI alongside percentile). Schoen wins both
-σ-discrimination and the BBW-correct Yukawa chain-match.
+Donaldson-metric statistics. Current state: TY-vs-Schoen σ-discrimination
+reported as a 4-tier transparency table — **conservative (full 20+20 seed
+sample, no filter): 3.99σ, percentile 95% CI [3.29, 10.64]** (referee-safe
+unconditional; CI lower bound straddles 5σ); **strict-converged (residual<tol
+AND iters<cap, n_Schoen=16): 6.92σ, BCa [5.30, 9.04]** (conditional on the
+convergence filter, which preferentially trims 4/20 Schoen seeds from the
+upper tail). Source: `output/p5_10_n40k_p5_5k.log:75-78`; full discussion in
+`cy3_solver/references/cy3_publication_summary.md` §1. Schoen wins both
+σ-discrimination (at every tier) and the BBW-correct Yukawa chain-match.
 
 ### 3. E_8 ω_fix invariant — algebraic vs. eigenvalue interpretation
 

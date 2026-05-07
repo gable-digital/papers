@@ -1,5 +1,7 @@
 # P-Bundle-Provenance — Audit closure record (REM-OPT-B Phase 1.4)
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Date:** 2026-05-04
 **Scope:** Forward-confirmation of every line bundle, monad map, Wilson-line
 action, 5-brane class, and Yukawa-coverage citation used by the
@@ -48,8 +50,11 @@ action, 5-brane class, and Yukawa-coverage citation used by the
 > as a non-literal canonical-shape reference with the AGLP-2012 §5.3
 > exclusion footnote attached.
 
-The pipeline's headline empirical claim — Schoen-vs-TY chain-match
-discrimination at 6.92σ Tier 0 — is **bundle-citation-independent**
+The pipeline's headline empirical claim — Schoen-vs-TY σ-discrimination,
+4-tier table with conservative (full 20+20) **3.99σ** referee-safe and
+strict-converged (conditional) **6.92σ** (see `cy3_publication_summary.md`
+§1 for the 4-tier table and asymmetric-pruning disclosure) — is
+**bundle-citation-independent**
 for the Tian-Yau side: the chain-match channel runs on the Donaldson-
 balanced metric Laplacian, not on the bundle. The Yukawa channel,
 which *does* consume the bundle, is gated behind

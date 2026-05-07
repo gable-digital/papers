@@ -1,5 +1,7 @@
 # CY3 Substrate-Discrimination — Consolidated Publication-Grade Summary
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Document purpose.** This is the document a hostile reviewer of the
 CY3 substrate-discrimination paper would read. It leads with the two
 publication headlines, defends each, points at the source JSON
@@ -17,22 +19,59 @@ Bayes factor that drives the physics-preference number.
 
 ## Section 1 — Headlines
 
-* **Discriminability (σ-channel).** **6.92σ** Tier 0 strict-converged,
-  BCa 95% CI **[5.30, 9.04]** (percentile 95% CI [5.65, 10.03]),
+* **Discriminability (σ-channel) — 4-tier transparency table.**
   k=3, n_pts=40 000, donaldson_iters=100, Donaldson-only (no Adam),
-  20 seeds (n_TY=20, n_Schoen=16 strict-converged). Source:
-  `output/p5_10_ty_schoen_5sigma.json` (P5.10 / P5.5k). Defended
-  through 8 hostile-review rounds (see `references/p5_10_5sigma_target.md`).
+  20 TY seeds + 20 Schoen seeds. Source for tier numbers:
+  `output/p5_10_n40k_p5_5k.log:75-78`; `output/p5_10_ty_schoen_5sigma.json`
+  (P5.10 / P5.5k); defended through 8 hostile-review rounds (see
+  `references/p5_10_5sigma_target.md`).
 
-* **Physics preference (chain channels).** **5.43σ Schoen-favored**
-  (combined ln BF = **−14.76 nats**, "Strong" on the Kass–Raftery
-  scale; convention: positive ln BF = TY-favored, negative =
-  Schoen-favored). Computed from `chain_quark` (ln BF = **−5.60**) +
-  `chain_lepton` (ln BF = **−9.16**) at k=3, n_pts=25 000.
-  σ-channel is **excluded** from this BF (see Section 2). Source:
+  | Tier | Filter | n_TY | n_Sc | n-σ | pct 95% CI | BCa 95% CI | CI floor ≥ 5σ? |
+  |---|---|---:|---:|---:|---|---|---|
+  | **Tier 1: conservative (referee-safe)** | full 20+20, no filter | 20 | 20 | **3.99** | [3.29, 10.64] | [2.89, 8.97] | NO (straddles 5σ) |
+  | **Tier 0: strict-converged (conditional)** | residual<tol AND iters<cap | 20 | **16** | **6.92** | [5.65, 10.03] | [5.30, 9.04] | YES |
+  | Tier 2: canonical | residual < 1e-3 | 20 | 18 | 3.52 | [2.94, 10.05] | [2.51, 8.05] | NO |
+  | Tier 3: Tukey re-trim | Tier 2 ∖ Tukey 1.5·IQR | 20 | 17 | 7.43 | [5.94, 11.53] | [5.27, 9.90] | YES |
+
+  **Headline framing.** The conservative tier (Tier 1, 3.99σ) is the
+  referee-safe number: it includes all 20 Schoen seeds with no filter.
+  The strict-converged tier (Tier 0, 6.92σ) is genuine *conditional on
+  the strict-convergence filter* (`residual < tol AND iters < cap`),
+  which drops 4/20 Schoen seeds — including seed 5 (σ=43.24, ~7× the
+  remaining cluster), preferentially from the upper tail. This
+  asymmetric pruning makes Tier 0 a stronger-looking but
+  filter-conditional reading; Tier 1 is the unfiltered reading and is
+  what should anchor the public claim.
+
+  **Disclosure.** The 6.92σ figure is real but conditioned on the
+  strict-convergence gate; it cannot be cited as the unconditional
+  discrimination strength. The 3.99σ conservative number's 95% CI
+  *straddles 5σ at the lower bound* (3.29). Both numbers must be
+  reported together; reporting 6.92σ alone overstates the result.
+
+* **Physics preference (2-channel chain-match — CORROBORATING, NOT
+  STANDALONE 5σ-GRADE).** Sign-agreement: Schoen-favored on both the
+  `chain_quark` (ln BF = **−5.60**) and `chain_lepton` (ln BF =
+  **−9.16**) channels at k=3, n_pts=25 000. Combined ln BF ≤ **−14.76
+  nats** corresponds to **≤ 5.43σ-equivalent** under the diagonal
+  Wilks heuristic at face value. **This is qualitative corroboration
+  of the σ-channel headline, not an independent publication-grade
+  discriminator** — three caveats stack against using the 5.43σ-equiv
+  as a standalone claim: (i) **convergence not met**: the chain JSONs
+  carry `converged: false` flags with 12-19% Schoen-residual drift
+  across td=2..5 (10% strict criterion not satisfied); (ii)
+  **independence violated**: both channels reuse the same Donaldson
+  seed (`12345`, `n_pts=25 000`, `k=3`) and the same converged
+  TY/Schoen metric pair, so the diagonal-covariance combiner sum
+  overstates joint evidence (the value is reported as an upper bound);
+  (iii) **likelihood is heuristic**: the per-channel `ln BF = δ/2`
+  Laplace/BIC reading is not a formal posterior. Convention: positive
+  ln BF = TY-favored, negative = Schoen-favored. σ-channel is
+  **excluded** from this BF (see Section 2). Source:
   `output/p7_11_quark_chain.json`, `output/p7_11_lepton_chain.json`,
   combined in `output/p8_1_bayes_multichannel.json` (P7.11 + P8.1f,
-  defended via P8.1g).
+  defended via P8.1g). Production-grade replacement = the
+  PDG-fermion-mass Yukawa-cohomology pipeline (REM-OPT-B Phase 2).
 
 * **(Supporting, NOT a publication headline.) Discriminability at
   k=4.** **3.82σ** Tier 0 strict-converged, BCa 95% CI **[2.48,
@@ -75,12 +114,19 @@ Bayes factor that drives the physics-preference number.
   hysteresis) under-performs at production scale despite out-performing
   static at test-speed n_pts=2 500. Tracked as P8.4-fix-f.
 
-Two distinct, falsifiable, geometric claims — one per headline. The
+Two distinct claims with **asymmetric publication weight**. The
 σ-channel is a discriminability claim ("the two substrates can be
-told apart at finite k"); the chain-channel result is a model-comparison
-claim ("under the chain-match likelihood the data prefer Schoen over
-TY"). They are not redundant and they are not double-counted: the BF
-that produces the 5.43σ figure does not include the σ-channel.
+told apart at finite k") and is the standalone publication headline
+(reported as both 3.99σ conservative and 6.92σ strict-converged
+tiers). The chain-channel result is a model-comparison-style
+sign-agreement check ("under the chain-match likelihood the data
+prefer Schoen over TY across all four test-degree cells td=2..5")
+and is reported as **corroborating evidence only**, not a
+standalone 5σ-grade discriminator — it carries `converged: false`
+flags, reuses the same Donaldson seed across both channels, and uses
+a Laplace/BIC heuristic likelihood. They are not redundant and they
+are not double-counted: the BF that produces the ≤ 5.43σ-equiv
+upper-bound figure does not include the σ-channel.
 
 ---
 
@@ -145,14 +191,34 @@ headline) sums only the chain channels.
 
 ### 3.1 σ-channel (k=3, publication; k=4, supporting only)
 
-* **k=3 publication result.** Tier 0 strict-converged, n=40 000,
-  donaldson_iters=100, 20 seeds. **n-σ = 6.92**, BCa [5.30, 9.04],
-  pct [5.65, 10.03]. Both percentile and BCa 95% CI floors clear 5σ.
-  Tier 0 *strict-converged* gating: `residual < tol AND iters < cap`.
-  No Tukey trim; no guard-snapshot inflation; n_Schoen=16 (the 4
-  non-strict Schoen seeds are excluded by the strict gate). Source:
-  `output/p5_10_ty_schoen_5sigma.json` →
-  `discrimination_strict_converged[0]`.
+* **k=3 publication result — 4-tier transparency table** (n_pts=40 000,
+  donaldson_iters=100, 20 TY seeds + 20 Schoen seeds, recorded in
+  `output/p5_10_n40k_p5_5k.log:75-78`):
+
+  | Tier | Filter | n_Sc | n-σ | pct 95% CI | BCa 95% CI |
+  |---|---|---:|---:|---|---|
+  | **Tier 1: conservative (full 20+20)** | none | 20 | **3.99** | [3.29, 10.64] | [2.89, 8.97] |
+  | **Tier 0: strict-converged** | residual<tol AND iters<cap | **16** | **6.92** | [5.65, 10.03] | [5.30, 9.04] |
+  | Tier 2: canonical | residual < 1e-3 | 18 | 3.52 | [2.94, 10.05] | [2.51, 8.05] |
+  | Tier 3: Tukey re-trim | Tier 2 ∖ Tukey | 17 | 7.43 | [5.94, 11.53] | [5.27, 9.90] |
+
+  **Conservative-tier referee-safe headline: n-σ = 3.99**, percentile
+  CI [3.29, 10.64], BCa CI [2.89, 8.97]. The percentile CI lower bound
+  3.29 straddles 5σ — this is the unconditional discriminability
+  reading and should anchor the public claim.
+
+  **Strict-converged tier (conditional): n-σ = 6.92**, BCa [5.30, 9.04],
+  pct [5.65, 10.03], n_Schoen=16. This filter (`residual<tol AND
+  iters<cap`) drops 4/20 Schoen seeds preferentially from the upper
+  tail: seed 5 σ=43.24 (~7× the remaining cluster), and seeds 7 / 314 /
+  57005 (high-residual stalls). Tier 0 is genuine **conditional on
+  strict convergence** but inherits a heavier-tail-asymmetric pruning
+  effect; it cannot be cited as the unconditional 6.92σ result.
+
+  Source: `output/p5_10_ty_schoen_5sigma.json` →
+  `discrimination_strict_converged[0]` (Tier 0);
+  `discrimination_round4[0]` and the four-tier verdict block in
+  `output/p5_10_n40k_p5_5k.log:75-78` (all four tiers).
 * **k=4 supporting tier (current).** Tier 0 strict-converged at k=4,
   with **static damping α=0.5** in the Donaldson update, sits at
   **3.82σ**, BCa [2.48, 6.37], pct [3.05, 10.39] (n_TY=20,

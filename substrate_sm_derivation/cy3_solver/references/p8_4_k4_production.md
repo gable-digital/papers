@@ -1,5 +1,7 @@
 # P8.4 — TY-vs-Schoen σ-discrimination at k=4 (SUPPORTING tier — corroborates k=3 headline)
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 > **TL;DR — updated after P8.4-fix damped re-run (Apr 2026).**
 > k=4 σ-discrimination is presented as a **SUPPORTING tier** consistent
 > with the k=3 publication headline, NOT as a parallel publication

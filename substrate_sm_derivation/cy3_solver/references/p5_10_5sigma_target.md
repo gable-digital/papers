@@ -1,10 +1,30 @@
 # §5.10 — TY-vs-Schoen σ-discrimination: round-6 (P5.5k) headline
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Date**: 2026-04-27 (original); 2026-04-29 (P5.5d / P5.5f / round-3 /
 round-4 / P5.5j); 2026-04-29 (P5.5k — round-6 hostile-review fix —
 canonical discriminability headline); **2026-04-30 (P8.1e —
 σ-channel removed from model-comparison BF, retained as
-discriminability metric)**
+discriminability metric)**; **2026-05-07 (asymmetric-pruning
+disclosure / 4-tier reframing)**.
+
+> **Asymmetric-pruning disclosure (2026-05-07).** The Tier 0 strict-
+> converged filter (`residual < tol AND iters < cap`) drops 4 of 20
+> Schoen seeds at n_pts=40k iter_cap=100: seeds **5, 7, 314, 57005**.
+> Seed 5 has σ=43.24 (~7× the surviving cluster mean) — a **persistent
+> upper-tail outlier** (early bail at iter 17, residual 2.4e-4). The
+> filter is sign-agnostic and applied symmetrically by code, but its
+> *effect* is asymmetric: it preferentially trims Schoen's heavier
+> upper tail and not TY's tighter distribution (TY n=20 → 20 under the
+> same filter). This shifts the n-σ headline from
+> **3.99 (conservative, full 20+20) → 6.92 (strict-converged, 20 TY +
+> 16 Schoen)** — almost a 2× lift driven by upper-tail pruning. Both
+> numbers are real; both must be reported. The conservative tier
+> (3.99σ) is the referee-safe unconditional reading; the strict tier
+> (6.92σ) is conditional on the convergence filter and is genuine
+> only with that conditioning visible. **The conservative-tier
+> percentile CI [3.29, 10.64] straddles 5σ at the lower bound (3.29).**
 
 > **P8.1e clarification (2026-04-30).** σ-channel provides
 > *discriminability strength only* (|t|=6.92, BIC-corrected

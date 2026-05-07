@@ -1,5 +1,7 @@
 # P-TY-Bundle-Research-Log — Iterated hypothesis cycles for a real TY/Z3 SM bundle
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **Date:** 2026-04-30
 **Scope:** Empirical scan for a 3-generation heterotic Standard-Model bundle
 on the Tian-Yau Z/3 quotient (h^{1,1}=2, h^{2,1}=4, |Z/3|=3, χ=-6).

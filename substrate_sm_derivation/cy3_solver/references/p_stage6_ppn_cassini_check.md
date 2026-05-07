@@ -1,5 +1,7 @@
 # Stage 6 — PPN parameters from substrate structural corrections (back-of-envelope)
 
+> **k=3 reframing note (2026-05-07).** References below to "6.92σ" or "Tier 0" denote the **strict-converged tier** of the 4-tier k=3 σ-discrimination table; the referee-safe **conservative tier (full 20+20, no filter)** at k=3 is **3.99σ** with percentile CI [3.29, 10.64] (lower bound straddles 5σ). 4/20 Schoen seeds dropped from upper tail by strict filter. See `cy3_publication_summary.md` §1 for the full 4-tier transparency table and asymmetric-pruning disclosure.
+
 **HEADLINE (revised post-reviewer-critique).** The framework's 4D EFT,
 after BHOP-2005 §6 dimensional reduction of the Schoen `Z_3 × Z_3` /
 rank-4 SU(4) bundle setup, is a standard heterotic-orbifold Standard

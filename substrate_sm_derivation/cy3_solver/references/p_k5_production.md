@@ -1,5 +1,15 @@
 # P-K5 — TY-vs-Schoen σ-discrimination at k=5 (SUPPORTING tier — corroborates k=3 headline)
 
+> **k=3 reframing note (2026-05-07).** Throughout this document the
+> phrase "k=3 6.92σ headline" refers specifically to the
+> **strict-converged tier** of the 4-tier k=3 table; the
+> referee-safe **conservative tier (full 20+20, no filter)** at k=3
+> is **3.99σ** with percentile CI [3.29, 10.64] (lower bound
+> straddles 5σ). See `cy3_publication_summary.md` §1 and
+> `p5_10_5sigma_target.md` for the full 4-tier table and the
+> asymmetric-pruning disclosure (4/20 Schoen seeds dropped from
+> upper tail under the strict filter).
+
 > **TL;DR.**
 > k=5 σ-discrimination at the strict-converged tier reads
 > **n-σ = 10.87**, BCa 95% CI **[8.79, 15.01]** (percentile 95% CI
