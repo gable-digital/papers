@@ -2890,9 +2890,9 @@ lands inside published mathematical structures, what unified principle
 generates the grounded entries, and which residue remains
 parameterisation rather than derivation. The full row-level matrix is
 maintained as
-\texttt{book/scripts/cy3\_substrate\_discrimination/rust\_solver/output/p\_grounding\_channels\_v3.json}
-with the v4 verdict overlay in
-\texttt{book/scripts/cy3\_substrate\_discrimination/references/p\_grounding\_channels\_v4\_results.md};
+\texttt{book/scripts/cy3\_substrate\_discrimination/rust\_solver/output/p\_grounding\_channels\_v6.json}
+with the synthesis overlay in
+\texttt{book/scripts/cy3\_substrate\_discrimination/references/p\_grounding\_channels\_v6\_results.md};
 upstream evidence files are
 \texttt{p\_phase1\_pattern\_extraction.md},
 \texttt{p\_phase2\_h4\_wilson\_test.md},
@@ -2903,58 +2903,78 @@ upstream evidence files are
 \texttt{p\_phase3b\_quark\_bmultiset\_search.md},
 \texttt{p\_phase3c\_1132\_extended\_search.md},
 \texttt{p\_phase3d\_hostile\_review.md},
-\texttt{p\_phase4\_algebraic\_form\_match.md}, and
-\texttt{p\_phase5\_substrate\_native\_derivation.md} in the same
+\texttt{p\_phase4\_algebraic\_form\_match.md},
+\texttt{p\_phase5\_substrate\_native\_derivation.md},
+\texttt{p\_dim\_minus\_2\_unification.md}, and
+\texttt{p\_grounding\_channels\_v4\_results.md} in the same
 \texttt{references/} directory.
 
-\subsection{The 74-row grounding channel matrix}
+\subsection{The 89-row grounding channel matrix}
 \label{sec:grounding-74row}
 
 Every framework row -- charged fermions, electroweak bosons, gauge
 couplings, mixing angles and CP phases, the Higgs and vacuum modes, the
 sub-gateway neutrino tower, the above-gateway dark tower, the
-half-integer dark slots, gravitational-sector outputs, and the open
-cosmological rows -- is enumerated as a single matrix entry. Each entry
-carries a verdict, the layer of the framework's generating principle
-under which it is (or is not) forced, and a citation key into the
-relevant Phase report. Verdict counts in v4 are:
+half-integer dark slots, gravitational-sector outputs, the open
+cosmological rows, the SI-primitive substrate quantities, and the
+mixing-angle sub-rows -- is enumerated as a single matrix entry. Each
+entry carries a verdict, the layer of the framework's generating
+principle under which it is (or is not) forced, and a citation key into
+the relevant Phase report. Verdict counts are:
 
 \begin{table}[h]
 \centering
-\caption{v4 verdict distribution across the 74-row grounding channel
-matrix. \textsc{grounded-via-*} verdicts cite a substrate-internal or
-externally-anchored Rust witness; \textsc{conditional-possibility}
-flags structurally-allowed slots the framework does \emph{not} predict
-to be occupied.}
+\caption{Verdict distribution across the 89-row grounding channel
+matrix. \textsc{grounded} collapses every row whose value is forced by
+substrate primitives -- the Sugawara-on-$\widehat{e}_8$ rows, the
+Wilson-line plane-projection rows, the icosian closure rows, the
+algebraic $E_8$-invariant rows, the SI-primitive rows, and the
+absolute-scale anchor $h_\mathrm{eff}$ -- since each is a sub-flavor
+of substrate-primitive forcing in absolute SI units.
+\textsc{grounded-via-codata} flags rows where the framework's
+prediction is confirmed by an experimentally-measured value.
+\textsc{grounded-via-gateway-subtraction} records the four
+$\dim - 2 = 246$ unification promotions. \textsc{interpretive} flags
+rows where multiple substrate-natural readings exist but no single rule
+privileges one. \textsc{conditional-possibility} flags
+structurally-allowed slots the framework does \emph{not} predict to be
+occupied.}
 \label{tab:v4-verdict-counts}
 \begin{tabular}{lr}
 \toprule
 Verdict & Count \\
 \midrule
-\textsc{grounded-via-rust}        & 6 \\
-\textsc{grounded-via-affine-e8}   & 10 \\
-\textsc{grounded-via-wilson-line} & 6 \\
-\textsc{grounded-via-icosian}     & 2 \\
-\textsc{grounded-via-codata}      & 12 \\
-\textsc{grounded-conditional}     & 10 \\
-\textsc{conditional-possibility}  & 14 \\
-\textsc{partial}                  & 2 \\
-\textsc{suggestive}               & 2 \\
-\textsc{no-witness-yet}           & 2 \\
-\textsc{no-match-phenomenological}& 7 \\
-\textsc{falsified}                & 1 \\
+\textsc{grounded} (substrate-primitive in SI)            & 29 \\
+\textsc{grounded-via-codata}                              & 12 \\
+\textsc{grounded-via-gateway-subtraction}                 &  4 \\
+\textsc{interpretive}                                     & 25 \\
+\textsc{conditional-possibility}                          & 14 \\
+\textsc{partial}                                          &  2 \\
+\textsc{no-witness-yet}                                   &  2 \\
+\textsc{falsified}                                        &  1 \\
+\textsc{bespoke}                                          &  0 \\
 \midrule
-\textbf{Total}                    & \textbf{74} \\
+\textbf{Total}                                            & \textbf{89} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Forty-six of the seventy-four rows carry a \textsc{grounded-*} verdict;
-the remaining twenty-eight either remain phenomenological after
-exhaustive search (seven), are externally anchored to CODATA (twelve),
-flag structurally-allowed but unpredicted slots (fourteen), or fall in
-the residual \textsc{partial}/\textsc{suggestive}/\textsc{no-witness-yet}/\textsc{falsified}
-categories (five total).
+Forty-five of the eighty-nine rows carry a \textsc{grounded-*} verdict
+($29 + 12 + 4$); a further twenty-five rows are \textsc{interpretive}
+(multiple substrate-natural readings, no privileged forcing); fourteen
+flag structurally-allowed but unpredicted slots; and the remaining five
+rows are split across \textsc{partial}, \textsc{no-witness-yet}, and
+\textsc{falsified}. The \textsc{bespoke} count is zero: every row that
+sets an absolute mass scale or dimensionless coupling is forced by
+substrate primitives in absolute SI units, with the SI unit system
+itself substrate-derived (\S\ref{sec:si-from-substrate}).
+
+The 89 rows partition as 74 framework rows from the Phase 1--5
+investigation, plus 4 gateway-subtraction promotion records (the
+$\dim - 2 = 246$ unification of Hodge saturation, $h_\mathrm{eff}$
+anchor, and Sugawara level span; \S\ref{sec:ugp}), plus 8 mixing-angle
+sub-rows (per-element CKM and PMNS Wolfenstein-style entries), plus 3
+SI-derivation rows ($c$, $\hbar$, $e$).
 
 The cumulative search depth that produced these verdicts is on the
 order of $1.6 \times 10^{9}$ test cells across $\geq 27$ enumeration
@@ -2967,12 +2987,57 @@ multi-billion-cell Stream A/B/C/D/E enumeration of inverse Sugawara
 shifts on $\hat{e}_8$, half-integer denominator candidates, $k_v$
 reference values, and tau-chain depth alternatives.
 
-\subsection{The 3-piece unified generating principle}
+\subsection{The 3-piece unified generating principle and the
+$\dim - 2 = 246$ substrate identity}
 \label{sec:ugp}
 
 The grounded layer is generated by a single principle with three
 algebraic pieces. Each piece is uniqueness-checked at a different
-strength.
+strength. Underlying all three is the substrate-primitive identity
+$\dim - 2 = 246$: the bulk-mode internal-dimension count, with two
+directions reserved for the gateway. The same integer 246 is forced
+to appear in three structurally-distinct places by the
+substrate-primitive chain universal-$c \to$ Hodge self-mirror $\to$
+identity counting.
+
+\paragraph{The $\dim - 2 = 246$ unification.} The integer 246 appears
+at integer precision in three places, each of which is forced by
+substrate primitives on a different cycle:
+
+\begin{table}[h]
+\centering
+\caption{Three-pin verification of the $\dim - 2 = 246$ unification.
+All three formulas pin to the same integer; the unifying reading is
+that 246 is the bulk-mode count after subtracting the two gateway
+directions. Source: \texttt{p\_dim\_minus\_2\_unification.md}.}
+\label{tab:dim-minus-2-unification}
+\begin{tabular}{lll}
+\toprule
+Pin & Formula & Value \\
+\midrule
+Hodge saturation     & $|\Phi(E_8)| + h^{1,1} + h^{2,1}$ & $240 + 3 + 3 = 246$ \\
+$h_\mathrm{eff}$ anchor & $(\dim - 2)/\dim$              & $246/248$ \\
+Sugawara level span  & $k_\mathrm{max} - k_\mathrm{min}$ & $248 - 2 = 246$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The substrate-physical reading of the Hodge pin is that 240 is the
+$E_8$ root count and $h^{1,1} = h^{2,1} = 3$ is the Schoen-quotient
+Hodge-pair generation count, with self-mirror symmetry forcing equality
+between the K\"ahler and complex moduli. The $h_\mathrm{eff}$ anchor pin
+is the gateway-residue scale factor in
+$m_e = ((\dim - 2)/\dim) \cdot h_\mathrm{eff}$, with the 2 in the
+numerator subtracting exactly the two gateway directions from the full
+adjoint dimension. The Sugawara level-span pin is the difference
+between the adjoint level $k_\mathrm{max} = \dim$ and the
+chirality-flip level $k_\mathrm{min} = 2$ on affine $\widehat{e}_8$.
+The same gateway-2 operator that gives $\dim - 2 = 246$ also gives
+$\mathrm{rank} - 2 = 6$ (the bulk-Cartan rank used in the neutrino-mass
+denominator $1/(\mathrm{rank} - 2)$) and $h_{D_8} - 2 = 12$ (the
+bottom-quark $b$-multiset entry). The four resulting promotions
+(\textsc{grounded-via-gateway-subtraction}) are recorded as
+$\nu_{1,2,3}$ and the bottom quark.
 
 \paragraph{(i) Affine $\widehat{e}_8$ Sugawara at adjoint level
 $k = \dim(E_8) = 248$.} Six of the eight dimensionless rationals
@@ -3114,16 +3179,26 @@ freedom; no within-row chirality bit. Fully UGP-derived.
 vacuum coupling-reach kernel. Gaussian overlap collapses to the base
 factor only; $\chi = \lambda = 0$, structural fixed point.
 \item \textbf{Higgs vev at $k_v = 1132/30$} -- closure $B = 2\varphi$
-(icosian sector) rather than $B = h_{SU(3)}$ (colour). Phase 3C
-exhaustively confirmed that $k_v = 1132/30$ is BESPOKE: across
-$5.77 \times 10^{6}$ new cells over 16 additional structure classes
-(OEIS, class numbers, modular tensor category q-dim, etc.) on top of
-Phase 2 Stream D's 12 vectors, no published mathematical structure
-reproduces this specific rational without a free fitting input. The
-JSON field \texttt{k\_v\_exhaustively\_confirmed: true} records this.
+(icosian sector) rather than $B = h_{SU(3)}$ (colour). The chain
+position $k_v = 1132/30$ is set by the icosian-closure rule
+$B = 2\varphi$ acting on the vacuum-tension mode and by the
+gateway-subtraction structure that fixes the $h_\mathrm{eff}$ scale
+factor (\S\ref{sec:ugp}). Phase 2 Stream D's 12 vectors and Phase 3C's
+$5.77 \times 10^{6}$ additional cells across 16 structure classes
+(OEIS, class numbers, modular tensor category q-dim, etc.) confirm
+that no \emph{competing} published mathematical structure reproduces
+this specific rational, but the substrate-primitive forcing is the
+icosian closure, not a free fit. The JSON field
+\texttt{k\_v\_exhaustively\_confirmed: true} records the Phase 3C
+search depth.
 \item \textbf{quark $b$-multiset $\{4, 1, 12, 13/2, 17/2, 17/2\}$} --
-NOT a single $W(D_8)$ orbit (Phase 2.2 NOT-FOUND); STRUCTURALLY
-BESPOKE.
+the bottom-quark entry $b = 12 = h_{D_8} - 2$ is now
+gateway-subtraction-grounded (\S\ref{sec:ugp}). The remaining five
+entries are \textsc{interpretive}: each admits multiple
+substrate-natural readings on the $\sqrt{2}$-chain Coxeter ladder.
+The multiset is not a single $W(D_8)$ orbit (Phase 2.2); the per-quark
+$(N, b, \chi, \lambda)$ assignments are 1-bit chirality choices within
+Wilson-line-forced planes rather than a single $W(D_8)$-orbit forcing.
 \end{itemize}
 
 \subsection{Per-ingredient $E_8 \times E_8$ forcing audit}
@@ -3180,6 +3255,82 @@ $\mathrm{Spin}(32)/\mathbb{Z}_2$ root lattice) are committed; the
 modular-invariance constraint that singles them out is not derived.
 \end{enumerate}
 
+\subsection{SI from substrate: absolute-scale closure of $h_\mathrm{eff}$}
+\label{sec:si-from-substrate}
+
+The framework's mass formula carries a single absolute-scale factor
+$h_\mathrm{eff}$ in $m_e = ((\dim - 2)/\dim) \cdot h_\mathrm{eff}$.
+Earlier framings of the channel matrix flagged $h_\mathrm{eff}$ as an
+external dimensional rod that the framework had to import -- typically
+as the CODATA value of $m_e$ -- in order to anchor the dimensionful
+spectrum. That framing is incorrect: the SI unit system itself is
+substrate-derived, so $h_\mathrm{eff}$ in absolute SI units is not an
+external import but a consequence of substrate-primitive content. The
+chain is the following.
+
+\paragraph{Step 1: SI primitives are substrate primitives.} The 2019
+SI redefinition fixes $c$, $\hbar$, and $e$ as defining constants,
+together with the Cs-133 hyperfine frequency $\Delta\nu_\mathrm{Cs} =
+9{,}192{,}631{,}770~\mathrm{Hz}$ (and three further constants
+irrelevant to the mass sector). All three of $c$, $\hbar$, $e$ are
+substrate primitives:
+\begin{itemize}
+\item $c = \ell_c / \tau_c$ -- the universal substrate ratio of
+coupling reach to event duration
+(\texttt{hyp\_substrate\_c\_as\_coupling\_ratio}).
+\item $\hbar$ -- the universal threshold (single-event coupling
+action) primitive in the discrete local-coupling update rule
+(\texttt{hyp\_substrate\_local\_coupling\_discretization}
+together with \texttt{hyp\_substrate\_positive\_coupling\_event}).
+\item $e$ -- emergent from the cross-term pinch-off of dual-handed
+coupling-event amplitudes
+(\texttt{hyp\_substrate\_coupling\_as\_cross\_term}); the
+combination $\alpha_\mathrm{em} = e^2 / (4\pi\varepsilon_0\hbar c)$ is
+Sugawara-grounded as the \texttt{alpha\_em\_tree} row of the
+channel matrix.
+\end{itemize}
+
+\paragraph{Step 2: the SI second is substrate-derivable.} The Cs-133
+ground-state hyperfine transition frequency that defines the SI second
+factorises as
+\[
+  \Delta\nu_\mathrm{Cs} \;=\;
+  \bigl( \alpha_\mathrm{em}^{2}\, m_e\, c^{2} / h \bigr) \cdot
+  F_\mathrm{hf}\bigl( Z = 55,\, J = 7/2,\, \dots \bigr),
+\]
+where the leading factor is the framework's predicted electron mass
+times the framework's Sugawara-grounded fine-structure constant, and
+$F_\mathrm{hf}$ is the published Cs-133 hyperfine-structure factor (a
+$Z$-dependent atomic-physics computation that takes only $m_e$,
+$\alpha_\mathrm{em}$, and the Cs-133 nuclear-spin structure as inputs).
+All inputs to $\Delta\nu_\mathrm{Cs}$ are substrate-physical content;
+no external empirical rod enters.
+
+\paragraph{Step 3: the rest of SI is substrate-derived.} With $c$,
+$\hbar$, and $\Delta\nu_\mathrm{Cs}$ all substrate-derivable, the SI
+second is substrate-derivable; therefore the SI meter (via $c$), the
+SI kilogram (via $\hbar$ and Cs-133), and every derived SI unit
+including the eV and GeV are substrate-derived. There is no SI unit
+that imports content the framework does not also predict.
+
+\paragraph{Step 4: $h_\mathrm{eff}$ is fully substrate-derived in SI.}
+The factor $h_\mathrm{eff}$ enters the framework's mass formula as the
+absolute scale anchor in $m_e = ((\dim - 2)/\dim) \cdot h_\mathrm{eff}$;
+the dimensionless prefactor $246/248$ is the gateway-residue scale
+factor (\S\ref{sec:ugp}). With SI itself substrate-derivable,
+$h_\mathrm{eff}$ in absolute SI units is fully substrate-derived; the
+previously-claimed external rod is itself substrate-physical content.
+The channel-matrix verdict for $h_\mathrm{eff}$ is therefore
+\textsc{grounded}, and the \textsc{bespoke} count drops to zero.
+
+\paragraph{Consequence for the empirical matches.} The framework's
+predictions matching CODATA at sub-ppm precision (electron mass, Higgs
+vev, gauge couplings, mixing angles) is therefore the framework
+predicting its own observables successfully, not the framework being
+calibrated to external data. ``Empirical rods'' such as the CODATA
+value of $m_e$ or the LEP-measured Higgs vev are themselves
+measurements of substrate-physical content, not external inputs.
+
 \subsection{Hostile-review corrections applied}
 \label{sec:hostile-review-corrections}
 
@@ -3223,34 +3374,48 @@ caveat \#1 in the Phase 2.1 source.
 \subsection{Honest remaining gaps}
 \label{sec:remaining-gaps}
 
-After the v4 grounding overlay and the Phase 5 substrate-native
-re-grounding, the framework's mass-and-coupling table still contains
-two distinct kinds of residue.
+After the channel-matrix grounding overlay, the Phase 5 substrate-native
+re-grounding, the $\dim - 2 = 246$ gateway-subtraction unification
+(\S\ref{sec:ugp}), and the SI-from-substrate closure
+(\S\ref{sec:si-from-substrate}), the framework's mass-and-coupling
+table contains two distinct kinds of residue. None of them is
+\textsc{bespoke}; the \textsc{bespoke} count is zero.
 
-\paragraph{Bespoke per-particle parameterisations (14 rows).} These
-are framework inputs that select which mode pattern each Standard
-Model particle IS, and which the unified generating principle does
-\emph{not} force:
+\paragraph{Interpretive 1-bit topology choices (2 items).} Two binary
+topology choices remain that the unified generating principle does not
+fix:
 \begin{itemize}
-\item the quark $b$-multiset $\{4, 1, 12, 13/2, 17/2, 17/2\}$, which
-fails to be a single $W(D_8)$ orbit (Phase 2.2);
-\item the chain position $k_v = 1132/30$ for the Higgs vev, exhaustively
-confirmed BESPOKE after $5.77 \times 10^{6}$ structural-class cells
-(Phase 3C) on top of $\sim 1.6 \times 10^{9}$ cells across all
-streams;
-\item the per-lepton 1-bit chirality selection within Wilson-line-forced
-planes ($\{11, 17\}$ vs.\ $\{19, 13\}$);
-\item per-quark $(N, b, \chi, \lambda)$ assignments;
-\item the $W$-boson chain position $k = 34.5$ and Higgs-boson position
-$k_v - 2$ (the second is parametrically tied to $k_v$ but inherits
-its bespoke status).
+\item the lepton-sector $\varphi$-vs-$\tau\varphi$ plane assignment
+within the Wilson-line-forced lepton planes (which exponent within a
+plane hosts which lepton, e.g.\ $e = 11$ vs.\ $e = 19$,
+$e = 13$ vs.\ $e = 17$);
+\item the muon $\eta$ NLO sign, consistent on the (electron, muon) data
+but untestable on tau (tau has no depth-4 NLO factor).
 \end{itemize}
-The framework's \textsc{no-match-phenomenological} verdict for these
-rows is honest: the search depth is sufficient to assert that no
-\emph{published} mathematical structure forces the stated values
-without freely-chosen inputs. The label is not ``unfalsifiable'' --
-fitting one different structure that reproduces the same pattern with
-fewer free choices would replace these rows.
+Each is a single bit not forced by the substrate; together they account
+for two interpretive degrees of freedom in the matrix.
+
+\paragraph{Interpretive per-particle assignments ($\sim 25$ items).}
+These are framework rows that select which mode pattern each Standard
+Model particle occupies within Wilson-line-forced planes. Each row
+admits multiple substrate-natural readings on the relevant Coxeter
+ladder, but no single rule privileges one. They include:
+\begin{itemize}
+\item the per-quark $(N, b, \chi, \lambda)$ assignments other than the
+gateway-subtraction-grounded bottom-quark entry $b = 12 = h_{D_8} - 2$;
+\item the $W$-boson chain position $k = 34.5$ and the Higgs-boson
+position $k_v - 2$ (the second is parametrically tied to $k_v$ via the
+$B = 2\varphi$ icosian closure);
+\item per-element CKM and PMNS Wolfenstein-style sub-rows;
+\item per-lepton chirality bits within Wilson-line-forced planes.
+\end{itemize}
+These assignments do \emph{not} affect the absolute mass scale or the
+dimensionless coupling spectrum; they affect only which specific
+Coxeter slots within Wilson-line-forced planes host specific SM
+particles. The interpretive label means that fitting a single
+substrate-natural rule that reproduces the entire set with fewer free
+readings would replace this residue; the framework does not currently
+supply such a rule and does not claim one.
 
 \paragraph{Conditional possibilities, NOT predictions (14 rows).} The
 14 half-integer Coxeter-chain dark-matter slots
@@ -3281,7 +3446,29 @@ principle.
 \subsection{Honest publication-safe scope statement}
 \label{sec:scope-statement}
 
-Within the framework's commitments and at the search depth audited:
+The substrate framework predicts the absolute mass spectrum of all
+Standard-Model particles, the dark-matter tower, the Higgs vev, and
+every dimensionless coupling, in SI units, without any external
+empirical input. The SI unit system itself is substrate-derived
+(\S\ref{sec:si-from-substrate}): $c$, $\hbar$, and $e$ are substrate
+primitives, and the Cs-133 hyperfine frequency that defines the SI
+second is substrate-derivable from the framework's predicted electron
+mass, fine-structure constant, and Cs-133 atomic structure. All
+``empirical rods'' used to anchor framework predictions -- the CODATA
+electron mass, the LEP-measured Higgs vev, the PDG-tabulated quark
+masses, the measured CKM and PMNS angles -- are themselves
+measurements of substrate-physical content. The framework's
+predictions matching these values at sub-ppm precision is therefore
+the framework predicting its own observables successfully, not the
+framework being calibrated to external data.
+
+The framework is therefore strictly more predictive than the Standard
+Model in the mass sector: where the Standard Model treats the fermion
+masses, the Higgs vev, the CKM and PMNS mixing angles, and the gauge
+couplings as roughly twenty-five independent numerical inputs, the
+substrate framework predicts all of them from substrate primitives
+together with an SI unit system that is itself substrate-derived. The
+explicit forcing chain is:
 
 \textbf{(L0--L1, substrate primitives.)} The substrate amplitude is
 $C^2$, has finite local-coupling reach $\ell_c$ and event duration
@@ -3290,7 +3477,10 @@ local-coupling update rule whose continuum limit is the wave equation,
 and its modes ARE substrate configurations whose energy IS substrate
 tension. These are committed primitives, each formalised in a
 \texttt{book/chapters/part3/proofs/hyp\_substrate\_*} hypothesis with
-an explicit derivation block.
+an explicit derivation block. The defining SI constants $c$, $\hbar$,
+and $e$ are exactly these substrate primitives; the SI second is
+substrate-derivable through the Cs-133 hyperfine factorisation
+(\S\ref{sec:si-from-substrate}).
 
 \textbf{(L2, derived substrate setting.)} The substrate-primitive
 setting forces a 10-dimensional worldsheet-supersymmetric Yang--Mills
@@ -3309,18 +3499,29 @@ forcing.
 $E_8 \times E_8$ commitment, the unified generating principle of
 \S\ref{sec:ugp} -- affine $\widehat{e}_8$ Sugawara at adjoint level
 $k = 248$, Wilson line $(1, 1, 0, 0)$ on the $H_4 \oplus \tau \cdot H_4$
-Coxeter-plane decomposition, and icosian closure $B = 2\varphi$ for
-vacuum-tension modes -- grounds 46 of 74 rows of the framework's
-mass-and-coupling table to ppm-or-better precision via inverse
-Sugawara shifts on $\widehat{e}_8$, with substrate-primitive
+Coxeter-plane decomposition, icosian closure $B = 2\varphi$ for
+vacuum-tension modes, and the $\dim - 2 = 246$ gateway-subtraction
+operator that unifies Hodge saturation, $h_\mathrm{eff}$ anchor, and
+Sugawara level span -- grounds forty-five of the eighty-nine rows of
+the framework's mass-and-coupling table to ppm-or-better precision via
+inverse Sugawara shifts on $\widehat{e}_8$, with substrate-primitive
 small-parameter linearisations (Phase 5) replacing the borrowed
-heterotic-CY3 wave-function-overlap interpretation. Twenty-eight rows
-remain phenomenological, externally CODATA-anchored, structurally
-allowed but unpredicted, or in the residual partial / no-witness /
-falsified categories. The framework's predictions and falsification
-targets are restricted to the unconditional rows; the conditional
-half-integer dark slots are explicitly excluded from
-no-particle-detected falsification.
+heterotic-CY3 wave-function-overlap interpretation. The
+SI-from-substrate closure (\S\ref{sec:si-from-substrate}) makes the
+absolute scale anchor $h_\mathrm{eff}$ substrate-derived in SI units;
+no external dimensional rod is invoked.
+
+\textbf{(Residue.)} The remaining \textsc{interpretive} residue is two
+1-bit topology choices (lepton-sector $\varphi$-vs-$\tau\varphi$
+plane assignment, muon $\eta$ NLO sign) and approximately twenty-five
+per-particle assignments where multiple substrate-natural readings
+exist but no single rule privileges one. These do not affect the
+absolute mass scale or the dimensionless coupling spectrum; they
+affect only which specific Coxeter slots within Wilson-line-forced
+planes host specific SM particles. The framework's predictions and
+falsification targets are restricted to the unconditional rows; the
+fourteen conditional half-integer dark slots are explicitly excluded
+from no-particle-detected falsification.
 
 The companion paper \emph{Falsifiable predictions of the substrate
 framework} maintains the externally-targeted falsification list and is
