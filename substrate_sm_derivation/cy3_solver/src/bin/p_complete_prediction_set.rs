@@ -12,7 +12,8 @@
 //!     (commit `831d910c`, `references/p_ext1_engagement_2026-05-05.md`).
 //!   * dP9 W-bundle h^1 ≥ 3 in non-invariant β-characters
 //!     (commit `eea6f085`, `references/p_dp9_w_lift_2026-05-05.md`).
-//!   * Z/3xZ/3-invariant projection: Σ_invariant = 0 — verdict (a) ROBUST
+//!   * Z/3xZ/3-invariant projection: Σ_invariant = 0 — verdict (a) at the
+//!     line-bundle-shadow + W-twisted-SES audited scope on the (0,0) lift
 //!     (commit `a4e6231e`,
 //!     `references/p_dp9_w_invariant_proj_2026-05-06.md`).
 //!
@@ -1199,8 +1200,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         build_id: build_id.clone(),
         status: "framework_prediction_with_falsification_verdict_a",
         description:
-            "Canonical end-to-end prediction set after Path A research closure \
-             (verdict (a) ROBUST, 2026-05-06). 27 SM + cosmological visible-sector \
+            "Canonical end-to-end prediction set after Path A closure at the \
+             audited scope (verdict (a), line-bundle-shadow + W-twisted-SES on \
+             Z/3×Z/3-invariant subspace, (0,0) lift, 2026-05-06). 27 SM + cosmological visible-sector \
              rows: 4 PHYSICAL (gauge couplings, Higgs, Newton G), 12 \
              FRAMEWORK_PREDICTION_FALSIFIED (rank-4 BHOP-2005 SU(4) shadow at κ=0 \
              gives O(TeV) Yukawa eigenvalues + identity CKM, in tension with PDG; \

@@ -22,7 +22,9 @@ bundle:
    * Result: `Σ mult · χ_dP9 = +18` from BHOP §6.1 W-twist on
      `dP9 = (3,1) ⊂ CP²_y × CP¹_t`. Suggestive of (b) until projected.
 
-3. **Z/3×Z/3-invariant projection `= 0`** — verdict (a) ROBUST
+3. **Z/3×Z/3-invariant projection `= 0`** — verdict (a) at the
+   audited scope (line-bundle shadow + W-twisted SES on the
+   Z/3×Z/3-invariant subspace, `(0, 0)` lift)
    * Commit: `a4e6231e`
    * Reference: `cy3_solver/references/p_dp9_w_invariant_proj_2026-05-06.md`
    * Result: at the BHOP-canonical bundle-frame lift `(g_α, g_β) = (0, 0)`,
@@ -30,13 +32,18 @@ bundle:
      characters. Both lower and upper SES bounds give invariant H¹
      dim = 0. Robustness: a closed-form geometric argument (BHOP §6.1
      SES sub `O(-2f)` rigs the elliptic-fiber `H¹` direction to
-     `β = 2 ≠ 0`, independent of admissible `L_base` choice on dP9).
+     `β = 2 ≠ 0`, independent of admissible `L_base` choice on dP9)
+     — at this scope only.
 
-The chain establishes `Ext¹_full = 0` on the BHOP-2005 quotient as a
-**definitive theorem**, not a temporary truncation pending future
-refinement. Consequently the off-diagonal SU(4) coupling `κ` vanishes
-on the Schoen Z/3×Z/3 quotient as a geometric consequence of the BHOP
-SES design.
+The chain establishes `Ext¹_shadow = 0` at the BHOP-2005 line-bundle
+shadow + W-twisted-SES audited scope on the (0, 0) bundle-frame
+lift. **Scope caveat:** a complete proof of `Ext¹_full = 0` across
+all bundle-frame lifts and beyond the line-bundle shadow truncation
+requires dP9-cohomology of the rank-2 W-bundle in its own right
+(`p_ext1_compute.rs:19-37, 87-90, 324-330` self-discloses the shadow
+truncation). Within the audited scope, the off-diagonal SU(4)
+coupling `κ` vanishes on the Schoen Z/3×Z/3 quotient as a geometric
+consequence of the BHOP SES design.
 
 ## Implications for the framework's prediction set
 
@@ -130,7 +137,7 @@ Complete prediction set (canonical_complete_set_sha256):
 Path A closure chain:
   shadow Ext^1 = 0       at commit 831d910c
   dP9 W h^1 ≥ 3          at commit eea6f085
-  Z/3xZ/3-invariant = 0  at commit a4e6231e (verdict (a) ROBUST)
+  Z/3xZ/3-invariant = 0  at commit a4e6231e (verdict (a) at audited scope: shadow + (0,0) lift)
 ```
 
 ## Why this matters
