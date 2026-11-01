@@ -1,0 +1,22 @@
+{
+ "acorr28": {
+  "commit": "20cb3828b3550103544a0ae5dee6af2df28b6bb6",
+  "name": "origin/research/acorr-newton-g-c28"
+ },
+ "bond": {
+  "commit": "367287a67291015d4b68f7cdfe2eb1119aa39d26",
+  "name": "origin/substrate-bond-generator-20261101"
+ },
+ "c27": {
+  "commit": "cdd0f70ffa18e5599134127805c555ba2fec76cb",
+  "name": "origin/review/order17-divisor-c27-20261101"
+ },
+ "dev": {
+  "commit": "830cc5170df58c182ce54fe7a8c7ca0cdb2e3842",
+  "name": "origin/dev"
+ },
+ "ode": {
+  "commit": "3b8c2653996dda0629c544328b48abc5ef0ca38b",
+  "name": "origin/math/rtail-frozen-ode-1-10"
+ }
+}

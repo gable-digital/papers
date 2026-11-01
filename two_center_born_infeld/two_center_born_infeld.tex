@@ -1,0 +1,326 @@
+\documentclass[aps,prd,onecolumn,amsmath,amssymb,longbibliography,floatfix,nofootinbib]{revtex4-2}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{longtable}
+\def\UrlBreaks{\do\/\do\_\do\.\do\:}
+\newcommand{\cell}[2]{\parbox[t]{#1\linewidth}{\raggedright #2\strut}}
+\input{numbers.tex}
+\newcommand{\Wsup}{W_{\mathrm{sup}}}
+\newcommand{\Emin}{E_{\min}}
+\newcommand{\Vsup}{V_{\mathrm{sup}}}
+\newcommand{\st}[1]{\textsc{#1}}
+
+\begin{document}
+
+\title{The static two-centre Born-Infeld problem in the substrate framework:\\
+nonsuperposition, an exact differential equation for the frozen trial energy,\\
+and certified fences for the true minimum}
+
+\author{Eliot Gable}
+\email{10015996+egable@users.noreply.github.com}
+\affiliation{Independent Researcher}
+
+\date{\today}
+
+\begin{abstract}
+Two equal point sources held a distance $d$ apart in the Born-Infeld (BI) medium store a static field energy that is not the sum of two single-source energies, because the BI constitutive law is nonlinear. We record, with its corpus provenance, what the substrate corpus establishes about this static two-centre problem. The superposed displacement field satisfies Gauss's law but its electric field has nonzero curl at an explicit point, so superposition is not the minimizer, and the superposed (frozen) trial energy $\Wsup(d)$ lies strictly above the true static minimum $\Emin(d)$ for every $d>0$. For the frozen trial the corpus constructs an exact linear differential equation with polynomial coefficients: an order-\ScalarOrderVal{} operator for an auxiliary period and an order-\EnergyOrderVal{} annihilator of $\Wsup$, certified by exact divergence identities and replayed here; a smaller order-\OrderSeventeenVal{} annihilator with an explicit apparent-singularity analysis has independent source clearance but has not reached the shared branch. The physical branch has differential order at least \SelectedLowerVal{} and is not algebraic. An exact algebraic-period germ at $d=1$ selects the solution, so $\Wsup$ is computable by series continuation; a recorded continuation step agrees with independent 150-digit quadrature to $\IvpErrVal$, and an unreviewed multi-step continuation to between $\BondDiffMinVal$ and $\BondDiffMaxVal$ on $1.25\le d\le4$. These are observed agreements, not error bars. For the true minimum the corpus has no series, but it has certified fences: a contact enclosure giving the exact contact force $1/2$, a certified interval at $d=1$, and a dual lower bound. The large-separation law of the true minimum rests on a registered commitment. A frozen trial is an upper bound, not the energy. The static energy of two like sources is a repulsion; a bond needs the moving, bound two-mode state, which this problem does not contain.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction and scope}
+
+\subsection{The problem}
+Hold two equal sources of the Born-Infeld medium fixed a distance $d$ apart and let the medium settle into the configuration of least stored energy. In a linear (Maxwell) medium the answer is the sum of the two single-source fields. In the Born-Infeld medium the stored energy saturates as the strain approaches its ceiling, the response is nonlinear, and the field of the pair is not the sum of the single fields. This paper records exactly what the substrate corpus has established about that static two-centre energy, to what precision, under which premises, and what remains open. It is the companion of a provenance paper on the atomic correlation constant $a_{\mathrm{corr}}$~\cite{AcorrPaper}, in which this static energy enters as the diagnostic behind the name $R_{\mathrm{tail}}$.
+
+\subsection{Standing context of the framework}
+The substrate framework is a Born-Infeld Lagrangian describing an elastic solid with an excited $E_8\times E_8$ dyad. $E_8\times E_8$ is observationally overdetermined: one free parameter ($E_8\times E_8$ versus $D_{16}$) stands against the particle-mass conditions it reproduces within observational error, and $D_{16}$ is excluded (corpus: \path{book/gr_qm_unification/sympy/substrate_theorems/rank16_observational_overdetermination.py}); this includes its twist and spinor sector, its rank eight and its $D_8$ map. The framework has forward-derived quantization, entanglement and relativistic time dilation and is not a classical field theory. The particle mass equations are fixed closed forms in \path{book/scripts/substrate_mass_spectrum.py}. Particles are localized rotating wave modes of finite radius, not points. The static point-source problem studied here uses none of the geometric or particle premises: it is a dimensionless diagnostic of the Born-Infeld form alone, and its results are statements about that diagnostic. Section~\ref{sec:bonds} states what the physical two-mode problem needs beyond it.
+
+\subsection{Status vocabulary and evidence convention}
+Each claim carries one status. \st{certified-exact}: an exact identity checked by exact arithmetic, with an independent checker. \st{certified-interval}: an enclosure with outward rounding. \st{certified}: a theorem whose proof the corpus records with its executable antecedents. \st{derived}: forward from the stated premises. \st{conditional}: rests on a registered commitment. \st{observed}: agreement of two numerical routes; not an error bound. \st{source-clear}: an independent reviewer cleared the source, but the work has not landed on the shared branch. \st{author-qualified}: checked by its author only. \st{unreviewed}: another lane's current result, with independent review pending. \st{open}: not established.
+
+Every number in this paper is a macro generated by \path{papers/two_center_born_infeld/generate_numbers.py}, which reads the value from a corpus receipt at a recorded commit, or recomputes it from a closed form, and refuses to run if a receipt's verdict or shape has changed. The resolved references are origin/dev at \RefDev, the frozen-ODE branch at \RefOde, the independent order-17 check at \RefCTwoSeven{} and the bond-research branch at \RefBond{} (full hashes in \path{provenance_refs.json}). Commit prefixes in Table~\ref{tab:claims} are the last commit touching each source at its reference; a dagger marks a commit not contained in origin/dev.
+
+\section{The variational problem}
+
+\subsection{Normalization}
+Use the core scale and saturation scale as units. For displacement fields $D$ on $\mathbb{R}^3$ with
+\begin{equation}
+\nabla\cdot D = 4\pi\,\bigl(\delta_{x_1}+\delta_{x_2}\bigr),\qquad |x_1-x_2|=d,
+\end{equation}
+the static energy is
+\begin{equation}
+W[D]=\frac{1}{4\pi}\int_{\mathbb{R}^3}\Bigl(\sqrt{1+|D|^2}-1\Bigr)\,d^3x ,
+\label{eq:energy}
+\end{equation}
+with the vacuum subtraction kept inside the integrand (the separated terms diverge). This is the corpus definition \path{rtail_contact_static_energy_definition}. The density $h(D)=\sqrt{1+|D|^2}-1$ is the convex conjugate of the static potential density $h^*(E)=1-\sqrt{1-|E|^2}$ on $|E|\le 1$; the master Lagrangian $L=-\rho_0c^2\sqrt{1-X/S^2}$ of the chain's first file supplies this form, and no speed enters the dimensionless static problem. The displacement $D$, the scalar potential and the mechanical strain are distinct objects: a scalar $1/r$ potential does not by itself identify a compatible mechanical strain field of the elastic medium.
+
+A single unit source has $D=x/|x|^3$ and energy
+\begin{equation}
+K=\frac{\Gamma(1/4)^2}{6\sqrt{\pi}}=\KVal ,\qquad
+C_0=\frac{\Gamma(1/4)^2}{4\sqrt{\pi}}=\frac{3}{2}K=\CzeroVal ,
+\end{equation}
+where $C_0$ is the potential at the source; $K=2C_0/3$ follows from a radial virial identity with vanishing endpoints. A source of charge $q$ has energy $Kq^{3/2}$ by the displacement-preserving dilation $r=\sqrt{q}\,x$.
+
+\subsection{Notation}
+$\Emin(d)$ is the infimum of (\ref{eq:energy}); $V(d)=\Emin(d)-2K$ is the interaction energy (corpus symbol $V_{\mathrm{int}}$; several corpus files write $R_{\mathrm{tail}}(d)$ for $\Emin(d)$ itself, a symbol also used with a different meaning in~\cite{AcorrPaper}). $\Wsup(d)=W[D_1+D_2]$ is the frozen superposition trial and $\Vsup=\Wsup-2K$. We use $s=d^4/64$, $\lambda=16/d^4$ and $\theta=d\,\partial_d$.
+
+\subsection{Existence, uniqueness and duality}
+The density $h$ has Hessian eigenvalues $(1+|D|^2)^{-1/2}$ (twice) and $(1+|D|^2)^{-3/2}$, so $W$ is strictly convex, and the Gauss constraint is affine; the minimizer is unique. For the point-charge problem in the potential formulation, Bonheure, d'Avenia and Pomponio prove existence and uniqueness of the minimizer for charge densities in the dual space, which includes finite sums of point charges, and show that it solves the Euler-Lagrange equation classically on the complement of the segments joining the charges, and on the complement of the charge points under additional conditions (small charges, sufficiently distant charges, or symmetric equal charges)~\cite{BdAP2016}. Bonheure, Colasuonno and F\"oldes give explicit sufficient conditions under which the minimizer solves the Euler-Lagrange equation and analyse the singularities at the charges~\cite{BCF2019}. Neither paper gives a closed form. The corpus registers the finite-energy admissible class as a commitment (\path{rtail_finite_energy_admissible_class}). Fenchel-Young, $h(D)+h^*(E)\ge D\cdot E$, gives the weak-duality bracket: for any admissible $D$ and any decaying 1-Lipschitz potential $\psi$,
+\begin{equation}
+\psi(x_1)+\psi(x_2)-\frac{1}{4\pi}\int h^*(-\nabla\psi)\,d^3x\ \le\ \Emin(d)\ \le\ W[D].
+\label{eq:bracket}
+\end{equation}
+
+\subsection{Endpoints}
+At $d=0$ the two sources merge into one source of charge two, so $\Emin(0)=\Wsup(0)=2^{3/2}K=\ContactTotalVal$ and $V(0)=(2^{3/2}-2)K=\VzeroVal$. As $d\to\infty$, $\Emin\to 2K=\TwoKVal$. These endpoint values are \st{certified-exact}.
+
+\section{Why Born-Infeld does not superpose}
+\label{sec:nonsup}
+The field is $E=\nabla h(D)=D/\sqrt{1+|D|^2}$. A superposition $D=D_1+D_2$ of the two single-source fields satisfies Gauss's law, and $\nabla\times D=0$. Writing $E=g(|D|)D$ with $g(t)=(1+t^2)^{-1/2}$,
+\begin{equation}
+\nabla\times E=g'(|D|)\,\nabla|D|\times D .
+\end{equation}
+For one centre $\nabla|D|$ is parallel to $D$ and the curl vanishes. For two centres it does not: with unit sources at $(\pm1,0,0)$, at the point $(3/5,7/5,0)$ the exact symbolic field gives $(\nabla|D|\times D)_z=\WitnessVal$, while $\nabla\times D$ vanishes identically (corpus witness \path{bi_two_center_nonsuperposition_witness.py}; \st{certified-exact}). Since $g'\neq0$ for $|D|>0$, the superposed field is not curl-free, so it violates the Euler-Lagrange condition that the minimizer's $E$ be a gradient. The corpus module \path{rtail_trial_strict_upper_bound.py} turns this into a strict inequality: a compactly supported curl variation near such a point preserves both source charges and lowers the energy, so
+\begin{equation}
+\Wsup(d)>\Emin(d)\qquad\text{for every } d>0 \qquad(\st{certified}).
+\end{equation}
+The frozen trial is therefore an upper bound on the static energy, never the energy itself. Physically, the medium relaxes: where the two single-source fields overlap, the saturating response redistributes the flux, and that redistribution is exactly what superposition misses.
+
+\section{The frozen trial: an exact linear differential equation}
+\label{sec:frozen}
+
+\subsection{Exact reduction}
+In prolate coordinates $x\ge1$, $-1\le y\le1$ with foci at the sources, put $\delta=x^2-y^2$, $A=x^4+3x^2y^2-x^2+y^2$ and $P=A+s\,\delta^4$. The focal-radius formula gives $|D_1+D_2|^2=64A/(d^4\delta^4)$. Keeping the vacuum subtraction together, exact differentiation gives
+\begin{equation}
+(\theta-3)\Wsup=-d\,G(s),\qquad G(s)=\int\frac{A}{\delta\sqrt{P}}\,dx\,dy,\qquad
+\frac{dG}{ds}=-\frac{H}{4},
+\end{equation}
+where, with $X=x^2$, $Y=y^2$,
+\begin{equation}
+H(s)=\int_{X\ge1,\,0\le Y\le1}\frac{A(X-Y)^3}{\sqrt{XY}\,P^{3/2}}\,dX\,dY,\qquad
+H\!\left(\tfrac{d^4}{64}\right)=64\,d^{-5}(\theta-1)(\theta-3)\Wsup .
+\label{eq:HW}
+\end{equation}
+The $G$ kernel decays as $x^{-2}$; the uncancelled raw kernel grows as $x^2$ and cannot be used separately. The compact unit-square form and the Duffy-triangle maps that control the corner singularities are recorded in \path{rtail_frozen_superposition_ode_FINDINGS.md}; the identities are checked by \path{rtail_frozen_ode/identity_probe.py} (\st{certified-exact}).
+
+\subsection{The order-16 and order-18 operators}
+A derivative-closed relative-period system of 18 components was built from \DivergenceColsVal{} polynomial divergence identities whose certificates have numerators $X(X-1)U$ and $Y(Y-1)V$ over $\sqrt{XY}P^{m+1/2}$. Integrating each divergence on $1\le X\le R$, taking the $Y$ endpoint limits and then $R\to\infty$ proves the combined identity: the $X$ certificate vanishes at $X=1$, the $Y$ certificate behaves as $\sqrt{Y}$ at $0$ and vanishes at $1$, and the remaining $X$ boundary is $O(R^{-1/2}Y^{-1/2})$. The physical $H$ is a specified combination of those periods, and its first sixteen derivatives give a cyclic relation over $\mathbb{Q}(s)$:
+\begin{equation}
+P_H=\sum_{j=0}^{16}p_j(s)\,\partial_s^j,\qquad P_H H=0,\qquad \deg p_j\in[\HDegMinVal,\HDegMaxVal].
+\end{equation}
+Composing with (\ref{eq:HW}) gives the energy annihilator
+\begin{equation}
+P_W=\Bigl[\sum_{j}p_j\!\left(\tfrac{d^4}{64}\right)\bigl(16d^{-3}\partial_d\bigr)^j\Bigr]\,64\,d^{-5}(\theta-1)(\theta-3),\qquad P_W\Wsup=0,
+\end{equation}
+of order \EnergyOrderVal{} with integer coefficient degrees from \EnergyDegMinVal{} to \EnergyDegMaxVal{} (arrays in \path{rtail_frozen_ode/energy-operator-char0.json}). The construction used creative telescoping in Chyzak's holonomic framework~\cite{Chyzak2000} with the explicit relative-boundary proof above. A standalone FLINT verifier reconstructs all \DivergenceColsVal{} divergence identities with a different algebra engine, differentiates the connection sixteen times, checks the scalar identity exactly, and rejects an altered operator. Replayed for this paper on a scratch extract of origin/dev, it printed \texttt{verdict PASS}, \texttt{energy\_order 18}, \texttt{observable\_rank 16} and \texttt{wrong\_operator REJECTED}; \path{identity_probe.py}, \path{check_controls.py} and \path{global_c4_proof.py} also returned PASS. Status: \st{certified-exact}. Minimality is not asserted.
+
+\subsection{Singularities and exponents}
+The leading coefficient of $P_W$ is proportional to
+\begin{equation}
+d^{16}(d^4-27)(d^4-\tfrac{27}{16})(d^4+1)(d^4+\tfrac{256}{27})(d^4+64)\,A_{39}(d^4/64),
+\end{equation}
+with $A_{39}$ a degree-\ApparentDegVal{} polynomial coprime to the connection denominator. At the roots of $A_{39}$ the first-order system and its output are ordinary, so those singularities are apparent for $H$ and for $\Wsup$; the verifier checks coprimality, simple roots and the indicial gap (\st{certified-exact}). The other finite singularities are not asserted apparent; the physical branch is analytic for every positive $d$. The indicial multisets of $P_W$, recomputed for this paper by the generator directly from the stored integer coefficient arrays and found equal to the corpus statement, are
+\begin{align}
+d=0&:\ \IndZeroEighteen,\nonumber\\
+d=\infty\ (z=1/d)&:\ \IndInfEighteen .
+\end{align}
+The exponents $0,1$ at $d=0$ carry the contact series of Sec.~\ref{sec:asym} and $0,1,4$ at infinity its large-$d$ series. The operator has the exact Euler solutions $d$ and $d^3$ (\path{rtail_frozen_ode/power_factors.py}); an exponent of the operator does not by itself occur in the physical solution.
+
+\subsection{The order-17 refinement}
+\label{sec:order17}
+On the frozen-ODE branch (\RefOde) the corpus derives a smaller annihilator. A spatial Euler identity on the cancellation-safe density $g=u^3/Z-u/(\sqrt{s}\sqrt{XY})$ with $u=X-Y$, $Z=\sqrt{XYP}$ gives
+\begin{equation}
+\frac{32(\theta-1)\Wsup}{d^3}=\sqrt{s}\,\bigl(B-H-\partial_s\Omega\bigr),\qquad \Omega=\int\frac{dX\,dY}{Z},
+\end{equation}
+where $B$ is the outward flux through $X=1$ and $Y=1$, reduced exactly to eight second-kind moments on the two genus-two boundary curves $y_i^2=tQ_i(t)$, $Q_1=s(1-t)^4+4t$, $Q_2=s(1-t)^4+t^2(1+t)^2$, with the algebraic endpoint constants cancelling. A relative lift of the holomorphic period, $\Omega=I(\partial_s)H+\beta J$, executed over $\mathbb{Q}(s)$, puts $e=\Wsup/d$ in a first-order extension of the $H$ module: $\partial_s e=\mathcal{A}H$ with $\mathcal{A}$ of order 15, $(2s\partial_s+1)\mathcal{A}-\tfrac18=qL_{16}$, and $L_{17,e}=\bigl(8\mathcal{A}(2s\partial_s+1)-1\bigr)\partial_s$. The energy operator is its fourth-root gauge conjugate, of order \OrderSeventeenVal{}. No fitted coefficient enters.
+
+The divisor analysis gives, up to nonzero constants,
+\begin{equation}
+\mathrm{lead}(N_{17,W})=s^{16}(27s+4)(64s+1)(s+1)(64s-27)(1024s-27)\,Q_{35},
+\end{equation}
+where the old degree-\OldFactorDegVal{} factor is now the common coefficient denominator and its roots are ordinary points (removed by the forward reduction, not by cancelling a common factor), and the new squarefree degree-\NewFactorDegVal{} factor $Q_{35}$ has exponents $0,\dots,15,17$. Local monodromy at each $Q_{35}$ root is the identity: the identity $E\,L_{17,e}=8qL_{16}E\,\partial_s$ with $E=2s\partial_s+1$ shows every local solution extends analytically, an argument that survives the logarithmic counterexample where integer exponents alone would not. Converting the stored indicial roots in $s$ to $d$ (multiply by four),
+\begin{align}
+d=0&:\ \IndZeroSeventeen,\nonumber\\
+d=\infty&:\ \IndInfSeventeen ;
+\end{align}
+the order-18 exponent $3$ at $d=0$ (the extra $d^3$ Euler mode) is absent. Status: the scalar operator has an independent \st{source-clear} verdict (C0 H0 M0 L1, reviewer native replay unexecuted), the divisor and endpoint data were checked independently on \RefCTwoSeven{} (\st{source-clear}, C0 H0 M0 L0), and neither has landed on origin/dev. The branch also records an \st{author-qualified} proof that the formal radial module generated by $e$ has cyclic rank exactly 17, using a boundary-primitive obstruction and the adjoint indicial polynomial at infinity $F(m)=-(2m+11)(3m+16)(3m+17)(6m+31)^2(6m+35)^2/23328$, which has no integer root. That makes the order-17 operator minimal for the formal module; whether the evaluation on the physical cycle is injective, and hence the minimal order of $\Wsup$ itself, is \st{open}.
+
+\subsection{Lower bound and nonalgebraicity}
+On origin/dev (\path{rtail_frozen_ode/selected-period-bound.json}) the corpus proves that the physical $\Wsup$ has differential order at least \SelectedLowerVal{} over $\mathbb{C}(s)$, also after finite algebraic covers of the parameter line, and that it is not an algebraic function (\st{certified}; independent review recorded in the findings). The proof places the first boundary moment $J_0(s)=\int_0^1du/\sqrt{uQ_1}$ in the differential span of the physical $H$ (projection ranks $16=7+9$), and $J_0$ has the fixed form
+\begin{equation}
+J_0(s)=\frac{1}{\pi\sqrt6}\,G^{2,4}_{4,4}\!\left(\frac{64s}{27}\,\middle|\,\begin{matrix}1/2,\,3/4,\,1/2,\,1/4\\ 0,\,0;\,2/3,\,1/3\end{matrix}\right),
+\end{equation}
+obtained from two beta integrations and Mellin inversion (DLMF 1.14.34~\cite{DLMF}); its hypergeometric monodromy has Zariski closure $\mathrm{Sp}_4$ by the Beukers-Heckman criteria~\cite{BeukersHeckman1989}, so $J_0$ has minimal order four after finite covers. The bound excludes an order-2 or order-3 homogeneous minimum for $\Wsup$; it does not exclude higher-order hypergeometric forms or elliptic expressions with extra extensions, and it says nothing about whether a particular value such as $\Wsup(1)$ is an algebraic number. The minimal order of $\Wsup$ therefore lies between \SelectedLowerVal{} and \OrderSeventeenVal{} (the latter source-clear) or \EnergyOrderVal{} (certified).
+
+\subsection{Geometry of the relative periods}
+The native radicand defines the double plane $Z^2=XYP$ with a K3 resolution. At $s=1/64$ the exact Picard rank is 15 (finite-field Artin-Tate comparisons), with $\mathrm{NS}=U\oplus D_4(-1)^2\oplus A_5(-1)$ and transcendental lattice $T=U(2)^2\oplus A_2(-1)\oplus A_1(-1)$; the absolute part of $P_H$ factors exactly as $Q_9L_7$. These are \st{certified} statements about the period module (landed with independent review); they do not determine the selected physical solution or a closed form.
+
+\section{Selecting and computing the physical solution}
+\label{sec:compute}
+
+\subsection{Exact initial germ}
+At $s_0=1/64$ ($d=1$, an ordinary point) define on the compact unit square
+\begin{equation}
+I_0=\int\frac{B}{D(\sqrt{Q}+\sqrt{s}D^2)},\qquad
+I_j=\Bigl(\tfrac12\Bigr)_{\!\underline{j}}\int\frac{D^{4j}Q^{1/2-j}-D^2s^{1/2-j}}{u^4D},\quad j=1,\dots,17,
+\end{equation}
+with $(a)_{\underline{j}}=a(a-1)\cdots(a-j+1)$, $D=1-u^2y^2$, $B=(1-u^2)+y^2u^2(3+u^2)$, $Q=sD^4+u^4B$ and the bracket evaluated together. Since $\Wsup=2\sqrt2\,s^{1/4}I_0(s)$, the eighteen $s$-derivatives at $s_0$ are fixed finite combinations of the $I_j$, converted to $d$-derivatives by an exact chain-rule recurrence. These eighteen algebraic periods are an exact, unfitted initial-data prescription that uniquely selects the physical solution of $P_W$ and its continuation along $d>0$ (\st{derived}). Whether the endpoint behaviour alone selects all eighteen constants is \st{open}. The recorded numerical values at 150 working digits and 192 nodes are $\Wsup(1)=\WoneVal\ldots$ and $\Wsup'(1)=\WprimeOneVal\ldots$ (truncated; refinement observations, not interval-certified digits).
+
+\subsection{Computation by series continuation}
+A function annihilated by a linear operator with polynomial coefficients is D-finite. Given its initial values at an ordinary point to a requested precision, its value at any point reachable by a path that avoids the singular set can be computed with rigorous error bounds to any requested precision, by Taylor steps whose radii are bounded by the distance to the nearest singularity (van der Hoeven~\cite{vanderHoeven1999}; an implementation is described by Mezzarobba~\cite{Mezzarobba2010}). Hence $\Wsup$ is computable to arbitrary precision on $d>0$ once the eighteen germ constants are enclosed to that precision. ``No closed form is known'' is not ``not computable''.
+
+The executed evidence is the following. First, direct 150-digit BI quadrature of $\Wsup$ and its derivatives satisfies $P_W$ at eight separations with normalized residual below the predeclared threshold \ResidualThreshVal{}, while a one-percent change of one coefficient fails at every separation (Table~\ref{tab:residual}; \st{observed}). Second, a Taylor step from the germ at $d=1$ to $d=\IvpTargetVal$ agrees with fresh quadrature to \IvpErrVal{} against a threshold of \IvpThreshVal{}; the quadrature's own refinement change is \IvpOracleVal{}, and a germ perturbed by \IvpWrongVal{} is rejected (\st{observed}). Third, the bond-research lane continued the germ along complex paths at \BondSeriesDpsVal{} digits, around the real singular points $d=(27/16)^{1/4}$ and $d=27^{1/4}$, and reproduced the 150-digit quadrature as in Table~\ref{tab:bond}; paths above and below agree with imaginary parts $\pm\BondImagVal$, consistent with analyticity of the physical branch there, and the continued value $\Wsup(1/2)=\BondHalfVal\ldots$ matches the 60-digit quadrature table (\st{unreviewed}). None of these agreements is an error bar: certified digits need the germ enclosed at that precision and a rigorous truncation bound for each step, which is \st{open}, as are the device qualification and the 200-digit values the frozen-ODE lane lists.
+
+\begin{table}[ht]
+\caption{ODE residual test for $\Wsup$ at 150 working digits: normalized residual $|\sum\mathrm{terms}|/\sum|\mathrm{terms}|$ and the same residual with coefficient $p_0$ changed by one percent. Worst accepted residual \ResidualWorstVal; threshold \ResidualThreshVal. Source: \texttt{rtail\_frozen\_ode/numeric-verification.json}.}
+\label{tab:residual}
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+$d$ & nodes per variable & residual & altered-operator residual\\
+\hline
+\ResidualRows
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Series continuation of the exact germ (bond-research lane, \RefBond, \texttt{diatomic\_frozen\_pair\_series\_check.json}; unreviewed): number of Taylor steps and absolute difference from the corpus 150-digit quadrature. Observed agreements, not error bars.}
+\label{tab:bond}
+\begin{ruledtabular}
+\begin{tabular}{ccc}
+$d$ & steps & $|\Wsup^{\mathrm{series}}-\Wsup^{\mathrm{quad}}|$\\
+\hline
+\BondSeriesRows
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\subsection{Endpoint asymptotics of the frozen trial}
+\label{sec:asym}
+Expressing the merged and separated fields in the same coordinates and bounding the rationalized difference by an integrable majorant gives, by dominated convergence,
+\begin{equation}
+\Wsup(d)=2\sqrt2\,K-\kappa_{\mathrm{sup}}\,d+o(d),
+\end{equation}
+\begin{equation}
+\kappa_{\mathrm{sup}}=\int_{[1,\infty)\times[0,1]}\Bigl[\frac{x^2-y^2}{x^2+y^2-1}-\frac{\sqrt{A}}{x^2-y^2}\Bigr]dx\,dy=\KappaSuperVal\ldots
+\end{equation}
+(\st{derived}; the value is a 150-digit quadrature whose 96-to-192-node change is \KappaChangeVal, \st{observed}). At large separation the corpus proves, from the native BI functional with explicit core and exterior bounds, the global law
+\begin{equation}
+\Wsup(d)=2K+\frac1d-\frac{3K/4}{d^4}+o(d^{-4}),\qquad \frac{3K}{4}=\frac{C_0}{2}=\FrozenCfourVal ,
+\end{equation}
+via the exact decomposition $\Vsup=1/d+2\psi(d)+(4\pi)^{-1}\int Q(a,b)$, the bound $|Q(a,b)|\le\tfrac32|b|^2\min(|a|^2,1)+\tfrac{13}{8}|b|^4+\tfrac12|a||b|^3$, and the radial virial identity (\st{certified}; replayed). No $O(d^{-6})$ remainder and no complete $d^{-5}$ coefficient is established: the two linear potential terms alone contribute $-1/5$.
+
+\section{The true minimum}
+\label{sec:true}
+
+\subsection{Contact enclosure and the exact contact force}
+An admissible BI flow, in which displacement runs from each source to its half of a surrounding sphere and then through the shared exterior, together with the dual bound, gives the \st{certified-interval} enclosure (\ContactBitsVal-bit certificate \path{rtail_contact_asymptotic_certificate.json}, which records that no coalescence premise is consumed)
+\begin{equation}
+0\le V(d)-V(0)+\frac d2\le\frac{31}{20}\Bigl(\frac d2\Bigr)^{5/3},\qquad 0\le d\le\frac12 .
+\end{equation}
+Hence $V'(0^+)=-1/2$: the contact force is $F_0=1/2$ in units where the far interaction is $1/d$, finite because saturation caps the field. The enclosure width at $d=1/100$ is \ContactWidthHundredthVal. The frozen trial leaves contact with the smaller slope $\kappa_{\mathrm{sup}}$; the true minimum falls faster, by $1/2-\kappa_{\mathrm{sup}}=\KappaHalfGapVal$, as relaxation requires.
+
+\subsection{A certified value at unit separation}
+Interval-evaluated primal and dual trials give the \st{certified-interval}
+\begin{equation}
+\DoneLowerVal\le V(1)\le\DoneUpperVal ,
+\end{equation}
+a relative gap of \DoneRelGapVal{} percent (\path{rtail_step2_d1_certificate.json}, rounded outward). The frozen value $\Vsup(1)=\FrozenVoneVal$ lies above this interval by at least \FrozenMinusUpperVal, a quantitative measure of what superposition misses at this separation.
+
+\subsection{The maximum-potential lower fence}
+Taking $\psi=\max(\phi_q(r_1),\phi_q(r_2))$ with $\phi_q(r)=\sqrt q\,[C_0-I(r/\sqrt q)]$, $I(x)=\int_0^x(1+t^4)^{-1/2}dt$, in (\ref{eq:bracket}) gives the lower bound
+\begin{equation}
+\Emin(d)\ge L(q,d)=2C_0\sqrt q-q^{3/2}\Bigl[\frac{C_0}{3}+\frac{x(\sqrt{1+x^4}-x^2)}{6}+\frac{I(x)}{3}\Bigr],\qquad x=\frac{d}{2\sqrt q},
+\end{equation}
+best in this family at the root $q\in[1,2]$ of $q\,[C_0+I(d/(2\sqrt q))]=2C_0$ (\st{derived}; \path{rtail_maximum_potential_lower_bound.md}). The bond-research lane evaluated it in interval arithmetic (Table~\ref{tab:fence}; \st{unreviewed}). The product $d\cdot V_{\mathrm{lower}}$ tends to about $1/2$, while the upper fence $\Vsup$ behaves as $1/d$: at large $d$ the true $V$ is fenced only within a factor of about two.
+
+\begin{table}[ht]
+\caption{Certified dual lower fence on $V(d)$ evaluated in interval arithmetic (bond-research lane, \RefBond, \texttt{diatomic\_static\_pair\_fences.json}; unreviewed).}
+\label{tab:fence}
+\begin{ruledtabular}
+\begin{tabular}{ccc}
+$d$ & lower fence on $V(d)$ & $d\times$ fence\\
+\hline
+\BondFenceRows
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\subsection{Large separation}
+Linearizing the static field about the single-source background gives an $l=1$ response equation whose homogeneous space contains the exact solution $1/\sqrt{r^4+1}$; reduction of order yields the finite-energy response and the relaxed dipole polarizability $\alpha=3(C_0-K)=C_0$ exactly (\path{rtail_large_d_polarizability_exact.py}). If the two-centre energy at large $d$ is the Coulomb tail plus the charge-induced-dipole energy $-\tfrac12\alpha E_{\mathrm{ext}}^2$ with a controlled remainder, then
+\begin{equation}
+V(d)=\frac1d-\frac{C_0}{d^4}+\dots ,
+\end{equation}
+twice the frozen softening $C_0/2$. That structural step is the registered commitment \path{rtail_large_d_induced_dipole_structure}, whose discharge (a uniform remainder bound) is not done: the true large-$d$ law is \st{conditional}, and the fences of Table~\ref{tab:fence} do not yet confirm even its leading coefficient.
+
+\subsection{Like sources repel}
+$V(0)=\VzeroVal>0$, $V(\infty)=0$, and the certified lower fences are positive at every evaluated separation, so the static interaction of two like sources is a repulsion there and shows no attractive well. Monotonic decrease for all $d$ is not proved. With the core scale fixed by identifying the single-source energy with the rest energy of the mode conventionally called the electron (an identification the bond lane takes from \path{acorr_two_center_saturation_repulsion_and_rmin.py}, core radius \BondCoreRadiusVal{}~m), a separation of $10^{-10}$~m is \BondScaleDVal{} core units, where the frozen law departs from $1/d$ by a relative \BondScaleRelVal{} (\st{unreviewed}; conditional on that identification).
+
+\subsection{Comparison with the literature}
+No closed form for the free two-point-charge Born-Infeld electrostatic field or its energy is known: the mathematical literature establishes existence, uniqueness, regularity and singularity structure~\cite{BdAP2016,BCF2019}. Yang constructs exact multicentred BI point-charge solutions, but they require induced static magnetic or electric currents, so they solve a different problem~\cite{Yang2023}. Carley and Kiessling computed Born-Infeld effects on the hydrogen spectrum nonperturbatively~\cite{CarleyKiessling2006}; the electrostatic potential they used was later disputed~\cite{Smolyakov2022}, and the authors replied~\cite{CarleyKiessling2024}. Breev and Shabad treat two point charges in a different nonlinear model, quadratic in the field invariant (a truncated Euler-Heisenberg form), not Born-Infeld; their estimated contact law $a+bR^{1/3}$ belongs to that model~\cite{BreevShabad2018}, whereas the BI contact law certified above is a linear cusp. The forcing-graph node \path{two_center_born_infeld_field_energy_closed_form} and the module \path{atomic_correlation_constant_not_forced.py} attributed~\cite{BCF2019} to Bonheure, d'Avenia and Pomponio with a wrong volume and page range, and the node listed~\cite{BreevShabad2018} among Born-Infeld results; both records are corrected in the corpus commit that accompanies this paper.
+
+\section{Frozen trial and true minimum side by side}
+
+\begin{table}[ht]
+\caption{What is known about the frozen trial $\Wsup$ and the true static minimum $\Emin$.}
+\label{tab:compare}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+\cell{0.2}{quantity} & \cell{0.37}{frozen trial $\Wsup$} & \cell{0.37}{true minimum $\Emin$}\\
+\hline
+\cell{0.2}{role} & \cell{0.37}{strict upper bound for every $d>0$} & \cell{0.37}{the energy}\\
+\cell{0.2}{contact value} & \cell{0.37}{$2\sqrt2K$, exact} & \cell{0.37}{$2\sqrt2K$, exact}\\
+\cell{0.2}{contact slope} & \cell{0.37}{$-\kappa_{\mathrm{sup}}$, derived; value observed} & \cell{0.37}{$-1/2$, certified interval}\\
+\cell{0.2}{$d=1$} & \cell{0.37}{$\Vsup(1)=\FrozenVoneVal$, observed} & \cell{0.37}{$[\DoneLowerVal,\DoneUpperVal]$, certified}\\
+\cell{0.2}{large $d$} & \cell{0.37}{$1/d-(C_0/2)/d^4+o(d^{-4})$, certified} & \cell{0.37}{$1/d-C_0/d^4$, conditional}\\
+\cell{0.2}{equation} & \cell{0.37}{order 18 certified; order 17 source-clear; order $\ge4$, not algebraic} & \cell{0.37}{no differential equation known}\\
+\cell{0.2}{computation} & \cell{0.37}{series continuation from an exact germ; observed agreement $\BondDiffMaxVal$ or better on $[1.25,4]$ (unreviewed)} & \cell{0.37}{primal-dual fences}\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{What a bond needs beyond the static problem}
+\label{sec:bonds}
+The static energy of two like sources is a repulsion; in a molecule it is the source-source term, a necessary ingredient but not the well. The framework's particles are finite rotating wave modes, and their binding is the medium's own interference: the energy of the phase-locked pattern is the well the bound modes would have to climb out of. A substrate-native bond therefore needs, beyond this paper: the finite moving mode profile and its full moving-field action, with strain and strain-rate content; the retarded strain field, whose updates travel at the medium's finite signal speeds ($\mathbb{C}$, the compression speed, \texttt{c\_L} in code; $c$, the speed of light, \texttt{c\_T} in code; $\mathbb{C}=\sqrt2\,c$), with the direction- and polarization-dependent characteristic speeds of the moving, strained medium still to be derived; the motion wake of moving strain; the twist induced by the tension difference across a mode's radius, which the owner confirms for electron capture and electromagnetics and conjectures for valence bonds (a hypothesis to test, not a result here); the local time-dilation factor $R=\sqrt{1-X/S^2}$ across the mode's radius; the observer clock and measure (by the owner's ruling, one global tick and the actual local voxel volume); and exclusion for two-electron bonds. A bound moving mode is a stationary point of an action with a quantized frequency. The series method here applies to parameter integrals of fixed algebraic profiles, and the fences to a convex static minimization; neither transfers directly to that problem. This is a structural observation, not an impossibility theorem. The smallest next derivation, as the bond lane frames it, is one finite mode bound to one static source and then the same mode shared by two sources, the substrate analogue of the hydrogen molecular ion, whose energy plus $V(d)$ gives the first well.
+
+\section{Open problems}
+\begin{enumerate}
+\item The minimal differential order of the physical $\Wsup$ (between \SelectedLowerVal{} and \OrderSeventeenVal), equivalently injectivity of the formal module's evaluation on the physical cycle; landing of the order-17 operator and its divisor analysis.
+\item Selection of the eighteen solution constants by endpoint data alone.
+\item An interval-certified germ and a certified multi-step continuation of $\Wsup$, and the qualified device computation the frozen-ODE lane plans.
+\item A complete $d^{-5}$ coefficient and an $O(d^{-6})$ remainder for $\Wsup$.
+\item A proof of the true large-$d$ law (discharging the induced-dipole commitment) and fences that close at large $d$.
+\item Any closed form, differential equation or series for $\Emin(d)$, or an impossibility proof.
+\item Monotonicity and positivity of $V(d)$ for all $d$.
+\item The moving two-mode bound state of Sec.~\ref{sec:bonds}.
+\end{enumerate}
+
+\appendix
+\section{Claims, status and corpus sources}
+\label{app:claims}
+Table~\ref{tab:claims} is generated by \path{generate_numbers.py}; paths are relative to \path{book/gr_qm_unification/sympy/} unless they start with \path{work_journal}.
+
+\begingroup\small
+\begin{longtable}{lllll}
+\caption{Claims of this paper with status and source.}\label{tab:claims}\\
+\toprule
+\cell{0.04}{id} & \cell{0.33}{claim} & \cell{0.17}{status} & \cell{0.29}{source} & \cell{0.1}{commit}\\
+\midrule
+\endfirsthead
+\toprule
+\cell{0.04}{id} & \cell{0.33}{claim} & \cell{0.17}{status} & \cell{0.29}{source} & \cell{0.1}{commit}\\
+\midrule
+\endhead
+\input{claims_table.tex}
+\end{longtable}
+\endgroup
+
+\section{Premise ledger}
+Premises consumed by the static results: the Born-Infeld form of the energy density (the chain's single axiom, owner-supplied); unit point sources in Euclidean $\mathbb{R}^3$ and the static restriction (definitions of the diagnostic); the finite-energy admissible class (commitment); the positive square-root sheet and nonvanishing rational frame denominators (domain conditions of the exact period certificates). Conditional results add the induced-dipole commitment (large-$d$ true law) and, for the bond-scale estimate, the identification of the core energy with the electron rest energy. The $E_8\times E_8$ geometry, its $D_8$ placement and the particle equations are retained in the framework and are not consumed by these static results.
+
+\bibliography{two_center_born_infeld}
+
+\end{document}
