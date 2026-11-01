@@ -8,8 +8,12 @@ commit, with each premise and its status. Its findings:
 
 - In the corpus a_corr = eps_2 - eta_2 is the high-Z, same-centre, two-electron second-order
   correlation coefficient of the Coulomb comparison model. eta_2 is derived in closed form; eps_2 is a
-  published value, so the corpus number is a diagnostic, not a substrate prediction.
-- The corpus splits a_corr into two parts in three senses: contact block plus non-contact remainder;
+  published value, so the corpus number is imported: a cross-check oracle, not a substrate
+  prediction and not a derivation. The element generators' Monte Carlo route is a calculation of the
+  ordinary two-electron Coulomb problem, also imported. The required route derives a_corr from the
+  Born-Infeld Lagrangian and the particle equations; it is open.
+- The corpus splits a_corr into two parts in three senses: contact block plus a remainder (the local
+  Taylor remainder on the overlap interval plus the outer integral);
   s-wave (about 31 percent) plus higher partial waves (about 69 percent), of which the coincidence limit
   fixes only the large-l tail; and charge tail plus two-centre correlation. None of the splits
   determines a_corr from the master Lagrangian.

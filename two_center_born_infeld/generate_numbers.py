@@ -175,6 +175,30 @@ def tex_multiset(vals):
     return "\\{" + ",".join(parts) + "\\}"
 
 
+def local_remainder_counterexample():
+    """Paper A, contact block: the split a = sum mu_k G_k + R_loc + R_out needs the local Taylor remainder
+    R_loc = int_0^{r*} (G - sum_k G_k r^{p_k}) w dr. For G = r^10 e^-r, w = 1, r* = 1 and retained exponents
+    3..9 every retained coefficient is zero while R_loc = 10! - 9864101/e > 0. Checked symbolically here;
+    the identity contact + R_loc + R_out = total is checked exactly as well."""
+    r = sp.Symbol("r", positive=True)
+    g = r**10 * sp.exp(-r)
+    ps = range(3, 10)
+    ser = sp.series(g, r, 0, 10).removeO()
+    gk = [ser.coeff(r, p) for p in ps]
+    if any(c != 0 for c in gk):
+        raise SystemExit("counterexample: a retained coefficient is nonzero: %s" % gk)
+    r_loc = sp.integrate(g, (r, 0, 1))
+    if sp.simplify(r_loc - (sp.factorial(10) - sp.Integer(9864101) / sp.E)) != 0:
+        raise SystemExit("counterexample: R_loc is not 10! - 9864101/e: %s" % r_loc)
+    r_out = sp.integrate(g, (r, 1, sp.oo))
+    if sp.simplify(r_loc + r_out - sp.integrate(g, (r, 0, sp.oo))) != 0:
+        raise SystemExit("counterexample: contact + R_loc + R_out differs from the total")
+    val = mp.mpf(sp.N(r_loc, 40))
+    if not val > 0:
+        raise SystemExit("counterexample: R_loc is not positive")
+    return mp.nstr(val, 6)
+
+
 def compute_numbers(refs):
     mp.mp.dps = 60
     g = mp.gamma(mp.mpf(1) / 4) ** 2
@@ -219,6 +243,7 @@ def compute_numbers(refs):
     n["ExactMinusScreenedVal"] = mp.nstr(abs(eps2 + mp.mpf(25) / 256), 6)
     n["TwentyOneDevVal"] = "%.2f" % float(100 * (mp.mpf(1) / 21 / abs(eps2 - eta2) - 1))
     n["SixtyFourDevVal"] = "%.2f" % float(100 * (mp.mpf(3) / 64 / abs(eps2 - eta2) - 1))
+    n["RlocCounterVal"] = local_remainder_counterexample()
 
     # partial-wave split: run the corpus script from its blob
     out = exec_corpus_script(refs, "dev", SY + "derivations/acorr_partialwave_decomposition.py")
@@ -389,27 +414,28 @@ def bond_fence_rows(fe):
 CLAIMS = [
     ("A1", "A", "a_corr is defined as eps_2 - eta_2 of the Coulomb comparison model (high-Z, same centre, two electrons)", "DEFINITION", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "verdict"),
     ("A2", "A", "eta_2 = (9/32)ln(3/4) - 13/432 by the Dalgarno-Lewis reduction", "DERIVED (imported Coulomb operator)", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "eta2_symbolic_derivation"),
-    ("A3", "A", "eps_2 = published value (Wang 2013), not a substrate result", "LITERATURE", "dev", SY + "imported_theorems/second_order_partial_waves.py", "published_eps2"),
+    ("A3", "A", "eps_2 = published value (Wang 2013), not a substrate result; with it the a_corr value is a cross-check oracle", "IMPORTED (literature; cross-check oracle only)", "dev", SY + "imported_theorems/second_order_partial_waves.py", "published_eps2"),
     ("A4", "A", "s-wave and l>=1 split of a_corr from literature per-l increments", "DIAGNOSTIC (literature inputs)", "dev", SY + "derivations/acorr_partialwave_decomposition.py", None),
     ("A5", "A", "the s-wave crossover correction lies outside the elementary plus Ei span (non-membership only)", "DERIVED (conditional)", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "eps2_swave_crossover_is_non_elementary"),
-    ("A6", "A", "coincidence match is a square system; it fixes contact data, not a_corr", "DERIVED", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "substrate_correlation_coincidence_match_underdetermines"),
-    ("A7", "A", "proximity cap adds zero rank; (a_corr, R_tail) block stays rank 1 in 2 unknowns", "DERIVED", "dev", SY + "derivations/acorr_proximity_cap_rank_analysis.py", None),
+    ("A6", "A", "coincidence match is a square system on the retained contact coefficients; it fixes them, not a_corr", "DERIVED", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "substrate_correlation_coincidence_match_underdetermines"),
+    ("A7", "A", "proximity cap rows add zero rank; (a_corr, remainder) block stays rank 1 in 2 unknowns", "DERIVED (finite contact-coefficient model only)", "dev", SY + "derivations/acorr_proximity_cap_rank_analysis.py", None),
     ("A8", "A", "test-charge contact ratio V(1,1;0)/U(0) = 4(sqrt2-1)/3, not 1", "CERTIFIED-EXACT", "dev", SY + "substrate_theorems/bi_test_charge_pair_energy.py", "contact_interaction_certificate"),
     ("A9", "A", "scalar point-source potential: exact substitution, quartic range [1/8,1], Coulomb bracket", "DERIVED (scalar route only)", "dev", SY + "derivations/acorr_charge_tail_dependency_FINDINGS.md", None),
     ("A10", "A", "static linear strain tail is l=0 and the wake is O(alpha^2) inside the Coulomb comparison only", "CONDITIONAL DIAGNOSTIC", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "substrate_correlation_strain_tail_and_wake_not_the_resisting_piece"),
     ("A11", "A", "static two-centre energy to a_corr identification", "COMMITMENT (M11-gated)", "dev", SY + "substrate_theorems/rtail_two_center_synthesis.py", "two_center_synthesis"),
     ("A12", "A", "M11 true-minimizer route: physical moving-mode functional and bound mode missing", "OPEN", "dev", SY + "derivations/acorr_m11_true_minimizer_route_validation.py", None),
     ("A13", "A", "former order-4 Picard-Fuchs non-elementarity claim", "WITHDRAWN", "dev", SY + "derivations/rtail_known_problems_context.md", None),
-    ("A14", "A", "physical a_corr value from the framework's premises (Lagrangian and particle equations)", "OPEN", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "verdict"),
+    ("A14", "A", "a_corr derived from the Born-Infeld Lagrangian and the particle equations (the required route)", "OPEN", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "verdict"),
     ("A15", "A", "electron mass from the fixed closed-form particle equations (default structural anchor)", "FIXED CLOSED FORM (framework premise)", "dev", "book/scripts/substrate_mass_spectrum.py", "derive_constants"),
     ("A16", "A", "energy unit alpha^2 m_e c^2 that expresses a_corr in eV, from the particle module", "CONDITIONAL (module marks a_0 and Ry not forward-closed)", "dev", "book/scripts/forward_p_row_generator.py", "hartree_eV"),
-    ("A17", "A", "r12 Jastrow VMC 'forward a': Coulomb Hamiltonian, screened reference, extrapolated", "DIAGNOSTIC (Coulomb model; not the defined quantity)", "dev", "book/scripts/derive_pair_correlation_constant_forward.py", "corr_at_Z"),
+    ("A17", "A", "r12 Jastrow VMC 'forward a': Monte Carlo of the ordinary Coulomb problem, screened reference, extrapolated", "IMPORTED (cross-check only; not a derivation)", "dev", "book/scripts/derive_pair_correlation_constant_forward.py", "corr_at_Z"),
     ("A18", "A", "b/a = -3/4 identified with the spin-1/2 Casimir of the particle sector", "OPEN (lead, to confirm)", "dev", "book/scripts/FORWARD_ELEMENT_GENERATOR.md", None),
-    ("A19", "A", "element generator installs a_corr = 4667/100000 as a legacy diagnostic literal", "LITERATURE VALUE INSTALLED", "dev", "book/scripts/forward_generator_complete.py", "legacy_orbital_ie_diagnostic"),
+    ("A19", "A", "element generator installs a_corr = 4667/100000 as a legacy diagnostic literal", "IMPORTED (literature value installed)", "dev", "book/scripts/forward_generator_complete.py", "legacy_orbital_ie_diagnostic"),
     ("A20", "A", "occupation shape k(3k-11)/8 and b/a = -3/4 found by least-squares fit of the period-2 residual", "FITTED", "dev", "book/scripts/forward_missing_terms_generator.py", None),
     ("A21", "A", "legacy optimizer minimized a removed-orbital expression, not the atom's energy (September correction)", "CERTIFIED-EXACT (defect)", "dev", SY + "derivations/atomic_generator_energy_consistency_FINDINGS.md", None),
     ("A22", "A", "period 2 under 1% with zero fits superseded; corrected objective gives B to Ne -16.1 to -53.6 percent", "UNREVIEWED (other lane probe)", "ion", "work_journal/ionization-generator-period3-open.md", None),
-    ("B1", "B", "superposed D is divergence-correct but curl E is nonzero at (3/5,7/5)", "CERTIFIED-EXACT", "dev", SY + "derivations/bi_two_center_nonsuperposition_witness.py", None),
+    ("A23", "A", "proximity cap consistency sum_k L_k r_min^p_k = 0 is a condition on r_min; a positive root and its uniqueness are not proved", "OPEN (result left unset)", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "substrate_correlation_proximity_cap_is_contact_local_no_rank"),
+    ("B1", "B","superposed D is divergence-correct but curl E is nonzero at (3/5,7/5)", "CERTIFIED-EXACT", "dev", SY + "derivations/bi_two_center_nonsuperposition_witness.py", None),
     ("B2", "B", "the frozen trial lies strictly above the static infimum for every d>0", "CERTIFIED", "dev", SY + "substrate_theorems/rtail_trial_strict_upper_bound.py", None),
     ("B3", "B", "unique minimizer and weak-duality bracket", "DERIVED + LITERATURE (admissible-class commitment)", "dev", SY + "substrate_theorems/rtail_convex_minimizer_uniqueness.py", None),
     ("B4", "B", "order-16 H operator and order-18 W annihilator with exact certificate", "CERTIFIED-EXACT", "dev", SY + "substrate_theorems/rtail_frozen_superposition_ode.py", "frozen_certificate"),
