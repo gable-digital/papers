@@ -49,6 +49,7 @@ REF_NAMES = {
     "c27": "origin/review/order17-divisor-c27-20261101",
     "bond": "origin/substrate-bond-generator-20261101",
     "acorr28": "origin/research/acorr-newton-g-c28",
+    "ion": "origin/research/ionization-generator-period3-20261101",
 }
 
 
@@ -67,7 +68,9 @@ def resolve_refs(refresh):
             refs = json.load(fh)
     else:
         refs = {}
-        for alias, name in REF_NAMES.items():
+    # Stored references stay fixed; an alias added later is resolved once and then stored.
+    for alias, name in REF_NAMES.items():
+        if alias not in refs:
             refs[alias] = {"name": name, "commit": git("rev-parse", "--verify", name + "^{commit}").strip()}
     for alias, rec in refs.items():
         if not re.fullmatch(r"[0-9a-f]{40}", rec["commit"]):
@@ -198,6 +201,24 @@ def compute_numbers(refs):
     n["EpsTwoVal"] = m.group(1)
     n["AcorrDiagVal"] = fmt(eps2 - eta2, 20)
     n["AcorrMagVal"] = fmt(abs(eps2 - eta2), 12)
+
+    # The particle-expression route: values recorded in FORWARD_ELEMENT_GENERATOR.md.
+    feg = blob(refs, "dev", "book/scripts/FORWARD_ELEMENT_GENERATOR.md").decode("utf-8")
+    vm = re.search(r"Z=2: (0\.[0-9]+), Z=4: (0\.[0-9]+), Z=8: (0\.[0-9]+), Z=16: (0\.[0-9]+) Ha", feg)
+    if not vm:
+        raise SystemExit("VMC values not found in FORWARD_ELEMENT_GENERATOR.md")
+    vmc = {2: vm.group(1), 4: vm.group(2), 8: vm.group(3), 16: vm.group(4)}
+    n["VmcValuesVal"] = ", ".join("$Z=%d$: %s" % (z, vmc[z]) for z in (2, 4, 8, 16))
+    # the script's own extrapolation: least squares a + b/Z over Z = 4, 8, 16
+    zs = [4, 8, 16]
+    A = sp.Matrix([[1, sp.Rational(1, z)] for z in zs])
+    y = sp.Matrix([sp.Rational(vmc[z]) for z in zs])
+    sol = (A.T * A).inv() * A.T * y
+    n["VmcExtrapVal"] = mp.nstr(mp.mpf(sp.N(sol[0], 30)), 4)
+    n["ScreenedConstVal"] = mp.nstr(mp.mpf(25) / 256, 8)
+    n["ExactMinusScreenedVal"] = mp.nstr(abs(eps2 + mp.mpf(25) / 256), 6)
+    n["TwentyOneDevVal"] = "%.2f" % float(100 * (mp.mpf(1) / 21 / abs(eps2 - eta2) - 1))
+    n["SixtyFourDevVal"] = "%.2f" % float(100 * (mp.mpf(3) / 64 / abs(eps2 - eta2) - 1))
 
     # partial-wave split: run the corpus script from its blob
     out = exec_corpus_script(refs, "dev", SY + "derivations/acorr_partialwave_decomposition.py")
@@ -379,7 +400,15 @@ CLAIMS = [
     ("A11", "A", "static two-centre energy to a_corr identification", "COMMITMENT (M11-gated)", "dev", SY + "substrate_theorems/rtail_two_center_synthesis.py", "two_center_synthesis"),
     ("A12", "A", "M11 true-minimizer route: physical moving-mode functional and bound mode missing", "OPEN", "dev", SY + "derivations/acorr_m11_true_minimizer_route_validation.py", None),
     ("A13", "A", "former order-4 Picard-Fuchs non-elementarity claim", "WITHDRAWN", "dev", SY + "derivations/rtail_known_problems_context.md", None),
-    ("A14", "A", "physical a_corr value from the master Lagrangian", "OPEN", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "verdict"),
+    ("A14", "A", "physical a_corr value from the framework's premises (Lagrangian and particle equations)", "OPEN", "dev", SY + "substrate_theorems/atomic_correlation_constant_not_forced.py", "verdict"),
+    ("A15", "A", "electron mass from the fixed closed-form particle equations (default structural anchor)", "FIXED CLOSED FORM (framework premise)", "dev", "book/scripts/substrate_mass_spectrum.py", "derive_constants"),
+    ("A16", "A", "energy unit alpha^2 m_e c^2 that expresses a_corr in eV, from the particle module", "CONDITIONAL (module marks a_0 and Ry not forward-closed)", "dev", "book/scripts/forward_p_row_generator.py", "hartree_eV"),
+    ("A17", "A", "r12 Jastrow VMC 'forward a': Coulomb Hamiltonian, screened reference, extrapolated", "DIAGNOSTIC (Coulomb model; not the defined quantity)", "dev", "book/scripts/derive_pair_correlation_constant_forward.py", "corr_at_Z"),
+    ("A18", "A", "b/a = -3/4 identified with the spin-1/2 Casimir of the particle sector", "OPEN (lead, to confirm)", "dev", "book/scripts/FORWARD_ELEMENT_GENERATOR.md", None),
+    ("A19", "A", "element generator installs a_corr = 4667/100000 as a legacy diagnostic literal", "LITERATURE VALUE INSTALLED", "dev", "book/scripts/forward_generator_complete.py", "legacy_orbital_ie_diagnostic"),
+    ("A20", "A", "occupation shape k(3k-11)/8 and b/a = -3/4 found by least-squares fit of the period-2 residual", "FITTED", "dev", "book/scripts/forward_missing_terms_generator.py", None),
+    ("A21", "A", "legacy optimizer minimized a removed-orbital expression, not the atom's energy (September correction)", "CERTIFIED-EXACT (defect)", "dev", SY + "derivations/atomic_generator_energy_consistency_FINDINGS.md", None),
+    ("A22", "A", "period 2 under 1% with zero fits superseded; corrected objective gives B to Ne -16.1 to -53.6 percent", "UNREVIEWED (other lane probe)", "ion", "work_journal/ionization-generator-period3-open.md", None),
     ("B1", "B", "superposed D is divergence-correct but curl E is nonzero at (3/5,7/5)", "CERTIFIED-EXACT", "dev", SY + "derivations/bi_two_center_nonsuperposition_witness.py", None),
     ("B2", "B", "the frozen trial lies strictly above the static infimum for every d>0", "CERTIFIED", "dev", SY + "substrate_theorems/rtail_trial_strict_upper_bound.py", None),
     ("B3", "B", "unique minimizer and weak-duality bracket", "DERIVED + LITERATURE (admissible-class commitment)", "dev", SY + "substrate_theorems/rtail_convex_minimizer_uniqueness.py", None),
@@ -445,7 +474,49 @@ TRANSCRIPTIONS = [
     ("ode", FO + "radial-euler-reduction-spec.md", "lead(N17_W)=s^16*(27s+4)*(64s+1)*(s+1)*(64s-27)*(1024s-27)*Q35."),
     ("ode", FO + "radial-euler-reduction-spec.md", "SOURCE COMPONENT CLEAR C0H0M0L1"),
     ("c27", "work_journal/order17-divisor-review-c27-open.md", "C0/H0/M0/L0 new candidate findings"),
+    ("dev", "book/scripts/derive_pair_correlation_constant_forward.py", "pot = -Z / r1 - Z / r2 + 1.0 / r12"),
+    ("dev", "book/scripts/derive_pair_correlation_constant_forward.py", "E_corr(Z) = -(Z-5/16)^2 - min E(zeta,c;Z)"),
+    ("dev", "book/scripts/derive_pair_correlation_constant_forward.py", "a_generator = 0.04738"),
+    ("dev", "book/scripts/derive_pair_correlation_constant_forward.py", "assert abs(a_lim - a_generator) < 0.008"),
+    ("dev", "book/scripts/derive_helium_correlation_forward.py", "pot = -Z / r1 - Z / r2 + 1.0 / r12"),
+    ("dev", "book/scripts/FORWARD_ELEMENT_GENERATOR.md", "generator / E8 double-leakage / anomalous-moment work"),
+    ("dev", "book/scripts/FORWARD_ELEMENT_GENERATOR.md", "TO CONFIRM: derive the 3/4 from the spin algebra"),
+    ("dev", "book/scripts/forward_p_row_generator.py", "alpha_sub = ce['lambda_C_e'] / (2 * mp.pi * ce['a_0'])"),
+    ("dev", "book/scripts/forward_p_row_generator.py", "return 27.211386245988, 'Hartree (fallback)'"),
+    ("dev", "book/scripts/substrate_mass_spectrum.py", "'a_0': 'NOT forward-closed: inherits alpha_g2_forward"),
+    ("dev", "book/scripts/substrate_mass_spectrum.py", "default='structural'"),
+    ("dev", "book/scripts/forward_generator_complete.py", "LEGACY_DIAGNOSTIC_A_CORR=sp.Rational(4667,100000)"),
+    ("dev", "book/scripts/forward_missing_terms_generator.py", "A_CORR = 0.04667"),
+    ("dev", "book/scripts/forward_missing_terms_generator.py", "This script DISCOVERS the RATIO pattern (fits to expose the 3:4 lock and the single constant a)."),
+    ("dev", "book/scripts/forward_missing_terms_generator.py", "sol, *_ = np.linalg.lstsq(B2, resHa, rcond=None)"),
+    ("dev", SY + "derivations/atomic_generator_energy_consistency_FINDINGS.md", "`[0, -21/64, -63/64, -585/256, -921/256, -1341/256]`"),
+    ("dev", SY + "derivations/atomic_p_relaxed_energy_FINDINGS.md", "Selecting the common energy fixes that objective"),
+    ("ion", "work_journal/ionization-generator-period3-open.md", "SUPERSEDED: \"period 2 complete to <1% with zero fits\"."),
+    ("ion", "work_journal/ionization-generator-period3-open.md", "B..Ne at -16.1, -23.4, -28.1, -53.6, -44.5, -37.9 %"),
+    ("ion", SY + "derivations/atomic_shell_generator_FINDINGS.md", "the shape does not transfer to the corrected generator."),
 ]
+
+# Commit-message transcriptions: (exact subject, substring of the commit body).
+COMMIT_TRANSCRIPTIONS = [
+    ("feat(gr_qm): a_corr is measured, not derivable -- and the corpus disagrees with itself by 2",
+     "3/64 and 1/21 are both rejected by the error bar, at +0.45% and +2.0%."),
+    ("feat(gr_qm): a_corr is measured, not derivable -- and the corpus disagrees with itself by 2",
+     "a_corr is the Z->infinity limit of E_corr(Z) = E_exact - E_HF."),
+    ("feat(book): forward-derive the missing-terms constant a = pair-correlation energy",
+     "extrapolating to ~0.05 Ha"),
+]
+
+
+def check_commit_transcriptions():
+    for subject, text in COMMIT_TRANSCRIPTIONS:
+        hashes = [line.split("\t", 1)[0] for line in git("log", "--remotes=origin", "--since=2026-08-01",
+                                                         "--format=%H\t%s").splitlines()
+                  if line.split("\t", 1)[-1] == subject]
+        if not hashes:
+            raise SystemExit("commit subject not found: %r" % subject[:50])
+        if not any(" ".join(text.split()) in " ".join(git("show", "-s", "--format=%B", h).split()) for h in hashes):
+            raise SystemExit("commit body lacks transcribed text: %r" % text[:50])
+    return len(COMMIT_TRANSCRIPTIONS)
 
 
 def check_transcriptions(refs):
@@ -462,7 +533,11 @@ EM = chr(0x2014)  # the em dash two historical subjects carry
 TIMELINE = [
     "feat(book): the COMPLETE forward generator " + EM + " zero fitted constants, 2p row <1%",
     "fix: correct the E_c=a_corr over-claim " + EM + " verified they are different quantities",
+    "feat(abi): forward helium correlation -- the r12 term closes the mean-field residual to +0.42%",
+    "feat(book): forward-derive the missing-terms constant a = pair-correlation energy",
     "feat(gr_qm): a_corr is measured, not derivable -- and the corpus disagrees with itself by 2",
+    "fix(gr-qm): reconcile conditional atomic energy and ionization",
+    "fix(gr-qm): consume exact relaxed occupation certificates",
     "feat(gr-qm): eps_2(0) does not close by the Green's-function assembly -- the crossover correction is non-elementary",
     "research(gr-qm): prove the rigid-limit source non-elementary; the substrate answer is the deformed metric",
     "research(gr-qm): the substrate a_corr is a global field energy; the saturation root resums globally",
@@ -497,7 +572,7 @@ def claim_rows(refs, paper):
             continue
         h, date = last_commit(refs, alias, path)
         if func is not None:
-            text = blob(refs, alias, path).decode("ascii")
+            text = blob(refs, alias, path).decode("utf-8")
             if not re.search(r"^def %s\(" % re.escape(func), text, re.M):
                 raise SystemExit("function %s not found in %s" % (func, path))
         on_dev = is_ancestor(h, refs["dev"]["commit"])
@@ -529,9 +604,9 @@ def timeline_rows(refs):
         h, date = sorted(on_dev or hits, key=lambda x: x[1])[0]
         utc = git("log", "-1", "--date=format-local:%Y-%m-%d %H:%MZ", "--format=%ad", h).strip()
         safe = subject.replace(EM, ";")
-        rows.append("\\cell{0.17}{%s} & \\cell{0.14}{\\texttt{%s}%s} & \\cell{0.62}{%s} \\\\" % (
-            utc, h[:10], "" if on_dev else "$^{\\dagger}$", tex_escape(safe)))
-    return "\n".join(rows) + "\n\\bottomrule\n"
+        rows.append((utc, "\\cell{0.17}{%s} & \\cell{0.14}{\\texttt{%s}%s} & \\cell{0.62}{%s} \\\\" % (
+            utc, h[:10], "" if on_dev else "$^{\\dagger}$", tex_escape(safe))))
+    return "\n".join(r for _, r in sorted(rows)) + "\n\\bottomrule\n"
 
 
 def numbers_tex(n, refs):
@@ -572,7 +647,7 @@ def main():
     args = ap.parse_args()
     refs = resolve_refs(args.refresh)
     n = compute_numbers(refs)
-    n["TranscriptionCountVal"] = str(check_transcriptions(refs))
+    n["TranscriptionCountVal"] = str(check_transcriptions(refs) + check_commit_transcriptions())
     num = numbers_tex(n, refs)
     a_tex, a_md = claim_rows(refs, "A")
     b_tex, b_md = claim_rows(refs, "B")

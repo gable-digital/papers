@@ -12,7 +12,7 @@ rounds, and the open items.
 2. The partial-wave split and the nonsuperposition witness are produced by executing the corpus
    scripts `acorr_partialwave_decomposition.py` and `bi_two_center_nonsuperposition_witness.py` from
    their blobs at the recorded origin/dev commit inside the generator.
-3. `latexmk -pdf acorr_derivation.tex` (TeX Live 2026 used; 8 pages).
+3. `latexmk -pdf acorr_derivation.tex` (TeX Live 2026 used; 10 pages).
 
 ## Claims
 
@@ -32,17 +32,38 @@ rounds, and the open items.
 | A11 | static two-centre energy to a_corr identification | COMMITMENT (M11-gated) | `substrate_theorems/rtail_two_center_synthesis.py::two_center_synthesis` | `56d7c16cfe` (2026-09-23) | dev |
 | A12 | M11 true-minimizer route: physical moving-mode functional and bound mode missing | OPEN | `derivations/acorr_m11_true_minimizer_route_validation.py` | `56d7c16cfe` (2026-09-23) | dev |
 | A13 | former order-4 Picard-Fuchs non-elementarity claim | WITHDRAWN | `derivations/rtail_known_problems_context.md` | `745293d9c5` (2026-09-19) | dev |
-| A14 | physical a_corr value from the master Lagrangian | OPEN | `substrate_theorems/atomic_correlation_constant_not_forced.py::verdict` | `56d7c16cfe` (2026-09-23) | dev |
+| A14 | physical a_corr value from the framework's premises (Lagrangian and particle equations) | OPEN | `substrate_theorems/atomic_correlation_constant_not_forced.py::verdict` | `56d7c16cfe` (2026-09-23) | dev |
+| A15 | electron mass from the fixed closed-form particle equations (default structural anchor) | FIXED CLOSED FORM (framework premise) | `book/scripts/substrate_mass_spectrum.py::derive_constants` | `d90bb8280a` (2026-09-22) | dev |
+| A16 | energy unit alpha^2 m_e c^2 that expresses a_corr in eV, from the particle module | CONDITIONAL (module marks a_0 and Ry not forward-closed) | `book/scripts/forward_p_row_generator.py::hartree_eV` | `de463350ee` (2026-09-20) | dev |
+| A17 | r12 Jastrow VMC 'forward a': Coulomb Hamiltonian, screened reference, extrapolated | DIAGNOSTIC (Coulomb model; not the defined quantity) | `book/scripts/derive_pair_correlation_constant_forward.py::corr_at_Z` | `79ab032f5a` (2026-08-11) | dev |
+| A18 | b/a = -3/4 identified with the spin-1/2 Casimir of the particle sector | OPEN (lead, to confirm) | `book/scripts/FORWARD_ELEMENT_GENERATOR.md` | `7fd6e5c283` (2026-08-11) | dev |
+| A19 | element generator installs a_corr = 4667/100000 as a legacy diagnostic literal | LITERATURE VALUE INSTALLED | `book/scripts/forward_generator_complete.py::legacy_orbital_ie_diagnostic` | `82ead9b8d9` (2026-09-20) | dev |
+| A20 | occupation shape k(3k-11)/8 and b/a = -3/4 found by least-squares fit of the period-2 residual | FITTED | `book/scripts/forward_missing_terms_generator.py` | `c0610401eb` (2026-08-11) | dev |
+| A21 | legacy optimizer minimized a removed-orbital expression, not the atom's energy (September correction) | CERTIFIED-EXACT (defect) | `derivations/atomic_generator_energy_consistency_FINDINGS.md` | `de463350ee` (2026-09-20) | dev |
+| A22 | period 2 under 1% with zero fits superseded; corrected objective gives B to Ne -16.1 to -53.6 percent | UNREVIEWED (other lane probe) | `work_journal/ionization-generator-period3-open.md` | `40cd2c13f7` (2026-11-01) | origin/research/ionization-generator-period3-20261101 |
 <!-- END GENERATED CLAIMS -->
 
-## Assessment of the owner's statement
+## Assessment of the owner's statements
 
 "a_corr was derived into two parts with R_tail closed as a series" partly aligns with the record.
 Aligns: the corpus splits a_corr into two parts (three different senses), and the frozen two-centre
 trial energy is closed as an exact differential equation with an exact germ, computable by series.
-Conflicts: no split determines a_corr from the master Lagrangian; what is closed as a series is the
-frozen trial (an upper bound), not the true static minimum and not the moving-mode correlation; the
-corpus a_corr number inherits the published eps_2. The physical a_corr is open.
+Conflicts: no split determines a_corr; what is closed as a series is the frozen trial (an upper
+bound), not the true static minimum and not the moving-mode correlation; the corpus a_corr number
+inherits the published eps_2.
+
+Owner correction (relayed by the coordinator, verbatim): "a_corr is not fixed merely from the
+lagrangian. It is also built based on the fixed closed form expressions for the particles". Aligns:
+the particle equations of book/scripts/substrate_mass_spectrum.py enter, through the electron mass
+(the hartree and Bohr units; fixed closed form, framework premise), the coupling used for the eV
+conversion (conditional: the module marks a_0 and Ry not forward-closed) and the Born-Infeld core
+scale relative to the atom (conditional on the W_single = m_e c^2 identification). Does not establish:
+that these expressions fix the dimensionless value. The August route
+(derive_pair_correlation_constant_forward.py) is a Coulomb-model Jastrow VMC of a screened-reference
+quantity (recorded values extrapolate to 0.04995 by the script's own fit); the generators install the
+literature value 0.04667; the occupation shape and the 3:4 ratio were fitted; and the period-2
+under-one-percent closure was superseded in September (removed-orbital objective; see A20 to A22 and
+paper Sec. IV). The physical a_corr is open.
 
 ## Literature, checked against Crossref on 2026-11-01
 
@@ -64,9 +85,20 @@ Round 1 (2026-11-01, during drafting):
 
 Round 2 (2026-11-01, whole-text re-read after fixes): no CRITICAL, HIGH or MEDIUM finding.
 
+Round 3 (2026-11-01, revision for the owner's correction and the coordinator's relay of READY 128594):
+
+| severity | finding | disposition |
+| --- | --- | --- |
+| HIGH | Paper framed a_corr as not determined "from the Lagrangian" alone and omitted how the closed-form particle expressions enter | new Sec. IV traces steps P1 to P7 with statuses; abstract and assessment revised |
+| MEDIUM | The August "forward a" route was not analysed: Coulomb Hamiltonian, screened (not HF) reference, MC without error bars, extrapolation 0.04995 vs the documented 0.047, validation gated on the fitted 0.04738 | stated in Sec. IV, claim A17 |
+| MEDIUM | The period-2 "under 1% with zero fits" claim needed its September correction and fit provenance | claims A20 to A22, timeline adds both September commits |
+| LOW | Email line 14 pt overfull | follow-up |
+
+Round 3 re-read: no CRITICAL, HIGH or MEDIUM finding remains.
+
 ## Open items
 
-Listed in Sec. VIII of the paper: the moving-mode two-electron correlation functional and bound mode;
+Listed in Sec. IX of the paper: the moving-mode two-electron correlation functional and bound mode;
 the charge sector of the cross term; a closed form or impossibility proof for eps_2; the remainder
 R_tail as a constructed integral; the static two-centre items of the companion paper; and unverified
 corpus citation fields.

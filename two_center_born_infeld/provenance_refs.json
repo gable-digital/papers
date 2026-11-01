@@ -15,6 +15,10 @@
   "commit": "830cc5170df58c182ce54fe7a8c7ca0cdb2e3842",
   "name": "origin/dev"
  },
+ "ion": {
+  "commit": "40cd2c13f73b5747302d2d70dd81dfabf08dd452",
+  "name": "origin/research/ionization-generator-period3-20261101"
+ },
  "ode": {
   "commit": "3b8c2653996dda0629c544328b48abc5ef0ca38b",
   "name": "origin/math/rtail-frozen-ode-1-10"
