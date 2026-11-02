@@ -199,6 +199,29 @@ def local_remainder_counterexample():
     return mp.nstr(val, 6)
 
 
+def local_remainder_zero_witness():
+    """Paper A, contact block: pointwise equality with the retained expansion is sufficient for R_loc = 0 but
+    not necessary. For G = r^3 + r^10 (r - 11/12), w = 1, r* = 1 and retained exponents 3..9 the retained
+    expansion is r^3 and R_loc = int_0^1 r^10 (r - 11/12) dr = 0, while the residual at r = 1/2 is -5/12288
+    and G > 0 on (0, 1]. Checked exactly here; returns the residual at r = 1/2 as an exact rational."""
+    r = sp.Symbol("r", positive=True)
+    g = r**3 + r**10 * (r - sp.Rational(11, 12))
+    poly = sp.Poly(sp.expand(g), r)
+    retained = sum(poly.coeff_monomial(r**p) * r**p for p in range(3, 10))
+    if sp.expand(retained - r**3) != 0:
+        raise SystemExit("zero witness: retained expansion is not r^3: %s" % retained)
+    residual = sp.expand(g - retained)
+    if sp.integrate(residual, (r, 0, 1)) != 0:
+        raise SystemExit("zero witness: R_loc is not zero")
+    at_half = residual.subs(r, sp.Rational(1, 2))
+    if at_half != sp.Rational(-5, 12288):
+        raise SystemExit("zero witness: residual at 1/2 is not -5/12288: %s" % at_half)
+    # G / r^3 = 1 + r^7 (r - 11/12) >= 1 - (11/12) r^7 >= 1/12 on (0, 1], so G > 0 there.
+    if sp.minimum(sp.expand(g / r**3), r, sp.Interval.Lopen(0, 1)) <= 0:
+        raise SystemExit("zero witness: G is not positive on (0, 1]")
+    return "%d/%d" % (at_half.p, at_half.q)
+
+
 def compute_numbers(refs):
     mp.mp.dps = 60
     g = mp.gamma(mp.mpf(1) / 4) ** 2
@@ -244,6 +267,7 @@ def compute_numbers(refs):
     n["TwentyOneDevVal"] = "%.2f" % float(100 * (mp.mpf(1) / 21 / abs(eps2 - eta2) - 1))
     n["SixtyFourDevVal"] = "%.2f" % float(100 * (mp.mpf(3) / 64 / abs(eps2 - eta2) - 1))
     n["RlocCounterVal"] = local_remainder_counterexample()
+    n["RlocZeroResidualVal"] = local_remainder_zero_witness()
 
     # partial-wave split: run the corpus script from its blob
     out = exec_corpus_script(refs, "dev", SY + "derivations/acorr_partialwave_decomposition.py")

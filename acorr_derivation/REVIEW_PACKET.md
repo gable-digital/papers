@@ -115,6 +115,12 @@ owner ruling above; remediation by the acct3 lead):
 | LOW | Paper B said every number is a generated macro, though model constants and coordinates are literals | narrowed to generated numerical results; the same narrowing applied to paper A's purpose paragraph |
 | HIGH (owner ruling) | Value and Monte Carlo route presented as diagnostic rather than imported; required route not stated | IMPORTED status added and applied (abstract, Secs. II C and IV, certified list, assessment, premise ledger, A3, A17, A19); required BI-plus-particle-equations route OPEN (A14, open item 1) |
 
+Round 5 (2026-11-02, Codex4-2 re-review VERDICT SOURCE CLEAR C0 H0 M0 L1):
+
+| severity | finding | disposition |
+| --- | --- | --- |
+| LOW | Sec. III A and the source script docstring said R_loc vanishes only if G equals its retained expansion; witness G = r^3 + r^10 (r - 11/12), w = 1, r* = 1, p = 3..9 has R_loc = 0 with residual -5/12288 at r = 1/2 | both now state that equality is sufficient but not necessary, citing this witness, checked exactly by `generate_numbers.py::local_remainder_zero_witness` (macro RlocZeroResidualVal); script output unchanged |
+
 ## Open items
 
 Listed in Sec. IX of the paper: the required derivation of a_corr from the Born-Infeld Lagrangian and
